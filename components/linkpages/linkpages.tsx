@@ -4,6 +4,9 @@ import { FaStar } from "react-icons/fa";
 
 
 export default function Linkpages(){
+    function setEmail(){
+
+    }
 {/* advertise section */}
 return(
 <div className="bg-[#F6F5F1]">
@@ -46,7 +49,7 @@ return(
         </ul>
       <p className="py-6">We'll do the legwork, from creating catchy copy to design.</p>
       <button
-        onClick={() => setEmail("")}
+        onClick={() => setEmail()}
         className="py-3 px-8  bg-[#0C3D3D] mt-4 sm:text-xl  text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
          Speak to sales &rarr;
       </button>
