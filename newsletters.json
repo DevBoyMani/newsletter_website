@@ -1,0 +1,36 @@
+{
+    "newsletters":[
+        {
+            "id":1,
+            "image":"https://media-hosting.imagekit.io//6ab9e7d90b9143a0/w-ps.jpeg?Expires=1830959294&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=iZqaecUrmopiCR3WH5M-qgiwQJ1zoqYYclmZlAAoq7NdN9X4MPPZ8QvAqtmZLH5ZkPZ9TXa67p4IX6Bd2~qGSQROOoLjV~OkTNhhwqMygt6HfNXlsa6U7R0aV9zpkPqHcOo1bzGYiX9llKa6BhtyP6-qX8Y8ud4-whLlS1CD1wHWKPpXZgG2L1tKa~NszRYRD3rIti4ALQA87vi8VxyhVuW71GwFSiy92BwKGiZrqF2n66GIY2W-3560~I1dlZHL0AItuvG4petf3hABl4Rndv6rAE6YkQ-vttJ2bJZyDvOC6ff7H0256PAQsyyXJLjNFPPm1Kn1psWyLPlHDXZZqQ__",
+            "heading":"Presidential Summary.",
+            "description":"Heads of nations read a summary of the most important news every morning. Now, so will you.",
+            "website":"https://www.presidentialsummary.com/",
+            "selected":false
+        },
+        {
+            "id":2,
+            "image":"https://media-hosting.imagekit.io//6a9e2118139444f5/w-gs.jpeg?Expires=1830959342&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aGWn~NriQ0SE0FlnpyF9CUiA21j5mfpuXtAJXZeip9DM9qOF1Rpt~FU6V1~405hJ1KJG7gbFvS314Y8N74vnLZguI~jKjBlnHAOjDZEMPiAmL-3eQd39sV4E-qxIUWZFB6qzPNDCv~yUkbfQFA~~WVlV41uA9d8Hj8I7CMKa59mpKkaQYu9Ru2Wik-35-3gRUR4I8cgfvkrAHn3axog7B7du-6md8Nnrn-nUHH642PHhnGFFyvgOh6HnmX7t7avno84~zaxv0cVP5tu4KG-2yEzhF4~LYElxAlMnJRMznXqUYWYIniC2rp5u6a96pLYOLP1hwYTYcEFQPyNnLL-0LA__",
+            "heading":"Geopolitical Summary.",
+            "description":"Fact-checked geopolitics news for diplomats. Read the most impactful geopolitical and international relations stories and visuals are delivered to your inbox six days a week.",
+            "website":"https://www.geopoliticalsummary.com/",
+            "selected":false
+        },
+        {
+            "id":3,
+            "image":"https://media-hosting.imagekit.io//bcf576321c59449d/w-ls.jpeg?Expires=1830959247&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=nJXczO304nC~wHg3XN3i9KEzDu2DsZ0GJAnhEXxqlhHGrLfIC4VVxLRKnsxFVHxdtrBavQuXXboQ5AJUp0iqN0J353QBY7MSWPhpV431-qKb6FGUYOWsiXGku2s2x8R4uolpsaV28HF2-DGAC0x5P4Z9YttRSwa1ojMlcuy6gRYgzARGBrL6F84iRJnAJqzrEPZ76NXYcNBeocFBCtNck1yMuAAiJVLoPUHlBBQqIUY9G8D~yaBcHomk2IfK5SCk1w5taoHGBWLm0jZlV0yEeLiEVpqCv6-sjLGnMB9x6QXj27Kx9lUqS-z-rlpVQPeeE~QO7MenPhtWnN2Fb8Aryg__",
+            "heading":"Long and Short.",
+            "description":"Insider news for the world of finance. Markets in minutes. Unbiased, fact-checked finance news, 5-minute read.",
+            "website":"https://www.longandshort.com/",
+            "selected":false
+        },
+        {
+            "id":4,
+            "image":"https://media-hosting.imagekit.io//3d46c5f2b78c45d3/w-bh.jpeg?Expires=1830959144&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=W-AlcMM8FNBE7q~r898pMlIeQgdEmQzkklYkVF4ho5h2k8fVU9OCPDs5lg1chsg1X7a3Zmif6Zy-022jU1oEXEld0RI0rpNVnPooXhcGR7cY7VOflrgzzVeooX6TkDHnv6CAuEUB4ilKR4RsmPtX4wPz~KsBGHcjgV4xAHb-LTSuxX8bJPZSDPsuyGDwjb8NOahqCneWw3tT-9-6dB1zRu-CgbUnIYMNadDPOFNRquGSgu02pjSaLsj~SD8BechxiSQlcH44vXETEYkxFb72zeDI5P2FzAThboSQnwawivxPPUemrG0G2TTh9Mgrq~PG1YYyk6ohiIWbP3FnZcs1uA__",
+            "heading":"Business History.",
+            "description":"Intriguing stories that built (or broke) the greatest businesses.",
+            "website":"https://www.businesshistory.co/",
+            "selected":false
+        }
+    ]
+}
