@@ -40,7 +40,7 @@ const Test = ({ count, email, setEmail, mHandleSubmit }) => {
       >
         <div className="text-left text-white">
           <h3 className="text-3xl font-bold mb-6">{count} newsletters selected</h3>
-          <p className="text-sm">Enter the email address where you'd like to receive these newsletters.</p>
+          <p className="text-sm">Enter the email address where you'd like to receive these newsletters</p>
         </div>
 
         <div className="flex flex-col items-end space-y-2">
