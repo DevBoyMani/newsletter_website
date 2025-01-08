@@ -1,7 +1,7 @@
 import Hero from "@/components/hero/hero";
-// import Linkpages from "@/components/linkpages/linkpages";
+import Linkpages from "@/components/linkpages/linkpages";
 import Navbar from "@/components/navbar/navbar";
-import Newsletters from "@/components/newsletters/newsletters";
+import Newsletters from "@/components/newsletters/newsletters"
 
 export default function Home(){
     return(
@@ -9,7 +9,7 @@ export default function Home(){
         <Navbar/>
         <Hero/>
         <Newsletters/>
-        {/* <Linkpages/> */}
+        <Linkpages/>
 
         </>
     )
