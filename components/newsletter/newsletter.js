@@ -25,8 +25,8 @@ const Newsletter = ({ inform, handleAdd }) => {
               e.preventDefault(); // Prevent navigation when the button is clicked
               handleAdd(inform.id); // Call the handler function
             }}
-            className={`absolute top-2 right-2 w-14 h-14 flex items-center justify-center rounded bg-white hover:bg-[#46DE46] ${
-              inform.selected ? "" : ""
+            className={`absolute top-2 right-2 w-14 h-14 flex items-center justify-center rounded  hover:bg-[#46DE46] ${
+              inform.selected ? "bg-[#46DE46]" : "bg-white"
             }`}
           >
             {inform.selected ? (

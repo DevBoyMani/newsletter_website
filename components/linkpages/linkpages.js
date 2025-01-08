@@ -6,34 +6,43 @@ const Linkpages = () => {
 
   const testimonials = [
     {
-      name: "Sir Lewis Hamilton",
-      quote: "I've been drinking AG1 every single day for a few years and it's become a key part of my routine. As a daily clean, green source of energy — it tastes great, is convenient to take on the road, and is complete enough to be an all-in-one supplement. I love that it's a really easy way to support my overall health.",
-      image: "https://via.placeholder.com/400x400?text=Lewis+Hamilton", // Replace with actual image URL
+      name: "Fashion",
+      author:"MARCHTEE, ELITE T-SHIRT MANUFACTURER",
+      quote: "Sagravia is an exceptional newsletter company that exceeded all expectations! Their advertising strategy was spot-on, helping my company sell out our entire t-shirt inventory in just a few hours during a one-week campaign. Their team is professional, creative, and highly effective at crafting messages that truly resonate with the audience. Sagravia delivers results beyond imagination—I highly recommend them to anyone looking for impactful marketing and incredible sales success!",
+      image: "/testimonials/1.jpg", // Replace with actual image URL
     },
     {
-      name: "Dr. Andrew Huberman",
-      quote: "AG1 has completely changed the way I approach nutrition and supplements. It simplifies my routine and ensures I'm getting everything I need in one simple solution.",
-      image: "https://via.placeholder.com/400x400?text=Andrew+Huberman", // Replace with actual image URL
+      name: "Digital Marketing",
+      author:"SOCIAL BROKER, ACQUIRED ANY SOCIAL MEDIA HANDLE",
+      quote: "Sagravia is a game-changer! Their newsletter advertising helped my company sell out our entire t-shirt inventory in just a few hours. Their team is professional, innovative, and truly understands how to engage audiences. The results were beyond impressive, and the process was seamless from start to finish. If you’re looking for marketing that delivers quick, impactful results, Sagravia is the partner you need. Highly recommended for driving sales and success!",
+      image: "/testimonials/2.png", 
     },
     {
-      name: "Allyson Felix",
-      quote: "AG1 is my go-to solution for energy, focus, and recovery. It's a game-changer for athletes and anyone looking to perform at their best.",
-      image: "https://via.placeholder.com/400x400?text=Allyson+Felix", // Replace with actual image URL
+      name: "Healthcare",
+      author:"HIMS, TELEHEALTH FOR MEN",
+      quote: "Sagravia is simply outstanding! Their newsletter campaign drove incredible results, selling out my entire t-shirt inventory in just a few hours during a one-week promotion. The team is sharp, efficient, and knows exactly how to captivate an audience. Their expertise turned my sales goals into a reality faster than I imagined. If you want marketing that truly works, Sagravia is the way to go. I couldn’t be happier with the results!",
+      image: "/testimonials/3.png", // Replace with actual image URL
     },
   ];
 
   return (
-    <div className="max-w-5xl mx-auto px-4 py-8">
+    <div className="text-white px-4 md:px-16 py-20 lg:py-4  mx-auto lg:min-h-[650px] ">
       {/* Tabs */}
-      <div className="flex space-x-4 border-b border-gray-300">
+      <div className="mb-8">
+        <h2 className="text-4xl font-semibold text-black">
+        Case studies: working with our advertising partners
+        </h2>
+      </div>
+      
+      <div className="flex space-x-4 ">
         {testimonials.map((testimonial, index) => (
           <button
             key={index}
             onClick={() => setActiveTab(index)}
-            className={`px-4 py-2 text-sm font-medium ${
+            className={`text-2xl px-4 py-2 mb-12 ${
               activeTab === index
-                ? "border-b-2 border-blue-500 text-blue-500"
-                : "text-gray-600 hover:text-blue-500"
+                ? "border-b-2 border-black text-black"
+                : "text-gray-600 hover:text-black"
             }`}
           >
             {testimonial.name}
@@ -45,18 +54,18 @@ const Linkpages = () => {
       <div className="mt-6 flex flex-col md:flex-row items-center md:items-start">
         {/* Left Content */}
         <div className="md:w-1/2">
-          <p className="text-lg italic text-gray-800">{testimonials[activeTab].quote}</p>
-          <p className="mt-4 font-semibold text-gray-700">
-            - {testimonials[activeTab].name}
+          <p className="text-4xl text-gray-800 mb-8 leading-tight">{testimonials[activeTab].quote}</p>
+          <p className="mt-4 text-gray-700">
+            - {testimonials[activeTab].author}
           </p>
         </div>
 
         {/* Right Image */}
-        <div className="md:w-1/2 mt-6 md:mt-0 md:pl-8">
+        <div className="md:w-1/2 mt-6 md:mt-0 md:pl-8 ml-16 pb-80 ">
           <img
             src={testimonials[activeTab].image}
             alt={testimonials[activeTab].name}
-            className="w-full h-auto rounded-lg shadow-md"
+            className="w-[80%] h-auto  shadow-md"
           />
         </div>
       </div>

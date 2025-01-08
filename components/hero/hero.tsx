@@ -110,12 +110,12 @@ export default function Hero() {
             <div className="">
 
                 <div className="flex items-center ">
-                <h3 className="text-4xl">
+                <h3 className="text-4xl ">
                 "Our newsletters are read by 100,000+ people"
                 </h3>
                    
                 </div>
-                <p className="text-xl mt-4">
+                <p className="text-xl mt-4 mb-10">
                    Daily and weekly newsletters that cover topics from business history to global affairs
                 </p>
                 <button
