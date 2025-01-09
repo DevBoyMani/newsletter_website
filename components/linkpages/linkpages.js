@@ -26,7 +26,7 @@ const Linkpages = () => {
   ];
 
   return (
-    <div className="text-white px-4 md:px-16 py-20 lg:py-4  mx-auto lg:min-h-[650px] ">
+    <div className="text-white px-4 md:px-16 py-20 lg:py-4 md:pb-60  lg:pb-60 mx-auto lg:min-h-[650px] ">
       {/* Tabs */}
       <div className="mb-8">
         <h2 className="text-4xl font-semibold text-black">
@@ -61,7 +61,7 @@ const Linkpages = () => {
         </div>
 
         {/* Right Image */}
-        <div className="md:w-1/2 mt-6 md:mt-0 md:pl-8 ml-16 pb-80 ">
+        <div className="md:w-1/2 mt-6 md:mt-0 md:pl-8 ml-16">
           <img
             src={testimonials[activeTab].image}
             alt={testimonials[activeTab].name}
@@ -74,3 +74,4 @@ const Linkpages = () => {
 };
 
 export default Linkpages;
+

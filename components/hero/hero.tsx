@@ -58,16 +58,17 @@ export default function Hero() {
 
 <div className="bg-[#F6F5F1]">
   <div className="flex  px-4 md:px-0 py-20 lg:py-20 max-w-7xl  lg:min-h-[650px] relative z-10">
-    <div className="hidden pt-0 flex-1 lg:block relative">
+    <div className="px-4 ml-14 pt-0 flex-1 lg:block relative">
       <Image
-        src="/advertise.png"
+        src="/w-advertise.jpeg
+        "
         fill
         // objectFit="cover"
-        sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+        sizes=""
         alt="advertise screen banner image"
       />
     </div>
-    <div className="flex-1 pl-20">
+    <div className="flex-1 pl-40">
       <div className="flex">
         <div className="flex items-center mr-4">
                     
@@ -79,7 +80,7 @@ export default function Hero() {
         <h3 className="text-xl mt-0">100 verified 5-star reviews</h3>
         </div>
       </div>
-      <h1 className="mt-4 text-nl_background text-4xl sm:text-4xl leading-tight sm:leading-tight">
+      <h1 className="mt-8 mb-6 text-nl_background md:text-4xl lg:text-4xl sm:text-4xl leading-tight sm:leading-tight">
         ADVERTISE
       </h1>
       <p className="py-6">Advertise on newsletters that cater to your target demographics.</p>
