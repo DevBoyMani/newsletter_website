@@ -60,8 +60,7 @@ export default function Hero() {
   <div className="flex  px-4 md:px-0 py-20 lg:py-20 max-w-7xl  lg:min-h-[650px] relative z-10">
     <div className="px-4 ml-14 pt-0 flex-1 lg:block relative">
       <Image
-        src="/w-advertise.jpeg
-        "
+        src="/w-advertise.png"
         fill
         // objectFit="cover"
         sizes=""
