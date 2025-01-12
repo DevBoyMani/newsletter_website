@@ -70,7 +70,7 @@ export default function Socials() {
             image: "/socialimgs/s-ps.png",
             instaProfileLink: "https://www.instagram.com/presidentialsummary/",
             LDN: "@presidential",
-            instagramIcon:"/socialImgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/instagram-icon.png",
         },
         {
             name: "GS",
@@ -84,14 +84,14 @@ export default function Socials() {
             image: "/socialimgs/s-ls.png",
             instaProfileLink: "https://www.instagram.com/readlongandshort/?igsh=ZzhoeGR3YXZnbzA4#",
             LDN: "@longandshort",
-            instagramIcon:"/socialImgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/instagram-icon.png",
         },
         {
             name: "BH",
             image: "/socialimgs/s-bh.png",
             instaProfileLink: "https://www.instagram.com/businesshistory/",
             LDN: "@businesshistory",
-            instagramIcon:"/socialImgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/instagram-icon.png",
         },
     ];
 
