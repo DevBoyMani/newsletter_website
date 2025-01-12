@@ -62,7 +62,6 @@
 //         </div>
 //     );
 // }
-import Image from "next/image";
 
 export default function Socials() {
     const socialMedia = [
@@ -71,24 +70,28 @@ export default function Socials() {
             image: "/socialimgs/s-ps.png",
             instaProfileLink: "https://www.instagram.com/presidentialsummary/",
             LDN: "@presidential",
+            instaIcon:"/socialImgs/insta-icon.png",
         },
         {
             name: "GS",
             image: "/socialimgs/s-gp.png",
             instaProfileLink: "https://www.instagram.com/geopoliticalsummary/",
             LDN: "@geopolitical",
+            instaIcon:"/socialImgs/insta-icon.png",
         },
         {
             name: "LS",
             image: "/socialimgs/s-ls.png",
             instaProfileLink: "https://www.instagram.com/readlongandshort/?igsh=ZzhoeGR3YXZnbzA4#",
             LDN: "@longandshort",
+            instaIcon:"/socialImgs/insta-icon.png",
         },
         {
             name: "BH",
             image: "/socialimgs/s-bh.png",
             instaProfileLink: "https://www.instagram.com/businesshistory/",
             LDN: "@businesshistory",
+            instaIcon:"/socialImgs/insta-icon.png",
         },
     ];
 
@@ -130,7 +133,7 @@ export default function Socials() {
                             >
                                 
                                 <img
-                                    src="/socialImgs/insta-icon.png"
+                                    src={social.instaIcon}
                                     alt="Instagram"
                                     className="w-5 h-5"
                                 />
