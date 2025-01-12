@@ -130,7 +130,7 @@ export default function Socials() {
                             >
                                 
                                 <img
-                                    src="/socialImgs/socialIcons/ins.png"
+                                    src="/socialImgs/insta-icon.png"
                                     alt="Instagram"
                                     className="w-5 h-5"
                                 />
