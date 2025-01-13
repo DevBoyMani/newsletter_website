@@ -70,28 +70,28 @@ export default function Socials() {
             image: "/socialimgs/s-ps.png",
             instaProfileLink: "https://www.instagram.com/presidentialsummary/",
             LDN: "@presidential",
-            instagramIcon:"/socialimgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/insta-icon-1.png",
         },
         {
             name: "GS",
             image: "/socialimgs/s-gp.png",
             instaProfileLink: "https://www.instagram.com/geopoliticalsummary/",
             LDN: "@geopolitical",
-            instagramIcon:"/socialimgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/insta-icon-1.png",
         },
         {
             name: "LS",
             image: "/socialimgs/s-ls.png",
             instaProfileLink: "https://www.instagram.com/readlongandshort/?igsh=ZzhoeGR3YXZnbzA4#",
             LDN: "@longandshort",
-            instagramIcon:"/socialimgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/insta-icon-1.png",
         },
         {
             name: "BH",
             image: "/socialimgs/s-bh.png",
             instaProfileLink: "https://www.instagram.com/businesshistory/",
             LDN: "@businesshistory",
-            instagramIcon:"/socialimgs/instagram-icon.png",
+            instagramIcon:"/socialimgs/insta-icon-1.png",
         },
     ];
 
