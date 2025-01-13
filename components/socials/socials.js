@@ -105,26 +105,26 @@ export default function Socials() {
             </div>
 
             {/* Portrait Cards */}
-            <div className="flex justify-between gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {socialMedia.map((social, index) => (
                     
 
-                    <div key={index} className="w-70 h-[520px] flex flex-col items-center">
+                    <div key={index} className="w-70 h-[500px] flex flex-col items-center">
                  
                         <a
                             href={social.instaProfileLink}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="w-full h-full"
+                            className=""
                         >
                             <img
                                 src={social.image}
                                 alt={social.name}
-                                className="object-cover rounded-lg w-fit h-full"
+                                className="object-cover rounded-lg w-100% h-70%"
                             />
                         </a>
                         {/* Text Section */}
-                        <div className="mt-8 w-full text-left">
+                        <div className="mt-4 w-full text-left">
                             <a
                                 href={social.instaProfileLink}
                                 target="_blank"
