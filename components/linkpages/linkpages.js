@@ -111,19 +111,20 @@ const Linkpages = () => {
         </h2>
       </div>
 
-      <div className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0">
+      <div className="flex flex-row md:flex-row md:space-x-4 space-y-4 md:space-y-0">
         {testimonials.map((testimonial, index) => (
           <button
-            key={index}
-            onClick={() => setActiveTab(index)}
-            className={`text-lg md:text-2xl px-4 py-2 ${
-              activeTab === index
-                ? "border-b-2 border-black text-black"
-                : "text-gray-600 hover:text-black"
-            }`}
-          >
-            {testimonial.name}
-          </button>
+          key={index}
+          onClick={() => setActiveTab(index)}
+          className={`text-lg sm:text-base md:text-2xl px-4 py-2 sm:px-6 sm:py-2 md:px-4 md:py-2 lg:px-6 lg:py-3 ${
+            activeTab === index
+              ? "border-b-2 border-black text-black"
+              : "text-gray-600 hover:text-black"
+          }`}
+        >
+          {testimonial.name}
+        </button>
+        
         ))}
       </div>
 
