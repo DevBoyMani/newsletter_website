@@ -5,6 +5,7 @@ import Newsletters from "@/components/newsletters/newsletters";
 import Journey from "@/components/journey/journey";
 import Socials from "@/components/socials/socials";
 import Checkdatas from "@/components/checkdatas/checkdatas"
+import FaqAccordion from "@/components/faqaccordion/faqaccordion"
 
 export default function Home(){
     return(
@@ -16,6 +17,7 @@ export default function Home(){
         <Journey/>
         <Socials/>
         <Checkdatas/>
+        <FaqAccordion/>
 
         </>
     )

@@ -7,8 +7,8 @@ const Newsletter = ({ inform, handleAdd }) => {
   console.log("inform", inform);
   return (
     <a
-      href={inform.website} // Link to the specific website
-      target="_blank" // Open in a new tab
+      href={inform.website} 
+      target="_blank" 
       rel="noopener noreferrer"
       className="block bg-white shadow-md relative w-full h-full flex flex-col no-underline"
     >
@@ -34,7 +34,7 @@ const Newsletter = ({ inform, handleAdd }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={2.8}
                 stroke="black"
                 className="w-8 h-6 "
               >
@@ -49,9 +49,9 @@ const Newsletter = ({ inform, handleAdd }) => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                strokeWidth={2}
+                strokeWidth={2.8}
                 stroke="black"
-                className="w-10 h-6"
+                className="w-10 h-6 text-black"
               >
                 <path
                   strokeLinecap="round"
