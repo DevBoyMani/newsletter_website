@@ -96,7 +96,7 @@ export default function Socials() {
     ];
 
     return (
-        <div className="bg-[#F6F5F1] text-white px-4 md:px-16 py-20 lg:py-4 md:pb-20 lg:pb-20 mx-auto lg:min-h-[650px]">
+        <div className="bg-[#F6F5F1] text-white px-4 md:px-16 py-20 lg:py-10   mx-auto lg:min-h-[650px]">
             {/* Header */}
             <div className="mb-16 mt-14">
                 <h2 className="text-4xl font-semibold text-black">
@@ -105,11 +105,11 @@ export default function Socials() {
             </div>
 
             {/* Portrait Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 lg:pb-0 pb-16 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                 {socialMedia.map((social, index) => (
                     
 
-                    <div key={index} className="w-70 h-[500px] flex flex-col items-center">
+                    <div key={index} className="w-70 h-[500px] flex flex-col items-center mb-10">
                  
                         <a
                             href={social.instaProfileLink}
