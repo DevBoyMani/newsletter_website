@@ -83,7 +83,7 @@ export default function Research() {
                     {/* Right Section */}
                     <div className="flex-[1.1] text-black">
                         <div>
-                           <p className="text-sm bg-[#46DE46] p-2 mb-4 font-diatype-mono">
+                           <p className="text-sm bg-[#46DE46] p-3 mb-4 font-diatype-mono">
                                 IN A SINGLE-ARM STUDY†
                             </p>
                             <div className="flex flex-col sm:flex-row lg:gap-6">
