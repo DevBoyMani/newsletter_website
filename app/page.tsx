@@ -6,18 +6,20 @@ import Journey from "@/components/journey/journey";
 import Socials from "@/components/socials/socials";
 import Checkdatas from "@/components/checkdatas/checkdatas"
 import FaqAccordion from "@/components/faqaccordion/faqaccordion"
+import Research from "@/components/research/research"
 
 export default function Home(){
     return(
         <>
         <Navbar/>
         <Hero/>
-        <Newsletters/>
         <Linkpages/>
-        <Journey/>
-        <Socials/>
         <Checkdatas/>
+        <Journey/>
+        <Newsletters/>
         <FaqAccordion/>
+        <Socials/>
+        <Research/>
 
         </>
     )

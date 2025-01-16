@@ -135,7 +135,7 @@ export default function FaqAccordion() {
   return (
     <>
     {/* // desk top view */}
-    <div className="bg-[#ffffff] hidden md:block text-white pl-12 pr-14 py-10 mx-auto">
+    <div className="bg-[#ffffff] hidden md:block text-white pl-12 pr-14 pt-10 pb-32 mx-auto">
       <div className="flex flex-col md:flex-row gap-8 lg:gap-20">
    
         <div className="md:w-1/3 lg:w-1/2">
