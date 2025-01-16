@@ -67,7 +67,7 @@
 export default function Research() {
     return (
         <>
-            <div className="text-white py-10 px-4 md:px-16 lg:py-24 md:pb-20 lg:pb-20 mx-auto lg:min-h-[650px]">
+            <div className="text-white py-20 px-4 md:px-16 lg:py-24 md:pb-20 lg:pb-20 mx-auto lg:min-h-[650px]">
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:gap-0">
                     {/* Left Section */}
                     <div className="flex-[0.9] text-black mb-8 lg:mb-0">
@@ -88,13 +88,13 @@ export default function Research() {
                             </p>
                             <div className="flex flex-col sm:flex-row lg:gap-6">
                                 <div className="flex-1 w-full sm:w-1/2">
-                                    <div className="text-8xl">97%</div>
+                                    <div className="lg:text-8xl text-5xl">97%</div>
                                     <div className="py-4 font-bold">
                                         of participants felt more energy after 30 days*
                                     </div>
                                 </div>
                                 <div className="flex-1 w-full sm:w-1/2">
-                                    <div className="text-8xl">80%</div>
+                                    <div className="lg:text-8xl text-5xl">80%</div>
                                     <div className="py-4 font-bold">
                                         of participants felt more energy after 30 days*
                                     </div>
