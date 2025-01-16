@@ -9,7 +9,11 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        'diatype-mono': 'var(--diatype-mono), monospace, sans-serif',
+    },
+    },
   },
   plugins: [],
 }
