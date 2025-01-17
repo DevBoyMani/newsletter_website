@@ -67,7 +67,7 @@
 export default function Research() {
     return (
         <>
-            <div className="text-white py-20 px-4 md:px-16 lg:py-24 md:pb-20 lg:pb-20 mx-auto lg:min-h-[650px]">
+            <div className="text-white py-20 px-4 md:px-16 lg:py-24 md:pb-20 lg:pb-20 mx-auto ">
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:gap-0">
                     {/* Left Section */}
                     <div className="flex-[0.9] text-black mb-8 lg:mb-0">

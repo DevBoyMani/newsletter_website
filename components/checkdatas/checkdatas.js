@@ -71,7 +71,7 @@ export default function Checkdatas() {
   return (
     <>
       {/* Desktop View */}
-      <div className="bg-[#ffffff] text-white px-4 md:px-16 py-20 lg:py-4 md:pb-20 lg:pb-20 mx-auto lg:min-h-[650px] hidden md:block">
+      <div className="bg-[#ffffff] text-white px-4 md:px-16 py-20 lg:py-4 md:pb-20 lg:pb-20 mx-auto hidden md:block">
         {/* Header */}
         <div className="mb-16 mt-14">
           <h2 className="text-4xl font-semibold text-black">

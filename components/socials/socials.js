@@ -96,7 +96,7 @@ export default function Socials() {
     ];
 
     return (
-        <div className="bg-[#F6F5F1] text-white px-4 md:px-16 py-20 lg:py-10   mx-auto lg:min-h-[650px]">
+        <div className="bg-[#F6F5F1] text-white px-4 md:px-16 py-20 lg:py-10 mx-auto">
             {/* Header */}
             <div className="mb-16 mt-14">
                 <h2 className="text-4xl font-semibold text-black">
@@ -109,7 +109,7 @@ export default function Socials() {
                 {socialMedia.map((social, index) => (
                     
 
-                    <div key={index} className="w-70 h-[500px] flex flex-col items-center mb-10">
+                    <div key={index} className=" flex flex-col items-center mb-4">
                  
                         <a
                             href={social.instaProfileLink}
@@ -120,7 +120,7 @@ export default function Socials() {
                             <img
                                 src={social.image}
                                 alt={social.name}
-                                className="object-cover rounded-lg w-100% h-70%"
+                                className="object-cover rounded-lg w-full h-full"
                             />
                         </a>
                         {/* Text Section */}

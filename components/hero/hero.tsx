@@ -16,7 +16,7 @@ export default function Hero() {
           fill
           className="-z-10 object-cover"
         />
-        <div className="text-white px-4 md:px-16 py-20 lg:py-36 mx-auto lg:min-h-[650px]">
+        <div className="text-white px-4 md:px-16 py-20 lg:py-36 mx-auto ">
           <div className="text-center lg:text-left">
             <h1 className="text-4xl sm:text-6xl leading-tight sm:leading-tight">
               Newsletter ads perform<br /> 20x better than <br />social media
@@ -38,7 +38,7 @@ export default function Hero() {
 
       {/* Bottom of the Hero Section */}
       <div className="bg-white">
-        <div className="flex flex-col lg:flex-row text-black px-4 md:px-16 py-10 lg:py-12 mx-auto lg:min-h-[100px] gap-4 lg:gap-0">
+        <div className="flex flex-col lg:flex-row text-black px-4 md:px-16 py-10 lg:py-12 mx-auto gap-4 lg:gap-0">
           <div className="lg:flex-[1] text-center lg:text-left">
             <div className="flex justify-center lg:justify-start items-center">
               {[...Array(5)].map((_, index) => (
@@ -58,7 +58,7 @@ export default function Hero() {
 
       {/* Advertise Section */}
       <div className="bg-[#F6F5F1]">
-        <div className="flex flex-col lg:flex-row px-4 md:px-0 py-20 lg:py-20 max-w-7xl lg:min-h-[650px] mx-auto gap-10 lg:gap-0">
+        <div className="flex flex-col lg:flex-row px-4 md:px-0 py-20 lg:py-20 max-w-7xl mx-auto gap-10 lg:gap-0">
           <div className="relative lg:flex-1 flex justify-center">
             <Image
               src="/w-advertise.png"

@@ -103,7 +103,7 @@ const Linkpages = () => {
   ];
 
   return (
-    <div className="text-white px-4 md:px-16 py-20 lg:py-4 md:pb-20 lg:pb-20 mx-auto lg:min-h-[650px]">
+    <div className="text-white px-4 md:px-16 py-20 lg:py-4 md:pb-20 lg:pb-20 mx-auto">
       {/* Tabs */}
       <div className="mb-8">
         <h2 className="text-3xl md:text-4xl font-semibold text-black text-center md:text-left">

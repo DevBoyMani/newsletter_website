@@ -136,7 +136,7 @@ export default function FaqAccordion() {
     <>
     {/* // desk top view */}
     <div className="bg-[#ffffff] hidden md:block text-white pl-12 pr-14 mx-auto ">
-      <div className="flex flex-col md:flex-row gap-8 lg:gap-20 lg:py-40">
+      <div className="flex flex-col md:flex-row gap-8 lg:gap-20 lg:pb-40 lg:pt-16">
    
         <div className="md:w-1/3 lg:w-1/2">
           <h2 className="text-5xl  text-black">FAQs</h2>
@@ -187,7 +187,7 @@ export default function FaqAccordion() {
     </div>
 
     {/* mobile view */}
-    <div className="bg-white block md:hidden text-black px-6 py-20 md:hidden">
+    <div className="bg-white block md:hidden text-black px-6 pb-20 pt-8 md:hidden">
   <h2 className="text-3xl font-bold mb-6">FAQs</h2>
   {accordions.map((item, index) => (
     <div key={index} className="border-b border-gray-300 mb-4">
