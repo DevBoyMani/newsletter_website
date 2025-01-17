@@ -10,29 +10,27 @@ export default function Hero() {
     <>
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row px-0 lg:px-0 py-0 lg:py-6 mx-auto gap-10 lg:gap-0">
-        <div className="relative lg:flex-1 flex justify-center">
-          <div className="block lg:hidden px-0 lg:py-0 lg:px-0">
+        <div className="relative lg:flex-1 ">
+          <div className="block lg:hidden h-[20%] overflow-hidden px-0 lg:py-0 lg:px-0">
             {/* For small screens */}
-            <Image
-              src="/hero-landing-img.jpg"
-              width={376}
-              height={290}
-              className="w-full h-auto object-cover"
+            <img
+              src="/image.png"
+              height="50%"
               alt="Advertise Banner for small screens"
             />
           </div>
-          <div className="hidden lg:block">
+          <div className="h-[700px] hidden lg:block">
             {/* For large screens */}
-            <Image
-              src="/hero-landing-img.jpg"
-              width={672}
-              height={640}
+            <img
+              src="/image.png"
+              width="100%"
+              height="100%"
               className="w-auto h-auto"
               alt="Advertise Banner for large screens"
             />
           </div>
         </div>
-        <div className="lg:flex-1 px-4 lg:pl-28 lg:py-60 text-center lg:text-left">
+        <div className="lg:flex-1 px-4 lg:pl-28 lg:py-24 text-center lg:text-left">
           <div className="flex">
             <div className="flex justify-center lg:justify-start mr-2 lg:mr-4">
             {[...Array(5)].map((_, index) => (
@@ -72,36 +70,34 @@ export default function Hero() {
         </div>
       </div>
       
-      <div className="">
-  <div className="text-2xl flex flex-col lg:flex-row items-center lg:items-start justify-between text-black px-4 md:px-16 py-10 lg:py-12">
-    <div className="flex items-center py-2">
-      <img
-        src="/align-right.png"
-        alt="Instagram"
-        className="w-5 h-5"
-      />
-      <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
-    </div>
-    <div className="flex items-center py-2">
-      <img
-        src="/align-right.png"
-        alt="Instagram"
-        className="w-5 h-5"
-      />
-      <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
-    </div>
-    <div className="flex items-center py-2">
-      <img
-        src="/align-right.png"
-        alt="Instagram"
-        className="w-5 h-5"
-      />
-      <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
-    </div>
-    
-    
-  </div>
-</div>
+    <div className="">
+      <div className="text-2xl flex flex-col lg:flex-row items-center lg:items-start justify-between text-black px-4 md:px-16 py-10 lg:py-8">
+        <div className="flex items-center py-2">
+          <img
+            src="/align-right.png"
+            alt="Instagram"
+            className="w-5 h-5"
+          />
+          <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
+        </div>
+        <div className="flex items-center py-2">
+          <img
+            src="/align-right.png"
+            alt="Instagram"
+            className="w-5 h-5"
+          />
+          <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
+        </div>
+        <div className="flex items-center py-2">
+          <img
+            src="/align-right.png"
+            alt="Instagram"
+            className="w-5 h-5"
+          />
+          <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
+        </div>
+      </div>
+   </div>
 
 
       {/* Bottom of the Hero Section */}
