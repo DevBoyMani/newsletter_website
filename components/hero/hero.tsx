@@ -9,32 +9,100 @@ export default function Hero() {
   return (
     <>
       {/* Hero Section */}
-      <div className="relative bg-cover bg-center">
-        <Image
-          src="/hero.jpg"
-          alt="Hero Image"
-          fill
-          className="-z-10 object-cover"
-        />
-        <div className="text-white px-4 md:px-16 py-20 lg:py-36 mx-auto ">
-          <div className="text-center lg:text-left">
-            <h1 className="text-4xl sm:text-6xl leading-tight sm:leading-tight">
-              Newsletter ads perform<br /> 20x better than <br />social media
-            </h1>
-            <p className="text-xl py-4">
-              60,000+ Americans who trust our newsletters. Advertise with us to
-              reach this engaged audience.
-            </p>
-
-            <button
-              onClick={() => setEmail("")}
-              className="py-3 px-8 bg-white mt-4 sm:text-xl text-black text-center rounded-full hover:bg-[#46DE46]"
-            >
-              Speak to sales &rarr;
-            </button>
+      <div className="flex flex-col lg:flex-row px-0 lg:px-0 py-0 lg:py-6 mx-auto gap-10 lg:gap-0">
+        <div className="relative lg:flex-1 flex justify-center">
+          <div className="block lg:hidden px-0 lg:py-0 lg:px-0">
+            {/* For small screens */}
+            <Image
+              src="/hero-landing-img.jpg"
+              width={376}
+              height={290}
+              className="w-full h-auto object-cover"
+              alt="Advertise Banner for small screens"
+            />
+          </div>
+          <div className="hidden lg:block">
+            {/* For large screens */}
+            <Image
+              src="/hero-landing-img.jpg"
+              width={672}
+              height={640}
+              className="w-auto h-auto"
+              alt="Advertise Banner for large screens"
+            />
           </div>
         </div>
+        <div className="lg:flex-1 px-4 lg:pl-28 lg:py-60 text-center lg:text-left">
+          <div className="flex">
+            <div className="flex justify-center lg:justify-start mr-2 lg:mr-4">
+            {[...Array(5)].map((_, index) => (
+              <FaStar key={index} className="text-2xl text-[#46DE46]  lg:mr-2 mt-0" />
+            ))}
+          </div>
+          <div className="text-xl">100 verified 5-star reviews</div>
+          </div>
+          <h1 className="mt-8 mb-6 text-nl_background text-4xl lg:text-7xl leading-tight">
+          Goodbye Bloat,<br/>
+          Hello Energy
+          </h1>
+          <p className="text-lg py-6">
+          AG1 is a daily health drink packed with nutrients to help alleviate bloating,<br/> support sustained energy and whole body health.
+          </p>
+          {/* <ul className="list-none space-y-2 text-left lg:text-left">
+            <li className="flex items-center">
+              <span className="text-black font-bold mr-2">✓</span> Copywriting services included
+            </li>
+            <li className="flex items-center">
+              <span className="text-black font-bold mr-2">✓</span> Ad design included
+            </li>
+            <li className="flex items-center">
+              <span className="text-black font-bold mr-2">✓</span> Performance report included
+            </li>
+          </ul> */}
+          
+          <button
+            onClick={() => setEmail("")}
+            className="py-4 px-9 lg:w-fit w-full bg-[#0C3D3D] mt-8 sm:text-xl text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black"
+          >
+            Speak to sales &rarr;
+          </button>
+          <p className="text-sm py-6 mt-2">
+          <span className="mr-2">✓</span> 90-day money back guarantee
+          </p>
+        </div>
       </div>
+      
+      <div className="">
+  <div className="text-2xl flex flex-col lg:flex-row items-center lg:items-start justify-between text-black px-4 md:px-16 py-10 lg:py-12">
+    <div className="flex items-center py-2">
+      <img
+        src="/align-right.png"
+        alt="Instagram"
+        className="w-5 h-5"
+      />
+      <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
+    </div>
+    <div className="flex items-center py-2">
+      <img
+        src="/align-right.png"
+        alt="Instagram"
+        className="w-5 h-5"
+      />
+      <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
+    </div>
+    <div className="flex items-center py-2">
+      <img
+        src="/align-right.png"
+        alt="Instagram"
+        className="w-5 h-5"
+      />
+      <div className="px-4">Vegan, Gluten-Free, and Dairy-Free</div>
+    </div>
+    
+    
+  </div>
+</div>
+
 
       {/* Bottom of the Hero Section */}
       <div className="bg-white">
@@ -58,7 +126,7 @@ export default function Hero() {
 
       {/* Advertise Section */}
       <div className="bg-[#F6F5F1]">
-        <div className="flex flex-col lg:flex-row px-4 md:px-0 py-20 lg:py-20 max-w-7xl mx-auto gap-10 lg:gap-0">
+        <div className="flex flex-col lg:flex-row px-4 lg:px-8 md:px-0 py-20 lg:py-20 max-w-7xl mx-auto gap-10 lg:gap-0">
           <div className="relative lg:flex-1 flex justify-center">
             <Image
               src="/w-advertise.png"
