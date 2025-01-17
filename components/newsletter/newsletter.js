@@ -14,11 +14,11 @@ const Newsletter = ({ inform, handleAdd }) => {
     >
       <div className="p-0 flex-1 bg-[#f6f5f1]">
         {/* Image Section */}
-        <div className="mb-6 relative h-54">
+        <div className="mb-6 relative lg:h-54">
           <img
             src={inform.image}
             alt={inform.heading}
-            className="rounded-t shadow-md object-cover w-full h-full"
+            className="rounded-t shadow-md object-cover lg:w-full lg:h-full h-80"
           />
           <button
             onClick={(e) => {

@@ -133,7 +133,7 @@ const Newsletters = () => {
   console.log(inform);
   return (
     <>
-      <section className="bg-white px-4 pt-10 pb-28">
+      <section className="bg-white px-0 pt-10 pb-28">
         <div className="container-lg lg:container m-auto ">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 ">
             {inform.length > 0 ? (
