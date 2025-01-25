@@ -230,7 +230,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <div className="sm:text-lg flex items-center space-x-8 text-lg ml-8">
+          <div className="sm:text-lg flex items-center text-lg ml-8">
               {contactSales.map((contact) => (
                 <Link
                   key={contact.key}
@@ -242,18 +242,16 @@ export default function Navbar() {
               ))}
             </div>
 
-            {isOpen && (
-                <div className="sm:text-xl flex items-center px-2 py-2 text-lg">
+            <button
+            onClick={() => setIsOpen(!isOpen)}
+            className=" text-black"
+          >
+            {isOpen ? <div className="sm:text-xl flex items-center px-2 py-2 text-lg">
                     <h3 className="black">close</h3>
-                </div>
-            )}
-
-            {!isOpen && (
-                <div className="sm:text-xl flex items-center px-2 py-2 text-lg">
+                </div> : <div className="sm:text-xl flex items-center px-2 py-2 text-lg">
                     <h3 className="black">menu</h3>
-                </div>
-            )}
-           
+                </div>}
+          </button>
 
           <button
             onClick={() => setIsOpen(!isOpen)}
