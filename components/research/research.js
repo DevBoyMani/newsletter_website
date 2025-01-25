@@ -100,6 +100,20 @@ export default function Research() {
                                     </div>
                                 </div>
                             </div>
+                            <div className="flex flex-col sm:flex-row lg:gap-6">
+                                <div className="flex-1 w-full sm:w-1/2">
+                                    <div className="lg:text-8xl text-5xl">94%</div>
+                                    <div className="py-4 font-bold">
+                                        of participants felt more energy after 30 days*
+                                    </div>
+                                </div>
+                                <div className="flex-1 w-full sm:w-1/2">
+                                    <div className="lg:text-8xl text-5xl">81%</div>
+                                    <div className="py-4 font-bold">
+                                        of participants felt more energy after 30 days*
+                                    </div>
+                                </div>
+                            </div>
                             <div className="text-xs text-gray-500 mt-4">
                                 <i>
                                     †In a third-party, single-arm study conducted on 35 healthy adults ages 25-48
