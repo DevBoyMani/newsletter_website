@@ -181,7 +181,7 @@ const Test = ({ count, email, setEmail, mHandleSubmit }) => {
 
       {/* Mobile View */}
       <div
-        className={`lg:hidden fixed left-0 bottom-0 bg-black px-4 py-4 w-full flex flex-col items-start space-y-4 h-80 transition-all duration-[500ms] ease-out transform ${
+        className={`z-10 lg:hidden fixed left-0 bottom-0 bg-black px-4 py-4 w-full flex flex-col items-start space-y-4 h-80 transition-all duration-[500ms] ease-out transform ${
           showSection ? "translate-y-0 opacity-100" : "translate-y-full opacity-0"
         }`}
       >
