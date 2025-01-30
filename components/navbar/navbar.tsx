@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const routes = [
+  { path: "/careers", name: "Careers" },
   { path: "/newsletters", name: "Newsletters" },
   { path: "/advertise", name: "Advertise" },
   { path: "/about", name: "About" },
