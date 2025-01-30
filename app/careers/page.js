@@ -1,10 +1,10 @@
 "use client";
 import React, { useState, useRef } from "react";
-import ViewAll from "@components/viewAll/viewAll";
-// import Vitamins from "./Vitamins";
-// import Minerals from "./Minerals";
-// import GoodBacteria from "./GoodBacteria";
-// import PlantCompounds from "./PlantCompounds";
+import ViewAll from "../../components/viewAll/viewAll";
+import Vitamins from "../../components/vitamins/vitamins";
+import Minerals from "../../components/minerals/minerals";
+import GoodBacteria from "../../components/goodBacteria/goodBacteria";
+import PlantCompounds from "../../components/plantCompounds/plantCompounds";
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   const containerRef = useRef(null);
@@ -26,7 +26,7 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
         <button
           key={index}
           onClick={() => handleClick(index)}
-          className={`text-lg md:text-2xl py-2 mx-2 border-b-2 transition-all duration-300 ${
+          className={`text-lg md:text-xl py-2 lg:pt-10 mx-2 border-b-2 transition-all duration-300 ${
             activeTab === index ? "border-black text-black" : "text-gray-600 hover:text-black border-white"
           }`}
         >
@@ -56,7 +56,7 @@ const Careers = () => {
         </h2>
       </div>
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
-      <div className="mt-6">{testimonials[activeTab].component}</div>
+      <div className="mt-0">{testimonials[activeTab].component}</div>
     </div>
   );
 };
