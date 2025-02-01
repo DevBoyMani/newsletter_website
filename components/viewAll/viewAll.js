@@ -56,8 +56,7 @@ export default function ViewAll() {
     return (
         <div className="text-white py-20 lg:py-10 mx-auto relative">
             <h2 className="text-black text-4xl w-[80%]">
-                We don’t think you should settle for questionable ingredients when it comes to your daily supplement. 
-                That's why each ingredient in AG1 is sourced for optimal absorption and nutrient density, and combined for maximum potency.
+                We don’t think you should settle for questionable ingredients...
             </h2>
             <button className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
                 Check &rarr;
@@ -84,41 +83,38 @@ export default function ViewAll() {
             {/* Sliding Panel (Sidebar) */}
             {selectedData && (
                 <div 
-                    className="fixed inset-0 bg-black bg-opacity-50 flex justify-end"
+                    className="fixed inset-0 bg-black bg-opacity-50 justify-end flex items-center z-50"
                     onClick={closeSidebar}
                 >
                     <div 
-                        className="md:w-1/2 w-full mt-14 h-screen lg:mt-20 bg-white shadow-lg transform transition-transform duration-300 relative flex flex-col"
+                        className="w-full md:w-1/2  lg:mt-0 h-screen bg-white shadow-lg transform transition-transform duration-300 relative flex flex-col"
                         onClick={(e) => e.stopPropagation()}
                     >
                         {/* Fixed Header */}
-                        <div className="fixed top-0 left-0 w-full bg-white px-4 py-6 flex justify-between items-center z-10">
-                        <h3 className="text-2xl font-semibold text-black ">{selectedData.title}</h3>
-                            
+                        <div className="fixed top-0 left-0 w-full bg-white px-4 py-4 md:py-6 flex justify-between items-center z-10">
+                            <h3 className="text-lg md:text-2xl font-semibold text-black">{selectedData.title}</h3>
                             <button
                                 onClick={closeSidebar}
-                                className="w-12 h-12 text-2xl  text-black flex items-center justify-center hover:bg-[#46DE46] rounded-lg"
+                                className="w-10 h-10 md:w-12 md:h-12 text-xl md:text-2xl text-black flex items-center justify-center hover:bg-[#46DE46] rounded-lg"
                             >
                                 ✕
                             </button>
                         </div>
 
                         {/* Scrollable Content */}
-                        <div className="flex-1 overflow-y-auto px-6 md:px-10 pt-20 pb-60">
-                        
-                            <img src={selectedData.image} alt="Selected" className="w-full h-[492] object-cover mb-4 mt-4 rounded-lg" />
-                            <h4 className="text-4xl  text-black">{selectedData.heading}</h4>
-                            <p className="text-gray-700 text-lg mt-2">{selectedData.content}</p>
+                        <div className="flex-1 overflow-y-auto px-4 md:px-10 pt-16 md:pt-20 pb-[calc(7rem+40px)]">
+                            <img src={selectedData.image} alt="Selected" className="w-full h-auto max-h-[400px] md:max-h-[492px] object-cover mb-4 mt-4 rounded-lg" />
+                            <h4 className="text-xl md:text-4xl text-black">{selectedData.heading}</h4>
+                            <p className="text-sm md:text-lg text-gray-700 mt-2">{selectedData.content}</p>
                         </div>
 
                         {/* Fixed Footer with Navigation */}
-                        <div className="fixed bottom-10 lg:bottom-20 left-0 w-full h-24 bg-white flex justify-between items-center px-6 py-4 shadow-md">
-
+                        <div className="fixed bottom-0 md:bottom-0 lg:bottom-0 left-0 w-full h-20 md:h-20 bg-white flex justify-between items-center px-4 md:px-6 py-2 md:py-4 shadow-md">
                             <div className="flex space-x-4">
                                 <button
                                     onClick={handlePrev}
                                     disabled={selectedIndex === 0}
-                                    className={`w-12 h-12 text-3xl text-[#0C3D3D] rounded-lg flex items-center justify-center ${
+                                    className={`w-10 h-10 md:w-12 md:h-12 text-2xl md:text-3xl text-[#0C3D3D] rounded-lg flex items-center justify-center ${
                                         selectedIndex === 0 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#46DE46]"
                                     }`}
                                 >
@@ -127,20 +123,77 @@ export default function ViewAll() {
                                 <button
                                     onClick={handleNext}
                                     disabled={selectedIndex === images.length - 1}
-                                    className={`w-12 h-12 text-3xl text-[#0C3D3D] rounded-lg flex items-center justify-center ${
+                                    className={`w-10 h-10 md:w-12 md:h-12 text-2xl md:text-3xl text-[#0C3D3D] rounded-lg flex items-center justify-center ${
                                         selectedIndex === images.length - 1 ? "opacity-50 cursor-not-allowed" : "hover:bg-[#46DE46]"
                                     }`}
                                 >
                                     →
                                 </button>
                             </div>
-                            <span className="text-lg  text-gray-600">
+                            <span className="text-sm md:text-lg text-gray-600">
                                 {selectedIndex + 1} of {images.length}
                             </span>
                         </div>
                     </div>
                 </div>
             )}
+            <div className="bg-[#F6F5F1] text-white px-4 pb-20 pt-20 lg:py-20 lg:px-16 mx-auto">
+                <h3 className="text-black text-2xl text-center">And that's not all.</h3>
+                <div className="flex justify-center mt-2">
+                    <button className="py-3 px-8 bg-[#0C3D3D] mt-4 sm:text-xl text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
+                        Speak to sales &rarr;
+                    </button>
+                </div>
+            </div>
+            {/* <div className="bg-white text-black px-4 pb-20 pt-20 mx-auto">
+                <div className="flex justify-start space-x-28">
+                    <div>
+                    <h3>Free of</h3>
+                    <ul>
+                        <li>Artificial sweeteners, flavours, colourings or preservatives</li>
+                        <li>Gluten</li>
+                        <li>Dairy or Lactose</li>
+                        <li>Egg or Peanuts</li>
+                    </ul>   
+                    </div>
+                    <div>
+                        <h3>Diet-Friendly</h3>
+                    <ul>
+                        <li>Vegetarian</li>
+                        <li>Vegan</li>
+                        <li>Paleo</li>
+                        <li>Keto</li>
+                        <li>Low-carb</li>
+                        <li>Halal</li>
+                    </ul>
+                    </div>
+                </div>
+            </div> */}
+            <div className="bg-white text-black px-4 pb-20 pt-20 mx-auto">
+    <div className="flex flex-col md:flex-row justify-start space-y-10 md:space-y-0 md:space-x-36">
+        <div>
+            <h3 className="text-xl py-4 uppercase">Free of</h3>
+            <ul className="list-disc pl-5 text-4xl">
+                <li>Artificial sweeteners, flavours,<br/> colourings or preservatives</li>
+                <li>Gluten</li>
+                <li>Dairy or Lactose</li>
+                <li>Egg or Peanuts</li>
+            </ul>   
         </div>
+        <div >
+            <h3 className="text-xl py-4 uppercase">Diet-Friendly</h3>
+            <ul className="list-disc pl-5 text-4xl">
+                <li>Vegetarian</li>
+                <li>Vegan</li>
+                <li>Paleo</li>
+                <li>Keto</li>
+                <li>Low-carb</li>
+                <li>Halal</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+    </div>
     );
 }
