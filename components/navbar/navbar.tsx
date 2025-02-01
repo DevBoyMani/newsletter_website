@@ -113,46 +113,46 @@ export default function Navbar() {
             </div>
           </button> */}
 
-<button
-  onClick={() => setIsOpen(!isOpen)}
-  className="p-2 text-black transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center"
->
-  <div className="relative w-6 h-4 flex flex-col justify-between items-center opacity-100">
-    
-      {/* Top Line */}
-      <span
-      className={`absolute top-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-        isOpen ? "opacity-0" : "top-0 opacity-100"
-      }`}
-    ></span>
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="p-2 text-black transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center"
+        >
+          <div className="relative w-6 h-4 flex flex-col justify-between items-center opacity-100">
+            
+              {/* Top Line */}
+              <span
+              className={`absolute top-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                isOpen ? "opacity-0" : "top-0 opacity-100"
+              }`}
+            ></span>
 
-    {/* Middle Line */}
-    <span
-      className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-        isOpen ? "opacity-0" : "top-[44%] opacity-100"
-      }`}
-    ></span>
+            {/* Middle Line */}
+            <span
+              className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                isOpen ? "opacity-0" : "top-[44%] opacity-100"
+              }`}
+            ></span>
 
-    {/* Bottom Line */}
-    <span
-      className={`absolute bottom-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-        isOpen ? "opacity-0" : "bottom-0 opacity-100"
-      }`}
-    ></span>
+            {/* Bottom Line */}
+            <span
+              className={`absolute bottom-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                isOpen ? "opacity-0" : "bottom-0 opacity-100"
+              }`}
+            ></span>
 
-    {/* "X" Lines */}
-    <span
-      className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-        isOpen ? "rotate-45 translate-y-0" : "-translate-y-full opacity-0"
-      }`}
-    ></span>
-    <span
-      className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-        isOpen ? "-rotate-45 translate-y-0" : "translate-y-full opacity-0"
-      }`}
-    ></span>
-  </div>
-</button>
+            {/* "X" Lines */}
+            <span
+              className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                isOpen ? "rotate-45 translate-y-0" : "-translate-y-full opacity-0"
+              }`}
+            ></span>
+            <span
+              className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                isOpen ? "-rotate-45 translate-y-0" : "translate-y-full opacity-0"
+              }`}
+            ></span>
+          </div>
+        </button>
 
 
 
