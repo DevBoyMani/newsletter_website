@@ -4,6 +4,7 @@ import { useState } from "react";
 export default function ViewAll() {
     const [selectedIndex, setSelectedIndex] = useState(null);
 
+
     const images = [
         { 
             name: "PS", 
@@ -58,9 +59,14 @@ export default function ViewAll() {
             <h2 className="text-black text-4xl w-[80%]">
                 We don’t think you should settle for questionable ingredients...
             </h2>
+            <div className="space-x-6">
             <button className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
                 Check &rarr;
             </button>
+            <button className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
+                Click &rarr;
+            </button>
+            </div>
 
             {/* Image Grid */}
             <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 gap-6 py-16">
@@ -137,6 +143,54 @@ export default function ViewAll() {
                     </div>
                 </div>
             )}
+           {/* view all section image */}
+           {/* <div className="bg-white text-black px-4 pb-20 pt-20 mx-auto">
+            <div className="flex flex-col lg:flex-row ">
+                <div className="">
+                <h3 className="text-xl ">RESEARCH TIMELINE</h3>
+                <h3 className="text-[44px] mt-4">Setting a new standard in research</h3>
+                <p className="text-lg">Our in-house team of doctors, scientists, and researchers worked with third-party experts to conduct a set of scientific studies and further validate the benefits of AG1. We followed a universally acknowledged hierarchy of scientific rigor, looking beyond ingredient data to test our complete formula and validate the synergy of how ingredients work together.</p>
+                </div>
+
+            <div className="lg:w-1/2">
+                <img
+                src="/view-all-s-1-img.jpg"
+                alt="view all section analytics image"
+                className="object-cover rounded-md w-full h-full"
+                />
+            </div>
+            </div>
+           </div> */}
+           <div className="bg-white text-black px-0 pb-20 pt-20 mx-auto">
+            <div className="flex flex-col-reverse lg:flex-row items-center gap-10">
+                
+                {/* Left Side - Text Content */}
+                <div className="lg:w-1/2">
+                <h3 className="text-xl lg:text-2xl">RESEARCH TIMELINE</h3>
+                <h3 className="text-3xl lg:text-[44px] mt-4 leading-tight">
+                    Setting a new standard in research
+                </h3>
+                <p className="text-lg mt-4 text-gray-700">
+                    Our in-house team of doctors, scientists, and researchers worked with third-party experts 
+                    to conduct a set of scientific studies and further validate the benefits of AG1. 
+                    We followed a universally acknowledged hierarchy of scientific rigor, looking beyond ingredient data 
+                    to test our complete formula and validate the synergy of how ingredients work together.
+                </p>
+                </div>
+
+                {/* Right Side - Image */}
+                <div className="lg:w-1/2 w-full">
+                <img
+                    src="/view-all-s-1-img.jpg"
+                    alt="view all section analytics image"
+                    className="object-cover rounded-md w-full max-h-[400px] lg:max-h-[500px]"
+                />
+                </div>
+
+            </div>
+            </div>
+
+
             <div className="bg-[#F6F5F1] text-white px-4 pb-20 pt-20 lg:py-20 lg:px-16 mx-auto">
                 <h3 className="text-black text-2xl text-center">And that's not all.</h3>
                 <div className="flex justify-center mt-2">
@@ -145,35 +199,11 @@ export default function ViewAll() {
                     </button>
                 </div>
             </div>
-            {/* <div className="bg-white text-black px-4 pb-20 pt-20 mx-auto">
-                <div className="flex justify-start space-x-28">
-                    <div>
-                    <h3>Free of</h3>
-                    <ul>
-                        <li>Artificial sweeteners, flavours, colourings or preservatives</li>
-                        <li>Gluten</li>
-                        <li>Dairy or Lactose</li>
-                        <li>Egg or Peanuts</li>
-                    </ul>   
-                    </div>
-                    <div>
-                        <h3>Diet-Friendly</h3>
-                    <ul>
-                        <li>Vegetarian</li>
-                        <li>Vegan</li>
-                        <li>Paleo</li>
-                        <li>Keto</li>
-                        <li>Low-carb</li>
-                        <li>Halal</li>
-                    </ul>
-                    </div>
-                </div>
-            </div> */}
             <div className="bg-white text-black px-4 pb-20 pt-20 mx-auto">
     <div className="flex flex-col md:flex-row justify-start space-y-10 md:space-y-0 md:space-x-36">
         <div>
             <h3 className="text-xl py-4 uppercase">Free of</h3>
-            <ul className="list-disc pl-5 text-4xl">
+            <ul className="list-disc pl-5 text-2xl md:text-4xl">
                 <li>Artificial sweeteners, flavours,<br/> colourings or preservatives</li>
                 <li>Gluten</li>
                 <li>Dairy or Lactose</li>
@@ -181,8 +211,8 @@ export default function ViewAll() {
             </ul>   
         </div>
         <div >
-            <h3 className="text-xl py-4 uppercase">Diet-Friendly</h3>
-            <ul className="list-disc pl-5 text-4xl">
+            <h3 className="text-xl py-4  uppercase">Diet-Friendly</h3>
+            <ul className="list-disc pl-5 text-2xl md:text-4xl">
                 <li>Vegetarian</li>
                 <li>Vegan</li>
                 <li>Paleo</li>

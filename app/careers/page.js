@@ -26,8 +26,8 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
         <button
           key={index}
           onClick={() => handleClick(index)}
-          className={`text-lg md:text-xl py-2 lg:pt-10 mx-2 border-b-2 transition-all duration-300 ${
-            activeTab === index ? "border-black text-black" : "text-gray-600 hover:text-black border-white"
+          className={`text-lg md:text-[16px] py-2 px-3 mx-1 md:mx-2 mt-8 text-[#0C3D3D] border border-[#0C3D3D] rounded-lg transition-all duration-300 ${
+            activeTab === index ? "text-[#0C3D3D] bg-[#CDD2CF] hover:bg-[#46DE46]" : "  hover:text-black hover:bg-[#46DE46]"
           }`}
         >
           {testimonial.name}
