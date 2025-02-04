@@ -10,6 +10,7 @@ const routes = [
   { path: "/newsletters", name: "Newsletters" },
   { path: "/advertise", name: "Advertise" },
   { path: "/about", name: "About" },
+  { path: "/features", name: "Features" },
 ];
 
 const contactSales = [

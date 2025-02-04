@@ -60,12 +60,24 @@ export default function ViewAll() {
                 We don’t think you should settle for questionable ingredients...
             </h2>
             <div className="space-x-6">
-            <button className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
-                Check &rarr;
-            </button>
-            <button className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black">
-                Click &rarr;
-            </button>
+            <a 
+                href="https://www.glassdoor.co.in/Overview/Working-at-Sagravia-EI_IE10263537.11,19.htm" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black inline-block"
+            >
+                Glassdoor &rarr;
+            </a>
+
+            <a 
+                href="https://www.linkedin.com/company/sagravia" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="py-3 px-8 mt-10 border bg-[#0C3D3D] text-white text-center rounded-full hover:bg-[#46DE46] hover:text-black inline-block"
+            >
+                LinkedIn &rarr;
+            </a>
+
             </div>
 
             {/* Image Grid */}

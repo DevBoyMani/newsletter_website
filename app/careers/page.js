@@ -1,10 +1,12 @@
 "use client";
 import React, { useState, useRef } from "react";
 import ViewAll from "../../components/viewAll/viewAll";
-import Vitamins from "../../components/vitamins/vitamins";
-import Minerals from "../../components/minerals/minerals";
-import GoodBacteria from "../../components/goodBacteria/goodBacteria";
-import PlantCompounds from "../../components/plantCompounds/plantCompounds";
+import Leadership from "../../components/leadership/leadership";
+import Others from "../../components/others/others";
+import Design from "../../components/design/design";
+import Engineering from "../../components/engineering/engineering";
+import Journalism from "../../components/journalism/journalism";
+import Tech from "../../components/tech/tech";
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   const containerRef = useRef(null);
@@ -42,17 +44,19 @@ const Careers = () => {
 
   const testimonials = [
     { name: "View All", component: <ViewAll/> },
-    { name: "Vitamins", component: <Vitamins /> },
-    { name: "Minerals", component: <Minerals /> },
-    { name: "Good Bacteria", component: <GoodBacteria /> },
-    { name: "Plant Compounds & Mushrooms", component: <PlantCompounds /> },
+    { name: "Design", component: <Design/> },
+    { name: "Engineering", component: <Engineering/> },
+    { name: "Journalism", component: <Journalism /> },
+    { name: "Tech", component: <Tech/> },
+    { name: "Leadership", component: <Leadership /> },
+    { name: "Others", component: <Others /> }
   ];
 
   return (
     <div className="text-white px-4 md:px-16 py-20 mx-auto">
       <div className="mb-8">
         <h2 className="text-3xl md:text-6xl font-semibold text-black text-start">
-          High-quality ingredients<br /> optimised for impact
+        Work hard, have fun, make history.<br /> From home.
         </h2>
       </div>
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
