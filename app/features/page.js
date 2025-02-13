@@ -3,6 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import SidebarNav from "../../components/sidebarNav/sidebarNav";
 import ImageGrid from "../../components/imageGrid/imageGrid";
 import FeatureSection from "../../components/featureSection/featureSection";
+import { FaStar } from "react-icons/fa";
 
 export default function Features() {
     const listNames = [
@@ -65,7 +66,7 @@ export default function Features() {
                         Discover the benefits of taking AG1 daily to support your health holistically.
                     </p>
                 </div>
-            </div>
+        </div>
 
         <div className="flex text-white px-4 md:px-16 py-10 md:py-20 mx-auto">
             <SidebarNav listNames={listNames} activeIndex={activeIndex} />
@@ -82,6 +83,55 @@ export default function Features() {
                 ))}
             </div>
         </div>
+
+        {/* 2×2 Matrix Card Layout */}
+        <div className="px-4 md:px-16 py-10 md:pt-20 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6  p-6 rounded-lg">
+            {/* Card 1 */}
+            <div className="bg-[#F6F5F1] p-6 rounded-lg">
+            <div className="flex justify-center lg:justify-start mb-2">
+                {[...Array(5)].map((_, index) => (
+                <FaStar key={index} className="text-2xl text-[#46DE46] mr-2" />
+                ))}
+            </div>
+            <h2 className="text-black text-2xl font-semibold py-4">Believer</h2>
+            <p className=" italic text-lg text-black">
+                I’ve always had a hard time choosing the right multivitamin and having to take pills. AG1 has been a godsend for me. My gut feels better, I feel more awake during the day and feel overall healthier and less sluggish.
+            </p>
+            <p className="text-gray-500 text-lg py-4">James J.</p>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-[#F6F5F1] p-6 rounded-lg">
+            <div className="flex justify-center lg:justify-start mb-2">
+                {[...Array(5)].map((_, index) => (
+                <FaStar key={index} className="text-2xl text-[#46DE46] mr-2" />
+                ))}
+            </div>
+            <h2 className="text-black text-2xl font-semibold py-4">I Love AG1            </h2>
+            <p className=" italic text-lg text-black">
+            I feel so much better since I ditched my daily multivitamin and switched. I have energy. My stomach isn’t grumbling anymore. It gets delivered every month. It really couldn’t be any easier.
+            </p>
+            <p className="text-gray-500 text-lg py-4">James J.</p>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-[#F6F5F1] p-6 rounded-lg">
+            <div className="flex justify-center lg:justify-start mb-2">
+                {[...Array(5)].map((_, index) => (
+                <FaStar key={index} className="text-2xl text-[#46DE46] mr-2" />
+                ))}
+            </div>
+            <h2 className="text-black text-2xl font-semibold py-4">Long Time Customer</h2>
+            <p className=" italic text-lg text-black">
+            I have been using AG1 for at least 5 years. It’s much better than taking a multivitamin and it’s got a surprisingly good taste. It’s not bad at all. Their customer service is also some of the best I have ever experienced.
+            </p>
+            <p className="text-gray-500 text-lg py-4">James J.</p>
+            </div>
+
+        </div>
+        </div>
+
         </>
     );
 }

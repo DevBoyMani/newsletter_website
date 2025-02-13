@@ -23,7 +23,7 @@ export default function SidebarNav({ listNames, activeIndex }) {
                 <div
                     key={index}
                     className={`py-4 px-4 border-b text-lg md:text-xl cursor-pointer transition-all
-                        ${index === activeIndex ? "bg-[#CD853F] text-black" : "text-black"}`}
+                        ${index === activeIndex ? "bg-[#CD853F] text-black" : "text-black hover:bg-[#C4A484]"}`}
                 >
                     {name}
                 </div>
