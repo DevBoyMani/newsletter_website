@@ -68,7 +68,7 @@ export default function Features() {
                 </div>
         </div>
 
-        <div className="flex text-white px-4 md:px-16 py-10 md:py-20 mx-auto">
+        <div className="flex sticky top-10 left-0 text-white px-4 md:px-16 py-10 md:py-20 mx-auto">
             <SidebarNav listNames={listNames} activeIndex={activeIndex} />
 
             <div className="w-3/4 text-black overflow-y-auto h-screen"  style={{ scrollbarWidth: "none" }}>
