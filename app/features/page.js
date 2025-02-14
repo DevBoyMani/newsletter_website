@@ -84,9 +84,9 @@ export default function Features() {
             </div>
         </div>
 
-        {/* 2×2 Matrix Card Layout */}
-        <div className="px-4 md:px-16 py-10 md:pt-20 mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6  p-6 rounded-lg">
+        {/* review section*/}
+        <div className="px-4  md:px-16 py-10 md:pt-20 mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6  p-6 rounded-lg z-10">
             {/* Card 1 */}
             <div className="bg-[#F6F5F1] p-6 rounded-lg">
             <div className="flex justify-center lg:justify-start mb-2">
