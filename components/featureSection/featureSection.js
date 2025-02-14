@@ -13,10 +13,10 @@ const FeatureSection = forwardRef(({ title }, ref) => {
 
     return (
         <div ref={ref} className="w-full px-8">
-            <div className="flex flex-col md:flex-row border-b md:py-10">
+            <div className="flex flex-col md:flex-row border-b md:py-10 top-10">
                 {/* Left Side - Sticky Text Content */}
-                <div className="md:w-1/2 text-black md:pr-10 pr-4 md:sticky top-0 bg-white z-10">
-                    <h2 className="text-3xl md:text-3xl lg:text-4xl text-black text-start md:pb-4">
+                <div className="md:w-1/2 text-black md:pr-10 pr-4 md:sticky  bg-white z-10">
+                    <h2 className="text-3xl md:text-3xl lg:text-4xl text-black text-start md:pb-6 md:pt-4">
                         {title}
                     </h2>
                     <p className="text-black text-lg md:text-xl md:pb-6">

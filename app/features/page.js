@@ -55,9 +55,10 @@ export default function Features() {
         };
     }, []);
 
+
     return (
         <>
-        <div className="text-white px-4 md:px-16 py-10 md:pt-20 mx-auto">
+ <div className="text-white px-4 md:px-16 py-10 md:pt-20 mx-auto">
             <div className="max-w-4xl">
                 <h2 className="text-3xl md:text-5xl lg:text-6xl text-black text-start">
                     The benefits of taking AG1
@@ -68,15 +69,11 @@ export default function Features() {
             </div>
         </div>
 
-        {/* Left and Right Combined Section */}
         <div className="flex px-4 md:px-16 mx-auto relative">
-            {/* Left Sidebar (Fixed) */}
-            <div className="w-1/4 sticky top-0 h-screen">
-                <SidebarNav listNames={listNames} activeIndex={activeIndex} />
+            <div className="w-1/4 sticky top-24 h-screen">
+                <SidebarNav listNames={listNames} activeIndex={activeIndex} sectionRefs={sectionRefs} />
             </div>
-            
-            {/* Right Content (Scrollable) */}
-            <div className="w-3/4 h-screen overflow-y-auto" style={{ scrollbarWidth: "none" }}>
+            <div className="w-3/4 overflow-y-auto " style={{ scrollbarWidth: "none" }}>
                 <ImageGrid images={images} />
                 {listNames.map((name, index) => (
                     <FeatureSection 
