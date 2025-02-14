@@ -18,7 +18,7 @@
 
 export default function SidebarNav({ listNames, activeIndex }) {
     return (
-        <div className="w-1/4 sticky top-0 h-screen overflow-y-auto pr-10">
+        <div className="top-0 h-screen overflow-hidden pr-10 z-10">
             {listNames.map((name, index) => (
                 <div
                     key={index}

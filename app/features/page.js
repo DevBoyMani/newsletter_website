@@ -58,22 +58,26 @@ export default function Features() {
     return (
         <>
         <div className="text-white px-4 md:px-16 py-10 md:pt-20 mx-auto">
-                <div className="max-w-4xl">
-                    <h2 className="text-3xl md:text-5xl lg:text-6xl text-black text-start">
-                        The benefits of taking AG1
-                    </h2>
-                    <p className="text-black text-lg md:text-xl py-4 md:py-6">
-                        Discover the benefits of taking AG1 daily to support your health holistically.
-                    </p>
-                </div>
+            <div className="max-w-4xl">
+                <h2 className="text-3xl md:text-5xl lg:text-6xl text-black text-start">
+                    The benefits of taking AG1
+                </h2>
+                <p className="text-black text-lg md:text-xl py-4 md:py-6">
+                    Discover the benefits of taking AG1 daily to support your health holistically.
+                </p>
+            </div>
         </div>
 
-        <div className="flex sticky top-10 left-0 text-white px-4 md:px-16 py-10 md:py-20 mx-auto">
-            <SidebarNav listNames={listNames} activeIndex={activeIndex} />
-
-            <div className="w-3/4 text-black overflow-y-auto h-screen"  style={{ scrollbarWidth: "none" }}>
+        {/* Left and Right Combined Section */}
+        <div className="flex px-4 md:px-16 mx-auto relative">
+            {/* Left Sidebar (Fixed) */}
+            <div className="w-1/4 sticky top-0 h-screen">
+                <SidebarNav listNames={listNames} activeIndex={activeIndex} />
+            </div>
+            
+            {/* Right Content (Scrollable) */}
+            <div className="w-3/4 h-screen overflow-y-auto" style={{ scrollbarWidth: "none" }}>
                 <ImageGrid images={images} />
-
                 {listNames.map((name, index) => (
                     <FeatureSection 
                         key={index} 
@@ -86,7 +90,7 @@ export default function Features() {
 
         {/* review section*/}
         <div className="px-4  md:px-16 py-10 md:pt-20 mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6  p-6 rounded-lg z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6  p-6 rounded-lg z-10">
             {/* Card 1 */}
             <div className="bg-[#F6F5F1] p-6 rounded-lg">
             <div className="flex justify-center lg:justify-start mb-2">
