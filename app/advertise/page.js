@@ -1,12 +1,12 @@
 "use client";
 import { useState, useRef } from "react";
-import AdvertiseSidebar from "../../components/advertiseSidebar/advertiseSidebar";
-import HeaderButton from "../../components/advertiseComponents/headerButton/headerButton";
+import AdvertiseSidebar from "../../components/advertiseSidebar-mani/advertiseSidebar";
+// import HeaderButton from "../../components/advertiseComponents/headerButton/headerButton";
 
 // Create components for each section (with images and dummy content)
 const TotalVisits = () => (
   <div className="p-4 flex flex-col items-center">
-    <img src="/images/total-visits.jpg" alt="Total Visits" className="w-1/2 h-auto mb-4" />
+    <img src="/hero-landing-img.jpg" alt="Total Visits" className="w-full h-auto mb-4" />
     <h3 className="text-2xl font-bold mb-2">Total Visits</h3>
     <p className="text-lg"> of visits to your website. Here are the metrics for the last month...</p>
   </div>
@@ -14,7 +14,7 @@ const TotalVisits = () => (
 
 const PageViews = () => (
   <div className="p-4 flex flex-col items-center">
-    <img src="/images/page-views.jpg" alt="Page Views" className="w-1/2 h-auto mb-4" />
+    <img src="/hero-landing-img.jpg" alt="Page Views" className="w-1/2 h-auto mb-4" />
     <h3 className="text-2xl font-bold mb-2">Page Views</h3>
     <p className="text-lg">viewed. This data helps to analyze the popularity of specific pages...</p>
   </div>
@@ -78,10 +78,10 @@ const DirectTraffic = () => (
 
 export default function Advertise() {
   const advertiseListNames = [
-    "Total Visits",
-    "Page Views",
-    "Bounce Rate",
-    "Average Session Duration",
+    "Presidential Summary",
+    "Geopolitical Summary",
+    "Long and Short",
+    "Business History",
     "New Users",
     "Returning Users",
     "Organic Search",
@@ -126,15 +126,17 @@ export default function Advertise() {
     <div className="flex">
       {/* Left Sidebar (Fixed) */}
       <div className="flex-1 fixed md:h-screen lg:w-[540px] bg-[#343434] text-white p-4 flex flex-col">
-        <header className="py-1 px-3 text-sm mb-4 pt-10">
-          <HeaderButton onClick={() => {}} />
-          <p className="leading-6 text-white ml-2 py-1">
-            <span className="text-4xl pr-4 font-semibold">.</span>
-            is an EU-based designer with a multi-disciplinary approach, creating websites & graphics.
-          </p>
-        </header>
+        <div className="py-1 px-3 text-sm mb-4 pt-10">
+          <a className="py-1 px-3 rounded-xl text-white bg-white/10 backdrop-blur-md transition hover:bg-white/20">
+            Home page
+            </a>
+  
+            <span className="text-4xl px-4  font-semibold">.</span>
+            <span className="leading-6">is an EU-based designer with a multi-disciplinary approach, creating websites & graphics.</span>
+          
+        </div>
 
-        <div className="text-4xl text-white px-4 py-4">Building innovative digital solutions.</div>
+        <div className="mt-10 text-4xl text-white px-4 py-6">Building innovative digital solutions.</div>
         {/* Sidebar List (Scrollable) */}
         <div className="h-[320px]  border-t border-b border-gray-600 overflow-y-auto" style={{scrollbarWidth: "none"}}>
           <AdvertiseSidebar

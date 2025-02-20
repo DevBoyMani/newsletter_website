@@ -22,7 +22,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <main className="pt-16">
+    <nav className="pt-16">
       {/* Desktop View */}
       <header className="bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block">
         <div className="flex h-14 items-center justify-between px-8">
@@ -32,7 +32,7 @@ export default function Navbar() {
             </div>
           </Link>
 
-          <nav className="sm:text-xl flex items-center space-x-8 text-xl">
+          <div className="sm:text-xl flex items-center space-x-8 text-xl">
             {routes.map((route) => (
               <Link
                 key={route.path}
@@ -59,10 +59,9 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-          </nav>
+          </div>
         </div>
       </header>
-
       {/* Mobile View */}
       <header className={`bg-white fixed top-0 left-0 w-full border-b border-nl_button_border z-50 shadow-lg md:hidden transition-all duration-300 h-16`}>
         
@@ -154,13 +153,9 @@ export default function Navbar() {
             ></span>
           </div>
         </button>
-
-
-
         </div>
         </div>
-
-        <nav
+        <div
             className={`bg-white px-4 py-4 mt-16 h-screen fixed top-0 right-0 w-full transform transition-transform duration-300 ease-out ${
               isOpen ? "translate-x-0" : "translate-x-full"
             }`}
@@ -182,10 +177,9 @@ export default function Navbar() {
                 </li>
               ))}
             </ul>
-          </nav>
-
+        </div>
       </header>
     
-    </main>
+    </nav>
   );
 }
