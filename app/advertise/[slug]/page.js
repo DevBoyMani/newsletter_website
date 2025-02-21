@@ -7,58 +7,41 @@ import AdvertiseSidebar from "../../../components/advertiseSidebar/advertiseSide
 import { Component } from "../../../components/areaChart/areaChart";
 
 const components = {
-  "presidential-summary": () => (
-    <div className="relative mt-0">
-      <Component />
-    </div>
-  ),
-  "geopolitical-summary": () => (
-    <div className="relative mt-0">
-      <Component />
-    </div>
-  ),
-  "long-and-short": () => (
-    <div className="relative mt-0">
-      <Component />
-    </div>
-  ),
-  "business-history": () => (
-    <div className="relative mt-0">
-      <Component />
-    </div>
-  ),
-  "photo-summary": () => (
-    <div className="relative mt-0">
-      <Component />
-    </div>
-  ),
+  "presidential-summary": () => <Component />,
+  "geopolitical-summary": () => <Component />,
+  "long-and-short": () => <Component />,
+  "business-history": () => <Component />,
+  "photo-summary": () => <Component />,
 };
 
-// Main Advertise Component
 export default function Advertise() {
   const params = useParams();
-  const rightSectionNav = [
-    "Active Users",
-    "Country",
-    "Age",
-    "Subscriber Growth",
-    "Total Visits",
-  ];
   const [selectedSlug, setSelectedSlug] = useState("");
+  
+  const rightSectionNav = [
+    { name: "Active Users", id: "chart1" },
+    { name: "Country", id: "chart2" },
+    { name: "Age", id: "chart3" },
+    { name: "Subscriber Growth", id: "chart4" },
+    { name: "Total Visits", id: "chart5" },
+  ];
+
   useEffect(() => {
     if (params?.slug) {
-      setSelectedSlug(params.slug); // ✅ Set slug when params are available
+      setSelectedSlug(params.slug);
     }
   }, [params?.slug]);
-  // Handle sidebar click
-  const handleSidebarClick = (slug) => {
-    setSelectedSlug(slug);
+
+  const handleScrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   };
 
-  const Component =
-    selectedSlug && components[selectedSlug]
-      ? components[selectedSlug]
-      : () => <div>Content not found</div>;
+  const SelectedComponent = selectedSlug && components[selectedSlug]
+    ? components[selectedSlug]
+    : () => <div>Content not found</div>;
 
   return (
     <div className="flex">
@@ -67,58 +50,45 @@ export default function Advertise() {
         <div className="lg:px-14">
           <div className="px-4 text-lg py-8">&larr; Introduction</div>
           <div className="pt-10">
-            <h2 className="py-4 text-3xl">
-              Building innovative Digital
-              <br /> solutions
-            </h2>
-            <div
-              className="border-t-2 border-b-2 border-black overflow-y-auto h-[320px]"
-              style={{ scrollbarWidth: "none" }}
-            >
-              <AdvertiseSidebar
-                activeSlug={selectedSlug}
-                onSelect={handleSidebarClick}
-              />
+            <h2 className="py-4 text-3xl">Building innovative Digital solutions</h2>
+            <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[320px]" style={{ scrollbarWidth: "none" }}>
+              <AdvertiseSidebar activeSlug={selectedSlug} onSelect={setSelectedSlug} />
             </div>
           </div>
-          <div className="text-black py-6">
-            <div className="flex justify-between">
-              <h3 className="text-sm px-4 py-1">Interested to advertise?</h3>
-              <h3 className="text-sm border border-black px-4 py-1 rounded-3xl">
-                Contact US
-              </h3>
-            </div>
+          <div className="text-black py-6 flex justify-between">
+            <h3 className="text-sm px-4 py-1">Interested to advertise?</h3>
+            <h3 className="text-sm border border-black px-4 py-1 rounded-3xl">Contact Us</h3>
           </div>
         </div>
       </div>
 
       {/* Right Section */}
-      <div className="w-[65%] h-full ml-auto overflow-y-auto bg-[#013220]  rounded-l-3xl relative z-10">
+      <div className="w-[65%] h-full ml-auto overflow-y-auto bg-[#013220] rounded-l-3xl relative z-10">
         <motion.div
           key={selectedSlug}
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.5, ease: "easeInOut" }}
-          className=""
         >
-          <div className="h-full flex flex-col ">
-            {/* nav */}
-            <div className="ml-44 mt-10 mb-0 align-middle">
+          <div className="h-full flex flex-col">
+            {/* Top Fixed Buttons */}
+            <div className="ml-44 mt-10 mb-0 align-center">
               <div className="fixed flex flex-wrap gap-4 z-10">
-                {rightSectionNav.map((name, index) => (
-                  <div
-                    key={index}
-                    className="border border-white text-white px-4 py-1 rounded-full "
+                {rightSectionNav.map(({ name, id }) => (
+                  <button
+                    key={id}
+                    className=" text-white bg-black px-4 py-2 rounded-full cursor-pointer"
+                    onClick={() => handleScrollToSection(id)}
                   >
                     {name}
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
 
-            {/* nav2*/}
-            <div className="mb-10">
+             {/* nav2*/}
+             <div className="mb-10">
               <div className="fixed lg:top-14 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
                 <h3 className="text-sm bg-white rounded-full shadow-lg  px-6 py-2.5">
                   info
@@ -133,16 +103,23 @@ export default function Advertise() {
               </div>
             </div>
 
-            <div className="ml-24 lg:mb-28 lg:mt-6 ">
-              {/* Main Content */}
-              <div className="">
-                <div className="w-[90%]">
-                  <Component key={selectedSlug} />
-                </div>
 
-                <div className="w-[90%] my-10">
-                  <Component key={selectedSlug} />
-                </div>
+            {/* Content Sections */}
+            <div className="ml-24 lg:mb-28 lg:mt-[-10]">
+              <div className="w-[90%] my-10" id="chart1">
+                <SelectedComponent />
+              </div>
+              <div className="w-[90%] my-10" id="chart2">
+                <SelectedComponent />
+              </div>
+              <div className="w-[90%] my-10" id="chart3">
+                <SelectedComponent />
+              </div>
+              <div className="w-[90%] my-10" id="chart4">
+                <SelectedComponent />
+              </div>
+              <div className="w-[90%] my-10" id="chart5">
+                <SelectedComponent />
               </div>
             </div>
           </div>
