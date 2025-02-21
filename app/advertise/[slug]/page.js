@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import AdvertiseSidebar from "../../../components/advertiseSidebar/advertiseSidebar";
 import { Component } from "../../../components/areaChart/areaChart";
@@ -16,12 +17,26 @@ const components = {
       <Component />
     </div>
   ),
-
-
+  "long-and-short": () => (
+    <div className="relative mt-0">
+      <Component />
+    </div>
+  ),
+  "business-history": () => (
+    <div className="relative mt-0">
+      <Component />
+    </div>
+  ),
+  "photo-summary": () => (
+    <div className="relative mt-0">
+      <Component />
+    </div>
+  ),
 };
 
 // Main Advertise Component
 export default function Advertise() {
+  const params = useParams();
   const rightSectionNav = [
     "Active Users",
     "Country",
@@ -29,8 +44,12 @@ export default function Advertise() {
     "Subscriber Growth",
     "Total Visits",
   ];
-  const [selectedSlug, setSelectedSlug] = useState("presidential-summary");
-
+  const [selectedSlug, setSelectedSlug] = useState("");
+  useEffect(() => {
+    if (params?.slug) {
+      setSelectedSlug(params.slug); // ✅ Set slug when params are available
+    }
+  }, [params?.slug]);
   // Handle sidebar click
   const handleSidebarClick = (slug) => {
     setSelectedSlug(slug);
@@ -75,61 +94,59 @@ export default function Advertise() {
 
       {/* Right Section */}
       <div className="w-[65%] h-full ml-auto overflow-y-auto bg-[#013220]  rounded-l-3xl relative z-10">
-      <motion.div
-        key={selectedSlug}
-        initial={{ x: "100%", opacity: 0 }}
-        animate={{ x: 0, opacity: 1 }}
-        exit={{ x: "-100%", opacity: 0 }}
-        transition={{ duration: 0.5, ease: "easeInOut" }}
-        className=""
-      >
-        <div className="h-full flex flex-col ">
-
+        <motion.div
+          key={selectedSlug}
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: "-100%", opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className=""
+        >
+          <div className="h-full flex flex-col ">
             {/* nav */}
-           <div className="ml-44 mt-10 mb-0 align-middle">
-           <div className="fixed flex flex-wrap gap-4 z-10">
-            {rightSectionNav.map((name, index) => (
-              <div
-                key={index}
-                className="border border-white text-white px-4 py-1 rounded-full "
-              >
-                {name}
+            <div className="ml-44 mt-10 mb-0 align-middle">
+              <div className="fixed flex flex-wrap gap-4 z-10">
+                {rightSectionNav.map((name, index) => (
+                  <div
+                    key={index}
+                    className="border border-white text-white px-4 py-1 rounded-full "
+                  >
+                    {name}
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
             </div>
 
-          {/* nav2*/}
-         <div className="mb-10">
-         <div className="fixed lg:top-14 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
-         
-            <h3 className="text-sm bg-white rounded-full shadow-lg  px-6 py-2.5">info</h3>
-            
-            <a className="text-sm bg-white  rounded-full shadow-lg px-6 py-2.5" href="#">
-              Visit Website
-            </a>
-           
-          </div>
-         </div>
+            {/* nav2*/}
+            <div className="mb-10">
+              <div className="fixed lg:top-14 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
+                <h3 className="text-sm bg-white rounded-full shadow-lg  px-6 py-2.5">
+                  info
+                </h3>
 
-        
-
-         <div className="ml-24 lg:mb-28 lg:mt-6 ">
-           {/* Main Content */}
-           <div className="">
-            <div className="w-[90%]">
-              <Component key={selectedSlug} />
+                <a
+                  className="text-sm bg-white  rounded-full shadow-lg px-6 py-2.5"
+                  href="#"
+                >
+                  Visit Website
+                </a>
+              </div>
             </div>
 
-            <div className="w-[90%] my-10">
-              <Component key={selectedSlug} />
+            <div className="ml-24 lg:mb-28 lg:mt-6 ">
+              {/* Main Content */}
+              <div className="">
+                <div className="w-[90%]">
+                  <Component key={selectedSlug} />
+                </div>
+
+                <div className="w-[90%] my-10">
+                  <Component key={selectedSlug} />
+                </div>
+              </div>
             </div>
           </div>
-
-         </div>
-          
-        </div>
-      </motion.div>
+        </motion.div>
       </div>
     </div>
   );
