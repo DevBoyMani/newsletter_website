@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const AdvertiseSidebar = ({ activeSlug }) => {
+const AdvertiseSidebar = ({ activeSlug,onSelect }) => {
   const [selectedSlug, setSelectedSlug] = useState(activeSlug);
 
   const advertiseList = [
@@ -20,32 +20,28 @@ const AdvertiseSidebar = ({ activeSlug }) => {
   const formatSlug = (str) => str.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <div className="flex justify-start space-x-2">
+    <div className="flex justify-start">
       <div className="h-full py-4 space-y-2">
         {advertiseList.map(({ name, issue, when }) => {
           const slug = formatSlug(name);
 
           return (
-            <div key={slug} className="relative flex items-center">
+            <div key={slug} className="relative flex items-center ">
               <div
                 onClick={() => setSelectedSlug(slug)}
-                className={`flex justify-between items-center py-2 px-3 transition-all cursor-pointer w-full
-                  ${selectedSlug === slug ? "bg-gray-400 rounded-full" : "hover:bg-gray-300 rounded-full"}
+                className={`flex justify-between items-center py-1 px-6 my-1 transition-all cursor-pointer w-full
+                  ${selectedSlug === slug ? "bg-[#121212]/20 rounded-full" : " "}
                 `}
               >
 
-                <Link href={`/advertise/${slug}`} className="w-full">
+                <Link href={`/advertise/${slug}`} className="w-full mr-4">
                   <span className="text-left text-lg w-full">{name}</span>
                 </Link>
-                <div className="flex space-x-4 text-sm pl-6">
-                  <span className="bg-gray-100 rounded-3xl px-2 py-1">{issue}</span>
-                  <span className="bg-gray-100 rounded-3xl px-2 py-1">{when}</span>
+                <div className="flex space-x-6 text-xs pl-6">
+                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1">{issue}</span>
+                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1">{when}</span>
                 </div>
               </div>
-
-              {selectedSlug === slug && (
-                <span className="absolute right-[-18px] text-xl text-black">•</span>
-              )}
             </div>
           );
         })}

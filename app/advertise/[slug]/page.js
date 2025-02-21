@@ -11,6 +11,13 @@ const components = {
       <Component />
     </div>
   ),
+  "geopolitical-summary": () => (
+    <div className="relative mt-0">
+      <Component />
+    </div>
+  ),
+
+
 };
 
 // Main Advertise Component
@@ -37,9 +44,9 @@ export default function Advertise() {
   return (
     <div className="flex">
       {/* Left Section */}
-      <div className="w-[38%] bg-white fixed h-screen pt-6">
+      <div className="w-[35%] bg-white fixed h-screen">
         <div className="lg:px-14">
-          <div className="px-4 text-lg py-4">&larr; Introduction</div>
+          <div className="px-4 text-lg py-8">&larr; Introduction</div>
           <div className="pt-10">
             <h2 className="py-4 text-3xl">
               Building innovative Digital
@@ -67,61 +74,63 @@ export default function Advertise() {
       </div>
 
       {/* Right Section */}
+      <div className="w-[65%] h-full ml-auto overflow-y-auto bg-[#013220]  rounded-l-3xl relative z-10">
       <motion.div
         key={selectedSlug}
         initial={{ x: "100%", opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         exit={{ x: "-100%", opacity: 0 }}
         transition={{ duration: 0.5, ease: "easeInOut" }}
-        className="w-[62%] ml-auto overflow-y-auto bg-[#013220] h-screen rounded-l-3xl mt-6 relative"
+        className=""
       >
-        <div className="h-full flex flex-col justify-between">
-          {/* Top Navbar Inside Right Section */}
-          <div className="fixed top-56 left-50 w-[58%]  z-10 flex justify-between items-center px-12 py-6">
-            <h3 className="text-lg bg-white px-6 py-2 rounded-full shadow-lg">info</h3>
-            <a className="text-lg bg-white px-6 py-2 rounded-full shadow-lg" href="#">
-              Visit Website
-            </a>
-          </div>
+        <div className="h-full flex flex-col ">
 
-          {/* Navigation Pills */}
-          <div className="my-12 px-12 flex flex-wrap gap-4">
+            {/* nav */}
+           <div className="ml-44 mt-10 mb-0 align-middle">
+           <div className="fixed flex flex-wrap gap-4 z-10">
             {rightSectionNav.map((name, index) => (
               <div
                 key={index}
-                className="border border-white text-white px-6 py-2 rounded-full"
+                className="border border-white text-white px-4 py-1 rounded-full "
               >
                 {name}
               </div>
             ))}
           </div>
+            </div>
 
-          {/* Main Content */}
-          <div className="pl-12 py-12">
+          {/* nav2*/}
+         <div className="mb-10">
+         <div className="fixed lg:top-14 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
+         
+            <h3 className="text-sm bg-white rounded-full shadow-lg  px-6 py-2.5">info</h3>
+            
+            <a className="text-sm bg-white  rounded-full shadow-lg px-6 py-2.5" href="#">
+              Visit Website
+            </a>
+           
+          </div>
+         </div>
+
+        
+
+         <div className="ml-24 lg:mb-28 lg:mt-6 ">
+           {/* Main Content */}
+           <div className="">
             <div className="w-[90%]">
               <Component key={selectedSlug} />
             </div>
-          </div>
-          
-          <div className="pl-12 py-12">
-            <div className="w-[90%]">
+
+            <div className="w-[90%] my-10">
               <Component key={selectedSlug} />
             </div>
           </div>
 
-          <div className="pl-12 py-12">
-            <div className="w-[90%]">
-              <Component key={selectedSlug} />
-            </div>
-          </div>
+         </div>
           
-          <div className="pl-12 py-12">
-            <div className="w-[90%]">
-              <Component key={selectedSlug} />
-            </div>
-          </div>
         </div>
       </motion.div>
+      </div>
     </div>
   );
 }

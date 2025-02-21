@@ -21,6 +21,8 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
+  if (pathname.includes("/advertise")) return null;
+
   return (
     <nav className="pt-16">
       {/* Desktop View */}
