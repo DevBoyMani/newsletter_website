@@ -51,7 +51,7 @@ export default function Advertise() {
           <div className="px-4 text-lg py-8">&larr; Introduction</div>
           <div className="pt-10">
             <h2 className="py-4 text-3xl">Building innovative Digital solutions</h2>
-            <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[320px]" style={{ scrollbarWidth: "none" }}>
+            <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[360px]" style={{ scrollbarWidth: "none" }}>
               <AdvertiseSidebar activeSlug={selectedSlug} onSelect={setSelectedSlug} />
             </div>
           </div>
@@ -62,12 +62,12 @@ export default function Advertise() {
         </div>
       </div>
 
-      {/* Right Section */}
+
       {/* Right Section */}
       <div className="w-[65%] h-full ml-auto overflow-y-auto rounded-l-3xl relative z-10">
         <motion.div
           key={selectedSlug}
-          initial={{ x: "90%", opacity: 0 }}
+          initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1.5 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
@@ -92,7 +92,7 @@ export default function Advertise() {
 
              {/* nav2*/}
              <div className="mb-10">
-              <div className="fixed lg:top-14 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
+              <div className="fixed lg:top-16 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
                 <h3 className="text-sm bg-white rounded-full shadow-lg  px-6 py-2.5">
                   info
                 </h3>

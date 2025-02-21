@@ -29,7 +29,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
             <div key={slug} className="relative flex items-center ">
               <div
                 onClick={() => onSelect(slug)}
-                className={`flex justify-between items-center py-1 px-6 my-1 transition-all cursor-pointer w-full
+                className={`flex justify-between items-center py-1 px-6 my-1  cursor-pointer w-full
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full" : " "}
                 `}
               >
