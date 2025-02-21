@@ -10,11 +10,11 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
     { name: "Long and Short", issue: "Geopoliticals", when: "2024" },
     { name: "Business History", issue: "Geopoliticals", when: "2024" },
     { name: "Photo Summary", issue: "Geopoliticals", when: "2024" },
-    // { name: "New Users", issue: "Geopoliticals", when: "2024" },
-    // { name: "Returning Users", issue: "Geopoliticals", when: "2024" },
-    // { name: "Organic Search", issue: "Geopoliticals", when: "2024" },
-    // { name: "Social Media", issue: "Geopoliticals", when: "2024" },
-    // { name: "Direct Traffic", issue: "Geopoliticals", when: "2024" },
+    { name: "New Users", issue: "Geopoliticals", when: "2024" },
+    { name: "Returning Users", issue: "Geopoliticals", when: "2024" },
+    { name: "Organic Search", issue: "Geopoliticals", when: "2024" },
+    { name: "Social Media", issue: "Geopoliticals", when: "2024" },
+    { name: "Direct Traffic", issue: "Geopoliticals", when: "2024" },
   ];
 
   const formatSlug = (str) => str.toLowerCase().replace(/\s+/g, "-");

@@ -63,16 +63,19 @@ export default function Advertise() {
       </div>
 
       {/* Right Section */}
-      <div className="w-[65%] h-full ml-auto overflow-y-auto bg-[#013220] rounded-l-3xl relative z-10">
+      {/* Right Section */}
+      <div className="w-[65%] h-full ml-auto overflow-y-auto rounded-l-3xl relative z-10">
         <motion.div
           key={selectedSlug}
-          initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
+          initial={{ x: "90%", opacity: 0 }}
+          animate={{ x: 0, opacity: 1.5 }}
           exit={{ x: "-100%", opacity: 0 }}
-          transition={{ duration: 0.5, ease: "easeInOut" }}
+          transition={{ duration: 0.6, ease: "easeInOut" }}
+          className="bg-[#013220]"
         >
           <div className="h-full flex flex-col">
             {/* Top Fixed Buttons */}
+           
             <div className="ml-44 mt-10 mb-0 align-center">
               <div className="fixed flex flex-wrap gap-4 z-10">
                 {rightSectionNav.map(({ name, id }) => (
@@ -105,6 +108,14 @@ export default function Advertise() {
 
 
             {/* Content Sections */}
+            <motion.div
+            key={selectedSlug}
+            initial={{ x: "80%", opacity: 0 }}
+            animate={{ x: 0, opacity: 1 }}
+            exit={{ x: "-100%", opacity: 0 }}
+            transition={{ duration: 0.9, ease: "easeInOut" }}
+            
+          >
             <div className="ml-24 lg:mb-28 lg:mt-[-10]">
               <div className="w-[90%] my-10" id="chart1">
                 <SelectedComponent />
@@ -122,9 +133,11 @@ export default function Advertise() {
                 <SelectedComponent />
               </div>
             </div>
+            </motion.div>
           </div>
         </motion.div>
       </div>
+
     </div>
   );
 }
