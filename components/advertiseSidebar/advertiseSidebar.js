@@ -30,7 +30,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
               <div
                 onClick={() => onSelect(slug)}
                 className={`flex justify-between items-center py-1 px-6 my-1  cursor-pointer w-full
-                  ${activeSlug === slug ? "bg-[#121212]/20 rounded-full" : " "}
+                  ${activeSlug === slug ? "bg-[#121212]/20 rounded-full" : "hover:bg-[#121212]/10 rounded-full"}
                 `}
               >
                 <Link href={`/advertise/${slug}`} className="w-full mr-4">

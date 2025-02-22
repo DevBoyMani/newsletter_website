@@ -23,7 +23,7 @@ export default function Advertise() {
     { name: "Country", id: "chart2" },
     { name: "Age", id: "chart3" },
     { name: "Subscriber Growth", id: "chart4" },
-    { name: "Total Visits", id: "chart5" },
+    { name: "Total Visits", id: "chart5" }
   ];
 
   useEffect(() => {
@@ -46,9 +46,13 @@ export default function Advertise() {
   return (
     <div className="flex">
       {/* Left Section */}
-      <div className="w-[35%] bg-white fixed h-screen">
-        <div className="lg:px-14">
-          <div className="px-4 text-lg py-8">&larr; Introduction</div>
+      <div className="w-[36%] bg-white fixed h-screen">
+        <div className="lg:px-6">
+          <div className="px-4 text-lg py-8">
+            <p>
+            &larr; Introduction
+            </p>
+          </div>
           <div className="pt-10">
             <h2 className="py-4 text-3xl">Building innovative Digital solutions</h2>
             <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[360px]" style={{ scrollbarWidth: "none" }}>
@@ -56,81 +60,81 @@ export default function Advertise() {
             </div>
           </div>
           <div className="text-black py-6 flex justify-between">
-            <h3 className="text-sm px-4 py-1">Interested to advertise?</h3>
-            <h3 className="text-sm border border-black px-4 py-1 rounded-3xl">Contact Us</h3>
+            <p className="text-sm px-4 py-1">Interested to advertise?</p>
+            <p className="text-sm border border-black px-4 py-1 rounded-3xl">Contact Us</p>
           </div>
         </div>
       </div>
 
 
       {/* Right Section */}
-      <div className="w-[65%] h-full ml-auto overflow-y-auto rounded-l-3xl relative z-10">
+      <div className="w-[64%] h-full ml-auto overflow-y-auto rounded-l-3xl relative z-10">
         <motion.div
           key={selectedSlug}
           initial={{ x: "100%", opacity: 0 }}
           animate={{ x: 0, opacity: 1.5 }}
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
-          className="bg-[#013220]"
+          className="bg-[#01261E]"
         >
           <div className="h-full flex flex-col">
-            {/* Top Fixed Buttons */}
-           
-            <div className="ml-44 mt-10 mb-0 align-center">
-              <div className="fixed flex flex-wrap gap-4 z-10">
-                {rightSectionNav.map(({ name, id }) => (
-                  <button
-                    key={id}
-                    className=" text-white bg-black px-4 py-2 rounded-full cursor-pointer"
-                    onClick={() => handleScrollToSection(id)}
-                  >
-                    {name}
-                  </button>
-                ))}
-              </div>
-            </div>
-
-             {/* nav2*/}
-             <div className="mb-10">
-              <div className="fixed lg:top-16 lg:left-58 pl-20 pr-10 py-6 w-[64%]  z-10 flex justify-between items-center ">
-                <h3 className="text-sm bg-white rounded-full shadow-lg  px-6 py-2.5">
-                  info
-                </h3>
-
+        
+           {/* nav bar */}
+            <div className="">
+              <div className="bg-[#01261E] fixed top-0  w-[100%] pt-10 pb-12 z-50 hidden md:block rounded-l-3xl">
+              <div className="flex flex-row space-x-12  absolute left-24">
+                  <div className="">
+                    <div className="space-x-4">
+                      {rightSectionNav.map(({ name, id }) => (
+                        <a
+                          key={id}
+                      className="text-xs text-white border border-white w-full px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-black"
+                          onClick={() => handleScrollToSection(id)}
+                        >
+                          {name}
+                        </a>
+                      ))}
+                    </div>
+                  </div>
+                <div className="">
                 <a
-                  className="text-sm bg-white  rounded-full shadow-lg px-6 py-2.5"
-                  href="#"
+                  className="text-xs bg-white  rounded-full shadow-lg px-5 py-3"
+                  href="https://www.sagravia.com/" target="_blank"
                 >
                   Visit Website
                 </a>
+                </div>
+              </div>
               </div>
             </div>
-
+            
 
             {/* Content Sections */}
             <motion.div
             key={selectedSlug}
-            initial={{ x: "80%", opacity: 0 }}
+            initial={{ x: "100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
             transition={{ duration: 0.9, ease: "easeInOut" }}
             
           >
-            <div className="ml-24 lg:mb-28 lg:mt-[-10]">
-              <div className="w-[90%] my-10" id="chart1">
-                <SelectedComponent />
-              </div>
-              <div className="w-[90%] my-10" id="chart2">
-                <SelectedComponent />
-              </div>
-              <div className="w-[90%] my-10" id="chart3">
-                <SelectedComponent />
-              </div>
-              <div className="w-[90%] my-10" id="chart4">
-                <SelectedComponent />
-              </div>
-              <div className="w-[90%] my-10" id="chart5">
-                <SelectedComponent />
+            <div className="">
+              <div className="mx-24 lg:mb-28 mt-24">
+                  <div className=" my-10" id="chart1">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart2">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart3">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart4">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart5">
+                    <SelectedComponent />
+                  </div>
               </div>
             </div>
             </motion.div>
