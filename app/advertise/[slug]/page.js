@@ -12,6 +12,14 @@ const components = {
   "long-and-short": () => <Component />,
   "business-history": () => <Component />,
   "photo-summary": () => <Component />,
+
+  "new-users": () => <Component />,
+  "returning-users": () => <Component />,
+  "organic-search": () => <Component />,
+  "social-media": () => <Component />,
+  "direct-traffic": () => <Component />,
+
+
 };
 
 export default function Advertise() {
@@ -32,19 +40,24 @@ export default function Advertise() {
     }
   }, [params?.slug]);
 
-  const handleScrollToSection = (id) => {
+  const handleScrollToSection = (event, id, offset = 0) => {
+    event.preventDefault();
+  
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      const yOffset = section.getBoundingClientRect().top + window.scrollY + offset; 
+      window.scrollTo({ top: yOffset, behavior: "smooth" });
     }
   };
-
+  
   const SelectedComponent = selectedSlug && components[selectedSlug]
     ? components[selectedSlug]
     : () => <div>Content not found</div>;
 
   return (
-    <div className="flex">
+   <>
+     {/* desktop view */}
+    <div className="hidden md:flex">
       {/* Left Section */}
       <div className="w-[36%] bg-white fixed h-screen">
         <div className="lg:px-6">
@@ -68,15 +81,17 @@ export default function Advertise() {
 
 
       {/* Right Section */}
-      <div className="w-[64%] h-full ml-auto overflow-y-auto rounded-l-3xl relative z-10">
-        <motion.div
+      <div className="w-[64%] h-full  ml-auto overflow-y-auto rounded-l-3xl relative z-10">
+       <motion.div
+          layout
           key={selectedSlug}
           initial={{ x: "100%", opacity: 0 }}
-          animate={{ x: 0, opacity: 1.5 }}
+          animate={{ x: 0, opacity: 1 }}
           exit={{ x: "-100%", opacity: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          transition={{ duration: 0.9, ease: "easeInOut" }}
           className="bg-[#01261E]"
         >
+
           <div className="h-full flex flex-col">
         
            {/* nav bar */}
@@ -89,7 +104,7 @@ export default function Advertise() {
                         <a
                           key={id}
                       className="text-xs text-white border border-white w-full px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-black"
-                          onClick={() => handleScrollToSection(id)}
+                      onClick={(event) => handleScrollToSection(event, id, -120)}
                         >
                           {name}
                         </a>
@@ -111,11 +126,12 @@ export default function Advertise() {
 
             {/* Content Sections */}
             <motion.div
+            layout
             key={selectedSlug}
             initial={{ x: "100%", opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: "-100%", opacity: 0 }}
-            transition={{ duration: 0.9, ease: "easeInOut" }}
+            transition={{ duration: 1.0, ease: "easeInOut" }}
             
           >
             <div className="">
@@ -143,5 +159,41 @@ export default function Advertise() {
       </div>
 
     </div>
+
+   
+     {/* Mobile View */}
+     <div className="block md:hidden">
+     <div className="bg-[#01261E] p-4">
+       {/* Mobile Navigation */}
+       <div className="flex flex-wrap gap-2 justify-center">
+         {rightSectionNav.map(({ name, id }) => (
+           <a
+             key={id}
+             className="text-xs text-white border border-white px-3 py-2 rounded-full cursor-pointer hover:bg-white hover:text-black"
+             onClick={() => handleScrollToSection(id)}
+           >
+             {name}
+           </a>
+         ))}
+       </div>
+     </div>
+
+     {/* Mobile Content */}
+     <div className="p-4">
+       {rightSectionNav.map(({ id }) => (
+         <div className="my-5" id={id} key={id}>
+           <SelectedComponent />
+         </div>
+       ))}
+     </div>
+
+     {/* Mobile Footer */}
+     <div className="text-center py-4">
+       <a className="text-sm bg-white text-black px-4 py-2 rounded-full shadow-lg" href="https://www.sagravia.com/" target="_blank">
+         Visit Website
+       </a>
+     </div>
+   </div></>
+
   );
 }
