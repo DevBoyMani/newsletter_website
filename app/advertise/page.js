@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import AdvertiseSidebarHomepage from "../../components/advertiseSidebarHomepage/advertiseSidebarHomepage";
-// import { motion } from "framer-motion";
+import { motion } from "framer-motion";
 
 export default function Advertise() {
 
@@ -10,30 +10,30 @@ export default function Advertise() {
   return (
     <div className="flex w-full">
       {/* Left Sidebar */}
-     <div className="w-[36%] bg-white fixed h-screen">
-      <div className="lg:px-6">
-        <div className="px-4 text-lg py-8">
-            <a href="/advertise">
-            Analytics
-            </a>
-        </div>
-
-         <div className="pt-6">
-              <h2 className="py-4 text-3xl">Building Innovative Digital Solutions</h2>
-              <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[320px] "style={{ scrollbarWidth: "none" }}>
-                <AdvertiseSidebarHomepage />
+      <div className="w-[36%] bg-white fixed h-screen">
+        <div className="md:px-6">
+              <div className="px-4 text-lg py-8">
+                  <a href="/advertise">
+                  Analytics
+                  </a>
               </div>
-            <div className="text-black pt-4 flex justify-between">
-              <h3 className="text-sm px-4 py-1">Interested to advertise?</h3>
-              <h3 className="text-sm border border-black px-4 py-1 rounded-3xl cursor-pointer">Contact Us</h3>
-            </div>
-          </div>
+              <div className="pt-6">
+                <h2 className="py-4 text-3xl">Building Innovative Digital Solutions</h2>
+                <div className="border-t-2 border-b-2 border-black overflow-y-auto md:h-[320px] "style={{ scrollbarWidth: "none" }}>
+                  <AdvertiseSidebarHomepage />
+                </div>
+              </div>
+              <div className="text-black pt-4 flex justify-between">
+                <h3 className="text-sm px-4 py-1">Interested to advertise?</h3>
+                <h3 className="text-sm border border-black px-4 py-1 rounded-3xl cursor-pointer">Contact Us</h3>
+              </div>
+        </div>   
       </div>
-     </div>
+
 
       {/* Right Content Section */}
-      <div className="w-[64%] ml-[36%] flex flex-col">
-      {/* <motion.div
+      <div className="w-[64%] ml-auto flex flex-col ">
+      <motion.div
           layout
           // key={selectedSlug}
           initial={{ x: "100%", opacity: 0 }}
@@ -41,13 +41,13 @@ export default function Advertise() {
           exit={{ x: "-100%", opacity: 0 }}
           transition={{ duration: 0.9, ease: "easeInOut" }}
           
-        > */}
-        <div className="fixed h-screen">
+        >
+        <div className="fixed h-screen ">
           <div className="relative w-full h-full">
             <img
               src="/analytics-home-image.png"
               alt="Analytics Home"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-tl-3xl"
             />
           </div>
           <div className="lg:w-[28%] absolute right-0 top-5  px-4 ">
@@ -66,7 +66,7 @@ export default function Advertise() {
               </div>
           </div>
         </div>
-        {/* </motion.div> */}
+        </motion.div>
       </div>
     </div>
   );

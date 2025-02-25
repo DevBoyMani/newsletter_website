@@ -60,7 +60,7 @@ export default function Advertise() {
     <div className="hidden md:flex">
       {/* Left Section */}
       <div className="w-[36%] bg-white fixed h-screen">
-        <div className="lg:px-6">
+        <div className="md:px-6">
           <div className="px-4 text-lg py-8">
             <a href="/advertise">
             &larr; Introduction
@@ -68,7 +68,7 @@ export default function Advertise() {
           </div>
           <div className="pt-6">
             <h2 className="py-4 text-3xl">Building Innovative Digital Solutions</h2>
-            <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[320px]" style={{ scrollbarWidth: "none" }}>
+            <div className="border-t-2 border-b-2 border-black overflow-y-auto md:h-[320px]" style={{ scrollbarWidth: "none" }}>
               <AdvertiseSidebar activeSlug={selectedSlug} onSelect={setSelectedSlug} />
             </div>
           </div>
