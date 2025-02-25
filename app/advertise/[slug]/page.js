@@ -62,17 +62,17 @@ export default function Advertise() {
       <div className="w-[36%] bg-white fixed h-screen">
         <div className="lg:px-6">
           <div className="px-4 text-lg py-8">
-            <p>
+            <a href="/advertise">
             &larr; Introduction
-            </p>
+            </a>
           </div>
-          <div className="pt-10">
-            <h2 className="py-4 text-3xl">Building innovative Digital solutions</h2>
-            <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[360px]" style={{ scrollbarWidth: "none" }}>
+          <div className="pt-6">
+            <h2 className="py-4 text-3xl">Building Innovative Digital Solutions</h2>
+            <div className="border-t-2 border-b-2 border-black overflow-y-auto h-[320px]" style={{ scrollbarWidth: "none" }}>
               <AdvertiseSidebar activeSlug={selectedSlug} onSelect={setSelectedSlug} />
             </div>
           </div>
-          <div className="text-black py-6 flex justify-between">
+          <div className="text-black pt-4 flex justify-between">
             <p className="text-sm px-4 py-1">Interested to advertise?</p>
             <p className="text-sm border border-black px-4 py-1 rounded-3xl">Contact Us</p>
           </div>
