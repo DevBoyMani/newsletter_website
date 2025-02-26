@@ -7,7 +7,8 @@ import Design from "../../components/design/design";
 import Engineering from "../../components/engineering/engineering";
 import Journalism from "../../components/journalism/journalism";
 import Tech from "../../components/tech/tech";
-import Marketing from "../../components/marketing/marketing"
+import Marketing from "../../components/marketing/marketing";
+import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   const containerRef = useRef(null);
@@ -29,8 +30,8 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
         <button
           key={index}
           onClick={() => handleClick(index)}
-          className={` md:text-base uppercase py-2 px-3 lg:mx-2  text-[#0C3D3D] border border-[#0C3D3D] rounded-lg transition-all duration-300 ${
-            activeTab === index ? "text-[#0C3D3D] bg-[#CDD2CF] hover:bg-[#46DE46]" : "  hover:text-black hover:bg-[#46DE46]"
+          className={` md:text-base uppercase py-2 px-3 lg:mr-4  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
+            activeTab === index ? "text-[#0C3D3D] bg-[#CDD2CF] hover:bg-[#46DE46] " : "bg-[#DAEBE8]  hover:text-black hover:bg-[#46DE46]"
           }`}
         >
           {testimonial.name}
@@ -55,7 +56,8 @@ const Careers = () => {
   ];
 
   return (
-    <div className="text-white px-4 md:px-16 py-20 mx-auto">
+    <div className="text-white">
+      <div className="md:px-16 px-4 pt-20 mx-auto ">
       <div className="mb-8 text-start ">
         <p className="text-2xl font-semibold text-black px-1 uppercase ">Looking for a new role &</p>
         <div className="w-[46%]">
@@ -63,7 +65,7 @@ const Careers = () => {
         Ready to make an impact?
         </h2>
         </div>
-        <div className="pt-14 border-black border-b pb-8">
+        <div className="pt-14 border-black border-b pb-4">
           <div className="flex justify-between">
           <div className="text-5xl text-black">
             Open Positions
@@ -77,10 +79,54 @@ const Careers = () => {
           </div>
         </div>
       </div>
-      <div className="w-full">
+      </div>
+
+      <div className="w-full md:px-16">
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
-      <div className="mt-0">{testimonials[activeTab].component}</div>
+
+      <div className="mt-0 md:px-16">
+        {testimonials[activeTab].component}
+      </div>
+
+      <div className="py-10 md:px-16">
+        <div className="flex justify-between">
+          <div className="md:w-[40%]">
+            <div className="text-black text-7xl ">
+              How do we work with your application?
+            </div>
+          </div>
+
+          <div className="md:w-[44%]">
+            <div className="text-black">
+            <FaqAccordionC/>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+
+      <div className="relative py-10 ">
+        <div className="relative lg:h-[530px]">
+          <img
+            src="/careers/careers-1.png"
+            className="w-full h-full object-cover"
+            alt="Careers"
+          />
+          <div className="absolute top-1/4 left-10 lg:w-[35%] lg:h-[50%] space-y-10 md:px-4">
+            <div className="text-white text-4xl lg:text-6xl ">
+              Your trusted source for digital insights
+            </div>
+
+            <a
+              href=""
+              className="inline-block border border-white text-white text-lg mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white"
+            >
+              About Us
+            </a>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
