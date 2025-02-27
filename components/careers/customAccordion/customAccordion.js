@@ -59,11 +59,11 @@ import { ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 const accordionData = [
-  { id: "item-1", title: "Recruitment team chat", content: "Yes. It adheres to the WAI-ARIA design pattern.", step: 1 },
-  { id: "item-2", title: "Team member interview", content: "Help your new team understand your field of knowledge.", step: 2 },
-  { id: "item-3", title: "Technical exercise", content: "Yes. It's animated by default, but you can disable it if you prefer.", step: 3 },
-  { id: "item-4", title: "Leadership chat", content: "Yes. It's animated by default, but you can disable it if you prefer.", step: 4 },
-  { id: "item-5", title: "Offer time", content: "Yes. It's animated by default, but you can disable it if you prefer.", step: 5 },
+  { id: "item-1", title: "Recruitment team chat", content: "Help us get to know you beyond your CV", step: 1 },
+  { id: "item-2", title: "Team member interview", content: "Help your new team understand your field of knowledge", step: 2 },
+  { id: "item-3", title: "Technical exercise", content: "Put your skills to the test and show us how you shine.", step: 3 },
+  { id: "item-4", title: "Leadership chat", content: "Help us get to know you beyond your CV", step: 4 },
+  { id: "item-5", title: "Offer time", content: "Your now just a signature away from joining the greatest team", step: 5 },
 ];
 
 export default function CustomAccordion() {
