@@ -9,6 +9,7 @@ import Journalism from "../../components/journalism/journalism";
 import Tech from "../../components/tech/tech";
 import Marketing from "../../components/marketing/marketing";
 import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
+import { doCircle, XCircle } from "lucide-react";
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   const containerRef = useRef(null);
@@ -53,6 +54,42 @@ const Careers = () => {
     { name: "Leadership", component: <Leadership /> },
     {name: "Marketing", component: <Marketing /> },
     { name: "Others", component: <Others /> }
+  ];
+
+  const [selectedImage, setSelectedImage] = useState({
+    id: 1,
+    smallSrc: "/careers/p-1-small.png",
+    fullSrc: "/careers/p-1-full.png",
+    text: "Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.",
+    name: "Martine",
+    role: "COO",
+  });
+
+  const images = [
+    {
+      id: 1,
+      smallSrc: "/careers/p-1-small.png",
+      fullSrc: "/careers/p-1-full.png",
+      text: "Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.",
+      name: "Martine",
+      role: "COO",
+    },
+    {
+      id: 2,
+      smallSrc: "/careers/p-2-small.png",
+      fullSrc: "/careers/p-2-full.png",
+      text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.",
+      name: "Alan",
+      role: "CEO",
+    },
+    {
+      id: 3,
+      smallSrc: "/careers/p-3-small.png",
+      fullSrc: "/careers/p-3-full.png",
+      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      name: "Mark",
+      role: "CTO",
+    },
   ];
 
   return (
@@ -105,7 +142,6 @@ const Careers = () => {
         </div>
       </div>
       
-
       <div className="relative py-10 ">
         <div className="relative lg:h-[530px]">
           <img
@@ -113,7 +149,7 @@ const Careers = () => {
             className="w-full h-full object-cover"
             alt="Careers"
           />
-          <div className="absolute top-1/4 left-10 lg:w-[35%] lg:h-[50%] space-y-10 md:px-4">
+          <div className="absolute top-1/4 left-12 lg:w-[35%] lg:h-[50%] space-y-10 md:px-4">
             <div className="text-white text-4xl lg:text-6xl ">
               Your trusted source for digital insights
             </div>
@@ -127,6 +163,108 @@ const Careers = () => {
           </div>
         </div>
       </div>
+
+     <div className="md:px-16 md:py-8 text-black">
+      <div className="flex justify-between items-start gap-8">
+        <div className="w-1/2 space-y-4">
+          <h2 className="text-5xl pb-2">What we do</h2>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
+            <span>Supportive and collaborative environment</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
+            <span>Provide flexibility and work-life balance</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
+            <span>Create opportunities for growth</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
+            <span>Trust our team</span>
+          </div>
+        </div>
+
+       
+        <div className="border-l border-black h-auto mx-2 -mb-2 mt-16  self-stretch"></div>
+
+        <div className="w-1/2 space-y-4">
+          <h2 className="text-5xl pb-2">What we don't do</h2>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
+            <span>Impose unnecessary formalities</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
+            <span>Micromanage</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
+            <span>Discourage creativity or new ideas</span>
+          </div>
+          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
+            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
+            <span>Sacrifice well-being for work</span>
+          </div>
+        </div>
+      </div>
+     </div>
+
+    <div className="md:px-16 md:py-8">
+      <div className="border-b border-black">
+        <div className="text-5xl text-black py-4">What our people have to say</div>
+      </div>
+
+      <div>
+        <div>
+        <div className="flex justify-between py-6">
+      {/* Left Side (Small Images & Content) */}
+      <div className="w-[60%]">
+        {/* Small Images */}
+        <div className="flex flex-row space-x-4 md:py-8">
+          {images.map((image) => (
+            <button
+              key={image.id}
+              className={`cursor-pointer p-0.5 rounded-full ${
+                selectedImage.id === image.id ? "border border-black rounded-full" : "border-transparent"
+              }`}
+              onClick={() => setSelectedImage(image)}
+              
+            >
+              <img
+                src={image.smallSrc}
+                alt={`image-${image.id}`}
+                className="w-8 h-8"
+              />
+            </button>
+          ))}
+        </div>
+
+        {/* Dynamic Text Content */}
+        <div className="text-lg py-6 ">
+          <p className="text-black">{selectedImage.text}</p>
+        </div>
+
+        {/* Name & Role */}
+        <div className="text-black relative top-16">
+          <p className="text-lg">{selectedImage.name}</p>
+          <p className="text-sm">{selectedImage.role}</p>
+        </div>
+      </div>
+
+      {/* Right Side (Large Image) */}
+      <div className="w-[30%] md:py-8">
+        <div>
+          <img src={selectedImage.fullSrc} alt="selected" className="w-300" />
+        </div>
+      </div>
+    </div>
+          
+        </div>
+      </div>
+    </div>
+
     </div>
   );
 };
