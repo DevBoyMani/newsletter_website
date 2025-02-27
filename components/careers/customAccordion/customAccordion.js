@@ -55,7 +55,7 @@
 //   );
 // }
 
-import { ChevronDown } from "lucide-react";
+import { ChevronDown,ChevronUp } from "lucide-react";
 import { useState } from "react";
 
 const accordionData = [
@@ -74,12 +74,12 @@ export default function CustomAccordion() {
   };
 
   return (
-    <div className="w-full space-y-4">
+    <div className="w-full space-y-2 ">
       {accordionData.map((item) => (
         <div
           key={item.id}
           className={`rounded-lg transition ${
-            openItem === item.id ? "bg-white shadow-lg" : "bg-[#DAEBE8]"
+            openItem === item.id ? "bg-white shadow-lg" : "bg-[#DAEBE8] shadow-lg"
           }`}
         >
           <div
@@ -99,12 +99,12 @@ export default function CustomAccordion() {
                         <p className="text-sm py-2">{item.content}</p>
                       </div>
                     </div>
-                  <ChevronDown className="w-5 h-5 transition-transform duration-300" />
+                  <ChevronUp className="w-5 h-5 transition-transform duration-300" />
                 </div>
               </>
             ) : (
               // Normal heading when closed
-              <div className="flex justify-between items-center">
+              <div className="flex justify-between items-center ">
                 <p>{item.title}</p>
                 <ChevronDown className="w-5 h-5 transition-transform duration-300" />
               </div>
