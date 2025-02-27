@@ -8,7 +8,8 @@ import Engineering from "../../components/engineering/engineering";
 import Journalism from "../../components/journalism/journalism";
 import Tech from "../../components/tech/tech";
 import Marketing from "../../components/marketing/marketing";
-import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
+// import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
+import CustomAccordion from "../../components/careers/customAccordion/customAccordion"
 import { doCircle, XCircle } from "lucide-react";
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
@@ -136,7 +137,7 @@ const Careers = () => {
 
           <div className="md:w-[44%]">
             <div className="text-black">
-            <FaqAccordionC/>
+            <CustomAccordion/>
             </div>
           </div>
         </div>
