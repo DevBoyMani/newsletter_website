@@ -22,6 +22,6 @@
       "@/*": ["./*"],
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/linkpages/linkpages.js",],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/linkpages/linkpages.js", "components/footer/footer.js",],
   "exclude": ["node_modules"]
 }

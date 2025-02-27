@@ -11,6 +11,7 @@ import Marketing from "../../components/marketing/marketing";
 // import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
 import CustomAccordion from "../../components/careers/customAccordion/customAccordion"
 import { doCircle, XCircle } from "lucide-react";
+import Footer from "../../components/footer/footer"
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   const containerRef = useRef(null);
@@ -212,7 +213,7 @@ const Careers = () => {
       </div>
      </div>
 
-    <div className="md:px-16 md:py-8">
+    <div className="md:px-16 md:pt-8 md:pb-12">
       <div className="border-b border-black">
         <div className="text-5xl text-black py-4">What our people have to say</div>
       </div>
@@ -264,6 +265,10 @@ const Careers = () => {
           
         </div>
       </div>
+    </div>
+
+    <div>
+      <Footer/>
     </div>
 
     </div>
