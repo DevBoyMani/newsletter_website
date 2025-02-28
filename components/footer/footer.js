@@ -45,34 +45,71 @@ export default function Footer(){
                     {/* right */}
                     <div className="mr-10">
                         <div className="flex justify-start space-x-8">
-                            <div>
-                                <div className="flex flex-col">
-                                    <h6 className="text-xl font-semibold pb-4">Learn more</h6>
-                                    <a href="#" className="py-1 text-sm">About Us</a>
-                                    <a href="#" className="py-1 text-sm">Readers</a>
-                                    <a href="#" className="py-1 text-sm">Advertise</a>
-                                    <a href="#" className="py-1 text-sm">Analytics</a>
+                            
+                                <div className="">
+                                    <ul className="flex flex-col">
+                                        <li className="text-xl font-semibold pb-4">
+                                            Learn more
+                                        </li>
+
+
+                                        <li className="py-1 text-sm">
+                                            <Link href="#" className="">About Us</Link>
+                                        </li>
+                                        <li className="py-1 text-sm">
+                                            <Link href="#" className="">Readers</Link>
+                                        </li>
+                                        <li className="py-1 text-sm">
+                                            <Link href="#" className="">Advertise</Link>
+                                        </li>
+                                        <li className="py-1 text-sm">
+                                            <Link href="#" className="">Analytics</Link>
+                                        </li>
+                                    </ul>
                                 
                                 </div>
-                            </div>
-                            <div>
-                                <div className="flex flex-col ml-4">
-                                    <h6 className="text-xl font-semibold pb-4">More</h6>
-                                    <a href="#" className="py-1 text-sm">Blog</a>
-                                    <a href="#" className="py-1 text-sm">Careers</a>
-                                    <a href="#" className="py-1 text-sm">Privacy Policy</a>
-                                    <a href="#" className="py-1 text-sm">Legal</a>
+                           
+                            
+                                <div className="">
+                                    <ul className="flex flex-col ml-4">
+                                    <li className="text-xl font-semibold pb-4">
+                                        More
+                                    </li>
+
+
+                                    <li className="py-1 text-sm">
+                                        <Link href="#" className="">Blog</Link>
+                                    </li>
+                                    <li className="py-1 text-sm">
+                                    <   Link href="#" className="">Careers</Link>
+                                    </li>
+                                    <li className="py-1 text-sm">
+                                        <Link href="#" className="">Privacy Policy</Link>
+                                    </li>
+                                    <li className="py-1 text-sm">
+                                        <Link href="#" className="">Legal</Link>
+                                    </li>
+                                    </ul>
                                     
                                 </div>
-                            </div>
-                            <div className="">
-                                <div className="flex flex-col ml-10">
-                                    <h6 className="text-xl font-semibold pb-4">Contact Us</h6>
-                                    <a href="#" className="py-1 text-sm">info@sagravia.com</a>
-                                    <a href="#" className="py-1 text-sm">+1-2345-6789</a>
-                                    <a href="#" className="py-1 text-sm">123 Ave, New York, USA</a>    
+                         
+                            
+                                <div className="">
+                                    <ul className="flex flex-col ml-10">
+                                    <li className="text-xl font-semibold pb-4">Contact Us</li>
+
+                                    <li href="#" className="py-1 text-sm">
+                                        <Link href="#" className="">info@sagravia.com</Link>
+                                    </li>
+                                    <li href="#" className="py-1 text-sm">
+                                        <Link href="#" className="">+1-2345-6789</Link>
+                                    </li>
+                                    <li href="#" className="py-1 text-sm">
+                                        <Link href="#" className="">123 Ave, New York, USA</Link>
+                                    </li>
+                                    </ul>    
                                 </div>
-                            </div>
+                           
                         </div>
                     </div>
                 </div>
