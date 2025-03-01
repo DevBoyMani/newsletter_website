@@ -27,13 +27,13 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   };
 
   return (
-    <div ref={containerRef} className="overflow-x-auto no-scrollbar whitespace-nowrap flex flex-row">
+    <div ref={containerRef} className="overflow-x-auto no-scrollbar whitespace-nowrap flex flex-row ml-2 mr-3">
         
       {testimonials.map((testimonial, index) => ( 
         <button
           key={index}
           onClick={() => handleClick(index)}
-          className={` md:text-base uppercase py-2 px-3 lg:mr-4  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
+          className={` md:text-base uppercase py-2 px-3 lg:mr-4  mr-2  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
             activeTab === index ? "text-[#0C3D3D] bg-[#CDD2CF] hover:bg-[#46DE46] " : "bg-[#DAEBE8]  hover:text-black hover:bg-[#46DE46]"
           }`}
         >
@@ -96,21 +96,21 @@ const Careers = () => {
 
   return (
     <div className="text-white">
-      <div className="md:px-16 px-4 pt-20 mx-auto ">
+      <div className="md:px-16 px-4 lg:pt-20 pt-10 mx-auto ">
       <div className="mb-8 text-start ">
-        <p className="text-2xl font-semibold text-black px-1 uppercase ">Looking for a new role &</p>
-        <div className="w-[46%]">
-        <h2 className="text-3xl md:text-7xl text-black py-2 ">
+        <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">Looking for a new role &</p>
+        <div className="lg:w-[46%] w-[60%]">
+        <h2 className="lg:text-3xl text-5xl md:text-7xl text-black py-2 ">
         Ready to make an impact?
         </h2>
         </div>
         <div className="pt-14 border-black border-b pb-4">
           <div className="flex justify-between">
-          <div className="text-5xl text-black">
+          <div className="lg:text-5xl text-3xl  text-black">
             Open Positions
           </div>
           <div className="">
-          <div className="flex text-black text-base space-x-4 mt-8">
+          <div className="hidden lg:block flex text-black text-base space-x-4 mt-8">
             <a  href="" target="_blank">LinkedIn &#8599;</a>
             <a href="" target="_blank">Glassdoor &#8599;</a>
           </div>
@@ -120,18 +120,18 @@ const Careers = () => {
       </div>
       </div>
 
-      <div className="w-full md:px-16">
+      <div className="w-full md:px-16 ">
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
-      <div className="mt-0 md:px-16">
+      <div className="mt-0 md:px-16 px-2">
         {testimonials[activeTab].component}
       </div>
 
-      <div className="py-10 md:px-16">
-        <div className="flex justify-between">
-          <div className="md:w-[40%]">
-            <div className="text-black text-7xl ">
+      <div className="py-10  md:px-16">
+        <div className="flex flex-col md:flex-row justify-between px-4">
+          <div className="md:w-[40%] lg:py-0 pb-14">
+            <div className="text-black lg:text-7xl text-5xl">
               How do we work with your application?
             </div>
           </div>
@@ -144,8 +144,8 @@ const Careers = () => {
         </div>
       </div>
       
-      <div className="relative py-10 ">
-        <div className="relative lg:h-[530px]">
+      {/* <div className="relative py-10 ">
+        <div className="relative lg:h-auto">
           <img
             src="/careers/careers-1.png"
             className="w-full h-full object-cover"
@@ -164,7 +164,59 @@ const Careers = () => {
             </a>
           </div>
         </div>
+      </div> */}
+      <div>
+        {/* desktop view */}
+        <div className="">
+          <div className="hidden lg:block relative py-10 ">
+            <div className="relative lg:h-auto">
+              <img
+                src="/careers/careers-1.png"
+                className="w-full h-full object-cover"
+                alt="Careers"
+              />
+              <div className="absolute top-1/4 left-12 lg:w-[35%] lg:h-[50%] space-y-10 md:px-4">
+                <div className="text-white text-4xl lg:text-6xl ">
+                  Your trusted source for digital insights
+                </div>
+
+                <a
+                  href=""
+                  className="inline-block border border-white text-white text-lg mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white"
+                >
+                  About Us
+                </a>
+            </div>
+          </div>
+        </div>
+
+        {/* mobile view */}
+        <div className="">
+        <div className="block lg:hidden relative py-10 ">
+          <div className="relative lg:h-[530px]">
+            <img
+              src="/careers/Rectangle-image.png"
+              className="w-full h-full object-cover"
+              alt="Careers"
+            />
+            <div className="absolute top-0 left-0 w-[80%] space-y-6 pt-6 pl-6">
+              <div className="text-white text-4xl lg:text-6xl ">
+                Your trusted source for digital insights
+              </div>
+
+              <a
+                href=""
+                className="inline-block border border-white text-white text-lg px-6 py-1 rounded-lg hover:text-black hover:bg-white"
+              >
+                About Us
+              </a>
+            </div>
+          </div>
       </div>
+      </div>
+        </div>
+      </div>
+      
 
      <div className="md:px-16 md:py-8 text-black">
       <div className="flex justify-between items-start gap-8">
