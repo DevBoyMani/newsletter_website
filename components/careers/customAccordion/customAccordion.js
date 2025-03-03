@@ -67,7 +67,7 @@ export default function CustomAccordion() {
       </div>
 
       {/* Mobile View */}
-      <div className="block lg:hidden w-full space-y-2 relative w-[85%] ml-6">
+      <div className="block lg:hidden space-y-2 relative w-[80%] ml-8">
       <motion.div
           key={openItemMobile}
           initial={{ x: direction === "next" ? "100%" : "-100%", opacity: 0 }}
@@ -80,7 +80,7 @@ export default function CustomAccordion() {
           openItemMobile === item.id ? (
             <div
               key={item.id}
-              className={`rounded-lg transition ${openItemMobile === item.id ? "bg-white shadow-lg" : "bg-[#DAEBE8] shadow-xl"} mb-6`}
+              className={`rounded-lg transition  ${openItemMobile === item.id ? "bg-white shadow-lg" : "bg-[#DAEBE8] shadow-xl"} mb-6`}
             >
               <div className=" px-4 py-3 rounded-lg text-lg font-medium transition">
                 <div>

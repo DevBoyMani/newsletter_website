@@ -136,7 +136,7 @@ const Careers = () => {
             </div>
           </div>
 
-          <div className="md:w-[44%]">
+          <div className="md:w-[44%] ">
             <div className="text-black">
             <CustomAccordion/>
             </div>
