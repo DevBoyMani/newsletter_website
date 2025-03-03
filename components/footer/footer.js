@@ -123,23 +123,23 @@ export default function Footer(){
         {/*  mobile footer */}
         <div className="block lg:hidden bg-[#01261E]">
         <div className="md:px-14 py-12 ">
-                    <div className="">
-                        <div className="pt-2 pb-6">
+                    <div className="px-4 pb-10">
+                        <div className="">
                             <Link href="/">
                                 <div className="w-32 md:w-48">
                                 <img src="/light-logo.png" alt="Logo" />
                                 </div>
                             </Link>
                         </div>
-                        <div className="text-sm py-1 space-y-2">
+                        {/* <div className="text-sm py-1 space-y-2">
                             <p>The place where newsletters live</p>
                             <p>Your trusted messenger</p>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* right */}
-                    <div className="mr-10">
-                        <div className="grid grid-cols-2  gap-0">
+                    <div className=" px-6">
+                        <div className="flex justify-between">
                             
                                 <div className="">
                                     <ul className="flex flex-col">
@@ -166,7 +166,7 @@ export default function Footer(){
                            
                             
                                 <div className="">
-                                    <ul className="flex flex-col ml-4">
+                                    <ul className="flex flex-col mr-6">
                                     <li className="text-xl font-semibold pb-4">
                                         More
                                     </li>
@@ -188,9 +188,10 @@ export default function Footer(){
                                     
                                 </div>
                          
-                            
-                                <div className="">
-                                    <ul className="flex flex-col ml-10">
+                            </div>
+
+                            <div className="pt-8 ">
+                                    <ul className="flex flex-col ">
                                     <li className="text-xl font-semibold pb-4">Contact Us</li>
 
                                     <li href="#" className="py-1 text-sm">
@@ -204,13 +205,11 @@ export default function Footer(){
                                     </li>
                                     </ul>    
                                 </div>
-                           
-                        </div>
                     </div>
 
                     {/* social icons */}
                     <div>
-                        <div className="py-8">
+                        <div className="pt-14 px-4 flex justify-center">
                                 <div className="flex space-x-4">
                                     {socialIcons.map((icons, index) => (
                                         <a key={index} href={icons.url} target="_blank">
@@ -225,7 +224,11 @@ export default function Footer(){
                                 </div>
                         </div>
                     </div>
-                    <div className="text-sm text-center text-[#ffffff] py-8">
+
+                    {/* divider */}
+                    <div className="border-b px-4 py-2 mx-6"></div>
+
+                    <div className="text-xs text-center text-[#95A1BB] py-4">
                         <p>© 2024 Sagravia | All Rights Reserved</p>
                     </div>
             </div>

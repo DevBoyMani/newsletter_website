@@ -26,7 +26,7 @@ export default function Navbar() {
   return (
     <nav className="pt-16">
       {/* Desktop View */}
-      <header className="bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block">
+      <header className="hidden lg:block bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block">
         <div className="flex h-14 items-center justify-between px-8">
           <Link href="/">
             <div className="w-32 md:w-48">
@@ -64,8 +64,10 @@ export default function Navbar() {
           </div>
         </div>
       </header>
+
+
       {/* Mobile View */}
-      <header className={`bg-white fixed top-0 left-0 w-full border-b border-nl_button_border z-50 shadow-lg md:hidden transition-all duration-300 h-16`}>
+      <header className={`block lg:hidden bg-white fixed top-0 left-0 w-full border-b border-nl_button_border z-50 shadow-lg md:hidden transition-all duration-300 h-16`}>
         
         
         <div className="flex items-center justify-between px-4 py-3">
@@ -76,7 +78,8 @@ export default function Navbar() {
           </Link>
 
           <div className="flex space-x-1">
-          <div className="sm:text-lg flex items-center ml-8">
+
+          {/* <div className="sm:text-lg flex items-center ml-8">
               {contactSales.map((contact) => (
                 <Link
                   key={contact.key}
@@ -86,9 +89,9 @@ export default function Navbar() {
                   <span className="block">Contact</span>
                 </Link>
               ))}
-            </div>
+            </div> */}
 
-            <button
+            {/* <button
             onClick={() => setIsOpen(!isOpen)}
             className=" text-black tracking-normal"
           >
@@ -97,22 +100,6 @@ export default function Navbar() {
                 </div> : <div className="sm:text-xl flex items-center px-2 py-2 text-lg ">
                     <h4 className="black">MENU</h4>
                 </div>}
-          </button>
-
-          {/* <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-black transform transition-transform duration-300 ease-out"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button> */}
-
-          {/* <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-black transform transition-transform duration-500 ease-in-out"
-          >
-            <div className={`transform transition-transform duration-500 ease-in-out ${isOpen ? "scale-95" : "scale-100"}`}>
-              {isOpen ? <X size={24} /> : <Menu size={24} />}
-            </div>
           </button> */}
 
         <button
@@ -136,11 +123,11 @@ export default function Navbar() {
             ></span>
 
             {/* Bottom Line */}
-            <span
+            {/* <span
               className={`absolute bottom-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
                 isOpen ? "opacity-0" : "bottom-0 opacity-100"
               }`}
-            ></span>
+            ></span> */}
 
             {/* "X" Lines */}
             <span

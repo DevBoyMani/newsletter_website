@@ -94,6 +94,58 @@ const Careers = () => {
     },
   ];
 
+  const whatWeDo = [
+    {
+      
+      icon:"/careers/verified.png",
+      subHeading:"Environment",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+    {
+      
+      icon:"/careers/verified.png",
+      subHeading:"Work-life balance",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+    {
+      
+      icon:"/careers/verified.png",
+      subHeading:"Growth",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+    {
+      
+      icon:"/careers/verified.png",
+      subHeading:"Trust our team",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+  ]
+  const whatWeDoNotDo = [
+    {
+    
+      icon:"/careers/un-verified.png",
+      subHeading:"Environment",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+    {
+    
+      icon:"/careers/un-verified.png",
+      subHeading:"Work-life balance",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+    {
+    
+      icon:"/careers/un-verified.png",
+      subHeading:"Growth",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+    {
+    
+      icon:"/careers/un-verified.png",
+      subHeading:"Trust our team",
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+    },
+  ]
   return (
     <div className="text-white">
       <div className="md:px-16 px-4 lg:pt-20 pt-10 mx-auto ">
@@ -144,27 +196,6 @@ const Careers = () => {
         </div>
       </div>
       
-      {/* <div className="relative py-10 ">
-        <div className="relative lg:h-auto">
-          <img
-            src="/careers/careers-1.png"
-            className="w-full h-full object-cover"
-            alt="Careers"
-          />
-          <div className="absolute top-1/4 left-12 lg:w-[35%] lg:h-[50%] space-y-10 md:px-4">
-            <div className="text-white text-4xl lg:text-6xl ">
-              Your trusted source for digital insights
-            </div>
-
-            <a
-              href=""
-              className="inline-block border border-white text-white text-lg mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white"
-            >
-              About Us
-            </a>
-          </div>
-        </div>
-      </div> */}
       <div>
         {/* desktop view */}
         <div className="">
@@ -218,7 +249,10 @@ const Careers = () => {
       </div>
       
 
-     <div className="md:px-16 md:py-8 text-black">
+     <div>
+      {/* desktop view */}
+      <div>
+      <div className="hidden lg:block md:px-16 md:py-8 text-black">
       <div className="flex justify-between items-start gap-8">
         <div className="w-1/2 space-y-4">
           <h2 className="text-5xl pb-2">What we do</h2>
@@ -264,8 +298,49 @@ const Careers = () => {
         </div>
       </div>
      </div>
+      </div>
 
-    <div className="md:px-16 md:pt-8 md:pb-12">
+      {/* mobile view */}
+      <div className="block lg:hidden px-4 flex flex-col space-y-14">
+          {/* what we do */}
+        <div>
+          <div className="bg-[#DAEBE8] rounded-lg py-6">
+            <h4 className="text-3xl text-black text-center py-6">What we do</h4>
+            <div>
+              <div className="grid grid-cols-2 ">
+              {whatWeDo.map((item, index) => (
+                  <div key={index} className="grid grid-col-2 text-black text-center gap-2 py-4 px-3 rounded-lg">
+                    <img src={item.icon} alt="do" className="w-9 h-9 mx-auto" />
+                    <span className="text-lg">{item.subHeading}</span>
+                    <span className="text-sm leading-7">{item.content}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* what we do not dp */}
+        <div>
+          <div className="bg-[#DAEBE8] rounded-lg py-6">
+            <h4 className="text-3xl text-black text-center py-6">What we don't do</h4>
+            <div>
+              <div className="grid grid-cols-2 ">
+              {whatWeDoNotDo.map((item, index) => (
+                  <div key={index} className="grid grid-col-2 text-black text-center gap-2 py-4 px-3 rounded-lg">
+                    <img src={item.icon} alt="do" className="w-9 h-9 mx-auto" />
+                    <span className="text-lg">{item.subHeading}</span>
+                    <span className="text-sm leading-7">{item.content}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     </div>
+
+    <div className="md:px-16 px-4  py-10 md:pt-8 md:pb-12">
       <div className="border-b border-black">
         <div className="text-5xl text-black py-4">What our people have to say</div>
       </div>
@@ -274,9 +349,9 @@ const Careers = () => {
         <div>
         <div className="flex justify-between py-6">
       {/* Left Side (Small Images & Content) */}
-      <div className="w-[60%]">
+      <div className="lg:w-[60%]">
         {/* Small Images */}
-        <div className="flex flex-row space-x-4 md:py-8">
+        <div className="flex flex-row space-x-4 md:py-8 sm:px-4 py-6">
           {images.map((image) => (
             <button
               key={image.id}
@@ -289,26 +364,26 @@ const Careers = () => {
               <img
                 src={image.smallSrc}
                 alt={`image-${image.id}`}
-                className="w-8 h-8"
+                className="w-12 h-12"
               />
             </button>
           ))}
         </div>
 
         {/* Dynamic Text Content */}
-        <div className="text-lg py-6 ">
+        <div className="text-lg lg:py-6">
           <p className="text-black">{selectedImage.text}</p>
         </div>
 
         {/* Name & Role */}
-        <div className="text-black relative top-16">
+        <div className="text-black relative top-6 lg:top-16 py-4">
           <p className="text-lg">{selectedImage.name}</p>
           <p className="text-sm">{selectedImage.role}</p>
         </div>
       </div>
 
       {/* Right Side (Large Image) */}
-      <div className="w-[30%] md:py-8">
+      <div className="hidden lg:block w-[30%] md:py-8">
         <div>
           <img src={selectedImage.fullSrc} alt="selected" className="w-300" />
         </div>
