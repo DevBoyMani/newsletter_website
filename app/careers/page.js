@@ -27,7 +27,7 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   };
 
   return (
-    <div ref={containerRef} className="overflow-x-auto no-scrollbar whitespace-nowrap flex flex-row ml-2 mr-3">
+    <div ref={containerRef} className="overflow-x-auto no-scrollbar whitespace-nowrap flex flex-row mr-2 ml-1">
         
       {testimonials.map((testimonial, index) => ( 
         <button
@@ -152,7 +152,7 @@ const Careers = () => {
       <div className="mb-8 text-start ">
         <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">Looking for a new role &</p>
         <div className="lg:w-[46%] w-[60%]">
-        <h2 className="lg:text-3xl text-5xl md:text-7xl text-black py-2 ">
+        <h2 className="text-5xl lg:text-7xl text-black py-2 ">
         Ready to make an impact?
         </h2>
         </div>
@@ -172,11 +172,11 @@ const Careers = () => {
       </div>
       </div>
 
-      <div className="w-full md:px-16 ">
+      <div className="w-full md:px-16 px-3">
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
-      <div className="mt-0 md:px-16 px-2">
+      <div className="mt-0 md:px-16 px-4">
         {testimonials[activeTab].component}
       </div>
 
@@ -301,10 +301,10 @@ const Careers = () => {
       </div>
 
       {/* mobile view */}
-      <div className="block lg:hidden px-4 flex flex-col space-y-14">
+      <div className="block lg:hidden flex flex-col space-y-14">
           {/* what we do */}
-        <div>
-          <div className="bg-[#DAEBE8] rounded-lg py-6">
+        <div className="px-4">
+          <div className="bg-[#DAEBE8] rounded-lg py-6 ">
             <h4 className="text-3xl text-black text-center py-6">What we do</h4>
             <div>
               <div className="grid grid-cols-2 ">
@@ -321,7 +321,7 @@ const Careers = () => {
         </div>
 
         {/* what we do not dp */}
-        <div>
+        <div className="px-4">
           <div className="bg-[#DAEBE8] rounded-lg py-6">
             <h4 className="text-3xl text-black text-center py-6">What we don't do</h4>
             <div>
