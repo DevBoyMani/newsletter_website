@@ -13,12 +13,12 @@ export default function ViewAll() {
     };
 
     const images = [
-        { name: "Design", title: "Graphic Designer", experience: "Senior", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#E19F20" },
+        { name: "Design", title: "Graphic Designer", experience: "Senior", content: "You'll play a key role in scaling our platform as we strive to lead the branded payments industry. ", button: "Apply", theme: "#E19F20" },
         { name: "UX/UI", title: "UX Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences...", button: "Apply", theme: "#582719" },
-        { name: "Web Dev", title: "Full-Stack Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#092236" },
+        { name: "Web Dev", title: "Full-Stack", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#092236" },
         { name: "Design", title: "Graphic Designer", experience: "Senior", content: "Simply dummy text of the printing and typesetting industry...", button: "Apply", theme: "#1A1A1A" },
         { name: "UX/UI", title: "UX Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#394E65" },
-        { name: "Web Dev", title: "Backend Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#657C75" },
+        { name: "Web Dev", title: "Backend", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#657C75" },
         { name: "Software Engineer", title: "Programmer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#01261E" }
     ];
 
@@ -34,25 +34,44 @@ export default function ViewAll() {
 
     return (
         <div className="text-white py-10 lg:py-8 mx-auto relative">
-            <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 lg:gap-4 gap-4 px-4">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 2xl:grid-cols-6 lg:gap-4 space-x-1 gap-4 ">
                 {images.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="relative w-full h-[280px] md:h-[306px] lg:h-[316px] text-white p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
+                        className="relative w-[164px] h-[230px] lg:w-[225px] lg:h-[316px] text-white lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
                         //  className="relative w-full sm:w-[225px] lg:w-[225px] h-[280px] md:h-[306px] lg:h-[316px] text-white p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
                         style={{ backgroundColor: item.theme }}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                     >
-                        <h2 className="text-sm px-4 mt-2">{item.name}</h2>
+                        <h2 className="text-xs px-2 py-2 lg:px-4 lg:mt-2">{item.name}</h2>
+
+                        <div className="block lg:hidden px-2">
+                            <div className="absolute top-8">
+                                <h3 className="text-sm font-semibold ">{item.title}</h3>
+                                <p className="text-xs text-gray-300 ">{item.experience}</p>
+                            </div>
+                            <p className="px-2 pt-2 font-medium text-[9px]">{item.content}</p>
+                            <div className="px-2 pb-4">
+                                        <button
+                                            onClick={() => handleImageClick(index)}
+                                            className="relative w-full bg-white/25 text-white py-1 mt-3 rounded-lg"
+                                        >
+                                            {item.button}
+                                        </button>
+                                    </div>
+                        </div>
                         <motion.div
-                            className="absolute left-1/2 -translate-x-1/2 w-full px-4"
+                            className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-full px-4"
                             animate={{ bottom: hoveredIndex === index ? "2rem" : "1rem" }}
                             initial={{ bottom: "1rem" }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
                         >
-                            <h3 className="text-lg font-semibold px-4">{item.title}</h3>
-                            <p className="text-sm text-gray-300 px-4">{item.experience}</p>
+                            <div className="lg:pb-2">
+                                <h3 className="text-lg font-semibold lg:px-4">{item.title}</h3>
+                                <p className="text-sm text-gray-300 lg:px-4">{item.experience}</p>
+                            </div>
+                            
                             {hoveredIndex === index && (
                                 <motion.div 
                                     className="mt-4 text-sm text-white"
@@ -118,7 +137,7 @@ export default function ViewAll() {
                             )}
 
                             {activeSection === "job" && (
-                                <motion.div className="p-4 " initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
+                                <motion.div className="py-2 " initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
                                     <div className="text-black">
                                     <h4 className="text-xl font-semibold ">Automated Email Nurturing Campaign</h4>
                                     <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
