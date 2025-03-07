@@ -34,7 +34,7 @@ export default function ViewAll() {
 
     return (
         <div className="text-white py-10 lg:py-8 mx-auto relative">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 2xl:grid-cols-6 lg:gap-4 space-x-1 gap-4 ">
+            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 2xl:grid-cols-6 lg:gap-4 gap-3 ">
                 {images.map((item, index) => (
                     <motion.div
                         key={index}
