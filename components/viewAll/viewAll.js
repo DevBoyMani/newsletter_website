@@ -48,7 +48,7 @@ export default function ViewAll() {
                     >
                         <h2 className="text-sm lg:px-4 px-2 mt-2">{item.name}</h2>
                          {/* Mobile Content */}
-                        <div className="block lg:hidden px-2 flex-grow min-h-[164px]">
+                        <div className="block lg:hidden px-2 flex-grow min-h-[160px] max-h-[230px]">
                             <div className="mt-3">
                             <h3 className="text-sm font-semibold">{item.title}</h3>
                             <p className="text-xs text-gray-300">{item.experience}</p>
