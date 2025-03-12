@@ -82,14 +82,14 @@ export default function Advertise() {
 
 
     {/* mobile view */}
-    <div className="w-sm lg:hidden block min-h-screen">
-      <div className="h-[40%] ">
+    <div className="w-sm lg:hidden block max-h-screen">
+      <div className="max-h-[40vh] ">
       {openSection === "about" && (
-          <div>
+          <div className="h-[100%]">
             <img
               src="/analytics-home-image-mobile.png"
               alt="Analytics Home"
-              className="w-full h-full object-cover"
+              className=""
             />
           </div>
       )}
@@ -100,11 +100,11 @@ export default function Advertise() {
       )}
       </div>
 
-      <div className="max-h-[60%] overflow-y-auto">
+      <div className="max-h-[60vh] overflow-y-auto">
           <div className="w-sm max-w-2xl z-10 px-4 pb-4 w-full ">
             {/* Navigation Links */}
         
-              <div className="bg-white w-full pb-4 flex fixed justify-center ">
+              <div className="bg-white w-full pb-4 flex justify-center ">
                 <div className="flex space-x-6 py-2 border-black border-b mr-10">
                   <a className="cursor-pointer font-semibold" onClick={() => toggleSection("about")}>
                     About
