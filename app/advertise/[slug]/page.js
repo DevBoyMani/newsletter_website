@@ -57,7 +57,7 @@ export default function Advertise() {
   return (
    <>
      {/* desktop view */}
-    <div className="hidden md:flex">
+    <div className="hidden lg:block md:flex">
       {/* Left Section */}
       <div className="w-[36%] bg-white fixed h-screen">
         <div className="md:px-6">
@@ -162,21 +162,7 @@ export default function Advertise() {
 
    
      {/* Mobile View */}
-     <div className="block md:hidden">
-     <div className="bg-[#01261E] p-4">
-       {/* Mobile Navigation */}
-       <div className="flex flex-wrap gap-2 justify-center">
-         {rightSectionNav.map(({ name, id }) => (
-           <a
-             key={id}
-             className="text-xs text-white border border-white px-3 py-2 rounded-full cursor-pointer hover:bg-white hover:text-black"
-             onClick={() => handleScrollToSection(id)}
-           >
-             {name}
-           </a>
-         ))}
-       </div>
-     </div>
+     <div className="block lg:hidden w-sm bg-[#01261E]">
 
      {/* Mobile Content */}
      <div className="p-4">
@@ -187,13 +173,10 @@ export default function Advertise() {
        ))}
      </div>
 
-     {/* Mobile Footer */}
-     <div className="text-center py-4">
-       <a className="text-sm bg-white text-black px-4 py-2 rounded-full shadow-lg" href="https://www.sagravia.com/" target="_blank">
-         Visit Website
-       </a>
-     </div>
-   </div></>
+     
+   </div>
+   
+   </>
 
   );
 }
