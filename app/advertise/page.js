@@ -2,7 +2,10 @@
 
 import { useState } from "react";
 import AdvertiseSidebarHomepage from "../../components/advertiseSidebarHomepage/advertiseSidebarHomepage";
+import AdvertiseSidebar from "../../components/advertiseSidebar/advertiseSidebar";
 import { motion } from "framer-motion";
+// import { MobileChart} from "../../components/advertiseComponents/mobileChart/mobileChart";
+import { Component } from "../../components/areaChart/areaChart";
 
 export default function Advertise() {
   const [openSection, setOpenSection] = useState("about");
@@ -79,8 +82,8 @@ export default function Advertise() {
 
 
     {/* mobile view */}
-    <div className="w-sm lg:hidden block max-h-screen">
-      <div className="max-h-[40%] min-h-[40%] overflow-y-auto">
+    <div className="w-sm lg:hidden block min-h-screen">
+      <div className="h-[40%] ">
       {openSection === "about" && (
           <div>
             <img
@@ -90,13 +93,19 @@ export default function Advertise() {
             />
           </div>
       )}
+      {openSection === "newsletters" && (
+        <div className="overflow-y-auto">
+          <Component/>
+        </div>
+      )}
       </div>
-      <div className=" max-h-[60%] min-h-[60%] overflow-y-auto">
-          <div className=" w-sm z-10 px-4 pb-4 w-full flex flex-col items-start space-y-4 h-80">
+
+      <div className="max-h-[60%] overflow-y-auto">
+          <div className="w-sm max-w-2xl z-10 px-4 pb-4 w-full ">
             {/* Navigation Links */}
-            <div className="bg-white flex fixed w-full justify-start pb-4 ">
-              <div className="px-4">
-                <div className="flex flex-row space-x-6 py-2 border-black border-b ">
+        
+              <div className="bg-white w-full pb-4 flex fixed justify-center ">
+                <div className="flex space-x-6 py-2 border-black border-b mr-10">
                   <a className="cursor-pointer font-semibold" onClick={() => toggleSection("about")}>
                     About
                   </a>
@@ -110,7 +119,7 @@ export default function Advertise() {
                   </a>
                 </div>
               </div>
-            </div>
+          
 
             {/* Content Sections */}
             <div className="px-4">
@@ -136,13 +145,13 @@ export default function Advertise() {
               {/* Newsletters Section */}
               {openSection === "newsletters" && (
                 <>
-                <div className="fixed mt-8 bg-white">
+                <div className="fixed mt-8 ">
                   <h4 className="font-medium text-2xl">
                   Welcome to the News letters
                   </h4>
                 </div>
-                <div>
-                  <AdvertiseSidebarHomepage />
+                <div className="pt-24 ">
+                  <AdvertiseSidebar/>
                 </div>
                 </>
               )}
@@ -155,7 +164,7 @@ export default function Advertise() {
                   Contact us
                   </h4>
                 </div>
-                <div>
+                <div lassName="pt-24 ">
                   <p className="text-sm text-gray-700">Contact us...</p>
                 </div>
                 </>
