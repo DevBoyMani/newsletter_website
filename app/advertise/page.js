@@ -203,7 +203,59 @@ export default function Advertise() {
                 </>
               )}
 
-              {/* Newsletters Section */}
+              {openSection === "newsletters" && (
+                <>
+                  <div className="mt-8 fixed bg-white">
+                    <h4 className="font-medium text-2xl">
+                      Building innovative digital solutions
+                    </h4>
+                  </div>
+                  <div className="pt-24">
+                    <p className="py-2">
+                      Creativity has been an integral part of my life. Since
+                      2010 I've started working in design industry. Having
+                      worked in graphic, product, ux, ui, motion and website
+                      design I have acquired a good understanding of creation
+                      processes in different fields.
+                    </p>
+                    <p className="py-2">
+                      Within close cooperation with developers I have good
+                      understanding of different tech stacks. This helps me in
+                      the design process, where I can drive my imagination with
+                      tech possibilities and goals.
+                    </p>
+                    <p className="py-2">
+                      As a dedicated and organised individual, I have an active
+                      and dynamic approach to achieving the best results in my
+                      work. I have a strong knowledge in design and digital
+                      product. I am driven by the idea to show product in a
+                      simple, however unique and always rationale way.
+                    </p>
+                    <p className="py-2">
+                      Creativity has been an integral part of my life. Since
+                      2010 I've started working in design industry. Having
+                      worked in graphic, product, ux, ui, motion and website
+                      design I have acquired a good understanding of creation
+                      processes in different fields.
+                    </p>
+                    <p className="py-2">
+                      Within close cooperation with developers I have good
+                      understanding of different tech stacks. This helps me in
+                      the design process, where I can drive my imagination with
+                      tech possibilities and goals.
+                    </p>
+                    <p className="py-2">
+                      As a dedicated and organised individual, I have an active
+                      and dynamic approach to achieving the best results in my
+                      work. I have a strong knowledge in design and digital
+                      product. I am driven by the idea to show product in a
+                      simple, however unique and always rationale way.
+                    </p>
+                  </div>
+                </>
+              )}
+
+              {/* Newsletters Section
               {openSection === "newsletters" && (
                 <>
                   <div className="fixed mt-8 ">
@@ -215,7 +267,7 @@ export default function Advertise() {
                     <AdvertiseSidebar />
                   </div>
                 </>
-              )}
+              )} */}
 
               {/* Contact Us Section */}
               {openSection === "contact" && (
