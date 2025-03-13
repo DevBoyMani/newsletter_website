@@ -27,20 +27,39 @@ const components = {
 export default function AdvertiseSlug() {
   const params = useParams();
   const [selectedSlug, setSelectedSlug] = useState("");
+  
   // const [openSection, setOpenSection] = useState("");
   
   const rightSectionNav = [
-    { name: "Active Users", id: "chart1" },
-    { name: "Country", id: "chart2" },
-    { name: "Age", id: "chart3" },
-    { name: "Subscriber Growth", id: "chart4" },
-    { name: "Total Visits", id: "chart5" }
+    { name: "Active Users", id: "chart1",reachedTop:"false" },
+    { name: "Country", id: "chart2",reachedTop:"false" },
+    { name: "Age", id: "chart3",reachedTop:"false" },
+    { name: "Subscriber Growth", id: "chart4",reachedTop:"false" },
+    { name: "Total Visits", id: "chart5",reachedTop:"false" }
   ];
 
-
+const [activeChart, setActiveChart] = useState(1);
+  const totalCharts = rightSectionNav.length; 
   // const toggleSection = (section) => {
   //   setOpenSection(section);
   // };
+
+
+  const handleScroll = () => {
+    let currentChart = 1;
+    rightSectionNav.forEach(({ id }, index) => {
+      const section = document.getElementById(id);
+      if (section) {
+        const rect = section.getBoundingClientRect();
+        // Check if the section is at least halfway into view
+        if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
+          currentChart = index + 1; // Convert 0-based index to 1-based index
+        }
+      }
+    });
+
+    setActiveChart(currentChart);
+  };
 
 
   useEffect(() => {
@@ -172,33 +191,31 @@ export default function AdvertiseSlug() {
    
      {/* Mobile View */}
      <div className="block lg:hidden w-sm ">
-  
-     
-      <div className="bg-[#01261E] max-h-[40vh] overflow-y-auto relative z-10">
+
+      <div className="bg-[#01261E] max-h-[50vh] overflow-y-auto relative z-10" onScroll={handleScroll}>
+          {/* Header with Numerical Indicator */}
+          <div className="bg-[#01261E] fixed top-0 w-full pt-6 pb-3 px-4 z-50 text-white">
+            <div className="flex justify-between items-center">
+              <h4 className="text-sm text-gray-300">Total Visits</h4>
+              <div className="text-xs font-semibold bg-[#FAFAFA] text-[#01261E] py-2 px-2 rounded-full">{activeChart}/{totalCharts}</div>
+            </div>
+          </div>
+
         <div className=" flex flex-col">
             <div className="mx-4">
               <div className=" mt-24">
-                  <div className=" my-10" id="chart1">
+                  {rightSectionNav.map(el => {
+                    return <div className=" my-10" id={el.id}>
                     <SelectedComponent />
                   </div>
-                  <div className=" my-10" id="chart2">
-                    <SelectedComponent />
-                  </div>
-                  <div className=" my-10" id="chart3">
-                    <SelectedComponent />
-                  </div>
-                  <div className=" my-10" id="chart4">
-                    <SelectedComponent />
-                  </div>
-                  <div className=" my-10" id="chart5">
-                    <SelectedComponent />
-                  </div>
+                  
+                  })}
               </div>
             </div>
         </div>
       </div>
 
-      <div className="max-h-[60vh] overflow-y-auto">
+      <div className="max-h-[50vh] overflow-y-auto">
         <div className="max-w-2xl w-full ">
           {/* Navigation Links */}
           <div className="w-full px-4 py-2 fixed bg-white  z-50">
@@ -216,12 +233,13 @@ export default function AdvertiseSlug() {
                   </Link>
 
                   <a className="py-2">.</a>
-                  <a
+                  <Link
                     className="cursor-pointer font-semibold py-2 px-2" 
-                    onClick={() => toggleSection("contact")}
+                    // onClick={() => toggleSection("contact")}
+                    href="/contact"
                   >
                     Contact
-                  </a>
+                  </Link>
                 </div>
               </div>
 

@@ -103,7 +103,7 @@ export default function Advertise() {
 
       {/* mobile view */}
       <div className="w-sm lg:hidden block max-h-screen">
-        <div className="max-h-[40vh] overflow-hidden">
+        <div className="max-h-[50vh] overflow-hidden">
           {openSection === "about" && (
             <div className="h-[100%]">
               <img
@@ -115,7 +115,7 @@ export default function Advertise() {
           )}
         </div>
 
-        <div className="max-h-[60vh] overflow-y-auto">
+        <div className="max-h-[50vh] overflow-y-auto">
           <div className="max-w-2xl px-4 pb-4 w-full ">
 
 
