@@ -39,9 +39,13 @@ const chartConfig = {
 
 export function Component() {
   const [flipped, setFlipped] = useState(false);
+  const [showBack, setShowBack] = useState(false);
 
   return (
-    <div className="relative w-[730px] h-[467px] perspective-1000 ">
+
+    <>
+    {/* desktop view */}
+    <div className="hidden lg:block relative w-[730px] h-[467px] perspective-1000 ">
       <div
         className="relative w-full h-full transition-transform duration-500"
         style={{
@@ -128,5 +132,98 @@ export function Component() {
         </Card>
       </div>
     </div>
+
+    {/* mobile view */}
+    <div className="block lg:hidden relative w-full h-auto">
+      {!showBack ? (
+        // 👉 FRONT SIDE
+        <Card className="w-full h-full rounded-[20px] bg-white flex flex-col justify-between shadow-lg">
+          <CardHeader className="px-4 pt-4 pb-2 relative">
+            {/* Toggle Button */}
+            <button
+              onClick={() => setShowBack(true)}
+              className="absolute top-2 right-4 p-2 rounded-full bg-[#D2DCF4]"
+            >
+              <Plus className="w-3 h-3" />
+            </button>
+            <div className="text-[9px] text-[#9291A5] pt-2">
+              <p>Sales 2024</p>
+            </div>
+            <div className="flex justify-between items-center">
+              <div className="flex space-x-2">
+                <h2 className="text-[13px] font-bold">$12.7k</h2>
+                <p className="text-[4px] flex items-center">
+                  <span className="bg-[#46DE46] text-white rounded-full px-1">&#8599;</span>
+                  <span className="ml-1 text-[#46DE46] font-bold">1.3%</span>
+                  <span className="ml-1 text-[4px] text-gray-400 tracking-widest">VS LAST YEAR</span>
+                </p>
+              </div>
+              <div>
+                <div className="flex space-x-1">
+                  <a className="text-[5px] bg-[#ffffffc0] px-2 py-1 rounded-full">Daily</a>
+                  <a className="text-[5px] bg-[#ffffffc0] px-2 py-1 rounded-full">Weekly</a>
+                  <a className="text-[5px] text-white bg-[#1E1B39] px-2 py-1 rounded-full">Annually</a>
+                </div>
+              </div>
+            </div>
+          </CardHeader>
+          <CardContent className="pb-4">
+            <ChartContainer className="" config={chartConfig}>
+              <AreaChart data={chartData} margin={{ left: 1, right: -20 }}>
+                <defs>
+                  <linearGradient id="fadeGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="hsl(221, 90%, 23%)" stopOpacity={0.8} />
+                    <stop offset="100%" stopColor="hsl(221, 90%, 23%)" stopOpacity={0.1} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid vertical={false} />
+                <XAxis
+                  dataKey="month"
+                  tickLine={false}
+                  axisLine={false}
+                  tickMargin={6}
+                  tickFormatter={(value) => value.slice(0, 3)}
+                />
+                <YAxis
+                  tickLine={false}
+                  axisLine={false}
+                  tickMargin={6}
+                  orientation="right"
+                  tickFormatter={(v) => `${v / 1000}k`}
+                />
+                <ChartTooltipContent indicator="dot" />
+                <Area
+                  dataKey="sales"
+                  type="basis"
+                  fill="url(#fadeGradient)"
+                  stroke="hsl(221, 90%, 23%)"
+                  strokeWidth={3}
+                />
+              </AreaChart>
+            </ChartContainer>
+          </CardContent>
+        </Card>
+      ) : (
+        //  BACK SIDE
+        <Card className="w-full h-full rounded-[20px] bg-[#D2DCF4] flex flex-col justify-center items-center shadow-lg p-4 relative">
+          {/* Close Button */}
+          <button
+            onClick={() => setShowBack(false)}
+            className="absolute top-4 right-4 p-2 rounded-full bg-white"
+          >
+            <X className="w-3 h-3" />
+          </button>
+
+          <h4 className="text-[41px] font-bold mb-2 mt-10">Line chart</h4>
+          <p className="text-gray-600 text-center text-sm px-4 max-w-[270px]">
+            Nullam egestas, lorem eget placerat sodales, risus nunc condimentum nisl, nec euismod lorem lacus sed mi.
+            Maecenas et quam semper, facilisis quam ac, pulvinar arcu. Aliquam feugiat lobortis ex vel finibus.
+          </p>
+        </Card>
+      )}
+    </div>
+    </>
+
+    
   );
 }

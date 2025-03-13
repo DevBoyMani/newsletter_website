@@ -1,10 +1,12 @@
 "use client";
 
+
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
 import AdvertiseSidebar from "../../../components/advertiseSidebar/advertiseSidebar";
 import { Component } from "../../../components/areaChart/areaChart";
+import Link from "next/link";
 
 const components = {
   "presidential-summary": () => <Component />,
@@ -22,9 +24,10 @@ const components = {
 
 };
 
-export default function Advertise() {
+export default function AdvertiseSlug() {
   const params = useParams();
   const [selectedSlug, setSelectedSlug] = useState("");
+  // const [openSection, setOpenSection] = useState("");
   
   const rightSectionNav = [
     { name: "Active Users", id: "chart1" },
@@ -33,6 +36,12 @@ export default function Advertise() {
     { name: "Subscriber Growth", id: "chart4" },
     { name: "Total Visits", id: "chart5" }
   ];
+
+
+  // const toggleSection = (section) => {
+  //   setOpenSection(section);
+  // };
+
 
   useEffect(() => {
     if (params?.slug) {
@@ -162,20 +171,68 @@ export default function Advertise() {
 
    
      {/* Mobile View */}
-     <div className="block lg:hidden w-sm bg-[#01261E]">
-
-     {/* Mobile Content */}
-     <div className="p-4">
-       {rightSectionNav.map(({ id }) => (
-         <div className="my-5" id={id} key={id}>
-           <SelectedComponent />
-         </div>
-       ))}
-     </div>
-
+     <div className="block lg:hidden w-sm ">
+  
      
+      <div className="bg-[#01261E] max-h-[40vh] overflow-y-auto relative z-10">
+        <div className=" flex flex-col">
+            <div className="mx-4">
+              <div className=" mt-24">
+                  <div className=" my-10" id="chart1">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart2">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart3">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart4">
+                    <SelectedComponent />
+                  </div>
+                  <div className=" my-10" id="chart5">
+                    <SelectedComponent />
+                  </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div className="max-h-[60vh] overflow-y-auto z-50">
+        <div className="max-w-2xl pb-4 w-full ">
+          {/* Navigation Links */}
+          <div className="px-4 fixed bg-white ">
+                <div className="flex space-x-8 py-2 px-2 border-black border-b">
+                  <a
+                    className="cursor-pointer font-semibold"
+                    // onClick={() => toggleSection("about")}
+                    href="/advertise"
+                  >
+                    About
+                  </a>
+                  <a>.</a>
+                  <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold">
+                    Newsletters
+                  </Link>
+
+                  <a>.</a>
+                  <a
+                    className="cursor-pointer font-semibold"
+                    onClick={() => toggleSection("contact")}
+                  >
+                    Contact
+                  </a>
+                </div>
+              </div>
+
+
+            {/* bottom section */}
+            <div className="pt-24">
+                    <AdvertiseSidebar activeSlug={selectedSlug} onSelect={setSelectedSlug} />
+            </div>
+        </div>
    </div>
-   
+    </div>
    </>
 
   );

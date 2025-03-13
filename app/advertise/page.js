@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import AdvertiseSidebarHomepage from "../../components/advertiseSidebarHomepage/advertiseSidebarHomepage";
 import AdvertiseSidebar from "../../components/advertiseSidebar/advertiseSidebar";
@@ -112,19 +113,17 @@ export default function Advertise() {
               />
             </div>
           )}
-          {openSection === "newsletters" && (
-            <div className="overflow-y-auto">
-              <Component />
-            </div>
-          )}
         </div>
 
         <div className="max-h-[60vh] overflow-y-auto">
-          <div className="w-sm max-w-2xl z-10 px-4 pb-4 w-full ">
+          <div className="max-w-2xl px-4 pb-4 w-full ">
+
+
             {/* Navigation Links */}
 
-            <div className="bg-white w-full pb-4 flex fixed justify-center ">
-              <div className="flex space-x-6 py-2 border-black border-b mr-10">
+            <div className="px-4 fixed bg-white ">
+              <div className="">
+              <div className="flex space-x-8 py-2 border-black border-b">
                 <a
                   className="cursor-pointer font-semibold"
                   onClick={() => toggleSection("about")}
@@ -132,12 +131,10 @@ export default function Advertise() {
                   About
                 </a>
                 <a>.</a>
-                <a
-                  className="cursor-pointer font-semibold"
-                  onClick={() => toggleSection("newsletters")}
-                >
+                <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold">
                   Newsletters
-                </a>
+                </Link>
+
                 <a>.</a>
                 <a
                   className="cursor-pointer font-semibold"
@@ -146,19 +143,47 @@ export default function Advertise() {
                   Contact
                 </a>
               </div>
+              <div>
+              <div className="bg-white pt-3 pb-1">
+                  <h4 className="font-medium text-2xl">
+                    Building innovative digital solutions
+                  </h4>
+                </div>
+              </div>
+              </div>
             </div>
+
+            {/* {openSection === "about" && (
+              
+
+            )}
+
+            {openSection === "newsletters" && (
+              <div className="mt-8 fixed bg-white">
+              <h4 className="font-medium text-2xl">
+                Building innovative Newsletters
+              </h4>
+            </div>
+
+            )}
+
+            {openSection === "contact" && (
+              <div className="mt-8 fixed bg-white">
+              <h4 className="font-medium text-2xl">
+                Contact us
+              </h4>
+            </div>
+
+            )} */}
+
 
             {/* Content Sections */}
             <div className="px-4">
               {/* About Section */}
               {openSection === "about" && (
                 <>
-                  <div className="mt-8 fixed bg-white">
-                    <h4 className="font-medium text-2xl">
-                      Building innovative digital solutions
-                    </h4>
-                  </div>
-                  <div className="pt-24">
+                
+                  <div className="pt-32">
                     <p className="py-2">
                       Creativity has been an integral part of my life. Since
                       2010 I've started working in design industry. Having
@@ -203,57 +228,6 @@ export default function Advertise() {
                 </>
               )}
 
-              {openSection === "newsletters" && (
-                <>
-                  <div className="mt-8 fixed bg-white">
-                    <h4 className="font-medium text-2xl">
-                      Building innovative digital solutions
-                    </h4>
-                  </div>
-                  <div className="pt-24">
-                    <p className="py-2">
-                      Creativity has been an integral part of my life. Since
-                      2010 I've started working in design industry. Having
-                      worked in graphic, product, ux, ui, motion and website
-                      design I have acquired a good understanding of creation
-                      processes in different fields.
-                    </p>
-                    <p className="py-2">
-                      Within close cooperation with developers I have good
-                      understanding of different tech stacks. This helps me in
-                      the design process, where I can drive my imagination with
-                      tech possibilities and goals.
-                    </p>
-                    <p className="py-2">
-                      As a dedicated and organised individual, I have an active
-                      and dynamic approach to achieving the best results in my
-                      work. I have a strong knowledge in design and digital
-                      product. I am driven by the idea to show product in a
-                      simple, however unique and always rationale way.
-                    </p>
-                    <p className="py-2">
-                      Creativity has been an integral part of my life. Since
-                      2010 I've started working in design industry. Having
-                      worked in graphic, product, ux, ui, motion and website
-                      design I have acquired a good understanding of creation
-                      processes in different fields.
-                    </p>
-                    <p className="py-2">
-                      Within close cooperation with developers I have good
-                      understanding of different tech stacks. This helps me in
-                      the design process, where I can drive my imagination with
-                      tech possibilities and goals.
-                    </p>
-                    <p className="py-2">
-                      As a dedicated and organised individual, I have an active
-                      and dynamic approach to achieving the best results in my
-                      work. I have a strong knowledge in design and digital
-                      product. I am driven by the idea to show product in a
-                      simple, however unique and always rationale way.
-                    </p>
-                  </div>
-                </>
-              )}
 
               {/* Newsletters Section
               {openSection === "newsletters" && (
@@ -272,9 +246,6 @@ export default function Advertise() {
               {/* Contact Us Section */}
               {openSection === "contact" && (
                 <>
-                  <div className="fixed mt-8 bg-white">
-                    <h4 className="font-medium text-2xl">Contact us</h4>
-                  </div>
                   <div lassName="pt-24 ">
                     <p className="text-sm text-gray-700">Contact us...</p>
                   </div>

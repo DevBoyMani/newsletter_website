@@ -20,7 +20,9 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
   const formatSlug = (str) => str.toLowerCase().replace(/\s+/g, "-");
 
   return (
-    <div className="flex justify-start">
+    <>
+    {/* desktop view */}
+    <div className="hidden lg:block flex justify-start">
       <div className="h-full py-4 space-y-2">
         {advertiseList.map(({ name, issue, when }) => {
           const slug = formatSlug(name);
@@ -50,6 +52,42 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
         })}
       </div>
     </div>
+
+
+{/* mobile view */}
+    <div className="block lg:hidden flex justify-start">
+      <div className="h-full py-4 space-y-2 px-4">
+        {advertiseList.map(({ name, issue, when }) => {
+          const slug = formatSlug(name);
+
+          return (
+            <div key={slug} className="relative flex items-center ">
+              <div
+                onClick={() => onSelect(slug)}
+                className={`flex justify-between items-center py-1 px-6 my-1  cursor-pointer w-full
+                  ${activeSlug === slug ? "bg-[#121212]/20 rounded-full " : "hover:bg-[#121212]/10 rounded-full "}
+                `}
+              >
+                <Link href={`/advertise/${slug}`} className="w-full mr-4">
+                  <span className="text-left text-base w-full">{name}</span>
+                </Link>
+                <div className="flex space-x-6 text-xs pl-6">
+                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1 font-medium">
+                    {when}
+                  </span>
+                  {activeSlug === slug && (
+                      <span className="bg-[#121212]/20 rounded-3xl px-2 py-1">
+                        &#8599;
+                      </span>
+                    )}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+    </>
   );
 };
 
