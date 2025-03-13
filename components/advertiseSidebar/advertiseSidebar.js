@@ -15,6 +15,16 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
     { name: "Organic Search", issue: "Geopoliticals", when: "2024" },
     { name: "Social Media", issue: "Geopoliticals", when: "2024" },
     { name: "Direct Traffic", issue: "Geopoliticals", when: "2024" },
+    { name: "Summary", issue: "Geopoliticals", when: "2024" },
+    { name: "Summary1", issue: "Geopoliticals", when: "2024" },
+    { name: "Long", issue: "Geopoliticals", when: "2024" },
+    { name: "Business", issue: "Geopoliticals", when: "2024" },
+    { name: "Photo", issue: "Geopoliticals", when: "2024" },
+    { name: "Users", issue: "Geopoliticals", when: "2024" },
+    { name: "Returning", issue: "Geopoliticals", when: "2024" },
+    { name: "Organic", issue: "Geopoliticals", when: "2024" },
+    { name: "Socials", issue: "Geopoliticals", when: "2024" },
+    { name: "Direct", issue: "Geopoliticals", when: "2024" },
   ];
 
   const formatSlug = (str) => str.toLowerCase().replace(/\s+/g, "-");
@@ -55,8 +65,8 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
 
 
 {/* mobile view */}
-    <div className="block lg:hidden flex justify-start">
-      <div className="h-full py-4 space-y-2 px-4">
+    <div className="block lg:hidden flex justify-start px-4">
+      <div className="h-full py-4 space-y-2 ">
         {advertiseList.map(({ name, issue, when }) => {
           const slug = formatSlug(name);
 
@@ -64,7 +74,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
             <div key={slug} className="relative flex items-center ">
               <div
                 onClick={() => onSelect(slug)}
-                className={`flex justify-between items-center py-1 px-6 my-1  cursor-pointer w-full
+                className={`flex justify-between items-center py-1 px-4 my-1  cursor-pointer w-full
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full " : "hover:bg-[#121212]/10 rounded-full "}
                 `}
               >
@@ -72,7 +82,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
                   <span className="text-left text-base w-full">{name}</span>
                 </Link>
 
-                <div className="flex space-x-6 text-xs w-[]">
+                <div className="flex space-x-6 text-xs">
                   <span className="bg-[#121212]/20 rounded-3xl px-2 py-1 font-medium">
                     {when}
                   </span>

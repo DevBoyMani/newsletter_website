@@ -123,21 +123,21 @@ export default function Advertise() {
 
             <div className="px-4 fixed bg-white ">
               <div className="">
-              <div className="flex space-x-8 py-2 border-black border-b">
+              <div className="flex space-x-8 py-2 border-black border-b text-xs">
                 <a
-                  className="cursor-pointer font-semibold"
+                  className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
                   onClick={() => toggleSection("about")}
                 >
                   About
                 </a>
-                <a>.</a>
-                <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold">
+                <a className="py-2">.</a>
+                <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold py-2 px-2">
                   Newsletters
                 </Link>
 
-                <a>.</a>
+                <a className="py-2">.</a>
                 <a
-                  className="cursor-pointer font-semibold"
+                  className="cursor-pointer font-semibold py-2 px-2"
                   onClick={() => toggleSection("contact")}
                 >
                   Contact

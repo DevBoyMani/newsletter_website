@@ -199,25 +199,25 @@ export default function AdvertiseSlug() {
       </div>
 
       <div className="max-h-[60vh] overflow-y-auto">
-        <div className="max-w-2xl pb-4 w-full ">
+        <div className="max-w-2xl w-full ">
           {/* Navigation Links */}
-          <div className="w-full px-4 fixed bg-white  z-50">
-                <div className="flex space-x-8 py-2 px-2 border-black border-b">
+          <div className="w-full px-4 py-2 fixed bg-white  z-50">
+                <div className="flex space-x-6 py-2 px-2 border-black border-b text-xs">
                   <a
-                    className="cursor-pointer font-semibold"
+                    className="cursor-pointer font-semibold py-2 px-2"
                     // onClick={() => toggleSection("about")}
                     href="/advertise"
                   >
                     About
                   </a>
-                  <a>.</a>
-                  <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold">
+                  <a className="py-2">.</a>
+                  <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl">
                     Newsletters
                   </Link>
 
-                  <a>.</a>
+                  <a className="py-2">.</a>
                   <a
-                    className="cursor-pointer font-semibold"
+                    className="cursor-pointer font-semibold py-2 px-2" 
                     onClick={() => toggleSection("contact")}
                   >
                     Contact
@@ -227,7 +227,7 @@ export default function AdvertiseSlug() {
 
 
             {/* bottom section */}
-            <div className="pt-24">
+            <div className="pt-14">
                     <AdvertiseSidebar activeSlug={selectedSlug} onSelect={setSelectedSlug} />
             </div>
         </div>
