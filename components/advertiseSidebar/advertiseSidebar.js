@@ -68,10 +68,11 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full " : "hover:bg-[#121212]/10 rounded-full "}
                 `}
               >
-                <Link href={`/advertise/${slug}`} className="w-full mr-4">
+                <Link href={`/advertise/${slug}`} className="w-[192px] mr-4">
                   <span className="text-left text-base w-full">{name}</span>
                 </Link>
-                <div className="flex space-x-6 text-xs pl-6">
+
+                <div className="flex space-x-6 text-xs w-[]">
                   <span className="bg-[#121212]/20 rounded-3xl px-2 py-1 font-medium">
                     {when}
                   </span>

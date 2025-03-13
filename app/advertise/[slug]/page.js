@@ -198,10 +198,10 @@ export default function AdvertiseSlug() {
         </div>
       </div>
 
-      <div className="max-h-[60vh] overflow-y-auto z-50">
+      <div className="max-h-[60vh] overflow-y-auto">
         <div className="max-w-2xl pb-4 w-full ">
           {/* Navigation Links */}
-          <div className="px-4 fixed bg-white ">
+          <div className="w-full px-4 fixed bg-white  z-50">
                 <div className="flex space-x-8 py-2 px-2 border-black border-b">
                   <a
                     className="cursor-pointer font-semibold"
