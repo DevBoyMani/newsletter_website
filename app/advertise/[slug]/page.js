@@ -1,6 +1,8 @@
 "use client";
 
 
+
+
 import { useEffect, useState } from "react";
 import { useParams } from "next/navigation";
 import { motion } from "framer-motion";
@@ -51,9 +53,8 @@ const [activeChart, setActiveChart] = useState(1);
       const section = document.getElementById(id);
       if (section) {
         const rect = section.getBoundingClientRect();
-        // Check if the section is at least halfway into view
         if (rect.top <= window.innerHeight / 2 && rect.bottom >= window.innerHeight / 2) {
-          currentChart = index + 1; // Convert 0-based index to 1-based index
+          currentChart = index + 1;
         }
       }
     });
@@ -205,7 +206,7 @@ const [activeChart, setActiveChart] = useState(1);
             <div className="mx-4">
               <div className=" mt-24">
                   {rightSectionNav.map(el => {
-                    return <div className=" my-10" id={el.id}>
+                    return <div className=" my-10" key={el.id} id={el.id}>
                     <SelectedComponent />
                   </div>
                   
