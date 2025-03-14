@@ -116,42 +116,40 @@ export default function Advertise() {
         </div>
 
         <div className="max-h-[50vh] overflow-y-auto">
-          <div className="max-w-2xl px-4 pb-4 w-full ">
-
-
+          <div className="max-w-2xl pb-4 w-full ">
             {/* Navigation Links */}
+            <div className="">
+              <div className="w-full px-4 fixed bg-white  z-50">
+                <div className="flex space-x-6 py-2 px-2 border-black border-b text-xs">
+                  <a
+                    className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
+                    onClick={() => toggleSection("about")}
+                  >
+                    About
+                  </a>
+                  <a className="py-2">.</a>
+                  <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold py-2 px-2">
+                    Newsletters
+                  </Link>
 
-            <div className="px-4 fixed bg-white ">
-              <div className="">
-              <div className="flex space-x-8 py-2 border-black border-b text-xs">
-                <a
-                  className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
-                  onClick={() => toggleSection("about")}
-                >
-                  About
-                </a>
-                <a className="py-2">.</a>
-                <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold py-2 px-2">
-                  Newsletters
-                </Link>
-
-                <a className="py-2">.</a>
-                <a
-                  className="cursor-pointer font-semibold py-2 px-2"
-                  onClick={() => toggleSection("contact")}
-                >
-                  Contact
-                </a>
-              </div>
-              <div>
-              <div className="bg-white pt-3 pb-1">
-                  <h4 className="font-medium text-2xl">
-                    Building innovative digital solutions
-                  </h4>
+                  <a className="py-2 font-semibold">.</a>
+                  <a
+                    className="cursor-pointer font-semibold py-2 px-2"
+                    onClick={() => toggleSection("contact")}
+                  >
+                    Contact
+                  </a>
                 </div>
-              </div>
-              </div>
+                <div>
+                    <div className="bg-white pt-1 pb-1">
+                        <h4 className="font-medium text-2xl">
+                          Building innovative digital solutions
+                        </h4>
+                    </div>
+                </div>
+              </div>     
             </div>
+              
 
             {/* {openSection === "about" && (
               
@@ -184,7 +182,7 @@ export default function Advertise() {
                 <>
                 
                   <div className="pt-32">
-                    <p className="py-2">
+                    <p className="">
                       Creativity has been an integral part of my life. Since
                       2010 I've started working in design industry. Having
                       worked in graphic, product, ux, ui, motion and website

@@ -221,13 +221,13 @@ const [activeChart, setActiveChart] = useState(1);
           {/* Navigation Links */}
           <div className="w-full px-4 py-2 fixed bg-white  z-50">
                 <div className="flex space-x-6 py-2 px-2 border-black border-b text-xs">
-                  <a
+                  <Link
                     className="cursor-pointer font-semibold py-2 px-2"
                     // onClick={() => toggleSection("about")}
                     href="/advertise"
                   >
                     About
-                  </a>
+                  </Link>
                   <a className="py-2">.</a>
                   <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl">
                     Newsletters
