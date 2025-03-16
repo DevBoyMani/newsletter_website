@@ -118,61 +118,51 @@ export default function Advertise() {
         <div className="max-h-[50vh] overflow-y-auto">
         <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
-            <div className="w-full px-4 py-2 fixed bg-white  z-50">
-            <div className="flex space-x-6 py-2 px-2 border-black border-b text-xs">
-                  <a
-                    className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
-                    onClick={() => toggleSection("about")}
-                  >
-                    About
-                  </a>
-                  <a className="py-2">.</a>
-                  <Link href="/advertise/geopolitical-summary" className="cursor-pointer font-semibold py-2 px-2">
-                    Newsletters
-                  </Link>
-
-                  <a className="py-2 font-semibold">.</a>
-                  <a
-                    className="cursor-pointer font-semibold py-2 px-2"
-                    onClick={() => toggleSection("contact")}
-                  >
-                    Contact
-                  </a>
+            {/* <div className="w-full px-4 py-2 fixed bg-white  z-50">
+                <div className="flex space-x-6 pt-2 pb-4 px-2 border-black border-b text-xs"> */}
+                <div className="w-full px-4 py-2 fixed bg-white z-50">
+                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-2 pb-4 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
+                    <div>
+                      <Link
+                      prefetch={true}
+                        href="/"
+                        className="cursor-pointer font-semibold bg-[#121212]/20 py-1 px-2 rounded-3xl"
+                      >
+                        About
+                      </Link>
+                    </div>
+                    <div className="">.</div>
+                    <div>
+                      <Link
+                      prefetch={true}
+                        href="/advertise/geopolitical-summary"
+                        className="cursor-pointer font-semibold py-2 px-2"
+                      >
+                        Newsletters
+                      </Link>
+                    </div>
+                    <div className="">.</div>
+                    <div>
+                    <Link
+                     href="/"
+                     prefetch={true}
+                      className="cursor-pointer font-semibold py-2 px-2"
+                      // onClick={() => toggleSection("contact")}
+                    >
+                      Contact
+                    </Link>
+                    </div>
                 </div>
+             
+
                 <div>
-                    <div className="bg-white pt-1 pb-1">
+                    <div className="bg-white pt-2">
                         <h4 className="font-medium text-2xl">
                           Building innovative digital solutions
                         </h4>
                     </div>
                 </div>
               </div>     
-       
-              
-
-            {/* {openSection === "about" && (
-              
-
-            )}
-
-            {openSection === "newsletters" && (
-              <div className="mt-8 fixed bg-white">
-              <h4 className="font-medium text-2xl">
-                Building innovative Newsletters
-              </h4>
-            </div>
-
-            )}
-
-            {openSection === "contact" && (
-              <div className="mt-8 fixed bg-white">
-              <h4 className="font-medium text-2xl">
-                Contact us
-              </h4>
-            </div>
-
-            )} */}
-
 
             {/* Content Sections */}
             <div className="px-4">
@@ -180,7 +170,7 @@ export default function Advertise() {
               {openSection === "about" && (
                 <>
                 
-                  <div className="pt-32">
+                  <div className="pt-36">
                     <p className="">
                       Creativity has been an integral part of my life. Since
                       2010 I've started working in design industry. Having
