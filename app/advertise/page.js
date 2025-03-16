@@ -104,7 +104,6 @@ export default function Advertise() {
       {/* mobile view */}
       <div className="w-sm lg:hidden block max-h-screen">
         <div className="max-h-[50vh] overflow-hidden">
-          {openSection === "about" && (
             <div className="">
               <img
                 src="/analytics-home-image-mobile.png"
@@ -112,10 +111,9 @@ export default function Advertise() {
                 className="w-full h-[357px]"
               />
             </div>
-          )}
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto">
+        <div className="max-h-[50vh] overflow-y-auto relative z-10">
         <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
                 <div className="w-full px-4 py-2 fixed bg-white z-50">
@@ -124,7 +122,7 @@ export default function Advertise() {
                       <Link
                       prefetch={true}
                         href="/"
-                        className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
+                        className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
                       >
                         About
                       </Link>
@@ -136,7 +134,7 @@ export default function Advertise() {
                       <Link
                       prefetch={true}
                         href="/advertise/geopolitical-summary"
-                        className="cursor-pointer font-semibold py-2 px-2"
+                        className="cursor-pointer text-[13px] font-semibold py-2 px-2"
                       >
                         Newsletters
                       </Link>
@@ -148,7 +146,7 @@ export default function Advertise() {
                     <Link
                      href="/"
                      prefetch={true}
-                      className="cursor-pointer font-semibold py-2 px-2"
+                      className="cursor-pointer text-[13px] font-semibold py-2 px-2"
                       // onClick={() => toggleSection("contact")}
                     >
                       Contact

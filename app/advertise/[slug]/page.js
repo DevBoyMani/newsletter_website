@@ -243,7 +243,7 @@ export default function AdvertiseSlug() {
             <div className="w-full px-4 py-2 fixed bg-white z-50">
             <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-4 pb-5 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
               <div>
-                <Link href="/advertise" prefetch={true} className="cursor-pointer font-semibold py-2 px-2">
+                <Link href="/advertise" prefetch={true} className="cursor-pointer text-[13px] font-semibold py-2 px-2">
                   About
                 </Link>
               </div>
@@ -251,7 +251,7 @@ export default function AdvertiseSlug() {
                     <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
                     </div>
               <div>
-                <Link href="/" prefetch={true} className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl">
+                <Link href="/" prefetch={true} className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl">
                   Newsletters
                 </Link>
               </div>
@@ -259,7 +259,7 @@ export default function AdvertiseSlug() {
                     <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
                     </div>
               <div>
-                <Link href="/contact" prefetch={true} className="cursor-pointer font-semibold py-2 px-2">
+                <Link href="/contact" prefetch={true} className="cursor-pointer text-[13px] font-semibold py-2 px-2">
                   Contact
                 </Link>
               </div>
