@@ -105,11 +105,11 @@ export default function Advertise() {
       <div className="w-sm lg:hidden block max-h-screen">
         <div className="max-h-[50vh] overflow-hidden">
           {openSection === "about" && (
-            <div className="h-[100%]">
+            <div className="">
               <img
                 src="/analytics-home-image-mobile.png"
                 alt="Analytics Home"
-                className="w-full"
+                className="w-full h-[357px]"
               />
             </div>
           )}
@@ -118,20 +118,20 @@ export default function Advertise() {
         <div className="max-h-[50vh] overflow-y-auto">
         <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
-            {/* <div className="w-full px-4 py-2 fixed bg-white  z-50">
-                <div className="flex space-x-6 pt-2 pb-4 px-2 border-black border-b text-xs"> */}
                 <div className="w-full px-4 py-2 fixed bg-white z-50">
-                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-2 pb-4 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
+                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-4 pb-5 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
                     <div>
                       <Link
                       prefetch={true}
                         href="/"
-                        className="cursor-pointer font-semibold bg-[#121212]/20 py-1 px-2 rounded-3xl"
+                        className="cursor-pointer font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
                       >
                         About
                       </Link>
                     </div>
-                    <div className="">.</div>
+                    <div className="flex items-center">
+                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
+                    </div>
                     <div>
                       <Link
                       prefetch={true}
@@ -141,7 +141,9 @@ export default function Advertise() {
                         Newsletters
                       </Link>
                     </div>
-                    <div className="">.</div>
+                    <div className="flex items-center">
+                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
+                    </div>
                     <div>
                     <Link
                      href="/"
