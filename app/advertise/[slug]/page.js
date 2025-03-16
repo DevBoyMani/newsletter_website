@@ -216,10 +216,10 @@ export default function AdvertiseSlug() {
       <div className="block lg:hidden w-sm">
         <div
           ref={scrollContainerRef}
-          className="bg-[#01261E] max-h-[50vh] overflow-y-auto relative z-10"
+          className="bg-[#01261E] max-h-[50vh] h-[357px] overflow-y-auto relative z-10"
         >
           {/* Header with Numerical Indicator */}
-          <div className="bg-[#01261E] fixed top-0 w-full pt-6 pb-3 px-4 z-50 text-white">
+          <div className="bg-[#01261E] fixed top-0 w-full  pt-6 pb-3 px-4 z-50 text-white">
             <div className="flex justify-between items-center">
               <p className="text-sm text-gray-300">{activeChartName}</p>
               <div className="text-xs font-semibold bg-[#FAFAFA] text-[#01261E] py-2 px-2 rounded-full">
