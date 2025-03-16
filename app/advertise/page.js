@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
 import AdvertiseSidebarHomepage from "../../components/advertiseSidebarHomepage/advertiseSidebarHomepage";
@@ -14,7 +15,7 @@ export default function Advertise() {
   const toggleSection = (section) => {
     setOpenSection(section);
   };
-
+  const router = useRouter();
   return (
     <>
       {/* desktop view */}
@@ -117,7 +118,7 @@ export default function Advertise() {
         <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
                 <div className="w-full px-4 py-2 fixed bg-white z-50">
-                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-4 pb-5 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
+                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-2 pb-2 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
                     <div>
                       <Link
                       prefetch={true}
@@ -130,14 +131,11 @@ export default function Advertise() {
                     <div className="flex items-center">
                     <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
                     </div>
-                    <div>
-                      <Link
-                      prefetch={true}
-                        href="/advertise/geopolitical-summary"
-                        className="cursor-pointer text-[13px] font-semibold py-2 px-2"
-                      >
-                        Newsletters
-                      </Link>
+                    <div
+                      className="cursor-pointer text-[13px] font-semibold py-2 px-2"
+                      onClick={() => router.push("/advertise/geopolitical-summary")}
+                    >
+                      Newsletters
                     </div>
                     <div className="flex items-center">
                     <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
