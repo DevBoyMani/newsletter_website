@@ -1,6 +1,6 @@
 export default function Advertise() {
     const videos = [
-      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[734px]" },
+      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[732px]" },
       { video: "/advertise/v-2.mp4", id: "video2", height: "h-[661px]" },
       { video: "/advertise/v-3.mp4", id: "video3", height: "h-[876px]", moveUp: "mt-[-80px]" },
       { video: "/advertise/v-4.mp4", id: "video4", height: "h-[1005px]", moveUp: "mt-[-120px]" },
@@ -82,10 +82,11 @@ export default function Advertise() {
                 <span className="absolute bottom-[350px] left-[81.5%]">$144 million</span>
             </div>
 
-    
+            {/* <div className="absolute bottom-0 left-0 w-full h-[80px] bg-gradient-to-t from-white to-transparent z-20"></div> */}
 
-            <div className="absolute bottom-0 left-0 w-full h-[250px] bg-gradient-to-t from-white via-white/50 to-white/0 z-20"></div>
+            <div className="absolute bottom-0 left-0 w-full h-[250px] bg-gradient-to-t from-white to-transparent z-10"></div>
 
+            {/* 100K Subscribers Text (Above Gradient) */}
             <div className="hidden lg:block absolute bottom-0 left-4 text-[186px] font-normal leading-[94%] tracking-[-1.93px] z-20">
                 <span className="text-white">100K </span>
                 <span className="text-[#01261E]">Subscribers</span>
