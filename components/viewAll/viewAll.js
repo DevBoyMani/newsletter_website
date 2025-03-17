@@ -67,7 +67,7 @@ export default function ViewAll() {
                             </div>
                         </div>
                         <motion.div
-                            className="absolute left-1/2 -translate-x-1/2 w-full px-4"
+                            className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-full px-4"
                             animate={{ bottom: hoveredIndex === index ? "2rem" : "1rem" }}
                             initial={{ bottom: "1rem" }}
                             transition={{ duration: 0.4, ease: "easeInOut" }}
