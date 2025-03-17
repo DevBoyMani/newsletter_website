@@ -11,7 +11,7 @@ export default function Footer(){
     return(
         <>
          {/* desktop footer */}
-        <div className="hidden lg:block bg-[#01261E]">
+        <div className="hidden lg:block bg-[#01261E] text-white">
             <div className="md:px-14 py-12 ">
                 <div className="flex justify-between border-b">
                     {/* left */}
@@ -121,7 +121,7 @@ export default function Footer(){
         </div>
 
         {/*  mobile footer */}
-        <div className="block lg:hidden bg-[#01261E]">
+        <div className="block lg:hidden bg-[#01261E] text-white">
         <div className="md:px-14 py-12 ">
                     <div className="px-4 pb-10">
                         <div className="">

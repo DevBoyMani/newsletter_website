@@ -147,7 +147,7 @@ const Careers = () => {
     },
   ]
   return (
-    <div className="text-white">
+    <div className="">
       <div className="md:px-16 px-4 lg:pt-20 pt-10 mx-auto ">
       <div className="mb-8 text-start ">
         <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">Looking for a new role &</p>

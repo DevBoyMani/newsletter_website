@@ -6,11 +6,12 @@ import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const routes = [
-  { path: "/careers", name: "Careers" },
-  { path: "/newsletters", name: "Newsletters" },
-  { path: "/advertise", name: "Advertise" },
   { path: "/about", name: "About" },
+  { path: "/advertise", name: "Advertise" },
+  { path: "/analytics", name: "Analytics" },
+  { path: "/careers", name: "Careers" },
   { path: "/features", name: "Features" },
+  { path: "/newsletters", name: "Newsletters" },
 ];
 
 const contactSales = [
@@ -21,7 +22,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-  if (pathname.includes("/advertise")) return null;
+  if (pathname.includes("/analytics")) return null;
 
   return (
     <nav className="pt-16">

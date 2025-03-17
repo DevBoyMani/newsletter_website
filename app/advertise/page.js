@@ -1,245 +1,96 @@
-"use client";
-
-import { useRouter } from "next/navigation";
-import Link from "next/link";
-import { useState } from "react";
-import AdvertiseSidebarHomepage from "../../components/advertiseSidebarHomepage/advertiseSidebarHomepage";
-import AdvertiseSidebar from "../../components/advertiseSidebar/advertiseSidebar";
-import { motion } from "framer-motion";
-// import { MobileChart} from "../../components/advertiseComponents/mobileChart/mobileChart";
-import { Component } from "../../components/areaChart/areaChart";
-
 export default function Advertise() {
-  const [openSection, setOpenSection] = useState("about");
+    const videos = [
+      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[734px]" },
+      { video: "/advertise/v-2.mp4", id: "video2", height: "h-[661px]" },
+      { video: "/advertise/v-3.mp4", id: "video3", height: "h-[876px]", moveUp: "mt-[-80px]" },
+      { video: "/advertise/v-4.mp4", id: "video4", height: "h-[1005px]", moveUp: "mt-[-120px]" },
+    ];
+  
+    return (
+      <div className="bg-white relative">
 
-  const toggleSection = (section) => {
-    setOpenSection(section);
-  };
-  const router = useRouter();
-  return (
-    <>
-      {/* desktop view */}
-      <div className="hidden lg:block flex w-full">
-        {/* Left Sidebar */}
-        <div className="w-[36%] bg-white fixed h-screen">
-          <div className="md:px-6">
-            <div className="px-4 text-lg py-8">
-              <a href="/advertise">Analytics</a>
-            </div>
-            <div className="pt-6">
-              <h2 className="py-4 text-3xl">
-                Building Innovative Digital Solutions
-              </h2>
-              <div
-                className="border-t-2 border-b-2 border-black overflow-y-auto md:h-[320px] "
-                style={{ scrollbarWidth: "none" }}
-              >
-                <AdvertiseSidebarHomepage />
-              </div>
-            </div>
-            <div className="text-black pt-4 flex justify-between">
-              <h3 className="text-sm px-4 py-1">Interested to advertise?</h3>
-              <h3 className="text-sm border border-black px-4 py-1 rounded-3xl cursor-pointer">
-                Contact Us
-              </h3>
-            </div>
+        
+
+        {/* Top Year Labels */}
+      <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-sm px-[10%]">
+        <span className="absolute left-[12%]">2014</span>
+        <span className="absolute left-[35%]">2017</span>
+        <span className="absolute left-[59%]">2020</span>
+        <span className="absolute left-[84%]">2023</span>
+      </div>
+
+        {/* Text Section */}
+        <div className=" md:px-16 px-4 lg:pt-20 pt-10 mx-auto">
+          <div className="text-black">
+            <h2 className="text-7xl w-[50%] lg:w-[50%] ">Step into a world of discovery</h2>
+            <p className="text-base py-4 w-[30%] sm:w-[30%]">
+              Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
+            </p>
           </div>
         </div>
-
-        {/* Right Content Section */}
-        <div className="w-[64%] ml-auto flex flex-col ">
-          <motion.div
-            layout
-            // key={selectedSlug}
-            initial={{ x: "100%", opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            exit={{ x: "-100%", opacity: 0 }}
-            transition={{ duration: 0.9, ease: "easeInOut" }}
-          >
-            <div className="fixed h-screen ">
-              <div className="relative w-full h-full">
-                <img
-                  src="/analytics-home-image.png"
-                  alt="Analytics Home"
-                  className="w-full h-full object-cover rounded-tl-3xl"
+  
+       {/* <div className="">
+        <div className="absolute top-20 w-full h-full pointer-events-none">
+            <div className="absolute left-[13%] top-0 h-[22.32rem] bottom-0 border-l border-gray-300"></div>
+            <div className="absolute left-[36%] top-0 h-[27.12rem] bottom-0 border-l border-gray-300"></div>
+            <div className="absolute left-[60%] top-0 h-[13.68rem] bottom-0 border-l border-gray-300"></div>
+            <div className="absolute left-[85%] top-0 h-[5.62rem] bottom-0 border-l border-gray-300"></div>
+            </div>
+     
+            <div className="absolute top-40 xl:top-40 lg:top-60  left-0 right-0 w-full flex gap-x-2 items-end mt-16 px-2 z-0">
+            {videos.map((video) => (
+                <video
+                key={video.id}
+                src={video.video}
+                autoPlay
+                loop
+                muted
+                className={`w-[21.31rem] ${video.height} object-cover ${video.moveUp || ""}`}
                 />
-              </div>
-              <div className="lg:w-[28%] absolute right-0 top-5  px-4 ">
-                <div className="text-sm text-white">
-                  <p className="py-2">
-                    Creativity has been an integral part of my life. Since 2010
-                    I've started working in design industry. Having worked in
-                    graphic, product, ux, ui, motion and website design I have
-                    acquired a good understanding of creation processes in
-                    different fields.
-                  </p>
-                  <p className="py-2">
-                    Within close cooperation with developers I have good
-                    understanding of different tech stacks. This helps me in the
-                    design process, where I can drive my imagination with tech
-                    possibilities and goals.
-                  </p>
-                  <p className="py-2">
-                    As a dedicated and organised individual, I have an active
-                    and dynamic approach to achieving the best results in my
-                    work. I have a strong knowledge in design and digital
-                    product. I am driven by the idea to show product in a
-                    simple, however unique and always rationale way.
-                  </p>
-                  <div className="pt-6">
-                    <a
-                      className="text-xs border border-white  rounded-full shadow-lg px-5 py-3 hover:bg-white hover:text-black"
-                      href="https://www.sagravia.com/"
-                      target="_blank"
-                    >
-                      Visit Website
-                    </a>
-                  </div>
-                </div>
-              </div>
+            ))}
             </div>
-          </motion.div>
+       </div> */}
+
+       {/* Vertical Lines (Now properly positioned) */}
+      <div className="hidden lg:block absolute w-full h-full pointer-events-none">
+        <div className="absolute left-[13%] top-[-250] h-[420px] border-l border-gray-300 z-10"></div>
+        <div className="absolute left-[36%] top-[-250] h-[500px] border-l border-gray-300 z-10"></div>
+        <div className="absolute left-[60%] top-[-250] h-[280px] border-l border-gray-300 z-10"></div>
+        <div className="absolute left-[85%] top-[-250] h-[160px] border-l border-gray-300 z-10"></div>
+      </div>
+
+      {/* Video Section */}
+      <div className="hidden lg:block relative px-2">
+        <div className="flex gap-x-2 items-end relative z-0">
+          {videos.map((video) => (
+            <video
+              key={video.id}
+              src={video.video}
+              autoPlay
+              loop
+              muted
+              className={`w-[21.31rem] ${video.height} object-cover ${video.moveUp || ""}`}
+            />
+          ))}
         </div>
       </div>
 
-      {/* mobile view */}
-      <div className="w-sm lg:hidden block max-h-screen">
-        <div className="max-h-[50vh] overflow-hidden">
-            <div className="">
-              <img
-                src="/analytics-home-image-mobile.png"
-                alt="Analytics Home"
-                className="w-full h-[357px]"
-              />
+            <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-gray-800 text-lg font-semibold ">
+                <span className="absolute bottom-[85px] left-[9.5%]">$19.4 trillion</span>
+                <span className="absolute bottom-[10px] left-[32.5%]">$17.4 trillion</span>
+                <span className="absolute bottom-[230px] left-[56.5%]">$18.9 trillion</span>
+                <span className="absolute bottom-[350px] left-[81.5%]">$144 million</span>
             </div>
-        </div>
 
-        <div className="max-h-[50vh] overflow-y-auto relative z-10">
-        <div className="max-w-2xl w-full ">
-            {/* Navigation Links */}
-                <div className="w-full px-4 py-2 fixed bg-white z-50">
-                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-2 pb-2 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
-                    <div>
-                      <Link
-                      prefetch={true}
-                        href="/"
-                        className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
-                      >
-                        About
-                      </Link>
-                    </div>
-                    <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
-                    </div>
-                    <div
-                      className="cursor-pointer text-[13px] font-semibold py-2 px-2"
-                      onClick={() => router.push("/advertise/geopolitical-summary")}
-                    >
-                      Newsletters
-                    </div>
-                    <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
-                    </div>
-                    <div>
-                    <Link
-                     href="/"
-                     prefetch={true}
-                      className="cursor-pointer text-[13px] font-semibold py-2 px-2"
-                      // onClick={() => toggleSection("contact")}
-                    >
-                      Contact
-                    </Link>
-                    </div>
-                </div>
-             
+    
 
-                <div>
-                    <div className="bg-white pt-2">
-                        <h4 className="font-medium text-2xl">
-                          Building innovative digital solutions
-                        </h4>
-                    </div>
-                </div>
-              </div>     
+            <div className="absolute bottom-0 left-0 w-full h-[250px] bg-gradient-to-t from-white via-white/50 to-white/0 z-20"></div>
 
-            {/* Content Sections */}
-            <div className="px-4">
-              {/* About Section */}
-              {openSection === "about" && (
-                <>
-                
-                  <div className="pt-36">
-                    <p className="">
-                      Creativity has been an integral part of my life. Since
-                      2010 I've started working in design industry. Having
-                      worked in graphic, product, ux, ui, motion and website
-                      design I have acquired a good understanding of creation
-                      processes in different fields.
-                    </p>
-                    <p className="py-2">
-                      Within close cooperation with developers I have good
-                      understanding of different tech stacks. This helps me in
-                      the design process, where I can drive my imagination with
-                      tech possibilities and goals.
-                    </p>
-                    <p className="py-2">
-                      As a dedicated and organised individual, I have an active
-                      and dynamic approach to achieving the best results in my
-                      work. I have a strong knowledge in design and digital
-                      product. I am driven by the idea to show product in a
-                      simple, however unique and always rationale way.
-                    </p>
-                    <p className="py-2">
-                      Creativity has been an integral part of my life. Since
-                      2010 I've started working in design industry. Having
-                      worked in graphic, product, ux, ui, motion and website
-                      design I have acquired a good understanding of creation
-                      processes in different fields.
-                    </p>
-                    <p className="py-2">
-                      Within close cooperation with developers I have good
-                      understanding of different tech stacks. This helps me in
-                      the design process, where I can drive my imagination with
-                      tech possibilities and goals.
-                    </p>
-                    <p className="py-2">
-                      As a dedicated and organised individual, I have an active
-                      and dynamic approach to achieving the best results in my
-                      work. I have a strong knowledge in design and digital
-                      product. I am driven by the idea to show product in a
-                      simple, however unique and always rationale way.
-                    </p>
-                  </div>
-                </>
-              )}
-
-
-              {/* Newsletters Section
-              {openSection === "newsletters" && (
-                <>
-                  <div className="fixed mt-8 ">
-                    <h4 className="font-medium text-2xl">
-                      Welcome to the News letters
-                    </h4>
-                  </div>
-                  <div className="pt-24 ">
-                    <AdvertiseSidebar />
-                  </div>
-                </>
-              )} */}
-
-              {/* Contact Us Section */}
-              {openSection === "contact" && (
-                <>
-                  <div lassName="pt-24 ">
-                    <p className="text-sm text-gray-700">Contact us...</p>
-                  </div>
-                </>
-              )}
+            <div className="hidden lg:block absolute bottom-0 left-4 text-[186px] font-normal leading-[94%] tracking-[-1.93px] z-20">
+                <span className="text-white">100K </span>
+                <span className="text-[#01261E]">Subscribers</span>
             </div>
-          </div>
-        </div>
       </div>
-    </>
-  );
-}
+    );
+  }
+  

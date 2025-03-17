@@ -1,14 +1,14 @@
-
+"use client";
 
 import Link from "next/link";
 
 const AdvertiseSidebarHomepage = () => {
   const advertiseList = [
-    { name: "Geopolitical Summary", issue: "Geopoliticals", when: "2024", path: "/advertise/geopolitical-summary" },
-    { name: "Presidential Summary", issue: "Geopoliticals", when: "2024", path: "/advertise/presidential-summary" },
-    { name: "Long and Short", issue: "Geopoliticals", when: "2024", path: "/advertise/long-and-short" },
-    { name: "Business History", issue: "Geopoliticals", when: "2024", path: "/advertise/business-history" },
-    { name: "Photo Summary", issue: "Geopoliticals", when: "2024", path: "/advertise/photo-summary" },
+    { name: "Geopolitical Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/geopolitical-summary" },
+    { name: "Presidential Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/presidential-summary" },
+    { name: "Long and Short", issue: "Geopoliticals", when: "2024", path: "/analytics/long-and-short" },
+    { name: "Business History", issue: "Geopoliticals", when: "2024", path: "/analytics/business-history" },
+    { name: "Photo Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/photo-summary" },
   ];
 
   return (
