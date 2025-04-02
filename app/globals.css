@@ -117,3 +117,21 @@
     @apply bg-background text-foreground;
     }
 }
+
+
+@keyframes scrollText {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-scroll {
+  animation: scrollText 10s linear infinite;
+}
+
+.group:hover .animate-scroll {
+  animation-play-state: paused;
+}

@@ -7,6 +7,7 @@ import {Statistics} from "../../components/advertiseComponents/analyticsCharts/c
 import {SignInUps} from "../../components/advertiseComponents/analyticsCharts/chartSignUps/chartSignUps";
 import HeadingWithUnderline from "../../components/advertiseComponents/headingWithUnderline/headingwithUnderline";
 import { Link } from "lucide-react";
+import { H2Icon } from "@heroicons/react/16/solid";
 
 export default function Advertise() {
     const videos = [
@@ -169,7 +170,7 @@ export default function Advertise() {
 
           </div>
 
-          {/* video section */}
+          {/*text with video section */}
           <div className="bg-white ">
             <div className="px-4 md:px-28 py-6">
                 <HeadingWithUnderline text="How your ad will look like"/>
@@ -188,6 +189,25 @@ export default function Advertise() {
                   <source src="/advertise/advertise-page-video.mp4" type="video/mp4" />
                   {/* <source src="/advertise/advertise-page-video.webm" type="video/webm" /> */}
                 </video>
+              </div>
+            </div>
+
+            <div className="flex my-0 flex-col items-center justify-center text-center py-10">
+              <h2 className="text-[80px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
+                And that’s not all
+              </h2>
+
+              <div className="w-[390px] mx-auto">
+                <p className="text-[20px] font-[400] leading-[1.5]">
+                  Get a personalized demo and discover how Sagravia can help your business
+                </p>
+              </div>
+
+              {/* Moving Text */}
+              <div className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10">
+                <h2 className="flex justify-end items-center text-[100px] font-[800] py-[31px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group">
+                  SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
+                </h2>
               </div>
             </div>
 
