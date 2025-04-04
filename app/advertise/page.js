@@ -315,10 +315,11 @@ export default function Advertise() {
               </div>
 
               <div className="pt-20 pb-20 flex justify-center">
-                <div className="px-6 py-2 border border-black rounded-xl">
-                  <a href="" className=" text-[23px] font-[600]">See more</a>
-                </div>
+                <a href="" className="px-6 py-2 border border-black rounded-xl text-[23px] font-[600] hover:bg-[#01261E] hover:text-[#ffffff] transition">
+                  See more
+                </a>
               </div>
+
             </div>
 
           </div>
