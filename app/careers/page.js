@@ -180,6 +180,7 @@ const Careers = () => {
         {testimonials[activeTab].component}
       </div>
 
+      {/* faq */}
       <div className="py-10  md:px-16">
         <div className="flex flex-col md:flex-row justify-between px-4">
           <div className="md:w-[40%] lg:py-0 pb-14">
