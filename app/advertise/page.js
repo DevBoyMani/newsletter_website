@@ -300,7 +300,7 @@ export default function Advertise() {
                       style={{ width: `${item.logoWidth}px` }}
                     />
                     <h4 className="text-[26px] font-semibold">{item.title}</h4>
-                    <p className="text-[15px] font-semibold">{item.description}</p>
+                    <p className="text-[15px] ">{item.description}</p>
                     <div className="flex justify-between items-center">
                       <p className="text-[15px] font-semibold">{item.date}</p>
                       <a
@@ -312,6 +312,12 @@ export default function Advertise() {
                     </div>
                   </div>
                 ))}
+              </div>
+
+              <div className="pt-20 pb-20 flex justify-center">
+                <div className="px-6 py-2 border border-black rounded-xl">
+                  <a href="" className=" text-[23px] font-[600]">See more</a>
+                </div>
               </div>
             </div>
 
