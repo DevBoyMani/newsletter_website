@@ -29,7 +29,10 @@ const colors = {
 export function Statistics() {
   const [flipped, setFlipped] = useState(false);
   return (
-    <div className="relative w-full h-full flex justify-center items-center ">
+    <>
+
+    {/* desktop view */}
+    <div className="hidden lg:block relative w-full h-full flex justify-center items-center ">
       {/* 3D Perspective Container */}
       <div
         className="relative w-[674px] h-[365px] transition-transform duration-500"
@@ -69,7 +72,7 @@ export function Statistics() {
         <BarChart layout="vertical" data={chartData} barGap={2} barSize={14} margin={{ left: 4, right: 50 }}>
           <CartesianGrid horizontal={false} strokeDasharray="3 3" />
         
-          <YAxis dataKey="ageGroup" orientation="right" type="category" axisLine={false} tickLine={false} />
+          <YAxis dataKey="ageGroup" orientation="left" type="category" axisLine={false} tickLine={false} />
 
         
           <YAxis
@@ -121,5 +124,128 @@ export function Statistics() {
     </Card>
     </div>
   </div>
+
+
+  {/* mobile view */}
+  <div className="block lg:hidden relative w-full flex justify-center items-center py-4">
+  {/* 3D Flip Container */}
+  <div
+    className="relative w-[343px] h-[215px] transition-transform duration-500"
+    style={{
+      perspective: "1000px",
+    }}
+  >
+    {/* Inner Flip Layer */}
+    <div
+          className="relative w-[343px] h-[215px] transition-transform duration-500"
+          style={{
+            perspective: "1000px",
+            transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
+              transformStyle: "preserve-3d",
+          }}
+        >
+      {/* Front Side */}
+      <Card
+        className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-4 "
+        style={{ backfaceVisibility: "hidden" }}
+      >
+        <button
+          onClick={() => setFlipped(true)}
+          className="absolute top-4 right-4 p-2 rounded-full bg-white shadow"
+        >
+          <Plus className="w-4 h-4 text-black" />
+        </button>
+
+        <CardHeader className="p-0">
+          <div className="border-b border-[#515151] pb-2 w-full">
+            <div className="text-[9px] text-[#9291A5]">Statistics</div>
+            <div className="flex flex-wrap items-center justify-start mt-0">
+              <CardDescription className="text-[10px] text-[#1E1B39] font-bold">
+                Age and gender
+              </CardDescription>
+              <div className="flex gap-3 text-[9px] ml-4 mt-1">
+                <div className="flex items-center gap-1">
+                  <img src="/advertise/charts-analytics/male.png" alt="Male" className="w-2 h-2" />
+                  <span>Male</span>
+                </div>
+                <div className="flex items-center gap-1">
+                  <img src="/advertise/charts-analytics/female.png" alt="Female" className="w-2 h-2" />
+                  <span>Female</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </CardHeader>
+
+        <CardContent className="p-0 pt-2">
+          <ResponsiveContainer width="100%" height={120}>
+            <BarChart
+              layout="vertical"
+              data={chartData}
+              barGap={2}
+              barSize={14}
+              margin={{ left: 4, right: 30 }}
+            >
+              <CartesianGrid horizontal={false} strokeDasharray="3 3" />
+              <YAxis
+                dataKey="ageGroup"
+                orientation="left"
+                type="category"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 9 }}
+              />
+              <YAxis
+                dataKey="percentage"
+                type="category"
+                orientation="left"
+                axisLine={false}
+                tickLine={false}
+                tick={{ fontSize: 9 }}
+              />
+              <XAxis type="number" hide />
+              <Tooltip cursor={{ fill: "transparent" }} />
+              <Bar dataKey="male" stackId="a" fill={colors.male} radius={[8, 8, 8, 8]} background={{ fill: "#FFFFFF", radius: 8 }} />
+              <Bar dataKey="female" stackId="a" fill={colors.female} radius={[8, 8, 8, 8]} />
+            </BarChart>
+          </ResponsiveContainer>
+        </CardContent>
+      </Card>
+
+      {/* Back Side */}
+      <Card
+        className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-4 rounded-xl shadow-md"
+        style={{
+          transform: "rotateY(180deg)",
+          backfaceVisibility: "hidden",
+        }}
+      >
+        <button
+          onClick={() => setFlipped(false)}
+          className="absolute top-4 right-4 p-2 rounded-full bg-white"
+        >
+          <X className="w-4 h-4 text-black" />
+        </button>
+
+        <CardHeader className="p-0">
+          <div className="border-b border-white pb-2">
+            <div className="text-[9px] text-[#D3D3D3]">Statistics</div>
+            <CardDescription className="text-[10px] text-[#DAEBE8] font-bold">
+              Age and gender
+            </CardDescription>
+          </div>
+        </CardHeader>
+
+        <div className="text-[#FAFAFA] text-[10px] pt-4 leading-snug font-light">
+          Etiam et convallis dolor. Praesent pulvinar molestie leo, in finibus felis porttitor eget.
+          Suspendisse vel aliquet tellus. Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel
+          faucibus ut, pulvinar vitae orci.
+        </div>
+      </Card>
+    </div>
+  </div>
+</div>
+
+    </>
   );
 }

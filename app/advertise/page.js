@@ -10,6 +10,7 @@ import { Link } from "lucide-react";
 import { H2Icon } from "@heroicons/react/16/solid";
 import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/advertiseFaq";
 import Footer from "../../components/footer/footer"
+import AdvertisePageMobileVersion from "../../components/advertisePageMobileVersion/advertisePageMobileVersion";
 
 export default function Advertise() {
     const videos = [
@@ -52,7 +53,7 @@ export default function Advertise() {
     return (
       <>
         {/* hero section */}
-          <div className="bg-white relative">
+          <div className="bg-white relative hidden lg:block">
 
               {/* Top Year Labels */}
               {/* <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-sm px-[10%]">
@@ -65,7 +66,7 @@ export default function Advertise() {
               {/* Text Section */}
               <div className=" md:px-16 px-4 lg:pt-20 pt-10 mx-auto">
                 <div className="text-black">
-                  <h2 className="text-7xl w-[50%] lg:w-[50%] ">Step into a world of discovery</h2>
+                  <h2 className="text-7xl lg:w-[50%] ">Step into a world of discovery</h2>
                   <p className="text-base py-4 w-[30%] sm:w-[30%]">
                     Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
                   </p>
@@ -82,7 +83,7 @@ export default function Advertise() {
               </div> */}
 
               {/* Video Section */}
-              <div className="hidden lg:block relative px-2">
+              <div className="flex justify-center relative px-2">
               <div className="flex gap-x-2 items-end relative z-0">
                 {videos.map((video) => (
                   <video
@@ -116,7 +117,7 @@ export default function Advertise() {
           </div>
 
           {/* combined analytics */}
-          <div className="bg-white relative ">
+          <div className="bg-white relative hidden lg:block">
             <div className="px-4 md:px-28 py-10">
               <HeadingWithUnderline text="Combined Analytics"/>
             </div>
@@ -182,7 +183,7 @@ export default function Advertise() {
           </div>
 
           {/*text with video section */}
-          <div className="bg-white ">
+          <div className="bg-white hidden lg:block">
             <div className="px-4 md:px-28 py-10">
                 <HeadingWithUnderline text="How your ad will look like"/>
             </div>
@@ -225,7 +226,7 @@ export default function Advertise() {
           </div>
 
           {/* Ad blocker and Do follow */}
-          <div className="bg-white relative">
+          <div className="bg-white relative hidden lg:block">
               <div className="px-4 md:px-28 py-10">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6">
                   
@@ -264,9 +265,8 @@ export default function Advertise() {
               </div>
             </div>
 
-
           {/* faq */}
-          <div className="bg-white relative">
+          <div className="bg-white relative hidden lg:block">
             <div className="px-4 md:px-28 pt-20 pb-10">
               <div className="flex flex-col md:flex-row justify-between px-4">
               <div className="md:w-[40%] lg:py-0 pb-14">
@@ -284,7 +284,7 @@ export default function Advertise() {
             </div>
           </div>
 
-          <div className="bg-white ">
+          <div className="bg-white hidden lg:block">
             <div className="px-4 md:px-28 pt-20 pb-10">
                 <HeadingWithUnderline text="In the press"/>
             </div>
@@ -324,6 +324,9 @@ export default function Advertise() {
 
           </div>
 
+          <div className="block lg:hidden">
+            <AdvertisePageMobileVersion/>
+          </div>
           <div>
             <Footer />
           </div>
