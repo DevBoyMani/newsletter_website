@@ -23,40 +23,44 @@ export default function AdvertisePageMobileVersion() {
     <>
       {/* Hero Section */}
       <div className="bg-white relative">
-        <div className="px-4 md:px-16 pt-10 lg:pt-20 mx-auto max-w-screen-xl">
-          <h2 className="text-4xl sm:text-6xl md:text-7xl font-semibold text-left text-black w-full">
-            Step into a world of discovery
-          </h2>
-          <p className="w-[70%] text-base py-4 text-black">
-            Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
-          </p>
-        </div>
+  <div className="px-4 md:px-16 pt-10 lg:pt-20 mx-auto max-w-screen-xl">
+    <h2 className="text-3xl sm:text-5xl md:text-7xl font-semibold text-left text-black w-full">
+      Step into a world of discovery
+    </h2>
+    <p className="w-full sm:w-[90%] md:w-[70%] text-sm sm:text-base py-4 text-black">
+      Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
+    </p>
+  </div>
 
-        <div className="flex justify-center relative px-2">
-              <div className="flex gap-x-2 items-end relative z-0">
-                {videos.map((video) => (
-                  <video
-                    key={video.id}
-                    src={video.video}
-                    autoPlay
-                    loop
-                    muted
-                    className={`w-[5rem] ${video.height} object-cover ${video.moveUp || ""}`}
-                  />
-                ))}
-              </div>
-              </div>
+  {/* Videos */}
+  <div className="flex justify-center relative px-4 overflow-x-auto max-w-full mt-4">
+    <div className="flex gap-x-2 items-end relative z-0 w-max">
+      {videos.map((video) => (
+        <video
+          key={video.id}
+          src={video.video}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className={`object-cover
+            w-[30vw] sm:w-[5rem] 
+            ${video.height} ${video.moveUp || ""}`}
+        />
+      ))}
+    </div>
+  </div>
 
+  {/* Gradient */}
+  <div className="absolute -bottom-1 left-0 w-full h-[120px] bg-gradient-to-t from-white to-transparent z-10" />
 
+  {/* Subscribers Text */}
+  <div className="absolute bottom-5 left-4 w-fit text-[40px] sm:text-[36px] md:text-[47px] font-normal leading-[94%] tracking-[-1.5px] z-20 text-center">
+    <span className="text-white">100K </span>
+    <span className="text-[#01261E]">Subscribers</span>
+  </div>
+</div>
 
-        <div className="absolute -bottom-1 left-0 w-full h-[120px] bg-gradient-to-t from-white to-transparent z-10"></div>
-
-                  {/* 100K Subscribers Text (Above Gradient) */}
-                  <div className="w-fit absolute bottom-5 left-4 text-[47px] font-normal leading-[94%] tracking-[-1.93px] z-20">
-                      <span className="text-white">100K </span>
-                      <span className="text-[#01261E]">Subscribers</span>
-                  </div>
-      </div>
 
       {/* Combined Analytics */}
       <div className="bg-white relative px-4 md:px-28 pt-6">
