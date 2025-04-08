@@ -27,7 +27,7 @@ export default function AdvertisePageMobileVersion() {
     <h2 className="text-3xl sm:text-5xl md:text-7xl font-semibold text-left text-black w-full">
       Step into a world of discovery
     </h2>
-    <p className="w-full sm:w-[90%] md:w-[70%] text-sm sm:text-base py-4 text-black">
+    <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
       Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
     </p>
   </div>
