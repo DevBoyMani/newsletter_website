@@ -112,7 +112,7 @@ export default function AdvertisePageMobileVersion() {
             Get a personalized demo and discover how Sagravia can help your business
           </p>
 
-          <div className="w-full max-w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-white">
+          <div className="w-full max-w-[370px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-white mx-4">
             <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold py-6 whitespace-nowrap animate-scroll">
               SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
             </h2>
