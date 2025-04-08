@@ -1,0 +1,127 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+
+const newsData = [
+  {
+    id: "item-1",
+    logo: "/advertise/blommberg.png",
+    logoAlt: "Bloomberg",
+    logoWidth: 138,
+    title: "LARK advises FSN Capital and its portfolio company TASKING on the acquisition of LDRA",
+    description:
+      "Tasking GmbH, a leading provider of embedded software development tools, has acquired LDRA, a UK-based software company.",
+    date: "JANUARY 25, 2025",
+    link: "#",
+  },
+  {
+    id: "item-2",
+    logo: "/advertise/bbc.png",
+    logoAlt: "BBC",
+    logoWidth: 108,
+    title: "LARK advises FSN Capital and its portfolio company TASKING on the acquisition of LDRA",
+    description:
+      "Tasking GmbH, a leading provider of embedded software development tools, has acquired LDRA, a UK-based software company.",
+    date: "JANUARY 25, 2025",
+    link: "#",
+  },
+  {
+    id: "item-3",
+    logo: "/advertise/cnn.png",
+    logoAlt: "CNN",
+    logoWidth: 60,
+    title: "LARK advises FSN Capital and its portfolio company TASKING on the acquisition of LDRA",
+    description:
+      "Tasking GmbH, a leading provider of embedded software development tools, has acquired LDRA, a UK-based software company.",
+    date: "JANUARY 25, 2025",
+    link: "#",
+  },
+];
+
+export default function InThePress() {
+  const [openItemMobile, setOpenItemMobile] = useState(newsData[0].id);
+  const [direction, setDirection] = useState("next");
+
+  const handleNext = () => {
+    const currentIndex = newsData.findIndex((item) => item.id === openItemMobile);
+    if (currentIndex < newsData.length - 1) {
+      setDirection("next");
+      setOpenItemMobile(newsData[currentIndex + 1].id);
+    }
+  };
+
+  const handlePrev = () => {
+    const currentIndex = newsData.findIndex((item) => item.id === openItemMobile);
+    if (currentIndex > 0) {
+      setDirection("prev");
+      setOpenItemMobile(newsData[currentIndex - 1].id);
+    }
+  };
+
+  const currentItem = newsData.find((item) => item.id === openItemMobile);
+
+  return (
+    <div className="relative w-[90%] mx-auto space-y-4 py-10">
+      {/* News Slide */}
+      <AnimatePresence mode="wait">
+        <motion.div
+          key={currentItem?.id}
+          initial={{ x: direction === "next" ? "100%" : "-100%", opacity: 0 }}
+          animate={{ x: "0%", opacity: 1 }}
+          exit={{ x: direction === "next" ? "-100%" : "100%", opacity: 0 }}
+          transition={{ duration: 0.4, ease: "easeInOut" }}
+          className="space-y-3 text-center md:text-left"
+        >
+          <Image
+            src={currentItem.logo}
+            alt={currentItem.logoAlt}
+            width={currentItem.logoWidth}
+            height={31}
+            className="mx-auto md:mx-0"
+          />
+          <h4 className="text-[22px] md:text-[26px] font-semibold">{currentItem.title}</h4>
+          <p className="text-[15px]">{currentItem.description}</p>
+          <div className="flex justify-between items-center text-[15px] font-semibold">
+            <p>{currentItem.date}</p>
+            <a href={currentItem.link} className="text-blue-600 hover:underline">
+              READ MORE
+            </a>
+          </div>
+        </motion.div>
+      </AnimatePresence>
+
+      {/* Navigation Arrows */}
+      {openItemMobile !== newsData[0].id && (
+        <button
+          onClick={handlePrev}
+          className="absolute left-0 bottom-10 -translate-y-1/2"
+        >
+          <Image src="/careers/ButtonLeft.png" alt="Left" width={20} height={20} />
+        </button>
+      )}
+
+      {openItemMobile !== newsData[newsData.length - 1].id && (
+        <button
+          onClick={handleNext}
+          className="absolute right-0 bottom-8 -translate-y-1/2"
+        >
+          <Image src="/careers/ButtonRight.png" alt="Right" width={20} height={20} />
+        </button>
+      )}
+
+      {/* Slide Indicators */}
+      <div className="flex justify-between py-4 px-8">
+        {newsData.map((item) => (
+          <div
+            key={item.id}
+            className={`w-full border-b-2 transition ${
+              openItemMobile === item.id ? "border-black" : "border-gray-300"
+            }`}
+          />
+        ))}
+      </div>
+    </div>
+  );
+}

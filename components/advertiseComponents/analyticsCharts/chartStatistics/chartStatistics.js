@@ -128,16 +128,9 @@ export function Statistics() {
 
   {/* mobile view */}
   <div className="block lg:hidden relative w-full flex justify-center items-center py-4">
-  {/* 3D Flip Container */}
-  <div
-    className="relative w-[343px] h-[215px] transition-transform duration-500"
-    style={{
-      perspective: "1000px",
-    }}
-  >
     {/* Inner Flip Layer */}
     <div
-          className="relative w-[343px] h-[215px] transition-transform duration-500"
+          className="relative w-full h-[215px] transition-transform duration-500"
           style={{
             perspective: "1000px",
             transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -244,7 +237,7 @@ export function Statistics() {
       </Card>
     </div>
   </div>
-</div>
+
 
     </>
   );

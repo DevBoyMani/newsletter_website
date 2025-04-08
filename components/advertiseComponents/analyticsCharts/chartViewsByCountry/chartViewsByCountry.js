@@ -167,7 +167,7 @@ export function ViewsCountry() {
     <div className="block lg:hidden relative w-full h-full flex justify-center items-center ">
         {/* 3D Perspective Container */}
         <div
-          className="relative w-[343px] h-[215px] transition-transform duration-500"
+          className="relative w-full h-[215px] transition-transform duration-500"
           style={{
             perspective: "1000px",
             transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -189,23 +189,23 @@ export function ViewsCountry() {
                   </CardDescription>
                 </div>
               </CardHeader>
-        <CardContent className="">
-          <ChartContainer config={chartConfig} className="w-full h-[120px] sm:h-[100px] px-4">
-            <div className="flex justify-center items-center ">
+        <CardContent className="p-0">
+          <ChartContainer config={chartConfig} className="w-full h-[120px] sm:h-[100px] px-2">
+            <div className="flex justify-start items-center">
               {/* Pie Chart */}
               <div className="m-0 p-0">
-                <PieChart width={150} height={150}>
+                <PieChart width={120} height={120} className="">
                   <ChartTooltip cursor={false} content={<ChartTooltipContent hideLabel />} />
                   <Pie data={chartData} dataKey="visitors" nameKey="browser" />
                 </PieChart>
               </div>
 
               {/* Country List */}
-              <div className="ml-4 space-y-2">
+              <div className="w-full space-y-2 mx-2">
                 {chartDatas.map((data) => (
-                  <div key={data.id} className="flex items-center w-full">
+                  <div key={data.id} className="flex items-center ">
                   
-                    <img src={data.dot} alt={data.Country} className="w-[5px] h-[5px] " />
+                    <img src={data.dot} alt={data.Country} className="w-[5px] h-[5px] mr-2" />
                     
                 
                     <div className="text-[#1E1B39] text-[8px] w-10 ">{data.Country}</div>
