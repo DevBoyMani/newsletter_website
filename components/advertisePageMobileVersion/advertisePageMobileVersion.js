@@ -77,7 +77,7 @@ export default function AdvertisePageMobileVersion() {
           </div>
 
           {/* Chart Row 3 */}
-          <div className="flex flex-col justify-center items-center gap-4 ">
+          <div className="flex flex-col justify-center items-center gap-4">
             <SignInUps />
             <div className="w-full h-[215px] rounded-[8px]" style={{ background: "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)" }}>
               <div className="flex flex-col justify-between p-6 h-full">
@@ -95,7 +95,9 @@ export default function AdvertisePageMobileVersion() {
 
       {/* Ad Preview */}
       <div className="bg-white py-10">
-        <HeadingWithUnderline text="How your ad will look like" />
+        <div className="px-4">
+        <HeadingWithUnderline text="How your ad will look like"/>
+        </div>
         <div className="w-full h-[400px] sm:h-[500px] relative overflow-hidden mt-6">
           <video autoPlay loop muted playsInline className="w-full h-full object-cover">
             <source src="/advertise/advertise-page-video.mp4" type="video/mp4" />

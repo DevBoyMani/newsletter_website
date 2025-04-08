@@ -127,7 +127,7 @@ export function Statistics() {
 
 
   {/* mobile view */}
-  <div className="block lg:hidden relative w-full flex justify-center items-center py-4">
+  <div className="block lg:hidden relative w-full flex justify-center items-center">
     {/* Inner Flip Layer */}
     <div
           className="relative w-full h-[215px] transition-transform duration-500"

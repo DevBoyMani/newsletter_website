@@ -81,8 +81,8 @@ export default function InThePress() {
             height={31}
             className="mx-auto md:mx-0"
           />
-          <h4 className="text-[22px] md:text-[26px] font-semibold">{currentItem.title}</h4>
-          <p className="text-[15px]">{currentItem.description}</p>
+          <h4 className="text-[22px] md:text-[26px] font-semibold text-start">{currentItem.title}</h4>
+          <p className="text-[15px] text-start">{currentItem.description}</p>
           <div className="flex justify-between items-center text-[15px] font-semibold">
             <p>{currentItem.date}</p>
             <a href={currentItem.link} className="text-blue-600 hover:underline">

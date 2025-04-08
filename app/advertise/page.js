@@ -325,7 +325,7 @@ export default function Advertise() {
           </div>
 
           {/* mobile view for advertise page */}
-          <div className="block lg:hidden">
+          <div className="block lg:hidden ">
             <AdvertisePageMobileVersion/>
           </div>
           <div>
