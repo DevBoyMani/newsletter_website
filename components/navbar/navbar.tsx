@@ -12,6 +12,7 @@ const routes = [
   { path: "/careers", name: "Careers" },
   { path: "/features", name: "Features" },
   { path: "/newsletters", name: "Newsletters" },
+  { path: "/readers", name: "Readers" },
 ];
 
 const contactSales = [
