@@ -43,7 +43,7 @@ import {
       <Accordion type="single" collapsible className="w-full pt-10">
         {faqData.map((item) => (
           <AccordionItem key={item.value} value={item.value}>
-            <AccordionTrigger>{item.heading}</AccordionTrigger>
+            <AccordionTrigger className="text-[#01261E] font-Manrope font-[400] text-[16px]">{item.heading}</AccordionTrigger>
             <AccordionContent>{item.content}</AccordionContent>
           </AccordionItem>
         ))}

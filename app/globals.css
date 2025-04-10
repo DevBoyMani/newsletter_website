@@ -129,7 +129,7 @@
 }
 
 .animate-scroll {
-  animation: scrollText 10s linear infinite;
+  animation: scrollText 20s linear infinite;
 }
 
 .group:hover .animate-scroll {

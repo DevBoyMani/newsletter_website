@@ -72,20 +72,24 @@ export default function InThePress() {
           animate={{ x: "0%", opacity: 1 }}
           exit={{ x: direction === "next" ? "-100%" : "100%", opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="space-y-3 text-center md:text-left"
+          className="space-y-3"
         >
-          <Image
-            src={currentItem.logo}
-            alt={currentItem.logoAlt}
-            width={currentItem.logoWidth}
-            height={31}
-            className="mx-auto md:mx-0"
-          />
+         
+         <div className="flex justify-start items-start">
+            <Image
+              src={currentItem.logo}
+              alt={currentItem.logoAlt}
+              width={currentItem.logoWidth}
+              height={31}
+              className=""
+            />
+          </div>
+       
           <h4 className="text-[22px] md:text-[26px] font-semibold text-start">{currentItem.title}</h4>
           <p className="text-[15px] text-start">{currentItem.description}</p>
           <div className="flex justify-between items-center text-[15px] font-semibold">
             <p>{currentItem.date}</p>
-            <a href={currentItem.link} className="text-blue-600 hover:underline">
+            <a href={currentItem.link} className="text-black hover:underline">
               READ MORE
             </a>
           </div>
@@ -96,9 +100,9 @@ export default function InThePress() {
       {openItemMobile !== newsData[0].id && (
         <button
           onClick={handlePrev}
-          className="absolute left-0 bottom-10 -translate-y-1/2"
+          className="absolute left-0 bottom-8 -translate-y-1/2"
         >
-          <Image src="/careers/ButtonLeft.png" alt="Left" width={20} height={20} />
+          <Image src="/advertise/button-left.png" alt="Left" width={25} height={25} />
         </button>
       )}
 
@@ -107,7 +111,7 @@ export default function InThePress() {
           onClick={handleNext}
           className="absolute right-0 bottom-8 -translate-y-1/2"
         >
-          <Image src="/careers/ButtonRight.png" alt="Right" width={20} height={20} />
+          <Image src="/advertise/button-right.png" alt="Right" width={25} height={25} />
         </button>
       )}
 

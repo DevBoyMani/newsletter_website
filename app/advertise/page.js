@@ -11,6 +11,13 @@ import { H2Icon } from "@heroicons/react/16/solid";
 import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/advertiseFaq";
 import Footer from "../../components/footer/footer"
 import AdvertisePageMobileVersion from "../../components/advertisePageMobileVersion/advertisePageMobileVersion";
+import { Agdasima } from 'next/font/google';
+
+const agdasima = Agdasima({
+  weight: ['400'], 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function Advertise() {
     const videos = [
@@ -170,7 +177,7 @@ export default function Advertise() {
                     </div>
                     <div>
                       <button className="flex px-4 py-1 text-[#FAFAFA] text-lg rounded-[10px] border border-[#FAFAFA] p-2 hover:bg-[#ffffff] hover:text-[#01261E]">
-                        Learn More
+                        About Us
                       </button>
                     </div>
                   </div>
@@ -216,11 +223,11 @@ export default function Advertise() {
               </div>
 
               {/* Moving Text */}
-              <div className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff]">
-                <h2 className="flex justify-end items-center text-[100px] font-[800] py-[31px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group">
+              <a href="#" className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]">
+                <h2 className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
                   SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
                 </h2>
-              </div>
+              </a>
             </div>
 
           </div>
@@ -231,7 +238,7 @@ export default function Advertise() {
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6">
                   
                   {/* Box 1 */}
-                  <div className="flex-1 border border-black p-6 rounded-[15px]">
+                  <div className="flex-1 border border-black p-8 rounded-[15px]">
                     <h4 className="text-2xl md:text-[36px] text-[#01261E] mb-4">AD Blocker</h4>
                     <p className="text-base md:text-[20px] mb-4">
                       Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t.
@@ -247,15 +254,15 @@ export default function Advertise() {
                   </div>
 
                   {/* Box 2 */}
-                  <div className="flex-1 border border-black p-6 rounded-[15px]">
+                  <div className="flex-1 border border-black p-8 rounded-[15px]">
                     <h4 className="text-2xl md:text-[36px] text-[#01261E] mb-4">Do follow</h4>
                     <p className="text-base md:text-[20px] mb-20">
                       Dofollow links pass along what the SEO community commonly calls “link juice.”
                       Links are a vote for quality.
                     </p>
 
-                    <div className="border bg-[#E6E6E6;] border-[#A7A7A7] text-center py-2">
-                      <a href="http://raventools.com" target="_blank" className="text-black md:text-[20px]">
+                    <div className={`${agdasima.className} w-fit bg-[#E6E6E6] border-2 border-[#A7A7A7] text-center`}>
+                      <a href="http://raventools.com" target="_blank" className="px-2 py-1 text-[#121212] md:text-[20px]">
                         &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
                       </a>
                     </div>
@@ -305,7 +312,7 @@ export default function Advertise() {
                       <p className="text-[15px] font-semibold">{item.date}</p>
                       <a
                         href={item.link}
-                        className="text-[15px] font-semibold text-blue-600 hover:underline"
+                        className="text-[15px] font-semibold text-black hover:underline"
                       >
                         READ MORE
                       </a>
@@ -314,8 +321,8 @@ export default function Advertise() {
                 ))}
               </div>
 
-              <div className="pt-20 pb-20 flex justify-center">
-                <a href="" className="px-6 py-2 border border-black rounded-xl text-[23px] font-[600] hover:bg-[#01261E] hover:text-[#ffffff] transition">
+              <div className="px-20 py-20 flex justify-center ">
+                <a href="" className="w-[198px] h-[45px] flex justify-center items-center border border-[#121212] rounded-[10px] text-[23px] font-[600] hover:bg-[#01261E] hover:text-[#ffffff] transition">
                   See more
                 </a>
               </div>

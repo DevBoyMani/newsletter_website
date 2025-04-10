@@ -9,6 +9,13 @@ import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/adve
 import Footer from "../../components/footer/footer";
 import InThePress from "../advertiseComponents/mobileViewComponents/inThePress/inThePress";
 import { MobileFaq } from "../advertiseComponents/mobileViewComponents/mobileFaq/mobileFaq";
+import { Agdasima } from 'next/font/google';
+
+const agdasima = Agdasima({
+  weight: ['400'], 
+  subsets: ['latin'],
+  display: 'swap',
+});
 
 export default function AdvertisePageMobileVersion() {
   const videos = [
@@ -24,7 +31,7 @@ export default function AdvertisePageMobileVersion() {
       {/* Hero Section */}
       <div className="bg-white relative">
   <div className="px-4 md:px-16 pt-10 lg:pt-20 mx-auto max-w-screen-xl">
-    <h2 className="text-3xl sm:text-5xl md:text-7xl font-semibold text-left text-black w-full">
+    <h2 className="text-[44px] sm:text-5xl md:text-7xl font-semibold text-left text-black w-full leading-[1.2]">
       Step into a world of discovery
     </h2>
     <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
@@ -88,9 +95,11 @@ export default function AdvertisePageMobileVersion() {
                 <h4 className="text-white text-lg max-w-[335px]">
                   Access all major A2A payment methods via a single API and global settlement with multi-currency support.
                 </h4>
-                <button className="w-[50%] mt-6 px-1 py-1 border border-white text-white rounded-[10px] hover:bg-white hover:text-[#01261E] transition">
-                  Learn More
-                </button>
+                <div className="flex justify-start items-center max-w-xl max-h-[20px] pb-6">
+                  <button className="text-[15px] mt-6 px-4 py-1.5 border border-white text-white rounded-[10px] hover:bg-white hover:text-[#01261E] transition">
+                    About Us
+                  </button>
+                </div>
               </div>
             </div>
           </div>
@@ -99,25 +108,25 @@ export default function AdvertisePageMobileVersion() {
 
       {/* Ad Preview */}
       <div className="bg-white py-10">
-        <div className="px-4">
+        <div className="px-4 py-10">
         <HeadingWithUnderline text="How your ad will look like"/>
         </div>
-        <div className="w-full h-[400px] sm:h-[500px] relative overflow-hidden mt-6">
-          <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+        <div className="flex w-full max-h-[213px] relative overflow-hidden">
+          <video autoPlay loop muted playsInline className=" object-cover">
             <source src="/advertise/advertise-page-video.mp4" type="video/mp4" />
           </video>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-center py-10">
+        <div className="flex flex-col items-center justify-center text-center py-4">
           <h2 className="text-3xl sm:text-5xl md:text-[80px] font-light leading-tight">
             And that’s not all
           </h2>
-          <p className="text-lg sm:text-xl mt-4 max-w-md">
+          <p className="text-lg sm:text-xl mt-4 max-w-xs">
             Get a personalized demo and discover how Sagravia can help your business
           </p>
 
-          <div className="w-full max-w-[370px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-white mx-4">
-            <h2 className="text-2xl sm:text-4xl md:text-6xl font-bold py-6 whitespace-nowrap animate-scroll">
+          <div className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-white text-[#01261E]">
+            <h2 className="text-[40px] font-bold py-2 whitespace-nowrap animate-scroll">
               SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
             </h2>
           </div>
@@ -126,11 +135,11 @@ export default function AdvertisePageMobileVersion() {
 
       {/* Ad Blocker and Do Follow */}
       <div className="bg-white px-4 md:px-28 py-10">
-      <div className="flex flex-col md:flex-row justify-center items-stretch gap-6">
+      <div className="flex flex-row justify-between items-stretch gap-4">
         {/* AD Blocker Section */}
-        <div className="w-full md:w-1/2 flex-1 flex flex-col px-2">
+        <div className="w-1/2 ">
           <div className="flex justify-center">
-            <img src="/advertise/ad-blocker-image.png" alt="Ad Blocker" className="w-[38px] h-[38px]" />
+            <img src="/advertise/ad-blocker-image.png" alt="Ad Blocker" className="w-[37px] h-[37px]" />
           </div>
           <h4 className="text-[14px] text-[#01261E] mb-4 text-center md:text-left">AD Blocker</h4>
           <p className="text-base mb-4 text-center md:text-left">
@@ -140,21 +149,21 @@ export default function AdvertisePageMobileVersion() {
         </div>
 
     {/* Do Follow Section */}
-          <div className="w-full md:w-1/2 flex-1 flex flex-col px-2">
+          <div className="w-1/2 px-2">
             <div className="flex justify-center">
-              <img src="/advertise/do-follow.png" alt="Do Follow" className="w-[38px] h-[38px]" />
+              <img src="/advertise/do-follow.png" alt="Do Follow" className="w-[37px] h-[37px]" />
             </div>
             <h4 className="text-[14px] md:text-3xl text-[#01261E] mb-4 text-center md:text-left">Do follow</h4>
             <p className="text-base mb-2 text-center md:text-left">
               Dofollow links pass along what the SEO community commonly calls “link juice.”
               Links are a vote for quality.
             </p>
-            <div className="flex w-[200px] h-[16px] border bg-[#E6E6E6] border-[#A7A7A7] mx-auto md:mx-0 text-center">
+            <div className="flex w-lg max-w-[170px] border bg-[#E6E6E6] border-[#A7A7A7] text-center">
               <a
                 href="http://raventools.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-black text-[8px] w-full"
+                className={`${agdasima.className} text-black text-[8px] font- w-full px-1 py-1`}
               >
                 &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
               </a>
@@ -162,6 +171,8 @@ export default function AdvertisePageMobileVersion() {
           </div>
         </div>
       </div>
+
+      
 
 
       {/* FAQ Section */}
