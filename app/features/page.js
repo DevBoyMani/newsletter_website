@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import SidebarNav from "../../components/sidebarNav/sidebarNav";
-import ImageGrid from "../../components/imageGrid/imageGrid";
+import ImageGrid from "../../components/readersPageComponents/readerImageGrid/readerImageGrid";
 import FeatureSection from "../../components/featureSection/featureSection";
 import { FaStar } from "react-icons/fa";
 
