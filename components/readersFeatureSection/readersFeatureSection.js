@@ -1,28 +1,50 @@
 "use client";
 import { useState, useEffect, useRef } from "react";
 import SidebarNav from "../../components/sidebarNav/sidebarNav";
-import ImageGrid from "../../components/imageGrid/imageGrid";
 import FeatureSection from "../../components/featureSection/featureSection";
 import { FaStar } from "react-icons/fa";
+import ReaderImageGrid from "../readersImageGrid/readersImageGrid";
 
-export default function Features() {
+export default function ReadersFeatures() {
+
+    // this data for left side heading
     const listNames = [
-        "Healthy Ageing",
-        "Immune Defence",
-        "Digestion",
-        "Focus, Energy & Mood",
-        "High Quality Standards",
-        "Ingredients You Can Feel",
-        "Simplicity",
-        "Taste",
-        "Science & Research"
+        "Supports dark mode",
+        "High quality pictures for context",
+        "Fact checked and human written",
+        "Clear summary for important news",
+        "We don’t link to any paywalled sites",
+        
+        
     ];
-
-    const images = [
-        { name: "image1", src: "/features/features-1.jpg" },
-        { name: "image2", src: "/features/features-2.jpg" },
-        { name: "image3", src: "/features/features-3.jpg" }
-    ];
+// this data for right side 
+   const sections=[
+    { title:"Supports dark mode",
+    //   src:"/readers/supports-dark-mode.png",
+      content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      imageSize: "",
+    },
+    { title:"High quality pictures for context",
+      src:"/readers/highquality-picture-rectangle-image.png",
+      content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      imageSize: " h-[290px]",
+    },
+    { title:"Fact checked and human written",
+      src:"/readers/fact-checked.png",
+      content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      imageSize: "w-[431px] h-[518px]",
+    },
+    { title:"Clear summary for the import new",
+        src:"/readers/clear-summary-for-the-import-news.png",
+        content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+        imageSize: "w-[492px] h-[378px]",
+      },
+      { title:"We don’t link to any paywalled sites",
+        src:"/readers/we-dont-think.png",
+        content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+        imageSize: " h-auto",
+      },
+   ]
 
     const sectionRefs = useRef([]);
     const [activeIndex, setActiveIndex] = useState(0);
@@ -58,13 +80,11 @@ export default function Features() {
 
     return (
         <>
- <div className="bg-white px-4 md:px-16 py-10 md:pt-20 mx-auto">
-            <div className="max-w-4xl">
-                <h2 className="text-3xl md:text-5xl lg:text-6xl text-black text-start">
-                    The benefits of taking AG1
-                </h2>
-                <p className="text-black text-lg md:text-xl py-4 md:py-6">
-                    Discover the benefits of taking AG1 daily to support your health holistically.
+        <div className="bg-white px-4 md:px-16 pb-10 mx-auto">
+            <div className="">
+                <p className="text-black text-lg md:text-xl ">
+                Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.
+
                 </p>
             </div>
         </div>
@@ -74,21 +94,23 @@ export default function Features() {
                 <SidebarNav listNames={listNames} activeIndex={activeIndex} sectionRefs={sectionRefs} />
             </div>
             <div className="w-3/4 overflow-y-auto " style={{ scrollbarWidth: "none" }}>
-                <ImageGrid images={images} />
-                {listNames.map((name, index) => (
+                {/* <ReaderImageGrid images={images} /> */}
+                {sections.map((data, index) => (
                     <FeatureSection 
-                        key={index} 
-                        title={name} 
-                        ref={(el) => (sectionRefs.current[index] = el)}
+                    key={index} 
+                    data={{ ...data, isFirst: index === 0 }} 
+                    ref={(el) => (sectionRefs.current[index] = el)}
                     />
                 ))}
+
+               
             </div>
         </div>
 
         {/* review section*/}
-        <div className="px-4  md:px-16 py-10 md:pt-20 mx-auto">
+        {/* <div className="px-4  md:px-16 py-10 md:pt-20 mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6  p-6 rounded-lg z-10">
-            {/* Card 1 */}
+     
             <div className="bg-[#F6F5F1] p-6 rounded-lg">
             <div className="flex justify-center lg:justify-start mb-2">
                 {[...Array(5)].map((_, index) => (
@@ -102,7 +124,7 @@ export default function Features() {
             <p className="text-gray-500 text-lg py-4">James J.</p>
             </div>
 
-            {/* Card 2 */}
+ 
             <div className="bg-[#F6F5F1] p-6 rounded-lg">
             <div className="flex justify-center lg:justify-start mb-2">
                 {[...Array(5)].map((_, index) => (
@@ -116,7 +138,7 @@ export default function Features() {
             <p className="text-gray-500 text-lg py-4">James J.</p>
             </div>
 
-            {/* Card 3 */}
+         
             <div className="bg-[#F6F5F1] p-6 rounded-lg">
             <div className="flex justify-center lg:justify-start mb-2">
                 {[...Array(5)].map((_, index) => (
@@ -131,7 +153,7 @@ export default function Features() {
             </div>
 
         </div>
-        </div>
+        </div> */}
 
         </>
     );

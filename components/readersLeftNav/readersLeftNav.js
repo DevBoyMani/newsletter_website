@@ -1,5 +1,3 @@
-
-
 export default function SidebarNav({ listNames, activeIndex, sectionRefs }) {
     const handleClick = (index) => {
         if (sectionRefs.current[index]) {
@@ -19,8 +17,8 @@ export default function SidebarNav({ listNames, activeIndex, sectionRefs }) {
             {listNames.map((name, index) => (
                 <div
                     key={index}
-                    className={`py-4 px-4 border-b text-lg md:text-[18px] cursor-pointer transition-all
-                        ${index === activeIndex ? "bg-[#01261E] text-[#ffffff]" : "text-black hover:text-[#ffffff] hover:bg-[#01261ee0]"}`}
+                    className={`py-4 px-4 border-b text-lg md:text-xl cursor-pointer transition-all
+                        ${index === activeIndex ? "bg-[#CD853F] text-black" : "text-black hover:bg-[#C4A484]"}`}
                     onClick={() => handleClick(index)}
                 >
                     {name}

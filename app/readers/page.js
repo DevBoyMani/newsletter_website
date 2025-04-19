@@ -1,6 +1,6 @@
+import ReadersFeatures from "../../components/readersFeatureSection/readersFeatureSection";
 import ReadersHero from "../../components/readersPageComponents/readersHero/readersHero";
 import ReadersNewsletters from "../../components/readersPageComponents/readersNewsletters/readersNewsletters";
-import ReadersFeatures from "../../components/readersPageComponents/readersFeatures/readersFeatures"
 import HeadingWithUnderline from "../../components/readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 
 export default function ReadersPage(){

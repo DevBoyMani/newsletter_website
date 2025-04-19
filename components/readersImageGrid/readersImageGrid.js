@@ -1,4 +1,4 @@
-export default function ImageGrid({ images }) {
+export default function ReaderImageGrid({ images }) {
     return (
         <div className="pl-0 md:pl-8 ">
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 ">
