@@ -1,6 +1,6 @@
 "use client";
 import { forwardRef } from "react";
-import FeatureHighlight from "../../components/featureHighlight/featureHighlight";
+import FeatureHighlight from "../featureHighlight/featureHighlight";
 
 const FeatureSection = forwardRef(({ title }, ref) => {
     const sectionImage = { name: "feature image", src: "/features/sections/section1.jpg" };

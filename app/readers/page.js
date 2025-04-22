@@ -1,4 +1,5 @@
 import ReadersFeatures from "../../components/readersFeatureSection/readersFeatureSection";
+import ReadersFooter from "../../components/readersFooter/readersFooter";
 import ReadersHero from "../../components/readersPageComponents/readersHero/readersHero";
 import ReadersNewsletters from "../../components/readersPageComponents/readersNewsletters/readersNewsletters";
 import HeadingWithUnderline from "../../components/readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
@@ -17,6 +18,8 @@ export default function ReadersPage(){
               <HeadingWithUnderline text="Features"/>
             </div>
             <ReadersFeatures/>
+
+            <ReadersFooter/>
         </>
     )
 }
