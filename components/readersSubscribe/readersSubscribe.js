@@ -1,6 +1,7 @@
+
 export function ReadersSubscribe() {
   return (
-    <form className="flex w-full max-w-sm items-center space-x-2">
+    <form className="flex w-full max-w-sm items-center space-x-1">
       <input
         type="email"
         placeholder="Your email address"

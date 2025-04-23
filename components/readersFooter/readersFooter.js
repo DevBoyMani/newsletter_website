@@ -71,44 +71,57 @@ export default function ReadersFooter() {
 
 
             {/* footer */}
-              <div>
-                <div className="py-20 flex justify-center">
-                  <img
+            <div className="relative bg-[#01261E]">
+              {/* Background Logo */}
+              <div className="absolute -left-16 top-4 opacity-[100%] z-10">
+                <img
+                  src="/readers/sagravia-footer-logo.png"
+                  alt="background logo"
+                  className="w-82"
+                />
+              </div>
+
+              {/* Foreground Content */}
+              <div className="py-20 flex justify-center relative z-10">
+                <img
                   src="/readers/sagravia-big-text.png"
                   alt="sagravia"
-                  width={1262}/>
-                </div>
-                <div className="bg-[#01261E] px-4 py-16 text-white">
-                  <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-10">
-                    
-                    {/* left section */}
-                    <div className="lg:w-1/2">
-                      <h2 className="text-[28px] lg:text-[36px] font-normal mb-6">
-                        Subscribe to get tips and tactics to grow the way you want.
-                      </h2>
-                      <ReadersSubscribe />
-                    </div>
+                  width={1262}
+                />
+              </div>
 
-                    {/* right section */}
-                    <div className="lg:w-1/2 flex justify-end text-[16px]">
-                      <ul className="space-y-2">
-                        <li>Blog</li>
-                        <li>Careers</li>
-                        <li>Privacy Policy</li>
-                        <li>Legal</li>
-                      </ul>
-                      <ul className="space-y-2 ml-36">
-                        <li>About Us</li>
-                        <li>For Readers</li>
-                        <li>Advertise</li>
-                        <li>Analytics</li>
-                        <li>Contact Sales</li>
-                      </ul>
-                    </div>
-
+              <div className="px-4 py-16 text-white relative z-10">
+                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-10">
+                  
+                  {/* left section */}
+                  <div className="lg:w-1/2">
+                    <h2 className="text-[28px] lg:text-[36px] font-[400] mb-6">
+                      Subscribe to get tips and tactics to grow the way you want.
+                    </h2>
+                    <ReadersSubscribe />
                   </div>
+
+                  {/* right section */}
+                  <div className="lg:w-1/2 flex justify-end text-[16px]">
+                    <ul className="space-y-2">
+                      <li>Blog</li>
+                      <li>Careers</li>
+                      <li>Privacy Policy</li>
+                      <li>Legal</li>
+                    </ul>
+                    <ul className="space-y-2 ml-36">
+                      <li>About Us</li>
+                      <li>For Readers</li>
+                      <li>Advertise</li>
+                      <li>Analytics</li>
+                      <li>Contact Sales</li>
+                    </ul>
+                  </div>
+
                 </div>
               </div>
+            </div>
+
 
               <div>
                 <div className="flex justify-end border-b pb-8">
