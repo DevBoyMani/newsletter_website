@@ -122,7 +122,6 @@ export default function ReadersFooter() {
               </div>
             </div>
 
-
               <div>
                 <div className="flex justify-end border-b pb-8">
                   {socialMediaIcons.map((item,index)=>(

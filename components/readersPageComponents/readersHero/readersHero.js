@@ -2,7 +2,7 @@ export default function ReadersHero(){
     return(
         <>
             <div className="">
-                <div className="w-full h-[846px] relative overflow-hidden py-10">
+                <div className="w-full h-full relative overflow-hidden py-10">
                     <div className="w-full h-full">
                         <video
                         key="Hero-section-video"
