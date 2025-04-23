@@ -1,6 +1,8 @@
+import ReadersMobileNewsletterCards from "../readersMobileNewsletterCards/readersMobileNewsletterCards";
 import HeadingWithUnderline from "../readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 
 export default function ReadersMobileView(){
+
     return(
         <>
             <div className="bg-[#FAFAFA]">
@@ -12,7 +14,7 @@ export default function ReadersMobileView(){
                     Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
                     </p>
                 </div>
-                <div className="px-4 py-10 mx-auto">
+                <div className="px-4 pb-10 mx-auto">
                     <div className="w-full h-full">
                         <video
                             key="Hero-section-video"
@@ -22,7 +24,7 @@ export default function ReadersMobileView(){
                             playsInline
                             className="w-full h-full object-cover"
                             >
-                            <source src="/readers/readers-hero-section-bg-video.mp4" type="video/mp4" />
+                            <source src="/readers/hero-section-video-for-mobile.mp4" type="video/mp4" />
                             {/* <source src="/advertise/advertise-page-video.webm" type="video/webm" /> */}
                         </video>
                     </div>
@@ -31,9 +33,10 @@ export default function ReadersMobileView(){
                 {/* newsletters section */}
                 <div className="px-4 py-10 mx-auto">
                     <HeadingWithUnderline text="Our Newsletters"/>
-                    <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
+                   <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
                     Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et, auctor id libero. Interdum et malesuada fames ac ante ipsum primis in faucibus. Sed eu nulla felis. Quisque eget viverra massa. Donec posuere, sapien vel facilisis dictum, turpis mi tempus mauris, in ullamcorper libero turpis sed mauris. Nulla eu blandit nunc, ut suscipit dolor. Quisque dictum pellentesque tellus sed porta.
                     </p>
+                    <ReadersMobileNewsletterCards/>
                 </div>
             </div>
         </>
