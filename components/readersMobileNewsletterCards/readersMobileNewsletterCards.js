@@ -3,7 +3,7 @@ export default function ReadersMobileNewsletterCards() {
         {
             domain: "NEWS",
             name: "Presidential Summary",
-            image: "/readers/ps-card-for-mobile.png",
+            image: "/readers/ps-card-for-mobile.jpg",
             content: "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
             learnMore: "https://www.presidentialsummary.com/"
         },
@@ -60,7 +60,7 @@ export default function ReadersMobileNewsletterCards() {
                 <img
                     src={item.image}
                     alt={item.name}
-                    className="w-24 h-24 object-cover flex-shrink-0"
+                    className="w-16 h-16 object-cover flex-shrink-0"
                 />
 
             
