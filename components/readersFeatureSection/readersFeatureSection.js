@@ -34,9 +34,9 @@ export default function ReadersFeatures() {
       },
    ]
 
+   const [activeIndex, setActiveIndex] = useState(0);
     const sectionRefs = useRef([]);
-    const [activeIndex, setActiveIndex] = useState(0);
-    console.log(activeIndex);
+    console.log(activeIndex)
 
     useEffect(() => {
         const observer = new IntersectionObserver(
