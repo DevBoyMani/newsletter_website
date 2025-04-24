@@ -6,17 +6,6 @@ import ReaderImageGrid from "../readersImageGrid/readersImageGrid";
 
 export default function ReadersFeatures() {
 
-    // this data for left side heading
-    const listNames = [
-        "Supports dark mode",
-        "High quality pictures for context",
-        "Fact checked and human written",
-        "Clear summary for important news",
-        "We don’t link to any paywalled sites",
-        
-        
-    ];
-// this data for right side 
    const sections=[
     { title:"Supports dark mode",
     //   src:"/readers/supports-dark-mode.png",
@@ -47,6 +36,7 @@ export default function ReadersFeatures() {
 
     const sectionRefs = useRef([]);
     const [activeIndex, setActiveIndex] = useState(0);
+    console.log(activeIndex);
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -90,7 +80,7 @@ export default function ReadersFeatures() {
 
         <div className="flex px-4 md:px-16 mx-auto relative">
             <div className="w-1/4 sticky top-24 h-screen">
-                <SidebarNav listNames={listNames} activeIndex={activeIndex} sectionRefs={sectionRefs} />
+                <SidebarNav listNames={sections.map(el=>el.title)} activeIndex={activeIndex} sectionRefs={sectionRefs} />
             </div>
             <div className="w-3/4 overflow-y-auto " style={{ scrollbarWidth: "none" }}>
                 {/* <ReaderImageGrid images={images} /> */}
