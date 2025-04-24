@@ -106,7 +106,7 @@ export default function ReadersFooter() {
                 <img
                   src="/readers/sagravia-big-text.png"
                   alt="sagravia"
-                  className=" w-[1710] px-4 py-2"
+                  className=" w-[100%] px-4 py-2"
                 />
               </div>
 
