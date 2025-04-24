@@ -98,7 +98,7 @@ export default function ReadersFeatures() {
                     <FeatureSection 
                     key={index} 
                     data={{ ...data, isFirst: index === 0 }} 
-                    ref={(el) => (sectionRefs.current[index] = el)}
+                    ref={el => (sectionRefs.current[index] = el)}
                     />
                 ))}
 

@@ -1,3 +1,4 @@
+"use client"
 import { FaStar } from "react-icons/fa";
 import { ReadersSubscribe } from "../readersSubscribe/readersSubscribe";
 
@@ -46,28 +47,47 @@ export default function ReadersFooter() {
                 </h2>
             </div>
 
-            <div className="relative ">
-            <div className="absolute top-0 left-0 h-full w-60 "  style={{
-            background: "linear-gradient(90deg, #01261E 30.88%, rgba(1, 38, 30, 0) 96.5%)", }} />
-        
-          <div className="absolute top-0 right-0 h-full w-60" style={{background: "linear-gradient(270deg, #01261E 30.88%, rgba(1, 38, 30, 0) 96.5%)",}}/>
+            <div className="relative group overflow-hidden">
+      {/* Gradient Overlays */}
+      <div
+        className="absolute top-0 left-0 h-full w-32 z-20 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(90deg, #01261E 30.88%, rgba(1, 38, 30, 0) 96.5%)",
+        }}
+      />
+      <div
+        className="absolute top-0 right-0 h-full w-32 z-20 pointer-events-none"
+        style={{
+          background:
+            "linear-gradient(270deg, #01261E 30.88%, rgba(1, 38, 30, 0) 96.5%)",
+        }}
+      />
 
-                <div className=" grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6 p-6 rounded-lg z-10 ">
-                {feedbackData.map((item, index) => (
-                    <div key={index} className="bg-[#01261E] p-6 rounded-lg border border-[#FFFFFF33]">
-                        <div className="flex justify-center lg:justify-start mb-2">
-                            {[...Array(5)].map((_, id) => (
-                            <FaStar key={id} className="text-xl text-[#C7A262] mr-2" />
-                            ))}
-                        </div>
-                        <div className="text-[#ffffff]">
-                            <p className=" text-[16px] ">{item.feedback}</p>
-                            <p className=" text-[16px] py-4">{item.userName}</p>
-                        </div>
-                    </div>
+      {/* Auto-Scrolling Flex Container */}
+      <div className="overflow-hidden">
+        <div
+          className="flex gap-6 px-6 py-8 animate-scroll-cards"
+        >
+          {[...feedbackData, ...feedbackData].map((item, index) => (
+            <div
+              key={index}
+              className="min-w-[300px] max-w-[300px] bg-[#01261E] p-6 rounded-lg border border-[#FFFFFF33] shrink-0"
+            >
+              <div className="flex justify-center lg:justify-start mb-2">
+                {[...Array(5)].map((_, id) => (
+                  <FaStar key={id} className="text-xl text-[#C7A262] mr-2" />
                 ))}
               </div>
+              <div className="text-[#ffffff]">
+                <p className="text-[16px]">{item.feedback}</p>
+                <p className="text-[16px] py-4">{item.userName}</p>
+              </div>
             </div>
+          ))}
+        </div>
+      </div>
+    </div>
 
 
             {/* footer */}
@@ -86,12 +106,12 @@ export default function ReadersFooter() {
                 <img
                   src="/readers/sagravia-big-text.png"
                   alt="sagravia"
-                  width={1262}
+                  className=" w-[1710] px-4 py-2"
                 />
               </div>
 
-              <div className="px-4 py-16 text-white relative z-10">
-                <div className="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between gap-10">
+              <div className=" py-16 text-white relative z-10">
+                <div className="max-w-[1710] mx-auto flex flex-col lg:flex-row justify-between gap-10">
                   
                   {/* left section */}
                   <div className="lg:w-1/2">

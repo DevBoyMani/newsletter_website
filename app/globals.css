@@ -135,3 +135,22 @@
 .group:hover .animate-scroll {
   animation-play-state: paused;
 }
+
+
+@keyframes scrollCards {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-cards {
+  animation: scrollCards 5s linear infinite;
+}
+
+.group:hover .animate-scroll-cards {
+  animation-play-state: paused;
+}
+
