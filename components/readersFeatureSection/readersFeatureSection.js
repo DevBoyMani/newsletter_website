@@ -56,35 +56,49 @@ export default function ReadersFeatureSection() {
   };
 
   return (
-    <div className="flex h-screen bg-[#FAFAFA] px-4 md:px-16 mx-auto relative z-10 overflow-hidden mt-12">
-  {/* Left Sidebar (Sticky) */}
-  <div className="h-full overflow-hidden pr-10 z-10 w-1/4 sticky top-24 bg-[#FAFAFA]">
-    {sections.map((item, index) => (
-      <div
-        key={index}
-        className={`py-4 px-4 border-b text-lg md:text-[18px] cursor-pointer transition-all
-          ${index === activeIndex ? 'bg-[#01261E] text-white' : 'text-black hover:text-white hover:bg-[#01261ee0]'}`}
-        onClick={() => handleClick(index)}
-      >
-        {item.title}
-      </div>
-    ))}
-  </div>
 
-  {/* Right Scrollable Content */}
-  <div className="w-3/4 bg-[#FAFAFA] h-screen overflow-y-auto px-6 pt-6 pb-60 space-y-16 scroll-smooth scrollable-content" style={{ scrollbarWidth: "none" }}>
-    {sections.map((item, index) => (
-      <FeatureSection
-        key={index}
-        ref={(el) => (sectionRefs.current[index] = el)}
-        data={{
-          ...item,
-          isFirst: index === 0,isThird: index === 2,
-        }}
-      />
-    ))}
-  </div>
-</div>
+    <>
+        <div className="bg-[#FAFAFA] px-4 md:px-16 pb-10 mx-auto">
+            <div className="">
+                <p className="text-black text-lg md:text-xl ">
+                Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.
+
+                </p>
+            </div>
+        </div>
+
+            <div className="flex h-screen bg-[#FAFAFA] px-4 md:px-16 mx-auto relative z-10 overflow-hidden mt-12">
+          {/* Left Sidebar (Sticky) */}
+          <div className="h-full overflow-hidden pr-10 z-10 w-1/4 sticky top-24 bg-[#FAFAFA]">
+            {sections.map((item, index) => (
+              <div
+                key={index}
+                className={`py-4 px-4 border-b text-lg md:text-[18px] cursor-pointer transition-all
+                  ${index === activeIndex ? 'bg-[#01261E] text-white' : 'text-black hover:text-white hover:bg-[#01261ee0]'}`}
+                onClick={() => handleClick(index)}
+              >
+                {item.title}
+              </div>
+            ))}
+          </div>
+
+          {/* Right Scrollable Content */}
+
+          <div className="w-3/4 bg-[#FAFAFA] h-screen overflow-y-auto px-6 pt-6 pb-60 space-y-16 scroll-smooth scrollable-content" style={{ scrollbarWidth: "none" }}>
+            {sections.map((item, index) => (
+              <FeatureSection
+                key={index}
+                ref={(el) => (sectionRefs.current[index] = el)}
+                data={{
+                  ...item,
+                  isFirst: index === 0,isThird: index === 2,
+                }}
+              />
+            ))}
+          </div>
+        </div>
+
+    </>
 
   );
 }
