@@ -35,16 +35,17 @@ export default function ReadersNewsletters(){
                             className="w-full h-full object-cover rounded-t-lg"
                           />
 
-                <button className="absolute top-4 left-4 bg-gray-200 text-black px-5 py-1 rounded-full overflow-hidden group-hover:px-2 group-hover:py-2 group-hover:w-[30px] group-hover:h-[30px] group-hover:rounded-full flex items-center justify-center gap-2">
+<button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full overflow-hidden transition-all duration-300 ease-in-out flex items-center gap-2 h-[40px] group px-5 group-hover:px-3 w-auto">
+  <span className="transition-all duration-300 ease-in-out group-hover:opacity-0 group-hover:w-0 group-hover:overflow-hidden">
+    Subscribe
+  </span>
 
-                  <span className="group-hover:opacity-0 ">
-                    Subscribe
-                  </span>
+  <span className="text-2xl pb-1 transition-all duration-300 ease-in-out transform group-hover:translate-x-0">
+    +
+  </span>
+</button>
 
-                  <span className="mb-1 text-2xl transition-all duration-0 group-hover:absolute group-hover:inset-0 group-hover:flex group-hover:items-center group-hover:justify-center group-hover:scale-95">
-                    +
-                  </span>
-                </button>
+
 
 
                 {/* <button className="absolute top-4 left-4 bg-gray-200 text-black px-5 py-2 rounded-full transition-all duration-300 overflow-hidden group-hover:px-2 group-hover:py-2 group-hover:w-[30px] group-hover:h-[30px] group-hover:rounded-full flex items-center justify-center ">

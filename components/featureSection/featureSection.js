@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import { forwardRef } from "react";
+import { motion } from 'framer-motion';
 
 const FeatureSection = forwardRef(({ data }, ref) => {
     const { title, src, content, imageSize, isFirst, isThird } = data;
@@ -35,26 +36,34 @@ const FeatureSection = forwardRef(({ data }, ref) => {
                     {/* Mode buttons only on first section */}
                     {isFirst && (
                         <div className="flex space-x-4 mt-4">
-                            {mode === "dark" && (
-                                <button onClick={() => handleModeChange("light")}>
-                                    <img
-                                        src="/readers/light-mode-button.png"
-                                        alt="Light Mode"
-                                        className="w-[79px]"
-                                    />
-                                </button>
-                            )}
-                            {mode === "light" && (
-                                <button onClick={() => handleModeChange("dark")}>
-                                    <img
-                                        src="/readers/dark-mode-button.png"
-                                        alt="Dark Mode"
-                                        className="w-[79px]"
-                                    />
-                                </button>
-                            )}
+                            <motion.button
+                            onClick={() => handleModeChange(mode === "dark" ? "light" : "dark")}
+                            className={`
+                                relative w-[79px] h-[40px] rounded-full
+                                ${mode === "dark" ? "shadow-inner" : "shadow-inner"}
+                              `}
+                              style={{
+                                boxShadow: mode === "dark" 
+                                  ? "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset" 
+                                  : "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset"
+                              }}
+                            initial={{ backgroundColor: "#01261E" }}
+                            animate={{
+                                backgroundColor: mode === "dark" ? " #01261E" : "#DAEBE8",
+                            }}
+                            transition={{ duration: 0.3 }}
+                            >
+                            {/* Inner Image for Dark Mode */}
+                            <motion.img
+                                src={mode === "dark" ? "/readers/dark.jpg" : "/readers/light.jpg"}
+                                alt="Mode Toggle"
+                                className="absolute top-1.5 left-0.5 w-[30px] h-[30px] rounded-full"
+                                animate={{ x: mode === "dark" ? 39 : 0 }}
+        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                            />
+                            </motion.button>
                         </div>
-                    )}
+                        )}
                 </div>
 
                 {/* Right Side - Dynamic Image */}
