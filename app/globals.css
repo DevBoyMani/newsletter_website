@@ -138,16 +138,16 @@
 
 
 @keyframes scrollCards {
-  0% {
-    transform: translateX(-200%);
+  from {
+    transform: translateX(-100%);
   }
-  100% {
-    transform: translateX(0%);
+  to {
+    transform: translateX(100%);
   }
 }
 
 .animate-scroll-cards {
-  animation: scrollCards 30s linear infinite;
+  animation: scrollCards 20s linear infinite;
 }
 
 .group:hover .animate-scroll-cards {

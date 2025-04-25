@@ -1,7 +1,7 @@
 export default function ReadersHero(){
     return(
         <>
-            <div className="">
+            <div className="bg-[#FAFAFA]">
                 <div className="w-full h-full relative overflow-hidden py-10">
                     <div className="w-full h-full">
                         <video
