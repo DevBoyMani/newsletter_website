@@ -83,8 +83,8 @@ export default function ReadersNewsletters() {
                     className="w-full h-full object-cover rounded-t-lg"
                   />
 
-                  <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[120px] group-hover/card:w-[44px] px-4">
-                    <span className="text-[16px] group-hover/card:hidden flex items-center gap-2">
+                  <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[120px] group-hover/card:w-[40px] group-hover/card:h-[40px] px-4">
+                    <span className="text-[14px] group-hover/card:hidden flex items-center gap-2">
                       Subscribe <span className="text-2xl pb-1">+</span>
                     </span>
                     <span className="text-2xl pb-1 hidden group-hover/card:block">
