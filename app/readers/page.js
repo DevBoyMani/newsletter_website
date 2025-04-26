@@ -26,8 +26,9 @@ export default function ReadersPage(){
 
             <div className="block lg:hidden">
               <ReadersMobileView/>
-            </div>
+              
             <ReadersFooter/>
+            </div>
         </>
     )
 }
