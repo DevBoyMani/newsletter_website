@@ -1,0 +1,130 @@
+'use client';
+
+import { useState } from 'react';
+import { motion } from 'framer-motion';
+
+const sections=[
+    { title:"1. Supports dark mode",
+    //   src:"/readers/supports-dark-mode.png",
+      content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      imageSize: "",
+    },
+    { title:"2. High quality pictures for context",
+      src:"/readers/nl-image-for-features.png",
+      content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      imageSize: "w-[431px] h-[379px]",
+    },
+    { title:"3. Fact checked and human written",
+    videoSrc:"/readers/fact-checked-video.mp4",
+      content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      imageSize: " h-[375px]",
+    },
+    { title:"4. Clear summary for the import new",
+        src:"/readers/clear-summary-for-the-import-news.png",
+        content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+        imageSize: "w-[492px] h-[378px]",
+      },
+      { title:"5. We don’t link to any paywalled sites",
+        src:"/readers/we-dont-think.png",
+        content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+        imageSize: " h-auto",
+      },
+   ]
+
+export default function ReadersMobileFeaturesSection() {
+  const [mode, setMode] = useState('dark');
+
+  const handleModeChange = () => {
+    setMode(prev => (prev === "dark" ? "light" : "dark"));
+  };
+
+  return (
+    <div className="bg-[#FAFAFA] pb-10 mx-auto">
+      
+
+      {/* Features Loop */}
+      {sections.map(({ title, content, src, videoSrc, imageSize }, index) => {
+        const isFirst = index === 0;
+        const isThird = index === 2;
+
+        // Dynamic image for first item
+        const imageSrc = isFirst
+          ? (mode === "light" 
+              ? "/readers/light-mode-image.png"
+              : "/readers/dark-mode-image.png")
+          : src;
+
+        return (
+          <div key={index} className="flex flex-col py-4 items-center">
+             {/* Text Content */}
+             <div className="w-full">
+              <h2 className="text-[24px] font-[500] text-black ml-2 mb-4 leading-[normal]">{title}</h2>
+              <p className="text-black text-[14px] font-[400] pb-6">{content}</p>
+            </div>
+
+            {/* First Section Special Layout */}
+            {isFirst ? (
+              <div className="relative flex w-full items-start justify-center">
+                {/* Small Toggle Button */}
+                <motion.button
+                  onClick={handleModeChange}
+                  className="absolute top-0 left-0  w-[23.5%] h-[8%] rounded-full shadow-inner mr-[5px]"
+                  style={{
+                    boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
+                  }}
+                  initial={{ backgroundColor: "#01261E" }}
+                  animate={{ backgroundColor: mode === "dark" ? "#01261E" : "#DAEBE8" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.img
+                    src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
+                    alt="Mode Toggle"
+                      className="absolute top-1 left-0.5 w-[36.5%] rounded-full"
+                    animate={{ x: mode === "dark" ? 39 : 0 }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  />
+                </motion.button>
+
+                {/* Image */}
+                <div className="ml-5">
+                {imageSrc && (
+                  <img
+                    src={imageSrc}
+                    alt={title}
+                    className={`object-cover rounded-md w-[100%] h-auto`}
+                  />
+                )}
+                </div>
+              </div>
+            ) : (
+              // Normal sections
+              <div className="w-full">
+                {isThird && videoSrc ? (
+                  <video
+                    autoPlay
+                    muted
+                    loop
+                    className={`object-cover w-full px-0 mx-0 ${imageSize ?? "h-auto"}`}
+                  >
+                    <source src={videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  imageSrc && (
+                    <img
+                      src={imageSrc}
+                      alt={title}
+                      className={`object-cover rounded-md w-full ${imageSize ?? "h-auto"}`}
+                    />
+                  )
+                )}
+              </div>
+            )}
+
+           
+          </div>
+        );
+      })}
+    </div>
+  );
+}

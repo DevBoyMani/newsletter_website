@@ -48,7 +48,7 @@ export default function ReadersMobileNewsletterCards() {
                 {/* <button className="absolute top-2 right-2 w-6 h-6 flex items-center justify-center bg-gray-200 rounded-full text-lg font-bold text-gray-700">
                     +
                 </button> */}
-                <button className="absolute top-2 right-2 w-27 h-27 flex items-center justify-center bg-gray-200 rounded-full">
+                <button className="absolute top-3 right-2 w-27 h-27 flex items-center justify-center bg-gray-200 rounded-full">
                     <img
                         src="/readers/plus-icon-readers-mobile.jpg"
                         alt="Plus Icon"
@@ -60,7 +60,7 @@ export default function ReadersMobileNewsletterCards() {
                 <img
                     src={item.image}
                     alt={item.name}
-                    className="w-16 h-16 object-cover flex-shrink-0"
+                    className="w-16 h-16 object-cover flex-shrink-0 mt-2"
                 />
 
             

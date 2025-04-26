@@ -1,3 +1,4 @@
+import ReadersMobileFeaturesSection from "../readersMobileFeaturesSection/readersMobileFeaturesSection";
 import ReadersMobileNewsletterCards from "../readersMobileNewsletterCards/readersMobileNewsletterCards";
 import HeadingWithUnderline from "../readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 
@@ -38,7 +39,17 @@ export default function ReadersMobileView(){
                     </p>
                     <ReadersMobileNewsletterCards/>
                 </div>
+                {/* Features section */}
+                <div className="px-4 py-10 mx-auto">
+                    <HeadingWithUnderline text="Features"/>
+                   <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
+                   Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.
+                    </p>
+                    <ReadersMobileFeaturesSection/>
+                </div>
             </div>
+
+            
         </>
     )
 }
