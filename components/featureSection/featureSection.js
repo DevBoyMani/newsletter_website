@@ -55,9 +55,9 @@ const FeatureSection = forwardRef(({ data }, ref) => {
                             >
                             {/* Inner Image for Dark Mode */}
                             <motion.img
-                                src={mode === "dark" ? "/readers/dark.jpg" : "/readers/light.jpg"}
+                                src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
                                 alt="Mode Toggle"
-                                className="absolute top-1.5 left-0.5 w-[30px] h-[30px] rounded-full"
+                                className="absolute top-1 left-0.5 w-[34px] h-[34px] rounded-full"
                                 animate={{ x: mode === "dark" ? 39 : 0 }}
         transition={{ type: "spring", stiffness: 300, damping: 20 }}
                             />

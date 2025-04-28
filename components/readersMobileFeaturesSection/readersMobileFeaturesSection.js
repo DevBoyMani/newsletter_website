@@ -68,7 +68,7 @@ export default function ReadersMobileFeaturesSection() {
                 {/* Small Toggle Button */}
                 <motion.button
                   onClick={handleModeChange}
-                  className="absolute top-0 left-0  w-[23.5%] h-[8%] rounded-full shadow-inner mr-[5px]"
+                  className="absolute top-0 left-0  w-[22.5%] h-[7.5%] rounded-full shadow-inner mr-[5px]"
                   style={{
                     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
                   }}
@@ -80,7 +80,7 @@ export default function ReadersMobileFeaturesSection() {
                     src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
                     alt="Mode Toggle"
                       className="absolute top-1 left-0.5 w-[36.5%] rounded-full"
-                    animate={{ x: mode === "dark" ? 39 : 0 }}
+                    animate={{ x: mode === "dark" ? 42 : 0 }}
                     transition={{ type: "spring", stiffness: 300, damping: 20 }}
                   />
                 </motion.button>
