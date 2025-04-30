@@ -28,9 +28,9 @@ export default function ContactMessage({ onSend }) {
       <div className="flex justify-end mt-4">
         <button
           onClick={handleSend}
-          className="px-6 py-2 bg-[#01261E] text-white text-sm font-semibold rounded-full hover:bg-[#014134] transition"
+          className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
         >
-          Send Message
+          Send
         </button>
       </div>
     </div>

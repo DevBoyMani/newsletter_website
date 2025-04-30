@@ -1,13 +1,21 @@
 import Link from "next/link";
 
 export default function Footer(){
-    const socialIcons =[
-        {name:"instagram",icon:"/icon-instagram.png",url:""},
-        {name:"facebook",icon:"/icon-fb.png",url:""},
-        {name:"linedIn",icon:"/icon-In.png",url:""},
-        {name:"twitter",icon:"/icon-x.png",url:""},
-        {name:"youtube",icon:"/icon-yu.png",url:""},
-    ]
+    // const socialIcons =[
+    //     {name:"instagram",icon:"/icon-instagram.png",url:""},
+    //     {name:"facebook",icon:"/icon-fb.png",url:""},
+    //     {name:"linedIn",icon:"/icon-In.png",url:""},
+    //     {name:"twitter",icon:"/icon-x.png",url:""},
+    //     {name:"youtube",icon:"/icon-yu.png",url:""},
+    // ]
+    const socialMediaIcons=[
+        {name:"x",src:"/readers/x.png",href:"https://www.presidentialsummary.com/"},
+        {name:"insta",src:"/readers/insta.png",href:"https://www.presidentialsummary.com/"},
+        {name:"ln",src:"/readers/ln.png",href:"https://www.presidentialsummary.com/"},
+        {name:"tiktok",src:"/readers/tiktok.png",href:"https://www.presidentialsummary.com/"},
+        {name:"t",src:"/readers/t.png",href:"https://www.presidentialsummary.com/"},
+      
+      ]
     return(
         <>
          {/* desktop footer */}
@@ -29,13 +37,13 @@ export default function Footer(){
                         </div>
                         <div className="py-8">
                             <div className="flex space-x-4">
-                                {socialIcons.map((icons, index) => (
+                                {socialMediaIcons.map((icons, index) => (
                                     <a key={index} href={icons.url} target="_blank">
                                         <img
                                     
-                                    src={icons.icon}
+                                    src={icons.src}
                                     alt={icons.name}
-                                    className="w-8 h-8 hover:opacity-80 cursor-pointer"
+                                    className="w-6 h-6 hover:opacity-80 cursor-pointer"
                                     />
                                     </a>
                                 ))}
@@ -211,13 +219,13 @@ export default function Footer(){
                     <div>
                         <div className="pt-14 px-4 flex justify-center">
                                 <div className="flex space-x-4">
-                                    {socialIcons.map((icons, index) => (
+                                    {socialMediaIcons.map((icons, index) => (
                                         <a key={index} href={icons.url} target="_blank">
                                             <img
                                         
-                                        src={icons.icon}
+                                        src={icons.src}
                                         alt={icons.name}
-                                        className="w-8 h-8 hover:opacity-80 cursor-pointer"
+                                        className="w-6 h-6 hover:opacity-80 cursor-pointer"
                                         />
                                         </a>
                                     ))}

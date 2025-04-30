@@ -4,12 +4,25 @@ import ContactComboBox from "../../components/contactComboBox/contactComboBox";
 import ContactPhoneNumberSelection from "../../components/contactPhoneNumberSection/contactPhoneNumberSelection";
 import ContactRadioButtonsInput from "../../components/contactRdaioButtonsInput/contactRadioButtonsInput";
 import ContactMessage from "../../components/contactMessage/contactMessage";
+import Footer from "../../components/footer/footer";
+
+
+
+const socialMediaIcons=[
+    {name:"x",src:"/readers/x.png",href:"https://www.presidentialsummary.com/"},
+    {name:"insta",src:"/readers/insta.png",href:"https://www.presidentialsummary.com/"},
+    {name:"ln",src:"/readers/ln.png",href:"https://www.presidentialsummary.com/"},
+    {name:"tiktok",src:"/readers/tiktok.png",href:"https://www.presidentialsummary.com/"},
+    {name:"t",src:"/readers/t.png",href:"https://www.presidentialsummary.com/"},
+  
+  ]
 
 
 export default function Contact(){
 
     return(
        
+        <>
         <div className="bg-[#FAFAFA]">
           <div className="md:px-4 lg:pt-20 pt-10">
             {/* header */}
@@ -17,7 +30,7 @@ export default function Contact(){
                 <div className="flex justify-center text-[44px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E] py-4">Get in Touch With Us</div>
                 <div className="flex justify-center text-[18px] font-[500] text-[#717171] leading-normal">Any question or remarks? Just write us a message!</div>
             </div>
-
+            {/* contact form */}
             <div className="py-16 md:px-20 mx-auto">
                 <div className="flex space-x-2 bg-[#fff] p-2 rounded-[10px]" style={{ boxShadow: '0px 0px 60px 30px rgba(0, 0, 0, 0.03)' }}
                 >
@@ -65,6 +78,24 @@ export default function Contact(){
                             </div> 
 
                             {/* social icons */}
+                            <div>
+                                <div>
+                                    <div className="pt-28 flex justify-start pb-1">
+                                            <div className="flex space-x-6 ">
+                                                {socialMediaIcons.map((icons, index) => (
+                                                    <a key={index} href={icons.href} target="_blank">
+                                                        <img
+                                                    
+                                                    src={icons.src}
+                                                    alt={icons.name}
+                                                    className="w-6 h-6 cursor-pointer"
+                                                    />
+                                                    </a>
+                                                ))}
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -124,6 +155,12 @@ export default function Contact(){
             </div>
           </div>
         </div>
+
+        {/* footer */}
+        <div>
+            <Footer/>
+        </div>
+        </>
     )
     
 }
