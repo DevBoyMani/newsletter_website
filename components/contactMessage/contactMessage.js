@@ -1,7 +1,8 @@
 'use client';
+
 import { useState } from 'react';
 
-export default function ContactMessage({ onSend }) {
+export default function ContactMessage({ value, onChange }) {
   const [message, setMessage] = useState('');
 
   const handleSend = () => {
@@ -19,20 +20,11 @@ export default function ContactMessage({ onSend }) {
       </label>
       <textarea
         rows={4}
-        value={message}
-        onChange={(e) => setMessage(e.target.value)}
+        value={value}
+        onChange={(e) => onChange(e.target.value)}
         placeholder="Write your message here..."
         className="w-full h-10 text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E] bg-transparent resize-none"
       ></textarea>
-
-      <div className="flex justify-end mt-4">
-        <button
-          onClick={handleSend}
-          className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
-        >
-          Send
-        </button>
-      </div>
     </div>
   );
 }

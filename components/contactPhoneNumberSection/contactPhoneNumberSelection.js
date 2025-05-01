@@ -1,7 +1,7 @@
 'use client';
 
-import { useState } from 'react';
 import { Listbox } from '@headlessui/react';
+import { useState } from 'react';
 
 const countries = [
   {
@@ -31,7 +31,6 @@ const countries = [
     flag: (
       <svg className="h-4 w-4 me-2" fill="none" viewBox="0 0 20 15">
         <rect width="19.6" height="14" y=".5" fill="#fff" rx="2" />
-        {/* Simplified for brevity */}
         <path fill="#0A17A7" d="M0 .5h19.6v14H0z" />
         <path fill="#E6273E" d="M0 8.9h8.4v5.6h2.8V8.9h8.4V6.1h-8.4V.5H8.4v5.6H0v2.8z" />
       </svg>
@@ -39,21 +38,30 @@ const countries = [
   },
 ];
 
-export default function PhoneInputForm() {
+export default function ContactPhoneNumberSelection({ value, onChange }) {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
-  const [phone, setPhone] = useState('');
+
+  const handlePhoneChange = (e) => {
+    const phoneValue = e.target.value;
+    // Combine country code + user input
+    onChange(`${selectedCountry.code} ${phoneValue}`);
+  };
 
   return (
-    <form className="max-w-sm mx-auto">
+    <div className="max-w-sm mx-auto">
       <div className="flex items-center">
-        <Listbox value={selectedCountry} onChange={setSelectedCountry}>
+        <Listbox value={selectedCountry} onChange={(country) => {
+          setSelectedCountry(country);
+          // Update with new country code + current phone digits
+          const digits = value.replace(/^\+\d+\s*/, ''); // strip old code
+          onChange(`${country.code} ${digits}`);
+        }}>
           <div className="relative">
-            <Listbox.Button className="shrink-0 z-10 inline-flex items-center py-2 px-4 text-sm font-medium text-[#8D8D8D] border-b border-[#8D8D8D] focus:outline-none focus:border-b-1 focus:border-[#01261E]  dark:hover:bg-gray-600 dark:focus:ring-gray-700 dark:text-white dark:border-gray-600">
+            <Listbox.Button className="shrink-0 z-10 inline-flex items-center py-2 px-4 text-sm font-medium text-[#8D8D8D] border-b border-[#8D8D8D] focus:outline-none focus:border-[#01261E]">
               {selectedCountry.flag}
               {selectedCountry.code}
               <svg
                 className="w-2.5 h-2.5 ms-2.5"
-                aria-hidden="true"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 10 6"
@@ -67,16 +75,14 @@ export default function PhoneInputForm() {
                 />
               </svg>
             </Listbox.Button>
-            <Listbox.Options className="absolute mt-1 max-h-60 w-52 overflow-auto rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none text-sm z-10 dark:bg-gray-700 dark:text-gray-200">
+            <Listbox.Options className="absolute mt-1 max-h-60 w-52 overflow-auto rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none text-sm z-10">
               {countries.map((country, index) => (
                 <Listbox.Option
                   key={index}
                   value={country}
                   className={({ active }) =>
                     `cursor-pointer select-none px-4 py-2 ${
-                      active
-                        ? 'bg-gray-100 dark:bg-gray-600 dark:text-white'
-                        : 'text-gray-700 dark:text-gray-200'
+                      active ? 'bg-gray-100' : 'text-gray-700'
                     }`
                   }
                 >
@@ -93,11 +99,11 @@ export default function PhoneInputForm() {
         <input
           type="tel"
           placeholder="123-456-7890"
-          value={phone}
-          onChange={(e) => setPhone(e.target.value)}
-          className=" text-[#8D8D8D] border-b border-[#8D8D8D] focus:outline-none focus:border-b-1 focus:border-[#01261E] block w-full px-4 py-1.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white"
+          value={value.replace(/^\+\d+\s*/, '')} // show only digits
+          onChange={handlePhoneChange}
+          className="ml-2 text-[#8D8D8D] border-b border-[#8D8D8D] focus:outline-none focus:border-[#01261E] block w-full px-4 py-1.5"
         />
       </div>
-    </form>
+    </div>
   );
 }

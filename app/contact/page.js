@@ -1,11 +1,12 @@
+"use client";
 
+import { useState } from "react";
 import { BiBorderRadius } from "react-icons/bi";
 import ContactComboBox from "../../components/contactComboBox/contactComboBox";
 import ContactPhoneNumberSelection from "../../components/contactPhoneNumberSection/contactPhoneNumberSelection";
 import ContactRadioButtonsInput from "../../components/contactRdaioButtonsInput/contactRadioButtonsInput";
 import ContactMessage from "../../components/contactMessage/contactMessage";
 import Footer from "../../components/footer/footer";
-
 
 
 const socialMediaIcons=[
@@ -19,6 +20,33 @@ const socialMediaIcons=[
 
 
 export default function Contact(){
+
+    const [formData, setFormData] = useState({
+        fullName: "",
+        email: "",
+        phone: "",
+        foundUsVia: "",
+        preferredContact: "",  // from Radio button
+        message: "",
+      });
+    
+    const handleChange = (key,value)=>{
+        setFormData((prev)=>({
+            ...prev,
+            [key]: value,
+        }))
+    
+    }
+    
+    console.log(formData);
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        console.log("Submitted data:", formData);
+        localStorage.setItem('contactFormData', JSON.stringify(formData));
+        alert('Form data saved locally!');
+      };
+      
 
     return(
        
@@ -110,6 +138,8 @@ export default function Contact(){
                                         type="text"
                                         placeholder="Enter your full name"
                                         className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                        value={formData.fullName}
+                                        onChange={(e) => handleChange("fullName", e.target.value)}
                                     />
                                     </div>
                                     <div className="flex-1">
@@ -118,6 +148,8 @@ export default function Contact(){
                                         type="email"
                                         placeholder="Enter your email"
                                         className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                        value={formData.email}
+                                        onChange={(e) => handleChange("email", e.target.value)}
                                     />
                                     </div>
                                 </div>
@@ -131,24 +163,42 @@ export default function Contact(){
                                         placeholder="Enter your phone number"
                                         className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
                                     /> */}
-                                    <ContactPhoneNumberSelection/>
+                                    <ContactPhoneNumberSelection 
+                                    value={formData.phone}
+                                    onChange={(val) => handleChange("phone", val)}/>
+
                                     </div>
                                     <div className="flex-1">
                                     <label className="block text-[12px] font-[500] leading-[20px]">
                                         How did you find us?
                                     </label>
-                                    <ContactComboBox />
+                                    <ContactComboBox 
+                                    value={formData.foundUsVia}
+                                    onChange={(val) => handleChange("foundUsVia", val)}/>
                                     </div>
 
                             </div>
                         </form>
 
                     {/* contact radio button */}
-                    <ContactRadioButtonsInput/>
+                    <ContactRadioButtonsInput
+                     value={formData.preferredContact}
+                     onChange={(val) => handleChange("preferredContact", val)}/>
 
                     {/*  message */}
                     <div>
-                       <ContactMessage/>
+                       <ContactMessage
+                        value={formData.message}
+                        onChange={(val) => handleChange("message", val)}/>
+                    </div>
+
+                    <div className="flex justify-end mt-4">
+                        <button
+                        onClick={handleSubmit}
+                        className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
+                        >
+                        Submit
+                        </button>
                     </div>
                     </div>
                 </div>
