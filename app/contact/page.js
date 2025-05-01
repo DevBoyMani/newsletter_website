@@ -40,12 +40,28 @@ export default function Contact(){
     
     console.log(formData);
 
+    const [errors, setErrors] = useState({});
+
+
     const handleSubmit = (e) => {
         e.preventDefault();
+      
+        const newErrors = {};
+        if (!formData.fullName) newErrors.fullName = "Full name is required";
+        if (!formData.email) newErrors.email = "Email is required";
+        if (!formData.phone) newErrors.phone = "Phone number is required";
+      
+        if (Object.keys(newErrors).length > 0) {
+          setErrors(newErrors);
+          return;
+        }
+      
+        setErrors({});
         console.log("Submitted data:", formData);
-        localStorage.setItem('contactFormData', JSON.stringify(formData));
-        alert('Form data saved locally!');
+        localStorage.setItem("contactFormData", JSON.stringify(formData));
+        alert("Form data saved locally!");
       };
+      
       
 
     return(
@@ -141,6 +157,7 @@ export default function Contact(){
                                         value={formData.fullName}
                                         onChange={(e) => handleChange("fullName", e.target.value)}
                                     />
+                                    {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
                                     </div>
                                     <div className="flex-1">
                                     <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Email <span className="text-[#EB5757]">*</span></label>
@@ -151,6 +168,7 @@ export default function Contact(){
                                         value={formData.email}
                                         onChange={(e) => handleChange("email", e.target.value)}
                                     />
+                                    {errors.email && <p className="text-red-500 text-[12px]">{errors.email}</p>}
                                     </div>
                                 </div>
 
@@ -166,6 +184,7 @@ export default function Contact(){
                                     <ContactPhoneNumberSelection 
                                     value={formData.phone}
                                     onChange={(val) => handleChange("phone", val)}/>
+                                    {errors.phone && <p className="text-red-500 text-[12px]">{errors.phone}</p>}
 
                                     </div>
                                     <div className="flex-1">

@@ -9,7 +9,17 @@ import {
 import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
 import clsx from 'clsx';
 
-const options = [
+type Option = {
+  id: number;
+  name: string;
+};
+
+interface ContactComboBoxProps {
+  value: Option;
+  onChange: (val: Option) => void;
+}
+
+const options: Option[] = [
   { id: 1, name: 'Select...' },
   { id: 2, name: 'Google' },
   { id: 3, name: 'Social Media' },
@@ -17,7 +27,7 @@ const options = [
   { id: 5, name: 'Other' },
 ];
 
-export default function ContactComboBox({ value, onChange }) {
+export default function ContactComboBox({ value, onChange }: ContactComboBoxProps) {
   return (
     <div className="pt-2">
       <Listbox value={value} onChange={onChange}>
