@@ -43,13 +43,62 @@ export default function Contact(){
     const [errors, setErrors] = useState({});
 
 
+    // const handleSubmit = (e) => {
+    //     e.preventDefault();
+      
+    //     const newErrors = {};
+    //     if (!formData.fullName) newErrors.fullName = "Full name is required";
+    //     if (!formData.email) newErrors.email = "Email is required";
+    //     if (!formData.phone) newErrors.phone = "Phone number is required";
+      
+    //     if (Object.keys(newErrors).length > 0) {
+    //       setErrors(newErrors);
+    //       return;
+    //     }
+      
+    //     setErrors({});
+    //     console.log("Submitted data:", formData);
+    //     localStorage.setItem("contactFormData", JSON.stringify(formData));
+    //     alert("Form data saved locally!");
+    //   };
+      
     const handleSubmit = (e) => {
         e.preventDefault();
       
         const newErrors = {};
-        if (!formData.fullName) newErrors.fullName = "Full name is required";
-        if (!formData.email) newErrors.email = "Email is required";
-        if (!formData.phone) newErrors.phone = "Phone number is required";
+      
+        // Full name validation
+        if (!formData.fullName.trim()) {
+          newErrors.fullName = "Full name must be at least 3 characters";
+        } 
+        
+        // else if (formData.fullName.length < 3) {
+        //   newErrors.fullName = "Full name must be at least 3 characters";
+        // }
+      
+        // Email validation
+        if (!formData.email.trim()) {
+          newErrors.email = "Email is required";
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+          newErrors.email = "Please enter a valid email address";
+        }
+      
+        // Phone validation
+        if (!formData.phone.trim()) {
+          newErrors.phone = "Phone number is required";
+        } else if (!/^\+?[0-9\s-]{7,15}$/.test(formData.phone)) {
+          newErrors.phone = "Please enter a valid phone number";
+        }
+      
+        // Optional: Check for preferredContact
+        if (!formData.preferredContact.trim()) {
+          newErrors.preferredContact = "Please select a preferred contact method";
+        }
+      
+        // Optional: Check for message
+        if (!formData.message.trim()) {
+          newErrors.message = "Please enter your message";
+        }
       
         if (Object.keys(newErrors).length > 0) {
           setErrors(newErrors);
