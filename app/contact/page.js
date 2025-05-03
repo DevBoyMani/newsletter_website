@@ -116,7 +116,8 @@ export default function Contact(){
     return(
        
         <>
-        <div className="bg-[#FAFAFA]">
+        {/* desktop view */}
+        <div className="hidden lg:block bg-[#FAFAFA]">
           <div className="md:px-4 lg:pt-20 pt-10">
             {/* header */}
             <div className="">
@@ -273,6 +274,189 @@ export default function Contact(){
             </div>
           </div>
         </div>
+
+        {/* mobile view */}
+        <div className="block lg:hidden bg-[#FAFAFA]">
+        <div className="md:px-4 lg:pt-20 pt-10">
+            {/* header */}
+            <div className="w-full px-4 sm:px-0">
+                <div className="text-center py-4">
+                    <div className="text-[24px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E]">
+                    Get in Touch With Us
+                    </div>
+                    <div className="mt-2 text-[14px] font-[500] text-[#717171] leading-normal max-w-[60%] mx-auto">
+                    Any question or remarks? Just write us a message!
+                    </div>
+                </div>
+                </div>
+
+            {/* contact form */}
+            <div className="md:px-20 mx-auto">
+                <div className=" bg-[#fff] p-2 rounded-[10px]" style={{ boxShadow: '0px 0px 60px 30px rgba(0, 0, 0, 0.03)' }}
+                >
+                   
+                    <div className=" bg-[#01261E] rounded-[10px] py-10">
+                        <div className="text-center py-4">
+                            <h1 className="text-[#fff] text-[20px] leading-normal font-[600] ">Contact Information</h1>
+                            <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2">Say something to start a live chat!</p>
+                        </div>
+                        <div className="pt-8">
+                            <div className="pb-10">
+                                <div className="flex justify-center pb-4">
+                                <img
+                                src="/contact/call.jpg"
+                                alt="call"
+                                className="w-[24] h-[24]"/>
+                                </div>
+                                <div className="flex justify-center">
+                                <p className="text-[#fff] text-[16px] leading-normal font-[400]">+1012 3456 789</p>
+                                </div>
+                            </div>
+                            <div className="pb-10">
+                                <div className="flex justify-center pb-4">
+                                <img
+                                src="/contact/sms.jpg"
+                                alt="call"
+                                className="w-[24] h-[24]"/>
+                                </div>
+                                <div className="flex justify-center">
+                                <p className="text-[#fff] text-[16px] leading-normal font-[400]">+1012 demo@gmail.com</p>
+                                </div>
+                            </div>
+                            <div className="pb-10">
+                                <div className="flex justify-center pb-4">
+                                <img
+                                src="/contact/location.jpg"
+                                alt="call"
+                                className="w-[24] h-[24]"/>
+                                </div>
+                                <div className="flex items-center justify-center">
+                                    <p className=" text-[#fff] text-center text-[16px] leading-normal font-[400]">
+                                        132 Dartmouth Street Boston,<br/> 
+                                        Massachusetts 02156 United States</p>
+                                </div>
+                            </div>
+
+                            {/* social icons */}
+                            <div>
+                                <div>
+                                    <div className="pt-20 flex justify-center pb-1">
+                                            <div className="flex space-x-6 ">
+                                                {socialMediaIcons.map((icons, index) => (
+                                                    <a key={index} href={icons.href} target="_blank">
+                                                        <img
+                                                    
+                                                    src={icons.src}
+                                                    alt={icons.name}
+                                                    className="w-6 h-6 cursor-pointer"
+                                                    />
+                                                    </a>
+                                                ))}
+                                            </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div className="px-4 py-10">
+                        <form>
+                                <div className="text-[#8D8D8D]">
+                                    <div className="pb-6">
+                                        <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Full Name <span className="text-[12px] text-[#EB5757]">*</span> </label>
+                                        <input
+                                            type="text"
+                                            placeholder="Enter your full name"
+                                            className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                            value={formData.fullName}
+                                            onChange={(e) => handleChange("fullName", e.target.value)}
+                                        />
+                                        {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
+                                        </div>
+                                        <div className="pb-6">
+                                        <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Email <span className="text-[#EB5757]">*</span></label>
+                                        <input
+                                            type="email"
+                                            placeholder="Enter your email"
+                                            className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                            value={formData.email}
+                                            onChange={(e) => handleChange("email", e.target.value)}
+                                        />
+                                        {errors.email && <p className="text-red-500 text-[12px]">{errors.email}</p>}
+                                        </div>
+                                    </div>
+
+                                    <div className="text-[#8D8D8D]">
+                                        <div className="pb-6">
+                                        <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Phone Number <span className="text-[#EB5757]">*</span></label>
+                                        {/* <input
+                                            type="tel"
+                                            placeholder="Enter your phone number"
+                                            className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                        /> */}
+                                        <ContactPhoneNumberSelection 
+                                        value={formData.phone}
+                                        onChange={(val) => handleChange("phone", val)}/>
+                                        {errors.phone && <p className="text-red-500 text-[12px]">{errors.phone}</p>}
+
+                                        </div>
+                                        <div className="pb-6">
+                                        <label className="block text-[12px] font-[500] leading-[20px]">
+                                            How did you find us?
+                                        </label>
+                                        <ContactComboBox 
+                                        value={formData.foundUsVia}
+                                        onChange={(val) => handleChange("foundUsVia", val)}/>
+                                        </div>
+
+                                </div>
+                        </form>
+
+                        {/* contact radio button */}
+                        <ContactRadioButtonsInput
+                        value={formData.preferredContact}
+                        onChange={(val) => handleChange("preferredContact", val)}/>
+
+                        {/*  message */}
+                        <div>
+                        <ContactMessage
+                            value={formData.message}
+                            onChange={(val) => handleChange("message", val)}/>
+                        </div>
+
+                        <div className="flex justify-center  mt-4">
+                            <button
+                            onClick={handleSubmit}
+                            className="w-full py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
+                            >
+                            Submit
+                            </button>
+                        </div>
+
+                        <div>
+                            <div className="flex justify-start space-x-2 pt-8">
+                                <div>
+                                    <img
+                                    src="/contact/b-1.png"
+                                    alt="call"
+                                    className="w-[33] h-[33] "/>
+                                </div>
+                                <div>
+                                    <img
+                                    src="/contact/b-2.png"
+                                    alt="call"
+                                    className="w-[33] h-[33]"/>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+        </div>
+
+
 
         {/* footer */}
         <div>
