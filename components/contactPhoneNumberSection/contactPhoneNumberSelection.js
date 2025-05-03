@@ -37,7 +37,7 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
   };
 
   return (
-    <div className="max-w-sm mx-auto">
+    <div className="lg:max-w-md mx-auto">
       <div className="flex items-center">
         <Listbox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative">
