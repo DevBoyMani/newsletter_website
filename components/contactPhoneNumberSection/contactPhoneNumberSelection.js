@@ -85,7 +85,7 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
           placeholder="Enter your number"
           value={value}
           onChange={handlePhoneChange}
-          className="text-[#8D8D8D] border-b text-[14px] border-[#8D8D8D] focus:outline-none focus:border-[#01261E] block w-[100%] px-4 py-1.5"
+          className={`border-b text-[14px] border-[#8D8D8D] focus:outline-none focus:border-[#01261E] block w-[100%] px-4 py-1.5 focus:placeholder-transparent group focus-within:text-[#01261E] ${value ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'}`}
         />
       </div>
     </div>

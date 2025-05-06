@@ -29,12 +29,12 @@ const options: Option[] = [
 
 export default function ContactComboBox({ value, onChange }: ContactComboBoxProps) {
   return (
-    <div className="pt-2">
+    <div className="">
       <Listbox value={value} onChange={onChange}>
         <div className="relative">
           <ListboxButton
             className={clsx(
-              'relative w-full cursor-default bg-white text-left text-[14px] border-b border-[#8D8D8D] p-1.5 focus:outline-none focus:border-[#01261E]'
+              'relative w-full cursor-default bg-white text-left text-[14px] border-b border-[#8D8D8D] p-1.5 focus:outline-none focus:border-[#01261E]', value.name !== 'Select...' ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'
             )}
           >
             {value?.name || 'Select...'}

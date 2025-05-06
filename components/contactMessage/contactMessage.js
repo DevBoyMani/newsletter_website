@@ -14,8 +14,8 @@ export default function ContactMessage({ value, onChange }) {
   };
 
   return (
-    <div className="mt-8">
-      <label className="block mb-1 text-[12px] font-[500] leading-[20px] text-[#8D8D8D]">
+    <div className="mt-8 group focus-within:text-[#01261E]">
+      <label className="block mb-1 text-[16px] font-[500] leading-[20px] text-[#8D8D8D] transition-colors group-focus-within:text-[#01261E]">
         Message
       </label>
       <textarea
@@ -23,8 +23,13 @@ export default function ContactMessage({ value, onChange }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Write your message here..."
-        className="w-full h-10 text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E] bg-transparent resize-none"
-      ></textarea>
+        className={`w-full h-10 text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none 
+                  focus:border-[#01261E] bg-transparent resize-none 
+                  focus:placeholder-transparent ${value ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'}`}
+      >
+
+      </textarea>
     </div>
+
   );
 }

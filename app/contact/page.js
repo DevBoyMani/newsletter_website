@@ -41,26 +41,6 @@ export default function Contact(){
     console.log(formData);
 
     const [errors, setErrors] = useState({});
-
-
-    // const handleSubmit = (e) => {
-    //     e.preventDefault();
-      
-    //     const newErrors = {};
-    //     if (!formData.fullName) newErrors.fullName = "Full name is required";
-    //     if (!formData.email) newErrors.email = "Email is required";
-    //     if (!formData.phone) newErrors.phone = "Phone number is required";
-      
-    //     if (Object.keys(newErrors).length > 0) {
-    //       setErrors(newErrors);
-    //       return;
-    //     }
-      
-    //     setErrors({});
-    //     console.log("Submitted data:", formData);
-    //     localStorage.setItem("contactFormData", JSON.stringify(formData));
-    //     alert("Form data saved locally!");
-    //   };
       
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -129,12 +109,20 @@ export default function Contact(){
                 <div className="flex space-x-2 bg-[#fff] p-2 rounded-[10px]" style={{ boxShadow: '0px 0px 60px 30px rgba(0, 0, 0, 0.03)' }}
                 >
                     {/* left */}
-                    <div className=" w-[40.5%] bg-[#01261E] rounded-[10px] px-12 py-10">
+                    <div className="relative w-[40.5%] bg-[#01261E] rounded-[10px] px-12 py-10 overflow-hidden">
+
+                        <div className="absolute bottom-0 right-0 h-auto opacity-100 pointer-events-none z-0">
+                                <img
+                                    src="/contact/contact-background-circle.png"
+                                    alt="background logo"
+                                    className="w-52"
+                                />
+                        </div>
                         <div>
                             <h1 className="text-[#fff] text-[28px] leading-normal font-[600] ">Contact Information</h1>
                             <p className="text-[#C9C9C9] text-[18px] font-[400] leading-normal pt-2">Say something to start a live chat!</p>
                         </div>
-                        <div className="pt-16">
+                        <div className="relative pt-16 z-10">
                             <div className="flex pb-10">
                                 <img
                                 src="/contact/call.jpg"
@@ -145,30 +133,51 @@ export default function Contact(){
                             <div className="flex pb-10">
                                 <img
                                 src="/contact/sms.jpg"
-                                alt="call"
+                                alt="sms"
                                 className="w-[24] h-[24]"/>
-                                <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">+1012 demo@gmail.com</p>
+                                <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">demo@gmail.com</p>
                             </div>
                             <div className="flex pb-10">
                                 <img
-                                src="/contact/location.jpg"
-                                alt="call"
+                                src="/contact/location.png"
+                                alt="location"
                                 className="w-[24] h-[24]"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
                             </div>
 
                             {/* flex button */}
                             <div className="">
-                            <div className="flex gap-4">
-                                <button className="flex  items-center gap-2 px-4 py-2 bg-[#DAEBE8] text-[14px] text-[#01261E] rounded-full leading-normal font-[500]">
-                                    <span className="w-2 h-2 bg-[#01261E] rounded-full"></span>
-                                    Schedule a call
-                                </button>
-                                <button className="flex items-center gap-2 px-4 py-2 bg-[#DAEBE8] text-[14px] text-[#01261E] rounded-full leading-normal font-[500]">
-                                    Schedule a call
-                                    <span className="w-2 h-2 bg-[#01261E] rounded-full"></span>
-                                </button>
-                                </div>
+                            <div className="flex flex-wrap md:flex-nowrap w-full gap-2">
+  {/* Left Button */}
+  <button className="group relative flex items-center justify-center w-full sm:w-[35%] gap-2 py-2 rounded-full overflow-hidden text-sm font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
+    <span className="absolute left-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[24px] rounded-full bg-[#01261E] transition-transform duration-700 ease-out z-10" />
+    <span className="relative z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
+    <span className="relative flex items-center min-w-0 whitespace-nowrap z-10">
+      <span className="block group-hover:opacity-0 transition-opacity duration-200">
+        Schedule a call
+      </span>
+      <span className="absolute -left-4 opacity-0 group-hover:opacity-100 translate-x-10 group-hover:translate-x-0 transition-all duration-300 text-white whitespace-nowrap">
+        Schedule a call <span className="ml-2">→</span>
+      </span>
+    </span>
+  </button>
+
+  {/* Right Button */}
+  <button className="group relative flex items-center justify-center w-full sm:w-[35%] gap-2 py-2 rounded-full overflow-hidden text-sm font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
+    <span className="absolute right-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[124px] rounded-full bg-[#01261E] transition-transform duration-700 ease-out z-10" />
+    <span className="relative flex items-center min-w-0 whitespace-nowrap z-10">
+      <span className="block group-hover:opacity-0 transition-opacity duration-200">
+        Chat with us
+      </span>
+      <span className="absolute -right-4 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 text-white whitespace-nowrap">
+        <span className="mr-2">→</span> Chat with us
+      </span>
+    </span>
+    <span className="relative z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
+  </button>
+</div>
+
+
                             </div> 
 
                             {/* social icons */}
@@ -198,23 +207,25 @@ export default function Contact(){
                         <form>
                             {/* row-1 */}
                             <div className="flex flex-col md:flex-row gap-8 text-[#8D8D8D]">
-                                <div className="flex-1 pb-10">
-                                    <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Full Name <span className="text-[12px] text-[#EB5757]">*</span> </label>
+                                <div className="flex-1 pb-10 group focus-within:text-[#01261E]">
+                                    <label className="block mb-2 text-[16px] font-[500] leading-[20px]">Full Name <span className=" text-[#EB5757]">*</span> </label>
                                     <input
                                         type="text"
                                         placeholder="Enter your full name"
-                                        className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                        className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
+                                            formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'
+                                          }`}
                                         value={formData.fullName}
                                         onChange={(e) => handleChange("fullName", e.target.value)}
                                     />
                                     {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
                                     </div>
-                                    <div className="flex-1">
-                                    <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Email <span className="text-[#EB5757]">*</span></label>
+                                    <div className="flex-1 group focus-within:text-[#01261E]">
+                                    <label className="block mb-2 text-[16px] font-[500] leading-[20px]">Email <span className="text-[#EB5757]">*</span></label>
                                     <input
                                         type="email"
                                         placeholder="Enter your email"
-                                        className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                        className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E] focus:placeholder-transparent ${formData.email ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
                                         value={formData.email}
                                         onChange={(e) => handleChange("email", e.target.value)}
                                     />
@@ -224,8 +235,8 @@ export default function Contact(){
 
                                 {/* Row 2*/}
                                 <div className="flex flex-col md:flex-row gap-8 text-[#8D8D8D]">
-                                    <div className="flex-1">
-                                    <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Phone Number <span className="text-[#EB5757]">*</span></label>
+                                    <div className="flex-1 group focus-within:text-[#01261E]">
+                                    <label className="block mb-2 text-[16px] font-[500] leading-[20px]">Phone Number <span className="text-[#EB5757]">*</span></label>
                                     {/* <input
                                         type="tel"
                                         placeholder="Enter your phone number"
@@ -237,8 +248,8 @@ export default function Contact(){
                                     {errors.phone && <p className="text-red-500 text-[12px]">{errors.phone}</p>}
 
                                     </div>
-                                    <div className="flex-1">
-                                    <label className="block text-[12px] font-[500] leading-[20px]">
+                                    <div className="flex-1 group focus-within:text-[#01261E]">
+                                    <label className="block text-[16px] font-[500] leading-[20px] mb-2">
                                         How did you find us?
                                     </label>
                                     <ContactComboBox 
@@ -255,7 +266,7 @@ export default function Contact(){
                      onChange={(val) => handleChange("preferredContact", val)}/>
 
                     {/*  message */}
-                    <div>
+                    <div className="">
                        <ContactMessage
                         value={formData.message}
                         onChange={(val) => handleChange("message", val)}/>
@@ -264,9 +275,9 @@ export default function Contact(){
                     <div className="flex justify-end mt-4">
                         <button
                         onClick={handleSubmit}
-                        className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
+                        className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-full hover:bg-[#014134] transition"
                         >
-                        Submit
+                        Send message
                         </button>
                     </div>
                     </div>
@@ -277,11 +288,11 @@ export default function Contact(){
 
         {/* mobile view */}
         <div className="block lg:hidden bg-[#FAFAFA]">
-        <div className="md:px-4 lg:pt-20 pt-10">
+        <div className="md:px-4 pt-10">
             {/* header */}
-            <div className="w-full px-4 sm:px-0">
-                <div className="text-center py-4">
-                    <div className="text-[24px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E]">
+            <div className="w-full px-4 sm:px-0 pb-4">
+                <div className="text-center">
+                    <div className="text-[30px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E]">
                     Get in Touch With Us
                     </div>
                     <div className="mt-2 text-[14px] font-[500] text-[#717171] leading-normal max-w-[60%] mx-auto">
@@ -291,13 +302,13 @@ export default function Contact(){
                 </div>
 
             {/* contact form */}
-            <div className="md:px-20 mx-auto">
+            <div className=" mx-auto px-4 pb-4">
                 <div className=" bg-[#fff] p-2 rounded-[10px]" style={{ boxShadow: '0px 0px 60px 30px rgba(0, 0, 0, 0.03)' }}
                 >
                    
-                    <div className=" bg-[#01261E] rounded-[10px] py-10">
-                        <div className="text-center py-4">
-                            <h1 className="text-[#fff] text-[20px] leading-normal font-[600] ">Contact Information</h1>
+                <div className=" bg-[#01261E] rounded-[10px]">
+                        <div className="text-center pt-6">
+                            <h1 className="text-[#fff] text-[26px] leading-normal font-[600] ">Contact Information</h1>
                             <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2">Say something to start a live chat!</p>
                         </div>
                         <div className="pt-8">
@@ -339,46 +350,56 @@ export default function Contact(){
 
                             {/* social icons */}
                             <div>
-                                <div>
-                                    <div className="pt-20 flex justify-center pb-1">
-                                            <div className="flex space-x-6 ">
-                                                {socialMediaIcons.map((icons, index) => (
-                                                    <a key={index} href={icons.href} target="_blank">
-                                                        <img
-                                                    
-                                                    src={icons.src}
-                                                    alt={icons.name}
-                                                    className="w-6 h-6 cursor-pointer"
-                                                    />
-                                                    </a>
-                                                ))}
-                                            </div>
+                                <div className="relative overflow-hidden">
+                                    {/* Background Image Behind Icons */}
+                                    <div className="absolute bottom-0 right-0 h-auto opacity-100 pointer-events-none z-0">
+                                    <img
+                                        src="/contact/contact-background-circle.png"
+                                        alt="background logo"
+                                        className="w-32"
+                                    />
+                                    </div>
+
+                                    {/* Social Icons on top of background */}
+                                    <div className="pt-20 flex justify-center pb-6 relative z-10">
+                                    <div className="flex space-x-6">
+                                        {socialMediaIcons.map((icons, index) => (
+                                        <a key={index} href={icons.href} target="_blank">
+                                            <img
+                                            src={icons.src}
+                                            alt={icons.name}
+                                            className="w-6 h-6 cursor-pointer"
+                                            />
+                                        </a>
+                                        ))}
+                                    </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     </div>
 
                     <div className="px-4 py-10">
                         <form>
                                 <div className="text-[#8D8D8D]">
-                                    <div className="pb-6">
-                                        <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Full Name <span className="text-[12px] text-[#EB5757]">*</span> </label>
+                                    <div className="pb-6 group focus-within:text-[#01261E]">
+                                        <label className="block mb-1 text-[16px] font-[500] leading-[20px]">Full Name <span className="text-[12px] text-[#EB5757]">*</span> </label>
                                         <input
                                             type="text"
                                             placeholder="Enter your full name"
-                                            className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                            className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
                                             value={formData.fullName}
                                             onChange={(e) => handleChange("fullName", e.target.value)}
                                         />
                                         {errors.fullName && <p className="text-red-500 text-[12px]">{errors.fullName}</p>}
                                         </div>
-                                        <div className="pb-6">
-                                        <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Email <span className="text-[#EB5757]">*</span></label>
+                                        <div className="pb-6 group focus-within:text-[#01261E]">
+                                        <label className="block mb-1 text-[16px] font-[500] leading-[20px]">Email <span className="text-[#EB5757]">*</span></label>
                                         <input
                                             type="email"
                                             placeholder="Enter your email"
-                                            className="w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E]"
+                                            className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
                                             value={formData.email}
                                             onChange={(e) => handleChange("email", e.target.value)}
                                         />
@@ -387,8 +408,8 @@ export default function Contact(){
                                     </div>
 
                                     <div className="text-[#8D8D8D]">
-                                        <div className="pb-6">
-                                        <label className="block mb-1 text-[12px] font-[500] leading-[20px]">Phone Number <span className="text-[#EB5757]">*</span></label>
+                                        <div className="pb-6 focus-within:text-[#01261E]">
+                                        <label className="block mb-1 text-[16px] font-[500] leading-[20px]">Phone Number <span className="text-[#EB5757]">*</span></label>
                                         {/* <input
                                             type="tel"
                                             placeholder="Enter your phone number"
@@ -400,8 +421,8 @@ export default function Contact(){
                                         {errors.phone && <p className="text-red-500 text-[12px]">{errors.phone}</p>}
 
                                         </div>
-                                        <div className="pb-6">
-                                        <label className="block text-[12px] font-[500] leading-[20px]">
+                                        <div className="pb-6 focus-within:text-[#01261E]">
+                                        <label className="block text-[16px] font-[500] leading-[20px] mb-1">
                                             How did you find us?
                                         </label>
                                         <ContactComboBox 
@@ -427,9 +448,9 @@ export default function Contact(){
                         <div className="flex justify-center  mt-4">
                             <button
                             onClick={handleSubmit}
-                            className="w-full py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
+                            className="w-full py-2.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
                             >
-                            Submit
+                            Send message
                             </button>
                         </div>
 
@@ -439,13 +460,13 @@ export default function Contact(){
                                     <img
                                     src="/contact/b-1.png"
                                     alt="call"
-                                    className="w-[33] h-[33] "/>
+                                    className="w-[38] h-[38] "/>
                                 </div>
                                 <div>
                                     <img
                                     src="/contact/b-2.png"
                                     alt="call"
-                                    className="w-[33] h-[33]"/>
+                                    className="w-[38] h-[38]"/>
                                 </div>
 
                             </div>
