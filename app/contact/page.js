@@ -127,55 +127,55 @@ export default function Contact(){
                                 <img
                                 src="/contact/call.jpg"
                                 alt="call"
-                                className="w-[24] h-[24]"/>
+                                className="w-[24px] h-[24px]"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">+1012 3456 789</p>
                             </div>
                             <div className="flex pb-10">
                                 <img
                                 src="/contact/sms.jpg"
                                 alt="sms"
-                                className="w-[24] h-[24]"/>
+                                className="w-[24px] h-[24px]"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">demo@gmail.com</p>
                             </div>
                             <div className="flex pb-10">
                                 <img
                                 src="/contact/location.png"
                                 alt="location"
-                                className="w-[24] h-[24]"/>
+                                className="w-[24px] h-[24px] object-cover"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
                             </div>
 
                             {/* flex button */}
                             <div className="">
                             <div className="flex flex-wrap md:flex-nowrap w-full gap-2">
-  {/* Left Button */}
-  <button className="group relative flex items-center justify-center w-full sm:w-[35%] gap-2 py-2 rounded-full overflow-hidden text-sm font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
-    <span className="absolute left-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[24px] rounded-full bg-[#01261E] transition-transform duration-700 ease-out z-10" />
-    <span className="relative z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
-    <span className="relative flex items-center min-w-0 whitespace-nowrap z-10">
-      <span className="block group-hover:opacity-0 transition-opacity duration-200">
-        Schedule a call
-      </span>
-      <span className="absolute -left-4 opacity-0 group-hover:opacity-100 translate-x-10 group-hover:translate-x-0 transition-all duration-300 text-white whitespace-nowrap">
-        Schedule a call <span className="ml-2">→</span>
-      </span>
-    </span>
-  </button>
+                            {/* Left Button */}
+                            <button className="group relative flex items-center justify-center w-full sm:w-[35%] gap-2 py-2 rounded-full overflow-hidden text-sm font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
+                                <span className="absolute left-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[24px] rounded-full bg-[#01261E] transition-transform duration-700 ease-out z-10" />
+                                <span className="relative z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
+                                <span className="relative flex items-center min-w-0 whitespace-nowrap z-10">
+                                <span className="block group-hover:opacity-0 transition-opacity duration-200">
+                                    Schedule a call
+                                </span>
+                                <span className="absolute -left-4 opacity-0 group-hover:opacity-100 translate-x-10 group-hover:translate-x-0 transition-all duration-300 text-white whitespace-nowrap">
+                                    Schedule a call <span className="ml-2">→</span>
+                                </span>
+                                </span>
+                            </button>
 
-  {/* Right Button */}
-  <button className="group relative flex items-center justify-center w-full sm:w-[35%] gap-2 py-2 rounded-full overflow-hidden text-sm font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
-    <span className="absolute right-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[124px] rounded-full bg-[#01261E] transition-transform duration-700 ease-out z-10" />
-    <span className="relative flex items-center min-w-0 whitespace-nowrap z-10">
-      <span className="block group-hover:opacity-0 transition-opacity duration-200">
-        Chat with us
-      </span>
-      <span className="absolute -right-4 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 text-white whitespace-nowrap">
-        <span className="mr-2">→</span> Chat with us
-      </span>
-    </span>
-    <span className="relative z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
-  </button>
-</div>
+                            {/* Right Button */}
+                            <button className="group relative flex items-center justify-center w-full sm:w-[35%] gap-2 py-2 rounded-full overflow-hidden text-sm font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
+                                <span className="absolute right-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[124px] rounded-full bg-[#01261E] transition-transform duration-700 ease-out z-10" />
+                                <span className="relative flex items-center min-w-0 whitespace-nowrap z-10">
+                                <span className="block group-hover:opacity-0 transition-opacity duration-200">
+                                    Chat with us
+                                </span>
+                                <span className="absolute -right-4 opacity-0 group-hover:opacity-100 -translate-x-10 group-hover:translate-x-0 transition-all duration-300 text-white whitespace-nowrap">
+                                    <span className="mr-2">→</span> Chat with us
+                                </span>
+                                </span>
+                                <span className="relative z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
+                            </button>
+                            </div>
 
 
                             </div> 
