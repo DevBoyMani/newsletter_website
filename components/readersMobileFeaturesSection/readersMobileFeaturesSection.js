@@ -66,27 +66,10 @@ export default function ReadersMobileFeaturesSection() {
             {isFirst ? (
               <div className="relative flex w-full items-start justify-center">
                 {/* Small Toggle Button */}
-                {/* <motion.button
-                  onClick={handleModeChange}
-                  className="absolute top-0 left-0  w-[26.5%] h-[8.5%] rounded-full shadow-inner mr-[5px]"
-                  style={{
-                    boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
-                  }}
-                  initial={{ backgroundColor: "#01261E" }}
-                  animate={{ backgroundColor: mode === "dark" ? "#01261E" : "#DAEBE8" }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <motion.img
-                    src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
-                    alt="Mode Toggle"
-                      className="absolute top-0.5  left-0 w-[40.5%] rounded-full"
-                    animate={{ x: mode === "dark" ? 52 : 0 }}
-                    transition={{ type: "spring", stiffness: 400, damping: 40 }}
-                  />
-                </motion.button> */}
+               
                 <motion.button
                   onClick={handleModeChange}
-                  className="absolute top-0 left-0 w-[26.5%] h-[8%] rounded-full shadow-inner mr-[5px] flex items-center "
+                  className="absolute top-0 left-0 w-[26.5%] h-[9%] rounded-full shadow-inner mr-[5px] flex items-center "
                   style={{
                     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
                     justifyContent: mode === "dark" ? "flex-end" : "flex-start",
