@@ -111,7 +111,7 @@ export default function ReadersNewsletters() {
                     {data.paragraph}
                   </div>
                   <div className="mt-4">
-                    <button className=" border border-[#01261E] flex items-center justify-between w-[48%] py-3 px-4 rounded-full hover:bg-[#01261E] hover:text-white text-[#01261E]">
+                    <button className=" border border-[#01261E] flex items-center justify-between w-[60%] py-2 px-4 rounded-full hover:bg-[#01261E] hover:text-white text-[#01261E]">
                       <span className="font-[400] text-[13px]">
                         {data.footerButton}
                       </span>
