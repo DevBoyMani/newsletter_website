@@ -20,9 +20,9 @@ const sections=[
       imageSize: " h-[375px]",
     },
     { title:"4. Clear summary for the import new",
-        src:"/readers/clear-summary-for-the-import-news.png",
+        src:"/readers/clear-summary.png",
         content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-        imageSize: "w-[492px] h-[378px]",
+        imageSize: "w-[60%] ",
       },
       { title:"5. We don’t link to any paywalled sites",
         src:"/readers/we-dont-think.png",
@@ -66,9 +66,9 @@ export default function ReadersMobileFeaturesSection() {
             {isFirst ? (
               <div className="relative flex w-full items-start justify-center">
                 {/* Small Toggle Button */}
-                <motion.button
+                {/* <motion.button
                   onClick={handleModeChange}
-                  className="absolute top-0 left-0  w-[22.5%] h-[7.5%] rounded-full shadow-inner mr-[5px]"
+                  className="absolute top-0 left-0  w-[26.5%] h-[8.5%] rounded-full shadow-inner mr-[5px]"
                   style={{
                     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
                   }}
@@ -79,9 +79,28 @@ export default function ReadersMobileFeaturesSection() {
                   <motion.img
                     src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
                     alt="Mode Toggle"
-                      className="absolute top-1 left-0.5 w-[36.5%] rounded-full"
-                    animate={{ x: mode === "dark" ? 42 : 0 }}
-                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                      className="absolute top-0.5  left-0 w-[40.5%] rounded-full"
+                    animate={{ x: mode === "dark" ? 52 : 0 }}
+                    transition={{ type: "spring", stiffness: 400, damping: 40 }}
+                  />
+                </motion.button> */}
+                <motion.button
+                  onClick={handleModeChange}
+                  className="absolute top-0 left-0 w-[26.5%] h-[8%] rounded-full shadow-inner mr-[5px] flex items-center "
+                  style={{
+                    boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset",
+                    justifyContent: mode === "dark" ? "flex-end" : "flex-start",
+                  }}
+                  initial={{ backgroundColor: "#01261E" }}
+                  animate={{ backgroundColor: mode === "dark" ? "#01261E" : "#DAEBE8" }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.img
+                    src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
+                    alt="Mode Toggle"
+                    className="w-[48%] mt-0.5 rounded-full"
+                    layout
+                    transition={{ type: "spring", stiffness: 400, damping: 40, mass: 0.8, }}
                   />
                 </motion.button>
 
@@ -102,8 +121,10 @@ export default function ReadersMobileFeaturesSection() {
                 {isThird && videoSrc ? (
                   <video
                     autoPlay
+                    playsInline
                     muted
                     loop
+                    preload="auto"
                     className={`object-cover w-full px-0 mx-0 ${imageSize ?? "h-auto"}`}
                   >
                     <source src={videoSrc} type="video/mp4" />

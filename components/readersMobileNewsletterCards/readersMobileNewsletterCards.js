@@ -3,7 +3,7 @@ export default function ReadersMobileNewsletterCards() {
         {
             domain: "NEWS",
             name: "Presidential Summary",
-            image: "/readers/ps-card-for-mobile.jpg",
+            image: "/readers/ps-image.png",
             content: "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
             learnMore: "https://www.presidentialsummary.com/"
         },
@@ -24,7 +24,7 @@ export default function ReadersMobileNewsletterCards() {
         {
             domain: "Finance",
             name: "Long and Short",
-            image: "/readers/ls-card-for-mobile.jpg",
+            image: "/readers/ls.jpg",
             content: "We cover key topics such as market trends, investment strategies, risk management, and economic developments, delivering in-depth analysis in a format that is accessible.",
             learnMore: "https://www.presidentialsummary.com/"
         },
