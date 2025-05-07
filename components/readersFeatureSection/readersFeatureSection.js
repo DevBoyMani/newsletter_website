@@ -43,52 +43,61 @@ export default function ReadersFeatureSection() {
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
-        if (!isClickScrolling) {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const index = sectionRefs.current.findIndex(
-                (ref) => ref === entry.target
-              );
-              if (index !== -1) {
-                setActiveIndex(index);
-                setActiveScrollIndex(index);
-              }
+        if (isClickScrolling) return;
+  
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.findIndex(
+              (ref) => ref === entry.target
+            );
+            if (index !== -1) {
+              setActiveIndex(index);
+              setActiveScrollIndex(index);
             }
-          });
-        }
+          }
+        });
       },
       {
-        threshold: 0.6
+        threshold: 0.6,
       }
     );
-
+  
     sectionRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
-
+  
     return () => {
       sectionRefs.current.forEach((ref) => {
         if (ref) observer.unobserve(ref);
       });
     };
   }, [isClickScrolling]);
+  
 
   // Click from left sidebar
   const handleClick = (index) => {
+    if (index === activeIndex) return; // prevent double click on same item
+  
+    setIsClickScrolling(true); // start ignoring intersection while clicking
     setActiveIndex(index);
     setActiveScrollIndex(index);
-    setIsClickScrolling(true);
-
+  
     const el = sectionRefs.current[index];
     if (el) {
       el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
+  
+      // Allow time for scroll animation to complete before enabling intersection again
       setTimeout(() => {
         window.scrollBy({ top: -100, behavior: 'smooth' });
-        setIsClickScrolling(false);
-      }, 400); 
+  
+        // Give a little more buffer before re-enabling scroll sync
+        setTimeout(() => {
+          setIsClickScrolling(false);
+        }, 500);
+      }, 400);
     }
   };
+  
 
   return (
     <>
