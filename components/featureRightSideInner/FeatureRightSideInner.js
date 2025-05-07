@@ -3,7 +3,7 @@ import { useState } from "react";
 import { forwardRef } from "react";
 import { motion } from 'framer-motion';
 
-const FeatureSection = forwardRef(({ data }, ref) => {
+const FeatureRightSideInner = forwardRef(({ data }, ref) => {
     const { title, src, content, imageSize, isFirst, isThird } = data;
 
     // Track which mode is active
@@ -39,7 +39,7 @@ const FeatureSection = forwardRef(({ data }, ref) => {
                             <motion.button
                             onClick={() => handleModeChange(mode === "dark" ? "light" : "dark")}
                             className={`
-                                relative w-[79px] h-[40px] rounded-full
+                                relative w-[80px] h-[40px] rounded-full
                                 ${mode === "dark" ? "shadow-inner" : "shadow-inner"}
                               `}
                               style={{
@@ -57,9 +57,9 @@ const FeatureSection = forwardRef(({ data }, ref) => {
                             <motion.img
                                 src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
                                 alt="Mode Toggle"
-                                className="absolute top-1 left-0.5 w-[34px] h-[34px] rounded-full"
-                                animate={{ x: mode === "dark" ? 39 : 0 }}
-        transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                                className="absolute top-0.5 left-0 w-[40px] h-[40px] rounded-full"
+                                animate={{ x: mode === "dark" ? 40 : 0 }}
+        transition={{ type: "spring", stiffness: 400, damping: 40 }}
                             />
                             </motion.button>
                         </div>
@@ -93,5 +93,5 @@ const FeatureSection = forwardRef(({ data }, ref) => {
     );
 });
 
-FeatureSection.displayName = "FeatureSection";
-export default FeatureSection;
+FeatureRightSideInner.displayName = "FeatureRightSideInner";
+export default FeatureRightSideInner;

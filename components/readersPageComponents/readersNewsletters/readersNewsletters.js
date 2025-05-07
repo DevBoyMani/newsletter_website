@@ -91,27 +91,15 @@ export default function ReadersNewsletters() {
                       +
                     </span>
                   </button>
-
-                  {/* <button className="absolute top-4 left-4 bg-gray-200 text-black px-5 py-2 rounded-full transition-all duration-300 overflow-hidden group-hover:px-2 group-hover:py-2 group-hover:w-[30px] group-hover:h-[30px] group-hover:rounded-full flex items-center justify-center ">
-
-                  <span className="transition-all duration-300 opacity-100  group-hover:opacity-0 group-hover:-translate-x-2  left-1/2 transform -translate-x-1/2">
-                    Subscribe
-                  </span>
-
-
-                  <span className="transition-all duration-300 opacity-0 scale-90 group-hover:opacity-100 group-hover:scale-110  inset-0 flex items-center justify-center">
-                    +
-                  </span>
-                </button> */}
                 </div>
 
                 {/* Card content */}
-                <div className="w-full border px-4 rounded-b-lg py-4 font-Manrope">
+                <div className=" w-full border px-4 rounded-b-lg py-4 font-Manrope">
                   <div className="relative h-6 overflow-hidden">
-                    <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-0 group-hover:-translate-y-6 text-[13px] text-[#000000a8]">
+                    <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-0 group-hover/card:-translate-y-6 text-[13px] text-[#000000a8]">
                       {data.topic}
                     </span>
-                    <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-6 group-hover:translate-y-0 text-[13px] text-[#000000a8]">
+                    <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-6 group-hover/card:translate-y-0 text-[13px] text-[#000000a8]">
                       {data.when}
                     </span>
                   </div>
@@ -128,7 +116,22 @@ export default function ReadersNewsletters() {
                         {data.footerButton}
                       </span>
 
-                      <ArrowRight className="w-[18px] h-[18px] transition duration-300 " />
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 60 32"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-[30px] h-[28px]"
+                      >
+                        <line x1="10" y1="16" x2="50" y2="16" />
+                        <polyline points="42 6 54 16 42 26" />
+                      </svg>
+
+
+
                     </button>
                   </div>
                 </div>

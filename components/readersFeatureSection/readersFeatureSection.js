@@ -1,7 +1,8 @@
 'use client';
 
-import { useState,useRef} from 'react';
-import FeatureSection from '../featureSection/featureSection';
+import { useState, useRef, useEffect } from 'react';
+import FeatureLeftSidebar from '../featureLeftSidebar/featureLeftSidebar';
+import FeatureRightSide from '../featureRightSide/featureRightSide';
 
 const sections=[
     { title:"Supports dark mode",
@@ -31,75 +32,87 @@ const sections=[
       },
    ]
 
-
 export default function ReadersFeatureSection() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [activeScrollIndex, setActiveScrollIndex] = useState(0);
+  const [isClickScrolling, setIsClickScrolling] = useState(false);
 
-  // Create refs for each section
   const sectionRefs = useRef([]);
 
+  // Scroll observer
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (!isClickScrolling) {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const index = sectionRefs.current.findIndex(
+                (ref) => ref === entry.target
+              );
+              if (index !== -1) {
+                setActiveIndex(index);
+                setActiveScrollIndex(index);
+              }
+            }
+          });
+        }
+      },
+      {
+        threshold: 0.6
+      }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      sectionRefs.current.forEach((ref) => {
+        if (ref) observer.unobserve(ref);
+      });
+    };
+  }, [isClickScrolling]);
+
+  // Click from left sidebar
   const handleClick = (index) => {
     setActiveIndex(index);
-  
-    const section = sectionRefs.current[index];
-    const scrollContainer = document.querySelector('.scrollable-content'); // class for right section
-    const yOffset = -10; // adjust this to move section a bit higher
-  
-    if (section && scrollContainer) {
-      const sectionTop = section.offsetTop + yOffset;
-  
-      scrollContainer.scrollTo({
-        top: sectionTop,
-        behavior: 'smooth',
-      });
+    setActiveScrollIndex(index);
+    setIsClickScrolling(true);
+
+    const el = sectionRefs.current[index];
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+      setTimeout(() => {
+        window.scrollBy({ top: -100, behavior: 'smooth' });
+        setIsClickScrolling(false);
+      }, 400); 
     }
   };
 
   return (
-
     <>
-        <div className="bg-[#FAFAFA] px-4 md:px-16 pb-10 mx-auto">
-            <div className="">
-                <p className="text-black text-lg md:text-xl ">
+      <div className="bg-[#FAFAFA] px-4 md:px-16 pb-10 mx-auto">
+      <p className="text-black text-lg md:text-xl ">
                 Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.
 
                 </p>
-            </div>
-        </div>
+      </div>
 
-            <div className="flex h-screen bg-[#FAFAFA] px-4 md:px-16 mx-auto relative z-10 overflow-hidden mt-12">
-          {/* Left Sidebar (Sticky) */}
-          <div className="h-full overflow-hidden pr-10 z-10 w-1/4 sticky top-24 bg-[#FAFAFA]">
-            {sections.map((item, index) => (
-              <div
-                key={index}
-                className={`py-4 px-4 border-b text-lg md:text-[18px] cursor-pointer transition-all
-                  ${index === activeIndex ? 'bg-[#01261E] text-white' : 'text-black hover:text-white hover:bg-[#01261ee0]'}`}
-                onClick={() => handleClick(index)}
-              >
-                {item.title}
-              </div>
-            ))}
-          </div>
+      <div className="flex h-screen sticky-0 bg-[#FAFAFA] px-4 md:px-16 mx-auto z-10 overflow-hidden mt-12">
+        {/* Left Sidebar */}
+        <FeatureLeftSidebar
+          sections={sections}
+          activeIndex={activeIndex}
+          handleClick={handleClick}
+        />
 
-          {/* Right Scrollable Content */}
-
-          <div className="w-3/4 bg-[#FAFAFA] h-screen overflow-y-auto px-6 pt-6 pb-60 space-y-16 scroll-smooth scrollable-content" style={{ scrollbarWidth: "none" }}>
-            {sections.map((item, index) => (
-              <FeatureSection
-                key={index}
-                ref={(el) => (sectionRefs.current[index] = el)}
-                data={{
-                  ...item,
-                  isFirst: index === 0,isThird: index === 2,
-                }}
-              />
-            ))}
-          </div>
-        </div>
-
+        {/* Right Scrollable Content */}
+        <FeatureRightSide
+          sections={sections}
+          sectionRefs={sectionRefs}
+        />
+      </div>
     </>
-
   );
 }
-

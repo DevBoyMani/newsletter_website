@@ -1,3 +1,4 @@
+import ReadersFeatureSection from "../../components/readersFeatureSection/readersFeatureSection";
 import ReadersFeatures from "../../components/readersFeatureSection/readersFeatureSection";
 import ReadersFooter from "../../components/readersFooter/readersFooter";
 import ReadersMobileView from "../../components/readersMobileView/readersMobileView";
@@ -19,7 +20,7 @@ export default function ReadersPage(){
               <div className="px-4 md:px-16 py-10 ">
                 <HeadingWithUnderline text="Features"/>
               </div>
-              <ReadersFeatures/>
+              <ReadersFeatureSection/>
 
               <ReadersFooter/>
             </div>
