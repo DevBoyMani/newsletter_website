@@ -45,7 +45,7 @@ export function Component() {
 
     <>
     {/* desktop view */}
-    <div className="hidden lg:block relative w-[730px] h-[467px] perspective-1000 ">
+    <div className="hidden lg:block relative w-[98%] h-[467px] perspective-1000 ">
       <div
         className="relative w-full h-full transition-transform duration-500"
         style={{
@@ -88,7 +88,7 @@ export function Component() {
             </div>
           </CardHeader>
           <CardContent>
-            <ChartContainer className="w-[710px] h-[240px]" config={chartConfig}>
+            <ChartContainer className="w-[98%] h-[240px]" config={chartConfig}>
               <AreaChart data={chartData} margin={{ left: 12, right: 12 }}>
                 <defs>
                   <linearGradient id="fadeGradient" x1="0" y1="0" x2="0" y2="1">

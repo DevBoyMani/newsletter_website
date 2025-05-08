@@ -23,7 +23,7 @@ export default function Analytics() {
         {/* Left Sidebar */}
         <div className="w-[36%] bg-white fixed h-screen">
           <div className="md:px-6">
-            <div className="px-4 text-[16px] py-8">
+            <div className="px-4 text-[16px] py-8 hover:underline">
               <a href="/analytics">Analytics</a>
             </div>
             <div className="pt-6">
@@ -31,17 +31,20 @@ export default function Analytics() {
                 Building Innovative Digital Solutions
               </h2>
               <div
-                className="overflow-y-auto w-[100%] md:h-[320px]"
-                style={{ scrollbarWidth: "none" }}
+                className="overflow-y-auto w-[100%] sm:h-[40vh] md:h-[46vh] 
+              lg:h-[46vh] 
+              xl:h-[50vh]
+              2xl:h-[60vh] max-h-[64vh]"
+                style={{scrollbarWidth: "none" }}
               >
                 <AdvertiseSidebarHomepage />
               </div>
             </div>
             <div className="w-[80%] mx-4 text-black pt-4 flex justify-between border-t border-[#121212]">
               <h3 className="text-[13px] py-1">Interested to advertise?</h3>
-              <h3 className="text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
+              <a className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
                 Contact Us
-              </h3>
+              </a>
             </div>
           </div>
         </div>
