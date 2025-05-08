@@ -55,41 +55,107 @@ export default function AnalyticsSlug() {
     }
   }, [params?.slug]);
 
-  useEffect(() => {
-    const scrollContainer = scrollContainerRef.current;
-    if (!scrollContainer) return;
+   // useEffect(() => {
+  //   const scrollContainer = scrollContainerRef.current;
+  //   if (!scrollContainer) return;
 
-    const handleScroll = () => {
-      let nextChartIndex = null;
+  //   const handleScroll = () => {
+  //     let nextChartIndex = null;
 
-      rightSectionNav.forEach(({ id, name }, index) => {
-        const section = document.getElementById(id);
-        if (section) {
-          const rect = section.getBoundingClientRect();
+  //     rightSectionNav.forEach(({ id, name }, index) => {
+  //       const section = document.getElementById(id);
+  //       if (section) {
+  //         const rect = section.getBoundingClientRect();
 
-          // Section is visible within 15% of the viewport height
-          if (
-            rect.top < window.innerHeight * 0.15 &&
-            rect.bottom > window.innerHeight * 0.15
-          ) {
-            nextChartIndex = index;
+  //         // Section is visible within 15% of the viewport height
+  //         if (
+  //           rect.top < window.innerHeight * 0.15 &&
+  //           rect.bottom > window.innerHeight * 0.15
+  //         ) {
+  //           nextChartIndex = index;
+  //         }
+  //       }
+  //     });
+
+  //     if (nextChartIndex !== null) {
+  //       setActiveChart(nextChartIndex + 1);
+  //       setActiveChartName(rightSectionNav[nextChartIndex].name);
+  //     }
+  //   };
+
+  //   scrollContainer.addEventListener("scroll", handleScroll);
+
+  //   return () => {
+  //     scrollContainer.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, []);
+
+      useEffect(() => {
+        const handleScrollDesktop = () => {
+          let nextChartIndex = null;
+      
+          rightSectionNav.forEach(({ id }, index) => {
+            const section = document.getElementById(id);
+            if (section) {
+              const rect = section.getBoundingClientRect();
+      
+              if (
+                rect.top < window.innerHeight * 0.3 &&
+                rect.bottom > window.innerHeight * 0.3
+              ) {
+                nextChartIndex = index;
+              }
+            }
+          });
+      
+          if (nextChartIndex !== null) {
+            setActiveChart(nextChartIndex + 1);
+            setActiveChartName(rightSectionNav[nextChartIndex].name);
+          }
+        };
+      
+        const handleScrollMobile = () => {
+          const scrollContainer = scrollContainerRef.current;
+          if (!scrollContainer) return;
+      
+          let nextChartIndex = null;
+      
+          rightSectionNav.forEach(({ id }, index) => {
+            const section = document.getElementById(id);
+            if (section) {
+              const sectionTop = section.offsetTop;
+              const sectionHeight = section.offsetHeight;
+              const scrollTop = scrollContainer.scrollTop;
+              const containerHeight = scrollContainer.offsetHeight;
+      
+              if (
+                scrollTop + containerHeight * 0.3 > sectionTop &&
+                scrollTop + containerHeight * 0.3 < sectionTop + sectionHeight
+              ) {
+                nextChartIndex = index;
+              }
+            }
+          });
+      
+          if (nextChartIndex !== null) {
+            setActiveChart(nextChartIndex + 1);
+            setActiveChartName(rightSectionNav[nextChartIndex].name);
+          }
+        };
+      
+        if (isDesktop) {
+          window.addEventListener("scroll", handleScrollDesktop);
+          return () => window.removeEventListener("scroll", handleScrollDesktop);
+        } else {
+          const scrollContainer = scrollContainerRef.current;
+          if (scrollContainer) {
+            scrollContainer.addEventListener("scroll", handleScrollMobile);
+            return () =>
+              scrollContainer.removeEventListener("scroll", handleScrollMobile);
           }
         }
-      });
-
-      if (nextChartIndex !== null) {
-        setActiveChart(nextChartIndex + 1);
-        setActiveChartName(rightSectionNav[nextChartIndex].name);
-      }
-    };
-
-    scrollContainer.addEventListener("scroll", handleScroll);
-
-    return () => {
-      scrollContainer.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
+      }, [isDesktop]);
+      
   const handleScrollToSection = (event, id) => {
     event.preventDefault();
     const section = document.getElementById(id);
@@ -108,17 +174,18 @@ export default function AnalyticsSlug() {
       {/* desktop view */}
       {isDesktop && (
         <div className="hidden lg:block md:flex">
+          {/* left */}
           <div className="w-[36%] bg-white fixed h-screen">
             <div className="md:px-6">
-              <div className="px-4 text-lg py-8">
+              <div className="px-4 text-[16px] py-8">
                 <Link href="/analytics" prefetch={true}>&larr; Introduction</Link>
               </div>
               <div className="pt-6">
-                <h2 className="py-4 text-3xl">
+                <h2 className="py-4 mx-4 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
                   Building Innovative Digital Solutions
                 </h2>
                 <div
-                  className="border-t-2 border-b-2 border-black overflow-y-auto md:h-[320px]"
+                  className="overflow-y-auto w-[100%] md:h-[320px]"
                   style={{ scrollbarWidth: "none" }}
                 >
                   <AdvertiseSidebar
@@ -127,23 +194,20 @@ export default function AnalyticsSlug() {
                   />
                 </div>
               </div>
-              <div className="text-black pt-4 flex justify-between">
-                <p className="text-sm px-4 py-1">Interested to advertise?</p>
-                <p className="text-sm border border-black px-4 py-1 rounded-3xl">
-                  Contact Us
-                </p>
-              </div>
+              <div className="w-[80%] mx-4 text-black pt-4 flex justify-between border-t border-[#121212]">
+              <h3 className="text-[13px] py-1">Interested to advertise?</h3>
+              <h3 className="text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
+                Contact Us
+              </h3>
+            </div>
             </div>
           </div>
 
-          <div className="w-[64%] h-full  ml-auto overflow-y-auto rounded-l-3xl relative z-10">
+          {/* right */}
+          <div 
+          ref={scrollContainerRef}
+          className="w-[64%] h-full  ml-auto overflow-y-auto rounded-l-3xl relative z-10">
             <div
-              // layout
-              // key={selectedSlug}
-              // initial={{ x: "100%", opacity: 0 }}
-              // animate={{ x: 0, opacity: 1 }}
-              // exit={{ x: "-100%", opacity: 0 }}
-              // transition={{ duration: 0.9, ease: "easeInOut" }}
               className="bg-[#01261E]"
             >
               <div className="h-full flex flex-col">
@@ -178,15 +242,23 @@ export default function AnalyticsSlug() {
                   </div>
                 </div>
 
-                <div
-                  // layout
-                  // key={selectedSlug}
-                  // initial={{ x: "100%", opacity: 0 }}
-                  // animate={{ x: 0, opacity: 1 }}
-                  // exit={{ x: "-100%", opacity: 0 }}
-                  // transition={{ duration: 1.0, ease: "easeInOut" }}
-                >
-                  <div className="">
+                
+               
+       
+               
+                   {/* Vertical Lines Indicator */}
+                <div className="fixed top-1/3 right-20  h-full flex flex-col items-center space-y-4 z-10">
+                {rightSectionNav.map((el, index) => (
+                    <div
+                      key={el.id}
+                      className={`h-[43px] w-[2px] transition-all duration-300 ${
+                        activeChart === index + 1 ? "bg-[#fff]" : "bg-[#FFFFFF26]"
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                <div className="">
                     <div className="mx-24 lg:mb-28 mt-24">
                       <div className=" my-10" id="chart1">
                         <SelectedComponent />
@@ -204,8 +276,9 @@ export default function AnalyticsSlug() {
                         <SelectedComponent />
                       </div>
                     </div>
-                  </div>
                 </div>
+             
+               
               </div>
             </div>
           </div>

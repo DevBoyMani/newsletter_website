@@ -41,21 +41,21 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
           const slug = formatSlug(name);
 
           return (
-            <div key={slug} className="relative flex items-center ">
+            <div key={slug} className="relative flex items-center w-[80%]">
               <div
                 onClick={() => onSelect(slug)}
-                className={`flex justify-between items-center py-1 px-6 my-1  cursor-pointer w-full
+                className={`flex justify-start items-center py-1 px-4 my-1 cursor-pointer w-full
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full" : "hover:bg-[#121212]/10 rounded-full"}
                 `}
               >
-                <Link href={`/advertise/${slug}`} className="w-full mr-4">
-                  <span className="text-left text-lg w-full">{name}</span>
+                <Link href={`/advertise/${slug}`} className="w-[60%]">
+                  <span className="text-left text-[17px] leading-normal font-[400]">{name}</span>
                 </Link>
-                <div className="flex space-x-6 text-xs pl-6">
-                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1">
+                <div className="flex space-x-6 text-[11px] pl-6">
+                  <span className="bg-[#121212]/20 rounded-full px-2 py-1">
                     {issue}
                   </span>
-                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1">
+                  <span className="bg-[#121212]/20 rounded-full px-2 py-1">
                     {when}
                   </span>
                 </div>
