@@ -73,7 +73,7 @@ export default function Advertise() {
               {/* Text Section */}
               <div className=" md:px-16 px-4 lg:pt-20 pt-10 mx-auto">
                 <div className="text-black">
-                  <h2 className="text-7xl lg:w-[50%] ">Step into a world of discovery</h2>
+                  <h2 className="text-7xl lg:w-[50%] font-[GT-Super-Ds-Trial]">Step into a world of discovery</h2>
                   <p className="text-base py-4 w-[30%] sm:w-[30%]">
                     Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
                   </p>
@@ -124,26 +124,20 @@ export default function Advertise() {
           </div>
 
           {/* combined analytics */}
-          <div className="bg-white relative hidden lg:block">
-            <div className="px-4 md:px-28 py-10">
-              <HeadingWithUnderline text="Combined Analytics"/>
-            </div>
+            <div className="bg-white relative hidden lg:block">
+              <div className="px-4 xl:px-20 2xl:px-32 py-10">
+                <HeadingWithUnderline text="Combined Analytics"/>
+              </div>
 
-            {/* chars section */}
-            <div className="">
-              <div>
-
+              {/* charts section */}
+              <div className="">
                 {/* #1 */}
                 <div className="lg:flex justify-center items-center flex:col space-x-6 md:py-4">
-                  <div className="">
                     <div>
                         <AccountReached/>
                     </div>
-                  </div>
-                  <div className="">
                     <div>
                     <ViewsCountry/>
-                    </div>
                   </div>
                 </div>
 
@@ -187,11 +181,9 @@ export default function Advertise() {
               </div>
             </div>
 
-          </div>
-
           {/*text with video section */}
           <div className="bg-white hidden lg:block">
-            <div className="px-4 md:px-28 py-10">
+            <div className="px-4 xl:px-20 2xl:px-32 py-10">
                 <HeadingWithUnderline text="How your ad will look like"/>
             </div>
 
@@ -277,7 +269,7 @@ export default function Advertise() {
             <div className="px-4 md:px-28 pt-20 pb-10">
               <div className="flex flex-col md:flex-row justify-between px-4">
               <div className="md:w-[40%] lg:py-0 pb-14">
-                <div className="text-black lg:text-7xl text-5xl">
+                <div className="text-black lg:text-7xl text-5xl font-[GT-Super-Ds-Trial]">
                 Got Questions? We've Got Answers!
                 </div>
               </div>
@@ -292,11 +284,11 @@ export default function Advertise() {
           </div>
 
           <div className="bg-white hidden lg:block">
-            <div className="px-4 md:px-28 pt-20 pb-10">
+            <div className="px-4 xl:px-20 2xl:px-32 py-10">
                 <HeadingWithUnderline text="In the press"/>
             </div>
 
-            <div className="px-4 md:px-28 pb-20 pt-10">
+            <div className="px-4 md:px-32 pb-20 pt-10">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                 {newsData.map((item, index) => (
                   <div key={index} className="space-y-3">

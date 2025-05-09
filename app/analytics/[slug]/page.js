@@ -2,22 +2,34 @@
 
 import { useEffect, useState, useRef } from "react";
 import { useParams } from "next/navigation";
-import AdvertiseSidebar from "../../../components/advertiseSidebar/advertiseSidebar";
+import AdvertiseSidebar from "../../../components/analyticsSidebar/analyticsSidebar";
 import { motion } from "framer-motion";
-import { Component } from "../../../components/areaChart/areaChart";
 import Link from "next/link";
+import { AnalyticsChartPS } from "../../../components/analyticsChartPS/analyticsChartPS";
+import { AnalyticsChartGS } from "../../../components/analyticsChartGS/analyticsChartGS";
+import AnalyticsSidebar from "../../../components/analyticsSidebar/analyticsSidebar";
 
 const components = {
-  "presidential-summary": () => <Component />,
-  "geopolitical-summary": () => <Component />,
-  "long-and-short": () => <Component />,
-  "business-history": () => <Component />,
-  "photo-summary": () => <Component />,
-  "new-users": () => <Component />,
-  "returning-users": () => <Component />,
-  "organic-search": () => <Component />,
-  "social-media": () => <Component />,
-  "direct-traffic": () => <Component />,
+  "geopolitical-summary": () => <AnalyticsChartGS/>,
+  "presidential-summary": () => <AnalyticsChartPS/>,
+  "long-and-short": () => <AnalyticsChartGS/>,
+  "business-history": () => <AnalyticsChartPS/>,
+  "photo-summary": () => <AnalyticsChartGS/>,
+  "new-users": () => <AnalyticsChartPS/>,
+  "returning-users": () => <AnalyticsChartGS/>,
+  "organic-search": () => <AnalyticsChartPS/>,
+  "social-media": () => <AnalyticsChartGS/>,
+  "direct-traffic": () => <AnalyticsChartPS/>,
+  "summary": () => <AnalyticsChartGS/>,
+  "summary1": () => <AnalyticsChartPS/>,
+  "Long": () => <AnalyticsChartGS/>,
+  "business": () => <AnalyticsChartPS/>,
+  "photo": () => <AnalyticsChartGS/>,
+  "users": () => <AnalyticsChartPS/>,
+  "returning": () => <AnalyticsChartGS/>,
+  "organic": () => <AnalyticsChartPS/>,
+  "social": () => <AnalyticsChartGS/>,
+  "direct": () => <AnalyticsChartPS/>,
 };
 
 const rightSectionNav = [
@@ -156,13 +168,19 @@ export default function AnalyticsSlug() {
         }
       }, [isDesktop]);
       
-  const handleScrollToSection = (event, id) => {
-    event.preventDefault();
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-  };
+const handleScrollToSection = (event, id, offset = 0) => {
+  event.preventDefault();
+  const section = document.getElementById(id);
+  if (section) {
+    const scrollY = section.getBoundingClientRect().top + window.pageYOffset + offset;
+    window.scrollTo({
+      top: scrollY,
+      behavior: "smooth"
+    });
+  }
+};
+// handleScrollToSection(e, 'sectionId', -80);
+
 
   const SelectedComponent =
     selectedSlug && components[selectedSlug]
@@ -191,7 +209,7 @@ export default function AnalyticsSlug() {
                   2xl:h-[60vh] max-h-[64vh]"
                   style={{ scrollbarWidth: "none" }}
                 >
-                  <AdvertiseSidebar
+                  <AnalyticsSidebar
                     activeSlug={selectedSlug}
                     onSelect={setSelectedSlug}
                   />
@@ -275,7 +293,7 @@ export default function AnalyticsSlug() {
                       <div className=" my-10" id="chart4">
                         <SelectedComponent />
                       </div>
-                      <div className=" my-10" id="chart5">
+                      <div className=" my-10 pb-28" id="chart5">
                         <SelectedComponent />
                       </div>
                     </div>
@@ -297,8 +315,8 @@ export default function AnalyticsSlug() {
           {/* Header with Numerical Indicator */}
           <div className="bg-[#01261E] fixed top-0 w-full  pt-6 pb-3 px-4 z-50 text-white">
             <div className="flex justify-between items-center">
-              <p className="text-sm text-gray-300">{activeChartName}</p>
-              <div className="text-xs font-semibold bg-[#FAFAFA] text-[#01261E] py-2 px-2 rounded-full">
+              <p className="text-[14px] text-[#FAFAFA]">{activeChartName}</p>
+              <div className="text-xs font-semibold bg-[#FAFAFA99] text-[#01261E] py-2 px-2 rounded-full">
                 {activeChart}/{rightSectionNav.length}
               </div>
             </div>
@@ -306,7 +324,7 @@ export default function AnalyticsSlug() {
 
           <div className="flex flex-col mx-4 mt-20">
             {rightSectionNav.map((el) => (
-              <div className="my-4" key={el.id} id={el.id}>
+              <div className=" my-4" key={el.id} id={el.id}>
                 <SelectedComponent />
               </div>
             ))}
@@ -324,7 +342,7 @@ export default function AnalyticsSlug() {
                 </Link>
               </div>
               <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
+                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
                     </div>
               <div>
                 <Link href="/" prefetch={true} className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl">
@@ -332,7 +350,7 @@ export default function AnalyticsSlug() {
                 </Link>
               </div>
               <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
+                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
                     </div>
               <div>
                 <Link href="/contact" prefetch={true} className="cursor-pointer text-[13px] font-semibold py-2 px-2">
@@ -345,7 +363,7 @@ export default function AnalyticsSlug() {
 
             {/* Bottom Section */}
             <div className="pt-14">
-              <AdvertiseSidebar
+              <AnalyticsSidebar
                 activeSlug={selectedSlug}
                 onSelect={setSelectedSlug}
               />

@@ -4,10 +4,10 @@
 import Link from "next/link";
 import { useState } from "react";
 
-const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
+const AnalyticsSidebar = ({ activeSlug, onSelect }) => {
   // const [selectedSlug, setSelectedSlug] = useState(activeSlug);
 
-  const advertiseList = [
+  const analyticsList = [
     { name: "Geopolitical Summary", issue: "Geopoliticals", when: "2024",sourceLink:"https://www.geopoliticalsummary.com/", },
     { name: "Presidential Summary", issue: "Geopoliticals", when: "2024",sourceLink:"https://www.presidentialsummary.com/" },
     { name: "Long and Short", issue: "Geopoliticals", when: "2024",sourceLink:"https://www.longandshort.com/" },
@@ -37,7 +37,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
     {/* desktop view */}
     <div className="hidden lg:block flex justify-start">
       <div className="h-full py-4 space-y-2">
-        {advertiseList.map(({ name, issue, when }) => {
+        {analyticsList.map(({ name, issue, when }) => {
           const slug = formatSlug(name);
 
           return (
@@ -48,7 +48,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full" : "hover:bg-[#121212]/10 rounded-full"}
                 `}
               >
-                <Link href={`/advertise/${slug}`} className="w-[60%]">
+                <Link href={`/analytics/${slug}`} className="w-[60%]">
                   <span className="text-left text-[17px] leading-normal font-[400]">{name}</span>
                 </Link>
                 <div className="flex space-x-6 text-[11px] pl-6">
@@ -70,7 +70,7 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
 {/* mobile view */}
     <div className="block lg:hidden flex justify-start px-4 ">
       <div className="h-full w-full py-4 space-y-2 ">
-        {advertiseList.map(({ name, issue, when,sourceLink }) => {
+        {analyticsList.map(({ name, issue, when,sourceLink }) => {
           const slug = formatSlug(name);
 
           return (
@@ -81,12 +81,12 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full " : "hover:bg-[#121212]/10 rounded-full "}
                 `}
               >
-                <Link href={`/advertise/${slug}`} prefetch={true} className="w-[192px] mr-4">
-                  <span className="text-left text-base w-full">{name}</span>
+                <Link href={`/analytics/${slug}`} prefetch={true} className="w-[192px] mr-4">
+                  <span className="text-left text-[15px] w-full">{name}</span>
                 </Link>
 
                 <div className="flex space-x-6 text-xs">
-                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1 font-medium">
+                  <span className="bg-[#121212]/20 rounded-3xl px-2 py-1 text-[11px]">
                     {when}
                   </span>
                   {activeSlug === slug && (
@@ -107,4 +107,4 @@ const AdvertiseSidebar = ({ activeSlug, onSelect }) => {
   );
 };
 
-export default AdvertiseSidebar;
+export default AnalyticsSidebar;

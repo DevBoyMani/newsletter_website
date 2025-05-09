@@ -3,11 +3,12 @@
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { useState } from "react";
-import AdvertiseSidebarHomepage from "../../components/advertiseSidebarHomepage/advertiseSidebarHomepage";
-import AdvertiseSidebar from "../../components/advertiseSidebar/advertiseSidebar";
+import AdvertiseSidebarHomepage from "../../components/analyticsSidebarHomepage/analyticsSidebarHomepage";
+import AdvertiseSidebar from "../../components/analyticsSidebar/analyticsSidebar";
 import { motion } from "framer-motion";
 // import { MobileChart} from "../../components/advertiseComponents/mobileChart/mobileChart";
-import { Component } from "../../components/areaChart/areaChart";
+import { Component } from "../../components/analyticsChartGS/analyticsChartGS";
+import AnalyticsSidebarHomepage from "../../components/analyticsSidebarHomepage/analyticsSidebarHomepage";
 
 export default function Analytics() {
   const [openSection, setOpenSection] = useState("about");
@@ -37,7 +38,7 @@ export default function Analytics() {
               2xl:h-[60vh] max-h-[64vh]"
                 style={{scrollbarWidth: "none" }}
               >
-                <AdvertiseSidebarHomepage />
+                <AnalyticsSidebarHomepage />
               </div>
             </div>
             <div className="w-[80%] mx-4 text-black pt-4 flex justify-between border-t border-[#121212]">
@@ -132,7 +133,7 @@ export default function Analytics() {
                       </Link>
                     </div>
                     <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
+                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
                     </div>
                     <div
                       className="cursor-pointer text-[13px] font-semibold py-2 px-2"
@@ -141,7 +142,7 @@ export default function Analytics() {
                       Newsletters
                     </div>
                     <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1.5 h-1.5 rounded-full" />
+                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
                     </div>
                     <div>
                     <Link
@@ -171,7 +172,7 @@ export default function Analytics() {
               {openSection === "about" && (
                 <>
                 
-                  <div className="pt-36">
+                  <div className="pt-36 text-[12px]">
                     <p className="">
                       Creativity has been an integral part of my life. Since
                       2010 I've started working in design industry. Having

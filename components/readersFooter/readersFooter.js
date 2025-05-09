@@ -145,22 +145,23 @@ export default function ReadersFooter() {
                   </div>
 
                   {/* right section */}
-                  <div className="lg:w-1/2 flex justify-end text-[16px]">
-                    <ul className="space-y-2">
-                      <li>Blog</li>
-                      <li>Careers</li>
-                      <li>Privacy Policy</li>
-                      <li>Legal</li>
-                    </ul>
-                    <ul className="space-y-2 ml-36">
-                      <li>About Us</li>
-                      <li>For Readers</li>
-                      <li>Advertise</li>
-                      <li>Analytics</li>
-                      <li>Contact Sales</li>
-                    </ul>
+                  <div className="lg:w-1/2 flex flex-row justify-end text-[16px]">
+                    <div className="flex space-x-16 mr-6">
+                      <ul className="space-y-2 mr-7">
+                        <li>Blog</li>
+                        <li>Careers</li>
+                        <li>Privacy Policy</li>
+                        <li>Legal</li>
+                      </ul>
+                      <ul className="space-y-2 ">
+                        <li>About Us</li>
+                        <li>For Readers</li>
+                        <li>Advertise</li>
+                        <li>Analytics</li>
+                        <li>Contact Sales</li>
+                      </ul>
+                    </div> 
                   </div>
-
                 </div>
               </div>
             </div>

@@ -2,18 +2,29 @@
 
 import Link from "next/link";
 
-const AdvertiseSidebarHomepage = () => {
+const AnalyticsSidebarHomepage = () => {
   const advertiseList = [
     { name: "Geopolitical Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/geopolitical-summary" },
     { name: "Presidential Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/presidential-summary" },
     { name: "Long and Short", issue: "Geopoliticals", when: "2024", path: "/analytics/long-and-short" },
     { name: "Business History", issue: "Geopoliticals", when: "2024", path: "/analytics/business-history" },
     { name: "Photo Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/photo-summary" },
-    { name: "Geopolitical Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/geopolitical-summary" },
-    { name: "Presidential Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/presidential-summary" },
-    { name: "Long and Short", issue: "Geopoliticals", when: "2024", path: "/analytics/long-and-short" },
-    { name: "Business History", issue: "Geopoliticals", when: "2024", path: "/analytics/business-history" },
-    { name: "Photo Summary", issue: "Geopoliticals", when: "2024", path: "/analytics/photo-summary" },
+    { name: "New Users", issue: "Geopoliticals", when: "2024",path: "/analytics/new-users" },
+    { name: "Returning Users", issue: "Geopoliticals", when: "2024",path: "/analytics/returning-users" },
+    { name: "Organic Search", issue: "Geopoliticals", when: "2024",path: "/analytics/organic-search" },
+    { name: "Social Media", issue: "Geopoliticals", when: "2024",path: "/analytics/social-media" },
+    { name: "Direct Traffic", issue: "Geopoliticals", when: "2024",path: "/analytics/direct-traffic" },
+    { name: "Summary", issue: "Geopoliticals", when: "2024",path: "/analytics/summary" },
+    { name: "Summary1", issue: "Geopoliticals", when: "2024",path: "/analytics/summary1" },
+    { name: "Long", issue: "Geopoliticals", when: "2024",path: "/analytics/long" },
+    { name: "Business", issue: "Geopoliticals", when: "2024",path: "/analytics/business" },
+    { name: "Photo", issue: "Geopoliticals", when: "2024",path: "/analytics/photo" },
+    { name: "Users", issue: "Geopoliticals", when: "2024",path: "/analytics/users" },
+    { name: "Returning", issue: "Geopoliticals", when: "2024",path: "/analytics/returning" },
+    { name: "Organic", issue: "Geopoliticals", when: "2024",path: "/analytics/organic" },
+    { name: "Socials", issue: "Geopoliticals", when: "2024",path: "/analytics/socials" },
+    { name: "Direct", issue: "Geopoliticals", when: "2024",path: "/analytics/direct" },
+   
   ];
 
   return (
@@ -58,5 +69,5 @@ const AdvertiseSidebarHomepage = () => {
   );
 };
 
-export default AdvertiseSidebarHomepage;
+export default AnalyticsSidebarHomepage;
 
