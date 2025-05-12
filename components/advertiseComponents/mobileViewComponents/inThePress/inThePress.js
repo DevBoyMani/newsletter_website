@@ -44,6 +44,9 @@ export default function InThePress() {
   const [openItemMobile, setOpenItemMobile] = useState(newsData[0].id);
   const [direction, setDirection] = useState("next");
 
+  const swipeConfidenceThreshold = 50; 
+
+
   const handleNext = () => {
     const currentIndex = newsData.findIndex((item) => item.id === openItemMobile);
     if (currentIndex < newsData.length - 1) {
@@ -68,24 +71,23 @@ export default function InThePress() {
       <div className="relative w-full overflow-hidden min-h-[200px]"> {/* Container with stable height */}
    <AnimatePresence mode="wait" initial={false}>
     <motion.div
-      key={currentItem?.id}
-      drag="x"
-      dragConstraints={{ left: 0, right: 0 }}
-      onDragEnd={(e, info) => {
-        if (info.offset.x < -swipeConfidenceThreshold) {
-          // Swiped left → next
-          handleNext();
-        } else if (info.offset.x > swipeConfidenceThreshold) {
-          // Swiped right → prev
-          handlePrev();
-        }
-      }}
-      initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
-      exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
-      transition={{ duration: 0.4, ease: "easeInOut" }}
-      className="w-full space-y-3 cursor-grab active:cursor-grabbing"
-    >
+        key={currentItem?.id}
+        drag="x"
+        dragConstraints={{ left: 0, right: 0 }}
+        onDragEnd={(e, info) => {
+          if (info.offset.x < -swipeConfidenceThreshold) {
+            handleNext();
+          } else if (info.offset.x > swipeConfidenceThreshold) {
+            handlePrev();
+          }
+        }}
+        initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
+        transition={{ duration: 0.4, ease: "easeInOut" }}
+        className="w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x"
+      >
+
       <Image
           src={currentItem.logo}
           alt={currentItem.logoAlt}

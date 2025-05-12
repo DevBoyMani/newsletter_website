@@ -117,24 +117,24 @@ export default function AdvertisePageMobileVersion() {
           </video>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-center py-4">
-          <h2 className="text-3xl sm:text-5xl md:text-[80px] font-light leading-tight">
+        <div className="flex flex-col items-center justify-center text-center pt-8 pb-4">
+          <h2 className="text-[34px] font-[GT-Super-Ds-Trial] font-[400] leading-normal">
             And that’s not all
           </h2>
-          <p className="text-lg sm:text-xl mt-4 max-w-xs">
+          <p className="text-[12px] leading-[125%] font-[400] mt-4 max-w-[60%]">
             Get a personalized demo and discover how Sagravia can help your business
           </p>
 
-          <div className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-white text-[#01261E]">
-            <h2 className="text-[40px] font-bold py-2 whitespace-nowrap animate-scroll">
-              SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-            </h2>
-          </div>
+          <a href="#" className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]">
+                <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
+                  SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
+                </span>
+              </a>
         </div>
       </div>
 
       {/* Ad Blocker and Do Follow */}
-      <div className="bg-white px-4 md:px-28 py-10">
+      <div className="bg-white px-4 md:px-28 py-8">
       <div className="flex flex-row justify-between items-stretch gap-4">
         {/* AD Blocker Section */}
         <div className="w-1/2 ">
