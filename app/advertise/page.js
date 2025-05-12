@@ -159,19 +159,19 @@ export default function Advertise() {
                     </div>
                   </div>
                   <div className="w-full md:w-[35%]">
-                    <div className="w-full h-[365px] rounded-[8px]" style={{background: "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)"}}>
-                  <div className="md:flex md:flex-col justify-between md:p-10 h-full">
-                    <div className="flex-grow">
-                      <h4 className="text-[#FAFAFA] max-w-[335px] text-[20px]">
-                        Access all major A2A payment methods via a single API and global settlement with multi-currency support.
-                      </h4>
+                    <div className="h-[365px] rounded-[8px]" style={{background: "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)"}}>
+                    <div className="md:flex md:flex-col justify-between md:p-10 h-full">
+                      <div className="flex-grow">
+                        <h4 className="text-[#FAFAFA] max-w-[335px] text-[20px]">
+                          Access all major A2A payment methods via a single API and global settlement with multi-currency support.
+                        </h4>
+                      </div>
+                      <div>
+                        <button className="flex px-4 py-1 text-[#FAFAFA] text-lg rounded-[10px] border border-[#FAFAFA] p-2 hover:bg-[#ffffff] hover:text-[#01261E]">
+                          About Us
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <button className="flex px-4 py-1 text-[#FAFAFA] text-lg rounded-[10px] border border-[#FAFAFA] p-2 hover:bg-[#ffffff] hover:text-[#01261E]">
-                        About Us
-                      </button>
-                    </div>
-                  </div>
 
                   </div>
                   </div>
