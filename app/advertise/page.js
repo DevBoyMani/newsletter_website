@@ -70,6 +70,7 @@ export default function Advertise() {
               <span className="absolute left-[85%]">2023</span>
               </div>
 
+              {/* vertical lines */}
               <div className="absolute top-20 bottom-[180px] left-[13%] w-px bg-[#716D6D] z-0" />
               <div className="absolute top-20 bottom-[70px] left-[37.5%] w-px bg-[#716D6D] z-0" />
               <div className="absolute top-20 bottom-[270px] left-[61%] w-px bg-[#716D6D] z-0" />
