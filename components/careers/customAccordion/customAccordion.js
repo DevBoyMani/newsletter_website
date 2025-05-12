@@ -72,10 +72,10 @@ export default function CustomAccordion() {
         ))}
       </div>
 
+     
       {/* Mobile View */}
-      {/* Mobile View */}
-<div className="block lg:hidden relative w-[80%] ml-8 space-y-2 overflow-hidden">
-  <div className="relative h-[220px]">
+<div className="block lg:hidden relative w-[80%] ml-8 space-y-2 ">
+  <div className="relative h-[220px] overflow-hidden">
     <AnimatePresence mode="wait" initial={false}>
       {currentItem && (
         <motion.div
@@ -96,7 +96,7 @@ export default function CustomAccordion() {
           className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
         >
           <div className="rounded-lg bg-white shadow-lg mb-6">
-            <div className="px-4 py-3 text-lg font-medium transition">
+            <div className="px-8 py-3 text-lg font-medium transition">
               <div>
                 <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 my-2 rounded-full w-fit mb-1">
                   Step {currentItem.step}
@@ -109,11 +109,11 @@ export default function CustomAccordion() {
         </motion.div>
       )}
     </AnimatePresence>
-
-    {/* Navigation Buttons */}
+  </div>
+   {/* Navigation Buttons */}
     {openItemMobile !== accordionData[0].id && (
       <button
-        className="absolute left-0 top-1/2 -translate-y-1/2 z-20"
+        className="absolute -left-8 top-[35%] -translate-y-1/2 z-20"
         onClick={handlePrev}
       >
         <img src="/careers/ButtonLeft.png" alt="Prev" className="w-8 h-8" />
@@ -121,13 +121,12 @@ export default function CustomAccordion() {
     )}
     {openItemMobile !== accordionData[accordionData.length - 1].id && (
       <button
-        className="absolute right-0 top-1/2 -translate-y-1/2 z-20"
+        className="absolute -right-10 top-[39%] -translate-y-1/2 z-20"
         onClick={handleNext}
       >
         <img src="/careers/ButtonRight.png" alt="Next" className="w-8 h-8" />
       </button>
     )}
-  </div>
 
   {/* Indicator */}
   <div className="flex justify-between py-2 px-2 w-full">
