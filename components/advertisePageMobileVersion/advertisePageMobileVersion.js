@@ -29,44 +29,65 @@ export default function AdvertisePageMobileVersion() {
   return (
     <>
       {/* Hero Section */}
-      <div className="bg-white relative">
-  <div className="px-4 md:px-16 pt-10 lg:pt-20 mx-auto max-w-screen-xl">
-    <h2 className="text-[44px] sm:text-5xl md:text-7xl font-semibold text-left text-black w-full leading-[1.2]">
-      Step into a world of discovery
-    </h2>
-    <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
-      Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
-    </p>
-  </div>
+    <div className="bg-white relative">
+       {/* Top Year Labels */}
+              <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
+              <span className="absolute left-[10.5%]">2014</span>
+              <span className="absolute left-[33%]">2017</span>
+              <span className="absolute left-[57%]">2020</span>
+              <span className="absolute left-[82%]">2023</span>
+              </div>
 
-  {/* Videos */}
-  <div className="flex relative pl-4 pr-6 mt-4">
-    <div className="flex gap-x-2 items-end relative z-0 w-max">
-      {videos.map((video) => (
-        <video
-          key={video.id}
-          src={video.video}
-          autoPlay
-          loop
-          muted
-          playsInline
-          className={`object-cover
-           w-[24%] 
-            ${video.height} ${video.moveUp || ""}`}
-        />
-      ))}
+              <div className="absolute top-20 bottom-[180px] left-[14%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[70px] left-[37%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[270px] left-[61%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[390px] left-[86%] w-px bg-gray-300 z-0" />
+
+
+        <div className="px-4 md:px-16 pt-28 lg:pt-20 mx-auto max-w-screen-xl">
+          <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] font-[GT-Super-Ds-Trial]">
+            Step into a world of discovery
+          </h2>
+          <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
+            Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
+          </p>
+        </div>
+
+        {/* Videos */}
+        <div className="flex relative pl-4 pr-6 mt-4">
+          <div className="flex gap-x-2 items-end relative z-0 w-max">
+            {videos.map((video) => (
+              <video
+                key={video.id}
+                src={video.video}
+                autoPlay
+                loop
+                muted
+                playsInline
+                className={`object-cover
+                w-[24%] 
+                  ${video.height} ${video.moveUp || ""}`}
+              />
+            ))}
+          </div>
+        </div>
+        {/* bottom text  */}
+                  <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-gray-800 text-[16px]">
+                      <span className="absolute bottom-[246px] left-[9.5%]">$19.4<br/> trillion</span>
+                      <span className="absolute bottom-[196px] left-[32.5%]">$17.4<br/> trillion</span>
+                      <span className="absolute bottom-[326px] left-[56.5%]">$18.9<br/> trillion</span>
+                      <span className="absolute bottom-[452px] left-[80%]">$144<br/> million</span>
+                  </div>
+
+          {/* Gradient */}
+      <div className="absolute -bottom-1 left-0 w-full h-[120px] bg-gradient-to-t from-white to-transparent z-10" />
+
+          {/* Subscribers Text */}
+          <div className="absolute bottom-3 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
+            <span className="text-white">100K </span>
+            <span className="text-[#01261E]">Subscribers</span>
+          </div>
     </div>
-  </div>
-
-  {/* Gradient */}
-  <div className="absolute -bottom-1 left-0 w-full h-[120px] bg-gradient-to-t from-white to-transparent z-10" />
-
-  {/* Subscribers Text */}
-  <div className="absolute bottom-3 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
-    <span className="text-white">100K </span>
-    <span className="text-[#01261E]">Subscribers</span>
-  </div>
-</div>
 
 
       {/* Combined Analytics */}

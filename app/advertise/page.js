@@ -63,12 +63,17 @@ export default function Advertise() {
           <div className="bg-white relative hidden lg:block">
 
               {/* Top Year Labels */}
-              {/* <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-sm px-[10%]">
+              <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
               <span className="absolute left-[12%]">2014</span>
-              <span className="absolute left-[35%]">2017</span>
-              <span className="absolute left-[59%]">2020</span>
-              <span className="absolute left-[84%]">2023</span>
-              </div> */}
+              <span className="absolute left-[36.5%]">2017</span>
+              <span className="absolute left-[60%]">2020</span>
+              <span className="absolute left-[85%]">2023</span>
+              </div>
+
+              <div className="absolute top-20 bottom-[180px] left-[13%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[70px] left-[37.5%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[270px] left-[61%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[390px] left-[86%] w-px bg-[#716D6D] z-0" />
 
               {/* Text Section */}
               <div className=" md:px-16 px-4 lg:pt-20 pt-10 mx-auto">
@@ -100,12 +105,12 @@ export default function Advertise() {
             </div>
 
                   {/* bottom text  */}
-                  {/* <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-gray-800 text-lg font-semibold ">
-                      <span className="absolute bottom-[85px] left-[9.5%]">$19.4 trillion</span>
-                      <span className="absolute bottom-[10px] left-[32.5%]">$17.4 trillion</span>
-                      <span className="absolute bottom-[230px] left-[56.5%]">$18.9 trillion</span>
-                      <span className="absolute bottom-[350px] left-[81.5%]">$144 million</span>
-                  </div> */}
+                  <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#716D6D] text-[16px] font-[600] ">
+                      <span className="absolute bottom-[90px] left-[9.5%]">$19.4 trillion</span>
+                      <span className="absolute bottom-[26px] left-[34.5%]">$17.4 trillion</span>
+                      <span className="absolute bottom-[234px] left-[58.5%]">$18.9 trillion</span>
+                      <span className="absolute bottom-[366px] left-[83.5%]">$144 million</span>
+                  </div>
 
 
                   <div className="absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-white to-transparent z-10"></div>
@@ -115,7 +120,7 @@ export default function Advertise() {
                         <span className="text-white">100K </span>
                         <span className="text-[#01261E]">Subscribers</span>
                       </div>
-                    </div>
+          </div>
 
           {/* combined analytics */}
             <div className="bg-white relative hidden lg:block">
