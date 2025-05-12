@@ -322,7 +322,7 @@ const handleScrollToSection = (event, id, offset = 0) => {
             </div>
           </div>
 
-          <div className="flex flex-col mx-4 mt-20">
+          <div className="flex flex-col mx-4 mt-20 pb-16">
             {rightSectionNav.map((el) => (
               <div className=" my-4" key={el.id} id={el.id}>
                 <SelectedComponent />

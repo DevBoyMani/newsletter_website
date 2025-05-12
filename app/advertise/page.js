@@ -72,26 +72,17 @@ export default function Advertise() {
 
               {/* Text Section */}
               <div className=" md:px-16 px-4 lg:pt-20 pt-10 mx-auto">
-                <div className="text-black">
-                  <h2 className="text-7xl lg:w-[50%] font-[GT-Super-Ds-Trial]">Step into a world of discovery</h2>
+                <div className="text-[#01261E]">
+                  <h2 className="text-[80px] lg:w-[50%] font-[GT-Super-Ds-Trial] leading-[94%]" style={{textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)"}}>Step into a world of discovery</h2>
                   <p className="text-base py-4 w-[30%] sm:w-[30%]">
                     Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
                   </p>
                 </div>
               </div>
 
-
-              {/* Vertical Lines (Now properly positioned) */}
-              {/* <div className="hidden lg:block absolute w-full h-full pointer-events-none">
-              <div className="absolute left-[13%] top-[-250] h-[420px] border-l border-gray-300 z-10"></div>
-              <div className="absolute left-[36%] top-[-250] h-[500px] border-l border-gray-300 z-10"></div>
-              <div className="absolute left-[60%] top-[-250] h-[280px] border-l border-gray-300 z-10"></div>
-              <div className="absolute left-[85%] top-[-250] h-[160px] border-l border-gray-300 z-10"></div>
-              </div> */}
-
               {/* Video Section */}
-              <div className="flex justify-center relative px-2">
-              <div className="flex gap-x-2 items-end relative z-0">
+            <div className="flex justify-center relative pl-6 mr-0 mt-4">
+              <div className="flex gap-x-2.5 items-end relative z-0 ">
                 {videos.map((video) => (
                   <video
                     key={video.id}
@@ -99,11 +90,14 @@ export default function Advertise() {
                     autoPlay
                     loop
                     muted
-                    className={`w-[21.31rem] ${video.height} object-cover ${video.moveUp || ""}`}
+                    playsInline
+                    className={`object-cover
+                    w-[24%] max-[40%] 
+                      ${video.height} ${video.moveUp || ""}`}
                   />
                 ))}
               </div>
-              </div>
+            </div>
 
                   {/* bottom text  */}
                   {/* <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-gray-800 text-lg font-semibold ">
@@ -114,41 +108,43 @@ export default function Advertise() {
                   </div> */}
 
 
-                  <div className="absolute bottom-0 left-0 w-full h-[250px] bg-gradient-to-t from-white to-transparent z-10"></div>
+                  <div className="absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-white to-transparent z-10"></div>
 
                   {/* 100K Subscribers Text (Above Gradient) */}
-                  <div className="hidden lg:block absolute bottom-0 left-4 text-[186px] font-normal leading-[94%] tracking-[-1.93px] z-20">
-                      <span className="text-white">100K </span>
-                      <span className="text-[#01261E]">Subscribers</span>
-                  </div>
-          </div>
+                    <div className="absolute bottom-0 left-3 text-[13.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
+                        <span className="text-white">100K </span>
+                        <span className="text-[#01261E]">Subscribers</span>
+                      </div>
+                    </div>
 
           {/* combined analytics */}
             <div className="bg-white relative hidden lg:block">
-              <div className="px-4 xl:px-20 2xl:px-32 py-10">
+              <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
                 <HeadingWithUnderline text="Combined Analytics"/>
               </div>
 
               {/* charts section */}
               <div className="">
                 {/* #1 */}
-                <div className="lg:flex justify-center items-center flex:col space-x-6 md:py-4">
-                    <div>
-                        <AccountReached/>
-                    </div>
-                    <div>
-                    <ViewsCountry/>
+                <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
+                  <div className="w-full md:w-[45%]">
+                    <AccountReached />
+                  </div>
+                  <div className="w-full md:w-[35%]">
+                    <ViewsCountry />
                   </div>
                 </div>
 
+
+
                 {/* #2 */}
-                <div className="lg:flex justify-center items-center flex:col space-x-6 md:py-4">
-                  <div className="">
+                <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
+                  <div className="w-full md:w-[35%]">
                     <div>
                         <ActiveUsers/>
                     </div>
                   </div>
-                  <div className="">
+                  <div className="w-full md:w-[45%]">
                     <div>
                     <Statistics/>
                     </div>
@@ -156,13 +152,14 @@ export default function Advertise() {
                 </div>
 
                 {/* #3 */}
-                <div className="lg:flex justify-center items-center flex:col space-x-6 md:py-4">
-                  <div className="">
+                <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
+                  <div className="w-full md:w-[45%]">
                     <div>
                         <SignInUps/>
                     </div>
                   </div>
-                  <div className="w-[478px] h-[365px] rounded-[8px]" style={{background: "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)"}}>
+                  <div className="w-full md:w-[35%]">
+                    <div className="w-full h-[365px] rounded-[8px]" style={{background: "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)"}}>
                   <div className="md:flex md:flex-col justify-between md:p-10 h-full">
                     <div className="flex-grow">
                       <h4 className="text-[#FAFAFA] max-w-[335px] text-[20px]">
@@ -177,13 +174,14 @@ export default function Advertise() {
                   </div>
 
                   </div>
+                  </div>
                 </div>
               </div>
             </div>
 
           {/*text with video section */}
           <div className="bg-white hidden lg:block">
-            <div className="px-4 xl:px-20 2xl:px-32 py-10">
+            <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
                 <HeadingWithUnderline text="How your ad will look like"/>
             </div>
 
@@ -226,7 +224,7 @@ export default function Advertise() {
 
           {/* Ad blocker and Do follow */}
           <div className="bg-white relative hidden lg:block">
-              <div className="px-4 md:px-28 py-10">
+              <div className="px-4 md:px-32 py-10">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6">
                   
                   {/* Box 1 */}
@@ -284,7 +282,7 @@ export default function Advertise() {
           </div>
 
           <div className="bg-white hidden lg:block">
-            <div className="px-4 xl:px-20 2xl:px-32 py-10">
+            <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
                 <HeadingWithUnderline text="In the press"/>
             </div>
 

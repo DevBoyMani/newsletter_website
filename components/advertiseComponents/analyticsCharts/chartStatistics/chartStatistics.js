@@ -35,7 +35,7 @@ export function Statistics() {
     <div className="hidden lg:block relative w-full h-full flex justify-center items-center ">
       {/* 3D Perspective Container */}
       <div
-        className="relative w-[674px] h-[365px] transition-transform duration-500"
+        className="relative w-full h-[365px] transition-transform duration-500"
         style={{
           perspective: "1000px",
           transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",

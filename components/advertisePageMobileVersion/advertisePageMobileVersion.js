@@ -40,7 +40,7 @@ export default function AdvertisePageMobileVersion() {
   </div>
 
   {/* Videos */}
-  <div className="flex justify-center relative px-4 overflow-x-auto max-w-full mt-4">
+  <div className="flex relative pl-4 pr-6 mt-4">
     <div className="flex gap-x-2 items-end relative z-0 w-max">
       {videos.map((video) => (
         <video
@@ -51,7 +51,7 @@ export default function AdvertisePageMobileVersion() {
           muted
           playsInline
           className={`object-cover
-            w-[30vw] sm:w-[5rem] 
+           w-[24%] 
             ${video.height} ${video.moveUp || ""}`}
         />
       ))}
@@ -62,7 +62,7 @@ export default function AdvertisePageMobileVersion() {
   <div className="absolute -bottom-1 left-0 w-full h-[120px] bg-gradient-to-t from-white to-transparent z-10" />
 
   {/* Subscribers Text */}
-  <div className="absolute bottom-5 left-4 w-fit text-[40px] sm:text-[36px] md:text-[47px] font-normal leading-[94%] tracking-[-1.5px] z-20 text-center">
+  <div className="absolute bottom-3 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
     <span className="text-white">100K </span>
     <span className="text-[#01261E]">Subscribers</span>
   </div>

@@ -65,36 +65,50 @@ export default function InThePress() {
   return (
     <div className="relative w-[90%] mx-auto space-y-4 py-10">
       {/* News Slide */}
-      <AnimatePresence mode="wait">
-        <motion.div
-          key={currentItem?.id}
-          initial={{ x: direction === "next" ? "100%" : "-100%", opacity: 0 }}
-          animate={{ x: "0%", opacity: 1 }}
-          exit={{ x: direction === "next" ? "-100%" : "100%", opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="space-y-3"
-        >
-         
-         <div className="flex justify-start items-start">
-            <Image
-              src={currentItem.logo}
-              alt={currentItem.logoAlt}
-              width={currentItem.logoWidth}
-              height={31}
-              className=""
-            />
-          </div>
-       
-          <h4 className="text-[22px] md:text-[26px] font-semibold text-start">{currentItem.title}</h4>
-          <p className="text-[15px] text-start">{currentItem.description}</p>
-          <div className="flex justify-between items-center text-[15px] font-semibold">
-            <p>{currentItem.date}</p>
-            <a href={currentItem.link} className="text-black hover:underline">
-              READ MORE
-            </a>
-          </div>
-        </motion.div>
-      </AnimatePresence>
+      <div className="relative w-full overflow-hidden min-h-[200px]"> {/* Container with stable height */}
+   <AnimatePresence mode="wait" initial={false}>
+    <motion.div
+      key={currentItem?.id}
+      drag="x"
+      dragConstraints={{ left: 0, right: 0 }}
+      onDragEnd={(e, info) => {
+        if (info.offset.x < -swipeConfidenceThreshold) {
+          // Swiped left → next
+          handleNext();
+        } else if (info.offset.x > swipeConfidenceThreshold) {
+          // Swiped right → prev
+          handlePrev();
+        }
+      }}
+      initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
+      transition={{ duration: 0.4, ease: "easeInOut" }}
+      className="w-full space-y-3 cursor-grab active:cursor-grabbing"
+    >
+      <Image
+          src={currentItem.logo}
+          alt={currentItem.logoAlt}
+          width={currentItem.logoWidth}
+          height={31}
+          priority
+          className="w-auto h-[31px]"
+        />
+
+      <h4 className="text-[22px] md:text-[26px] font-semibold text-start">
+        {currentItem.title}
+      </h4>
+      <p className="text-[15px] text-start">{currentItem.description}</p>
+      <div className="flex justify-between items-center text-[15px] font-semibold">
+        <p>{currentItem.date}</p>
+        <a href={currentItem.link} className="text-black hover:underline">
+          READ MORE
+        </a>
+      </div>
+    </motion.div>
+  </AnimatePresence>
+</div>
+
 
       {/* Navigation Arrows */}
       {openItemMobile !== newsData[0].id && (
