@@ -47,6 +47,9 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
 const Careers = () => {
   const [activeTab, setActiveTab] = useState(0);
 
+   const [hoverIndexDo, setHoverIndexDo] = useState(null);
+  const [hoverIndexDont, setHoverIndexDont] = useState(null);
+
   const testimonials = [
     { name: "View All", component: <ViewAll/> },
     { name: "Design", component: <Design/> },
@@ -146,6 +149,8 @@ const Careers = () => {
       content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
     },
   ]
+
+
   return (
     <div className="">
       <div className="md:px-16 px-4 lg:pt-20 pt-10 mx-auto ">
@@ -261,7 +266,7 @@ const Careers = () => {
      <div>
       {/* desktop view */}
       <div>
-      <div className="hidden lg:block md:px-16 md:py-8 text-black">
+      {/* <div className="hidden lg:block md:px-16 md:py-8 text-black">
       <div className="flex justify-between items-start gap-8">
         <div className="w-1/2 space-y-4">
           <h2 className="text-5xl pb-2">What we do</h2>
@@ -306,7 +311,69 @@ const Careers = () => {
           </div>
         </div>
       </div>
-     </div>
+     </div> */}
+      <div className="hidden lg:block md:px-16 md:py-8 text-black">
+      <div className="flex justify-between items-start gap-8">
+        {/* What we do */}
+        <div className="w-1/2 space-y-4">
+          <h2 className="text-5xl pb-2">What we do</h2>
+          {whatWeDo.map((item, index) => (
+          <div
+            key={index}
+            onMouseEnter={() => setHoverIndexDo(index)}
+            onMouseLeave={() => setHoverIndexDo(null)}
+            className="bg-[#DAEBE8] py-4 px-3 rounded-lg transition-all duration-300 hover:bg-[#cde0db] group"
+          >
+            <div className="flex items-center gap-2">
+              <img src={item.icon} alt="do" className="w-6 h-6" />
+              <span>{item.subHeading}</span>
+            </div>
+
+            {/* Expanding paragraph */}
+            <div
+              className={`
+                overflow-hidden transition-all duration-700 ease-in-out text-sm text-black
+                ${hoverIndexDo === index ? 'max-h-40 mt-2' : 'max-h-0'}
+              `}
+            >
+              {item.content}
+            </div>
+          </div>
+        ))}
+
+        </div>
+
+        <div className="border-l border-black h-auto mx-2 -mb-2 mt-16  self-stretch"></div>
+
+        {/* What we don't do */}
+        <div className="w-1/2 space-y-4">
+          <h2 className="text-5xl pb-2">What we don't do</h2>
+         {whatWeDoNotDo.map((item, index) => (
+            <div
+              key={index}
+              onMouseEnter={() => setHoverIndexDont(index)}
+              onMouseLeave={() => setHoverIndexDont(null)}
+              className="bg-[#DAEBE8] py-4 px-3 rounded-lg transition-all duration-300 hover:bg-[#cde0db] group"
+            >
+              <div className="flex items-center gap-2">
+                <img src={item.icon} alt="undo" className="w-6 h-6" />
+                <span>{item.subHeading}</span>
+              </div>
+
+              {/* Smooth expand/collapse paragraph */}
+              <div
+                className={`
+                  overflow-hidden transition-all duration-700 ease-in-out text-sm text-black
+                  ${hoverIndexDont === index ? 'max-h-40 mt-2' : 'max-h-0'}
+                `}
+              >
+                {item.content}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
       </div>
 
       {/* mobile view */}
