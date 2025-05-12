@@ -1,8 +1,8 @@
-"use client"
+"use client";
 
-import { ChevronDown, ChevronUp, ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const accordionData = [
   { id: "item-1", title: "Recruitment team chat", content: "Help us get to know you beyond your CV", step: 1 },
@@ -17,21 +17,25 @@ export default function CustomAccordion() {
   const [openItemMobile, setOpenItemMobile] = useState(accordionData[0].id);
   const [direction, setDirection] = useState("next");
 
+  const swipeConfidenceThreshold = 50;
+
   const handleNext = () => {
     const currentIndex = accordionData.findIndex((item) => item.id === openItemMobile);
-    setDirection("next"); // Set direction
     if (currentIndex < accordionData.length - 1) {
+      setDirection("next");
       setOpenItemMobile(accordionData[currentIndex + 1].id);
     }
   };
 
   const handlePrev = () => {
     const currentIndex = accordionData.findIndex((item) => item.id === openItemMobile);
-    setDirection("prev"); // Set direction
     if (currentIndex > 0) {
+      setDirection("prev");
       setOpenItemMobile(accordionData[currentIndex - 1].id);
     }
   };
+
+  const currentItem = accordionData.find((item) => item.id === openItemMobile);
 
   return (
     <>
@@ -69,78 +73,75 @@ export default function CustomAccordion() {
       </div>
 
       {/* Mobile View */}
-      <div className="block lg:hidden space-y-2 relative w-[80%] ml-8">
-      <motion.div
-          key={openItemMobile}
-          initial={{ x: direction === "next" ? "100%" : "-100%", opacity: 0 }}
-          animate={{ x: "0%", opacity: 1 }}
-          exit={{ x: direction === "next" ? "-100%" : "100%", opacity: 0 }}
+      {/* Mobile View */}
+<div className="block lg:hidden relative w-[80%] ml-8 space-y-2 overflow-hidden">
+  <div className="relative h-[220px]">
+    <AnimatePresence mode="wait" initial={false}>
+      {currentItem && (
+        <motion.div
+          key={currentItem.id}
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragEnd={(e, info) => {
+            if (info.offset.x < -swipeConfidenceThreshold) {
+              handleNext();
+            } else if (info.offset.x > swipeConfidenceThreshold) {
+              handlePrev();
+            }
+          }}
+          initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
           transition={{ duration: 0.4, ease: "easeInOut" }}
-          className=""
+          className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
         >
-        {accordionData.map((item) =>
-          openItemMobile === item.id ? (
-            <div
-              key={item.id}
-              className={`rounded-lg transition  ${openItemMobile === item.id ? "bg-white shadow-lg" : "bg-[#DAEBE8] shadow-xl"} mb-6`}
-            >
-              <div className=" px-4 py-3 rounded-lg text-lg font-medium transition">
-                <div>
-                  <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 my-2 rounded-full w-fit mb-1">
-                    Step {item.step}
-                  </div>
-                  <h4 className="text-xl">{item.title}</h4>
-                  <p className="text-sm py-4">{item.content}</p>
+          <div className="rounded-lg bg-white shadow-lg mb-6">
+            <div className="px-4 py-3 text-lg font-medium transition">
+              <div>
+                <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 my-2 rounded-full w-fit mb-1">
+                  Step {currentItem.step}
                 </div>
+                <h4 className="text-xl">{currentItem.title}</h4>
+                <p className="text-sm py-4">{currentItem.content}</p>
               </div>
             </div>
-          ) : null
-        )}
-      </motion.div>
+          </div>
+        </motion.div>
+      )}
+    </AnimatePresence>
 
-        {/* Navigation Buttons */}
-        <div>
-        {openItemMobile !== accordionData[0].id && (
-          <button
-            className="absolute  -left-10 top-24 transform -translate-y-1/2  py-1 pr-4  "
-            onClick={handlePrev}
-          >
-            <img
-            src="/careers/ButtonLeft.png"
-            alt=""
-            className="w-8 h-8 mb-4" />
-          </button>
-        )}
-        </div>
+    {/* Navigation Buttons */}
+    {openItemMobile !== accordionData[0].id && (
+      <button
+        className="absolute left-0 top-1/2 -translate-y-1/2 z-20"
+        onClick={handlePrev}
+      >
+        <img src="/careers/ButtonLeft.png" alt="Prev" className="w-8 h-8" />
+      </button>
+    )}
+    {openItemMobile !== accordionData[accordionData.length - 1].id && (
+      <button
+        className="absolute right-0 top-1/2 -translate-y-1/2 z-20"
+        onClick={handleNext}
+      >
+        <img src="/careers/ButtonRight.png" alt="Next" className="w-8 h-8" />
+      </button>
+    )}
+  </div>
 
-        <div>
-        {openItemMobile !== accordionData[accordionData.length - 1].id && (
-          <button
-            className="absolute -right-10 top-24 transform -translate-y-1/2  py-1 pl-4 "
-            onClick={handleNext}
-          >
-            <img
-            src="/careers/ButtonRight.png"
-            alt=""
-            className="w-8 h-8 " />
-          </button>
-        )}
-        </div>
-
-          {/* indicator */}
-        <div className="flex justify-between py-2 px-2 w-full">
-          {accordionData.map((item, index) => (
-            <div
-              key={index}
-              className={`w-full border-b-2 transition ${
-                openItemMobile === item.id ? "border-black" : "border-gray-300"
-              }`}
-            ></div>
-          ))}
-        </div>
-      </div>
+  {/* Indicator */}
+  <div className="flex justify-between py-2 px-2 w-full">
+    {accordionData.map((item) => (
+      <div
+        key={item.id}
+        className={`w-full border-b-2 transition ${
+          openItemMobile === item.id ? "border-black" : "border-gray-300"
+        }`}
+      ></div>
+    ))}
+  </div>
+</div>
 
     </>
   );
 }
-

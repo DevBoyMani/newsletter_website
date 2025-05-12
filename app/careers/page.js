@@ -34,7 +34,7 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
           key={index}
           onClick={() => handleClick(index)}
           className={` md:text-base uppercase py-2 px-3 lg:mr-4  mr-2  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
-            activeTab === index ? "text-[#0C3D3D] bg-[#CDD2CF] hover:bg-[#46DE46] " : "bg-[#DAEBE8]  hover:text-black hover:bg-[#46DE46]"
+            activeTab === index ? "text-[#DAEBE8] bg-[#01261E] hover:bg-[#01261E] " : "bg-[#DAEBE8]  hover:text-[#DAEBE8] hover:bg-[#01261E]"
           }`}
         >
           {testimonial.name}
@@ -162,9 +162,9 @@ const Careers = () => {
             Open Positions
           </div>
           <div className="">
-          <div className="hidden lg:block flex text-black text-base space-x-4 mt-8">
-            <a  href="" target="_blank">LinkedIn &#8599;</a>
-            <a href="" target="_blank">Glassdoor &#8599;</a>
+          <div className="hidden lg:block flex text-[#020715] text-[17px] space-x-4 mt-8">
+            <a  href="" target="_blank" className="hover:underline hover:text-[#01261E]">LinkedIn &#8599;</a>
+            <a href="" target="_blank" className="hover:underline hover:text-[#01261E]">Glassdoor &#8599;</a>
           </div>
           </div>
           </div>
@@ -200,53 +200,61 @@ const Careers = () => {
       <div>
         {/* desktop view */}
         <div className="">
-          <div className="hidden lg:block relative py-10 ">
-            <div className="relative lg:h-auto">
-              <img
-                src="/careers/careers-1.png"
-                className="w-full h-full object-cover"
-                alt="Careers"
-              />
-              <div className="absolute top-1/4 left-12 lg:w-[35%] lg:h-[50%] space-y-10 md:px-4">
-                <div className="text-white text-4xl lg:text-6xl ">
-                  Your trusted source for digital insights
-                </div>
-
-                <a
-                  href=""
-                  className="inline-block border border-white text-white text-lg mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white"
-                >
-                  About Us
-                </a>
-            </div>
-          </div>
-        </div>
-
-        {/* mobile view */}
-        <div className="">
-        <div className="block lg:hidden relative py-10 ">
+        {/* Desktop view with video background */}
+        <div className="hidden lg:block relative py-10">
           <div className="relative lg:h-[530px]">
-            <img
-              src="/careers/Rectangle-image.png"
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
               className="w-full h-full object-cover"
-              alt="Careers"
-            />
-            <div className="absolute top-0 left-0 w-[80%] space-y-6 pt-6 pl-6">
-              <div className="text-white text-4xl lg:text-6xl ">
+            >
+              <source src="/careers/careers-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute top-[10%] left-12 w-[42%] space-y-10 md:px-4">
+              <div className="text-white lg:text-[88px] font-[GT-Super-Ds-Trial] leading-[94%]">
                 Your trusted source for digital insights
               </div>
-
               <a
                 href=""
-                className="inline-block border border-white text-white text-lg px-6 py-1 rounded-lg hover:text-black hover:bg-white"
+                className="inline-block border border-white text-white text-lg mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white"
               >
                 About Us
               </a>
             </div>
           </div>
-      </div>
-      </div>
         </div>
+
+     {/* Mobile view with fallback image */}
+      <div className="block lg:hidden relative py-10">
+        <div className="relative h-[470px]">
+                <video
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className="w-full h-full object-cover"
+                >
+                  <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <div className="absolute top-[4%] left-4 w-[60%] space-y-10 md:px-4">
+                  <div className="text-white text-[39px] font-[GT-Super-Ds-Trial] leading-[84%] font-[400]">
+                    Your trusted source for digital insights
+                  </div>
+                  <a
+                    href=""
+                    className="inline-block border border-white text-white text-[15px] mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white leading-normal"
+                  >
+                    About Us
+                  </a>
+                </div>
+        </div>
+      </div>
+    </div>
+
       </div>
       
 
