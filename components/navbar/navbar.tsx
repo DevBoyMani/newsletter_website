@@ -13,11 +13,9 @@ const routes = [
   { path: "/features", name: "Features" },
   { path: "/newsletters", name: "Newsletters" },
   { path: "/readers", name: "Readers" },
+  { path: "/contact", name: "Contact sales →", key: "letstalk" },
 ];
 
-const contactSales = [
-  { path: "/contact", name: "Contact sales", key: "letstalk" },
-];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -52,7 +50,7 @@ export default function Navbar() {
             ))}
 
             {/* Button Section */}
-            <div className="sm:text-xl flex items-center space-x-8 text-xl">
+            {/* <div className="sm:text-xl flex items-center space-x-8 text-xl">
               {contactSales.map((contact) => (
                 <Link
                   key={contact.key}
@@ -62,7 +60,7 @@ export default function Navbar() {
                   <span className="block">{contact.name} &rarr;</span>
                 </Link>
               ))}
-            </div>
+            </div> */}
           </div>
         </div>
       </header>
