@@ -45,14 +45,14 @@ export default function AdvertiseFaq() {
             }`}
           >
             <div
-              className="px-4 py-3 rounded-lg text-lg font-medium cursor-pointer transition"
+              className="px-4 py-3 rounded-lg cursor-pointer transition"
               onClick={() => setOpenItemDesktop(openItemDesktop === item.id ? null : item.id)}
             >
               <div className="flex justify-between gap-4 items-start">
                 <div className="flex-1">
-                  <h4 className="text-xl">{item.title}</h4>
+                  <h4 className="text-[22px] text-[#01261E] leading-[104%] font-[400]">{item.title}</h4>
                   {openItemDesktop === item.id && (
-                    <p className="text-sm py-2">{item.content}</p>
+                    <p className="text-[#12121299] text-[15px] leading-[130%] font-400 py-2">{item.content}</p>
                   )}
                 </div>
 

@@ -235,8 +235,8 @@ export default function Advertise() {
                   
                   {/* Box 1 */}
                   <div className="flex-1 border border-black p-8 rounded-[15px]">
-                    <h4 className="text-2xl md:text-[36px] text-[#01261E] mb-4">AD Blocker</h4>
-                    <p className="text-base md:text-[20px] mb-4">
+                    <h4 className=" md:text-[36px] text-[#01261E] mb-4 leading-normal font-[GT-Super-Ds-Trial]">AD Blocker</h4>
+                    <p className="md:text-[20px] mb-4">
                       Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t.
                       Reach our audience directly, no filters, no ad blockers.
                     </p>
@@ -251,8 +251,8 @@ export default function Advertise() {
 
                   {/* Box 2 */}
                   <div className="flex-1 border border-black p-8 rounded-[15px]">
-                    <h4 className="text-2xl md:text-[36px] text-[#01261E] mb-4">Do follow</h4>
-                    <p className="text-base md:text-[20px] mb-20">
+                    <h4 className=" md:text-[36px] text-[#01261E] mb-4 leading-normal font-[GT-Super-Ds-Trial]">Do follow</h4>
+                    <p className="md:text-[20px] mb-20">
                       Dofollow links pass along what the SEO community commonly calls “link juice.”
                       Links are a vote for quality.
                     </p>
@@ -273,7 +273,7 @@ export default function Advertise() {
             <div className="px-4 md:px-28 pt-20 pb-10">
               <div className="flex flex-col md:flex-row justify-between px-4">
               <div className="md:w-[40%] lg:py-0 pb-14">
-                <div className="text-black lg:text-7xl text-5xl font-[GT-Super-Ds-Trial]">
+                <div className="text-[#01261E] text-[56px] leading-[104%] font-[400] font-[GT-Super-Ds-Trial]">
                 Got Questions? We've Got Answers!
                 </div>
               </div>
