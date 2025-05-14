@@ -146,63 +146,58 @@ export default function Contact(){
                             </div>
 
                             {/* flex button */}
-                            <div className="">
+                       <div className="">
                             <div className="flex flex-wrap md:flex-nowrap w-full gap-2">
-                            {/* Left Button */}
-                            <button className="group relative flex items-center justify-center md:w-[40%] lg:w-[45%] gap-2 py-2 rounded-full overflow-hidden text-sm md:text-[14px] lg:text-[16px] font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-500">
-                            {/* Background hover effect */}
-                            <span className="absolute left-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[24px] rounded-full bg-[#01261E] transition-transform duration-400 ease-in-out z-10" />
+                                {/* Left Button */}
+                                <button className="group relative flex items-center justify-center md:w-[40%] lg:w-[45%] gap-2 py-2 rounded-full overflow-hidden text-sm md:text-[14px] lg:text-[16px] font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-500 ease-in-out hover:border-none hover:bg-[#01261E]">
+                                {/* Background hover effect */}
+                                <span className="absolute left-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[24px] rounded-full bg-[#01261E] transition-transform duration-500 ease-in-out z-10" />
 
-                            {/* Dot */}
-                            <span className="relative -left-2 z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
+                                {/* Dot */}
+                                <span className="relative -left-2 z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-500 ease-in-out"></span>
 
-                            {/* Text wrapper */}
-                            <span className="relative flex items-center min-w-0 whitespace-nowrap z-10 overflow-hidden">
-                                {/* Normal state text */}
-                                <span className="block group-hover:opacity-0 transition-opacity duration-200">
-                                Schedule a call
+                                {/* Text wrapper */}
+                                <span className="relative flex items-center min-w-0 whitespace-nowrap z-10 overflow-hidden">
+                                    {/* Normal state text */}
+                                    <span className="block group-hover:opacity-0 ">
+                                    Schedule a call
+                                    </span>
+
+                                    {/* Hover state sliding text */}
+                                    <span className="absolute left-0 top-0 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out whitespace-nowrap text-white pr-6">
+                                    Schedule a call
+                                    </span>
                                 </span>
 
-                                {/* Hover state sliding text */}
-                                <span className="absolute left-0 top-0 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out whitespace-nowrap text-white pr-6">
-                                Schedule a call
-                                </span>
-                            </span>
+                                {/* Arrow */}
+                                <span className="relative group-hover:inline hidden z-10 text-[#01261E] group-hover:text-white transition-colors duration-500 ease-in-out">→</span>
+                                </button>
 
-                            {/* Arrow (static, always visible) */}
-                            <span className="relative group-hover:inline hidden z-10 text-[#01261E] group-hover:text-white transition-colors duration-300">→</span>
-                            </button>
+                                {/* Right Button */}
+                                <button className="group relative flex items-center justify-center md:w-[40%] lg:w-[45%] gap-2 py-2 rounded-full overflow-hidden text-sm md:text-[14px] lg:text-[16px] font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-500 ease-in-out hover:border-none hover:bg-[#01261E]">
+                                {/* Background hover effect */}
+                                <span className="absolute right-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[155px] rounded-full bg-[#01261E] transition-transform duration-500 ease-in-out z-10" />
 
+                                <span className="relative -left-2 group-hover:inline hidden z-10 text-[#01261E] group-hover:text-white transition-colors duration-500 ease-in-out">→</span>
 
+                                {/* Text wrapper */}
+                                <span className="relative flex items-center min-w-0 whitespace-nowrap z-10 overflow-hidden">
+                                    {/* Normal state text */}
+                                    <span className="block group-hover:opacity-0 ">
+                                    Chat with us
+                                    </span>
 
-                            {/* Right Button */}
-                            <button className="group relative flex items-center justify-center md:w-[40%] lg:w-[45%] gap-2 py-2 rounded-full overflow-hidden text-sm md:text-[14px] lg:text-[16px] font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-300">
-                            {/* Background hover effect */}
-                            <span className="absolute right-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[155px] rounded-full bg-[#01261E] transition-transform duration-400 ease-in-out z-10" />
-
-                            <span className="relative -left-2 group-hover:inline hidden z-10 text-[#01261E] group-hover:text-white transition-colors duration-300">→</span>
-
-                            {/* Text wrapper */}
-                            <span className="relative flex items-center min-w-0 whitespace-nowrap z-10 overflow-hidden">
-                                {/* Normal state text */}
-                                <span className="block group-hover:opacity-0 transition-opacity duration-200">
-                                Chat with us
+                                    {/* Hover state sliding text */}
+                                    <span className="absolute right-0 top-0 flex items-center -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out whitespace-nowrap text-white">
+                                    <span>Chat with us</span>
+                                    </span>
                                 </span>
 
-                                {/* Hover state sliding text with left arrow */}
-                                <span className="absolute right-0 top-0 flex items-center -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-400 ease-out whitespace-nowrap text-white">
-                                <span>Chat with us</span>
-                                </span>
-                            </span>
-
-                            {/* Dot */}
-                            <span className="relative -right-3 z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-300"></span>
-                            </button>
-
+                                {/* Dot */}
+                                <span className="relative -right-3 z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-500 ease-in-out"></span>
+                                </button>
                             </div>
-
-
-                            </div> 
+                            </div>
 
                             {/* social icons */}
                             <div>
