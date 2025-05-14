@@ -330,7 +330,7 @@ export default function Contact(){
                 <div className=" bg-[#fff] p-2 rounded-[10px]" style={{ boxShadow: '0px 0px 60px 30px rgba(0, 0, 0, 0.03)' }}
                 >
                    
-                <div className=" bg-[#01261E] max-h-[387px]">
+                <div className=" bg-[#01261E] max-h-[387px] rounded-[5px]">
                         <div className="text-center pt-4">
                             <h1 className="text-[#fff] text-[20px] leading-normal font-[600] ">Contact Information</h1>
                             <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2">Say something to start a live chat!</p>
@@ -374,13 +374,13 @@ export default function Contact(){
 
                             {/* social icons */}
                             <div>
-                                <div className="relative overflow-hidden">
+                                <div className="relative overflow-hidden pb-0">
                                     {/* Background Image Behind Icons */}
                                     <div className="absolute bottom-2 right-0 h-auto opacity-100 pointer-events-none z-0">
                                     <img
                                         src="/contact/contact-background-circle.png"
                                         alt="background logo"
-                                        className="w-24"
+                                        className="w-24 rounded-[5px]"
                                     />
                                     </div>
 
