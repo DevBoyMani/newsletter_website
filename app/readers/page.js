@@ -12,12 +12,12 @@ export default function ReadersPage(){
             <div className="hidden lg:block bg-[#FAFAFA]">
             <ReadersHero/>
 
-              <div className="px-4 md:px-16 py-10 ">
+              <div className="px-4 md:px-28 py-10 ">
                 <HeadingWithUnderline text="Our newsletters" />
               </div>
               <ReadersNewsletters/>
 
-              <div className="px-4 md:px-16 py-10 ">
+              <div className="px-4 md:px-28 py-10 ">
                 <HeadingWithUnderline text="Features"/>
               </div>
               <ReadersFeatureSection/>

@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { ReadersSubscribe } from "../readersSubscribe/readersSubscribe";
+import Image from "next/image";
 
 const feedbackData = [
   {
@@ -90,21 +91,29 @@ export default function ReadersFooter() {
       {/* Auto-Scrolling Flex Container */}
       <div className="overflow-hidden">
         <div
-          className="flex gap-6 px-6 py-8 animate-scroll-cards"
+          className="flex gap-6 p-8 animate-scroll-cards"
         >
           {[...feedbackData, ...feedbackData].map((item, index) => (
             <div
               key={index}
-              className="min-w-[300px] max-w-[300px] bg-[#01261E] p-6 rounded-lg border border-[#FFFFFF33] shrink-0"
+              className="w-[317px] h-[241px] bg-[#FFFFFF0D] p-6 rounded-lg border border-[#FFFFFF33] shrink-0"
             >
               <div className="flex justify-center lg:justify-start mb-2">
                 {[...Array(5)].map((_, id) => (
-                  <FaStar key={id} className="text-xl text-[#C7A262] mr-2" />
+                  <Image
+                    key={id}
+                    src="/readers/reader-star.png"
+                    alt="star"
+                    width={18}
+                    height={18}
+                    className=""
+                  />
                 ))}
               </div>
+
               <div className="text-[#ffffff]">
-                <p className="text-[16px]">{item.feedback}</p>
-                <p className="text-[16px] py-4">{item.userName}</p>
+                <p className="text-[16px] max-w-[279px]">{item.feedback}</p>
+                <p className="text-[16px] mt-4">{item.userName}</p>
               </div>
             </div>
           ))}
@@ -228,16 +237,23 @@ export default function ReadersFooter() {
           {[...feedbackData, ...feedbackData].map((item, index) => (
             <div
               key={index}
-              className="max-w-[290px] bg-[#01261E] p-6 rounded-lg border border-[#FFFFFF33] shrink-0"
+              className="w-[317px] h-[241px] bg-[#FFFFFF0D] p-6 rounded-lg border border-[#FFFFFF33] shrink-0"
             >
-              <div className="flex justify-start lg:justify-start mb-2">
+             <div className="flex justify-startt mb-2">
                 {[...Array(5)].map((_, id) => (
-                  <FaStar key={id} className="text-xl text-[#C7A262] mr-2" />
+                  <Image
+                    key={id}
+                    src="/readers/reader-star.png"
+                    alt="star"
+                    width={18}
+                    height={18}
+                    className=""
+                  />
                 ))}
               </div>
               <div className="text-[#ffffff]">
-                <p className="text-[16px]">{item.feedback}</p>
-                <p className="text-[16px] py-4">{item.userName}</p>
+                <p className="text-[16px] max-w-[279px]">{item.feedback}</p>
+                <p className="text-[16px] mt-4">{item.userName}</p>
               </div>
             </div>
           ))}

@@ -56,7 +56,7 @@ export default function ReadersNewsletters() {
   return (
     <>
       <div className="bg-[#FAFAFA]">
-        <div className="px-4 md:px-16">
+        <div className="px-4 md:px-28">
           <p className="text-[#000] font-Manrope text-16px font-[400]">
             Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
             sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
@@ -68,7 +68,7 @@ export default function ReadersNewsletters() {
           </p>
         </div>
 
-        <div className="px-4 md:px-16 py-10 ">
+        <div className="px-4 md:px-28 py-10 ">
           <div className="grid gap-6 lg:grid-cols-3">
             {datas.map((data, index) => (
               <div

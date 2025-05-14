@@ -330,43 +330,43 @@ export default function Contact(){
                 <div className=" bg-[#fff] p-2 rounded-[10px]" style={{ boxShadow: '0px 0px 60px 30px rgba(0, 0, 0, 0.03)' }}
                 >
                    
-                <div className=" bg-[#01261E] rounded-[10px]">
-                        <div className="text-center pt-6">
-                            <h1 className="text-[#fff] text-[26px] leading-normal font-[600] ">Contact Information</h1>
+                <div className=" bg-[#01261E] max-h-[387px]">
+                        <div className="text-center pt-4">
+                            <h1 className="text-[#fff] text-[20px] leading-normal font-[600] ">Contact Information</h1>
                             <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2">Say something to start a live chat!</p>
                         </div>
-                        <div className="pt-8">
-                            <div className="pb-10">
-                                <div className="flex justify-center pb-4">
+                        <div className="pt-4">
+                            <div className="pb-4">
+                                <div className="flex justify-center pb-2">
                                 <img
                                 src="/contact/call.jpg"
                                 alt="call"
                                 className="w-[24] h-[24]"/>
                                 </div>
                                 <div className="flex justify-center">
-                                <p className="text-[#fff] text-[16px] leading-normal font-[400]">+1012 3456 789</p>
+                                <p className="text-[#fff] text-[12px] leading-normal font-[400]">+1012 3456 789</p>
                                 </div>
                             </div>
-                            <div className="pb-10">
-                                <div className="flex justify-center pb-4">
+                            <div className="pb-4">
+                                <div className="flex justify-center pb-2">
                                 <img
                                 src="/contact/sms.jpg"
                                 alt="call"
                                 className="w-[24] h-[24]"/>
                                 </div>
                                 <div className="flex justify-center">
-                                <p className="text-[#fff] text-[16px] leading-normal font-[400]">+1012 demo@gmail.com</p>
+                                <p className="text-[#fff] text-[12px] leading-normal font-[400]">+1012 demo@gmail.com</p>
                                 </div>
                             </div>
-                            <div className="pb-10">
-                                <div className="flex justify-center pb-4">
+                            <div className="pb-0">
+                                <div className="flex justify-center pb-2">
                                 <img
                                 src="/contact/location.jpg"
                                 alt="call"
                                 className="w-[24] h-[24]"/>
                                 </div>
                                 <div className="flex items-center justify-center">
-                                    <p className=" text-[#fff] text-center text-[16px] leading-normal font-[400]">
+                                    <p className=" text-[#fff] text-center text-[12px] leading-normal font-[400]">
                                         132 Dartmouth Street Boston,<br/> 
                                         Massachusetts 02156 United States</p>
                                 </div>
@@ -376,23 +376,23 @@ export default function Contact(){
                             <div>
                                 <div className="relative overflow-hidden">
                                     {/* Background Image Behind Icons */}
-                                    <div className="absolute bottom-0 right-0 h-auto opacity-100 pointer-events-none z-0">
+                                    <div className="absolute bottom-2 right-0 h-auto opacity-100 pointer-events-none z-0">
                                     <img
                                         src="/contact/contact-background-circle.png"
                                         alt="background logo"
-                                        className="w-32"
+                                        className="w-24"
                                     />
                                     </div>
 
                                     {/* Social Icons on top of background */}
-                                    <div className="pt-20 flex justify-center pb-6 relative z-10">
+                                    <div className="pt-16 flex justify-center pb-6 relative z-10">
                                     <div className="flex space-x-6">
                                         {socialMediaIcons.map((icons, index) => (
                                         <a key={index} href={icons.href} target="_blank">
                                             <img
                                             src={icons.src}
                                             alt={icons.name}
-                                            className="w-6 h-6 cursor-pointer"
+                                            className="w-5 h-5 cursor-pointer"
                                             />
                                         </a>
                                         ))}

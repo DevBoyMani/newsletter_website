@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import { motion } from 'framer-motion';
 
 const FeatureRightSideInner = forwardRef(({ data }, ref) => {
-    const { title, src, content, imageSize, isFirst, isThird } = data;
+    const { title, src, content, imageSize, isFirst, isThird, isFourth } = data;
 
     // Track which mode is active
     const [mode, setMode] = useState("dark"); // default: dark
@@ -25,7 +25,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
 
     return (
         <div ref={ref} className="w-full px-8 bg-[#FAFAFA]">
-            <div className="flex flex-col md:flex-row border-t md:pb-10 md:pt-4 top-20">
+            <div className={`flex flex-col md:flex-row  md:pt-4 md:pb-0 top-20`} style={{borderTop:"1px solid #707170"}}>
                 {/* Left Side - Sticky Text Content */}
                 <div className="md:w-1/2 text-black md:pr-10 pr-4 md:sticky  bg-[#FAFAFA] z-10">
                     <h2 className="text-3xl md:text-3xl lg:text-4xl text-black text-start md:pb-6 md:pt-4">
@@ -67,27 +67,33 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                 </div>
 
                 {/* Right Side - Dynamic Image */}
-                <div className="md:w-1/2">
-                   {isThird ? (
-                            // Render video if it's the third section
-                            <video 
-                                autoPlay 
-                                muted 
-                                className={`object-cover rounded-md w-full ${imageSize ?? "h-auto"}`} 
-                               
-                                >
-                                <source src={videoSrc} type="video/mp4" />
-                                Your browser does not support the video tag.
-                                </video>
-                        ) : (
-                            // Render image for other sections
-                            <img
-                                src={imageSrc}
-                                alt={title}
-                                className={`object-cover rounded-md w-full ${imageSize ?? "h-auto"}`}
-                        />
-                    )}
+                <div className={`md:w-1/2 md:relative md:pt-4 ${isFourth ? "min-h-[300px]" : ""}`}>
+                {isThird ? (
+                    <video
+                    autoPlay
+                    muted
+                    className={`object-cover rounded-md w-full ${imageSize ?? "h-auto"}`}
+                    >
+                    <source src={videoSrc} type="video/mp4" />
+                    Your browser does not support the video tag.
+                    </video>
+
+                    
+                ) : isFourth ? (
+                    <img
+                    src={imageSrc}
+                    alt={title}
+                    className={`object-cover w-full absolute 2xl:top-12 xl:top-16 ${imageSize ?? "h-auto"}`}
+                    />
+                ) : (
+                    <img
+                    src={imageSrc}
+                    alt={title}
+                    className={`object-cover rounded-md w-full ${imageSize ?? "h-auto"}`}
+                    />
+                )}
                 </div>
+
             </div>
         </div>
     );

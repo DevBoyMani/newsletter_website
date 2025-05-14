@@ -15,7 +15,8 @@ const FeatureRightSide = ({ sections, sectionRefs }) => {
             data={{
               ...item,
               isFirst: index === 0,
-              isThird: index === 2
+              isThird: index === 2,
+              isFourth: index === 3,
             }}
           />
         </div>
