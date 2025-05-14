@@ -139,7 +139,7 @@ export default function Contact(){
                             </div>
                             <div className="flex pb-10">
                                 <img
-                                src="/contact/location.png"
+                                src="/contact/location.jpg"
                                 alt="location"
                                 className="w-[24px] h-[24px] object-cover"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
@@ -477,13 +477,13 @@ export default function Contact(){
                             <div className="flex justify-start space-x-2 pt-8">
                                 <div>
                                     <img
-                                    src="/contact/b-1.png"
+                                    src="/contact/b-1.jpg"
                                     alt="call"
                                     className="w-[38] h-[38] "/>
                                 </div>
                                 <div>
                                     <img
-                                    src="/contact/b-2.png"
+                                    src="/contact/b-2.jpg"
                                     alt="call"
                                     className="w-[38] h-[38]"/>
                                 </div>
