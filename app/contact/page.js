@@ -125,7 +125,7 @@ export default function Contact(){
                         <div className="relative pt-16 z-10">
                             <div className="flex pb-10">
                                 <img
-                                src="/contact/call.jpg"
+                                src="/contact/call.png"
                                 alt="call"
                                 className="w-[24px] h-[24px]"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">+1012 3456 789</p>
@@ -334,7 +334,7 @@ export default function Contact(){
                             <div className="pb-4">
                                 <div className="flex justify-center pb-2">
                                 <img
-                                src="/contact/call.jpg"
+                                src="/contact/call.png"
                                 alt="call"
                                 className="w-[24] h-[24]"/>
                                 </div>
