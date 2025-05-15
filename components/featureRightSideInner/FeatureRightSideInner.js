@@ -75,7 +75,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                     className={`object-cover rounded-[30px] w-[431px]  ${imageSize ?? "h-[518px]"}`}
                     >
                     <source src={videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
+                    Your browser does not support the video tag
                     </video>
 
                     
