@@ -83,7 +83,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                     <img
                     src={imageSrc}
                     alt={title}
-                    className={`object-cover w-[492px] h-[378px] absolute -bottom-[10%] ${imageSize ?? ""}`}
+                    className={`object-cover w-[492px]  absolute -bottom-[10%] ${imageSize ?? "h-[378px]"}`}
 
                     />
                 ) : isSecond ? (
