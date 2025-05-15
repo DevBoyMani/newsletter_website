@@ -334,7 +334,7 @@ export default function Contact(){
                             <div className="pb-4">
                                 <div className="flex justify-center pb-2">
                                 <img
-                                src="/contact/call.png"
+                                src="/contact/m-call.png"
                                 alt="call"
                                 className="w-[24] h-[24]"/>
                                 </div>
@@ -344,14 +344,14 @@ export default function Contact(){
                             </div>
                             <div className="pb-4">
                                 <div className="flex justify-center pb-2">
-                                    <img 
+                                    {/* <img 
                                     src="/contact/sms.jpg" alt="sma" 
                                     srcSet="/contact/sms.jpg" 
-                                    className="w-[24] h-[24]" />
-                                {/* <img
-                                src="/contact/sms.jpg"
+                                    className="w-[24] h-[24]" /> */}
+                                <img
+                                src="/contact/m-sms.png"
                                 alt="call"
-                                className="w-[24] h-[24]"/> */}
+                                className="w-[24] h-[24]"/>
                                 </div>
                                 <div className="flex justify-center">
                                 <p className="text-[#fff] text-[12px] leading-normal font-[400]">+1012 demo@gmail.com</p>
@@ -360,7 +360,7 @@ export default function Contact(){
                             <div className="pb-0">
                                 <div className="flex justify-center pb-2">
                                 <img
-                                src="/contact/location.jpg"
+                                src="/contact/m-location.png"
                                 alt="call"
                                 className="w-[24] h-[24]"/>
                                 </div>
