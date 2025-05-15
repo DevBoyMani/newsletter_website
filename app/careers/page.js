@@ -153,17 +153,17 @@ const Careers = () => {
 
   return (
     <div className="">
-      <div className="md:px-16 px-4 lg:pt-20 pt-10 mx-auto ">
+      <div className="md:px-28 px-4 lg:pt-20 pt-10 mx-auto ">
       <div className="mb-8 text-start ">
         <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">Looking for a new role &</p>
         <div className="lg:w-[46%] w-[60%]">
-        <h2 className="text-5xl lg:text-7xl text-black py-2 ">
+        <h2 className="text-5xl lg:text-7xl text-[#01261E] py-2 font-[GT-Super-Ds-Trial]">
         Ready to make an impact?
         </h2>
         </div>
         <div className="pt-14 border-black border-b pb-4">
           <div className="flex justify-between">
-          <div className="lg:text-5xl text-3xl  text-black">
+          <div className="lg:text-5xl text-3xl  text-[#01261E] font-[GT-Super-Ds-Trial] ">
             Open Positions
           </div>
           <div className="">
@@ -177,24 +177,24 @@ const Careers = () => {
       </div>
       </div>
 
-      <div className="w-full md:px-16 px-3">
+      <div className="w-full md:px-28 px-3">
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
-      <div className="mt-0 md:px-16 px-4">
+      <div className="mt-0 md:px-28 px-4">
         {testimonials[activeTab].component}
       </div>
 
       {/* faq */}
-      <div className="py-10  md:px-16">
-        <div className="flex flex-col md:flex-row justify-between px-4">
-          <div className="md:w-[40%] lg:py-0 pb-14">
-            <div className="text-black lg:text-7xl text-5xl">
+      <div className="py-10  md:px-28">
+        <div className="flex flex-col md:flex-row justify-between">
+          <div className="md:w-[46%] lg:py-0 pb-14">
+            <div className="text-[#01261E] lg:text-[80px] font-[GT-Super-Ds-Trial] text-5xl font-[400] leading-[104%]">
               How do we work with your application?
             </div>
           </div>
 
-          <div className="md:w-[44%] ">
+          <div className="md:w-[47.5%] ">
             <div className="text-black">
             <CustomAccordion/>
             </div>
@@ -312,11 +312,11 @@ const Careers = () => {
         </div>
       </div>
      </div> */}
-      <div className="hidden lg:block md:px-16 md:py-8 text-black">
+      <div className="hidden lg:block md:px-28 md:py-8 text-black">
       <div className="flex justify-between items-start gap-8">
         {/* What we do */}
         <div className="w-1/2 space-y-4">
-          <h2 className="text-5xl pb-2">What we do</h2>
+          <h2 className="text-5xl pb-2 font-[GT-Super-Ds-Trial]">What we do</h2>
           {whatWeDo.map((item, index) => (
           <div
             key={index}
@@ -347,7 +347,7 @@ const Careers = () => {
 
         {/* What we don't do */}
         <div className="w-1/2 space-y-4">
-          <h2 className="text-5xl pb-2">What we don't do</h2>
+          <h2 className="text-5xl pb-2 font-[GT-Super-Ds-Trial]">What we don't do</h2>
          {whatWeDoNotDo.map((item, index) => (
             <div
               key={index}
@@ -415,10 +415,11 @@ const Careers = () => {
         </div>
       </div>
      </div>
-
-    <div className="md:px-16 px-4  py-10 md:pt-8 md:pb-12">
+      
+      {/* heading with underline and content */}
+    <div className="md:px-28 px-4  py-10 md:pt-8 md:pb-12">
       <div className="border-b border-black">
-        <div className="text-5xl text-black py-4">What our people have to say</div>
+        <div className="text-5xl text-[#01261E] font-[GT-Super-Ds-Trial] py-4">What our people have to say</div>
       </div>
 
       <div>

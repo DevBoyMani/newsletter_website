@@ -13,7 +13,7 @@ const accordionData = [
 ];
 
 export default function CustomAccordion() {
-  const [openItemDesktop, setOpenItemDesktop] = useState(null);
+  const [openItemDesktop, setOpenItemDesktop] = useState(accordionData[1].id);
   const [openItemMobile, setOpenItemMobile] = useState(accordionData[0].id);
   const [direction, setDirection] = useState("next");
 
@@ -53,18 +53,18 @@ export default function CustomAccordion() {
               {openItemDesktop === item.id ? (
                 <div className="flex justify-between">
                   <div>
-                    <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 rounded-full w-fit mb-1">
-                      Step {item.step}
+                    <div className="pb-4">
+                      <span className="px-3 py-1 text-[11px] text-[#048B65] bg-[#D6FFEC] rounded-[23px] font-[600] leading-[104%]">Step {item.step}</span>
                     </div>
-                    <h4 className="text-xl">{item.title}</h4>
-                    <p className="text-sm py-2">{item.content}</p>
+                    <h4 className="text-[22px] text-[#01261E] font-[600] leading-[104%]">{item.title}</h4>
+                    <p className="text-[15px] text-[#12121299] py-2 font-[600] leading-[104%]">{item.content}</p>
                   </div>
-                  <ChevronUp className="w-5 h-5 transition-transform duration-300" />
+                  <ChevronUp className="w-6 h-6 transition-transform duration-300" />
                 </div>
               ) : (
                 <div className="flex justify-between items-center">
-                  <p>{item.title}</p>
-                  <ChevronDown className="w-5 h-5 transition-transform duration-300" />
+                  <h2 className="text-[22px] text-[#01261E] font-[600] leading-[104%] py-4">{item.title}</h2>
+                  <ChevronDown className="w-6 h-6 transition-transform duration-300" />
                 </div>
               )}
             </div>
@@ -74,72 +74,72 @@ export default function CustomAccordion() {
 
      
       {/* Mobile View */}
-<div className="block lg:hidden relative w-[80%] ml-8 space-y-2 ">
-  <div className="relative h-[220px] overflow-hidden">
-    <AnimatePresence mode="wait" initial={false}>
-      {currentItem && (
-        <motion.div
-          key={currentItem.id}
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragEnd={(e, info) => {
-            if (info.offset.x < -swipeConfidenceThreshold) {
-              handleNext();
-            } else if (info.offset.x > swipeConfidenceThreshold) {
-              handlePrev();
-            }
-          }}
-          initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
-          transition={{ duration: 0.4, ease: "easeInOut" }}
-          className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
-        >
-          <div className="rounded-lg bg-white shadow-lg mb-6">
-            <div className="px-8 py-3 text-lg font-medium transition">
-              <div>
-                <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 my-2 rounded-full w-fit mb-1">
-                  Step {currentItem.step}
+      <div className="block lg:hidden relative w-[80%] ml-8 space-y-2 ">
+        <div className="relative h-[220px] overflow-hidden">
+          <AnimatePresence mode="wait" initial={false}>
+            {currentItem && (
+              <motion.div
+                key={currentItem.id}
+                drag="x"
+                dragConstraints={{ left: 0, right: 0 }}
+                onDragEnd={(e, info) => {
+                  if (info.offset.x < -swipeConfidenceThreshold) {
+                    handleNext();
+                  } else if (info.offset.x > swipeConfidenceThreshold) {
+                    handlePrev();
+                  }
+                }}
+                initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
+              >
+                <div className="rounded-lg bg-white shadow-lg mb-6">
+                  <div className="px-8 py-3 text-lg font-medium transition">
+                    <div>
+                      <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 my-2 rounded-full w-fit mb-1">
+                        Step {currentItem.step}
+                      </div>
+                      <h4 className="text-xl">{currentItem.title}</h4>
+                      <p className="text-sm py-4">{currentItem.content}</p>
+                    </div>
+                  </div>
                 </div>
-                <h4 className="text-xl">{currentItem.title}</h4>
-                <p className="text-sm py-4">{currentItem.content}</p>
-              </div>
-            </div>
-          </div>
-        </motion.div>
-      )}
-    </AnimatePresence>
-  </div>
-   {/* Navigation Buttons */}
-    {openItemMobile !== accordionData[0].id && (
-      <button
-        className="absolute -left-8 top-[35%] -translate-y-1/2 z-20"
-        onClick={handlePrev}
-      >
-        <img src="/careers/ButtonLeft.png" alt="Prev" className="w-8 h-8" />
-      </button>
-    )}
-    {openItemMobile !== accordionData[accordionData.length - 1].id && (
-      <button
-        className="absolute -right-10 top-[39%] -translate-y-1/2 z-20"
-        onClick={handleNext}
-      >
-        <img src="/careers/ButtonRight.png" alt="Next" className="w-8 h-8" />
-      </button>
-    )}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+        {/* Navigation Buttons */}
+          {openItemMobile !== accordionData[0].id && (
+            <button
+              className="absolute -left-8 top-[35%] -translate-y-1/2 z-20"
+              onClick={handlePrev}
+            >
+              <img src="/careers/ButtonLeft.png" alt="Prev" className="w-8 h-8" />
+            </button>
+          )}
+          {openItemMobile !== accordionData[accordionData.length - 1].id && (
+            <button
+              className="absolute -right-10 top-[39%] -translate-y-1/2 z-20"
+              onClick={handleNext}
+            >
+              <img src="/careers/ButtonRight.png" alt="Next" className="w-8 h-8" />
+            </button>
+          )}
 
-  {/* Indicator */}
-  <div className="flex justify-between py-2 px-2 w-full">
-    {accordionData.map((item) => (
-      <div
-        key={item.id}
-        className={`w-full border-b-2 transition ${
-          openItemMobile === item.id ? "border-black" : "border-gray-300"
-        }`}
-      ></div>
-    ))}
-  </div>
-</div>
+        {/* Indicator */}
+        <div className="flex justify-between py-2 px-2 w-full">
+          {accordionData.map((item) => (
+            <div
+              key={item.id}
+              className={`w-full border-b-2 transition ${
+                openItemMobile === item.id ? "border-black" : "border-gray-300"
+              }`}
+            ></div>
+          ))}
+        </div>
+      </div>
 
     </>
   );

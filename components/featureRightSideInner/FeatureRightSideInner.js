@@ -72,7 +72,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                     <video
                     autoPlay
                     muted
-                    className={`object-cover rounded-[30px] w-[431px] h-[518px] ${imageSize ?? "h-auto"}`}
+                    className={`object-cover rounded-[30px] w-[431px]  ${imageSize ?? "h-[518px]"}`}
                     >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
