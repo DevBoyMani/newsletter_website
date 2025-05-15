@@ -74,30 +74,45 @@ export default function ReadersFeatureSection() {
   }, [isClickScrolling]);
   
 
-  // Click from left sidebar
-  const handleClick = (index) => {
-    if (index === activeIndex) return; // prevent double click on same item
-  
-    setIsClickScrolling(true); // start ignoring intersection while clicking
-    setActiveIndex(index);
-    setActiveScrollIndex(index);
-  
-    const el = sectionRefs.current[index];
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  
-      // Allow time for scroll animation to complete before enabling intersection again
-      setTimeout(() => {
-        window.scrollBy({ top: -100, behavior: 'smooth' });
-  
-        // Give a little more buffer before re-enabling scroll sync
-        setTimeout(() => {
-          setIsClickScrolling(false);
-        }, 500);
-      }, 400);
+const handleClick = (index) => {
+  if (index === activeIndex) return; // prevent double click on same item
+
+  setIsClickScrolling(true); // start ignoring intersection while clicking
+  setActiveIndex(index);
+  setActiveScrollIndex(index);
+
+  const el = sectionRefs.current[index];
+  if (el) {
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Determine scroll offset based on screen size
+    const screenWidth = window.innerWidth;
+    let offset = -100; // default
+
+    if (screenWidth >= 1536) {
+      offset = -160; // 2xl
+    } else if (screenWidth >= 1280) {
+      offset = -120; // xl
+    } else if (screenWidth >= 1024) {
+      offset = -100; // lg
+    } else if (screenWidth >= 768) {
+      offset = -80; // md
+    } else {
+      offset = -60; // sm
     }
-  };
-  
+
+    // Wait for scrollIntoView to finish, then apply offset
+    setTimeout(() => {
+      window.scrollBy({ top: offset, behavior: 'smooth' });
+
+      // Give a buffer before re-enabling intersection sync
+      setTimeout(() => {
+        setIsClickScrolling(false);
+      }, 500);
+    }, 400);
+  }
+};
+
 
   return (
     <>
