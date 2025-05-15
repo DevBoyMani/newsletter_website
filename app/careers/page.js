@@ -120,7 +120,7 @@ const Careers = () => {
       
       icon:"/careers/verified.png",
       subHeading:"Trust our team",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect.."
     },
   ]
   const whatWeDoNotDo = [
