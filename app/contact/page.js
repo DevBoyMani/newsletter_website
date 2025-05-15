@@ -483,13 +483,13 @@ export default function Contact(){
                                     <img
                                     src="/contact/b-1.jpg"
                                     alt="call"
-                                    className="w-[38] h-[38] "/>
+                                    className="w-8 h-8 "/>
                                 </div>
                                 <div>
                                     <img
                                     src="/contact/b-2.jpg"
                                     alt="call"
-                                    className="w-[38] h-[38]"/>
+                                    className="w-8 h-8"/>
                                 </div>
 
                             </div>
