@@ -127,21 +127,21 @@ export default function Contact(){
                                 <img
                                 src="/contact/call.png"
                                 alt="call"
-                                className="w-[24px] h-[24px]"/>
+                                className="w-6 h-6"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">+1012 3456 789</p>
                             </div>
                             <div className="flex pb-10">
                                 <img
                                 src="/contact/sms.jpg"
                                 alt="sms"
-                                className="w-[24px] h-[24px]"/>
+                                className="w-6 h-6"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">demo@gmail.com</p>
                             </div>
                             <div className="flex pb-10">
                                 <img
                                 src="/contact/location.jpg"
                                 alt="location"
-                                className="w-[24px] h-[24px] object-cover"/>
+                                className="w-6 h-6 object-cover"/>
                                 <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">132 Dartmouth Street Boston, Massachusetts 02156 United States</p>
                             </div>
 
@@ -411,7 +411,7 @@ export default function Contact(){
                                         <input
                                             type="text"
                                             placeholder="Enter your full name"
-                                            className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
+                                            className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
                                             value={formData.fullName}
                                             onChange={(e) => handleChange("fullName", e.target.value)}
                                         />
@@ -422,7 +422,7 @@ export default function Contact(){
                                         <input
                                             type="email"
                                             placeholder="Enter your email"
-                                            className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
+                                            className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${formData.fullName ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]' }`}
                                             value={formData.email}
                                             onChange={(e) => handleChange("email", e.target.value)}
                                         />

@@ -23,7 +23,7 @@ export default function ContactMessage({ value, onChange }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Write your message here..."
-        className={`w-full h-10 text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none 
+        className={`w-full h-10 text-[14px] rounded-none border-b border-[#8D8D8D] p-2 focus:outline-none 
                   focus:border-[#01261E] bg-transparent resize-none 
                   focus:placeholder-transparent ${value ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'}`}
       >
