@@ -18,7 +18,7 @@ const sections=[
     { title:"Fact checked and human written",
       // src:"/readers/fact-checked-video.mp4",
       content:"AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-      imageSize: "w-[431px] h-[440px]",
+      // imageSize: "w-[431px] h-[440px]",
     },
     { title:"Clear summary for the import new",
         src:"/readers/clear-summary-for-the-import-news.png",

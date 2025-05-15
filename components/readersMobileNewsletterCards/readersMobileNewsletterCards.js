@@ -10,14 +10,14 @@ export default function ReadersMobileNewsletterCards() {
         {
             domain: "Politics",
             name: "Geopolitical Summary",
-            image: "/readers/gs-card-for-mobile.jpg",
+            image: "/readers/gs.jpg",
             content: "By examining key political, economic, and security dynamics, we help readers stay informed about the forces driving international relations and decision-making.",
             learnMore: "https://www.presidentialsummary.com/"
         },
         {
             domain: "Business",
             name: "Business History",
-            image: "/readers/bh-card-for-mobile.jpg",
+            image: "/readers/bh.jpg",
             content: "Our mission is to make historical business knowledge accessible and relevant for entrepreneurs, executives, researchers.",
             learnMore: "https://www.presidentialsummary.com/"
         },
@@ -31,7 +31,7 @@ export default function ReadersMobileNewsletterCards() {
         {
             domain: "Entertainment",
             name: "Movie Suggestions",
-            image: "/readers/ms-card-for-mobile.jpg",
+            image: "/readers/ms.jpg",
             content: "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
             learnMore: "https://www.presidentialsummary.com/"
         },
@@ -50,9 +50,9 @@ export default function ReadersMobileNewsletterCards() {
                 </button> */}
                 <button className="absolute top-3 right-2 w-27 h-27 flex items-center justify-center bg-gray-200 rounded-full">
                     <img
-                        src="/readers/plus-icon-readers-mobile.jpg"
+                        src="/readers/plus-icon-readers-mobile.png"
                         alt="Plus Icon"
-                        className="w-27 h-27"
+                        className="w-7 h-7"
                     />
                 </button>
 

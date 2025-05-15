@@ -4,7 +4,7 @@ import { forwardRef } from "react";
 import { motion } from 'framer-motion';
 
 const FeatureRightSideInner = forwardRef(({ data }, ref) => {
-    const { title, src, content, imageSize, isFirst, isThird, isFourth } = data;
+    const { title, src, content, imageSize, isFirst, isSecond, isThird, isFourth } = data;
 
     // Track which mode is active
     const [mode, setMode] = useState("dark"); // default: dark
@@ -72,7 +72,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                     <video
                     autoPlay
                     muted
-                    className={`object-cover rounded-md w-full ${imageSize ?? "h-auto"}`}
+                    className={`object-cover rounded-[30px] w-[431px] h-[518px] ${imageSize ?? "h-auto"}`}
                     >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.
@@ -85,7 +85,14 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                     alt={title}
                     className={`object-cover w-full absolute 2xl:top-12 xl:top-16 ${imageSize ?? "h-auto"}`}
                     />
-                ) : (
+                ) : isSecond ? (
+                     <img
+                    src={imageSrc}
+                    alt={title}
+                    className={`object-cover rounded-[20px] w-full ${imageSize ?? "h-auto"}`}
+                    />  
+                ):(
+                 
                     <img
                     src={imageSrc}
                     alt={title}
