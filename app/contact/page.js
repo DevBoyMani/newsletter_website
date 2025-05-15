@@ -336,7 +336,7 @@ export default function Contact(){
                                 <img
                                 src="/contact/m-call.png"
                                 alt="call"
-                                className="w-[24] h-[24]"/>
+                                className="w-6 h-6"/>
                                 </div>
                                 <div className="flex justify-center">
                                 <p className="text-[#fff] text-[12px] leading-normal font-[400]">+1012 3456 789</p>
@@ -347,11 +347,11 @@ export default function Contact(){
                                     {/* <img 
                                     src="/contact/sms.jpg" alt="sma" 
                                     srcSet="/contact/sms.jpg" 
-                                    className="w-[24] h-[24]" /> */}
+                                    className="w-6 h-6" /> */}
                                 <img
                                 src="/contact/m-sms.png"
                                 alt="call"
-                                className="w-[24] h-[24]"/>
+                                className="w-6 h-6"/>
                                 </div>
                                 <div className="flex justify-center">
                                 <p className="text-[#fff] text-[12px] leading-normal font-[400]">+1012 demo@gmail.com</p>
@@ -362,7 +362,7 @@ export default function Contact(){
                                 <img
                                 src="/contact/m-location.png"
                                 alt="call"
-                                className="w-[24] h-[24]"/>
+                                className="w-6 h-6"/>
                                 </div>
                                 <div className="flex items-center justify-center">
                                     <p className=" text-[#fff] text-center text-[12px] leading-normal font-[400]">
