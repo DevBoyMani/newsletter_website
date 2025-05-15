@@ -128,7 +128,7 @@ const Careers = () => {
     
       icon:"/careers/un-verified.png",
       subHeading:"Environment",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
+      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect."
     },
     {
     
