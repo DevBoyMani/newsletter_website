@@ -183,7 +183,7 @@ export default function ReadersFooter() {
                       <img
                       src={item.src}
                       alt={item.name}
-                      className="w-[32] h-[32]"/>
+                      className="w-8 h-8"/>
                       </a>
                     </div>
                     
