@@ -10,7 +10,7 @@ export function ReadersSubscribe() {
       <button
         type="submit"
          className="h-10 w-10 flex items-center justify-center rounded-[5px] bg-[#DAEBE8] text-[#01261E] text-2xl font-medium px-6"
-      > &rarr;
+      > <span className="mb-1">&rarr;</span>
 
        {/* <img
        src="/readers/readers-right-arrow-button.png"

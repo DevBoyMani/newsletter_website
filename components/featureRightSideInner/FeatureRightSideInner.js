@@ -39,7 +39,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                             <motion.button
                             onClick={() => handleModeChange(mode === "dark" ? "light" : "dark")}
                             className={`
-                                relative w-[80px] h-[40px] rounded-full
+                                relative w-[80px] h-[38px] rounded-full
                                 ${mode === "dark" ? "shadow-inner" : "shadow-inner"}
                               `}
                               style={{
@@ -57,7 +57,7 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                             <motion.img
                                 src={mode === "dark" ? "/readers/moon.png" : "/readers/sun.png"}
                                 alt="Mode Toggle"
-                                className="absolute top-0.5 left-0 w-[40px] h-[40px] rounded-full"
+                                className="absolute top-0 left-0 w-[50%] rounded-full"
                                 animate={{ x: mode === "dark" ? 40 : 0 }}
         transition={{ type: "spring", stiffness: 400, damping: 40 }}
                             />
@@ -83,7 +83,8 @@ const FeatureRightSideInner = forwardRef(({ data }, ref) => {
                     <img
                     src={imageSrc}
                     alt={title}
-                    className={`object-cover w-full absolute 2xl:top-12 xl:top-16 ${imageSize ?? "h-auto"}`}
+                    className={`object-cover w-[492px] h-[378px] absolute -bottom-[10%] ${imageSize ?? ""}`}
+
                     />
                 ) : isSecond ? (
                      <img
