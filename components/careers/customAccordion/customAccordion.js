@@ -37,6 +37,22 @@ export default function CustomAccordion() {
 
   const currentItem = accordionData.find((item) => item.id === openItemMobile);
 
+      const swipeVariants = {
+      enter: (direction) => ({
+        x: direction === "next" ? 200 : -200,
+        opacity: 0,
+      }),
+      center: {
+        x: 0,
+        opacity: 1,
+      },
+      exit: (direction) => ({
+        x: direction === "next" ? -200 : 200,
+        opacity: 0,
+      }),
+    };
+
+
   return (
     <>
       {/* Desktop View */}
@@ -75,37 +91,46 @@ export default function CustomAccordion() {
      
       {/* Mobile View */}
       <div className="block lg:hidden relative w-[80%] ml-8 space-y-2 ">
-        <div className="relative h-[220px] overflow-hidden">
+        <div className="relative h-[24vh] overflow-hidden">
           <AnimatePresence mode="wait" initial={false}>
-            {currentItem && (
-              <motion.div
-                key={currentItem.id}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                onDragEnd={(e, info) => {
-                  if (info.offset.x < -swipeConfidenceThreshold) {
-                    handleNext();
-                  } else if (info.offset.x > swipeConfidenceThreshold) {
-                    handlePrev();
-                  }
-                }}
-                initial={{ x: direction === "next" ? 100 : -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: direction === "next" ? -100 : 100, opacity: 0 }}
-                transition={{ duration: 0.4, ease: "easeInOut" }}
-                className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
-              >
-                <div className="rounded-lg bg-white shadow-lg mb-6">
-                  <div className="px-8 py-3 text-lg font-medium transition">
-                    <div>
-                      <div className="text-sm font-medium text-black bg-[#D6FFEC] px-2 py-1 my-2 rounded-full w-fit mb-1">
+          {currentItem && (
+                    <motion.div
+                      key={currentItem.id}
+                      custom={direction}
+                      variants={swipeVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      drag="x"
+                      dragConstraints={{ left: 2, right: 2 }}
+                      onDragEnd={(e, info) => {
+                        if (info.offset.x < -swipeConfidenceThreshold) {
+                          handleNext();
+                        } else if (info.offset.x > swipeConfidenceThreshold) {
+                          handlePrev();
+                        }
+                      }}
+                      className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
+                    >
+            
+                  <div className="p-1">
+                    <div className="shadow-lg rounded-lg bg-white mb-4">
+                    <div className=" text-lg font-medium transition">
+                      <div className="px-4">
+                     
+                          <span className="relative top-3 block text-[11px] font-[600] leading-[104%] text-[#048B65] bg-[#D6FFEC] px-2 py-1 rounded-[23px] w-fit ">
                         Step {currentItem.step}
+                      </span>
+                  
+                      
+                      <h4 className=" pt-6 text-[18px] text-[#01261E] font-[600] leading-[104%]">{currentItem.title}</h4>
+                      <p className=" text-[12px] text-[#12121299] font-[600] leading-[104%] py-4">{currentItem.content}</p>
                       </div>
-                      <h4 className="text-xl">{currentItem.title}</h4>
-                      <p className="text-sm py-4">{currentItem.content}</p>
                     </div>
                   </div>
-                </div>
+                  </div>
+             
               </motion.div>
             )}
           </AnimatePresence>
@@ -113,18 +138,18 @@ export default function CustomAccordion() {
         {/* Navigation Buttons */}
           {openItemMobile !== accordionData[0].id && (
             <button
-              className="absolute -left-8 top-[35%] -translate-y-1/2 z-20"
+              className="absolute -left-8 top-[33.5%] -translate-y-1/2 z-20"
               onClick={handlePrev}
             >
-              <img src="/careers/ButtonLeft.png" alt="Prev" className="w-8 h-8" />
+              <img src="/careers/ButtonLeft.png" alt="Prev" className="w-7 h-7" />
             </button>
           )}
           {openItemMobile !== accordionData[accordionData.length - 1].id && (
             <button
-              className="absolute -right-10 top-[39%] -translate-y-1/2 z-20"
+              className="absolute -right-8 top-[37.5%] -translate-y-1/2 z-20"
               onClick={handleNext}
             >
-              <img src="/careers/ButtonRight.png" alt="Next" className="w-8 h-8" />
+              <img src="/careers/ButtonRight.png" alt="Next" className="w-7 h-7" />
             </button>
           )}
 

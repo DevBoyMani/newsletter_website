@@ -157,13 +157,13 @@ const Careers = () => {
       <div className="mb-8 text-start ">
         <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">Looking for a new role &</p>
         <div className="lg:w-[46%] w-[60%]">
-        <h2 className="text-5xl lg:text-7xl text-[#01261E] py-2 font-[GT-Super-Ds-Trial]">
+        <h2 className="text-[53px] leading-[84%] lg:text-[80px] lg:leading-[104%] text-[#01261E] py-2 font-[GT-Super-Ds-Trial]">
         Ready to make an impact?
         </h2>
         </div>
-        <div className="pt-14 border-black border-b pb-4">
+        <div className="lg:pt-14 pt-8 border-black border-b lg:pb-0 ">
           <div className="flex justify-between">
-          <div className="lg:text-5xl text-3xl  text-[#01261E] font-[GT-Super-Ds-Trial] ">
+          <div className="lg:text-[56px] text-[30px]  text-[#01261E] font-[GT-Super-Ds-Trial] leading-normal">
             Open Positions
           </div>
           <div className="">
@@ -177,7 +177,7 @@ const Careers = () => {
       </div>
       </div>
 
-      <div className="w-full md:px-28 px-3">
+      <div className="w-full md:px-28 px-4">
       <Testimonials testimonials={testimonials} activeTab={activeTab} setActiveTab={setActiveTab} />
       </div>
 
@@ -189,13 +189,13 @@ const Careers = () => {
       <div className="py-10  md:px-28">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="md:w-[46%] lg:py-0 pb-14">
-            <div className="text-[#01261E] lg:text-[80px] font-[GT-Super-Ds-Trial] text-5xl font-[400] leading-[104%]">
+            <div className="px-4 text-[#01261E] lg:text-[80px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%]">
               How do we work with your application?
             </div>
           </div>
 
           <div className="md:w-[47.5%] ">
-            <div className="text-black">
+            <div className="text-black ">
             <CustomAccordion/>
             </div>
           </div>
@@ -203,9 +203,10 @@ const Careers = () => {
       </div>
       
       <div>
+
         {/* desktop view */}
         <div className="">
-        {/* Desktop view with video background */}
+        {/* Desktop view with fallback image */}
         <div className="hidden lg:block relative py-10">
           <div className="relative lg:h-[530px]">
             <video
@@ -245,7 +246,7 @@ const Careers = () => {
                   <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute top-[4%] left-4 w-[60%] space-y-10 md:px-4">
+                <div className="absolute top-[4%] left-4 w-[80%] space-y-10 md:px-4">
                   <div className="text-white text-[39px] font-[GT-Super-Ds-Trial] leading-[84%] font-[400]">
                     Your trusted source for digital insights
                   </div>
@@ -263,55 +264,8 @@ const Careers = () => {
       </div>
       
 
-     <div>
       {/* desktop view */}
       <div>
-      {/* <div className="hidden lg:block md:px-16 md:py-8 text-black">
-      <div className="flex justify-between items-start gap-8">
-        <div className="w-1/2 space-y-4">
-          <h2 className="text-5xl pb-2">What we do</h2>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
-            <span>Supportive and collaborative environment</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
-            <span>Provide flexibility and work-life balance</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
-            <span>Create opportunities for growth</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/verified.png" alt="do" className="w-6 h-6" />
-            <span>Trust our team</span>
-          </div>
-        </div>
-
-       
-        <div className="border-l border-black h-auto mx-2 -mb-2 mt-16  self-stretch"></div>
-
-        <div className="w-1/2 space-y-4">
-          <h2 className="text-5xl pb-2">What we don't do</h2>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
-            <span>Impose unnecessary formalities</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
-            <span>Micromanage</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
-            <span>Discourage creativity or new ideas</span>
-          </div>
-          <div className="flex items-center gap-2 bg-[#DAEBE8] py-4 px-3 rounded-lg">
-            <img src="/careers/un-verified.png" alt="undo" className="w-6 h-6" />
-            <span>Sacrifice well-being for work</span>
-          </div>
-        </div>
-      </div>
-     </div> */}
       <div className="hidden lg:block md:px-28 md:py-8 text-black">
       <div className="flex justify-between items-start gap-8">
         {/* What we do */}
@@ -374,21 +328,21 @@ const Careers = () => {
         </div>
       </div>
     </div>
-      </div>
+
 
       {/* mobile view */}
-      <div className="block lg:hidden flex flex-col space-y-14">
+      <div className="block lg:hidden flex flex-col space-y-10">
           {/* what we do */}
         <div className="px-4">
-          <div className="bg-[#DAEBE8] rounded-lg py-6 ">
-            <h4 className="text-3xl text-black text-center py-6">What we do</h4>
+          <div className="bg-[#DAEBE8] rounded-[10px] py-6 ">
+            <h4 className="text-[34px] text-[#121212] font-[GT-Super-Ds-Trial] font-[400] leading-[24px] text-center py-6">What we do</h4>
             <div>
               <div className="grid grid-cols-2 ">
               {whatWeDo.map((item, index) => (
                   <div key={index} className="grid grid-col-2 text-black text-center gap-2 py-4 px-3 rounded-lg">
                     <img src={item.icon} alt="do" className="w-9 h-9 mx-auto" />
-                    <span className="text-lg">{item.subHeading}</span>
-                    <span className="text-sm leading-7">{item.content}</span>
+                    <span className="text-[#304659] text-[14px] font-[500] leading-[24px]">{item.subHeading}</span>
+                    <span className="text-[#304659] text-[10px] font-[400] leading-[20px]">{item.content}</span>
                   </div>
                 ))}
               </div>
@@ -399,14 +353,14 @@ const Careers = () => {
         {/* what we do not do */}
         <div className="px-4">
           <div className="bg-[#DAEBE8] rounded-lg py-6">
-            <h4 className="text-3xl text-black text-center py-6">What we don't do</h4>
+            <h4 className="text-[34px] text-[#121212] font-[GT-Super-Ds-Trial] font-[400] leading-[24px] text-center py-6">What we don't do</h4>
             <div>
               <div className="grid grid-cols-2 ">
               {whatWeDoNotDo.map((item, index) => (
                   <div key={index} className="grid grid-col-2 text-black text-center gap-2 py-4 px-3 rounded-lg">
                     <img src={item.icon} alt="do" className="w-9 h-9 mx-auto" />
-                    <span className="text-lg">{item.subHeading}</span>
-                    <span className="text-sm leading-7">{item.content}</span>
+                    <span className="text-[#304659] text-[14px] font-[500] leading-[24px]">{item.subHeading}</span>
+                    <span className="text-[#304659] text-[10px] font-[400] leading-[20px ]">{item.content}</span>
                   </div>
                 ))}
               </div>
@@ -419,7 +373,7 @@ const Careers = () => {
       {/* heading with underline and content */}
     <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
         <div className="border-b border-black">
-          <div className="text-5xl text-[#01261E] font-[GT-Super-Ds-Trial] py-4">What our people have to say</div>
+          <div className="text-[50px] lg:text-[56px] lg:w-full w-[80%] leading-[50px] font-[400] text-[#01261E] font-[GT-Super-Ds-Trial] py-4">What our people have to say</div>
         </div>
 
           <div className="flex justify-between pb-6 pt-8">
@@ -439,7 +393,12 @@ const Careers = () => {
                     <img
                       src={image.smallSrc}
                       alt={`image-${image.id}`}
-                      className="w-13 h-13"
+                      className="hidden lg:block w-13 h-13"
+                    />
+                    <img
+                      src={image.smallSrc}
+                      alt={`image-${image.id}`}
+                      className="block lg:hidden w-13 h-13"
                     />
                   </button>
                 ))}
@@ -447,13 +406,13 @@ const Careers = () => {
 
               {/* Dynamic Text Content */}
               <div className="lg:py-6">
-                <p className="text-black text-[24px] leading-[130%] font-[400]">{selectedImage.text}</p>
+                <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400]">{selectedImage.text}</p>
               </div>
 
               {/* Name & Role */}
               <div className="text-black relative top-6 lg:top-16 py-4">
-                <p className="text-[24px]">{selectedImage.name}</p>
-                <p className="text-[15px]">{selectedImage.role}</p>
+                <p className="text-[17px] lg:text-[24px]">{selectedImage.name}</p>
+                <p className="text-[11px] lg:text-[15px]">{selectedImage.role}</p>
               </div>
             </div>
 
