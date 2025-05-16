@@ -90,8 +90,8 @@ export default function CustomAccordion() {
 
      
       {/* Mobile View */}
-      <div className="block lg:hidden relative w-[80%] ml-8 space-y-2 ">
-        <div className="relative h-[24vh] overflow-hidden">
+      <div className="block lg:hidden relative w-[80%] mx-10 space-y-2 ">
+        <div className="relative h-[129px] overflow-hidden">
           <AnimatePresence mode="wait" initial={false}>
           {currentItem && (
                     <motion.div
@@ -114,7 +114,7 @@ export default function CustomAccordion() {
                       className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-x z-10"
                     >
             
-                  <div className="p-1">
+                  <div className="p-1 ">
                     <div className="shadow-lg rounded-lg bg-white mb-4">
                     <div className=" text-lg font-medium transition">
                       <div className="px-4">
@@ -141,15 +141,15 @@ export default function CustomAccordion() {
               className="absolute -left-8 top-[33.5%] -translate-y-1/2 z-20"
               onClick={handlePrev}
             >
-              <img src="/careers/ButtonLeft.png" alt="Prev" className="w-7 h-7" />
+              <img src="/careers/Button-left.png" alt="Prev" className="w-6 h-6" />
             </button>
           )}
           {openItemMobile !== accordionData[accordionData.length - 1].id && (
             <button
-              className="absolute -right-8 top-[37.5%] -translate-y-1/2 z-20"
+              className="absolute -right-8 top-[37%] -translate-y-1/2 z-20"
               onClick={handleNext}
             >
-              <img src="/careers/ButtonRight.png" alt="Next" className="w-7 h-7" />
+              <img src="/careers/Button-right.png" alt="Next" className="w-6 h-6" />
             </button>
           )}
 

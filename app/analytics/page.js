@@ -22,13 +22,19 @@ export default function Analytics() {
       {/* desktop view */}
       <div className="hidden lg:block flex w-full">
         {/* Left Sidebar */}
-        <div className="w-[36%] bg-white fixed h-screen">
+        <div className="w-[36%] bg-white fixed h-screen ml-8">
           <div className="md:px-6">
-            <div className="px-4 text-[16px] py-8 hover:underline">
-              <a href="/analytics">Analytics</a>
+            <div className="px-2  py-8 hover:underline">
+         
+              <Link href="/">
+                <div className="md:w-40 mt-1">
+                  <img src="/logo.png" alt="Logo" />
+                </div>
+              </Link>
+             
             </div>
             <div className="pt-6">
-              <h2 className="py-4 mx-4 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
+              <h2 className="py-4 mx-0 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
                 Building Innovative Digital Solutions
               </h2>
               <div
@@ -41,7 +47,7 @@ export default function Analytics() {
                 <AnalyticsSidebarHomepage />
               </div>
             </div>
-            <div className="w-[80%] mx-4 text-black pt-4 flex justify-between border-t border-[#121212]">
+            <div className="w-[80%] mx-0 text-black pt-4 flex justify-between border-t border-[#121212]">
               <h3 className="text-[13px] py-1">Interested to advertise?</h3>
               <a className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
                 Contact Us
@@ -108,7 +114,7 @@ export default function Analytics() {
 
       {/* mobile view */}
       <div className="w-sm lg:hidden block max-h-screen">
-        <div className="max-h-[50vh] overflow-hidden">
+        <div className="max-h-[45vh] overflow-hidden">
             <div className="">
               <img
                 src="/analytics-home-image-mobile.png"
@@ -118,7 +124,7 @@ export default function Analytics() {
             </div>
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto relative z-10">
+        <div className="max-h-[45vh] overflow-y-auto relative z-10">
         <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
                 <div className="w-full px-4 py-2 fixed bg-white z-50">
@@ -159,8 +165,8 @@ export default function Analytics() {
 
                 <div>
                     <div className="bg-white pt-2">
-                        <h4 className="font-medium text-2xl">
-                          Building innovative digital solutions
+                        <h4 className="font-[500] leading-[134%] text-[20px]">
+                          Building innovative digital<br/> solutions
                         </h4>
                     </div>
                 </div>
@@ -172,7 +178,7 @@ export default function Analytics() {
               {openSection === "about" && (
                 <>
                 
-                  <div className="pt-36 text-[12px]">
+                  <div className="pt-32 text-[12px]">
                     <p className="">
                       Creativity has been an integral part of my life. Since
                       2010 I've started working in design industry. Having

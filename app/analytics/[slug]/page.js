@@ -193,13 +193,13 @@ const handleScrollToSection = (event, id, offset = 0) => {
       {isDesktop && (
         <div className="hidden lg:block md:flex">
           {/* left */}
-          <div className="w-[36%] bg-white fixed h-screen">
+          <div className="w-[36%] bg-white fixed h-screen ml-8">
             <div className="md:px-6">
-              <div className="px-4 text-[16px] py-8 hover:underline">
+              <div className="px-4 text-[24.5px] py-8 hover:underline">
                 <Link href="/analytics" prefetch={true}>&larr; Introduction</Link>
               </div>
               <div className="pt-6">
-                <h2 className="py-4 mx-4 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
+                <h2 className="py-4 mx-0 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
                   Building Innovative Digital Solutions
                 </h2>
                 <div
@@ -215,7 +215,7 @@ const handleScrollToSection = (event, id, offset = 0) => {
                   />
                 </div>
               </div>
-              <div className="w-[80%] mx-4 text-black pt-4 flex justify-between border-t border-[#121212]">
+              <div className="w-[80%] mx-0 text-black pt-4 flex justify-between border-t border-[#121212]">
               <h3 className="text-[13px] py-1">Interested to advertise?</h3>
               <a className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
                 Contact Us
@@ -310,15 +310,18 @@ const handleScrollToSection = (event, id, offset = 0) => {
       <div className="block lg:hidden w-sm">
         <div
           ref={scrollContainerRef}
-          className="bg-[#01261E] max-h-[50vh] h-[357px] overflow-y-auto relative z-10"
+          className="bg-[#01261E] max-h-[45vh] h-[357px] overflow-y-auto relative z-10"
         >
           {/* Header with Numerical Indicator */}
-          <div className="bg-[#01261E] fixed top-0 w-full  pt-6 pb-3 px-4 z-50 text-white">
+          <div className="bg-[#01261E] fixed top-0 w-full  pt-20 pb-3 px-4 z-50 text-white">
             <div className="flex justify-between items-center">
               <p className="text-[14px] text-[#FAFAFA]">{activeChartName}</p>
-              <div className="text-xs font-semibold bg-[#FAFAFA99] text-[#01261E] py-2 px-2 rounded-full">
-                {activeChart}/{rightSectionNav.length}
+              <div className="text-[12px]  text-[#01261E]">
+                <span className="w-8 h-8 flex items-center justify-center rounded-full font-[600] leading-normal bg-[#FAFAFA99]">
+                  {activeChart}/{rightSectionNav.length}
+                </span>
               </div>
+
             </div>
           </div>
 
@@ -331,10 +334,10 @@ const handleScrollToSection = (event, id, offset = 0) => {
           </div>
         </div>
 
-        <div className="max-h-[50vh] overflow-y-auto">
+        <div className="max-h-[45vh] overflow-y-auto">
         <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
-            <div className="w-full px-4 py-2 fixed bg-white z-50">
+            <div className="w-full px-4 py-2 fixed bg-white z-10">
             <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-4 pb-5 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
               <div>
                 <Link href="/analytics" prefetch={true} className="cursor-pointer text-[13px] font-semibold py-2 px-2">

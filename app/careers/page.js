@@ -189,7 +189,7 @@ const Careers = () => {
       <div className="py-10  md:px-28">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="md:w-[46%] lg:py-0 pb-14">
-            <div className="px-4 text-[#01261E] lg:text-[80px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%]">
+            <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%]">
               How do we work with your application?
             </div>
           </div>
@@ -246,9 +246,9 @@ const Careers = () => {
                   <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
-                <div className="absolute top-[4%] left-4 w-[80%] space-y-10 md:px-4">
+                <div className="absolute top-[4%] left-4 w-full space-y-10 md:px-4">
                   <div className="text-white text-[39px] font-[GT-Super-Ds-Trial] leading-[84%] font-[400]">
-                    Your trusted source for digital insights
+                    Your trusted<br/> source for digital<br/> insights
                   </div>
                   <a
                     href=""
@@ -280,13 +280,13 @@ const Careers = () => {
           >
             <div className="flex items-center gap-2">
               <img src={item.icon} alt="do" className="w-9 h-9" />
-              <span className="text-[25px] font-[400] leading-[104%]">{item.subHeading}</span>
+              <span className="text-[20px] font-[400] leading-[104%]">{item.subHeading}</span>
             </div>
 
             {/* Expanding paragraph */}
             <div
               className={`
-                overflow-hidden transition-all duration-700 ease-in-out text-[18px] text-[#12121299] leading-[104%]
+                overflow-hidden transition-all duration-700 ease-in-out text-[16px] text-[#12121299] leading-[104%]
                 ${hoverIndexDo === index ? 'max-h-40 mt-2' : 'max-h-0'}
               `}
             >
@@ -301,7 +301,7 @@ const Careers = () => {
 
         {/* What we don't do */}
         <div className="w-1/2 space-y-4">
-          <h2 className="text-[55px] pb-2 font-[GT-Super-Ds-Trial]">What we don't do</h2>
+          <h2 className="text-[56px] pb-2 font-[GT-Super-Ds-Trial]">What we don't do</h2>
          {whatWeDoNotDo.map((item, index) => (
             <div
               key={index}
@@ -311,13 +311,13 @@ const Careers = () => {
             >
               <div className="flex items-center gap-2">
                 <img src={item.icon} alt="undo" className="w-9 h-9" />
-                <span className="text-[25px] font-[400] leading-[104%]">{item.subHeading}</span>
+                <span className="text-[20px] font-[400] leading-[104%]">{item.subHeading}</span>
               </div>
 
               {/* Smooth expand/collapse paragraph */}
               <div
                 className={`
-                  overflow-hidden transition-all duration-700 ease-in-out text-[18px] text-[#12121299] leading-[104%]
+                  overflow-hidden transition-all duration-700 ease-in-out text-[16px] text-[#12121299] leading-[104%]
                   ${hoverIndexDont === index ? 'max-h-40 mt-2' : 'max-h-0'}
                 `}
               >
@@ -373,14 +373,14 @@ const Careers = () => {
       {/* heading with underline and content */}
     <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
         <div className="border-b border-black">
-          <div className="text-[50px] lg:text-[56px] lg:w-full w-[80%] leading-[50px] font-[400] text-[#01261E] font-[GT-Super-Ds-Trial] py-4">What our people have to say</div>
+          <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E] font-[GT-Super-Ds-Trial] ">What our people have to say</div>
         </div>
 
           <div className="flex justify-between pb-6 pt-8">
             {/* Left Side (Small Images & Content) */}
             <div className="lg:w-[60%]">
               {/* Small Images */}
-              <div className="flex flex-row space-x-4 md:py-8 sm:px-4 py-6">
+              <div className="flex flex-row space-x-4 md:py-8 sm:px-4 py-4">
                 {images.map((image) => (
                   <button
                     key={image.id}
@@ -398,7 +398,7 @@ const Careers = () => {
                     <img
                       src={image.smallSrc}
                       alt={`image-${image.id}`}
-                      className="block lg:hidden w-13 h-13"
+                      className="block lg:hidden w-12 h-12"
                     />
                   </button>
                 ))}
@@ -406,7 +406,7 @@ const Careers = () => {
 
               {/* Dynamic Text Content */}
               <div className="lg:py-6">
-                <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400]">{selectedImage.text}</p>
+                <p className="text-black text-[17px] lg:text-[20px] leading-[130%] font-[400]">{selectedImage.text}</p>
               </div>
 
               {/* Name & Role */}
