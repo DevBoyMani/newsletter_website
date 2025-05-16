@@ -316,7 +316,7 @@ const Careers = () => {
       <div className="flex justify-between items-start gap-8">
         {/* What we do */}
         <div className="w-1/2 space-y-4">
-          <h2 className="text-5xl pb-2 font-[GT-Super-Ds-Trial]">What we do</h2>
+          <h2 className="text-[56px] pb-2 font-[GT-Super-Ds-Trial]">What we do</h2>
           {whatWeDo.map((item, index) => (
           <div
             key={index}
@@ -325,14 +325,14 @@ const Careers = () => {
             className="bg-[#DAEBE8] py-4 px-3 rounded-lg transition-all duration-300 hover:bg-[#cde0db] group"
           >
             <div className="flex items-center gap-2">
-              <img src={item.icon} alt="do" className="w-6 h-6" />
-              <span>{item.subHeading}</span>
+              <img src={item.icon} alt="do" className="w-9 h-9" />
+              <span className="text-[25px] font-[400] leading-[104%]">{item.subHeading}</span>
             </div>
 
             {/* Expanding paragraph */}
             <div
               className={`
-                overflow-hidden transition-all duration-700 ease-in-out text-sm text-black
+                overflow-hidden transition-all duration-700 ease-in-out text-[18px] text-[#12121299] leading-[104%]
                 ${hoverIndexDo === index ? 'max-h-40 mt-2' : 'max-h-0'}
               `}
             >
@@ -343,11 +343,11 @@ const Careers = () => {
 
         </div>
 
-        <div className="border-l border-black h-auto mx-2 -mb-2 mt-16  self-stretch"></div>
+        <div className="border-l border-black h-auto mx-2 -mb-2 mt-24  self-stretch"></div>
 
         {/* What we don't do */}
         <div className="w-1/2 space-y-4">
-          <h2 className="text-5xl pb-2 font-[GT-Super-Ds-Trial]">What we don't do</h2>
+          <h2 className="text-[55px] pb-2 font-[GT-Super-Ds-Trial]">What we don't do</h2>
          {whatWeDoNotDo.map((item, index) => (
             <div
               key={index}
@@ -356,14 +356,14 @@ const Careers = () => {
               className="bg-[#DAEBE8] py-4 px-3 rounded-lg transition-all duration-300 hover:bg-[#cde0db] group"
             >
               <div className="flex items-center gap-2">
-                <img src={item.icon} alt="undo" className="w-6 h-6" />
-                <span>{item.subHeading}</span>
+                <img src={item.icon} alt="undo" className="w-9 h-9" />
+                <span className="text-[25px] font-[400] leading-[104%]">{item.subHeading}</span>
               </div>
 
               {/* Smooth expand/collapse paragraph */}
               <div
                 className={`
-                  overflow-hidden transition-all duration-700 ease-in-out text-sm text-black
+                  overflow-hidden transition-all duration-700 ease-in-out text-[18px] text-[#12121299] leading-[104%]
                   ${hoverIndexDont === index ? 'max-h-40 mt-2' : 'max-h-0'}
                 `}
               >
@@ -396,7 +396,7 @@ const Careers = () => {
           </div>
         </div>
 
-        {/* what we do not dp */}
+        {/* what we do not do */}
         <div className="px-4">
           <div className="bg-[#DAEBE8] rounded-lg py-6">
             <h4 className="text-3xl text-black text-center py-6">What we don't do</h4>
@@ -417,63 +417,60 @@ const Careers = () => {
      </div>
       
       {/* heading with underline and content */}
-    <div className="md:px-28 px-4  py-10 md:pt-8 md:pb-12">
-      <div className="border-b border-black">
-        <div className="text-5xl text-[#01261E] font-[GT-Super-Ds-Trial] py-4">What our people have to say</div>
-      </div>
+    <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
+        <div className="border-b border-black">
+          <div className="text-5xl text-[#01261E] font-[GT-Super-Ds-Trial] py-4">What our people have to say</div>
+        </div>
 
-      <div>
+          <div className="flex justify-between pb-6 pt-8">
+            {/* Left Side (Small Images & Content) */}
+            <div className="lg:w-[60%]">
+              {/* Small Images */}
+              <div className="flex flex-row space-x-4 md:py-8 sm:px-4 py-6">
+                {images.map((image) => (
+                  <button
+                    key={image.id}
+                    className={`cursor-pointer p-0.5 rounded-full ${
+                      selectedImage.id === image.id ? "border border-black rounded-full" : "border-transparent"
+                    }`}
+                    onClick={() => setSelectedImage(image)}
+                    
+                  >
+                    <img
+                      src={image.smallSrc}
+                      alt={`image-${image.id}`}
+                      className="w-13 h-13"
+                    />
+                  </button>
+                ))}
+              </div>
+
+              {/* Dynamic Text Content */}
+              <div className="lg:py-6">
+                <p className="text-black text-[24px] leading-[130%] font-[400]">{selectedImage.text}</p>
+              </div>
+
+              {/* Name & Role */}
+              <div className="text-black relative top-6 lg:top-16 py-4">
+                <p className="text-[24px]">{selectedImage.name}</p>
+                <p className="text-[15px]">{selectedImage.role}</p>
+              </div>
+            </div>
+
+              {/* Right Side (Large Image) */}
+              <div className="hidden lg:block w-[30%] md:py-8">
+                <div>
+                  <img src={selectedImage.fullSrc} alt="selected" className="w-300" />
+                </div>
+              </div>
+          </div>
+    </div>
+      
+       
+
         <div>
-        <div className="flex justify-between py-6">
-      {/* Left Side (Small Images & Content) */}
-      <div className="lg:w-[60%]">
-        {/* Small Images */}
-        <div className="flex flex-row space-x-4 md:py-8 sm:px-4 py-6">
-          {images.map((image) => (
-            <button
-              key={image.id}
-              className={`cursor-pointer p-0.5 rounded-full ${
-                selectedImage.id === image.id ? "border border-black rounded-full" : "border-transparent"
-              }`}
-              onClick={() => setSelectedImage(image)}
-              
-            >
-              <img
-                src={image.smallSrc}
-                alt={`image-${image.id}`}
-                className="w-12 h-12"
-              />
-            </button>
-          ))}
+          <Footer/>
         </div>
-
-        {/* Dynamic Text Content */}
-        <div className="text-lg lg:py-6">
-          <p className="text-black">{selectedImage.text}</p>
-        </div>
-
-        {/* Name & Role */}
-        <div className="text-black relative top-6 lg:top-16 py-4">
-          <p className="text-lg">{selectedImage.name}</p>
-          <p className="text-sm">{selectedImage.role}</p>
-        </div>
-      </div>
-
-      {/* Right Side (Large Image) */}
-      <div className="hidden lg:block w-[30%] md:py-8">
-        <div>
-          <img src={selectedImage.fullSrc} alt="selected" className="w-300" />
-        </div>
-      </div>
-    </div>
-          
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <Footer/>
-    </div>
 
     </div>
   );
