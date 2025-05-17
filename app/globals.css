@@ -129,10 +129,18 @@
 }
 
 .animate-scroll {
-  animation: scrollText 20s linear infinite;
+  animation: scrollText 13s linear infinite;
 }
 
 .group:hover .animate-scroll {
+  animation-play-state: paused;
+}
+
+.animate-scroll-mobile {
+  animation: scrollText 8s linear infinite;
+}
+
+.group:hover .animate-scroll-mobile {
   animation-play-state: paused;
 }
 

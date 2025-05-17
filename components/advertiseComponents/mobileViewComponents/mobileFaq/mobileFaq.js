@@ -40,7 +40,7 @@ import {
     ];
   
     return (
-      <Accordion type="single" collapsible className="w-full pt-10">
+      <Accordion type="single" collapsible className="w-full pt-10 px-4">
         {faqData.map((item) => (
           <AccordionItem key={item.value} value={item.value}>
             <AccordionTrigger className="text-[#01261E] font-Manrope font-[400] text-[16px]">{item.heading}</AccordionTrigger>

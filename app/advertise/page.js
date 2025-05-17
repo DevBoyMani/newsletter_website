@@ -125,7 +125,7 @@ export default function Advertise() {
 
           {/* combined analytics */}
             <div className="bg-white relative hidden lg:block">
-              <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
+              <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 pt-16 pb-10">
                 <HeadingWithUnderline text="Combined Analytics"/>
               </div>
 
@@ -231,10 +231,10 @@ export default function Advertise() {
           {/* Ad blocker and Do follow */}
           <div className="bg-white relative hidden lg:block">
               <div className="px-4 md:px-32 py-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-6">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-14">
                   
                   {/* Box 1 */}
-                  <div className="flex-1 border border-black p-8 rounded-[15px]">
+                  <div className="flex-1 border border-black p-10 rounded-[15px]">
                     <h4 className=" md:text-[36px] text-[#01261E] mb-4 leading-normal font-[GT-Super-Ds-Trial]">AD Blocker</h4>
                     <p className="md:text-[20px] mb-4">
                       Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t.
@@ -250,15 +250,15 @@ export default function Advertise() {
                   </div>
 
                   {/* Box 2 */}
-                  <div className="flex-1 border border-black p-8 rounded-[15px]">
+                  <div className="flex-1 border border-black p-10 rounded-[15px]">
                     <h4 className=" md:text-[36px] text-[#01261E] mb-4 leading-normal font-[GT-Super-Ds-Trial]">Do follow</h4>
                     <p className="md:text-[20px] mb-20">
                       Dofollow links pass along what the SEO community commonly calls “link juice.”
                       Links are a vote for quality.
                     </p>
 
-                    <div className={`${agdasima.className} w-fit bg-[#E6E6E6] border-2 border-[#A7A7A7] text-center`}>
-                      <a href="http://raventools.com" target="_blank" className="px-2 py-1 text-[#121212] md:text-[20px]">
+                    <div className={`${agdasima.className} w-full bg-[#E6E6E6] border-2 border-[#A7A7A7] text-center`}>
+                      <a href="http://raventools.com" target="_blank" className=" py-0.5 text-[#121212] md:text-[27px]">
                         &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
                       </a>
                     </div>

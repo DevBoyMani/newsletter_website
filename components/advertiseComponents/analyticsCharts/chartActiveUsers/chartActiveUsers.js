@@ -51,10 +51,10 @@ export function ActiveUsers() {
             transformStyle: "preserve-3d",
         }}
       >
-    <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-4">
+    <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-8">
       <button
         onClick={() => setFlipped(true)}
-        className="absolute top-4 right-4 p-2 rounded-full bg-[#ffffff]"
+        className="absolute top-6 right-8 p-2 rounded-full bg-[#ffffff]"
         >
         <Plus className="w-6 h-6" />
       </button>
@@ -121,7 +121,7 @@ export function ActiveUsers() {
 
     {/* Back Side */}
     <Card
-            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-4"
+            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",
@@ -129,7 +129,7 @@ export function ActiveUsers() {
           >
             <button
               onClick={() => setFlipped(false)}
-              className="absolute top-4 right-4 p-2 rounded-full bg-white"
+              className="absolute top-6 right-8 p-2 rounded-full bg-white"
             >
               <X className="w-6 h-6" />
             </button>
@@ -159,10 +159,10 @@ export function ActiveUsers() {
               transformStyle: "preserve-3d",
           }}
         >
-      <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-4">
+      <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-6">
         <button
           onClick={() => setFlipped(true)}
-          className="absolute top-4 right-4 p-2 rounded-full bg-[#ffffff]"
+          className="absolute top-4 right-6 p-2 rounded-full bg-[#ffffff]"
           >
           <Plus className="w-4 h-4" />
         </button>
@@ -229,7 +229,7 @@ export function ActiveUsers() {
 
       {/* Back Side */}
       <Card
-              className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-4"
+              className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6"
               style={{
                 transform: "rotateY(180deg)",
                 backfaceVisibility: "hidden",
@@ -237,7 +237,7 @@ export function ActiveUsers() {
             >
               <button
                 onClick={() => setFlipped(false)}
-                className="absolute top-4 right-4 p-2 rounded-full bg-white"
+                className="absolute top-4 right-6 p-2 rounded-full bg-white"
               >
                 <X className="w-4 h-4" />
               </button>

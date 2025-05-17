@@ -234,7 +234,8 @@ const handleScrollToSection = (event, id, offset = 0) => {
               <div className="h-full flex flex-col">
                 <div className="">
                   <div className="bg-[#01261E] fixed top-0  w-[100%] pt-10 pb-12 z-50 hidden md:block rounded-l-3xl">
-                    <div className="flex flex-row space-x-12  absolute left-24">
+                    <div className="mx-[5.5%] 2xl:mx-[8%] 3xl:mx-[16%] w-[100%]">
+                      <div className="flex space-x-12 2xl:space-x-16 ">
                       <div className="">
                         <div className="space-x-4">
                           {rightSectionNav.map(({ name, id }) => (
@@ -260,6 +261,7 @@ const handleScrollToSection = (event, id, offset = 0) => {
                         </a>
                       </div>
                     </div>
+                    </div>
                   </div>
                 </div>
 
@@ -280,7 +282,7 @@ const handleScrollToSection = (event, id, offset = 0) => {
                 </div>
 
                 <div className="">
-                    <div className="mx-24 lg:mb-28 mt-24">
+                    <div className="mx-24 lg:mb-28 mt-28">
                       <div className=" my-10" id="chart1">
                         <SelectedComponent />
                       </div>

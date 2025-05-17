@@ -91,7 +91,7 @@ export default function AdvertisePageMobileVersion() {
 
 
       {/* Combined Analytics */}
-      <div className="bg-white relative px-4 md:px-28 pt-6">
+      <div className="bg-white relative px-4 md:px-28 pt-10">
         <HeadingWithUnderline text="Combined Analytics" />
 
         {/* Analytics Chart Grid */}
@@ -147,7 +147,7 @@ export default function AdvertisePageMobileVersion() {
           </p>
 
           <a href="#" className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]">
-                <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
+                <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
                   SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
                 </span>
               </a>
@@ -155,7 +155,7 @@ export default function AdvertisePageMobileVersion() {
       </div>
 
       {/* Ad Blocker and Do Follow */}
-      <div className="bg-white px-4 md:px-28 py-8">
+      <div className="bg-white px-8 md:px-28 py-8">
       <div className="flex flex-row justify-between items-stretch gap-4">
         {/* AD Blocker Section */}
         <div className="w-1/2 ">
@@ -170,7 +170,7 @@ export default function AdvertisePageMobileVersion() {
         </div>
 
     {/* Do Follow Section */}
-          <div className="w-1/2 px-2">
+          <div className="w-1/2">
             <div className="flex justify-center">
               <img src="/advertise/do-follow.png" alt="Do Follow" className="w-[37px] h-[37px]" />
             </div>
@@ -179,12 +179,12 @@ export default function AdvertisePageMobileVersion() {
               Dofollow links pass along what the SEO community commonly calls “link juice.”
               Links are a vote for quality.
             </p>
-            <div className="flex w-lg max-w-[170px] border bg-[#E6E6E6] border-[#A7A7A7] text-center">
+            <div className="flex w-full border bg-[#E6E6E6] border-[#A7A7A7] text-center">
               <a
                 href="http://raventools.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${agdasima.className} text-black text-[8px] font- w-full px-1 py-1`}
+                className={`${agdasima.className} text-black text-[8px] font-[400] leading-normal w-full px-1 py-0.5 `}
               >
                 &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
               </a>

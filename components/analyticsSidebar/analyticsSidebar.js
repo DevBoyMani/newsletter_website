@@ -77,7 +77,7 @@ const AnalyticsSidebar = ({ activeSlug, onSelect }) => {
             <div key={slug} className="relative flex items-center ">
               <div
                 onClick={() => onSelect(slug)}
-                className={`flex justify-between items-center py-1 px-4 my-1  cursor-pointer w-full
+                className={`flex justify-between items-center py-2 px-4 my-1  cursor-pointer w-full
                   ${activeSlug === slug ? "bg-[#121212]/20 rounded-full " : "hover:bg-[#121212]/10 rounded-full "}
                 `}
               >
