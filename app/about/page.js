@@ -1,7 +1,15 @@
 export default function About() {
     return (
-        <div>
-            <h1 className="text-black text-2xl mt-20">Welcome to About page</h1>
-        </div>
+        <>
+            <div>
+                <div className="bg-[#FAFAFA]">
+                    <img
+                     src="/about/hero.png"
+                     alt="About us hero"
+                     className="w-full "
+                     />
+                </div>
+            </div>
+        </>
     );
 }
