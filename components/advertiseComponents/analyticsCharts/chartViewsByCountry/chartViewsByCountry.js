@@ -20,10 +20,10 @@ import {
   ChartTooltipContent,
 } from "@/components/ui/chart"
 const chartData = [
-  { browser: "US", visitors: 275, fill: "var(--color-chrome)" },
-  { browser: "Canada", visitors: 200, fill: "var(--color-safari)" },
-  { browser: "U.K.", visitors: 187, fill: "var(--color-firefox)" },
-  { browser: "Australia", visitors: 173, fill: "var(--color-edge)" },
+  { browser: "US", visitors: 275, fill: "#394E65" },
+  { browser: "Canada", visitors: 200, fill: "#657C75" },
+  { browser: "U.K.", visitors: 187, fill: "#E19F20" },
+  { browser: "Australia", visitors: 173, fill: "#582719" },
   // { browser: "other", visitors: 90, fill: "var(--color-other)" },
 ]
 
@@ -55,16 +55,16 @@ const chartConfig = {
 
 const chartDatas =[
   {
-    Country:"USA",percentage:"39.11%",livePercentage:"(+2.11%)",id:"1",dot:"/advertise/charts-analytics/usa.png"
+    Country:"USA",percentage:"39.11%",livePercentage:"(+2.11%)",id:"1",dot:"/advertise/chart-usa.png"
   },
   {
-    Country:"Canada",percentage:"28.02%",livePercentage:"(-3.25%)",id:"2",dot:"/advertise/charts-analytics/canada.png"
+    Country:"Canada",percentage:"28.02%",livePercentage:"(-3.25%)",id:"2",dot:"/advertise/chart-canada.png"
   },
   {
-    Country:"U.K.",percentage:"23.11%",livePercentage:"(+0.14%)",id:"3",dot:"/advertise/charts-analytics/uk.png"
+    Country:"U.K.",percentage:"23.11%",livePercentage:"(+0.14%)",id:"3",dot:"/advertise/chart-uk.png"
   },
   {
-    Country:"Australia",percentage:"5.03%",livePercentage:"(+1.11%)",id:"4",dot:"/advertise/charts-analytics/australia.png"
+    Country:"Australia",percentage:"5.03%",livePercentage:"(+1.11%)",id:"4",dot:"/advertise/chart-australia.png"
   },
 ]
 
@@ -84,10 +84,10 @@ export function ViewsCountry() {
               transformStyle: "preserve-3d",
           }}
         >
-        <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-8" style={{ backfaceVisibility: "hidden" }}>
+        <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8" style={{ backfaceVisibility: "hidden" }}>
           <button
               onClick={() => setFlipped(true)}
-              className="absolute top-6 right-8 p-2 rounded-full bg-[#ffffff]"
+              className="absolute top-6 right-8 p-2 rounded-full bg-[#657C752B]"
                 >
               <Plus className="w-6 h-6" />
           </button>
@@ -115,7 +115,7 @@ export function ViewsCountry() {
                 {chartDatas.map((data) => (
                   <div key={data.id} className="flex items-center justify-between w-full">
                   
-                    <img src={data.dot} alt={data.Country} className="w-[8px] h-[7.504px] mr-2" />
+                    <img src={data.dot} alt={data.Country} className="w-2 h-2 mr-2" />
                     
                 
                     <div className="text-[#1E1B39] text-sm w-20">{data.Country}</div>

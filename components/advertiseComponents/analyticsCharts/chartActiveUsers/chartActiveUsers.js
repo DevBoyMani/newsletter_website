@@ -51,10 +51,10 @@ export function ActiveUsers() {
             transformStyle: "preserve-3d",
         }}
       >
-    <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-8">
+    <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8">
       <button
         onClick={() => setFlipped(true)}
-        className="absolute top-6 right-8 p-2 rounded-full bg-[#ffffff]"
+        className="absolute top-6 right-8 p-2 rounded-full bg-[#657C752B]"
         >
         <Plus className="w-6 h-6" />
       </button>
@@ -83,7 +83,7 @@ export function ActiveUsers() {
                   <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
                 </linearGradient>
               </defs>
-            <CartesianGrid vertical={false} />
+            <CartesianGrid vertical={true} />
 
             <YAxis
               width={20} // Controls the space for the Y-axis labels
@@ -108,7 +108,7 @@ export function ActiveUsers() {
               dataKey="desktop"
               type="linear"
               fill="url(#areaGradient)"
-              stroke="#01261E"
+               stroke="#657C75"
               strokeWidth={4}
               // fillOpacity={0.4}
                 // opacity={0.33}

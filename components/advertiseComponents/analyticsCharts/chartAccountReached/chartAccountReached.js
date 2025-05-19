@@ -52,12 +52,12 @@ export function AccountReached() {
        
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-8"
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
               onClick={() => setFlipped(true)}
-              className="absolute top-6 right-8 p-2 rounded-full bg-[#ffffff]"
+              className="absolute top-6 right-8 p-2 rounded-full bg-[#657C752B]"
             >
               <Plus className="w-6 h-6" />
             </button>
@@ -73,13 +73,13 @@ export function AccountReached() {
               <ChartContainer config={chartConfig} className="w-full h-[200px]">
                 <AreaChart data={chartData} margin={{ left: 12, right: 12 }}>
                   <defs>
-                    <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                      <stop offset="44.33%" stopColor="#8CFAE2" />
-                      <stop offset="70.32%" stopColor="#BBF5E8" />
-                      <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
-                    </linearGradient>
-                  </defs>
-                  <CartesianGrid vertical={false} />
+                  <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#657C75" stopOpacity="0.58" />
+                    <stop offset="100%" stopColor="#657C75" stopOpacity="0" />
+                  </linearGradient>
+                </defs>
+
+                  <CartesianGrid vertical={false} horizontal={false}/>
                   <XAxis
                     dataKey="month"
                     tickLine={false}
@@ -95,7 +95,7 @@ export function AccountReached() {
                     dataKey="desktop"
                     type="natural"
                     fill="url(#areaGradient)"
-                    stroke="#01261E"
+                    stroke="#657C75"
                     strokeWidth={4}
                     style={{ mixBlendMode: "multiply" }}
                   />
