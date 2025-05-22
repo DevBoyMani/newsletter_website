@@ -118,7 +118,7 @@ export default function InThePress() {
           onClick={handlePrev}
           className="absolute left-0 bottom-8 -translate-y-1/2"
         >
-          <Image src="/advertise/button-left.png" alt="Left" width={25} height={25} />
+          <Image src="/advertise/left-new.png" alt="Left" width={25} height={25} />
         </button>
       )}
 
@@ -127,7 +127,7 @@ export default function InThePress() {
           onClick={handleNext}
           className="absolute right-0 bottom-8 -translate-y-1/2"
         >
-          <Image src="/advertise/button-right.png" alt="Right" width={25} height={25} />
+          <Image src="/advertise/right-new.png" alt="Right" width={25} height={25} />
         </button>
       )}
 
