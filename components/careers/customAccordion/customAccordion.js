@@ -141,7 +141,7 @@ export default function CustomAccordion() {
               className="absolute -left-8 top-[33.5%] -translate-y-1/2 z-20"
               onClick={handlePrev}
             >
-              <img src="/careers/Button-left.png" alt="Prev" className="w-6 h-6" />
+              <img src="/careers/left-new.png" alt="Prev" className="w-6 h-6" />
             </button>
           )}
           {openItemMobile !== accordionData[accordionData.length - 1].id && (
@@ -149,7 +149,7 @@ export default function CustomAccordion() {
               className="absolute -right-8 top-[37%] -translate-y-1/2 z-20"
               onClick={handleNext}
             >
-              <img src="/careers/Button-right.png" alt="Next" className="w-6 h-6" />
+              <img src="/careers/right-new.png" alt="Next" className="w-6 h-6" />
             </button>
           )}
 

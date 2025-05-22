@@ -60,7 +60,7 @@ export default function Advertise() {
     return (
       <>
         {/* hero section */}
-          <div className="bg-white relative hidden lg:block">
+          <div className="bg-[#FAFAFA] relative hidden lg:block">
 
               {/* Top Year Labels */}
               <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
@@ -87,7 +87,7 @@ export default function Advertise() {
               </div>
 
               {/* Video Section */}
-            <div className="flex justify-center relative pl-6 mr-0 mt-4">
+            <div className="flex justify-center relative md:px-28 mr-0 mt-10">
               <div className="flex gap-x-2.5 items-end relative z-0 ">
                 {videos.map((video) => (
                   <video
@@ -114,17 +114,17 @@ export default function Advertise() {
                   </div>
 
 
-                  <div className="absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-white to-transparent z-10"></div>
+                  <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
 
                   {/* 100K Subscribers Text (Above Gradient) */}
-                    <div className="absolute bottom-0 left-3 text-[13.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
+                    <div className="absolute -bottom-4 left-32 text-[10.5vw] font-[700] leading-[94%] tracking-[-1%] z-20 text-center font-[GT-Super-Ds-Trial] ">
                         <span className="text-white">100K </span>
                         <span className="text-[#01261E]">Subscribers</span>
                       </div>
           </div>
 
           {/* combined analytics */}
-            <div className="bg-white relative hidden lg:block">
+            <div className="bg-[#FAFAFA] relative hidden lg:block pt-20">
               <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 pt-16 pb-10">
                 <HeadingWithUnderline text="Combined Analytics"/>
               </div>
@@ -186,7 +186,7 @@ export default function Advertise() {
             </div>
 
           {/*text with video section */}
-          <div className="bg-white hidden lg:block">
+          <div className="bg-[#FAFAFA] hidden lg:block">
             <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
                 <HeadingWithUnderline text="How your ad will look like"/>
             </div>
@@ -229,7 +229,7 @@ export default function Advertise() {
           </div>
 
           {/* Ad blocker and Do follow */}
-          <div className="bg-white relative hidden lg:block">
+          <div className="bg-[#FAFAFA] relative hidden lg:block">
               <div className="px-4 md:px-32 py-10">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-14">
                   
@@ -269,7 +269,7 @@ export default function Advertise() {
             </div>
 
           {/* faq */}
-          <div className="bg-white relative hidden lg:block">
+          <div className="bg-[#FAFAFA] relative hidden lg:block">
             <div className="px-4 md:px-28 pt-20 pb-10">
               <div className="flex flex-col md:flex-row justify-between px-4">
               <div className="md:w-[40%] lg:py-0 pb-14">
@@ -287,7 +287,7 @@ export default function Advertise() {
             </div>
           </div>
 
-          <div className="bg-white hidden lg:block">
+          <div className="bg-[#FAFAFA] hidden lg:block">
             <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
                 <HeadingWithUnderline text="In the press"/>
             </div>
