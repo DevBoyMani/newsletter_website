@@ -80,10 +80,10 @@ export default function AdvertisePageMobileVersion() {
                   </div>
 
           {/* Gradient */}
-      <div className="absolute -bottom-1 left-0 w-full h-[120px] bg-gradient-to-t from-white to-transparent z-10" />
+      <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
 
           {/* Subscribers Text */}
-          <div className="absolute bottom-3 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
+          <div className="absolute bottom-0 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
             <span className="text-white">100K </span>
             <span className="text-[#01261E]">Subscribers</span>
           </div>
@@ -160,7 +160,7 @@ export default function AdvertisePageMobileVersion() {
         {/* AD Blocker Section */}
         <div className="w-1/2 ">
           <div className="flex justify-center">
-            <img src="/advertise/ad-blocker-image.png" alt="Ad Blocker" className="w-[37px] h-[37px]" />
+            <img src="/advertise/ad-blocker-image.png" alt="Ad Blocker" className="w-9 h-9" />
           </div>
           <h4 className="text-[14px] text-[#304659] text-center py-4">AD Blocker</h4>
           <p className="text-[10px] text-[#3B5266] text-center md:text-left leading-[17px]">
@@ -172,7 +172,7 @@ export default function AdvertisePageMobileVersion() {
     {/* Do Follow Section */}
           <div className="w-1/2">
             <div className="flex justify-center">
-              <img src="/advertise/do-follow.png" alt="Do Follow" className="w-[37px] h-[37px]" />
+              <img src="/advertise/do-follow.png" alt="Do Follow" className="w-9 h-9" />
             </div>
             <h4 className="text-[14px] text-[#304659] text-center md:text-left py-4">Do follow</h4>
             <p className="text-[10px] text-[#3B5266] text-center md:text-left leading-[17px]">
