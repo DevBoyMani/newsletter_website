@@ -71,7 +71,7 @@ export default function AdvertiseFaq() {
       </div>
 
       {/* Mobile View */}
-      <div className="block lg:hidden space-y-2 relative w-[80%] ml-8">
+      {/* <div className="block lg:hidden space-y-2 relative w-[80%] ml-8">
       <motion.div
           key={openItemMobile}
           initial={{ x: direction === "next" ? "100%" : "-100%", opacity: 0 }}
@@ -100,7 +100,6 @@ export default function AdvertiseFaq() {
         )}
       </motion.div>
 
-        {/* Navigation Buttons */}
         <div>
         {openItemMobile !== accordionData[0].id && (
           <button
@@ -129,7 +128,7 @@ export default function AdvertiseFaq() {
         )}
         </div>
 
-          {/* indicator */}
+  
         <div className="flex justify-between py-2 px-2 w-full">
           {accordionData.map((item, index) => (
             <div
@@ -140,7 +139,7 @@ export default function AdvertiseFaq() {
             ></div>
           ))}
         </div>
-      </div>
+      </div> */}
 
     </>
   );
