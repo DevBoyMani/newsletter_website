@@ -77,11 +77,10 @@ export function ActiveUsers() {
             }}
           >
             <defs>
-                <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="44.33%" stopColor="657C75" />
-                  <stop offset="70.32%" stopColor="657C75" />
-                  <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
-                </linearGradient>
+                <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#657C75" stopOpacity="0.58" />
+                    <stop offset="100%" stopColor="#657C75" stopOpacity="0" />
+                  </linearGradient>
               </defs>
             <CartesianGrid vertical={true} />
 
@@ -185,11 +184,10 @@ export function ActiveUsers() {
               }}
             >
               <defs>
-                  <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="44.33%" stopColor="657C75" />
-                  <stop offset="70.32%" stopColor="657C75" />
-                  <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
-                </linearGradient>
+                  <linearGradient id="areaGradient" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stopColor="#657C75" stopOpacity="0.58" />
+                    <stop offset="100%" stopColor="#657C75" stopOpacity="0" />
+                  </linearGradient>
                 </defs>
               <CartesianGrid vertical={true} />
 

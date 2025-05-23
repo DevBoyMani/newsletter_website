@@ -162,8 +162,8 @@ export default function AdvertisePageMobileVersion() {
           <div className="flex justify-center">
             <img src="/advertise/ad-blocker-image.png" alt="Ad Blocker" className="w-[37px] h-[37px]" />
           </div>
-          <h4 className="text-[14px] text-[#01261E] mb-4 text-center md:text-left">AD Blocker</h4>
-          <p className="text-base mb-4 text-center md:text-left">
+          <h4 className="text-[14px] text-[#304659] text-center py-4">AD Blocker</h4>
+          <p className="text-[10px] text-[#3B5266] text-center md:text-left leading-[17px]">
             Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t.
             Reach our audience directly, no filters, no ad blockers.
           </p>
@@ -174,8 +174,8 @@ export default function AdvertisePageMobileVersion() {
             <div className="flex justify-center">
               <img src="/advertise/do-follow.png" alt="Do Follow" className="w-[37px] h-[37px]" />
             </div>
-            <h4 className="text-[14px] md:text-3xl text-[#01261E] mb-4 text-center md:text-left">Do follow</h4>
-            <p className="text-base mb-2 text-center md:text-left">
+            <h4 className="text-[14px] text-[#304659] text-center md:text-left py-4">Do follow</h4>
+            <p className="text-[10px] text-[#3B5266] text-center md:text-left leading-[17px]">
               Dofollow links pass along what the SEO community commonly calls “link juice.”
               Links are a vote for quality.
             </p>
@@ -184,7 +184,7 @@ export default function AdvertisePageMobileVersion() {
                 href="http://raventools.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${agdasima.className} text-black text-[8px] font-[400] leading-normal w-full px-1 py-0.5 `}
+                className={`${agdasima.className} text-[#121212] text-[8px] font-[400] leading-normal w-full px-1 py-0.5 `}
               >
                 &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
               </a>
