@@ -11,7 +11,7 @@ export default function Hero() {
       {/* Hero Section */}
       <div className="flex flex-col lg:flex-row px-0 lg:px-0 py-0 lg:py-6 mx-auto gap-10 lg:gap-0">
         <div className="relative lg:flex-1 ">
-          <div className="block lg:hidden h-[20%] overflow-hidden px-0 lg:py-0 lg:px-0">
+          <div className="block lg:hidden 2xl:h-[24%]  overflow-hidden px-0 lg:py-0 lg:px-0">
             {/* For small screens */}
             <img
               src="/image.png"
