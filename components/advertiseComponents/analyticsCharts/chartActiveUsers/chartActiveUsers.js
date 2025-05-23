@@ -159,10 +159,10 @@ export function ActiveUsers() {
               transformStyle: "preserve-3d",
           }}
         >
-      <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-6">
+      <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6">
         <button
           onClick={() => setFlipped(true)}
-          className="absolute top-4 right-6 p-2 rounded-full bg-[#ffffff]"
+          className="absolute top-4 right-6 p-2 rounded-full bg-[#657C752B]"
           >
           <Plus className="w-4 h-4" />
         </button>
@@ -186,12 +186,12 @@ export function ActiveUsers() {
             >
               <defs>
                   <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                    <stop offset="44.33%" stopColor="#8CFAE2" />
-                    <stop offset="70.32%" stopColor="#BBF5E8" />
-                    <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
-                  </linearGradient>
+                  <stop offset="44.33%" stopColor="#8CFAE2" />
+                  <stop offset="70.32%" stopColor="#BBF5E8" />
+                  <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
+                </linearGradient>
                 </defs>
-              <CartesianGrid vertical={false} />
+              <CartesianGrid vertical={true} />
 
               <YAxis
                 width={20} // Controls the space for the Y-axis labels
@@ -216,7 +216,7 @@ export function ActiveUsers() {
                 dataKey="desktop"
                 type="linear"
                 fill="url(#areaGradient)"
-                stroke="#01261E"
+                stroke="#657C75"
                 strokeWidth={4}
                 // fillOpacity={0.4}
                   // opacity={0.33}

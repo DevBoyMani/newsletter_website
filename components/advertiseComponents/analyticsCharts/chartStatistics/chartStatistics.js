@@ -139,12 +139,12 @@ export function Statistics() {
         >
       {/* Front Side */}
       <Card
-        className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-6 "
+        className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6 "
         style={{ backfaceVisibility: "hidden" }}
       >
         <button
           onClick={() => setFlipped(true)}
-          className="absolute top-4 right-6 p-2 rounded-full bg-white shadow"
+          className="absolute top-4 right-6 p-2 rounded-full bg-[#657C752B] shadow"
         >
           <Plus className="w-4 h-4 text-black" />
         </button>
@@ -158,11 +158,11 @@ export function Statistics() {
               </CardDescription>
               <div className="flex gap-3 text-[9px] ml-4 mt-1">
                 <div className="flex items-center gap-1">
-                  <img src="/advertise/charts-analytics/male.png" alt="Male" className="w-2 h-2" />
+                  <img src="/advertise/chart-canada.png" alt="Male" className="w-1 h-1" />
                   <span>Male</span>
                 </div>
                 <div className="flex items-center gap-1">
-                  <img src="/advertise/charts-analytics/female.png" alt="Female" className="w-2 h-2" />
+                  <img src="/advertise/chart-uk.png" alt="Female" className="w-1 h-1" />
                   <span>Female</span>
                 </div>
               </div>

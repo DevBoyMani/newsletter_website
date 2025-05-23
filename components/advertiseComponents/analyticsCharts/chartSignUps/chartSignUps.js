@@ -171,10 +171,10 @@ export function SignInUps() {
             transformStyle: "preserve-3d",
         }}
       >
-    <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-6">
+    <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6">
     <button
         onClick={() => setFlipped(true)}
-        className="absolute top-4 right-6 p-2 rounded-full bg-[#ffffff]"
+        className="absolute top-4 right-6 p-2 rounded-full bg-[#657C752B]"
         >
         <Plus className="w-4 h-4" />
       </button>
@@ -190,11 +190,11 @@ export function SignInUps() {
             </div>
             <div className="flex mr-8 gap-4 text-sm ml-8">
               <div className="flex items-center gap-2">
-                <img src="/advertise/charts-analytics/male.png" alt="Male" className="w-[5px] h-[5px]" />
+                <img src="/advertise/chart-canada.png" alt="Male" className="w-[5px] h-[5px]" />
                 <span className="text-[8px]">Last Month</span>
               </div>
               <div className="flex items-center gap-2">
-                <img src="/advertise/charts-analytics/female.png" alt="Female" className="w-[5px] h-[5px]" />
+                <img src="/advertise/chart-uk.png" alt="Female" className="w-[5px] h-[5px]" />
                 <span className="text-[8px]">This Month</span>
               </div>
             </div>
@@ -230,14 +230,14 @@ export function SignInUps() {
             <Line
               dataKey="desktop"
               type="linear"
-              stroke="#01261E"
+              stroke="#657C75"
               strokeWidth={2}
               dot={false}
             />
             <Line
               dataKey="mobile"
               type="linear"
-              stroke="#95FFE8"
+              stroke="#E19F20"
               strokeWidth={2}
               dot={false}
             />

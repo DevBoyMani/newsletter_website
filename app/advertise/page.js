@@ -21,10 +21,10 @@ const agdasima = Agdasima({
 
 export default function Advertise() {
     const videos = [
-      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[732px]" },
-      { video: "/advertise/v-2.mp4", id: "video2", height: "h-[661px]" },
-      { video: "/advertise/v-3.mp4", id: "video3", height: "h-[876px]", moveUp: "mt-[-80px]" },
-      { video: "/advertise/v-4.mp4", id: "video4", height: "h-[1005px]", moveUp: "mt-[-120px]" },
+      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[867px]" },
+      { video: "/advertise/v-2.mp4", id: "video2", height: "h-[804px]" },
+      { video: "/advertise/v-3.mp4", id: "video3", height: "h-[989px]", moveUp: "mt-[-80px]" },
+      { video: "/advertise/v-4.mp4", id: "video4", height: "h-[1101px]", moveUp: "mt-[-120px]" },
     ];
 
     const newsData = [
@@ -64,20 +64,20 @@ export default function Advertise() {
 
               {/* Top Year Labels */}
               <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
-              <span className="absolute left-[12%]">2014</span>
-              <span className="absolute left-[36.5%]">2017</span>
-              <span className="absolute left-[60%]">2020</span>
-              <span className="absolute left-[85%]">2023</span>
+              <span className="absolute left-[17%]">2014</span>
+              <span className="absolute left-[38%]">2017</span>
+              <span className="absolute left-[59%]">2020</span>
+              <span className="absolute left-[80%]">2023</span>
               </div>
 
               {/* vertical lines */}
-              <div className="absolute top-20 bottom-[180px] left-[13%] w-px bg-[#716D6D] z-0" />
-              <div className="absolute top-20 bottom-[70px] left-[37.5%] w-px bg-[#716D6D] z-0" />
-              <div className="absolute top-20 bottom-[270px] left-[61%] w-px bg-[#716D6D] z-0" />
-              <div className="absolute top-20 bottom-[390px] left-[86%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[180px] left-[18%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[70px] left-[39%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[270px] left-[60%] w-px bg-[#716D6D] z-0" />
+              <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" />
 
               {/* Text Section */}
-              <div className=" md:px-16 px-4 lg:pt-20 pt-10 mx-auto">
+              <div className=" md:px-28 px-4 lg:pt-20 pt-10 mx-auto">
                 <div className="text-[#01261E]">
                   <h2 className="text-[80px] lg:w-[50%] font-[GT-Super-Ds-Trial] leading-[94%]" style={{textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)"}}>Step into a world of discovery</h2>
                   <p className="text-base py-4 w-[30%] sm:w-[30%]">
@@ -107,10 +107,10 @@ export default function Advertise() {
 
                   {/* bottom text  */}
                   <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#716D6D] text-[16px] font-[600] ">
-                      <span className="absolute bottom-[90px] left-[9.5%]">$19.4 trillion</span>
-                      <span className="absolute bottom-[26px] left-[34.5%]">$17.4 trillion</span>
-                      <span className="absolute bottom-[234px] left-[58.5%]">$18.9 trillion</span>
-                      <span className="absolute bottom-[366px] left-[83.5%]">$144 million</span>
+                      <span className="absolute bottom-[236px] left-[14%]">$19.4 trillion</span>
+                      <span className="absolute bottom-[174px] left-[36%]">$17.4 trillion</span>
+                      <span className="absolute bottom-[360px] left-[57%]">$18.9 trillion</span>
+                      <span className="absolute bottom-[470px] left-[78%]">$144 million</span>
                   </div>
 
 

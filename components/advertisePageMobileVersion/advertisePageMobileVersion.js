@@ -29,7 +29,7 @@ export default function AdvertisePageMobileVersion() {
   return (
     <>
       {/* Hero Section */}
-    <div className="bg-white relative">
+    <div className="bg-[#FAFAFA] relative">
        {/* Top Year Labels */}
               <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
               <span className="absolute left-[10.5%]">2014</span>
@@ -91,7 +91,7 @@ export default function AdvertisePageMobileVersion() {
 
 
       {/* Combined Analytics */}
-      <div className="bg-white relative px-4 md:px-28 pt-10">
+      <div className="bg-[#FAFAFA] relative px-4 md:px-28 pt-20">
         <HeadingWithUnderline text="Combined Analytics" />
 
         {/* Analytics Chart Grid */}
@@ -128,7 +128,7 @@ export default function AdvertisePageMobileVersion() {
       </div>
 
       {/* Ad Preview */}
-      <div className="bg-white py-10">
+      <div className="bg-[#FAFAFA] py-10">
         <div className="px-4 py-10">
         <HeadingWithUnderline text="How your ad will look like"/>
         </div>
@@ -155,7 +155,7 @@ export default function AdvertisePageMobileVersion() {
       </div>
 
       {/* Ad Blocker and Do Follow */}
-      <div className="bg-white px-8 md:px-28 py-8">
+      <div className="bg-[#FAFAFA] px-8 md:px-28 py-8">
       <div className="flex flex-row justify-between items-stretch gap-4">
         {/* AD Blocker Section */}
         <div className="w-1/2 ">
@@ -197,7 +197,7 @@ export default function AdvertisePageMobileVersion() {
 
 
       {/* FAQ Section */}
-      <div className="bg-white px-4 md:px-28 pt-10 pb-10">
+      <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
       <HeadingWithUnderline text="Got Questions? We've Got Answers!"/>
       <div>
         <MobileFaq/>
@@ -205,7 +205,7 @@ export default function AdvertisePageMobileVersion() {
       </div>
 
       {/* In the Press */}
-      <div className="bg-white px-4 md:px-28 pt-10 pb-10">
+      <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
         <HeadingWithUnderline text="In the press"/>
         <InThePress />
       </div>

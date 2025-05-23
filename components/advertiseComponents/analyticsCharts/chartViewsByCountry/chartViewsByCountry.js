@@ -174,10 +174,10 @@ export function ViewsCountry() {
               transformStyle: "preserve-3d",
           }}
         >
-        <Card className="absolute w-full h-full bg-[#DAEBE8] flex flex-col justify-between p-6" style={{ backfaceVisibility: "hidden" }}>
+        <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6" style={{ backfaceVisibility: "hidden" }}>
           <button
               onClick={() => setFlipped(true)}
-              className="absolute top-4 right-6 p-2 rounded-full bg-[#ffffff]"
+              className="absolute top-4 right-6 p-2 rounded-full bg-[#657C752B]"
                 >
               <Plus className="w-4 h-4" />
           </button>
