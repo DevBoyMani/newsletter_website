@@ -33,15 +33,15 @@ export default function AdvertisePageMobileVersion() {
        {/* Top Year Labels */}
               <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
               <span className="absolute left-[10.5%]">2014</span>
-              <span className="absolute left-[33%]">2017</span>
-              <span className="absolute left-[57%]">2020</span>
+              <span className="absolute left-[34%]">2017</span>
+              <span className="absolute left-[58%]">2020</span>
               <span className="absolute left-[82%]">2023</span>
               </div>
 
-              <div className="absolute top-20 bottom-[180px] left-[14%] w-px bg-gray-300 z-0" />
-              <div className="absolute top-20 bottom-[70px] left-[37%] w-px bg-gray-300 z-0" />
-              <div className="absolute top-20 bottom-[270px] left-[61%] w-px bg-gray-300 z-0" />
-              <div className="absolute top-20 bottom-[390px] left-[86%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[182px] left-[15%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[70px] left-[38.5%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[270px] left-[62%] w-px bg-gray-300 z-0" />
+              <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" />
 
 
         <div className="px-4 md:px-16 pt-28 lg:pt-20 mx-auto max-w-screen-xl">
@@ -73,10 +73,10 @@ export default function AdvertisePageMobileVersion() {
         </div>
         {/* bottom text  */}
                   <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-gray-800 text-[16px]">
-                      <span className="absolute bottom-[246px] left-[9.5%]">$19.4<br/> trillion</span>
+                      <span className="absolute bottom-[248px] left-[9.5%]">$19.4<br/> trillion</span>
                       <span className="absolute bottom-[196px] left-[32.5%]">$17.4<br/> trillion</span>
-                      <span className="absolute bottom-[326px] left-[56.5%]">$18.9<br/> trillion</span>
-                      <span className="absolute bottom-[452px] left-[80%]">$144<br/> million</span>
+                      <span className="absolute bottom-[338px] left-[56.5%]">$18.9<br/> trillion</span>
+                      <span className="absolute bottom-[464px] left-[80%]">$144<br/> million</span>
                   </div>
 
           {/* Gradient */}

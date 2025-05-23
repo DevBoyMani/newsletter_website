@@ -78,8 +78,8 @@ export function ActiveUsers() {
           >
             <defs>
                 <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="44.33%" stopColor="#8CFAE2" />
-                  <stop offset="70.32%" stopColor="#BBF5E8" />
+                  <stop offset="44.33%" stopColor="657C75" />
+                  <stop offset="70.32%" stopColor="657C75" />
                   <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
                 </linearGradient>
               </defs>
@@ -186,8 +186,8 @@ export function ActiveUsers() {
             >
               <defs>
                   <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="44.33%" stopColor="#8CFAE2" />
-                  <stop offset="70.32%" stopColor="#BBF5E8" />
+                  <stop offset="44.33%" stopColor="657C75" />
+                  <stop offset="70.32%" stopColor="657C75" />
                   <stop offset="100%" stopColor="rgba(224, 250, 244, 0.31)" />
                 </linearGradient>
                 </defs>
