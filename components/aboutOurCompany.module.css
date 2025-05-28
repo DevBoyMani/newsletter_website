@@ -1,0 +1,112 @@
+/* NewsletterOrbit.module.css */
+.wrapper {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  margin: 40px auto;
+  animation: rotate 60s linear infinite;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.rotatingOrbit {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  animation: rotate 90s linear infinite;
+}
+
+.centerLogo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+.wrapper::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at center,
+      transparent 0,
+      transparent 39px,
+      #eaeaea 40px,
+      transparent 41px,
+      transparent 79px,
+      #eaeaea 80px,
+      transparent 81px,
+      transparent 119px,
+      #eaeaea 120px,
+      transparent 121px,
+      transparent 159px,
+      #eaeaea 160px,
+      transparent 161px,
+      transparent 199px,
+      #eaeaea 200px,
+      transparent 201px
+    );
+  z-index: 0;
+}
+
+.icon {
+  position: absolute;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.icon:hover {
+  transform: scale(1.1);
+}
+
+.tooltip {
+  position: absolute;
+  top: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #1c1c1c;
+  color: #fff;
+  padding: 8px 12px;
+  font-size: 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+  display: none;
+  z-index: 10;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.icon:hover .tooltip {
+  display: block;
+  opacity: 1;
+}
+
+@media (max-width: 500px) {
+  .wrapper {
+    width: 300px;
+    height: 300px;
+  }
+
+  .icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .tooltip {
+    font-size: 10px;
+  }
+
+  .centerLogo img {
+    width: 32px !important;
+    height: 32px !important;
+  }
+}

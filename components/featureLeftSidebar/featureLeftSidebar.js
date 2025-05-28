@@ -2,7 +2,7 @@
 
 const FeatureLeftSidebar = ({ sections, activeIndex, handleClick }) => {
   return (
-    <div className="w-1/4 space-y-1  sticky top-0">
+    <div className="w-1/4 space-y-1 sticky top-0 overflow-y-auto" style={{ scrollbarWidth: "none" }}>
       {sections.map((item, index) => (
         <button
           key={index}

@@ -1,138 +1,156 @@
-
+"use client"
 
 import Link from "next/link";
-
-export default function Footer(){
-    // const socialIcons =[
-    //     {name:"instagram",icon:"/icon-instagram.png",url:""},
-    //     {name:"facebook",icon:"/icon-fb.png",url:""},
-    //     {name:"linedIn",icon:"/icon-In.png",url:""},
-    //     {name:"twitter",icon:"/icon-x.png",url:""},
-    //     {name:"youtube",icon:"/icon-yu.png",url:""},
-    // ]
-    const socialMediaIcons=[
-        {name:"x",src:"/readers/x.png",href:"https://www.presidentialsummary.com/"},
-        {name:"insta",src:"/readers/insta.png",href:"https://www.presidentialsummary.com/"},
-        {name:"ln",src:"/readers/ln.png",href:"https://www.presidentialsummary.com/"},
-        {name:"tiktok",src:"/readers/tiktok.png",href:"https://www.presidentialsummary.com/"},
-        {name:"t",src:"/readers/t.png",href:"https://www.presidentialsummary.com/"},
-      
-      ]
-    return(
-        <>
-         {/* desktop footer */}
-        <div className="hidden lg:block bg-[#01261E] text-white">
-            <div className="md:px-14 py-12 ">
-                <div className="flex justify-between border-b">
-                    {/* left */}
-                    <div className="">
-                        <div className="pt-2 pb-6">
-                            <Link href="/">
-                                <div className="w-32 md:w-48">
-                                <img src="/light-logo.png" alt="Logo" />
-                                </div>
-                            </Link>
-                        </div>
-                        <div className="text-sm py-1 space-y-2">
-                            <p>The place where newsletters live</p>
-                            <p>Your trusted messenger</p>
-                        </div>
-                        <div className="py-8">
-                            <div className="flex space-x-4">
-                                {socialMediaIcons.map((icons, index) => (
-                                    <a key={index} href={icons.url} target="_blank">
-                                        <img
-                                    
-                                    src={icons.src}
-                                    alt={icons.name}
-                                    className="w-6 h-6 hover:opacity-80 cursor-pointer"
-                                    />
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-
-                    {/* right */}
-                    <div className="mr-10">
-                        <div className="flex justify-start space-x-8">
-                            
-                                <div className="">
-                                    <ul className="flex flex-col">
-                                        <li className="text-xl font-semibold pb-4">
-                                            Learn more
-                                        </li>
+import { FaStar } from "react-icons/fa";
+import { ReadersSubscribe } from "../readersSubscribe/readersSubscribe";
+import Image from "next/image";
 
 
-                                        <li className="py-1 text-sm">
-                                            <Link href="#" className="">About Us</Link>
-                                        </li>
-                                        <li className="py-1 text-sm">
-                                            <Link href="#" className="">Readers</Link>
-                                        </li>
-                                        <li className="py-1 text-sm">
-                                            <Link href="#" className="">Advertise</Link>
-                                        </li>
-                                        <li className="py-1 text-sm">
-                                            <Link href="#" className="">Analytics</Link>
-                                        </li>
-                                    </ul>
-                                
-                                </div>
-                           
-                            
-                                <div className="">
-                                    <ul className="flex flex-col ml-4">
-                                    <li className="text-xl font-semibold pb-4">
-                                        More
-                                    </li>
+// const feedbackData = [
+//   {
+//     userName: "Ava Wilson",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Jaxx Sanchez",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Ava Wilson",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Jaxx Sanchez",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Ava Wilson",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Jaxx Sanchez",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Ava Wilson",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+//   {
+//     userName: "Jaxx Sanchez",
+//     feedback:
+//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+//   },
+  
+// ];
 
+const socialMediaIcons=[
+  {name:"x",src:"/readers/x.png",href:"https://www.presidentialsummary.com/"},
+  {name:"insta",src:"/readers/insta.png",href:"https://www.presidentialsummary.com/"},
+  {name:"ln",src:"/readers/ln.png",href:"https://www.presidentialsummary.com/"},
+  {name:"tiktok",src:"/readers/tiktok.png",href:"https://www.presidentialsummary.com/"},
+  {name:"t",src:"/readers/t.png",href:"https://www.presidentialsummary.com/"},
 
-                                    <li className="py-1 text-sm">
-                                        <Link href="#" className="">Blog</Link>
-                                    </li>
-                                    <li className="py-1 text-sm">
-                                    <   Link href="#" className="">Careers</Link>
-                                    </li>
-                                    <li className="py-1 text-sm">
-                                        <Link href="#" className="">Privacy Policy</Link>
-                                    </li>
-                                    <li className="py-1 text-sm">
-                                        <Link href="#" className="">Legal</Link>
-                                    </li>
-                                    </ul>
-                                    
-                                </div>
-                         
-                            
-                                <div className="">
-                                    <ul className="flex flex-col ml-10">
-                                    <li className="text-xl font-semibold pb-4">Contact Us</li>
+]
 
-                                    <li href="#" className="py-1 text-sm">
-                                        <Link href="#" className="">info@sagravia.com</Link>
-                                    </li>
-                                    <li href="#" className="py-1 text-sm">
-                                        <Link href="#" className="">+1-2345-6789</Link>
-                                    </li>
-                                    <li href="#" className="py-1 text-sm">
-                                        <Link href="#" className="">123 Ave, New York, USA</Link>
-                                    </li>
-                                    </ul>    
-                                </div>
-                           
-                        </div>
-                    </div>
+export default function Footer() {
+  return (
+    <>
+      {/* review section */}
+    <div className="hidden lg:block bg-[#01261E]">
+        <div className="px-4 md:px-16 py-10 md:pt-20 mx-auto ">
+            {/* footer */}
+            <div className="relative bg-[#01261E]">
+              {/* Background Logo */}
+              <div className="absolute -left-16 top-4 opacity-[100%] z-10">
+                <img
+                  src="/readers/sagravia-footer-logo.png"
+                  alt="background logo"
+                  className="w-82"
+                />
+              </div>
+
+              {/* Foreground Content */}
+              <div className="py-20 flex justify-center relative z-10">
+                <img
+                  src="/readers/sagravia-big-text.png"
+                  alt="sagravia"
+                  className=" w-[100%] px-4 py-2"
+                />
+              </div>
+
+              <div className=" py-16 text-white relative z-10">
+                <div className="max-w-[1710] mx-auto flex flex-col lg:flex-row justify-between gap-10">
+                  
+                  {/* left section */}
+                  <div className="lg:w-1/2">
+                    <h2 className="text-[28px] lg:text-[36px] font-[400] mb-6">
+                      Subscribe to get tips and tactics to grow the way you want.
+                    </h2>
+                    <ReadersSubscribe />
+                  </div>
+
+                  {/* right section */}
+                  <div className="lg:w-1/2 flex flex-row justify-end text-[16px]">
+                    <div className="flex space-x-16 mr-6">
+                      <ul className="space-y-2 mr-7">
+                        <li>Blog</li>
+                        <li>Careers</li>
+                        <li>Privacy Policy</li>
+                        <li>Legal</li>
+                      </ul>
+                      <ul className="space-y-2 ">
+                        <li>About Us</li>
+                        <li>For Readers</li>
+                        <li>Advertise</li>
+                        <li>Analytics</li>
+                        <li>Contact Sales</li>
+                      </ul>
+                    </div> 
+                  </div>
                 </div>
-                <div className="text-sm text-center text-[#ffffff] py-8">
-                    <p>© 2024 Sagravia | All Rights Reserved</p>
-                </div>
+              </div>
             </div>
-        </div>
 
-        {/*  mobile footer */}
-        <div className="block lg:hidden bg-[#01261E] text-white">
-        <div className="md:px-14 py-12 ">
+              <div>
+                <div className="flex justify-end border-b pb-8">
+                  {socialMediaIcons.map((item,index)=>(
+                    <div className="px-4" key={index}>
+                      <a href={item.href}>
+                      <img
+                      src={item.src}
+                      alt={item.name}
+                      className="w-8 h-8"/>
+                      </a>
+                    </div>
+                    
+                  ))}
+                </div>
+                <div className="flex justify-center py-10">
+                  <p className="text-[14px] text-[#ffffff]">
+                  © 2024 Sagravia | All Rights Reserved
+                  </p>
+                </div>
+              </div>
+              {/* /footer */}
+       </div>
+    </div>
+    
+
+
+
+    {/* mobile view */}
+
+    <div className="block lg:hidden bg-[#01261E]">
+        <div className="px-4 md:px-16 py-10 md:pt-20 mx-auto ">
+          <div className="block lg:hidden bg-[#01261E] text-white">
+        <div className="md:px-14 pt-12 ">
                     <div className="px-4 pb-10">
                         <div className="">
                             <Link href="/">
@@ -153,21 +171,21 @@ export default function Footer(){
                             
                                 <div className="">
                                     <ul className="flex flex-col">
-                                        <li className="text-xl font-semibold pb-4">
+                                        <li className="text-[16px] font-semibold pb-4">
                                             Learn more
                                         </li>
 
 
-                                        <li className="py-1 text-sm">
+                                        <li className="py-1 text-[14px]">
                                             <Link href="#" className="">About Us</Link>
                                         </li>
-                                        <li className="py-1 text-sm">
+                                        <li className="py-1 text-[14px]">
                                             <Link href="#" className="">Readers</Link>
                                         </li>
-                                        <li className="py-1 text-sm">
+                                        <li className="py-1 text-[14px]">
                                             <Link href="#" className="">Advertise</Link>
                                         </li>
-                                        <li className="py-1 text-sm">
+                                        <li className="py-1 text-[14px]">
                                             <Link href="#" className="">Analytics</Link>
                                         </li>
                                     </ul>
@@ -177,21 +195,21 @@ export default function Footer(){
                             
                                 <div className="">
                                     <ul className="flex flex-col mr-6">
-                                    <li className="text-xl font-semibold pb-4">
+                                    <li className="text-[16px] font-semibold pb-4">
                                         More
                                     </li>
 
 
-                                    <li className="py-1 text-sm">
-                                        <Link href="#" className="">Blog</Link>
+                                    <li className="py-1 ">
+                                        <Link href="#" className="text-[14px]">Blog</Link>
                                     </li>
-                                    <li className="py-1 text-sm">
+                                    <li className="py-1 text-[14px]">
                                     <   Link href="#" className="">Careers</Link>
                                     </li>
-                                    <li className="py-1 text-sm">
+                                    <li className="py-1 text-[14px]">
                                         <Link href="#" className="">Privacy Policy</Link>
                                     </li>
-                                    <li className="py-1 text-sm">
+                                    <li className="py-1 text-[14px]">
                                         <Link href="#" className="">Legal</Link>
                                     </li>
                                     </ul>
@@ -200,17 +218,17 @@ export default function Footer(){
                          
                             </div>
 
-                            <div className="pt-8 ">
+                            <div className="pt-12 ">
                                     <ul className="flex flex-col ">
-                                    <li className="text-xl font-semibold pb-4">Contact Us</li>
+                                    <li className="text-[16px] font-semibold pb-4">Contact Us</li>
 
-                                    <li href="#" className="py-1 text-sm">
+                                    <li href="#" className="py-1 text-[14px]">
                                         <Link href="#" className="">info@sagravia.com</Link>
                                     </li>
-                                    <li href="#" className="py-1 text-sm">
+                                    <li href="#" className="py-1 text-[14px]">
                                         <Link href="#" className="">+1-2345-6789</Link>
                                     </li>
-                                    <li href="#" className="py-1 text-sm">
+                                    <li href="#" className="py-1 text-[14px]">
                                         <Link href="#" className="">123 Ave, New York, USA</Link>
                                     </li>
                                     </ul>    
@@ -219,15 +237,15 @@ export default function Footer(){
 
                     {/* social icons */}
                     <div>
-                        <div className="pt-14 px-4 flex justify-center">
-                                <div className="flex space-x-4">
+                        <div className="pt-14 px-4 flex justify-center pb-1">
+                                <div className="flex space-x-6 ">
                                     {socialMediaIcons.map((icons, index) => (
-                                        <a key={index} href={icons.url} target="_blank">
+                                        <a key={index} href={icons.href} target="_blank">
                                             <img
                                         
                                         src={icons.src}
                                         alt={icons.name}
-                                        className="w-6 h-6 hover:opacity-80 cursor-pointer"
+                                        className="w-6 h-6 cursor-pointer"
                                         />
                                         </a>
                                     ))}
@@ -238,11 +256,14 @@ export default function Footer(){
                     {/* divider */}
                     <div className="border-b px-4 py-2 mx-6"></div>
 
-                    <div className="text-xs text-center text-[#95A1BB] py-4">
+                    <div className="text-[12px] text-center text-[#95A1BB] py-4">
                         <p>© 2024 Sagravia | All Rights Reserved</p>
                     </div>
             </div>
         </div>
-        </>
-    )
+
+        </div>
+    </div>
+    </>
+  );
 }

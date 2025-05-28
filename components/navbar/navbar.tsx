@@ -44,7 +44,7 @@ function useIsDesktop() {
   return (
     <nav className="pt-16">
       {/* Desktop View */}
-      <header className="hidden lg:block bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block">
+      <header className="hidden lg:block bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block" >
         <div className="flex h-14 items-center justify-between px-8">
           <Link href="/">
             <div className="w-32 md:w-48">

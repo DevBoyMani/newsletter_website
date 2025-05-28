@@ -98,7 +98,7 @@ export default function Contact(){
         <>
         {/* desktop view */}
         <div className="hidden lg:block bg-[#FAFAFA]">
-          <div className="md:px-4 lg:pt-20 pt-10">
+          <div className="md:px-4 lg:pt-20 pt-10 ">
             {/* header */}
             <div className="">
                 <div className="flex justify-center text-[44px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E] py-4">Get in Touch With Us</div>
@@ -225,7 +225,7 @@ export default function Contact(){
                     <div className="w-[59.5%] px-12 py-10">
                         <form>
                             {/* row-1 */}
-                            <div className="flex flex-col md:flex-row gap-8 text-[#8D8D8D]">
+                            <div className="flex flex-col md:flex-row gap-8 text-[#000]">
                                 <div className="flex-1 pb-10 group focus-within:text-[#01261E]">
                                     <label className="block mb-2 text-[16px] font-[500] leading-[20px]">Full Name <span className=" text-[#EB5757]">*</span> </label>
                                     <input
@@ -253,7 +253,7 @@ export default function Contact(){
                                 </div>
 
                                 {/* Row 2*/}
-                                <div className="flex flex-col md:flex-row gap-8 text-[#8D8D8D]">
+                                <div className="flex flex-col md:flex-row gap-8 text-[#000]">
                                     <div className="flex-1 group focus-within:text-[#01261E]">
                                     <label className="block mb-2 text-[16px] font-[500] leading-[20px]">Phone Number <span className="text-[#EB5757]">*</span></label>
                                     {/* <input
@@ -500,12 +500,6 @@ export default function Contact(){
           </div>
         </div>
 
-
-
-        {/* footer */}
-        <div>
-            <Footer/>
-        </div>
         </>
     )
     

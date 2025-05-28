@@ -15,7 +15,7 @@ export default function ContactMessage({ value, onChange }) {
 
   return (
     <div className="mt-8 group focus-within:text-[#01261E]">
-      <label className="block mb-1 text-[16px] font-[500] leading-[20px] text-[#8D8D8D] transition-colors group-focus-within:text-[#01261E]">
+      <label className="block mb-1 text-[16px] font-[500] leading-[20px] text-[#000] transition-colors group-focus-within:text-[#01261E]">
         Message
       </label>
       <textarea

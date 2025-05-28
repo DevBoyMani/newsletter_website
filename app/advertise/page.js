@@ -9,7 +9,7 @@ import HeadingWithUnderline from "../../components/advertiseComponents/headingWi
 import { Link } from "lucide-react";
 import { H2Icon } from "@heroicons/react/16/solid";
 import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/advertiseFaq";
-import Footer from "../../components/footer/footer"
+
 import AdvertisePageMobileVersion from "../../components/advertisePageMobileVersion/advertisePageMobileVersion";
 import { Agdasima } from 'next/font/google';
 
@@ -330,9 +330,6 @@ export default function Advertise() {
           {/* mobile view for advertise page */}
           <div className="block lg:hidden ">
             <AdvertisePageMobileVersion/>
-          </div>
-          <div>
-            <Footer />
           </div>
 
 

@@ -40,13 +40,13 @@ export default function ViewAll() {
                 {images.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="relative w-3xs h-[230px] lg:h-[316px] xl:h-[316px] text-white lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
+                        className="group relative w-3xs h-[230px] lg:h-[316px] xl:h-[316px] text-white lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg"
                         //  className="relative w-full sm:w-[225px] lg:w-[225px] h-[280px] md:h-[306px] lg:h-[316px] text-white p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
                         style={{ backgroundColor: item.theme }}
                         onMouseEnter={() => setHoveredIndex(index)}
                         onMouseLeave={() => setHoveredIndex(null)}
                     >
-                        <h2 className="text-sm lg:px-4 px-2 mt-2">{item.name}</h2>
+                        <h2 className="text-sm lg:px-3 px-2 mt-2">{item.name}</h2>
                          {/* Mobile Content */}
                         <div className="block lg:hidden px-2 flex-grow min-h-[160px] max-h-[230px]">
                             <div className="mt-3">
@@ -67,24 +67,25 @@ export default function ViewAll() {
                             </div>
                         </div>
                         <motion.div
-                            className="hidden lg:block absolute left-1/2 -translate-x-1/2 w-full px-4"
-                            animate={{ bottom: hoveredIndex === index ? "2rem" : "1rem" }}
-                            initial={{ bottom: "1rem" }}
-                            transition={{ duration: 0.4, ease: "easeInOut" }}
+                            className="group relative hidden lg:block left-1/2 -translate-x-1/2 w-full "
+                            
+                            
                         >
-                            <div className="hidden lg:block pb-2">
-                                <h3 className="text-lg font-semibold px-4">{item.title}</h3>
-                                <p className="text-sm text-gray-300 px-4">{item.experience}</p>
+                            <div className="group-hover:hidden hidden lg:block pb-2">
+                                <h3 className="text-lg font-semibold px-3">{item.title}</h3>
+                                <p className="text-sm text-gray-300 px-3">{item.experience}</p>
                             </div>
                             {hoveredIndex === index && (
                                 <motion.div 
                                     className="mt-4 text-sm text-white"
-                                    initial={{ opacity: 0, y: 10 }}
+                                    initial={{ opacity: 1, y: 100 }}
                                     animate={{ opacity: 1, y: 0 }}
                                     exit={{ opacity: 0, y: 10 }}
                                     transition={{ duration: 0.4, ease: "easeOut" }}
                                 >
-                                    <p className="px-4">{item.content}</p>
+                                    <h3 className="text-lg font-semibold px-3">{item.title}</h3>
+                                <p className="text-sm text-gray-300 px-3">{item.experience}</p>
+                                    <p className="px-3">{item.content}</p>
                                     <div className="px-3">
                                         <button
                                             onClick={() => handleImageClick(index)}
