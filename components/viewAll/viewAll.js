@@ -10,7 +10,7 @@ export default function ViewAll() {
     const [isMobile,setIsMobile] = useState(null);
 
     const toggleSection = (section) => {
-        setActiveSection(activeSection === section ? null : section);
+        setActiveSection(activeSection === section ? 1 : section);
     };
 
     const images = [

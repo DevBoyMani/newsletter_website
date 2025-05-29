@@ -4,7 +4,7 @@ export default function ReadersNewsletters() {
   const datas = [
     {
       headerButton: "Subscribe",
-      image: "/readers/ps.png",
+      image: "/readers/n-ps.png",
       topic: "News",
       when: "weekly",
       heading: "Presidential Summary",
@@ -14,7 +14,7 @@ export default function ReadersNewsletters() {
     },
     {
       headerButton: "Subscribe",
-      image: "/readers/ps.png",
+      image: "/readers/n-gs.png",
       topic: "News",
       when: "weekly",
       heading: "Geopolitical Summary",
@@ -24,7 +24,7 @@ export default function ReadersNewsletters() {
     },
     {
       headerButton: "Subscribe",
-      image: "/readers/ps.png",
+      image: "/readers/n-bh.png",
       topic: "News",
       when: "weekly",
       heading: "Business History",
@@ -34,7 +34,7 @@ export default function ReadersNewsletters() {
     },
     {
       headerButton: "Subscribe",
-      image: "/readers/ps.png",
+      image: "/readers/n-ms.png",
       topic: "News",
       when: "weekly",
       heading: "Movie Suggestions",
@@ -44,7 +44,7 @@ export default function ReadersNewsletters() {
     },
     {
       headerButton: "Subscribe",
-      image: "/readers/ps.png",
+      image: "/readers/n-ls.png",
       topic: "News",
       when: "weekly",
       heading: "Long and Short",
@@ -54,7 +54,7 @@ export default function ReadersNewsletters() {
     },
     {
       headerButton: "Subscribe",
-      image: "/readers/ps.png",
+      image: "/readers/n-ps.png",
       topic: "News",
       when: "weekly",
       heading: "Dubai Summary",
@@ -122,7 +122,7 @@ export default function ReadersNewsletters() {
             {datas.map((data, index) => (
               <div
                 key={index}
-                className="group/card flex flex-col items-start transition-all duration-300"
+                className="group/card flex flex-col items-start transition-all duration-300 cursor-pointer"
               >
                 {/* Image wrapper with relative positioning */}
                 <div className="w-full max-h-[276px] relative">
@@ -140,9 +140,9 @@ export default function ReadersNewsletters() {
                       +
                     </span>
                   </button> */}
-                  <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[40px] group-hover/card:w-[120px] px-4">
+                  <button className="absolute top-4 left-4 bg-[#FFF] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[40px] group-hover/card:w-[120px] px-4 hover:bg-[#01261E] hover:text-[#fff]">
                     {/* Subscribe text only on hover */}
-                    <span className="text-[14px] hidden group-hover/card:inline-block transition-all duration-300 ease-in-out">
+                    <span className="text-[14px] hidden group-hover/card:inline-block transition-all duration-300 ease-in-out ">
                       Subscribe&nbsp;
                     </span>
 
