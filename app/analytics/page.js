@@ -49,9 +49,11 @@ export default function Analytics() {
             </div>
             <div className="w-[80%] mx-0 text-black pt-4 flex justify-between border-t border-[#121212]">
               <h3 className="text-[13px] py-1">Interested to advertise?</h3>
-              <a className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
-                Contact Us
-              </a>
+              <Link href="/contact"
+                 className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
+                  Contact Us
+              
+              </Link>
             </div>
           </div>
         </div>

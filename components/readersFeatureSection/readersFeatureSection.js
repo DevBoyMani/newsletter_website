@@ -103,7 +103,7 @@ const handleClick = (index) => {
 
     // Wait for scrollIntoView to finish, then apply offset
     setTimeout(() => {
-      window.scrollBy({ top: offset, behavior: 'smooth' });
+      window.scrollBy({ behavior: 'smooth' });
 
       // Give a buffer before re-enabling intersection sync
       setTimeout(() => {
@@ -116,7 +116,7 @@ const handleClick = (index) => {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] px-4 md:px-28 pb-10 mx-auto">
+      <div className="bg-[#FAFAFA] px-4 md:px-28 w-[55%]">
       <p className="text-black md:text-[16px] ">
                 Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.
 

@@ -17,7 +17,7 @@ export default function ReadersNewsletters() {
       image: "/readers/ps.png",
       topic: "News",
       when: "weekly",
-      heading: "Presidential Summary",
+      heading: "Geopolitical Summary",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
@@ -27,7 +27,7 @@ export default function ReadersNewsletters() {
       image: "/readers/ps.png",
       topic: "News",
       when: "weekly",
-      heading: "Presidential Summary",
+      heading: "Business History",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
@@ -37,7 +37,7 @@ export default function ReadersNewsletters() {
       image: "/readers/ps.png",
       topic: "News",
       when: "weekly",
-      heading: "Presidential Summary",
+      heading: "Movie Suggestions",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
@@ -47,25 +47,74 @@ export default function ReadersNewsletters() {
       image: "/readers/ps.png",
       topic: "News",
       when: "weekly",
-      heading: "Presidential Summary",
+      heading: "Long and Short",
+      paragraph:
+        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+      footerButton: "Learn More",
+    },
+    {
+      headerButton: "Subscribe",
+      image: "/readers/ps.png",
+      topic: "News",
+      when: "weekly",
+      heading: "Dubai Summary",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
     },
   ];
+
+  const information =[
+    {
+      id:1,
+      image:"/readers/6.png",
+      width:"30%",
+      height:"47px",
+      content:"Newsletters"
+    },
+    {
+      id:2,
+      image:"/readers/10.png",
+      width:"42%",
+      height:"47px",
+      content:"new subscribers sign up per week"
+    },
+    {
+      id:3,
+      image:"/readers/20.png",
+      width:"30%",
+      height:"47px",
+      content:"of subscribers open our news briefing every day."
+    },
+  ]
   return (
     <>
       <div className="bg-[#FAFAFA]">
-        <div className="px-4 md:px-28">
+        <div className="px-4 md:px-28 w-[55%]">
           <p className="text-[#000] font-Manrope text-16px font-[400]">
-            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
-            sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
-            auctor id libero. Interdum et malesuada fames ac ante ipsum primis
-            in faucibus. Sed eu nulla felis. Quisque eget viverra massa. Donec
-            posuere, sapien vel facilisis dictum, turpis mi tempus mauris, in
-            ullamcorper libero turpis sed mauris. Nulla eu blandit nunc, ut
-            suscipit dolor. Quisque dictum pellentesque tellus sed porta.
+            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et, auctor id libero. Interdum et malesuada fames ac ante ipsum primis in faucibus.Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget sollicitudin odio. Maecenas tellus sem, fermentu. <span className="text-[#C7A262] hover:underline"><a href="/contact">Reach out sales team →</a></span>
           </p>
+        </div>
+
+       {/* information */}
+        <div className="px-4 md:px-28 pt-20 pb-10">
+        <div className="flex justify-between items-start">
+          {information.map((item,index)=>(
+            <div 
+            key={index}
+            className="flex flex-col items-start text-center" 
+            >
+            <img
+                    src={item.image}
+                    alt={item.content}
+                    style={{ width: item.width, height: item.height }}
+                    className="object-contain"
+                  />
+            <span className="text-[20px] text-[#000] font-[600] leading-[152%]">{item.content}</span>
+            </div>
+          ))}
+
+        </div>
         </div>
 
         <div className="px-4 md:px-28 py-10 ">
@@ -83,14 +132,26 @@ export default function ReadersNewsletters() {
                     className="w-full h-full object-cover rounded-t-lg"
                   />
 
-                  <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[120px] group-hover/card:w-[40px] group-hover/card:h-[40px] px-4">
+                  {/* <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[120px] group-hover/card:w-[40px] group-hover/card:h-[40px] px-4">
                     <span className="text-[14px] group-hover/card:hidden flex items-center gap-2">
                       Subscribe <span className="text-2xl pb-1">+</span>
                     </span>
                     <span className="text-2xl pb-1 hidden group-hover/card:block">
                       +
                     </span>
+                  </button> */}
+                  <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[40px] group-hover/card:w-[120px] px-4">
+                    {/* Subscribe text only on hover */}
+                    <span className="text-[14px] hidden group-hover/card:inline-block transition-all duration-300 ease-in-out">
+                      Subscribe&nbsp;
+                    </span>
+
+                    {/* "+" icon always visible */}
+                    <span className="text-2xl pb-1 transition-all duration-300 ease-in-out">
+                      +
+                    </span>
                   </button>
+
                 </div>
 
                 {/* Card content */}
@@ -111,7 +172,7 @@ export default function ReadersNewsletters() {
                     {data.paragraph}
                   </div>
                   <div className="mt-4">
-                    <button className=" border border-[#01261E] flex items-center justify-between w-[60%] py-2 px-4 rounded-full hover:bg-[#01261E] hover:text-white text-[#01261E]">
+                    <button className=" border border-[#01261E] flex items-center justify-between w-[60%] py-2 px-4 rounded-full hover:bg-[#0B4337] text-white text bg-[#01261E]">
                       <span className="font-[400] text-[13px]">
                         {data.footerButton}
                       </span>
