@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect } from "react";
 import FeatureLeftSidebar from "../featureLeftSidebar/featureLeftSidebar";
 import FeatureRightSide from "../featureRightSide/featureRightSide";
-import TestedTabs from "../testedTabs/TestedTabs";
+
 import ScrollSyncTabs from "../scrollSyncTabs/ScrollSyncTabs";
 
 const sections = [
