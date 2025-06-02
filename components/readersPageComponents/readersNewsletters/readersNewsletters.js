@@ -126,56 +126,35 @@ export default function ReadersNewsletters() {
                 className="group/card flex flex-col items-start transition-all duration-300 cursor-pointer"
               >
                 {/* Image wrapper with relative positioning */}
-                <div className="w-full max-h-[276px] relative">
-                  <img
-                    src={data.image}
-                    alt={data.heading}
-                    className="w-full h-full object-cover rounded-t-[15px]"
-                  />
+                <div className="w-full relative  mx-auto">
+  <img
+    src={data.image}
+    alt={data.heading}
+    className="w-full h-full object-cover rounded-t-[15px]"
+  />
+  <div className="group/card">
+    <button
+      className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[30px] 
+                 overflow-hidden transition-all duration-700 ease-in-out flex items-center 
+                 w-[30px] group-hover/card:w-[110px]"
+    >
+      <span
+        className="text-2xl pb-1 pr-0 transition-all duration-700 ease-in-out 
+                   order-1 group-hover/card:order-2 group-hover/card:ml-2 mx-2 group-hover/card:px-0"
+      >
+        +
+      </span>
+      <span
+        className="text-[14px] whitespace-nowrap opacity-0 max-w-[110px] overflow-hidden 
+                   group-hover/card:opacity-100 group-hover/card:max-w-[110px] 
+                   transition-all duration-700 ease-in-out ml-0 group-hover/card:px-2"
+      >
+        Subscribe
+      </span>
+    </button>
+  </div>
+</div>
 
-
-                  {/* <button className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[40px] group-hover/card:w-[120px] px-4">
-                 
-                    <span className="text-[14px] hidden group-hover/card:inline-block transition-all duration-300 ease-in-out ">
-                      Subscribe&nbsp;
-                    </span>
-
-              
-                    <span className="text-2xl pb-1 transition-all duration-300 ease-in-out">
-                      +
-                    </span>
-                  </button> */}
-
-                 <div className="group/card ">
-                    <button
-                      className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[30px] 
-                                overflow-hidden transition-all duration-700 ease-in-out flex items-center 
-                                w-[30px] group-hover/card:w-[110px]"
-                    >
-                      {/* "+" icon - always visible, starts with some right margin, moves to end on hover */}
-                      <span
-                        className="text-2xl pb-1 pr-0 transition-all duration-700 ease-in-out 
-                                  order-1 group-hover/card:order-2 group-hover/card:ml-2 mx-2 group-hover/card:px-0"
-                      >
-                        +
-                      </span>
-
-                      {/* "Subscribe" text - hidden by default with zero width, visible with gap on hover */}
-                      <span
-                        className="text-[14px] whitespace-nowrap opacity-0 max-w-[110px] overflow-hidden 
-                                  group-hover/card:opacity-100 group-hover/card:max-w-[110px] 
-                                  transition-all duration-700 ease-in-out ml-0 group-hover/card:px-2"
-                      >
-                        Subscribe
-                      </span>
-                    </button>
-                  </div>
-
-
-
-
-
-                </div>
 
                 {/* Card content */}
                 <div className=" w-full border px-8 rounded-b-[15px] py-4 font-Manrope">
