@@ -134,24 +134,26 @@ export default function ReadersNewsletters() {
   />
   <div className="group/card">
     <button
-      className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[30px] 
-                 overflow-hidden transition-all duration-700 ease-in-out flex items-center 
-                 w-[30px] group-hover/card:w-[110px]"
-    >
-      <span
-        className="text-2xl pb-1 pr-0 transition-all duration-700 ease-in-out 
-                   order-1 group-hover/card:order-2 group-hover/card:ml-2 mx-2 group-hover/card:px-0"
-      >
-        +
-      </span>
-      <span
-        className="text-[14px] whitespace-nowrap opacity-0 max-w-[110px] overflow-hidden 
-                   group-hover/card:opacity-100 group-hover/card:max-w-[110px] 
-                   transition-all duration-700 ease-in-out ml-0 group-hover/card:px-2"
-      >
-        Subscribe
-      </span>
-    </button>
+  className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[30px] 
+             overflow-hidden transition-all duration-700 ease-in-out flex items-center 
+             w-[30px] group-hover/card:w-[110px]"
+>
+  <span
+    className="text-2xl pb-1 pr-1 transition-all duration-700 ease-in-out 
+               order-1 group-hover/card:order-2 group-hover/card:ml-2 
+               translate-x-[-2.5px] group-hover/card:translate-x-0"
+  >
+    +
+  </span>
+  <span
+    className="text-[14px] whitespace-nowrap opacity-0 max-w-[110px] overflow-hidden 
+               group-hover/card:opacity-100 group-hover/card:max-w-[110px] 
+               transition-all duration-700 ease-in-out ml-1 group-hover/card:px-2"
+  >
+    Subscribe
+  </span>
+</button>
+
   </div>
 </div>
 
