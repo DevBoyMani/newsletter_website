@@ -62,9 +62,9 @@ const socialMediaIcons=[
 export default function Footer() {
   return (
     <>
-      {/* review section */}
+      {/* desktop view*/}
     <div className="hidden lg:block bg-[#01261E]">
-        <div className="px-4 md:px-16 py-10 md:pt-20 mx-auto ">
+        <div className="px-4 md:px-16 mx-auto ">
             {/* footer */}
             <div className="relative bg-[#01261E]">
               {/* Background Logo */}
@@ -77,11 +77,11 @@ export default function Footer() {
               </div>
 
               {/* Foreground Content */}
-              <div className="py-20 flex justify-center relative z-10">
+              <div className="py-20 flex justify-center relative z-10 ">
                 <img
                   src="/readers/sagravia-big-text.png"
                   alt="sagravia"
-                  className=" w-[100%] px-4 py-2"
+                  className=" w-[97%] px-4 py-2"
                 />
               </div>
 

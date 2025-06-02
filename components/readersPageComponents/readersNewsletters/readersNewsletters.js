@@ -4,20 +4,30 @@ export default function ReadersNewsletters() {
   const datas = [
     {
       headerButton: "Subscribe",
-      image: "/readers/n-ps.png",
+      image: "/readers/n-gs.png",
       topic: "News",
       when: "weekly",
-      heading: "Presidential Summary",
+      heading: "Geopolitical Summary",
+      paragraph:
+      "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+      footerButton: "Learn More",
+    },
+    {
+      headerButton: "Subscribe",
+      image: "/readers/n-ms.png",
+      topic: "News",
+      when: "weekly",
+      heading: "Movie Suggestions",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
     },
     {
       headerButton: "Subscribe",
-      image: "/readers/n-gs.png",
+      image: "/readers/n-ps.png",
       topic: "News",
       when: "weekly",
-      heading: "Geopolitical Summary",
+      heading: "Presidential Summary",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
@@ -32,16 +42,7 @@ export default function ReadersNewsletters() {
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
     },
-    {
-      headerButton: "Subscribe",
-      image: "/readers/n-ms.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Movie Suggestions",
-      paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      footerButton: "Learn More",
-    },
+    
     {
       headerButton: "Subscribe",
       image: "/readers/n-ls.png",
@@ -129,33 +130,55 @@ export default function ReadersNewsletters() {
                   <img
                     src={data.image}
                     alt={data.heading}
-                    className="w-full h-full object-cover rounded-t-lg"
+                    className="w-full h-full object-cover rounded-t-[15px]"
                   />
 
-                  {/* <button className="absolute top-4 left-4 bg-[#FFFFFFB3] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[120px] group-hover/card:w-[40px] group-hover/card:h-[40px] px-4">
-                    <span className="text-[14px] group-hover/card:hidden flex items-center gap-2">
-                      Subscribe <span className="text-2xl pb-1">+</span>
-                    </span>
-                    <span className="text-2xl pb-1 hidden group-hover/card:block">
-                      +
-                    </span>
-                  </button> */}
-                  <button className="absolute top-4 left-4 bg-[#FFF] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[40px] group-hover/card:w-[120px] px-4 hover:bg-[#01261E] hover:text-[#fff]">
-                    {/* Subscribe text only on hover */}
+
+                  {/* <button className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[40px] overflow-hidden transition-all duration-300 ease-in-out flex items-center justify-center w-[40px] group-hover/card:w-[120px] px-4">
+                 
                     <span className="text-[14px] hidden group-hover/card:inline-block transition-all duration-300 ease-in-out ">
                       Subscribe&nbsp;
                     </span>
 
-                    {/* "+" icon always visible */}
+              
                     <span className="text-2xl pb-1 transition-all duration-300 ease-in-out">
                       +
                     </span>
-                  </button>
+                  </button> */}
+
+                 <div className="group/card ">
+                    <button
+                      className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[30px] 
+                                overflow-hidden transition-all duration-700 ease-in-out flex items-center 
+                                w-[30px] group-hover/card:w-[110px]"
+                    >
+                      {/* "+" icon - always visible, starts with some right margin, moves to end on hover */}
+                      <span
+                        className="text-2xl pb-1 pr-0 transition-all duration-700 ease-in-out 
+                                  order-1 group-hover/card:order-2 group-hover/card:ml-2 mx-2 group-hover/card:px-0"
+                      >
+                        +
+                      </span>
+
+                      {/* "Subscribe" text - hidden by default with zero width, visible with gap on hover */}
+                      <span
+                        className="text-[14px] whitespace-nowrap opacity-0 max-w-[110px] overflow-hidden 
+                                  group-hover/card:opacity-100 group-hover/card:max-w-[110px] 
+                                  transition-all duration-700 ease-in-out ml-0 group-hover/card:px-2"
+                      >
+                        Subscribe
+                      </span>
+                    </button>
+                  </div>
+
+
+
+
 
                 </div>
 
                 {/* Card content */}
-                <div className=" w-full border px-4 rounded-b-lg py-4 font-Manrope">
+                <div className=" w-full border px-8 rounded-b-[15px] py-4 font-Manrope">
                   <div className="relative h-6 overflow-hidden">
                     <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-0 group-hover/card:-translate-y-6 text-[13px] text-[#000000a8]">
                       {data.topic}
@@ -165,10 +188,10 @@ export default function ReadersNewsletters() {
                     </span>
                   </div>
 
-                  <div className="text-[22px] text-[#2C2C2C]">
+                  <div className="text-[22px] text-[#2C2C2C] font-[600] leading-[101.19%]">
                     {data.heading}
                   </div>
-                  <div className="w-[85%] text-[15px] font-[400] text-[#5A5A5A] mt-2">
+                  <div className=" text-[15px] font-[400] text-[#5A5A5A] mt-6 leading-[166%]">
                     {data.paragraph}
                   </div>
                   <div className="mt-4">
@@ -187,7 +210,7 @@ export default function ReadersNewsletters() {
                         strokeLinejoin="round"
                         className="w-[30px] h-[28px]"
                       >
-                        <line x1="10" y1="16" x2="50" y2="16" />
+                        <line x1="16" y1="16" x2="50" y2="16" />
                         <polyline points="42 6 54 16 42 26" />
                       </svg>
 
