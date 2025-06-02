@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import { motion } from "framer-motion";
+import { AnimatePresence, motion } from "framer-motion";
 import { ChevronUp, ChevronDown } from "lucide-react";
 
 export default function ViewAll() {
@@ -40,7 +40,7 @@ export default function ViewAll() {
                 {images.map((item, index) => (
                     <motion.div
                         key={index}
-                        className="group relative w-3xs h-[230px] lg:h-[316px] xl:h-[316px] text-white lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg"
+                        className="group relative w-3xs h-[230px] lg:h-[316px] xl:h-[316px] text-white lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg cursor-pointer"
                         //  className="relative w-full sm:w-[225px] lg:w-[225px] h-[280px] md:h-[306px] lg:h-[316px] text-white p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
                         style={{ backgroundColor: item.theme }}
                         onMouseEnter={() => setHoveredIndex(index)}
@@ -66,37 +66,46 @@ export default function ViewAll() {
                             </div>
                             </div>
                         </div>
-                        <motion.div
-                            className="group relative hidden lg:block left-1/2 -translate-x-1/2 w-full "
-                            
-                            
-                        >
-                            <div className="group-hover:hidden hidden lg:block pb-2">
-                                <h3 className="text-lg font-semibold px-3">{item.title}</h3>
-                                <p className="text-sm text-gray-300 px-3">{item.experience}</p>
-                            </div>
-                            {hoveredIndex === index && (
-                                <motion.div 
-                                    className="mt-4 text-sm text-white"
-                                    initial={{ opacity: 1, y: 100 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    exit={{ opacity: 0, y: 10 }}
-                                    transition={{ duration: 0.4, ease: "easeOut" }}
-                                >
-                                    <h3 className="text-lg font-semibold px-3">{item.title}</h3>
-                                <p className="text-sm text-gray-300 px-3">{item.experience}</p>
-                                    <p className="px-3">{item.content}</p>
-                                    <div className="px-3">
-                                        <button
-                                            onClick={() => handleImageClick(index)}
-                                            className="relative w-full bg-white/25 text-white py-2 mt-4 rounded-lg"
-                                        >
-                                            {item.button}
-                                        </button>
-                                    </div>
-                                </motion.div>
-                            )}
-                        </motion.div>
+                        
+                       <motion.div
+  className="group relative hidden lg:block left-1/2 -translate-x-1/2 w-full"
+  onMouseEnter={() => setHoveredIndex(index)}
+  onMouseLeave={() => setHoveredIndex(null)}
+  layout
+>
+  {/* Always visible: Title and Role */}
+  <motion.div layout className="pb-2">
+    <h3 className="text-lg font-semibold px-3">{item.title}</h3>
+    <p className="text-sm text-gray-300 px-3">{item.experience}</p>
+  </motion.div>
+
+  {/* Revealed only on hover: More content */}
+  <AnimatePresence initial={false}>
+    {hoveredIndex === index && (
+      <motion.div
+        key="hoverContent"
+        className="overflow-hidden text-sm text-white"
+        initial={{ opacity: 1, height: 0, y: -10 }}
+        animate={{ opacity: 1, height: 'auto', y: 0 }}
+        exit={{ opacity: 1, height: 0, y: -10 }}
+        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        layout
+      >
+        <p className="px-3">{item.content}</p>
+        <div className="px-3">
+          <button
+            onClick={() => handleImageClick(index)}
+            className="relative w-full bg-white/25 text-white py-2 mt-4 rounded-lg"
+          >
+            {item.button}
+          </button>
+        </div>
+      </motion.div>
+    )}
+  </AnimatePresence>
+</motion.div>
+
+
                     </motion.div>
                 ))}
             </div>

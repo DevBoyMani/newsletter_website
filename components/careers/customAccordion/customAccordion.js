@@ -1,7 +1,7 @@
 "use client";
 
 import { ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
 const accordionData = [
@@ -12,8 +12,8 @@ const accordionData = [
   { id: "item-5", title: "Offer time", content: "You're now just a signature away from joining the greatest team", step: 5 },
 ];
 
-export default function CustomAccordion() {
-  const [openItemDesktop, setOpenItemDesktop] = useState(accordionData[1].id);
+export default function CustomAccordion({ onStepChange }) {
+  const [openItemDesktop, setOpenItemDesktop] = useState(accordionData[0].id);
   const [openItemMobile, setOpenItemMobile] = useState(accordionData[0].id);
   const [direction, setDirection] = useState("next");
 
@@ -52,6 +52,10 @@ export default function CustomAccordion() {
       }),
     };
 
+    useEffect(() => {
+  onStepChange?.(currentItem?.step);
+}, [currentItem?.id]);
+
 
   return (
     <>
@@ -60,11 +64,15 @@ export default function CustomAccordion() {
         {accordionData.map((item) => (
           <div
             key={item.id}
-            className={`rounded-lg transition ${openItemDesktop === item.id ? "bg-white shadow-lg" : "bg-[#DAEBE8] shadow-lg"}`}
+            className={`rounded-lg transition ${openItemDesktop === item.id ? "bg-white " : "bg-white"}`}
           >
             <div
               className="px-4 py-3 rounded-lg text-lg font-medium cursor-pointer transition"
-              onClick={() => setOpenItemDesktop(openItemDesktop === item.id ? null : item.id)}
+              // onClick={() => setOpenItemDesktop(openItemDesktop === item.id ? null : item.id)}
+              onClick={() => {
+                setOpenItemDesktop(openItemDesktop === item.id ? null : item.id);
+                onStepChange?.(item.step); // Notify parent
+              }}
             >
               {openItemDesktop === item.id ? (
                 <div className="flex justify-between">

@@ -44,11 +44,23 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   );
 };
 
+ const steps =[
+    {id:1,source:"/careers/step-1.png",name:"step-1"},
+    {id:2,source:"/careers/step-2.png",name:"step-2"},
+    {id:3,source:"/careers/step-3.png",name:"step-3"},
+    {id:4,source:"/careers/step-4.png",name:"step-4"},
+    {id:5,source:"/careers/step-5.png",name:"step-5"},
+  ]
+
 const Careers = () => {
   const [activeTab, setActiveTab] = useState(0);
 
    const [hoverIndexDo, setHoverIndexDo] = useState(null);
   const [hoverIndexDont, setHoverIndexDont] = useState(null);
+    const [activeStepImage, setActiveStepImage] = useState(steps?.[0] || null);
+
+
+
 
   const testimonials = [
     { name: "View All", component: <ViewAll/> },
@@ -151,6 +163,13 @@ const Careers = () => {
   ]
 
 
+
+
+  const handleStepChange = (stepNumber) => {
+  const selected = steps.find((s) => s.id === stepNumber);
+  setActiveStepImage(selected);
+};
+
   return (
     <div className="">
       <div className="md:px-28 px-4 lg:pt-20 pt-10 mx-auto ">
@@ -186,22 +205,43 @@ const Careers = () => {
       </div>
 
       {/* faq */}
-      <div className="py-10  md:px-28">
-        <div className="flex flex-col md:flex-row justify-between">
-          <div className="md:w-[46%] lg:py-0 pb-14">
-            <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%]">
-              How do we work with your application?
+      <div className="py-10  md:px-28 flex justify-end">
+        <div className="md:w-[47%] lg:py-0 pb-14 ">
+            <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] text-right">
+              How do we work with <br/>your application?
             </div>
           </div>
-
-          <div className="md:w-[47.5%] ">
-            <div className="text-black ">
-            <CustomAccordion/>
-            </div>
-          </div>
-        </div>
       </div>
-      
+
+      <div className="py-10 md:px-28">
+  <div className="flex flex-col md:flex-row justify-between">
+
+    {/* Left side – Image */}
+        <div className="md:w-[46%] lg:py-0 pb-8">
+        {activeStepImage ? (
+          <img
+            src={activeStepImage.source}
+            alt={activeStepImage.name}
+             className="w-[86%] mt-[-80px]"
+             style={{ maxHeight: '80vh', objectFit: 'contain' }}
+          />
+        ) : (
+          <div className="text-gray-400 text-center italic">
+            Click a step to see preview
+          </div>
+        )}
+      </div>
+
+
+      {/* Right side – Accordion */}
+      <div className="md:w-[47.5%]">
+        <CustomAccordion onStepChange={handleStepChange} />
+
+      </div>
+
+  </div>
+</div>
+
       <div>
 
         {/* desktop view */}
