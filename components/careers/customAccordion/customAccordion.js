@@ -6,14 +6,14 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const accordionData = [
   { id: "item-1", title: "Recruitment team chat", content: "Help us get to know you beyond your CV", step: 1 },
-  { id: "item-2", title: "Team member interview", content: "Help your new team understand your field of knowledge", step: 2 },
+  { id: "item-2", title: "Team member interview", content: "Help your new team understand your field of knowledge Help your new team understand your field of knowledgeHelp your new team understand your field of knowledge", step: 2 },
   { id: "item-3", title: "Technical exercise", content: "Put your skills to the test and show us how you shine.", step: 3 },
   { id: "item-4", title: "Leadership chat", content: "Help us get to know you beyond your CV", step: 4 },
   { id: "item-5", title: "Offer time", content: "You're now just a signature away from joining the greatest team", step: 5 },
 ];
 
 export default function CustomAccordion({ onStepChange }) {
-  const [openItemDesktop, setOpenItemDesktop] = useState(accordionData[0].id);
+  const [openItemDesktop, setOpenItemDesktop] = useState(accordionData[1].id);
   const [openItemMobile, setOpenItemMobile] = useState(accordionData[0].id);
   const [direction, setDirection] = useState("next");
 
@@ -36,6 +36,7 @@ export default function CustomAccordion({ onStepChange }) {
   };
 
   const currentItem = accordionData.find((item) => item.id === openItemMobile);
+   const currentItemD = accordionData.find((item) => item.id === openItemDesktop);
 
       const swipeVariants = {
       enter: (direction) => ({
@@ -53,8 +54,15 @@ export default function CustomAccordion({ onStepChange }) {
     };
 
     useEffect(() => {
-  onStepChange?.(currentItem?.step);
-}, [currentItem?.id]);
+  onStepChange?.(currentItemD?.step);
+}, [currentItemD?.id]);
+
+
+// this is for mobile useEffect
+
+//  useEffect(() => {
+//   onStepChange?.(currentItem?.step);
+// }, [currentItem?.id]);
 
 
   return (
@@ -74,23 +82,51 @@ export default function CustomAccordion({ onStepChange }) {
                 onStepChange?.(item.step); // Notify parent
               }}
             >
-              {openItemDesktop === item.id ? (
+              {/* {openItemDesktop === item.id ? (
                 <div className="flex justify-between">
                   <div>
                     <div className="pb-4">
                       <span className="px-3 py-1 text-[11px] text-[#048B65] bg-[#D6FFEC] rounded-[23px] font-[600] leading-[104%]">Step {item.step}</span>
                     </div>
-                    <h4 className="text-[22px] text-[#01261E] font-[600] leading-[104%]">{item.title}</h4>
-                    <p className="text-[15px] text-[#12121299] py-2 font-[600] leading-[104%]">{item.content}</p>
+                    <h4 className="text-[20px] text-[#01261E] font-[500] leading-[104%]">{item.title}</h4>
+                    <p className="max-w-[90%] text-[15px] text-[#12121299] py-2 font-[400] leading-[104%]">{item.content}</p>
                   </div>
-                  <ChevronUp className="w-6 h-6 transition-transform duration-300" />
+                  <ChevronUp className="w-6 h-6 transition-transform duration-300 mr-8" />
                 </div>
               ) : (
-                <div className="flex justify-between items-center">
-                  <h2 className="text-[22px] text-[#01261E] font-[600] leading-[104%] py-4">{item.title}</h2>
+                <div className="flex justify-between items-center mr-8">
+                  <h2 className="text-[20px] text-[#01261E] font-[500] leading-[104%] py-4">{item.title}</h2>
                   <ChevronDown className="w-6 h-6 transition-transform duration-300" />
                 </div>
-              )}
+              )} */}
+              {openItemDesktop === item.id ? (
+                  <div className="flex justify-between items-start w-full gap-4">
+                    <div className="w-full max-w-[80%]">
+                      <div className="pb-4">
+                        <span className="px-3 py-1 text-[11px] text-[#048B65] bg-[#D6FFEC] rounded-[23px] font-[600] leading-[104%]">
+                          Step {item.step}
+                        </span>
+                      </div>
+                      <h4 className="text-[20px] text-[#01261E] font-[500] leading-[104%]">
+                        {item.title}
+                      </h4>
+                      <p className="text-[15px] text-[#12121299] py-2 font-[400] leading-[104%]">
+                        {item.content}
+                      </p>
+                    </div>
+                    <div className="shrink-0">
+                      <ChevronUp className="w-6 h-6 transition-transform duration-300 mr-8" />
+                    </div>
+                  </div>
+                ) : (
+                  <div className="flex justify-between items-center w-full ">
+                      <h2 className="text-[20px] text-[#01261E] font-[500] leading-[104%] py-4">
+                      {item.title}
+                    </h2>
+                    <ChevronDown className="w-6 h-6 transition-transform duration-300 mr-8" />
+                  </div>
+                )}
+
             </div>
           </div>
         ))}
