@@ -1,5 +1,6 @@
 "use client"
-import React, { useState, useRef } from "react";
+
+import { useEffect, useRef, useState } from "react";
 import ViewAll from "../../components/viewAll/viewAll";
 import Leadership from "../../components/leadership/leadership";
 import Others from "../../components/others/others";
@@ -73,41 +74,36 @@ const Careers = () => {
     { name: "Others", component: <Others /> }
   ];
 
-  const [selectedImage, setSelectedImage] = useState({
-    id: 1,
-    smallSrc: "/careers/p-1-small.png",
-    fullSrc: "/careers/p-1-full.png",
-    text: "Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.",
-    name: "Martine",
-    role: "COO",
-  });
+ 
 
   const images = [
     {
       id: 1,
-      smallSrc: "/careers/p-1-small.png",
-      fullSrc: "/careers/p-1-full.png",
+      smallSrc: "/careers/coo.png",
+      fullSrc: "/careers/coo-full.png",
       text: "Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.",
       name: "Martine",
       role: "COO",
     },
     {
       id: 2,
-      smallSrc: "/careers/p-2-small.png",
-      fullSrc: "/careers/p-2-full.png",
-      text: "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour.",
+      smallSrc: "/careers/ceo.png",
+      fullSrc: "/careers/ceo-full.png",
+      text: "“Our approach is to stay lean and adaptable, allowing us to swiftly address challenges and seize opportunities in our quest for global reach.“",
       name: "Alan",
       role: "CEO",
     },
     {
       id: 3,
-      smallSrc: "/careers/p-3-small.png",
-      fullSrc: "/careers/p-3-full.png",
-      text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.",
+      smallSrc: "/careers/cto.png",
+      fullSrc: "/careers/cto-full.png",
+      text: "Developing and implementing a technology strategy that aligns with the company's overall business goals.",
       name: "Mark",
       role: "CTO",
     },
   ];
+
+   const [selectedImage, setSelectedImage] = useState(images[2]);
 
   const whatWeDo = [
     {
@@ -162,13 +158,59 @@ const Careers = () => {
     },
   ]
 
+const whatWeOfferCol1=[
+  {id:1,logo:"/careers/supportive.png",heading:"Supportive and collaborative environment",content:"We believe the best ideas come from teamwork. Everyone is encouraged to share their thoughts, and contributions are recognized and celebrated."},
+  {id:2,logo:"/careers/trust.png",heading:"We trust our employees",content:"We trust our employees to deliver results without micromanagement. Once a task is assigned, you have the autonomy to get it done your way."},
+  {id:3,logo:"/careers/benefits.png",heading:"Benefits",content:"Competitive salary, insurance, group RRSP with employer participation, four weeks' vacation upon arrival, telemedicine and employee assistance programs, National PayrolI Institute membership, full working equipment, home office allowance..."},
+]
+const whatWeOfferCol2=[
+  {id:1,logo:"/careers/create-opportunities.png",heading:"Create opportunities for growth",content:"We invest in your development by providing opportunities to learn, grow, and take on new challenges. Your success is our success."},
+  {id:2,logo:"/careers/flexibility.png",heading:"Flexibility and work-life balance",content:"Our remote-friendly culture allows you to work where you’re most comfortable. We respect your personal time and prioritize a healthy work-life balance."},
+  {id:3,logo:"/careers/celebrate-diversity.png",heading:"Celebrate diversity and inclusion",content:"We invest in your development by providing opportunities to learn, grow, and take on new challenges. Your success is our success."},
+]
 
-
-
+// steps
   const handleStepChange = (stepNumber) => {
   const selected = steps.find((s) => s.id === stepNumber);
   setActiveStepImage(selected);
 };
+// /steps
+
+// what we offer
+  const [activeIndex, setActiveIndex] = useState(0);
+  const sectionRefs = useRef([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = sectionRefs.current.findIndex(
+              (ref) => ref === entry.target
+            );
+            if (index !== -1) {
+              setActiveIndex(index);
+            }
+          }
+        });
+      },
+      {
+        rootMargin: "-50% 0px -40% 0px",
+        threshold: 0.2,
+      }
+    );
+
+    sectionRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, []);
+
+  // const cardSections = [whatWeOfferCol1, whatWeOfferCol2];
+// what we offer
 
   return (
     <>
@@ -248,6 +290,7 @@ const Careers = () => {
 
             {/*/ faq */}
           
+
           
           
             {/* Desktop view with fallback image */}
@@ -264,20 +307,20 @@ const Careers = () => {
                   Your browser does not support the video tag.
                 </video>
                 <div className="absolute top-[10%] left-12 w-[42%] space-y-10 md:px-4">
-                  <div className="text-white lg:text-[88px] font-[GT-Super-Ds-Trial] leading-[94%]">
-                    Your trusted source for digital insights
+                  <div className="text-white lg:text-[56px] font-[GT-Super-Ds-Trial] leading-[94%]">
+                    Your trusted<br/> source for digital<br/> insights
                   </div>
                   <a
-                    href=""
-                    className="inline-block border border-white text-white text-lg mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white"
+                    href="https://www.sagravia.com/"
+                    className="inline-block border border-[#DAEBE8] text-[#DAEBE8] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-1 rounded-full hover:text-black hover:bg-[#DAEBE8]"
                   >
-                    About Us
+                    Visit Website
                   </a>
                 </div>
               </div>
             </div>
 
-        {/* Mobile view with fallback image */}
+          {/* Mobile view with fallback image */}
           <div className="block lg:hidden relative py-10">
             <div className="relative h-[470px]">
                     <video
@@ -304,71 +347,81 @@ const Careers = () => {
             </div>
           </div>
       
-          {/* desktop view */}
-          <div>
-          <div className="hidden lg:block md:px-28 md:py-8 text-black">
-          <div className="flex justify-between items-start gap-8">
-            {/* What we do */}
-            <div className="w-1/2 space-y-4">
-              <h2 className="text-[56px] pb-2 font-[GT-Super-Ds-Trial]">What we do</h2>
-              {whatWeDo.map((item, index) => (
-              <div
-                key={index}
-                onMouseEnter={() => setHoverIndexDo(index)}
-                onMouseLeave={() => setHoverIndexDo(null)}
-                className="bg-[#DAEBE8] py-4 px-3 rounded-lg transition-all duration-300 hover:bg-[#cde0db] group"
-              >
-                <div className="flex items-center gap-2">
-                  <img src={item.icon} alt="do" className="w-9 h-9" />
-                  <span className="text-[20px] font-[400] leading-[104%]">{item.subHeading}</span>
+
+          {/* What we offer */}
+           <div className="md:px-28 md:pb-10 md:pt-16">
+              <div className="md:flex h-full gap-10">
+                {/* Left: Sticky Section */}
+                <div className="w-[40%] sticky top-28 h-fit">
+                  <div className="text-[#000]">
+                    <span className="text-[16px] font-[400] leading-normal ">
+                      Become a colleague
+                    </span>
+                    <h2 className="text-[56px] font-[400] leading-normal font-[GT-Super-Ds-Trial]">
+                      What we offer
+                    </h2>
+                  </div>
                 </div>
 
-                {/* Expanding paragraph */}
-                <div
-                  className={`
-                    overflow-hidden transition-all duration-700 ease-in-out text-[16px] text-[#12121299] leading-[104%]
-                    ${hoverIndexDo === index ? 'max-h-40 mt-2' : 'max-h-0'}
-                  `}
-                >
-                  {item.content}
+                {/* Right: Scroll Sections */}
+                <div className="w-[60%] space-y-24">
+                  <div
+                  ref={(el) => (sectionRefs.current[0] = el)}
+                    // className="scroll-mt-24"
+                   className="flex justify-end space-x-6 scroll-mt-28">
+                    {/* col-1 */}
+                    <section
+                    // ref={(el) => (sectionRefs.current[0] = el)}
+                    // className="scroll-mt-24"
+                  >
+                    <div className="flex gap-6  mt-20">
+                      <div className="flex flex-col gap-6">
+                        {whatWeOfferCol1.map((item) => (
+                          <div
+                            key={item.id}
+                            className="border p-5 max-w-[280px] bg-[#B6B6B633]"
+                          >
+                            <img
+                              src={item.logo}
+                              alt={item.heading}
+                              className="w-14 h-14 mb-3"
+                            />
+                            <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">{item.heading}</h3>
+                            <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">{item.content}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+
+                {/* col-2 */}
+                  <section
+                    // ref={(el) => (sectionRefs.current[1] = el)}
+                    // className="scroll-mt-24"
+                  >
+                    <div className="flex gap-6">
+                      <div className="flex flex-col gap-6">
+                        {whatWeOfferCol2.map((item) => (
+                          <div
+                            key={item.id}
+                            className="border p-5 max-w-[280px] bg-[#B6B6B633]"
+                          >
+                            <img
+                              src={item.logo}
+                              alt={item.heading}
+                              className="w-14 h-14 mb-3"
+                            />
+                            <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">{item.heading}</h3>
+                            <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">{item.content}</p>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </section>
+                  </div>
                 </div>
               </div>
-            ))}
-
             </div>
-
-            <div className="border-l border-black h-auto mx-2 -mb-2 mt-24  self-stretch"></div>
-
-            {/* What we don't do */}
-            <div className="w-1/2 space-y-4">
-              <h2 className="text-[56px] pb-2 font-[GT-Super-Ds-Trial]">What we don't do</h2>
-            {whatWeDoNotDo.map((item, index) => (
-                <div
-                  key={index}
-                  onMouseEnter={() => setHoverIndexDont(index)}
-                  onMouseLeave={() => setHoverIndexDont(null)}
-                  className="bg-[#DAEBE8] py-4 px-3 rounded-lg transition-all duration-300 hover:bg-[#cde0db] group"
-                >
-                  <div className="flex items-center gap-2">
-                    <img src={item.icon} alt="undo" className="w-9 h-9" />
-                    <span className="text-[20px] font-[400] leading-[104%]">{item.subHeading}</span>
-                  </div>
-
-                  {/* Smooth expand/collapse paragraph */}
-                  <div
-                    className={`
-                      overflow-hidden transition-all duration-700 ease-in-out text-[16px] text-[#12121299] leading-[104%]
-                      ${hoverIndexDont === index ? 'max-h-40 mt-2' : 'max-h-0'}
-                    `}
-                  >
-                    {item.content}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-
 
           {/* mobile view */}
           <div className="block lg:hidden flex flex-col space-y-10">
@@ -408,7 +461,7 @@ const Careers = () => {
               </div>
             </div>
           </div>
-        </div>
+    
           
           {/* heading with underline and content */}
         <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
@@ -420,7 +473,7 @@ const Careers = () => {
                 {/* Left Side (Small Images & Content) */}
                 <div className="lg:w-[60%]">
                   {/* Small Images */}
-                  <div className="flex flex-row space-x-4 md:py-8 sm:px-4 py-4">
+                  <div className="flex flex-row space-x-4 md:py-8 py-4">
                     {images.map((image) => (
                       <button
                         key={image.id}
@@ -433,7 +486,7 @@ const Careers = () => {
                         <img
                           src={image.smallSrc}
                           alt={`image-${image.id}`}
-                          className="hidden lg:block w-13 h-13"
+                          className="hidden lg:block w-8 h-8"
                         />
                         <img
                           src={image.smallSrc}
@@ -446,13 +499,9 @@ const Careers = () => {
 
                   {/* Dynamic Text Content */}
                   <div className="lg:py-6">
-                    <p className="text-black text-[17px] lg:text-[20px] leading-[130%] font-[400]">{selectedImage.text}</p>
-                  </div>
-
-                  {/* Name & Role */}
-                  <div className="text-black relative top-6 lg:top-16 py-4">
-                    <p className="text-[17px] lg:text-[24px]">{selectedImage.name}</p>
-                    <p className="text-[11px] lg:text-[15px]">{selectedImage.role}</p>
+                    <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400] mb-10 max-w-[70%]">{selectedImage.text}</p>
+                    <p className="text-[17px] lg:text-[24px] leading-[130%] font-[400]">{selectedImage.name}</p>
+                    <p className="text-[11px] lg:text-[15px] leading-[130%] font-[300]">{selectedImage.role}</p>
                   </div>
                 </div>
 
@@ -464,6 +513,25 @@ const Careers = () => {
                   </div>
               </div>
         </div>
+
+        <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32">
+              <h2 className="text-[56px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
+                Contact our team
+              </h2>
+
+              <div className="w-[50%] mx-auto">
+                <p className="text-[18px] font-[400] leading-[150%] tracking-[0.36px]">
+                  If you're looking to grow in a dynamic environment and contribute to something greater, we invite you to explore our open positions and become a part of our journey.
+                </p>
+              </div>
+
+              {/* Moving Text */}
+              <a href="/contact" className="w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]">
+                <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
+                  SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
+                </span>
+              </a>
+            </div>
       
 
     </>

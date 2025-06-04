@@ -128,12 +128,13 @@
   }
 }
 
-.animate-scroll {
+/* .animate-scroll {
   animation: scrollText 13s linear infinite;
-}
+} */
 
 .group:hover .animate-scroll {
-  animation-play-state: paused;
+  /* animation-play-state: paused; */
+  animation: scrollText 13s linear infinite;
 }
 
 .animate-scroll-mobile {

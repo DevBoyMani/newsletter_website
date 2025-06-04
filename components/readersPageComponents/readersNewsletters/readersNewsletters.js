@@ -134,7 +134,7 @@ export default function ReadersNewsletters() {
   />
   <div className="group/card">
     <button
-  className="absolute top-4 left-4 bg-[#FFFFFFB2] text-black rounded-full h-[30px] 
+  className="absolute top-4 left-4 bg-[#FFFFFF] text-black rounded-full h-[30px] 
              overflow-hidden transition-all duration-700 ease-in-out flex items-center 
              w-[30px] group-hover/card:w-[110px]"
 >

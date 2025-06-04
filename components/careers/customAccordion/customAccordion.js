@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const accordionData = [
   { id: "item-1", title: "Recruitment team chat", content: "Help us get to know you beyond your CV", step: 1 },
-  { id: "item-2", title: "Team member interview", content: "Help your new team understand your field of knowledge Help your new team understand your field of knowledgeHelp your new team understand your field of knowledge", step: 2 },
+  { id: "item-2", title: "Team member interview", content: "Help your new team understand your field of knowledge ", step: 2 },
   { id: "item-3", title: "Technical exercise", content: "Put your skills to the test and show us how you shine.", step: 3 },
   { id: "item-4", title: "Leadership chat", content: "Help us get to know you beyond your CV", step: 4 },
   { id: "item-5", title: "Offer time", content: "You're now just a signature away from joining the greatest team", step: 5 },
