@@ -163,3 +163,17 @@
   animation-play-state: paused;
 }
 
+/*careers/slug */
+
+.custom-list {
+  list-style-type: disc;
+  list-style-position: inside; /* bullet inside */
+  padding-left: 0; /* remove default padding */
+  margin-left: 0;
+}
+
+.custom-list li {
+  padding-left: 2em; /* indent text after bullet */
+  text-indent: -1.4em; /* pull first line back to show bullet at start */
+}
+/*careers/slug   */

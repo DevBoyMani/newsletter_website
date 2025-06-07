@@ -13,7 +13,12 @@ export default function RootLayout({
     const pathname = usePathname();
     // const hideFooterRoutes = ['/analytics','/analytics/[slug]', '/readers'];
     //  const shouldHideFooter = hideFooterRoutes.includes(pathname);
-    const shouldHideFooter = pathname.startsWith('/analytics') || pathname === '/readers';
+    // const shouldHideFooter = pathname.startsWith('/analytics') || pathname === '/readers';
+
+    const shouldHideFooter =
+    pathname.startsWith('/analytics') ||
+    pathname === '/readers' ||
+    pathname.startsWith('/careers/');
     return (
       <html lang="en">
         <body>

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ChevronUp, ChevronDown, Link } from "lucide-react";
 
 export default function ViewAll() {
     const [selectedIndex, setSelectedIndex] = useState(null);
@@ -14,13 +14,13 @@ export default function ViewAll() {
     };
 
     const images = [
-        { name: "Design", title: "Graphic Designer", experience: "Senior", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#E19F20" },
-        { name: "UX/UI", title: "UX Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences...", button: "Apply", theme: "#582719" },
-        { name: "Web Dev", title: "Full-Stack Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#092236" },
-        { name: "Design", title: "Graphic Designer", experience: "Senior", content: "Simply dummy text of the printing and typesetting industry...", button: "Apply", theme: "#1A1A1A" },
-        { name: "UX/UI", title: "UX Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#394E65" },
-        { name: "Web Dev", title: "Backend Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#657C75" },
-        { name: "Software Engineer", title: "Programmer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#01261E" }
+        { popupSalary:"$50,000 - $70,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Design", title: "Graphic Designer", experience: "Senior", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#E19F20",slug:"graphic-designer" },
+        { popupSalary:"$40,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",name: "UX/UI", title: "UX Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences...", button: "Apply", theme: "#582719",slug:"ux-designer" },
+        { popupSalary:"$40,000 - $70,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Web Dev", title: "Full-Stack Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#092236",slug:"full-stack" },
+        { popupSalary:"$50,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Design", title: "logo Designer", experience: "Senior", content: "Simply dummy text of the printing and typesetting industry...", button: "Apply", theme: "#1A1A1A",slug:"logo-designer" },
+        { popupSalary:"$40,000 - $70,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "UX/UI", title: "web Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#394E65",slug:"web-designer" },
+        { popupSalary:"$30,000 - $60,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Web Dev", title: "Backend Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#657C75",slug:"backend-dev" },
+        { popupSalary:"$50,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Software Engineer", title: "Programmer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#01261E",slug:"software-engineer" }
     ];
 
     const handleImageClick = (index) => {
@@ -36,134 +36,104 @@ export default function ViewAll() {
     return (
         <>
         <div className="text-white py-10 lg:py-8 mx-auto relative">
-            <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-5 2xl:grid-cols-6 lg:gap-4 space-x-1 gap-4 ">
-                {images.map((item, index) => (
-                    <motion.div
-                        key={index}
-                        className="group relative w-3xs h-[230px] lg:h-[316px] xl:h-[316px] text-white lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg cursor-pointer"
-                        //  className="relative w-full sm:w-[225px] lg:w-[225px] h-[280px] md:h-[306px] lg:h-[316px] text-white p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg transition-all duration-400"
-                        style={{ backgroundColor: item.theme }}
-                        onMouseEnter={() => setHoveredIndex(index)}
-                        onMouseLeave={() => setHoveredIndex(null)}
-                    >
-                        <h2 className="text-sm lg:px-3 px-2 mt-2">{item.name}</h2>
-                         {/* Mobile Content */}
-                        <div className="block lg:hidden px-2 flex-grow min-h-[160px] max-h-[230px]">
-                            <div className="mt-3">
-                            <h3 className="text-sm font-semibold">{item.title}</h3>
-                            <p className="text-xs text-gray-300">{item.experience}</p>
-                            </div>
-                            
-                            <div className="mt-16">
-                            <p className="font-medium text-[9px]">{item.content}</p>
-                            <div className="py-4">
-                            <button
-                                onClick={() => handleImageClick(index)}
-                                className="text-sm relative w-full bg-white/25 text-white py-1 rounded-lg"
-                            >
-                                {item.button}
-                            </button>
-                            </div>
-                            </div>
-                        </div>
-                        
-                       <motion.div
-  className="group relative hidden lg:block left-1/2 -translate-x-1/2 w-full"
-  onMouseEnter={() => setHoveredIndex(index)}
-  onMouseLeave={() => setHoveredIndex(null)}
-  layout
->
-  {/* Always visible: Title and Role */}
-  <motion.div layout className="pb-2">
-    <h3 className="text-lg font-semibold px-3">{item.title}</h3>
-    <p className="text-sm text-gray-300 px-3">{item.experience}</p>
-  </motion.div>
+            <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-5 gap-x-4 gap-y-4">
+  {images.map((item, index) => (
+    <div
+      key={index}
+      className="group relative w-full h-[230px] lg:h-[316px] text-white p-3 lg:p-4 rounded-lg overflow-hidden flex flex-col justify-between shadow-lg cursor-pointer"
+      style={{ backgroundColor: item.theme }}
+      onMouseEnter={() => setHoveredIndex(index)}
+      onMouseLeave={() => setHoveredIndex(null)}
+    >
+      <h2 className="text-[14px] mt-2">{item.name}</h2>
 
-  {/* Revealed only on hover: More content */}
-  <AnimatePresence initial={false}>
-    {hoveredIndex === index && (
+      {/* Mobile Content */}
+      <div className="block lg:hidden flex-grow min-h-[160px] max-h-[230px]">
+        <div className="mt-3">
+          <h3 className="text-sm font-semibold">{item.title}</h3>
+          <p className="text-xs text-gray-300">{item.experience}</p>
+        </div>
+        <div className="mt-16">
+          <p className="font-medium text-[9px]">{item.content}</p>
+          <div className="py-4">
+            <button
+              onClick={() => handleImageClick(index)}
+              className="text-sm w-full bg-white/25 text-white py-1 rounded-lg"
+            >
+              {item.button}
+            </button>
+          </div>
+        </div>
+      </div>
+
+      {/* Desktop Hover Content */}
       <motion.div
-        key="hoverContent"
-        className="overflow-hidden text-sm text-white"
-        initial={{ opacity: 1, height: 0, y: -10 }}
-        animate={{ opacity: 1, height: 'auto', y: 0 }}
-        exit={{ opacity: 1, height: 0, y: -10 }}
-        transition={{ duration: 0.4, ease: 'easeInOut' }}
+        className="relative hidden lg:block w-full"
         layout
       >
-        <p className="px-3">{item.content}</p>
-        <div className="px-3">
-          <button
-            onClick={() => handleImageClick(index)}
-            className="relative w-full bg-white/25 text-white py-2 mt-4 rounded-lg"
-          >
-            {item.button}
-          </button>
-        </div>
+        <motion.div layout className="pb-2">
+          <h3 className="text-[17px] font-[700] leading-[101%] py-2">{item.title}</h3>
+          <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">{item.experience}</p>
+        </motion.div>
+
+        <AnimatePresence initial={false}>
+          {hoveredIndex === index && (
+            <motion.div
+              key="hoverContent"
+              className="overflow-hidden text-sm text-white"
+              initial={{ opacity: 1, height: 0, y: -10 }}
+              animate={{ opacity: 1, height: 'auto', y: 0 }}
+              exit={{ opacity: 1, height: 0, y: -10 }}
+              transition={{ duration: 0.4, ease: 'easeInOut' }}
+              layout
+            >
+              <p className="text-[#FAFAFA] text-[12px] font-[500] leading-normal">{item.content}</p>
+              <div className="pt-4">
+                <button
+                  onClick={() => handleImageClick(index)}
+                  className="w-full bg-white/25 text-white py-2 rounded-lg"
+                >
+                  {item.button}
+                </button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </motion.div>
-    )}
-  </AnimatePresence>
-</motion.div>
+    </div>
+  ))}
+</div>
 
-
-                    </motion.div>
-                ))}
-            </div>
 
             {selectedIndex !== null && (
-                <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-end items-center z-50 px-4" onClick={closeSidebar}>
-                    <div className="w-full md:w-[26%] h-screen bg-white shadow-lg transition-transform duration-300 relative flex flex-col" onClick={(e) => e.stopPropagation()}>
-                        <div className="w-full bg-white px-4 py-4 flex justify-between items-center z-10">
-                            <h3 className="text-lg md:text-2xl font-semibold text-black">{images[selectedIndex].title}</h3>
-                            <button onClick={closeSidebar} className="w-10 h-10 text-xl text-black flex items-center justify-center hover:bg-gray-200 rounded-lg">✕</button>
-                        </div>
+                <div className="fixed inset-0 bg-[#121212CC] flex justify-end items-center z-50 px-4 " onClick={closeSidebar}>
+                    <div className="w-full md:w-[27%] h-fit bg-[#DAEBE8] shadow-lg transition-transform duration-300 relative flex flex-col mr-4 mt-8 rounded-[10px]" onClick={(e) => e.stopPropagation()}>
+                        
 
-                        <div className="flex-1 overflow-y-auto px-4 pt-0 pb-20">
-                            <p className="text-lg text-black">{images[selectedIndex].name}</p>
-                            <h4 className="text-xl font-semibold text-black">Marketing Automation Engineer</h4>
-                            <p className="text-sm text-gray-700 mt-2">{images[selectedIndex].content}</p>
-                            <p className="text-sm text-gray-700 mt-2">$50,000 - $70,000</p>
-                            <p className="text-sm text-black py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                            <p className="text-sm text-black py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.</p>
-
-                            <div className="flex justify-center space-x-4 text-sm text-black pt-4">
-                                <button onClick={() => toggleSection("assignment")} className="flex items-center space-x-2 px-4 py-2  rounded-lg  transition ">
-                                    <span>Assignment</span>{activeSection === "assignment" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                                </button>
-                                <button onClick={() => toggleSection("job")} className="flex items-center space-x-2 px-4 py-2 rounded-lg  transition">
-                                    <span>Job Description</span>{activeSection === "job" ? <ChevronUp size={16} /> : <ChevronDown size={16} />}
-                                </button>
+                        <div className="flex-1 overflow-y-auto pb-6 px-6 pt-4">
+                            <div className="flex justify-end items-center">
+                              <button onClick={closeSidebar} className="w-7 h-7 text-xl text-black flex items-center justify-center rounded-lg ">✕</button>
                             </div>
+                            <p className="text-[16px] font-[300] leading-[108%] tracking-[0.32px] uppercase text-[#000]">{images[selectedIndex].popupVenue}</p>
+                            <h4 className="text-[22px] font-[500] leading-[108%] tracking-[0.88px] text-[#020715] py-2">{images[selectedIndex].title}</h4>
+                            {/* <p className="text-sm text-gray-700 mt-2">{images[selectedIndex].content}</p> */}
+                            <p className="text-[16px] text-[#000] font-[300] leading-[108%] tracking-[0.64px] ">{images[selectedIndex].popupSalary}</p>
+                            <p className="text-[#000] text-[14px] font-[400] leading-[135%] pt-4 pb-4">{images[selectedIndex].popupContent1}<br/></p>
+                            <p className="text-sm text-black">{images[selectedIndex].popupContent2}</p>
 
-                            {activeSection === "assignment" && (
-                                <motion.div className="py-2 " initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
-                                    <div className="text-black">
-                                    <h4 className="text-xl font-semibold ">Create an Automated Email Nurturing Campaign</h4>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    </div>
-                                    <div className="text-black py-4">
-                                        <a className="text-xl font-bold py-2 cursor-pointer hover:underline">job@sagravia.com</a>
-                                    </div>
-                                </motion.div>
-                            )}
+                            {/*dynamic path button button */}
+                          
+                              <div className="flex justify-end mt-4">
+                                <a
+                                  href={`/careers/${images[selectedIndex].slug}`}
+                                  className="flex justify-center w-full px-14 py-2 bg-[#01261E] text-white text-[18px] font-[500] rounded-[6px] hover:bg-[#014134] transition"
+                                >
+                                  Assignment
+                                </a>
+                              </div>
 
-                            {activeSection === "job" && (
-                                <motion.div className="py-2 " initial={{ opacity: 0, y: -10 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -10 }} transition={{ duration: 0.3 }}>
-                                    <div className="text-black">
-                                    <h4 className="text-xl font-semibold ">Automated Email Nurturing Campaign</h4>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    <p className="text-sm py-2">Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:</p>
-                                    </div>
-                                    <div className="text-black py-4">
-                                        <a className="text-xl font-bold py-2 cursor-pointer hover:underline">job@sagravia.com</a>
-                                    </div>
-                                </motion.div>
-                            )}
+                          
+                            
                         </div>
                     </div>
                 </div>

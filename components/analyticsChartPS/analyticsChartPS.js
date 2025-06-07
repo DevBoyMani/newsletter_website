@@ -59,11 +59,21 @@ export function AnalyticsChartPS() {
           className="absolute w-full h-full rounded-[20px] bg-white flex flex-col justify-between"
           style={{ backfaceVisibility: "hidden" }}
         >
-            <button
+            {/* <button
                 onClick={() => setFlipped(true)}
                 className="absolute top-6 right-10 p-2 rounded-full bg-[#D2DCF4]  "
               >
                 <Plus className="w-6 h-6 relative top-0 " />
+              </button> */}
+              <button
+                onClick={() => setFlipped(true)}
+                className="absolute top-6 right-10 p-2 rounded-full"
+              >
+                <img
+                  src="/analytics/flip-icon.png"
+                  alt="Flip"
+                  className="w-10 h-10 object-contain"
+                />
               </button>
               <CardHeader>
             <div className="text-sm  mt-10 text-[#9291A5]">
@@ -72,11 +82,11 @@ export function AnalyticsChartPS() {
             <div className="flex justify-between">
               <div className="flex space-x-2">
                 <h2 className="text-3xl font-bold">$12.7k</h2>
-                <p className="text-sm mt-3">
+                {/* <p className="text-sm mt-3">
                   <span className="bg-[#46DE46] text-white rounded-full px-1">&#8599;</span>
                   <span className="ml-2 text-[#46DE46] font-bold">1.3%</span>
                   <span className="ml-2 text-xs text-gray-400 tracking-widest"> VS LAST YEAR</span>
-                </p>
+                </p> */}
               </div>
               <div className="">
                 <div className="flex space-x-2 pl-8 pr-4">
@@ -118,12 +128,22 @@ export function AnalyticsChartPS() {
           className="absolute w-full h-full rounded-[20px] bg-[#D2DCF4] flex flex-col justify-center items-center"
           style={{ transform: "rotateY(180deg)", backfaceVisibility: "hidden" }}
         >
-          <button
+          {/* <button
             onClick={() => setFlipped(false)}
             className="absolute top-4 right-10 p-2 rounded-full bg-white "
           >
             <X className="w-6 h-6" />
-          </button>
+          </button> */}
+          <button
+                onClick={() => setFlipped(false)}
+                className="absolute top-6 right-10 p-2 rounded-full"
+              >
+                <img
+                  src="/analytics/flip-icon-back.png"
+                  alt="Flip"
+                  className="w-10 h-10 object-contain"
+                />
+              </button>
           <div className="absolute top-20">
           <h4 className="text-[41px] font-bold mb-2">Line chart</h4>
           </div>

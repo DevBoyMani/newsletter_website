@@ -310,12 +310,20 @@ const whatWeOfferCol2=[
                   <div className="text-white lg:text-[56px] font-[GT-Super-Ds-Trial] leading-[94%]">
                     Your trusted<br/> source for digital<br/> insights
                   </div>
-                  <a
+                  {/* <a
                     href="https://www.sagravia.com/"
-                    className="inline-block border border-[#DAEBE8] text-[#DAEBE8] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-1 rounded-full hover:text-black hover:bg-[#DAEBE8]"
+                    className="inline-block border border-[#DAEBE8] text-[#DAEBE8] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full hover:text-black hover:bg-[#DAEBE8]"
                   >
                     Visit Website
-                  </a>
+                  </a> */}
+                  <a
+                href="https://www.sagravia.com/"
+                className="relative inline-block border border-[#DAEBE8] text-[#DAEBE8] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full overflow-hidden group"
+              >
+                <span className="absolute inset-0 bg-[#DAEBE8] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center z-0"></span>
+                <span className="relative z-10 group-hover:text-black transition-colors duration-300">Visit Sagravia</span>
+              </a>
+
                 </div>
               </div>
             </div>
