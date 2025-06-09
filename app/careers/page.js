@@ -195,8 +195,8 @@ const whatWeOfferCol2=[
             {testimonials[activeTab].component}
           </div>
 
-          {/* faq */}
-          <div className="py-10  md:px-28 flex justify-end">
+          {/* desktop faq */}
+          <div className="hidden lg:block py-10  md:px-28 flex justify-end">
             <div className="xl:w-[54%] lg:pb-20">
                 <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] text-right">
                   How do we work with <br/>
@@ -205,7 +205,7 @@ const whatWeOfferCol2=[
               </div>
           </div>
 
-            <div className="py-10 md:px-28 md:pb-24">
+            <div className="hidden lg:block py-10 md:px-28 md:pb-24">
               <div className="flex flex-col md:flex-row justify-between ">
 
                 {/* Left side – Image */}
@@ -236,6 +236,52 @@ const whatWeOfferCol2=[
 
               </div>
             </div>
+
+            {/*/ desktop faq */}
+
+
+            {/* mobile faq */}
+
+             <div className="lg:hidden block py-10 flex justify-end">
+            <div className="xl:w-[54%] lg:pb-20">
+                <div className="px-4 text-[#01261E] text-[40px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] text-left">
+                  How do we work with <br/>
+                  your application?
+                </div>
+              </div>
+          </div>
+
+            <div className="lg:hidden block ">
+              {/* <div className="flex flex-col justify-between "> */}
+
+                {/* Left side – Image */}
+                  {/* <div className="md:w-[46%] lg:py-0 pb-8">
+                    {activeStepImage ? (
+                      <img
+                        src={activeStepImage.source}
+                        alt={activeStepImage.name}
+                        className="w-[66%] mx-auto"
+                        style={{ maxHeight: '80vh', objectFit: 'contain' }}
+                      />
+                    ) : (
+                      <img
+                        src="/careers/normal-state-image.png"
+                        alt="step doesn't selected"
+                        className="w-[86%] mt-[-80px]"
+                        style={{ maxHeight: '80vh', objectFit: 'contain' }}
+                      />
+                    )}
+                  </div> */}
+
+
+                  {/* Right side – Accordion / mobile too*/}
+                  <div className="">
+                    <CustomAccordion onStepChange={handleStepChange} />
+
+                  </div>
+
+              </div>
+            {/* </div> */}
 
             {/*/ faq */}
           
@@ -270,7 +316,7 @@ const whatWeOfferCol2=[
                 className="relative inline-block border border-[#DAEBE8] text-[#DAEBE8] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full overflow-hidden group"
               >
                 <span className="absolute inset-0 bg-[#DAEBE8] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center z-0"></span>
-                <span className="relative z-10 group-hover:text-black transition-colors duration-300">Visit Sagravia</span>
+                <span className="relative z-10 group-hover:text-[#01261E] transition-colors duration-300">Visit Sagravia</span>
               </a>
 
                 </div>

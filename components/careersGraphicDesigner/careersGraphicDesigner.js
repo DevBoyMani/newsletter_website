@@ -59,21 +59,21 @@ export default function CareersGraphicDesigner(){
         {/* desktop */}
         <div className="hidden lg:block">
             <div className="md:px-28 pt-14 pb-4">
-                <div className="flex md:flex-row flex-col w-full h-full">
+                <div className="flex md:flex-row justify-start flex-col w-full h-full">
                     {/* left */}
-                    <div className="md:w-[40%] w-full sticky top-24 h-fit pb-40">
+                    <div className="max-w-[40%] w-full sticky top-24 pb-40">
                         <Link 
                         href="/careers" 
                         className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline ">
                        <span className="text-[20px]"> &#8592;</span> All job offers
                         </Link>
-                        <div className="w-[66%] bg-[#01261E] mt-10 p-6 rounded-[10px]">
+                        <div className="w-[80%] h-[25vh]  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                             <div className="">
                                 <h3 className="text-[#fff] text-[20px] font-[600] leading-[141%]">Apply now!
 
                                 </h3>
-                                <p className="text-[#fff] text-[15px] font-[300] leading-[141%] py-4">If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.</p>
-                                <div className="flex flex-row">
+                                <p className="w-[74%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.</p>
+                                <div className="flex flex-row ">
                                     <p 
                                     className="text-[#fff] text-[16px] font-[400]
                                     leading-[141%] hover:underline cursor-pointer">careers@sagravia.com</p>
@@ -133,8 +133,8 @@ export default function CareersGraphicDesigner(){
                                 <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">As a Payroll Advisor, you will be responsible for supporting and executing payroll operation mandates for our clients. You will play a key coordinating role and contribute to the successful completion of payroll processing, analyses and identified customer needs. You will work as part of a team or independently on specific mandates.</p>
                              </div>
                              {/* 5 */}
-                             <div className="py-4 bg-[#DAEBE8] rounded-[10px]">
-                                <div className="px-4">
+                             <div className="p-6 bg-[#DAEBE8] rounded-[10px]">
+                                <div className="">
                                 <h4 className="text-[#121212] text-[18px] font-[700] leading-[141%] py-2">Assignment</h4>
                                 <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">Do you excel at understanding client needs and turning them into lasting partnerships? Join our team as a Sales Manager and be the driving force behind our client acquisition and business growth efforts. You will work on global projects, pitch innovative solutions, and collaborate with a diverse and talented team.</p>
                                  <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">We are looking for someone who takes initiative, communicates effectively, and is ready to be part of a company that values growth and teamwork. If you are eager to put your skills to work and take your career to the next level, this is the opportunity you have been waiting for.</p>
@@ -195,7 +195,7 @@ export default function CareersGraphicDesigner(){
                                             <div className="w-[85%]">
                                                 <p className="text-[#000] text-[16px] font-[400] leading-[174%]">Send your CV and a short motivational letter to <span className="underline cursor-pointer">careers@sagravia.com</span> with the name of the position in the subject of the email.</p>
                                             </div>
-                                             <div className="md:w-[20%] w-full">
+                                             <div className="md:w-[20%] w-full mt-6">
                                                 <a
                                                 href="mailto:careers@sagravia.com"
                                                 className="block text-center bg-[#01261E] hover:bg-[#014134] text-white text-[14px] font-[600] px-4 py-2 rounded-full w-full"
@@ -318,12 +318,12 @@ export default function CareersGraphicDesigner(){
                                 <p className="text-[#fff] text-[14px] font-[300] leading-[141%] py-4">If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.</p>
                                 <div className="flex flex-row relative">
                                     <p 
-                                    className="text-[#fff] text-[14px] font-[400]
+                                    className="text-[#fff] text-[13px] font-[400]
                                     leading-[141%] underline cursor-pointer">careers@sagravia.com</p>
                                     <img
                                     src="/careers/content-copy.png"
                                     alt="copy-icon"
-                                    className="w-6 h-6 ml-1 cursor-pointer"
+                                    className="w-5 h-5 ml-1 cursor-pointer"
                                     onClick={handleCopy}
                                     
                                     />
