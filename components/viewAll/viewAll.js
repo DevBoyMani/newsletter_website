@@ -107,7 +107,7 @@ export default function ViewAll() {
 
             {selectedIndex !== null && (
                 <div className="fixed inset-0 bg-[#121212CC] flex justify-end items-center z-50 px-4 " onClick={closeSidebar}>
-                    <div className="w-full md:w-[27%] h-fit bg-[#DAEBE8] shadow-lg transition-transform duration-300 relative flex flex-col mr-4 mt-8 rounded-[10px]" onClick={(e) => e.stopPropagation()}>
+                    <div className="w-full md:w-[27%] h-fit bg-[#DAEBE8] shadow-lg transition-transform duration-300 relative flex flex-col lg:mr-4 mx-6  mt-8 rounded-[10px]" onClick={(e) => e.stopPropagation()}>
                         
 
                         <div className="flex-1 overflow-y-auto pb-6 px-6 pt-4">

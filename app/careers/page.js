@@ -105,58 +105,7 @@ const Careers = () => {
 
    const [selectedImage, setSelectedImage] = useState(images[2]);
 
-  const whatWeDo = [
-    {
-      
-      icon:"/careers/verified.png",
-      subHeading:"Environment",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
-    },
-    {
-      
-      icon:"/careers/verified.png",
-      subHeading:"Work-life balance",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
-    },
-    {
-      
-      icon:"/careers/verified.png",
-      subHeading:"Growth",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
-    },
-    {
-      
-      icon:"/careers/verified.png",
-      subHeading:"Trust our team",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect."
-    },
-  ]
-  const whatWeDoNotDo = [
-    {
-    
-      icon:"/careers/un-verified.png",
-      subHeading:"Environment",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect."
-    },
-    {
-    
-      icon:"/careers/un-verified.png",
-      subHeading:"Work-life balance",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
-    },
-    {
-    
-      icon:"/careers/un-verified.png",
-      subHeading:"Growth",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
-    },
-    {
-    
-      icon:"/careers/un-verified.png",
-      subHeading:"Trust our team",
-      content:"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nunc vestibulum ect"
-    },
-  ]
+ 
 
 const whatWeOfferCol1=[
   {id:1,logo:"/careers/supportive.png",heading:"Supportive and collaborative environment",content:"We believe the best ideas come from teamwork. Everyone is encouraged to share their thoughts, and contributions are recognized and celebrated."},
@@ -431,46 +380,6 @@ const whatWeOfferCol2=[
               </div>
             </div>
 
-          {/* mobile view */}
-          <div className="block lg:hidden flex flex-col space-y-10">
-              {/* what we do */}
-            <div className="px-4">
-              <div className="bg-[#DAEBE8] rounded-[10px] py-6 ">
-                <h4 className="text-[34px] text-[#121212] font-[GT-Super-Ds-Trial] font-[400] leading-[24px] text-center py-6">What we do</h4>
-                <div>
-                  <div className="grid grid-cols-2 ">
-                  {whatWeDo.map((item, index) => (
-                      <div key={index} className="grid grid-col-2 text-black text-center gap-2 py-4 px-3 rounded-lg">
-                        <img src={item.icon} alt="do" className="w-9 h-9 mx-auto" />
-                        <span className="text-[#304659] text-[14px] font-[500] leading-[24px]">{item.subHeading}</span>
-                        <span className="text-[#304659] text-[10px] font-[400] leading-[20px]">{item.content}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* what we do not do */}
-            <div className="px-4">
-              <div className="bg-[#DAEBE8] rounded-lg py-6">
-                <h4 className="text-[34px] text-[#121212] font-[GT-Super-Ds-Trial] font-[400] leading-[24px] text-center py-6">What we don't do</h4>
-                <div>
-                  <div className="grid grid-cols-2 ">
-                  {whatWeDoNotDo.map((item, index) => (
-                      <div key={index} className="grid grid-col-2 text-black text-center gap-2 py-4 px-3 rounded-lg">
-                        <img src={item.icon} alt="do" className="w-9 h-9 mx-auto" />
-                        <span className="text-[#304659] text-[14px] font-[500] leading-[24px]">{item.subHeading}</span>
-                        <span className="text-[#304659] text-[10px] font-[400] leading-[20px ]">{item.content}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-    
-          
           {/* heading with underline and content */}
         <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
             <div className="border-b border-black">
@@ -534,11 +443,19 @@ const whatWeOfferCol2=[
               </div>
 
               {/* Moving Text */}
-              <a href="/contact" className="w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]">
+              <a href="/contact" className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]">
                 <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
                   SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
                 </span>
               </a>
+
+              <div className="py-4">
+                <a href="#" className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]">
+                <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
+                  SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
+                </span>
+              </a>
+              </div>
             </div>
       
 
