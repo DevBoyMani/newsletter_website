@@ -61,13 +61,13 @@ export default function CareersGraphicDesigner(){
             <div className="md:px-28 pt-14 pb-4">
                 <div className="flex md:flex-row justify-start flex-col w-full h-full">
                     {/* left */}
-                    <div className="max-w-[40%] w-full sticky top-24 pb-40">
+                    <div className="max-w-[40%] w-full h-auto sticky top-24 pb-40">
                         <Link 
                         href="/careers" 
                         className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline ">
                        <span className="text-[20px]"> &#8592;</span> All job offers
                         </Link>
-                        <div className="w-[80%] h-[25vh]  bg-[#01261E] mt-10 p-8 rounded-[10px]">
+                        <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                             <div className="">
                                 <h3 className="text-[#fff] text-[20px] font-[600] leading-[141%]">Apply now!
 
@@ -76,7 +76,7 @@ export default function CareersGraphicDesigner(){
                                 <div className="flex flex-row ">
                                     <p 
                                     className="text-[#fff] text-[16px] font-[400]
-                                    leading-[141%] hover:underline cursor-pointer">careers@sagravia.com</p>
+                                     hover:underline cursor-pointer">careers@sagravia.com</p>
                                     <img
                                     src="/careers/content-copy.png"
                                     alt="copy-icon"
