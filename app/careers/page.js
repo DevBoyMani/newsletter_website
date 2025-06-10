@@ -197,8 +197,8 @@ const whatWeOfferCol2=[
 
           {/* desktop faq */}
           <div className="hidden lg:block py-10  md:px-28 flex justify-end">
-            <div className="xl:w-[54%] lg:pb-20">
-                <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] text-right">
+            <div className="lg:pb-20">
+                <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] lg:text-right">
                   How do we work with <br/>
                   your application?
                 </div>
