@@ -61,8 +61,9 @@ export default function CareersGraphicDesigner(){
             <div className="md:px-28 pt-14 pb-4">
                 <div className="flex md:flex-row justify-start flex-col w-full h-full">
                     {/* left */}
-                    <div className="max-w-[40%] w-full h-auto sticky top-24 pb-40">
-                        <Link 
+                    <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start">
+                       <div className="h-auto">
+                         <Link 
                         href="/careers" 
                         className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline ">
                        <span className="text-[20px]"> &#8592;</span> All job offers
@@ -92,6 +93,7 @@ export default function CareersGraphicDesigner(){
                                 </div>
                             </div>
                         </div>
+                       </div>
                     </div>
                     {/* right */}
                     <div className="md:w-[60%] w-full space-y-24">  
