@@ -1,131 +1,8 @@
 "use client";
 
-// import { useState } from "react";
-// import { Link } from "lucide-react";
-// import PublicHeadingWithUnderline from "../publicHeadingWithUnderline/publicHeadingWithUnderline";
-
-
-// export default function AboutOurCompany(){
-//     const [hoveredIndex, setHoveredIndex] = useState(null);
-
-//     const areas = [
-//     { coords: "200,100,40", label: "Presidential Summary",content:"Global affairs and business news" },
-//     { coords: "400,80,40", label: "Geopolitical Summary",content:"International relations newsletter" },
-//     { coords: "420,230,40", label: "Business Highlights",content:"Global affairs and business news" },
-//     { coords: "420,410,40", label: "Entertainment News",content:"Global affairs and business news" },
-//     { coords: "200,410,40", label: "Cultural Affairs",content:"Global affairs and business news" },
-//   ];
-//     return(
-//         <div className="bg-[#FAFAFA] md:px-28">
-//             <div className="flex flex-col md:flex-row justify-start items-start py-10">
-//                 {/* left */}
-//                 <div className="w-full md:w-1/2">
-//                 <PublicHeadingWithUnderline text="Our company"/>
-//                 <div className="text-[#000] text-[18px] font-[400] leading-[135%] tracking-[0.36px]">
-//                     <p className="pt-8 pb-4">
-//                         We began as a single newsletter with one goal: delivering fresh, unbiased news to help you stay updated on the day’s most important topics. 
-//                     </p>
-//                      <p>
-//                        As we grew, we realized our audience's interests were diverse and ever-expanding. This inspired us to create a collection of specialized newsletters, each focused on a different subject, so you can dive deeper into everything that sparks your curiosity.
-//                     </p>
-//                 </div>
-//                 <div className="py-4">
-                  
-//                     <a href="/">
-//                         <button className="group relative justify-center flex items-center  transition-all duration-500 ease-in-out text-[#01261E] hover:border-none hover:text-[#fff] hover:bg-[#01261E] hover:rounded-full">
-
-//                         <span className="w-8 h-8 flex items-center justify-center text-white bg-[#01261E] rounded-full">
-//                             &#10095;
-//                         </span>
-//                         <span className=" text-[16px] font-[500] leading-normal px-4">
-//                             View Newsletters
-//                         </span>
-//                     </button>
-//                     </a> 
-//                 </div>
-
-
-//                 </div>
-//                 {/* right */}
-//                 <div className="relative w-full md:w-1/2 px-10 ml-10">
-//                 <img
-//                     src="/about/our-company-right-image.png"
-//                     alt="our-company-right-image"
-//                     useMap="#image-map"
-//                     className="w-[500px] h-auto"
-//                 />
-//                 <map name="image-map">
-//                     {areas.map((area, index) => (
-//                     <area
-//                         key={index}
-//                         shape="circle"
-//                         coords={area.coords}
-//                         alt={area.label}
-//                         onMouseEnter={() => setHoveredIndex(index)}
-//                         onMouseLeave={() => setHoveredIndex(null)}
-//                         href="#"
-//                     />
-//                     ))}
-//                 </map>
-//                 {/* {areas.map((area, index) => {
-//                     const [x, y, r] = area.coords.split(",").map(Number);
-//                     const isHovered = hoveredIndex === index;
-
-//                     return (
-//                         <div
-//                         key={index}
-//                         onMouseEnter={() => setHoveredIndex(index)}
-//                         onMouseLeave={() => setHoveredIndex(null)}
-//                         onClick={() => {
-//                             // Optional: Navigate to a section, open modal, etc.
-//                             console.log("Clicked:", area.label);
-//                         }}
-//                         className={`absolute rounded-full border-2 transition-all duration-300 ${
-//                             isHovered ? "bg-[#01261E] border-[#01261E]" : "bg-white border-gray-400"
-//                         }`}
-//                         style={{
-//                             top: `${y - r}px`,
-//                             left: `${x - r}px`,
-//                             width: `${r * 2}px`,
-//                             height: `${r * 2}px`,
-//                             cursor: "pointer",
-//                             zIndex: 10,
-//                         }}
-//                         title={area.label}
-//                         />
-//                     );
-//                     })} */}
-
-
-//                 {/* Tooltip overlays */}
-//                 {areas.map((area, index) => {
-//                     const [x, y, r] = area.coords.split(",").map(Number);
-//                     return (
-//                     hoveredIndex === index && (
-//                         <div
-//                         key={index}
-//                         className="absolute bg-black text-white text-sm px-3 py-2 rounded shadow-lg"
-//                         style={{
-//                             top: y - r - 40,
-//                             left: x - r,
-//                             transform: "translate(-50%, -50%)",
-//                         }}
-//                         >
-//                         <strong>{area.label}</strong>
-//                         <p>{area.content}</p>
-//                         </div>
-//                     )
-//                     );
-//                 })}
-//                 </div>
-//             </div>
-//         </div>
-//     )
-// }
-
-
 import Image from 'next/image';
 import styles from '../aboutOurCompany.module.css';
+import HeadingWithUnderline from '../advertiseComponents/headingWithUnderline/headingwithUnderline';
 
 const newsletters = [
   {
@@ -168,29 +45,121 @@ const newsletters = [
 
 export default function AboutOurCompany() {
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.centerLogo}>
-        <Image src="/icons/center-logo.png" alt="Center Logo" width={48} height={48} />
-      </div>
-      <div className={styles.rotatingOrbit}>
-        {newsletters.map((item, index) => (
-          <div key={index} className={styles.icon} style={item.style}>
-            <div className={styles.tooltip}>
-              <strong>{item.name}</strong>
-              <br />
-              <small>{item.description}</small>
-            </div>
-            <Image
-              src={item.icon}
-              alt={item.name}
-              width={60}
-              height={60}
-              style={{ borderRadius: '50%' }}
-            />
+
+    <>
+    <div className="px-4 md:px-28 md:py-10">
+     <div className="flex lg:flex-row">
+       {/* left */}
+      <div className="w-[50%]">
+        <div className="w-[80%]">
+          <HeadingWithUnderline text="Our company"/>
+
+          <p className="pt-8 text-[#000] text-[18px] font-[400] leading-[135%] tracking-[0.36px]">
+            We began as a single newsletter with one goal: delivering fresh, unbiased news to help you stay updated on the day’s most important topics. </p>
+
+            <p className="py-4 text-[#000] text-[18px] font-[400] leading-[135%] tracking-[0.36px]">
+            We began as a single newsletter with one goal: delivering fresh, unbiased news to help you stay updated on the day’s most important topics. </p>
+
+          <div className="md:w-[25%] w-full mt-6">
+            <a
+            href="/"
+            className="block text-center bg-[#01261E] hover:bg-[#014134] text-white text-[14px] font-[600] px-4 py-2 rounded-full w-full"
+            >
+            Learn more
+          </a>
           </div>
-        ))}
+        </div>
       </div>
+
+      {/* right */}
+      <div className="w-[50%]">
+       
+        <div className="relative w-full flex justify-center items-center">
+          {/* Orbit background image */}
+          <img
+            src="/about/roll-with-nls.png"
+            alt="Orbit"
+            className="w-[92%] h-auto"
+          />
+
+          {/* Icon 1 - Top Left (Capitol icon) */}
+          <div className="absolute top-[15%] left-[30%] group">
+            <img src="/about/ps-round.png" alt="Capitol" className="w-10 h-10 bg-[#4D3060] hover:bg-[#684182] rounded-full" />
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-2 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
+         
+                <div className='w-[150px]'>
+                  <p className='text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]'>Presidential Summary</p>
+                  <p className='text-[12px] text-center leading-[135%] tracking-[0.24px]'>Global affairs and<br/> business news</p>
+                </div>
+            
+                <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+            </div>
+          </div>
+
+          {/* Icon 2 - Top Right (Blue stripes icon) */}
+          <div className="absolute top-[12%] right-[25%] group">
+            <img src="/about/gs-round.png" alt="Stripes" className="w-10 h-10 bg-[#06266D] hover:bg-[#0A338C] rounded-full" />
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+
+             <div className='w-[150px]'>
+                  <p className='text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]'>Geopolitical Summary</p>
+                  <p className='text-[12px] text-center leading-[135%] tracking-[0.24px]'>International relations<br/> newsletter</p>
+                </div>
+
+                <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+            </div>
+          </div>
+
+          {/* Icon 3 - Middle Right (B&H) */}
+          <div className="absolute top-[38%] right-[23%] group">
+            <img src="/about/bh-round.png" alt="B&H" className="w-10 h-10 bg-[#8E3321] hover:bg-[#A23E2B] rounded-full" />
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              
+              <div className='w-[150px]'>
+                  <p className='text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]'>Business History</p>
+                  <p className='text-[12px] text-center leading-[135%] tracking-[0.24px]'>Historical business<br/>knowledge</p>
+                </div>
+
+                <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+            </div>
+          </div>
+
+          {/* Icon 4 - Bottom Right (Film roll) */}
+          <div className="absolute bottom-[18%] right-[32%] group">
+            <img src="/about/ms-round.png" alt="Film" className="w-10 h-10 bg-[#161B21] hover:bg-[#2D3844] rounded-full" />
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+             
+             <div className='w-[150px]'>
+                  <p className='text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]'>Movie Suggestions</p>
+                  <p className='text-[12px] text-center leading-[135%] tracking-[0.24px]'>A weekly roundup of<br/> movie reviews & news</p>
+                </div>
+
+                <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+            </div>
+          </div>
+
+          {/* Icon 5 - Bottom Left (Building) */}
+          <div className="absolute bottom-[22%] left-[25%] group">
+            <img src="/about/ls-round.png" alt="Building" className="w-10 h-10 bg-[#6A6F5B] hover:bg-[#737961] rounded-full" />
+            <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              
+              <div className='w-[150px]'>
+                  <p className='text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]'>
+                    Long and Short</p>
+                  <p className='text-[12px] text-center leading-[135%] tracking-[0.24px]'>Insider news for the world<br/> of finance</p>
+                </div>
+
+              <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+     </div>
     </div>
+    
+    </>
   );
 }
 

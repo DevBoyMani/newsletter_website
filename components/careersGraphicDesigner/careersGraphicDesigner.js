@@ -73,7 +73,7 @@ export default function CareersGraphicDesigner(){
                                 <h3 className="text-[#fff] text-[20px] font-[600] leading-[141%]">Apply now!
 
                                 </h3>
-                                <p className="w-[74%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.</p>
+                                <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">If you're interested in end-to-end development and want to work with cutting-edge technologies, come on board.</p>
                                 <div className="flex flex-row ">
                                     <p 
                                     className="text-[#fff] text-[16px] font-[400]
