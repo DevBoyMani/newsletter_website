@@ -2,6 +2,7 @@ import AboutHero from "../../components/aboutHero/aboutHero";
 import AboutNewslettersStatistics from "../../components/aboutNewslettersStatistics/aboutNewslettersStatistics";
 import AboutOurCompany from "../../components/aboutOurCompany/aboutOurCompany";
 import AboutOurMission from "../../components/aboutOurMission/aboutOurMission";
+import AboutOurStandards from "../../components/aboutOurStandards/aboutOurStandards";
 
 export default function About() {
     return (
@@ -11,6 +12,7 @@ export default function About() {
                 <AboutNewslettersStatistics/>
                 <AboutOurCompany/>
                 <AboutOurMission/>
+                <AboutOurStandards/>
             </div>
         </>
     );

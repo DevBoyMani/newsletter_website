@@ -426,7 +426,7 @@ const whatWeOfferCol2=[
               </div>
             </div>
 
-          {/* heading with underline and content */}
+          {/* What our people have to say*/}
         <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
             <div className="border-b border-black">
               <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E] font-[GT-Super-Ds-Trial] ">What our people have to say</div>
