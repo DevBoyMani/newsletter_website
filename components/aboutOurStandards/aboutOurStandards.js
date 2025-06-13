@@ -33,9 +33,9 @@ export default function AboutOurStandards() {
             {activeContent && (
             
                 <div>
-                    <h5 className='py-4 text-[22px] '>{activeContent.label}</h5>
-                    <p>{activeContent.p1}</p>
-                    <p>{activeContent.p2}</p>
+                    <h5 className='pt-8 pb-4 text-[31px] text-[#000] font-[400] leading-normal '>{activeContent.label}</h5>
+                    <p className='text-[18px] font-[400] leading-[124.251%] tracking-[0.36px]'>{activeContent.p1}</p>
+                    <p className='text-[18px] font-[400] leading-[124.251%] tracking-[0.36px] py-4'>{activeContent.p2}</p>
                 </div>
             
             )}
@@ -74,14 +74,14 @@ export default function AboutOurStandards() {
           onClick={() => setSelected(btn.label)}
         >
             <span
-            className={`text-xs ${
-              selected === btn.label ? "font-bold text-black" : "text-gray-800"
+            className={`text-[15px] ${
+              selected === btn.label ? "font-[500] leading-normal text-[#000] " : "text-[#00000099] font-[400] leading-normal"
             }`}
           >
             {btn.label}
           </span>
           <div
-            className={`w-4 h-4 rounded-full border-4 transition-all ${
+            className={`w-5 h-5 rounded-full border-[5px] transition-all ${
                 selected === btn.label
                 ? "border-[#00261E] bg-white"  
                 : "border-transparent bg-[#00261E]" 

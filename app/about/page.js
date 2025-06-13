@@ -3,6 +3,7 @@ import AboutNewslettersStatistics from "../../components/aboutNewslettersStatist
 import AboutOurCompany from "../../components/aboutOurCompany/aboutOurCompany";
 import AboutOurMission from "../../components/aboutOurMission/aboutOurMission";
 import AboutOurStandards from "../../components/aboutOurStandards/aboutOurStandards";
+import AboutWhantToJoinOurTeam from "../../components/aboutWhantToJoinOurTeam/aboutWhantToJoinOurTeam";
 
 export default function About() {
     return (
@@ -13,6 +14,7 @@ export default function About() {
                 <AboutOurCompany/>
                 <AboutOurMission/>
                 <AboutOurStandards/>
+                <AboutWhantToJoinOurTeam/>
             </div>
         </>
     );
