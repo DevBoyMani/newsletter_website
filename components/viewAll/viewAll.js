@@ -17,7 +17,7 @@ export default function ViewAll() {
         { popupSalary:"$50,000 - $70,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Design", title: "Graphic Designer", experience: "Senior", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#E19F20",slug:"graphic-designer" },
         { popupSalary:"$40,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",name: "UX/UI", title: "UX Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences...", button: "Apply", theme: "#582719",slug:"ux-designer" },
         { popupSalary:"$40,000 - $70,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Web Dev", title: "Full-Stack Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#092236",slug:"full-stack" },
-        { popupSalary:"$50,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Design", title: "logo Designer", experience: "Senior", content: "Simply dummy text of the printing and typesetting industry...", button: "Apply", theme: "#1A1A1A",slug:"logo-designer" },
+        { popupSalary:"$50,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Design", title: "logo Designer", experience: "Senior", content: "Simply dummy text of the printing ", button: "Apply", theme: "#1A1A1A",slug:"logo-designer" },
         { popupSalary:"$40,000 - $70,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "UX/UI", title: "web Designer", experience: "Mid-Level", content: "Creating intuitive and engaging user experiences", button: "Apply", theme: "#394E65",slug:"web-designer" },
         { popupSalary:"$30,000 - $60,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Web Dev", title: "Backend Developer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#657C75",slug:"backend-dev" },
         { popupSalary:"$50,000 - $80,000",popupVenue: "remote",popupContent1:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",popupContent2:"Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",name: "Software Engineer", title: "Programmer", experience: "Junior", content: "Building responsive and dynamic web applications...", button: "Apply", theme: "#01261E",slug:"software-engineer" }
@@ -45,20 +45,20 @@ export default function ViewAll() {
       onMouseEnter={() => setHoveredIndex(index)}
       onMouseLeave={() => setHoveredIndex(null)}
     >
-      <h2 className="text-[14px] mt-2">{item.name}</h2>
+      <h2 className="text-[12px] font-[400] leading-[101%] mt-2">{item.name}</h2>
 
       {/* Mobile Content */}
       <div className="block lg:hidden flex-grow min-h-[160px] max-h-[230px]">
-        <div className="mt-3">
-          <h3 className="text-sm font-semibold">{item.title}</h3>
-          <p className="text-xs text-gray-300">{item.experience}</p>
+        <div className="mt-4">
+          <h3 className="text-[14px] font-[700] leading-[101%]">{item.title}</h3>
+          <p className="text-[12px] text-[#FFFFFF99] font-[400] leading-[101%] py-1">{item.experience}</p>
         </div>
         <div className="mt-16">
-          <p className="font-medium text-[9px]">{item.content}</p>
+          <p className="text-[11px] font-[500] leading-normal">{item.content}</p>
           <div className="py-4">
             <button
               onClick={() => handleImageClick(index)}
-              className="text-sm w-full bg-white/25 text-white py-1 rounded-lg"
+              className="text-[12px] w-full bg-[#FFFFFF1A] text-white py-1 rounded-[5px]"
             >
               {item.button}
             </button>

@@ -243,9 +243,9 @@ const whatWeOfferCol2=[
             {/* mobile faq */}
 
              <div className="lg:hidden block py-10 flex justify-end">
-            <div className="xl:w-[54%] lg:pb-20">
-                <div className="px-4 text-[#01261E] text-[40px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] text-left">
-                  How do we work with <br/>
+            <div className=" lg:pb-20">
+                <div className="w-[80%] px-4 text-[#01261E] text-[30px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] ">
+                  How do we work with 
                   your application?
                 </div>
               </div>
@@ -342,7 +342,7 @@ const whatWeOfferCol2=[
                       </div>
                       <a
                         href=""
-                        className="inline-block border border-white text-white text-[15px] mt-4 px-6 py-1 rounded-lg hover:text-black hover:bg-white leading-normal"
+                        className="inline-block border border-[#FAFAFA] text-[#FAFAFA] text-[15px] mt-4 px-5 py-2 rounded-[57px] leading-normal"
                       >
                         About Us
                       </a>
@@ -351,8 +351,8 @@ const whatWeOfferCol2=[
           </div>
       
 
-          {/* What we offer */}
-           <div className="md:px-28 md:pb-10 md:pt-16">
+          {/* What we offer desktop*/}
+           <div className="hidden lg:block md:px-28 md:pb-10 md:pt-16">
               <div className="md:flex h-full gap-10">
                 {/* Left: Sticky Section */}
                 <div className="w-[40%] sticky top-28 h-fit">
@@ -426,6 +426,56 @@ const whatWeOfferCol2=[
               </div>
             </div>
 
+            {/* What we offer mobile*/}
+           <div className="block lg:hidden px-4 pb-10 pt-10 block md:hidden">
+            {/* Top Section: Heading */}
+            <div className="mb-10 text-[#000]">
+              <span className="text-[16px] font-[400] leading-normal">
+                Become a colleague
+              </span>
+              <h2 className="text-[34px] font-[400] leading-normal font-[GT-Super-Ds-Trial]">
+                What we offer
+              </h2>
+            </div>
+
+              {/* Cards Section: Column 1 */}
+              <div className="space-y-6 mb-10">
+                {whatWeOfferCol1.map((item) => (
+                  <div
+                    key={item.id}
+                    className="border p-6 bg-[#B6B6B633]"
+                  >
+                    <img
+                      src={item.logo}
+                      alt={item.heading}
+                      className="w-16 h-16 mb-3"
+                    />
+                    <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">{item.heading}</h3>
+                    <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">{item.content}</p>
+                  </div>
+                ))}
+              </div>
+
+              {/* Cards Section: Column 2 */}
+              <div className="space-y-6">
+                {whatWeOfferCol2.map((item) => (
+                  <div
+                    key={item.id}
+                    className="border p-6 bg-[#B6B6B633]"
+                  >
+                    <img
+                      src={item.logo}
+                      alt={item.heading}
+                      className="w-16 h-16 mb-3"
+                    />
+                    <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">{item.heading}</h3>
+                    <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">{item.content}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+
           {/* What our people have to say*/}
         <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
             <div className="border-b border-black">
@@ -478,12 +528,12 @@ const whatWeOfferCol2=[
         </div>
 
         <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32">
-              <h2 className="text-[56px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
+              <h2 className="text-[34px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
                 Contact our team
               </h2>
 
-              <div className="w-[50%] mx-auto">
-                <p className="text-[18px] font-[400] leading-[150%] tracking-[0.36px]">
+              <div className="w-[80%] mx-auto">
+                <p className="text-[12px] font-[400] leading-[150%] tracking-[0.36px] text-center">
                   If you're looking to grow in a dynamic environment and contribute to something greater, we invite you to explore our open positions and become a part of our journey.
                 </p>
               </div>
@@ -495,7 +545,7 @@ const whatWeOfferCol2=[
                 </span>
               </a>
 
-              <div className="py-4">
+              <div className="pb-20 ">
                 <a href="#" className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]">
                 <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
                   SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
