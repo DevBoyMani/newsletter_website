@@ -10,12 +10,8 @@ import Footer from "../../components/footer/footer";
 import InThePress from "../advertiseComponents/mobileViewComponents/inThePress/inThePress";
 import { MobileFaq } from "../advertiseComponents/mobileViewComponents/mobileFaq/mobileFaq";
 import { Agdasima } from 'next/font/google';
+import AdvertiseAdBlocker from "../advertiseAdBlocker/advertiseAdBlocker";
 
-const agdasima = Agdasima({
-  weight: ['400'], 
-  subsets: ['latin'],
-  display: 'swap',
-});
 
 export default function AdvertisePageMobileVersion() {
   const videos = [
@@ -155,50 +151,14 @@ export default function AdvertisePageMobileVersion() {
       </div>
 
       {/* Ad Blocker and Do Follow */}
-      <div className="bg-[#FAFAFA] px-8 md:px-28 py-8">
-      <div className="flex flex-row justify-between items-stretch gap-4">
-        {/* AD Blocker Section */}
-        <div className="w-1/2 ">
-          <div className="flex justify-center">
-            <img src="/advertise/ad-blocker-image.png" alt="Ad Blocker" className="w-9 h-9" />
-          </div>
-          <h4 className="text-[14px] text-[#304659] text-center py-4">AD Blocker</h4>
-          <p className="text-[10px] text-[#3B5266] text-center md:text-left leading-[17px]">
-            Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t.
-            Reach our audience directly, no filters, no ad blockers.
-          </p>
-        </div>
-
-    {/* Do Follow Section */}
-          <div className="w-1/2">
-            <div className="flex justify-center">
-              <img src="/advertise/do-follow.png" alt="Do Follow" className="w-9 h-9" />
-            </div>
-            <h4 className="text-[14px] text-[#304659] text-center md:text-left py-4">Do follow</h4>
-            <p className="text-[10px] text-[#3B5266] text-center md:text-left leading-[17px]">
-              Dofollow links pass along what the SEO community commonly calls “link juice.”
-              Links are a vote for quality.
-            </p>
-            <div className="flex w-full border bg-[#E6E6E6] border-[#A7A7A7] text-center">
-              <a
-                href="http://raventools.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${agdasima.className} text-[#121212] text-[8px] font-[400] leading-normal w-full px-1 py-0.5 `}
-              >
-                &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
+      
+      <AdvertiseAdBlocker/>
       
 
 
       {/* FAQ Section */}
       <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
-      <HeadingWithUnderline text="Got Questions? We've Got Answers!"/>
+      <HeadingWithUnderline text="Frequently Asked Questions"/>
       <div>
         <MobileFaq/>
       </div>
