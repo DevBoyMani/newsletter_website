@@ -336,7 +336,7 @@ const whatWeOfferCol2=[
                       <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
                       Your browser does not support the video tag.
                     </video>
-                    <div className="absolute top-[4%] left-4 w-full space-y-10 md:px-4">
+                    <div className="absolute top-[4%] left-4 w-full space-y-10 md:px-4 w-[40%]">
                       <div className="text-white text-[39px] font-[GT-Super-Ds-Trial] leading-[84%] font-[400]">
                         Your trusted<br/> source for digital<br/> insights
                       </div>
@@ -512,7 +512,7 @@ const whatWeOfferCol2=[
 
                   {/* Dynamic Text Content */}
                   <div className="lg:py-6">
-                    <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400] mb-10 max-w-[70%]">{selectedImage.text}</p>
+                    <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400] mb-10 lg:w-[70%]">{selectedImage.text}</p>
                     <p className="text-[17px] lg:text-[24px] leading-[130%] font-[400]">{selectedImage.name}</p>
                     <p className="text-[11px] lg:text-[15px] leading-[130%] font-[300]">{selectedImage.role}</p>
                   </div>
@@ -527,32 +527,38 @@ const whatWeOfferCol2=[
               </div>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32">
-              <h2 className="text-[34px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
+        {/* contact our team */}
+
+        <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32 pb-16">
+              <h2 className="text-[34px] lg:text-[56px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
                 Contact our team
               </h2>
 
-              <div className="w-[80%] mx-auto">
+              <div className="lg:w-[30%] mx-auto px-4">
                 <p className="text-[12px] font-[400] leading-[150%] tracking-[0.36px] text-center">
                   If you're looking to grow in a dynamic environment and contribute to something greater, we invite you to explore our open positions and become a part of our journey.
                 </p>
               </div>
 
-              {/* Moving Text */}
-              <a href="/contact" className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]">
+              {/* Moving Text desktop*/}
+           
+                <a href="/contact" className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]">
                 <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
                   SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
                 </span>
               </a>
+            
 
-              <div className="pb-20 ">
+
+{/* Moving Text mobile*/}
+             
                 <a href="#" className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]">
                 <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
                   SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
                 </span>
               </a>
               </div>
-            </div>
+         
       
 
     </>

@@ -12,19 +12,17 @@ import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/adve
 
 import AdvertisePageMobileVersion from "../../components/advertisePageMobileVersion/advertisePageMobileVersion";
 import { Agdasima } from 'next/font/google';
+import AdvertiseAdBlocker from "../../components/advertiseAdBlocker/advertiseAdBlocker";
+import AdvertiseNewFaq from "../../components/advertiseNewFaq/advertiseNewFaq";
 
-const agdasima = Agdasima({
-  weight: ['400'], 
-  subsets: ['latin'],
-  display: 'swap',
-});
+
 
 export default function Advertise() {
     const videos = [
-      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[867px]" },
-      { video: "/advertise/v-2.mp4", id: "video2", height: "h-[804px]" },
-      { video: "/advertise/v-3.mp4", id: "video3", height: "h-[989px]", moveUp: "mt-[-80px]" },
-      { video: "/advertise/v-4.mp4", id: "video4", height: "h-[1101px]", moveUp: "mt-[-120px]" },
+      { video: "/advertise/v-1.mp4", id: "video1", height: "h-[694px]" },
+      { video: "/advertise/v-2.mp4", id: "video2", height: "h-[644px]" },
+      { video: "/advertise/v-3.mp4", id: "video3", height: "h-[781px]", moveUp: "mt-[-80px]" },
+      { video: "/advertise/v-4.mp4", id: "video4", height: "h-[881px]", moveUp: "mt-[-120px]" },
     ];
 
     const newsData = [
@@ -107,10 +105,10 @@ export default function Advertise() {
 
                   {/* bottom text  */}
                   <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#716D6D] text-[16px] font-[600] ">
-                      <span className="absolute bottom-[236px] left-[14%]">$19.4 trillion</span>
-                      <span className="absolute bottom-[174px] left-[36%]">$17.4 trillion</span>
-                      <span className="absolute bottom-[360px] left-[57%]">$18.9 trillion</span>
-                      <span className="absolute bottom-[470px] left-[78%]">$144 million</span>
+                      <span className="absolute bottom-[66px] left-[14%]">$19.4 trillion</span>
+                      <span className="absolute bottom-[14px] left-[36%]">$17.4 trillion</span>
+                      <span className="absolute bottom-[148px] left-[57%]">$18.9 trillion</span>
+                      <span className="absolute bottom-[250px] left-[78%]">$144 million</span>
                   </div>
 
 
@@ -207,12 +205,12 @@ export default function Advertise() {
               </div>
             </div>
 
-            <div className="flex my-0 flex-col items-center justify-center text-center py-10">
+            <div className="flex my-0 flex-col items-center justify-center text-center pt-10 pb-28">
               <h2 className="text-[80px] font-[400]" style={{ fontFamily: "GT Super Ds Trial" }}>
                 And that’s not all
               </h2>
 
-              <div className="w-[390px] mx-auto">
+              <div className="w-[390px] mx-auto p">
                 <p className="text-[20px] font-[400] leading-[1.5]">
                   Get a personalized demo and discover how Sagravia can help your business
                 </p>
@@ -229,47 +227,13 @@ export default function Advertise() {
           </div>
 
           {/* Ad blocker and Do follow */}
-          <div className="bg-[#FAFAFA] relative hidden lg:block">
-              <div className="px-4 md:px-32 py-10">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-14">
-                  
-                  {/* Box 1 */}
-                  <div className="flex-1 border border-black p-10 rounded-[15px]">
-                    <h4 className=" md:text-[36px] text-[#01261E] mb-4 leading-normal font-[GT-Super-Ds-Trial]">AD Blocker</h4>
-                    <p className="md:text-[20px] mb-4">
-                      Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t.
-                      Reach our audience directly, no filters, no ad blockers.
-                    </p>
-                    <div className="flex justify-end">
-                      <img
-                        src="/advertise/ad-blocker-image.png"
-                        alt=""
-                        className="w-[114px] h-[114px] mt-auto"
-                      />
-                    </div>
-                  </div>
+          <AdvertiseAdBlocker/>
 
-                  {/* Box 2 */}
-                  <div className="flex-1 border border-black p-10 rounded-[15px]">
-                    <h4 className=" md:text-[36px] text-[#01261E] mb-4 leading-normal font-[GT-Super-Ds-Trial]">Do follow</h4>
-                    <p className="md:text-[20px] mb-20">
-                      Dofollow links pass along what the SEO community commonly calls “link juice.”
-                      Links are a vote for quality.
-                    </p>
-
-                    <div className={`${agdasima.className} w-full bg-[#E6E6E6] border-2 border-[#A7A7A7] text-center`}>
-                      <a href="http://raventools.com" target="_blank" className=" py-0.5 text-[#121212] md:text-[27px]">
-                        &lt;a href="http://raventools.com"&gt;great seo tools&lt;/a&gt;
-                      </a>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-            </div>
 
           {/* faq */}
-          <div className="bg-[#FAFAFA] relative hidden lg:block">
+
+          {/* old */}
+          {/* <div className="bg-[#FAFAFA] relative hidden lg:block">
             <div className="px-4 md:px-28 pt-20 pb-10">
               <div className="flex flex-col md:flex-row justify-between px-4">
               <div className="md:w-[40%] lg:py-0 pb-14">
@@ -285,8 +249,10 @@ export default function Advertise() {
               </div>
             </div>
             </div>
-          </div>
+          </div> */}
 
+          {/* new */}
+            <AdvertiseNewFaq/>
           <div className="bg-[#FAFAFA] hidden lg:block">
             <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
                 <HeadingWithUnderline text="In the press"/>
@@ -318,7 +284,7 @@ export default function Advertise() {
               </div>
 
               <div className="px-20 py-20 flex justify-center ">
-                <a href="" className="w-[198px] h-[45px] flex justify-center items-center border border-[#121212] rounded-[10px] text-[23px] font-[600] hover:bg-[#01261E] hover:text-[#ffffff] transition">
+                <a href="" className="w-[198px] h-[45px] flex justify-center items-center border border-[#121212] rounded-[45px] text-[23px] text-[#121212] font-[600] hover:bg-[#01261E] hover:text-[#ffffff] transition">
                   See more
                 </a>
               </div>
