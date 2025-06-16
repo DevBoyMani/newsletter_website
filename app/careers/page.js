@@ -242,7 +242,7 @@ const whatWeOfferCol2=[
 
             {/* mobile faq */}
 
-             <div className="lg:hidden block py-10 flex justify-end">
+             <div className="lg:hidden block py-10">
             <div className=" lg:pb-20">
                 <div className="w-[80%] px-4 text-[#01261E] text-[30px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] ">
                   How do we work with 
@@ -324,31 +324,32 @@ const whatWeOfferCol2=[
             </div>
 
           {/* Mobile view with fallback image */}
-          <div className="block lg:hidden relative py-10">
-            <div className="relative h-[470px]">
-                    <video
-                      autoPlay
-                      loop
-                      muted
-                      playsInline
-                      className="w-full h-full object-cover"
-                    >
-                      <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
-                      Your browser does not support the video tag.
-                    </video>
-                    <div className="absolute top-[4%] left-4 w-full space-y-10 md:px-4 w-[40%]">
-                      <div className="text-white text-[39px] font-[GT-Super-Ds-Trial] leading-[84%] font-[400]">
-                        Your trusted<br/> source for digital<br/> insights
-                      </div>
-                      <a
-                        href=""
-                        className="inline-block border border-[#FAFAFA] text-[#FAFAFA] text-[15px] mt-4 px-5 py-2 rounded-[57px] leading-normal"
-                      >
-                        About Us
-                      </a>
-                    </div>
+        <div className="block lg:hidden relative py-10">
+          <div className="relative h-[470px] w-full">
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="w-full h-full object-cover"
+            >
+              <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute top-[4%] left-4 space-y-10 max-w-[80%]">
+              <div className="text-white text-[39px] leading-[84%] font-[400] font-[GT-Super-Ds-Trial]">
+                Your trusted<br /> source for digital<br /> insights
+              </div>
+              <a
+                href=""
+                className="inline-block border border-[#FAFAFA] text-[#FAFAFA] text-[15px] mt-4 px-5 py-2 rounded-[57px] leading-normal"
+              >
+                About Us
+              </a>
             </div>
           </div>
+        </div>
+
       
 
           {/* What we offer desktop*/}
@@ -534,7 +535,7 @@ const whatWeOfferCol2=[
                 Contact our team
               </h2>
 
-              <div className="lg:w-[30%] mx-auto px-4">
+              <div className="lg:w-[30%] mx-auto px-8">
                 <p className="text-[12px] font-[400] leading-[150%] tracking-[0.36px] text-center">
                   If you're looking to grow in a dynamic environment and contribute to something greater, we invite you to explore our open positions and become a part of our journey.
                 </p>
