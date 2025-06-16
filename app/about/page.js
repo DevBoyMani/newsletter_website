@@ -8,7 +8,7 @@ import AboutWhantToJoinOurTeam from "../../components/aboutWhantToJoinOurTeam/ab
 export default function About() {
     return (
         <>
-            <div className="bg-[#FAFAFA]">
+            <div className="bg-[#FAFAFA] ">
                 <AboutHero/>
                 <AboutNewslettersStatistics/>
                 <AboutOurCompany/>

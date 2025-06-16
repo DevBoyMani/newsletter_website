@@ -1,6 +1,8 @@
 export default function AboutHero(){
     return(
-        <div>
+        <>
+        {/* desktop */}
+        <div className="hidden lg:block">
             <div className="px-2">
                 <img
                 src="/about/hero.png"
@@ -9,5 +11,18 @@ export default function AboutHero(){
                      />
             </div>
         </div>
+
+        {/* mobile */}
+
+        <div className="block lg:hidden">
+            <div className="px-2">
+                <img
+                src="/about/hero.png"
+                alt="About us hero"
+                className="w-full object-cover"
+                     />
+            </div>
+        </div>
+        </>
     )
 }

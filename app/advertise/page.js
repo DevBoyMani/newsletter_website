@@ -227,7 +227,9 @@ export default function Advertise() {
           </div>
 
           {/* Ad blocker and Do follow */}
-          <AdvertiseAdBlocker/>
+          <div className="hidden lg:block">
+            <AdvertiseAdBlocker/>
+          </div>
 
 
           {/* faq */}

@@ -50,7 +50,7 @@ const barColors = [
 
 export function AboutBarChart() {
   return (
-    <Card className="bg-[#FAFAFA] p-6 border-none shadow-none">
+    <Card className="bg-[#FAFAFA] lg:p-6 lg:mx-0 mx-auto border-none shadow-none">
       <ChartContainer config={chartConfig}>
         <BarChart width={600} height={300} data={chartData} className="">
           {/* ✅ Move defs here */}

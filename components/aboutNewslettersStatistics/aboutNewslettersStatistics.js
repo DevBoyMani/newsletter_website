@@ -11,8 +11,19 @@ export default function AboutNewslettersStatistics() {
         { id: 5, name: "Business History", colorImage: "about/bh.png" }
     ];
 
+    // mobile data
+    const newslettersLine =[
+        { id: 1, name: "Geopolitical Summary", colorImage: "about/gs.png" },
+        { id: 2, name: "Long and Short", colorImage: "about/ls.png" },
+        { id: 3, name: "Movie Suggestions", colorImage: "about/ms.png" },
+        { id: 4, name: "Presidential Summary", colorImage: "about/ps.png" },
+        { id: 5, name: "Business History", colorImage: "about/bh.png" }
+    ]
+
     return (
-        <div className="bg-[#FAFAFA] md:px-28">
+        <>
+        <div className="hidden lg:block">
+            <div className="bg-[#FAFAFA] md:px-28">
             <div className="flex flex-col md:flex-row justify-start items-start py-10">
                 {/* left */}
                 <div className="w-full md:w-1/2 mb-8">
@@ -70,5 +81,80 @@ export default function AboutNewslettersStatistics() {
                 </div>
             </div>
         </div>
+        </div>
+
+        <div className="block lg:hidden">
+            <div className="bg-[#FAFAFA] md:px-28">
+            
+                {/*top*/}
+                <div className="w-full px-4 py-10">
+                    <h1 className="text-[#151515] text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold">
+                        Writing awesome<br />
+                        newsletters is hard.<br />
+                    </h1>
+                    <h1 className="text-[#B3B3B3] text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold">
+                        We’ve done it over<br />
+                        600 times.
+                    </h1>
+                </div>
+
+                {/* <div className="border-t md:border-l border-black h-auto mx-2 md:mx-6 mt-10 md:mt-0 self-stretch"></div> */}
+
+                {/* bottom*/}
+                <div className="w-full">
+                    
+
+                    {/* <div className="flex space-x-7 mt-6 pl-14">
+                        {newslettersLine1.map((item) => (
+                            <div key={item.id} className="flex  items-center space-x-2 ">
+                                <img
+                                    src={item.colorImage}
+                                    alt={item.name}
+                                    className="w-2 h-2 object-contain"
+                                />
+                                <p className="text-[14px] font-[600] text-[#151515] leading-[109.922%]">{item.name}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="flex space-x-7 mt-2 pl-14">
+                        {newslettersLine2.map((item) => (
+                            <div key={item.id} className="flex items-center space-x-2 mr-0.5">
+                                <img
+                                    src={item.colorImage}
+                                    alt={item.name}
+                                    className="w-2 h-2 object-contain"
+                                />
+                                <p className="text-sm text-[#151515] font-[600] leading-[109.922%]">{item.name}</p>
+                            </div>
+                        ))}
+                    </div> */}
+
+                    <div className="px-4">
+                        <div className="grid grid-cols-2 gap-4 ">
+                    {newslettersLine.map((item) => (
+                        <div key={item.id} className="flex items-center space-x-2">
+                        <img
+                            src={item.colorImage}
+                            alt={item.name}
+                            className="w-2 h-2 object-contain"
+                        />
+                        <p className="text-[14px] font-[600] text-[#151515] leading-[109.922%]">
+                            {item.name}
+                        </p>
+                        </div>
+                    ))}
+                    </div>
+                    </div>
+
+
+                    <div className="py-10">
+                        <AboutBarChart/>
+                    </div>
+                </div>
+            
+        </div>
+        </div>
+        </>
     );
 }
