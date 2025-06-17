@@ -22,6 +22,7 @@ export default function AboutNewslettersStatistics() {
 
     return (
         <>
+        {/* desktop */}
         <div className="hidden lg:block">
             <div className="bg-[#FAFAFA] md:px-28">
             <div className="flex flex-col md:flex-row justify-start items-start py-10">
@@ -83,11 +84,12 @@ export default function AboutNewslettersStatistics() {
         </div>
         </div>
 
+        {/* mobile */}
         <div className="block lg:hidden">
             <div className="bg-[#FAFAFA] md:px-28">
             
                 {/*top*/}
-                <div className="w-full px-4 py-10">
+                <div className="w-full px-4 py-6">
                     <h1 className="text-[#151515] text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold">
                         Writing awesome<br />
                         newsletters is hard.<br />
