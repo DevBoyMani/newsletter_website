@@ -15,7 +15,7 @@ export default function AboutHero(){
         {/* mobile */}
 
         <div className="block lg:hidden">
-            <div className="px-2">
+            <div className="w-full">
                 <img
                 src="/about/hero.png"
                 alt="About us hero"

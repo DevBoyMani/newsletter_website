@@ -131,7 +131,7 @@ export default function AboutNewslettersStatistics() {
                     </div> */}
 
                     <div className="px-4">
-                        <div className="grid grid-cols-2 gap-4 ">
+                        <div className="grid grid-cols-2 gap-2 ">
                     {newslettersLine.map((item) => (
                         <div key={item.id} className="flex items-center space-x-2">
                         <img

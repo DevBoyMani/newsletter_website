@@ -23,7 +23,9 @@ export default function AboutOurStandards() {
   return (
 
     <>
-    <div className="px-4 md:px-28 md:py-20">
+    {/* desktop */}
+    <div className="hidden lg:block">
+      <div className="px-4 md:px-28 md:py-20">
      <div className="flex lg:flex-row">
        {/* left */}
       <div className="w-[50%]">
@@ -95,6 +97,83 @@ export default function AboutOurStandards() {
       </div>
      </div>
     </div>
+    </div>
+
+
+      {/* mobile */}
+      <div className='block lg:hidden'>
+        <div className="px-4">
+
+          <div className="pb-10">
+            <HeadingWithUnderline text="Our standards"/>
+          </div>
+
+          <div className="pt-4 pb-2">
+            <div className="relative w-full flex justify-center items-center">
+                  {/* Orbit background image */}
+                  <video
+                    src="/about/our-standards.mp4"
+                    className="w-[92%] h-auto"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    >
+                    Your browser does not support the video tag.
+                </video>
+
+                
+              {/* Radio buttons around the circle */}
+              {buttons.map((btn) => (
+                <div
+                  key={btn.label}
+                  style={{
+                    top: btn.top,
+                    left: btn.left,
+                    transform: "translate(-50%, -50%)",
+                  }}
+                  className="absolute flex flex-col items-center space-y-1 cursor-pointer"
+                  onClick={() => setSelected(btn.label)}
+                >
+                    <span
+                    className={`text-[12px] ${
+                      selected === btn.label ? "font-[500] leading-normal text-[#000] " : "text-[#00000099] font-[400] leading-normal"
+                    }`}
+                  >
+                    {btn.label}
+                  </span>
+                  <div
+                    className={`w-4 h-4 rounded-full border-[5px] transition-all ${
+                        selected === btn.label
+                        ? "border-[#00261E] bg-white"  
+                        : "border-transparent bg-[#00261E]" 
+                    }`}
+                    />
+                </div>
+              ))}
+
+            </div>
+          </div>
+
+           <div className="">
+
+              {activeContent && (
+                  
+                <div>
+                  <div className="pt-8 pb-4">
+                    <h5 
+                    className=' leading-normal text-[22px] text-[#000] font-[400] underline underline-offset-[6px] decoration-[1px]' 
+                    >
+                      {activeContent.label}</h5>
+                  </div>
+                  <p className='text-[14px] font-[400] leading-normal'>{activeContent.p1}</p>
+                  <p className='text-[14px] font-[400] leading-normal py-4'>{activeContent.p2}</p>
+                  </div>
+                  
+                  )}
+                </div>
+        </div>
+      </div>
     
     </>
   );

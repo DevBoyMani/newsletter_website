@@ -80,13 +80,15 @@ export default function AboutOurMission() {
 
   return (
     <>
-      <div className="py-10">
-        <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2] font-[GT-Super-Ds-Trial] text-center">
-          Our mission
-        </h2>
-        <p className="text-[#000] text-center text-[18px] font-[400] leading-[150%] tracking-[0.36px]">
-          Our mission is to keep the world informed and curious,
-          <br /> one newsletter at a time.
+    {/* desktop */}
+      <div className="hidden lg:block">
+        <div className="py-10">
+          <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2] font-[GT-Super-Ds-Trial] text-center">
+            Our mission
+          </h2>
+          <p className="text-[#000] text-center text-[18px] font-[400] leading-[150%] tracking-[0.36px]">
+            Our mission is to keep the world informed and curious,
+            <br /> one newsletter at a time.
         </p>
       </div>
 
@@ -205,6 +207,119 @@ export default function AboutOurMission() {
             </AnimatePresence>
           </div>
         </div>
+      </div>
+      </div>
+
+      {/* mobile */}
+      <div className="block lg:hidden">
+        <div className="py-10">
+        <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2] font-[GT-Super-Ds-Trial] text-center">
+          Our mission
+        </h2>
+        <p className="text-[#000] text-center text-[14px] font-[400] leading-[130%] tracking-[0.28px] px-12">
+          Our mission is to keep the world informed and curious,
+          one newsletter at a time.
+        </p>
+      </div>
+
+      <div className="pb-10 pt-4 relative">
+        <div className="bg-[#DAEBE8] h-[348px] relative overflow-hidden pt-4">
+          {/* Left Arrow */}
+          {currentIndex !== 0 && (
+            <button
+              onClick={handlePrev}
+              className="group absolute left-[20px] top-[160px] -translate-y-1/2"
+            >
+              <img
+                src="/about/button-left.png" 
+                alt="Arrow Icon"
+                className="w-5 h-5 relative z-10"
+              />
+            </button>
+          )}
+
+          {/* Right Arrow */}
+          {currentIndex !== componentData.length - 1 && (
+            <button
+              onClick={handleNext}
+              className="group absolute right-[20px] top-[158px] -translate-y-1/2"
+            >
+               <img
+                src="/about/button-right.png" 
+                alt="Arrow Icon"
+                className="w-5 h-5 relative z-10"
+              />
+            </button>
+          )}
+
+          {/* Content */}
+          <div className="p-6 transition duration-300 ease-in-out">
+            {/* Logos */}
+            <div className="flex justify-center items-center space-x-4">
+              {componentData.map((data, index) => (
+                <img
+                  key={data.id}
+                  src={
+                    index === currentIndex
+                      ? data.headerImageActive
+                      : data.headerImageInactive
+                  }
+                  alt={data.subContentL}
+                  className="w-[64px] transition-all duration-300 cursor-pointer"
+                  onClick={() => setCurrentIndex(index)}
+                />
+              ))}
+            </div>
+
+            {/* Quote */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={item.id + "-quote"}
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, ease: "easeInOut" }}
+                className="flex justify-center py-4"
+              >
+                <p className="w-[85%] px-4 text-[14px] text-[#000] font-[500] leading-[124.224%] text-center tracking-[0.28px]">
+                  {item.mainContent}
+                </p>
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Name + Role with staggered animation */}
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={item.id + direction}
+                variants={container}
+                initial="hidden"
+                animate="show"
+                exit="exit"
+                className="flex flex-col text-center justify-center pt-2 min-h-[24px] space-x-1"
+              >
+                <motion.span
+                  variants={fadeUp}
+                  className="font-semibold text-black text-[12px]"
+                >
+                  {item.subContentL}
+                </motion.span>
+                {/* <motion.span
+                  variants={fadeUp}
+                  className="text-[#A6A4A0] text-[15px]"
+                >
+                  |
+                </motion.span> */}
+                <motion.span
+                  variants={fadeUp}
+                  className="text-[#A6A4A0] text-[12px]"
+                >
+                  {item.subContentR}
+                </motion.span>
+              </motion.div>
+            </AnimatePresence>
+          </div>
+        </div>
+      </div>
       </div>
     </>
   );
