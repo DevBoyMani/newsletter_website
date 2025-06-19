@@ -43,6 +43,7 @@ const Newsletters = () => {
   const [inform, setInform] = useState(initialData);
   const [loading, setLoading] = useState(false);
   const [email, setEmail] = useState('');
+  
   const [details, setDetails] = useState({
     ids: [],
     email: "",
