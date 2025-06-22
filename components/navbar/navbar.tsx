@@ -9,33 +9,33 @@ const routes = [
   { path: "/about", name: "About" },
   { path: "/advertise", name: "Advertise" },
   { path: "/analytics", name: "Analytics" },
+  { path: "/blogs", name: "Blogs" },
   { path: "/careers", name: "Careers" },
-  { path: "/features", name: "Features" },
-  { path: "/newsletters", name: "Newsletters" },
+  // { path: "/features", name: "Features" },
+  // { path: "/newsletters", name: "Newsletters" },
   { path: "/readers", name: "Readers" },
   { path: "/contact", name: "Contact sales →", key: "letstalk" },
 ];
-
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
 
-function useIsDesktop() {
-  const [isDesktop, setIsDesktop] = useState(false);
+  function useIsDesktop() {
+    const [isDesktop, setIsDesktop] = useState(false);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsDesktop(window.innerWidth >= 640);
-    };
+    useEffect(() => {
+      const handleResize = () => {
+        setIsDesktop(window.innerWidth >= 640);
+      };
 
-    handleResize(); // check on mount
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
+      handleResize(); // check on mount
+      window.addEventListener("resize", handleResize);
+      return () => window.removeEventListener("resize", handleResize);
+    }, []);
 
-  return isDesktop;
-}
+    return isDesktop;
+  }
 
   const isDesktop = useIsDesktop();
 
@@ -44,7 +44,7 @@ function useIsDesktop() {
   return (
     <nav className="pt-16">
       {/* Desktop View */}
-      <header className="hidden lg:block bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block" >
+      <header className="hidden lg:block bg-white fixed top-0 left-0 w-full py-4 border-b border-nl_button_border z-50 shadow-sm hidden md:block">
         <div className="flex h-14 items-center justify-between px-8">
           <Link href="/">
             <div className="w-32 md:w-48">
@@ -83,11 +83,10 @@ function useIsDesktop() {
         </div>
       </header>
 
-
       {/* Mobile View */}
-      <header className={`block lg:hidden bg-white fixed top-0 left-0 w-full border-b border-nl_button_border z-50 shadow-lg md:hidden transition-all duration-300 h-16`}>
-        
-        
+      <header
+        className={`block lg:hidden bg-white fixed top-0 left-0 w-full border-b border-nl_button_border z-50 shadow-lg md:hidden transition-all duration-300 h-16`}
+      >
         <div className="flex items-center justify-between px-4 py-3">
           <Link href="/">
             <div className="w-32">
@@ -96,8 +95,7 @@ function useIsDesktop() {
           </Link>
 
           <div className="flex space-x-1">
-
-          {/* <div className="sm:text-lg flex items-center ml-8">
+            {/* <div className="sm:text-lg flex items-center ml-8">
               {contactSales.map((contact) => (
                 <Link
                   key={contact.key}
@@ -120,73 +118,75 @@ function useIsDesktop() {
                 </div>}
           </button> */}
 
-        <button
-          onClick={() => setIsOpen(!isOpen)}
-          className="p-2 text-black transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center"
-        >
-          <div className="relative w-6 h-4 flex flex-col justify-between items-center opacity-100">
-            
-              {/* Top Line */}
-              <span
-              className={`absolute top-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-                isOpen ? "opacity-0" : "top-0 opacity-100"
-              }`}
-            ></span>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 text-black transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center"
+            >
+              <div className="relative w-6 h-4 flex flex-col justify-between items-center opacity-100">
+                {/* Top Line */}
+                <span
+                  className={`absolute top-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                    isOpen ? "opacity-0" : "top-0 opacity-100"
+                  }`}
+                ></span>
 
-            {/* Middle Line */}
-            <span
-              className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-                isOpen ? "opacity-0" : "top-[44%] opacity-100"
-              }`}
-            ></span>
+                {/* Middle Line */}
+                <span
+                  className={`absolute top-1/2 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                    isOpen ? "opacity-0" : "top-[44%] opacity-100"
+                  }`}
+                ></span>
 
-            {/* Bottom Line */}
-            {/* <span
+                {/* Bottom Line */}
+                {/* <span
               className={`absolute bottom-0 left-0 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
                 isOpen ? "opacity-0" : "bottom-0 opacity-100"
               }`}
             ></span> */}
 
-            {/* "X" Lines */}
-            <span
-              className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-                isOpen ? "rotate-45 translate-y-0" : "-translate-y-full opacity-0"
-              }`}
-            ></span>
-            <span
-              className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
-                isOpen ? "-rotate-45 translate-y-0" : "translate-y-full opacity-0"
-              }`}
-            ></span>
+                {/* "X" Lines */}
+                <span
+                  className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                    isOpen
+                      ? "rotate-45 translate-y-0"
+                      : "-translate-y-full opacity-0"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute left-0 top-1/2 w-full h-[2px] bg-black transition-all duration-500 ease-in-out ${
+                    isOpen
+                      ? "-rotate-45 translate-y-0"
+                      : "translate-y-full opacity-0"
+                  }`}
+                ></span>
+              </div>
+            </button>
           </div>
-        </button>
-        </div>
         </div>
         <div
-            className={`bg-white px-4 py-4 mt-16 h-screen fixed top-0 right-0 w-full transform transition-transform duration-300 ease-out ${
-              isOpen ? "translate-x-0" : "translate-x-full"
-            }`}
-          >
-            <ul className="space-y-4 text-3xl">
-              {routes.map((route) => (
-                <li key={route.path}>
-                  <Link
-                    href={route.path}
-                    className={`block text-black ${
-                      pathname === route.path
-                        ? "underline underline-offset-4"
-                        : "hover:underline"
-                    }`}
-                    onClick={() => setIsOpen(false)}
-                  >
-                    {route.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
+          className={`bg-white px-4 py-4 mt-16 h-screen fixed top-0 right-0 w-full transform transition-transform duration-300 ease-out ${
+            isOpen ? "translate-x-0" : "translate-x-full"
+          }`}
+        >
+          <ul className="space-y-4 text-3xl">
+            {routes.map((route) => (
+              <li key={route.path}>
+                <Link
+                  href={route.path}
+                  className={`block text-black ${
+                    pathname === route.path
+                      ? "underline underline-offset-4"
+                      : "hover:underline"
+                  }`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {route.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
         </div>
       </header>
-    
     </nav>
   );
 }
