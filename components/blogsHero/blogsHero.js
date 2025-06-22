@@ -115,7 +115,7 @@ export default function BlogsHero() {
                 </div>
               </div>
               {/* 3 */}
-              <div className="flex flex-row gap-4 border-b pt-4 items-start pb-2">
+              <div className="flex flex-row gap-4 pt-4 items-start pb-2">
                 <div>
                   <div className="w-[98px] pt-2">
                     <img
