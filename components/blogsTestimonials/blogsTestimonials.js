@@ -1,7 +1,8 @@
 "use client";
 import { useRef, useState } from "react";
 import BlogsArticles from "../blogsArticles/blogsArticles";
-import { BlogsPagination } from "../blogsPagination/blogsPagination";
+import BlogsPagination from "../blogsPagination/blogsPagination";
+import BlogComboList from "../blogComboList/blogComboList";
 
 export default function BlogsTestimonials() {
   const [activeTab, setActiveTab] = useState(0);
@@ -89,7 +90,7 @@ export default function BlogsTestimonials() {
           {/* blogs */}
           <BlogsArticles />
           {/*pagination*/}
-          <BlogsPagination />
+          <BlogsPagination totalPages={25} />
           {/* subscribe */}
           <div className="md:px-10 py-10">
             <div className="bg-[#DAEBE8] rounded-[10px] p-6">
@@ -126,13 +127,15 @@ export default function BlogsTestimonials() {
             </h4>
           </div>
           {/* textimonial */}
-          <div className="w-full">
+          {/* <div className="w-full">
             <Testimonials
               testimonials={testimonials}
               activeTab={activeTab}
               setActiveTab={setActiveTab}
             />
-          </div>
+          </div> */}
+
+          <BlogComboList />
           {/* blogs */}
           <BlogsArticles />
           {/*pagination*/}

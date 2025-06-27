@@ -46,7 +46,8 @@ const articleData = [
 export default function BlogSlugBottom() {
   return (
     <>
-      <div>
+      {/* desktop */}
+      <div className="hidden lg:block">
         <div className="">
           <div className="pt-20">
             <div className="bg-[#DAEBE8]">
@@ -102,6 +103,72 @@ export default function BlogSlugBottom() {
                     </p>
                   </div>
                 ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* mobile */}
+      <div className="block lg:hidden">
+        <div className="">
+          <div className="pt-20">
+            <div className="bg-[#DAEBE8] px-4">
+              <div className=" pt-20 pb-8 md:px-28 over">
+                <div>
+                  <p className="text-[#000] text-[30px] font-[700] leading-[130%]">
+                    Suggested articles
+                  </p>
+                </div>
+              </div>
+
+              <div className="overflow-x-auto w-full">
+                <div className="flex gap-8 px-4 md:px-28 pt-10 pb-20 min-w-max">
+                  {articleData.map((item, index) => (
+                    <div key={index} className="flex-shrink-0 w-[267px]">
+                      <Link href="/blogs/slug">
+                        <div>
+                          <img
+                            src={item.image}
+                            alt={item.content}
+                            className="w-[267px] h-[267px] object-cover"
+                          />
+                        </div>
+                      </Link>
+
+                      <div className="pt-4 pb-2 flex space-x-2">
+                        <img
+                          src={item.profileP}
+                          alt={item.profileN}
+                          className="w-6 object-cover"
+                        />
+                        <p className="flex items-center gap-1 text-[#000] text-[14px] font-[400] leading-[104%]">
+                          <span>{item.profileN}</span>
+                          <span className="text-[14px]">•</span>
+                          <span>{item.profileA}</span>
+                          <span className="text-[14px]">•</span>
+                          <span>{item.when}</span>
+                        </p>
+                      </div>
+
+                      <p className="text-[16px] text-[#000] font-[700] leading-[130%]">
+                        {item.content}
+                      </p>
+
+                      <p className="text-[15px] text-[#000] font-[700] leading-[130%] underline py-4">
+                        {item.readMore}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
+              <div className="py-4">
+                <p className="text-[#000] text-[18px] font-[400] leading-[104%]">
+                  <Link href="/blogs">
+                    All Posts <span className="">&rarr;</span>
+                  </Link>
+                </p>
               </div>
             </div>
           </div>
