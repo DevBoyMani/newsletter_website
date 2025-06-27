@@ -19,6 +19,22 @@ const sectionsWithContent = [
           pop-ups, malicious bots, or fraud. This trust translates into higher
           engagement in email newsletters than in other marketing channels.
         </p>
+        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+          The marketing world is constantly evolving, and email marketing is the
+          future of advertising. It is a fast, flexible, and cost-effective way
+          to promote products or services. Email has become a daily habit for
+          many. It is perceived as reliable, safe, and free from intrusive
+          pop-ups, malicious bots, or fraud. This trust translates into higher
+          engagement in email newsletters than in other marketing channels.
+        </p>
+        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+          The marketing world is constantly evolving, and email marketing is the
+          future of advertising. It is a fast, flexible, and cost-effective way
+          to promote products or services. Email has become a daily habit for
+          many. It is perceived as reliable, safe, and free from intrusive
+          pop-ups, malicious bots, or fraud. This trust translates into higher
+          engagement in email newsletters than in other marketing channels.
+        </p>
       </>
     ),
   },
