@@ -8,19 +8,34 @@ import { Menu, X } from "lucide-react";
 const routes = [
   { path: "/about", name: "About" },
   { path: "/advertise", name: "Advertise" },
-  // { path: "/analytics", name: "Analytics" },
   { path: "/blogs", name: "Blogs" },
   { path: "/careers", name: "Careers" },
-  // { path: "/features", name: "Features" },
-  // { path: "/newsletters", name: "Newsletters" },
   { path: "/readers", name: "Readers" },
-  // { path: "/contact", name: "Contact sales →", key: "letstalk" },
 ];
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
+  const [navBgWhite, setNavBgWhite] = useState(false);
   const pathname = usePathname();
 
+  const isBlogPage = pathname === "/blogs";
+  const isDarkHeader = isBlogPage && !navBgWhite;
+
+  // Scroll listener to change navbar color on /blogs
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = 500; // Adjust to your actual hero section height
+      setNavBgWhite(window.scrollY > heroHeight);
+    };
+
+    if (isBlogPage) {
+      window.addEventListener("scroll", handleScroll);
+    }
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isBlogPage]);
+
+  // Desktop check
   function useIsDesktop() {
     const [isDesktop, setIsDesktop] = useState(false);
 
@@ -29,7 +44,7 @@ export default function Navbar() {
         setIsDesktop(window.innerWidth >= 640);
       };
 
-      handleResize(); // check on mount
+      handleResize();
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }, []);
@@ -38,69 +53,42 @@ export default function Navbar() {
   }
 
   const isDesktop = useIsDesktop();
-
   if (pathname.includes("/analytics") && isDesktop) return null;
+
+  // Background class
+  const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-white";
 
   return (
     <nav className="pt-16">
-      {/* Desktop View */}
-
-      {/* <header className="hidden lg:block bg-white fixed top-0 left-0 w-full z-50">
-        <div className=" py-4 md:px-[74px] border-b ">
-          <div className="flex items-center justify-between px-8 ">
-            <Link href="/">
-              <div className="w-32 md:w-40">
-                <img src="/logo.png" alt="Logo" />
-              </div>
-            </Link>
-
-            <div className="lg:text-[17px] font-[400] flex items-center space-x-8 text-xl">
-              {routes.map((route) => (
-                <Link
-                  key={route.path}
-                  href={route.path}
-                  className={`ml-2 md:ml-6 py-2 ${
-                    pathname === route.path
-                      ? "text-[#C7A262]"
-                      : "text-black hover:text-[#C7A262]"
-                  }`}
-                >
-                  {route.name}
-                </Link>
-              ))}
-
-             
-              <Link
-                href="/contact"
-                className="lg:text-[16px] font-[300] ml-4 px-4 py-2 bg-[#C7A262] text-white rounded-full hover:bg-[#121212] transition-colors duration-300"
-              >
-                Contact Sales →
-              </Link>
-            </div>
-          </div>
-        </div>
-      </header> */}
-      <header className="hidden lg:block fixed top-0 left-0 right-0 z-50 bg-white ">
+      <header
+        className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
+      >
         <div className="w-[84%] mx-auto border-b">
-          {/* Inner content with padding */}
           <div className="py-4">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link href="/">
                 <div className="w-32 md:w-40">
-                  <img src="/logo.png" alt="Logo" />
+                  <img
+                    src={isDarkHeader ? "/logo-white.png" : "/logo.png"} // <- Swap logos
+                    alt="Logo"
+                  />
                 </div>
               </Link>
 
-              {/* Navigation & Button */}
+              {/* Navigation */}
               <div className="lg:text-[17px] font-[400] flex items-center space-x-8 text-xl">
                 {routes.map((route) => (
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`ml-2 md:ml-6 py-2 ${
+                    className={`ml-2 md:ml-6 py-2 transition-colors duration-300 ${
                       pathname === route.path
-                        ? "text-[#C7A262]"
+                        ? isDarkHeader
+                          ? "text-[#C7A262]"
+                          : "text-[#C7A262]"
+                        : isDarkHeader
+                        ? "text-white hover:text-[#C7A262]"
                         : "text-black hover:text-[#C7A262]"
                     }`}
                   >
@@ -108,10 +96,14 @@ export default function Navbar() {
                   </Link>
                 ))}
 
-                {/* Custom Contact Sales Button */}
+                {/* Contact Sales Button */}
                 <Link
                   href="/contact"
-                  className="lg:text-[16px] font-[300] ml-4 px-4 py-2 bg-[#C7A262] text-white rounded-full hover:bg-[#121212] transition-colors duration-300"
+                  className={`lg:text-[16px] font-[300] ml-4 px-4 py-2 rounded-full transition-colors duration-300 ${
+                    isDarkHeader
+                      ? "bg-[#C7A262] text-white hover:bg-[#C7A262] hover:text-white"
+                      : "bg-[#C7A262] text-white hover:bg-[#121212]"
+                  }`}
                 >
                   Contact Sales →
                 </Link>
