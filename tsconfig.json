@@ -30,7 +30,8 @@
     "components/linkpages/linkpages.js",
     "components/footer/footer.js",
     "components/advertiseComponents/analyticsCharts/chartAccountReached/chartAccountReached.js",
-    "components/blogsTestimonials/blogsTestimonials.js"
+    "components/blogsTestimonials/blogsTestimonials.js",
+    "components/careers/customAccordion/customAccordion.js"
   ],
   "exclude": ["node_modules"]
 }

@@ -18,22 +18,30 @@ export default function Navbar() {
   const [navBgWhite, setNavBgWhite] = useState(false);
   const pathname = usePathname();
 
-  const isBlogPage = pathname === "/blogs";
+  const isBlogPage = pathname.startsWith("/blogs");
   const isDarkHeader = isBlogPage && !navBgWhite;
 
   // Scroll listener to change navbar color on /blogs
   useEffect(() => {
     const handleScroll = () => {
-      const heroHeight = 500; // Adjust to your actual hero section height
+      let heroHeight = 560;
+
+      if (pathname === "/blogs") {
+        heroHeight = 880; // Adjust to blogs list hero height
+      } else if (pathname.startsWith("/blogs/")) {
+        heroHeight = 560; // Adjust to single post hero height
+      }
+
       setNavBgWhite(window.scrollY > heroHeight);
     };
 
     if (isBlogPage) {
       window.addEventListener("scroll", handleScroll);
+      handleScroll(); // Call once on mount to set initial state
     }
 
     return () => window.removeEventListener("scroll", handleScroll);
-  }, [isBlogPage]);
+  }, [isBlogPage, pathname]);
 
   // Desktop check
   function useIsDesktop() {
@@ -63,50 +71,56 @@ export default function Navbar() {
       <header
         className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
       >
-        <div className="w-[84%] mx-auto border-b">
+        <div className="w-[86%] mx-auto border-b">
           <div className="py-4">
             <div className="flex items-center justify-between">
               {/* Logo */}
               <Link href="/">
-                <div className="w-32 md:w-40">
+                <div className="w-32 md:w-36 ">
                   <img
-                    src={isDarkHeader ? "/logo-white.png" : "/logo.png"} // <- Swap logos
+                    src={isDarkHeader ? "/blogs/logo-white.png" : "/logo.png"} // <- Swap logos
                     alt="Logo"
                   />
                 </div>
               </Link>
 
               {/* Navigation */}
-              <div className="lg:text-[17px] font-[400] flex items-center space-x-8 text-xl">
-                {routes.map((route) => (
+              <div className="">
+                {/* Navigation */}
+                <div className="lg:text-[17px] font-[400] flex items-center text-xl">
+                  {/* Nav Links */}
+                  <div className="flex items-center space-x-4">
+                    {routes.map((route) => (
+                      <Link
+                        key={route.path}
+                        href={route.path}
+                        className={`ml-2 md:ml-6 py-2 transition-colors duration-300 ${
+                          pathname === route.path
+                            ? isDarkHeader
+                              ? "text-[#C7A262]"
+                              : "text-[#C7A262]"
+                            : isDarkHeader
+                            ? "text-white hover:text-[#C7A262]"
+                            : "text-black hover:text-[#C7A262]"
+                        }`}
+                      >
+                        {route.name}
+                      </Link>
+                    ))}
+                  </div>
+
+                  {/* Contact Button (Separated) */}
                   <Link
-                    key={route.path}
-                    href={route.path}
-                    className={`ml-2 md:ml-6 py-2 transition-colors duration-300 ${
-                      pathname === route.path
-                        ? isDarkHeader
-                          ? "text-[#C7A262]"
-                          : "text-[#C7A262]"
-                        : isDarkHeader
-                        ? "text-white hover:text-[#C7A262]"
-                        : "text-black hover:text-[#C7A262]"
+                    href="/contact"
+                    className={`ml-20 px-3.5 py-1.5 rounded-full transition-colors duration-300 lg:text-[16px] ${
+                      isDarkHeader
+                        ? "text-white hover:bg-[#C7A262] hover:text-white font-[800]"
+                        : "bg-[#C7A262] text-white hover:bg-[#121212] font-[300]"
                     }`}
                   >
-                    {route.name}
+                    Contact Sales →
                   </Link>
-                ))}
-
-                {/* Contact Sales Button */}
-                <Link
-                  href="/contact"
-                  className={`lg:text-[16px] font-[300] ml-4 px-4 py-2 rounded-full transition-colors duration-300 ${
-                    isDarkHeader
-                      ? "bg-[#C7A262] text-white hover:bg-[#C7A262] hover:text-white"
-                      : "bg-[#C7A262] text-white hover:bg-[#121212]"
-                  }`}
-                >
-                  Contact Sales →
-                </Link>
+                </div>
               </div>
             </div>
           </div>
