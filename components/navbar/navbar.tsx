@@ -83,7 +83,7 @@ export default function Navbar() {
       <header
         className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
       >
-        <div className="w-[86%] mx-auto border-b">
+        <div className="w-[86%] mx-auto">
           <div className="py-4 flex items-center justify-between">
             <Link href="/">
               <div className="w-32 md:w-36">
