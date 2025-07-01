@@ -2,7 +2,7 @@
 
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useSwipeable } from "react-swipeable";
 
 const accordionData = [
   {
@@ -37,148 +37,76 @@ const accordionData = [
   },
 ];
 
-const swipeConfidenceThreshold = 50;
-
-const swipeVariants = {
-  enter: (direction) => ({
-    x: direction > 0 ? 300 : -300,
-    opacity: 0,
-  }),
-  center: {
-    x: 0,
-    opacity: 1,
-  },
-  exit: (direction) => ({
-    x: direction < 0 ? 300 : -300,
-    opacity: 0,
-  }),
-};
-
 export default function CustomAccordion({ onStepChange }) {
   const [openItemDesktop, setOpenItemDesktop] = useState(accordionData[0].id);
-  const [openItemMobile, setOpenItemMobile] = useState(accordionData[0].id);
-  const [direction, setDirection] = useState("next");
+  const [openItemMobile, setOpenItemMobile] = useState(
+    accordionData[0]?.id || null
+  );
 
-  // const handleNext = () => {
-  //   const currentIndex = accordionData.findIndex(
-  //     (item) => item.id === openItemMobile
-  //   );
-  //   if (currentIndex < accordionData.length - 1) {
-  //     setDirection("next");
-  //     setOpenItemMobile(accordionData[currentIndex + 1].id);
-  //   }
-  // };
-
-  // const handlePrev = () => {
-  //   const currentIndex = accordionData.findIndex(
-  //     (item) => item.id === openItemMobile
-  //   );
-  //   if (currentIndex > 0) {
-  //     setDirection("prev");
-  //     setOpenItemMobile(accordionData[currentIndex - 1].id);
-  //   }
-  // };
-
-  const currentItem = accordionData.find((item) => item.id === openItemMobile);
+  const currentItem =
+    accordionData.find((item) => item.id === openItemMobile) ||
+    accordionData[0];
 
   const handleNext = () => {
-    const currentIndex = accordionData.findIndex(
-      (item) => item.id === openItemMobile
-    );
-    const nextIndex = Math.min(currentIndex + 1, accordionData.length - 1);
-    setDirection(1);
-    setOpenItemMobile(accordionData[nextIndex].id);
+    const idx = accordionData.findIndex((item) => item.id === openItemMobile);
+    const next = Math.min(idx + 1, accordionData.length - 1);
+    setOpenItemMobile(accordionData[next].id);
   };
 
   const handlePrev = () => {
-    const currentIndex = accordionData.findIndex(
-      (item) => item.id === openItemMobile
-    );
-    const prevIndex = Math.max(currentIndex - 1, 0);
-    setDirection(-1);
-    setOpenItemMobile(accordionData[prevIndex].id);
+    const idx = accordionData.findIndex((item) => item.id === openItemMobile);
+    const prev = Math.max(idx - 1, 0);
+    setOpenItemMobile(accordionData[prev].id);
   };
 
-  // steps
-  const currentItemD = accordionData.find(
-    (item) => item.id === openItemDesktop
-  );
-
+  // notify parent
   useEffect(() => {
-    onStepChange?.(currentItemD?.step);
-  }, [currentItemD?.id]);
-
-  // this is for mobile useEffect
+    const itemD = accordionData.find((item) => item.id === openItemDesktop);
+    onStepChange?.(itemD?.step);
+  }, [openItemDesktop]);
 
   useEffect(() => {
     onStepChange?.(currentItem?.step);
-  }, [currentItem?.id]);
+  }, [openItemMobile]);
 
-  // steps
+  // swipe handlers
+  const swipeHandlers = useSwipeable({
+    onSwipedLeft: handleNext,
+    onSwipedRight: handlePrev,
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  });
 
   return (
     <>
-      {/* Desktop View */}
+      {/* Desktop */}
       <div className="hidden lg:block w-full space-y-2">
         {accordionData.map((item) => (
-          <div
-            key={item.id}
-            className={`rounded-lg transition ${
-              openItemDesktop === item.id ? "bg-white " : "bg-white"
-            }`}
-          >
+          <div key={item.id} className="rounded-lg bg-white transition">
             <div
-              className="px-4 py-3 rounded-lg text-lg font-medium cursor-pointer transition"
-              // onClick={() => setOpenItemDesktop(openItemDesktop === item.id ? null : item.id)}
+              className="px-4 py-3 cursor-pointer"
               onClick={() => {
                 setOpenItemDesktop(
                   openItemDesktop === item.id ? null : item.id
                 );
-                onStepChange?.(item.step); // Notify parent
+                onStepChange?.(item.step);
               }}
             >
-              {/* {openItemDesktop === item.id ? (
-                <div className="flex justify-between">
-                  <div>
-                    <div className="pb-4">
-                      <span className="px-3 py-1 text-[11px] text-[#048B65] bg-[#D6FFEC] rounded-[23px] font-[600] leading-[104%]">Step {item.step}</span>
-                    </div>
-                    <h4 className="text-[20px] text-[#01261E] font-[500] leading-[104%]">{item.title}</h4>
-                    <p className="max-w-[90%] text-[15px] text-[#12121299] py-2 font-[400] leading-[104%]">{item.content}</p>
-                  </div>
-                  <ChevronUp className="w-6 h-6 transition-transform duration-300 mr-8" />
-                </div>
-              ) : (
-                <div className="flex justify-between items-center mr-8">
-                  <h2 className="text-[20px] text-[#01261E] font-[500] leading-[104%] py-4">{item.title}</h2>
-                  <ChevronDown className="w-6 h-6 transition-transform duration-300" />
-                </div>
-              )} */}
               {openItemDesktop === item.id ? (
-                <div className="flex justify-between items-start w-full gap-4">
-                  <div className="w-full max-w-[80%]">
-                    <div className="pb-4">
-                      <span className="px-3 py-1 text-[11px] text-[#048B65] bg-[#D6FFEC] rounded-[23px] font-[600] leading-[104%]">
-                        Step {item.step}
-                      </span>
-                    </div>
-                    <h4 className="text-[20px] text-[#01261E] font-[500] leading-[104%]">
-                      {item.title}
-                    </h4>
-                    <p className="text-[15px] text-[#12121299] py-2 font-[400] leading-[104%]">
-                      {item.content}
-                    </p>
+                <div className="flex justify-between items-start gap-4">
+                  <div className="max-w-[80%]">
+                    <span className="text-[11px] bg-[#D6FFEC] px-3 py-1 rounded-full text-[#048B65] font-semibold">
+                      Step {item.step}
+                    </span>
+                    <h4 className="text-xl font-medium mt-2">{item.title}</h4>
+                    <p className="text-gray-600 mt-1">{item.content}</p>
                   </div>
-                  <div className="shrink-0">
-                    <ChevronUp className="w-6 h-6 transition-transform duration-300 mr-8" />
-                  </div>
+                  <ChevronUp className="w-6 h-6" />
                 </div>
               ) : (
-                <div className="flex justify-between items-center w-full ">
-                  <h2 className="text-[20px] text-[#01261E] font-[500] leading-[104%] py-4">
-                    {item.title}
-                  </h2>
-                  <ChevronDown className="w-6 h-6 transition-transform duration-300 mr-8" />
+                <div className="flex justify-between items-center">
+                  <h2 className="text-xl font-medium">{item.title}</h2>
+                  <ChevronDown className="w-6 h-6" />
                 </div>
               )}
             </div>
@@ -186,58 +114,39 @@ export default function CustomAccordion({ onStepChange }) {
         ))}
       </div>
 
-      {/* Mobile View */}
-      <div className="block lg:hidden relative w-[80%] mx-10 space-y-2">
+      {/* mobile */}
+      <div
+        className="block lg:hidden relative w-[80%] mx-10 space-y-2"
+        {...swipeHandlers}
+      >
         <div className="relative h-[129px] overflow-hidden">
-          <AnimatePresence mode="wait" initial={false}>
-            {currentItem && (
-              <motion.div
-                key={currentItem.id}
-                custom={direction}
-                variants={swipeVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                transition={{ duration: 0.3, ease: "easeInOut" }}
-                drag="x"
-                dragConstraints={{ left: 0, right: 0 }}
-                dragElastic={0.3}
-                whileTap={{ cursor: "grabbing" }}
-                onDragEnd={(e, info) => {
-                  if (info.offset.x < -swipeConfidenceThreshold) {
-                    handleNext();
-                  } else if (info.offset.x > swipeConfidenceThreshold) {
-                    handlePrev();
-                  }
-                }}
-                className="absolute top-0 left-0 w-full space-y-3 cursor-grab active:cursor-grabbing touch-pan-y z-10"
-              >
-                <div className="p-1">
-                  <div className="shadow-lg rounded-lg bg-white mb-4">
-                    <div className="text-lg font-medium transition">
-                      <div className="px-4">
-                        <span className="relative top-3 block text-[11px] font-[600] leading-[104%] text-[#048B65] bg-[#D6FFEC] px-2 py-1 rounded-[23px] w-fit">
-                          Step {currentItem.step}
-                        </span>
-                        <h4 className="pt-6 text-[18px] text-[#01261E] font-[600] leading-[104%]">
-                          {currentItem.title}
-                        </h4>
-                        <p className="text-[12px] text-[#12121299] font-[600] leading-[104%] py-4">
-                          {currentItem.content}
-                        </p>
-                      </div>
+          {currentItem && (
+            <div className="absolute top-0 left-0 w-full space-y-3 z-10">
+              <div className="p-1">
+                <div className="shadow-lg rounded-lg bg-white mb-4">
+                  <div className="text-lg font-medium transition">
+                    <div className="px-4">
+                      <span className="relative top-3 block text-[11px] font-[600] leading-[104%] text-[#048B65] bg-[#D6FFEC] px-2 py-1 rounded-[23px] w-fit">
+                        Step {currentItem.step}
+                      </span>
+                      <h4 className="pt-6 text-[18px] text-[#01261E] font-[600] leading-[104%]">
+                        {currentItem.title}
+                      </h4>
+                      <p className="text-[12px] text-[#12121299] font-[600] leading-[104%] py-4">
+                        {currentItem.content}
+                      </p>
                     </div>
                   </div>
                 </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Navigation Buttons */}
         {openItemMobile !== accordionData[0].id && (
           <button
-            className="absolute -left-8 top-[33.5%] -translate-y-1/2 z-20"
+            className="absolute -left-8 top-[36.5%] -translate-y-1/2 z-20"
             onClick={handlePrev}
           >
             <img src="/careers/left-new.png" alt="Prev" className="w-6 h-6" />

@@ -117,7 +117,7 @@ export default function Navbar() {
                 href="/contact"
                 className={`ml-20 px-3.5 py-1.5 rounded-full transition-colors duration-300 lg:text-[16px] ${
                   isDarkHeader
-                    ? "text-white hover:bg-[#C7A262] hover:text-white font-[800]"
+                    ? "text-[#FFF] hover:bg-[#DAEBE8] hover:text-[#000] font-[300] bg-[#C7A262]"
                     : "bg-[#C7A262] text-white hover:bg-[#121212] font-[300]"
                 }`}
               >
