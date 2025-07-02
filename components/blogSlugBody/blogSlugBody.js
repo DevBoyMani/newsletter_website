@@ -11,7 +11,7 @@ const sectionsWithContent = [
     title: "Summary",
     content: (
       <>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           The marketing world is constantly evolving, and email marketing is the
           future of advertising. It is a fast, flexible, and cost-effective way
           to promote products or services. Email has become a daily habit for
@@ -19,7 +19,7 @@ const sectionsWithContent = [
           pop-ups, malicious bots, or fraud. This trust translates into higher
           engagement in email newsletters than in other marketing channels.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           The marketing world is constantly evolving, and email marketing is the
           future of advertising. It is a fast, flexible, and cost-effective way
           to promote products or services. Email has become a daily habit for
@@ -27,7 +27,7 @@ const sectionsWithContent = [
           pop-ups, malicious bots, or fraud. This trust translates into higher
           engagement in email newsletters than in other marketing channels.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           The marketing world is constantly evolving, and email marketing is the
           future of advertising. It is a fast, flexible, and cost-effective way
           to promote products or services. Email has become a daily habit for
@@ -43,12 +43,12 @@ const sectionsWithContent = [
     title: "Is social media marketing better than email marketing?",
     content: (
       <>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Email marketing is a broad umbrella, and one of the most effective
           ways to leverage it is through newsletter advertising. It is a
           powerful strategy that is taking the marketing world by storm.
         </p>
-        <ul className="custom-list text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           <li>
             There are 4.5 billion email users, and this is expected to reach 4.8
             billion by 2027.
@@ -73,7 +73,7 @@ const sectionsWithContent = [
             media engagement. 
           </li>
         </ul>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           While social media offers broad reach and engagement, newsletter
           advertising often provides a more targeted and focused audience,
           potentially leading to higher conversion rates and a stronger return
@@ -89,21 +89,21 @@ const sectionsWithContent = [
     title: "What is newsletter advertising?",
     content: (
       <>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Newsletter advertising is a partnership between advertisers and
           newsletter publishers, offering a direct and highly targeted way to
           reach audiences. Instead of curating content and building a mailing
           list from scratch, businesses can leverage established newsletters
           that have already cultivated a dedicated readership.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Newsletters are entirely optional. Businesses can only reach out to
           customers after they subscribe. When a customer takes the extra step
           of joining a mailing list, they are essentially signaling that they
           want to hear more from the brand. They’re interested in the brand, the
           latest updates, exclusive offers, discounts and more.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           These are not passive consumers but engaged customers who trust the
           brand and want to stay connected. Given how frequently the average
           person checks their email, newsletters become more than a marketing
@@ -116,13 +116,13 @@ const sectionsWithContent = [
             className="w-full object-cover "
           />
         </div>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           In its simplest form, newsletter advertising means paying a publisher
           to place your ad within their content. These newsletters have already
           built a loyal community around their niches. By partnering with them,
           you gain access to a highly engaged audience.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Imagine you're a business selling supplements and vitamins. By placing
           ads in a well-established health and lifestyle newsletter, you
           instantly reach an audience actively seeking wellness tips, a
@@ -141,15 +141,15 @@ const sectionsWithContent = [
     title: "Advantages of Newsletter Advertising",
     content: (
       <>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] pt-2 pl-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
           &bull; No Adblockers
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           More and more users are now installing ad blockers, preventing ads
           from interrupting their experience but making it harder for businesses
           to reach their audience.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           As a result, advertisers pay for ad placements, but with ad blockers
           in place, many ads never even reach their audience. This makes their
           campaign efforts ineffective.
@@ -161,45 +161,45 @@ const sectionsWithContent = [
             className="w-full object-cover "
           />
         </div>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Newsletters bypass ad blockers since email ads don’t function like
           traditional media ads. This means that with newsletter ads, you reach
           your intended audience and achieve the ROI and engagement you planned
           for your campaign.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] pt-2 pl-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
           &bull; No Algorithms
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Social media and search engines rely on constantly evolving
           algorithms. With ever-shifting content rules, social media can be
           unpredictable. Since algorithms determine ad exposure, content ad
           visibility can be negatively impacted or even buried in searches,
           making it harder to track progress.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Newsletters offer a more reliable option. They don’t operate under
           algorithmic preferences but instead, work on a simple and direct
           approach. Newsletters go straight to subscribers’ inboxes, giving you
           full control over who sees your content without fighting for
           visibility.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] pt-2 pl-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
           &bull; Niche Markets
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Newsletters have their own personality and brand identity, making them
           a helpful partner for advertisers. Finding a newsletter that
           complements the advertiser's brand allows it to reach a focused and
           engaged mailing list.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           One of the biggest strengths of newsletter advertising is its ability
           to target niche audiences. By partnering with the relevant
           newsletters, advertisers ensure their message reaches the right
           people.
         </p>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] py-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
           Newsletters exist in every industry, from real estate to tech and
           beyond. They offer a direct medium to the ideal customers. The right
           partnership allows advertisers to leverage the authority a newsletter
@@ -213,7 +213,7 @@ const sectionsWithContent = [
     title: "Final Thoughts",
     content: (
       <>
-        <p className="text-[#000] text-[16px] font-[400] leading-[174%] pt-2 pl-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
           You can buy newsletter ad space through programmatic direct buys,
           private marketplaces (PMPs), or open exchanges. Programmatic direct
           buys allow you to purchase ad inventory directly from a publisher,
@@ -432,7 +432,7 @@ export default function BlogSlugBody() {
                     </div>
                     <div className="flex ">
                       <div className="w-[85%]">
-                        <p className="text-[#000] text-[16px] font-[400] leading-[174%]">
+                        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%]">
                           John Felix Anthony Cena is an American actor and
                           professional wrestler. As a wrestler, he has been
                           signed to WWE since 2001, where he is the current
@@ -547,51 +547,74 @@ export default function BlogSlugBody() {
 
           {/* Center */}
           <div className="w-full flex flex-col gap-8 py-4">
-            {sectionsWithContent.map((section, index) => (
-              <div key={index} id={`section-${index}`} className="">
-                <h4 className="text-[#000] text-[30px] font-[500] leading-[120%] py-2">
-                  {section.title}
-                </h4>
-                <div>{section.content}</div>
-              </div>
-            ))}
-
-            {/* 10 */}
-            <div className="pb-4">
-              <div className="mt-8">
-                <div className="pb-4 pt-6 px-6 bg-[#C7A26233] rounded-[7px] ">
-                  <div className="pt-4 pb-2 flex space-x-2">
-                    <img
-                      src="/blogs/p-1.png"
-                      alt="profile-1"
-                      className="w-10 h-10 object-cover rounded-full"
-                    />
-                    <p className="flex items-center gap-2 text-[#000] text-[18px] font-[400] leading-[104%]">
-                      <span>John Cena</span>
-                    </p>
-                  </div>
-                  <div className="flex ">
-                    <div className="w-[85%]">
-                      <p className="text-[#000] text-[16px] font-[400] leading-[174%]">
-                        John Felix Anthony Cena is an American actor and
-                        professional wrestler. As a wrestler, he has been signed
-                        to WWE since 2001, where he is the current Undisputed
-                        WWE Champion in his record 14th reign.
-                      </p>
-                      <div className="pt-4">
-                        <a
-                          href="/"
-                          className="text-[#000] text-[16px] font-[400] leading-[174%]"
-                        >
-                          More blogs from John{" "}
-                          <span className="text-[20px]">&rarr;</span>
-                        </a>
+            {sectionsWithContent.map((section, index) => {
+              const isTargetSection =
+                section.title === "What is newsletter advertising?";
+              return (
+                <div key={index} id={`section-${index}`} className="">
+                  {/* Inject subscribe box above the specific section */}
+                  {isTargetSection && (
+                    <div className="block lg:hidden mb-4">
+                      <div className="border border-[#01261E] rounded-[10px]">
+                        <div className="py-3 px-3">
+                          <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
+                            Sagravia Newsletter
+                          </p>
+                          <p className="text-[#01261E] font-[400] text-[14px] leading-[141%]">
+                            Do you want to get tips and tactics to grow
+                            <br /> the way you want?
+                          </p>
+                          <form
+                            onSubmit={handleSubmit}
+                            className="pt-4 space-y-2"
+                          >
+                            <div className="flex flex-row space-x-2">
+                              <div className="w-[60%]">
+                                <input
+                                  type="email"
+                                  value={email}
+                                  onChange={(e) => setEmail(e.target.value)}
+                                  placeholder="Email"
+                                  required
+                                  className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
+                                />
+                              </div>
+                              <div className="w-[40%]">
+                                <button
+                                  type="submit"
+                                  className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
+                                >
+                                  Subscribe
+                                </button>
+                              </div>
+                            </div>
+                          </form>
+                          <div className="pt-2">
+                            <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
+                              Unsubscribe at any time.{" "}
+                              <span className="underline underline-[#767676]">
+                                Terms
+                              </span>{" "}
+                              &{" "}
+                              <span className="underline underline-[#767676]">
+                                Privacy
+                              </span>
+                              .
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  )}
+
+                  {/* Section heading and content */}
+                  <h4 className="text-[#000] text-[22px] font-[500] leading-[120%] py-2">
+                    {section.title}
+                  </h4>
+                  <div>{section.content}</div>
                 </div>
-              </div>
-            </div>
+              );
+            })}
           </div>
 
           {/* right */}

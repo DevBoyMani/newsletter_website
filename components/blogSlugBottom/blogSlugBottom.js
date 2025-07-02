@@ -114,16 +114,22 @@ export default function BlogSlugBottom() {
         <div className="">
           <div className="pt-20">
             <div className="bg-[#DAEBE8] px-4">
-              <div className=" pt-20 pb-8 md:px-28 over">
+              <div className=" pt-14 pb-4">
                 <div>
-                  <p className="text-[#000] text-[30px] font-[700] leading-[130%]">
+                  <p className="text-[#000] text-[22px] font-[700] leading-[130%]">
                     Suggested articles
                   </p>
                 </div>
               </div>
 
-              <div className="overflow-x-auto w-full">
-                <div className="flex gap-8 px-4 md:px-28 pt-10 pb-20 min-w-max">
+              <div
+                className="overflow-x-auto w-full"
+                style={{
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                }}
+              >
+                <div className="flex gap-8 px-4 md:px-28 pt-10 pb-8 min-w-max">
                   {articleData.map((item, index) => (
                     <div key={index} className="flex-shrink-0 w-[267px]">
                       <Link href="/blogs/slug">
@@ -140,7 +146,7 @@ export default function BlogSlugBottom() {
                         <img
                           src={item.profileP}
                           alt={item.profileN}
-                          className="w-6 object-cover"
+                          className="w-6 h-6 object-cover"
                         />
                         <p className="flex items-center gap-1 text-[#000] text-[14px] font-[400] leading-[104%]">
                           <span>{item.profileN}</span>
@@ -151,20 +157,20 @@ export default function BlogSlugBottom() {
                         </p>
                       </div>
 
-                      <p className="text-[16px] text-[#000] font-[700] leading-[130%]">
+                      <p className="text-[14px] text-[#000] font-[700] leading-[130%]">
                         {item.content}
                       </p>
 
-                      <p className="text-[15px] text-[#000] font-[700] leading-[130%] underline py-4">
+                      {/* <p className="text-[15px] text-[#000] font-[700] leading-[130%] underline py-4">
                         {item.readMore}
-                      </p>
+                      </p> */}
                     </div>
                   ))}
                 </div>
               </div>
 
-              <div className="py-4">
-                <p className="text-[#000] text-[18px] font-[400] leading-[104%]">
+              <div className="pt-8 pb-10">
+                <p className="text-[#000] text-[16px] font-[600] leading-[104%]">
                   <Link href="/blogs">
                     All Posts <span className="">&rarr;</span>
                   </Link>
