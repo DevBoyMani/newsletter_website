@@ -78,18 +78,19 @@ export default function Navbar() {
   const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
 
   return (
-    <nav className="pt-16">
+    <nav className="">
       {/* === Desktop Header === */}
       <header
         className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
       >
-        <div className="w-[86%] h-[61px] mx-auto">
-          <div className=" flex items-center justify-between mt-1">
+        <div className="w-[86%] h-[61px] mx-auto my-auto">
+          <div className=" flex items-center justify-between">
             <Link href="/">
               <div className="w-32 md:w-36">
                 <img
                   src={isDarkHeader ? "/blogs/logo-white.png" : "/logo.png"}
                   alt="Logo"
+                  className="mt-3"
                 />
               </div>
             </Link>
@@ -113,7 +114,7 @@ export default function Navbar() {
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`relative group ml-2 md:ml-6 transition-colors duration-300 overflow-hidden ${
+                    className={`relative group ml-2 md:ml-6 transition-colors duration-300 overflow-hidden mt-2 ${
                       pathname === route.path
                         ? "text-[#C7A262]"
                         : isDarkHeader
