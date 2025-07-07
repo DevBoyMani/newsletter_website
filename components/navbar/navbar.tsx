@@ -71,8 +71,8 @@ export default function Navbar() {
 
   // Background class
   // const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-white";
-  const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-white";
-  const mobileHeaderBg = isDarkMobile ? "bg-[#01261E]" : "bg-white";
+  const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-[#FAFAFA]";
+  const mobileHeaderBg = isDarkMobile ? "bg-[#01261E]" : "bg-[#FAFAFA]";
   const mobileTextColor = isDarkMobile ? "text-white" : "text-black";
   const mobileLogoSrc = isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
   const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
@@ -83,8 +83,8 @@ export default function Navbar() {
       <header
         className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
       >
-        <div className="w-[86%] mx-auto">
-          <div className="py-4 flex items-center justify-between">
+        <div className="w-[86%] h-[61px] mx-auto">
+          <div className=" flex items-center justify-between mt-1">
             <Link href="/">
               <div className="w-32 md:w-36">
                 <img
@@ -97,10 +97,23 @@ export default function Navbar() {
             <div className="lg:text-[17px] font-[400] flex items-center text-xl">
               <div className="flex items-center space-x-4">
                 {routes.map((route) => (
+                  // <Link
+                  //   key={route.path}
+                  //   href={route.path}
+                  //   className={`ml-2 md:ml-6 transition-colors duration-300 ${
+                  //     pathname === route.path
+                  //       ? "text-[#C7A262]"
+                  //       : isDarkHeader
+                  //       ? "text-white hover:text-[#C7A262]"
+                  //       : "text-black hover:text-[#C7A262]"
+                  //   }`}
+                  // >
+                  //   {route.name}
+                  // </Link>
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`ml-2 md:ml-6 py-2 transition-colors duration-300 ${
+                    className={`relative group ml-2 md:ml-6 transition-colors duration-300 overflow-hidden ${
                       pathname === route.path
                         ? "text-[#C7A262]"
                         : isDarkHeader
@@ -108,20 +121,37 @@ export default function Navbar() {
                         : "text-black hover:text-[#C7A262]"
                     }`}
                   >
-                    {route.name}
+                    <span className="block transition-transform duration-300 transform group-hover:-translate-y-[100%]">
+                      {route.name}
+                    </span>
+                    <span className="block absolute left-0 top-0 transition-transform duration-300 transform translate-y-[100%] group-hover:translate-y-0">
+                      {route.name}
+                    </span>
                   </Link>
                 ))}
               </div>
-
-              <Link
+              {/* <Link
                 href="/contact"
-                className={`ml-20 px-3.5 py-1.5 rounded-full transition-colors duration-300 lg:text-[16px] ${
+                className={`ml-20 mt-2 px-3.5 py-1.5 rounded-full transition-colors duration-300 lg:text-[16px] ${
                   isDarkHeader
                     ? "text-[#FFF] hover:bg-[#DAEBE8] hover:text-[#000] font-[300] bg-[#C7A262]"
                     : "bg-[#C7A262] text-white hover:bg-[#121212] font-[300]"
                 }`}
               >
-                Contact Sales →
+                Contact Sales
+              </Link> */}
+
+              <Link
+                href="/contact"
+                className={`relative inline-block ml-20 mt-2 px-6 py-2 bg-[#C7A262] text-white lg:text-[16px] font-[600] leading-normal rounded-full overflow-hidden group`}
+              >
+                {/* Hover animation effect only — same color as base */}
+                <span className="absolute inset-0 bg-[#000] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center z-0"></span>
+
+                {/* Button text stays white */}
+                <span className="relative z-10 transition-colors duration-300">
+                  Contact Sales
+                </span>
               </Link>
             </div>
           </div>
@@ -130,7 +160,7 @@ export default function Navbar() {
 
       {/* === Mobile Header === */}
       <header
-        className={`block lg:hidden fixed top-0 left-0 w-full border-b z-50 shadow-lg transition-all duration-300 h-16 ${mobileHeaderBg}`}
+        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-16 ${mobileHeaderBg}`}
       >
         <div className="flex items-center justify-between px-4 py-3">
           <Link href="/">
