@@ -5,7 +5,6 @@ import { ActiveUsers } from "../../components/advertiseComponents/analyticsChart
 import { Statistics } from "../../components/advertiseComponents/analyticsCharts/chartStatistics/chartStatistics";
 import { SignInUps } from "../../components/advertiseComponents/analyticsCharts/chartSignUps/chartSignUps";
 import HeadingWithUnderline from "../../components/advertiseComponents/headingWithUnderline/headingwithUnderline";
-import { Link } from "lucide-react";
 import { H2Icon } from "@heroicons/react/16/solid";
 import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/advertiseFaq";
 
@@ -13,6 +12,7 @@ import AdvertisePageMobileVersion from "../../components/advertisePageMobileVers
 import { Agdasima } from "next/font/google";
 import AdvertiseAdBlocker from "../../components/advertiseAdBlocker/advertiseAdBlocker";
 import AdvertiseNewFaq from "../../components/advertiseNewFaq/advertiseNewFaq";
+import Link from "next/link";
 
 export default function Advertise() {
   const videos = [
@@ -87,7 +87,7 @@ export default function Advertise() {
         <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" />
 
         {/* Text Section */}
-        <div className=" md:px-28 px-4 lg:pt-20 pt-10 mx-auto">
+        <div className=" md:px-28 px-4 lg:pt-20 mx-auto">
           <div className="text-[#01261E]">
             <h2
               className="text-[80px] lg:w-[50%] font-[GT-Super-Ds-Trial] leading-[94%]"
@@ -201,9 +201,11 @@ export default function Advertise() {
                     </h4>
                   </div>
                   <div>
-                    <button className="flex px-4 py-1 text-[#FAFAFA] text-lg rounded-[10px] border border-[#FAFAFA] p-2 hover:bg-[#ffffff] hover:text-[#01261E]">
-                      About Us
-                    </button>
+                    <Link href="/analytics">
+                      <button className="flex px-4 py-1 text-[#FAFAFA] text-lg rounded-full border border-[#FAFAFA] p-2 hover:bg-[#ffffff] hover:text-[#01261E]">
+                        Analytics
+                      </button>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -237,7 +239,7 @@ export default function Advertise() {
           </div>
         </div>
 
-        <div className="flex my-0 flex-col items-center justify-center text-center pt-10 pb-28">
+        <div className="flex my-0 flex-col items-center justify-center text-center pt-10 pb-40">
           <h2
             className="text-[80px] font-[400]"
             style={{ fontFamily: "GT Super Ds Trial" }}
@@ -245,7 +247,7 @@ export default function Advertise() {
             And that’s not all
           </h2>
 
-          <div className="w-[390px] mx-auto p">
+          <div className="w-[390px] mx-auto">
             <p className="text-[20px] font-[400] leading-[1.5]">
               Get a personalized demo and discover how Sagravia can help your
               business
@@ -258,9 +260,11 @@ export default function Advertise() {
             className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
           >
             <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
-              SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-              SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-              SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
+              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
+              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+              SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
+              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
             </span>
           </a>
         </div>
@@ -337,7 +341,7 @@ export default function Advertise() {
       </div>
 
       {/* mobile view for advertise page */}
-      <div className="block lg:hidden ">
+      <div className="block lg:hidden py-10">
         <AdvertisePageMobileVersion />
       </div>
     </>

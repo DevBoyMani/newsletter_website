@@ -50,7 +50,7 @@ export default function AdvertiseNewFaq() {
         </div>
       </div>
 
-      <div className="flex justify-center items-start gap-6 px-8 py-16 bg-[#f9f9f9]">
+      <div className="flex items-start gap-6 py-24 bg-[#f9f9f9]">
         {faqs.map((faq) => {
           const isActive = activeId === faq.id;
 

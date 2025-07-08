@@ -9,43 +9,52 @@ import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/adve
 import Footer from "../../components/footer/footer";
 import InThePress from "../advertiseComponents/mobileViewComponents/inThePress/inThePress";
 import { MobileFaq } from "../advertiseComponents/mobileViewComponents/mobileFaq/mobileFaq";
-import { Agdasima } from 'next/font/google';
+import { Agdasima } from "next/font/google";
 import AdvertiseAdBlocker from "../advertiseAdBlocker/advertiseAdBlocker";
-
+import Link from "next/link";
 
 export default function AdvertisePageMobileVersion() {
   const videos = [
     { video: "/advertise/v-1.mp4", id: "video1", height: "h-[297px]" },
     { video: "/advertise/v-2.mp4", id: "video2", height: "h-[245px]" },
-    { video: "/advertise/v-3.mp4", id: "video3", height: "h-[389px]", moveUp: "mt-[-80px]" },
-    { video: "/advertise/v-4.mp4", id: "video4", height: "h-[513px]", moveUp: "mt-[-120px]" },
+    {
+      video: "/advertise/v-3.mp4",
+      id: "video3",
+      height: "h-[389px]",
+      moveUp: "mt-[-80px]",
+    },
+    {
+      video: "/advertise/v-4.mp4",
+      id: "video4",
+      height: "h-[513px]",
+      moveUp: "mt-[-120px]",
+    },
   ];
-
 
   return (
     <>
       {/* Hero Section */}
-    <div className="bg-[#FAFAFA] relative">
-       {/* Top Year Labels */}
-              <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
-              <span className="absolute left-[10.5%]">2014</span>
-              <span className="absolute left-[34%]">2017</span>
-              <span className="absolute left-[58%]">2020</span>
-              <span className="absolute left-[82%]">2023</span>
-              </div>
+      <div className="bg-[#FAFAFA] relative">
+        {/* Top Year Labels */}
+        <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
+          <span className="absolute left-[10.5%]">2014</span>
+          <span className="absolute left-[34%]">2017</span>
+          <span className="absolute left-[58%]">2020</span>
+          <span className="absolute left-[82%]">2023</span>
+        </div>
 
-              <div className="absolute top-20 bottom-[182px] left-[15%] w-px bg-gray-300 z-0" />
-              <div className="absolute top-20 bottom-[70px] left-[38.5%] w-px bg-gray-300 z-0" />
-              <div className="absolute top-20 bottom-[270px] left-[62%] w-px bg-gray-300 z-0" />
-              <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" />
-
+        <div className="absolute top-20 bottom-[182px] left-[15%] w-px bg-gray-300 z-0" />
+        <div className="absolute top-20 bottom-[70px] left-[38.5%] w-px bg-gray-300 z-0" />
+        <div className="absolute top-20 bottom-[270px] left-[62%] w-px bg-gray-300 z-0" />
+        <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" />
 
         <div className="px-4 md:px-16 pt-28 lg:pt-20 mx-auto max-w-screen-xl">
           <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] font-[GT-Super-Ds-Trial]">
             Step into a world of discovery
           </h2>
           <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
-            Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.
+            Explore different categories. Find the best deals. AG1 is a daily
+            health drink packed with nutrients to help alleviate bloating.
           </p>
         </div>
 
@@ -68,23 +77,34 @@ export default function AdvertisePageMobileVersion() {
           </div>
         </div>
         {/* bottom text  */}
-                  <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-gray-800 text-[16px]">
-                      <span className="absolute bottom-[248px] left-[9.5%]">$19.4<br/> trillion</span>
-                      <span className="absolute bottom-[196px] left-[32.5%]">$17.4<br/> trillion</span>
-                      <span className="absolute bottom-[338px] left-[56.5%]">$18.9<br/> trillion</span>
-                      <span className="absolute bottom-[464px] left-[80%]">$144<br/> million</span>
-                  </div>
+        <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-gray-800 text-[16px]">
+          <span className="absolute bottom-[248px] left-[9.5%]">
+            $19.4
+            <br /> trillion
+          </span>
+          <span className="absolute bottom-[196px] left-[32.5%]">
+            $17.4
+            <br /> trillion
+          </span>
+          <span className="absolute bottom-[338px] left-[56.5%]">
+            $18.9
+            <br /> trillion
+          </span>
+          <span className="absolute bottom-[464px] left-[80%]">
+            $144
+            <br /> million
+          </span>
+        </div>
 
-          {/* Gradient */}
-      <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
+        {/* Gradient */}
+        <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
 
-          {/* Subscribers Text */}
-          <div className="absolute bottom-0 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
-            <span className="text-white">100K </span>
-            <span className="text-[#01261E]">Subscribers</span>
-          </div>
-    </div>
-
+        {/* Subscribers Text */}
+        <div className="absolute bottom-0 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
+          <span className="text-white">100K </span>
+          <span className="text-[#01261E]">Subscribers</span>
+        </div>
+      </div>
 
       {/* Combined Analytics */}
       <div className="bg-[#FAFAFA] relative px-4 md:px-28 pt-20">
@@ -107,15 +127,24 @@ export default function AdvertisePageMobileVersion() {
           {/* Chart Row 3 */}
           <div className="flex flex-col justify-center items-center gap-4">
             <SignInUps />
-            <div className="w-full h-[215px] rounded-[8px]" style={{ background: "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)" }}>
+            <div
+              className="w-full h-[215px] rounded-[8px]"
+              style={{
+                background:
+                  "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)",
+              }}
+            >
               <div className="flex flex-col justify-between p-6 h-full">
                 <h4 className="text-white text-lg max-w-[335px]">
-                  Access all major A2A payment methods via a single API and global settlement with multi-currency support.
+                  Access all major A2A payment methods via a single API and
+                  global settlement with multi-currency support.
                 </h4>
                 <div className="flex justify-start items-center max-w-xl max-h-[20px] pb-6">
-                  <button className="text-[15px] mt-6 px-4 py-1.5 border border-white text-white rounded-[10px] hover:bg-white hover:text-[#01261E] transition">
-                    About Us
-                  </button>
+                  <Link href="/analytics">
+                    <button className="text-[15px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
+                      Analytics
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -126,11 +155,14 @@ export default function AdvertisePageMobileVersion() {
       {/* Ad Preview */}
       <div className="bg-[#FAFAFA] py-10">
         <div className="px-4 py-10">
-        <HeadingWithUnderline text="How your ad will look like"/>
+          <HeadingWithUnderline text="How your ad will look like" />
         </div>
         <div className="flex w-full max-h-[213px] relative overflow-hidden">
           <video autoPlay loop muted playsInline className=" object-cover">
-            <source src="/advertise/advertise-page-video.mp4" type="video/mp4" />
+            <source
+              src="/advertise/advertise-page-video.mp4"
+              type="video/mp4"
+            />
           </video>
         </div>
 
@@ -139,34 +171,40 @@ export default function AdvertisePageMobileVersion() {
             And that’s not all
           </h2>
           <p className="text-[12px] leading-[125%] font-[400] mt-4 max-w-[60%]">
-            Get a personalized demo and discover how Sagravia can help your business
+            Get a personalized demo and discover how Sagravia can help your
+            business
           </p>
 
-          <a href="#" className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]">
-                <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-                  SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES 
-                </span>
-              </a>
+          <a
+            href="#"
+            className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]"
+          >
+            <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
+              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
+              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+              SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
+              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            </span>
+          </a>
         </div>
       </div>
 
       {/* Ad Blocker and Do Follow */}
-      
-      <AdvertiseAdBlocker/>
-      
 
+      <AdvertiseAdBlocker />
 
       {/* FAQ Section */}
       <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
-      <HeadingWithUnderline text="Frequently Asked Questions"/>
-      <div>
-        <MobileFaq/>
-      </div>
+        <HeadingWithUnderline text="Frequently Asked Questions" />
+        <div>
+          <MobileFaq />
+        </div>
       </div>
 
       {/* In the Press */}
       <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
-        <HeadingWithUnderline text="In the press"/>
+        <HeadingWithUnderline text="In the press" />
         <InThePress />
       </div>
     </>

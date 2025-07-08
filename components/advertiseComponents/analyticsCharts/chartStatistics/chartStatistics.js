@@ -195,7 +195,7 @@ export function Statistics() {
           >
             <button
               onClick={() => setFlipped(true)}
-              className="absolute top-4 right-6  rounded-full  shadow"
+              className="absolute top-4 right-6"
             >
               <img
                 src="/advertise/flip-white-mob.png"
