@@ -6,30 +6,30 @@ import ReadersHero from "../../components/readersPageComponents/readersHero/read
 import ReadersNewsletters from "../../components/readersPageComponents/readersNewsletters/readersNewsletters";
 import HeadingWithUnderline from "../../components/readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 
-export default function ReadersPage(){
-    return (
-        <>
-            <div className="hidden lg:block bg-[#FAFAFA]">
-            <ReadersHero/>
+export default function ReadersPage() {
+  return (
+    <>
+      <div className="hidden lg:block bg-[#FAFAFA]">
+        <ReadersHero />
 
-              <div className="px-4 md:px-28 py-10 ">
-                <HeadingWithUnderline text="Our newsletters" />
-              </div>
-              <ReadersNewsletters/>
+        <div className="px-4 md:px-28 pt-10 w-[58%]">
+          <HeadingWithUnderline text="Our newsletters" />
+        </div>
+        <ReadersNewsletters />
 
-              <div className="px-4 md:px-28 py-10 ">
-                <HeadingWithUnderline text="Features"/>
-              </div>
-              <ReadersFeatureSection/>
+        <div className="px-4 md:px-28 py-10 w-[58%]">
+          <HeadingWithUnderline text="Features" />
+        </div>
+        <ReadersFeatureSection />
 
-              <ReadersFooter/>
-            </div>
+        <ReadersFooter />
+      </div>
 
-            <div className="block lg:hidden">
-              <ReadersMobileView/>
-              
-            <ReadersFooter/>
-            </div>
-        </>
-    )
+      <div className="block lg:hidden">
+        <ReadersMobileView />
+
+        <ReadersFooter />
+      </div>
+    </>
+  );
 }

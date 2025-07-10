@@ -182,39 +182,39 @@ export default function ViewAll() {
 
               {/* Desktop Hover Content */}
               <motion.div className="relative hidden lg:block w-full" layout>
-                <motion.div layout className="pb-2">
-                  <h3 className="text-[17px] font-[700] leading-[101%] py-2">
-                    {item.title}
-                  </h3>
-                  <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
-                    {item.experience}
-                  </p>
-                </motion.div>
-
                 <AnimatePresence initial={false}>
-                  {hoveredIndex === index && (
-                    <motion.div
-                      key="hoverContent"
-                      className="overflow-hidden text-sm text-white"
-                      initial={{ opacity: 1, height: 0, y: -10 }}
-                      animate={{ opacity: 1, height: "auto", y: 0 }}
-                      exit={{ opacity: 1, height: 0, y: -10 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      layout
-                    >
-                      <p className="text-[#FAFAFA] text-[12px] font-[500] leading-normal">
-                        {item.content}
-                      </p>
-                      <div className="pt-4">
-                        <button
-                          onClick={() => handleImageClick(index)}
-                          className="w-full bg-white/25 text-white py-2 rounded-lg"
-                        >
-                          {item.button}
-                        </button>
-                      </div>
-                    </motion.div>
-                  )}
+                  <motion.div layout className="pb-2">
+                    <h3 className="text-[17px] font-[700] leading-[101%] py-2">
+                      {item.title}
+                    </h3>
+                    <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
+                      {item.experience}
+                    </p>
+
+                    {hoveredIndex === index && (
+                      <motion.div
+                        key="hoverContent"
+                        className="overflow-hidden text-sm text-white"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: 20 }}
+                        transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
+                        layout
+                      >
+                        <p className="text-[#FAFAFA] text-[12px] font-[500] leading-normal pt-2">
+                          {item.content}
+                        </p>
+                        <div className="pt-4">
+                          <button
+                            onClick={() => handleImageClick(index)}
+                            className="w-full bg-white/25 text-white py-2 rounded-lg"
+                          >
+                            {item.button}
+                          </button>
+                        </div>
+                      </motion.div>
+                    )}
+                  </motion.div>
                 </AnimatePresence>
               </motion.div>
             </div>

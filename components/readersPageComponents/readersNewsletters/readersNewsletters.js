@@ -64,13 +64,27 @@ export default function ReadersNewsletters() {
     {
       id: 6,
       headerButton: "Subscribe",
-      image: "/readers/n-ps.png",
+      image: "/readers/n-ds.png",
       topic: "News",
       when: "weekly",
       heading: "Dubai Summary",
       paragraph:
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
+    },
+  ];
+
+  const aboutOurInfo = [
+    { id: 1, img: "/readers/newsletters.png", text: "Newsletters" },
+    {
+      id: 2,
+      img: "/readers/subscribers.png",
+      text: "new subscribers sign up per week",
+    },
+    {
+      id: 3,
+      img: "/readers/openRate.png",
+      text: "of subscribers open our news briefing every day.",
     },
   ];
 
@@ -113,6 +127,40 @@ export default function ReadersNewsletters() {
 
   return (
     <div className="bg-[#FAFAFA]">
+      {/* details */}
+      <div className="pt-[30px] pb-[56px] md:px-28">
+        <div className="w-[46%]">
+          <p className="text-[#000] text-[16px] font-[400] leading-[152%]">
+            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
+            sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
+            auctor id libero. Interdum et malesuada fames ac ante ipsum primis
+            in faucibus.Proin et pulvinar risus, quis hendrerit nisi. Vestibulum
+            eget sollicitudin odio. Maecenas tellus sem, fermentu.{" "}
+            <a
+              href="/contact"
+              className="text-[#C7A262] text-[16px] font-[500] leading-[152%]"
+            >
+              Reach out sales team →
+            </a>
+          </p>
+        </div>
+        <div className="pt-[56px]">
+          <div className="flex flex-row justify-between gap-6">
+            {aboutOurInfo.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col items-start text-center"
+              >
+                <img src={item.img} alt={item.text} className="w-18 h-[47px]" />
+                <span className="mt-2 text-[#000] text-[20px] font-[600] leading-[152%]">
+                  {item.text}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      {/* newsletter */}
       <div className="px-4 md:px-28 py-10">
         <div className="grid gap-6 lg:grid-cols-3">
           {testInform.map((data) => (

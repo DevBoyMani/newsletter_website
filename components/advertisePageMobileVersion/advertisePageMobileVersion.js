@@ -48,7 +48,7 @@ export default function AdvertisePageMobileVersion() {
         <div className="absolute top-20 bottom-[270px] left-[62%] w-px bg-gray-300 z-0" />
         <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" />
 
-        <div className="px-4 md:px-16 pt-28 lg:pt-20 mx-auto max-w-screen-xl">
+        <div className="px-4 pt-28 mx-auto max-w-screen-xl">
           <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] font-[GT-Super-Ds-Trial]">
             Step into a world of discovery
           </h2>
@@ -56,6 +56,13 @@ export default function AdvertisePageMobileVersion() {
             Explore different categories. Find the best deals. AG1 is a daily
             health drink packed with nutrients to help alleviate bloating.
           </p>
+          <div className="absolute top-100 left-[4%] z-20">
+            <Link href="/about">
+              <button className="flex px-[14px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[13px] font-[600] rounded-full border hover:bg-[#0B4337]">
+                About us
+              </button>
+            </Link>
+          </div>
         </div>
 
         {/* Videos */}

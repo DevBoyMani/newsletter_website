@@ -99,6 +99,13 @@ export default function Advertise() {
               Explore different categories. Find the best deals. AG1 is a daily
               health drink packed with nutrients to help alleviate bloating.
             </p>
+            <div>
+              <Link href="/about">
+                <button className="flex px-[18px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[14px] font-[600] rounded-full hover:bg-[#0B4337]">
+                  About us
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
 

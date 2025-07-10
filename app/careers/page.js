@@ -196,7 +196,7 @@ const Careers = () => {
 
   return (
     <>
-      <div className="md:px-28 px-4 lg:pt-20 pt-10 mx-auto ">
+      <div className="md:px-28 px-4 lg:pt-28 pt-10 mx-auto bg-[#FAFAFA]">
         <div className="mb-8 text-start ">
           <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">
             Looking for a new role &
@@ -234,7 +234,7 @@ const Careers = () => {
         </div>
       </div>
 
-      <div className="w-full md:px-28 px-4">
+      <div className="w-full md:px-28 px-4 bg-[#FAFAFA]">
         <Testimonials
           testimonials={testimonials}
           activeTab={activeTab}
@@ -242,12 +242,12 @@ const Careers = () => {
         />
       </div>
 
-      <div className="mt-0 md:px-28 px-4">
+      <div className="mt-0 md:px-28 px-4 bg-[#FAFAFA]">
         {testimonials[activeTab].component}
       </div>
 
       {/* desktop faq */}
-      <div className="hidden lg:block py-10  md:px-28 flex justify-end">
+      <div className="hidden lg:block py-10  md:px-28 flex justify-end bg-[#FAFAFA]">
         <div className="lg:pb-20">
           <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] lg:text-right">
             How do we work with <br />
@@ -256,7 +256,7 @@ const Careers = () => {
         </div>
       </div>
 
-      <div className="hidden lg:block py-10 md:px-28 md:pb-24">
+      <div className="hidden lg:block py-10 md:px-28 md:pb-24 bg-[#FAFAFA]">
         <div className="flex flex-col md:flex-row justify-between ">
           {/* Left side – Image */}
           <div className="md:w-[46%] lg:py-0 pb-8">
@@ -288,7 +288,7 @@ const Careers = () => {
 
       {/* mobile faq */}
 
-      <div className="lg:hidden block py-10">
+      <div className="lg:hidden block py-10 bg-[#FAFAFA]">
         <div className=" lg:pb-20">
           <div className="w-[80%] px-4 text-[#01261E] text-[30px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] ">
             How do we work with your application?
@@ -296,7 +296,7 @@ const Careers = () => {
         </div>
       </div>
 
-      <div className="lg:hidden block ">
+      <div className="lg:hidden block bg-[#FAFAFA]">
         {/* <div className="flex flex-col justify-between "> */}
 
         {/* Left side – Image */}
@@ -328,7 +328,7 @@ const Careers = () => {
       {/*/ faq */}
 
       {/* Desktop view with fallback image */}
-      <div className="hidden lg:block relative py-10">
+      <div className="hidden lg:block relative py-10 bg-[#FAFAFA]">
         <div className="relative lg:h-[530px]">
           <video
             autoPlay
@@ -397,7 +397,7 @@ const Careers = () => {
       </div>
 
       {/* What we offer desktop*/}
-      <div className="hidden lg:block md:px-28 md:pb-10 md:pt-16">
+      <div className="hidden lg:block md:px-28 md:pb-10 md:pt-16 bg-[#FAFAFA]">
         <div className="md:flex h-full gap-10">
           {/* Left: Sticky Section */}
           <div className="w-[40%] sticky top-28 h-fit">
@@ -481,7 +481,7 @@ const Careers = () => {
       </div>
 
       {/* What we offer mobile*/}
-      <div className="block lg:hidden px-4 pb-10 pt-10 block md:hidden">
+      <div className="block lg:hidden px-4 pb-10 pt-10 block md:hidden bg-[#FAFAFA]">
         {/* Top Section: Heading */}
         <div className="mb-10 text-[#000]">
           <span className="text-[16px] font-[400] leading-normal">
@@ -493,7 +493,7 @@ const Careers = () => {
         </div>
 
         {/* Cards Section: Column 1 */}
-        <div className="space-y-6 mb-10">
+        <div className="space-y-6 mb-10 bg-[#FAFAFA]">
           {whatWeOfferCol1.map((item) => (
             <div key={item.id} className="border p-6 bg-[#B6B6B633]">
               <img
@@ -512,7 +512,7 @@ const Careers = () => {
         </div>
 
         {/* Cards Section: Column 2 */}
-        <div className="space-y-6">
+        <div className="space-y-6 bg-[#FAFAFA]">
           {whatWeOfferCol2.map((item) => (
             <div key={item.id} className="border p-6 bg-[#B6B6B633]">
               <img
@@ -532,7 +532,7 @@ const Careers = () => {
       </div>
 
       {/* What our people have to say*/}
-      <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14">
+      <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14 bg-[#FAFAFA]">
         <div className="border-b border-black">
           <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E] font-[GT-Super-Ds-Trial] ">
             What our people have to say
@@ -557,7 +557,7 @@ const Careers = () => {
                   <img
                     src={image.smallSrc}
                     alt={`image-${image.id}`}
-                    className="hidden lg:block w-8 h-8"
+                    className="hidden lg:block w-14 h-14"
                   />
                   <img
                     src={image.smallSrc}
@@ -570,7 +570,7 @@ const Careers = () => {
 
             {/* Dynamic Text Content */}
             <div className="lg:py-6">
-              <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400] mb-10 lg:w-[70%]">
+              <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400] mb-10 lg:w-[94%]">
                 {selectedImage.text}
               </p>
               <p className="text-[17px] lg:text-[24px] leading-[130%] font-[400]">
@@ -597,7 +597,7 @@ const Careers = () => {
 
       {/* contact our team */}
 
-      <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32 pb-16">
+      <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32 pb-16 bg-[#FAFAFA]">
         <h2
           className="text-[34px] lg:text-[56px] font-[400]"
           style={{ fontFamily: "GT Super Ds Trial" }}
@@ -605,8 +605,8 @@ const Careers = () => {
           Contact our team
         </h2>
 
-        <div className="lg:w-[30%] mx-auto px-8">
-          <p className="text-[12px] font-[400] leading-[150%] tracking-[0.36px] text-center">
+        <div className="lg:w-[50%] mx-auto px-8">
+          <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
             If you're looking to grow in a dynamic environment and contribute to
             something greater, we invite you to explore our open positions and
             become a part of our journey.

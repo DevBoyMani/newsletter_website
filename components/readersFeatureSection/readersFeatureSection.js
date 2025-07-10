@@ -34,7 +34,6 @@ import ScrollSyncTabs from "../scrollSyncTabs/ScrollSyncTabs";
 //       },
 //    ]
 
-
 export default function ReadersFeatureSection() {
   // const [activeIndex, setActiveIndex] = useState(0);
   // const [activeScrollIndex, setActiveScrollIndex] = useState(0);
@@ -117,7 +116,7 @@ export default function ReadersFeatureSection() {
 
   return (
     <>
-      <div className="bg-[#FAFAFA] px-4 md:px-28 w-[55%]">
+      <div className="bg-[#FAFAFA] px-4 md:px-28 w-[54.5%]">
         <p className="text-black md:text-[16px] ">
           Integer convallis dapibus blandit. Proin dapibus vel eros id
           imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare
@@ -128,7 +127,7 @@ export default function ReadersFeatureSection() {
         </p>
       </div>
 
-       {/* my old code  all */}
+      {/* my old code  all */}
 
       {/* <div className="flex h-screen sticky-0 bg-[#FAFAFA] px-4 md:px-28 mx-auto z-10 overflow-hidden mt-12"> */}
       {/* Left Sidebar */}
@@ -144,8 +143,8 @@ export default function ReadersFeatureSection() {
           sectionRefs={sectionRefs}
         /> */}
       {/* </div> */}
-    {/*/ my old code all */}
-    
+      {/*/ my old code all */}
+
       <ScrollSyncTabs />
     </>
   );

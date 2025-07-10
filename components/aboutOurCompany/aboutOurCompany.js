@@ -372,6 +372,28 @@ export default function AboutOurCompany() {
                 <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
               </div>
             </div>
+
+            {/* Icon 6 - DS */}
+            <div className="absolute top-[40%] left-[28%] group">
+              <img
+                src="/about/ds.png"
+                alt="Capitol"
+                className="w-8 h-8 bg-[#102341] hover:bg-[#102341] rounded-full"
+              />
+              <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-2 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
+                <div className="w-[150px]">
+                  <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
+                    Dubai Summary
+                  </p>
+                  <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
+                    Explore Dubai careers with
+                    <br /> our guidance
+                  </p>
+                </div>
+
+                <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
