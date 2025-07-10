@@ -116,7 +116,7 @@ export default function BlogsArticles() {
       <div className="block lg:hidden">
         <div className="py-10">
           <div>
-            <div className="grid grid-cols-1 space-y-4">
+            <div className="grid grid-cols-1 space-y-0">
               {articleData.map((item, index) => (
                 <div key={index} className="">
                   <Link href="/blogs/slug">
@@ -148,7 +148,7 @@ export default function BlogsArticles() {
                     {item.content}
                   </p>
 
-                  <p className="text-[15px] py-2 text-[#000] font-[700] leading-[130%] underline">
+                  <p className="text-[15px] pt-[18px] pb-[32px] text-[#000] font-[700] leading-[130%] underline">
                     {item.readMore}
                   </p>
                 </div>

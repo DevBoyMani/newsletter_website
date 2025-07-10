@@ -163,43 +163,44 @@ export default function Navbar() {
       <header
         className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-16 ${mobileHeaderBg}`}
       >
-        <div className="flex items-center justify-between px-4 py-3">
-          <Link href="/">
-            <div className="w-32">
-              <img src={mobileLogoSrc} alt="Logo" />
-            </div>
-          </Link>
+        <div className="px-4">
+          <div className="flex items-center justify-between border-b border-[#FFFFFF80] py-3">
+            <Link href="/">
+              <div className="w-32">
+                <img src={mobileLogoSrc} alt="Logo" />
+              </div>
+            </Link>
 
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className={`p-2 transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center`}
-          >
-            <div className="relative w-6 h-4 flex flex-col justify-between items-center">
-              {/* Hamburger/X icons */}
-              <span
-                className={`absolute top-0 left-0 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
-                  isOpen ? "opacity-0" : "top-0 opacity-100"
-                }`}
-              ></span>
-              <span
-                className={`absolute top-1/2 left-0 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
-                  isOpen ? "opacity-0" : "top-[44%] opacity-100"
-                }`}
-              ></span>
-              <span
-                className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
-                  isOpen ? "rotate-45" : "-translate-y-full opacity-0"
-                }`}
-              ></span>
-              <span
-                className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
-                  isOpen ? "-rotate-45" : "translate-y-full opacity-0"
-                }`}
-              ></span>
-            </div>
-          </button>
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              className="p-2 transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center"
+            >
+              <div className="relative w-6 h-4 flex flex-col justify-between items-center">
+                {/* Hamburger/X icons */}
+                <span
+                  className={`absolute top-0 left-0 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                    isOpen ? "opacity-0" : "top-0 opacity-100"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute top-1/2 left-0 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                    isOpen ? "opacity-0" : "top-[44%] opacity-100"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                    isOpen ? "rotate-45" : "-translate-y-full opacity-0"
+                  }`}
+                ></span>
+                <span
+                  className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                    isOpen ? "-rotate-45" : "translate-y-full opacity-0"
+                  }`}
+                ></span>
+              </div>
+            </button>
+          </div>
         </div>
-
         <div
           className={`px-4 py-4 mt-16 h-screen fixed top-0 right-0 w-full transition-transform duration-300 ease-out bg-white ${
             isOpen ? "translate-x-0" : "translate-x-full"

@@ -3,17 +3,18 @@ export default function BlogsHero() {
     <>
       {/* desktop */}
       <div className="hidden lg:block">
-        <div className="py-10 md:px-28 bg-[#01261E]">
+        <div className="py-16 md:px-28 bg-[#01261E]">
           {/*part 1 */}
-          <div className="flex flex-row justify-between items-center border-b pb-6 pt-20">
-            <div className="w-[70%]">
+          <div className="flex flex-row justify-between border-b pb-6 pt-20">
+            <div className="w-[60%]">
               <h2 className="text-[#FAFAFA] font-[GT-Super-Ds-Trial] text-[104px] font-[400] leading-[104%]">
                 Sagravia Blogs
               </h2>
             </div>
-            <div className="w-[30%]">
+            <div className="w-[40%] flex justify-end items-end mb-4">
               <p className="text-[#FAFAFA] text-[16px] font-[600] leading-[141%] tracking-[-0.64px]">
-                Insights, tips, and tricks to help you grow your newsletter.
+                Insights, tips, and tricks to help you grow your
+                <br /> newsletter.
               </p>
             </div>
           </div>
@@ -53,7 +54,7 @@ export default function BlogsHero() {
               {/* right */}
               <div className="w-[40%] flex flex-col justify-start">
                 {/* 1 */}
-                <div className="flex flex-row gap-4 border-b pt-4 items-start pb-2">
+                <div className="flex flex-row gap-4 border-b pt-4 items-start">
                   <div>
                     <div className="w-[98px] pt-2">
                       <img
@@ -69,23 +70,23 @@ export default function BlogsHero() {
                       <span className="text-lg">•</span>
                       <span>8 mins</span>
                     </p>
-                    <p className="text-[#FFF] text-[18px] font-[700] leading-[130%] ">
+                    <p className="text-[#FFF] text-[18px] font-[700] leading-[130%] pt-[16px]">
                       What's the difference between a newsletter and a blog?
                     </p>
-                    <div className="flex flex-row space-x-2 items-center py-2">
+                    <div className="flex flex-row space-x-2 items-center pt-[16px] pb-[22px]">
                       <img
                         src="/blogs/p-1.png"
                         alt="profile-1"
                         className="w-7 object-cover"
                       />
-                      <p className="text-[#FFF] text-[14px] font-[700] leading-[104%] ">
+                      <p className="text-[#FFF] text-[14px] font-[400] leading-[104%]">
                         Jeff Hardy
                       </p>
                     </div>
                   </div>
                 </div>
                 {/* 2*/}
-                <div className="flex flex-row gap-4 border-b pt-4 items-start pb-2">
+                <div className="flex flex-row gap-4 border-b pt-[15px] items-start">
                   <div>
                     <div className="w-[98px] pt-2">
                       <img
@@ -101,23 +102,23 @@ export default function BlogsHero() {
                       <span className="text-lg">•</span>
                       <span>14 mins</span>
                     </p>
-                    <p className="text-[#FFF] text-[18px] font-[700] leading-[130%] ">
+                    <p className="text-[#FFF] text-[18px] font-[700] leading-[130%] pt-[16px]">
                       How to Create an SEO Newsletter: A Step-by-Step Guide
                     </p>
-                    <div className="flex flex-row space-x-2 items-center py-2">
+                    <div className="flex flex-row space-x-2 items-center py-2 pt-[16px] pb-[22px]">
                       <img
                         src="/blogs/p-1.png"
                         alt="profile-1"
                         className="w-7 object-cover"
                       />
-                      <p className="text-[#FFF] text-[14px] font-[700] leading-[104%] ">
+                      <p className="text-[#FFF] text-[14px] font-[400] leading-[104%] ">
                         Bianca Belair
                       </p>
                     </div>
                   </div>
                 </div>
                 {/* 3 */}
-                <div className="flex flex-row gap-4 pt-4 items-start pb-2">
+                <div className="flex flex-row gap-4 pt-[15px] items-start">
                   <div>
                     <div className="w-[98px] pt-2">
                       <img
@@ -133,16 +134,16 @@ export default function BlogsHero() {
                       <span className="text-lg">•</span>
                       <span>5 mins</span>
                     </p>
-                    <p className="text-[#FFF] text-[18px] font-[700] leading-[130%] ">
+                    <p className="text-[#FFF] text-[18px] font-[700] leading-[130%] pt-[16px]">
                       How to Create an Email Newsletter
                     </p>
-                    <div className="flex flex-row space-x-2 items-center py-2">
+                    <div className="flex flex-row space-x-2 items-center py-2 pt-[16px] ">
                       <img
                         src="/blogs/p-1.png"
                         alt="profile-1"
                         className="w-7 object-cover"
                       />
-                      <p className="text-[#FFF] text-[14px] font-[700] leading-[104%] ">
+                      <p className="text-[#FFF] text-[14px] font-[400] leading-[104%] ">
                         Rey Mysterio
                       </p>
                     </div>
@@ -156,9 +157,9 @@ export default function BlogsHero() {
 
       {/* mobile view */}
       <div className="block lg:hidden">
-        <div className="pt-6 pb-10 px-4 bg-[#01261E]">
+        <div className="pt-[70px] pb-10 px-4 bg-[#01261E]">
           {/*part 1 */}
-          <div className=" border-b pb-6 pt-10">
+          <div className=" border-b-[0.5px] border-[#FFFFFF80] pb-6 pt-10">
             <h2 className="text-[#FAFAFA] font-[GT-Super-Ds-Trial] text-[30px] font-[400] leading-[104%] pb-8">
               Sagravia Blogs
             </h2>
@@ -182,7 +183,7 @@ export default function BlogsHero() {
                   <img
                     src="/blogs/p-1.png"
                     alt="profile-1"
-                    className="w-7 object-cover"
+                    className="w-7 object-cover border border-white rounded-full"
                   />
                   <p className="flex items-center gap-1 text-[#FFF] text-[14px] font-[400] leading-[104%]">
                     <span>John Cena</span>
@@ -199,7 +200,7 @@ export default function BlogsHero() {
 
               {/* 1 */}
               <div className="pt-10 pb-2">
-                <div className="border-b pb-2">
+                <div className="border-b-[0.5px] border-[#FFFFFF80] pb-2">
                   <div>
                     <p className="flex items-center gap-2 text-[#FFF] text-[14px] font-[400] leading-[104%]">
                       <span>Foundations</span>
@@ -213,7 +214,7 @@ export default function BlogsHero() {
                       <img
                         src="/blogs/p-1.png"
                         alt="profile-1"
-                        className="w-6 object-cover"
+                        className="w-6 object-cover border border-white rounded-full"
                       />
                       <p className="text-[#FFF] text-[14px] font-[500] leading-[104%] ">
                         Jeff Hardy
@@ -224,7 +225,7 @@ export default function BlogsHero() {
               </div>
               {/* 2 */}
               <div className=" pb-2">
-                <div className="border-b pb-2">
+                <div className="border-b-[0.5px] border-[#FFFFFF80] pb-2">
                   <p className="flex items-center gap-2 text-[#FFF] text-[14px] font-[400] leading-[104%]">
                     <span>SEO</span>
                     <span className="text-lg">•</span>
@@ -237,7 +238,7 @@ export default function BlogsHero() {
                     <img
                       src="/blogs/p-1.png"
                       alt="profile-1"
-                      className="w-6 object-cover"
+                      className="w-6 object-cover border border-white rounded-full"
                     />
                     <p className="text-[#FFF] text-[14px] font-[500] leading-[104%] ">
                       Bianca Belair
@@ -260,7 +261,7 @@ export default function BlogsHero() {
                     <img
                       src="/blogs/p-1.png"
                       alt="profile-1"
-                      className="w-6 object-cover"
+                      className="w-6 object-cover border border-white rounded-full"
                     />
                     <p className="text-[#FFF] text-[14px] font-[500] leading-[104%] ">
                       Rey Mysterio

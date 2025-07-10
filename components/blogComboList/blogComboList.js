@@ -22,7 +22,7 @@ export default function BlogComboList() {
       <Listbox value={selected} onChange={setSelected}>
         <div className="relative">
           <Listbox.Button
-            className={`relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-[29px] p-2 focus:outline-none ${
+            className={`relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-full p-2 focus:outline-none ${
               selected !== "Table of content" ? "text-[#FFF]" : "text-[#FFF]"
             }`}
           >
@@ -30,7 +30,7 @@ export default function BlogComboList() {
             <ChevronDownIcon className="absolute right-2 top-2.5 h-5 w-5 text-[#FFF]" />
           </Listbox.Button>
 
-          <Listbox.Options className="absolute z-10 mt-1 w-full rounded-[10px] bg-[#0B4337] shadow-lg ring-1 ring-black/5 text-sm">
+          <Listbox.Options className="absolute z-10 mt-1 w-full px-2 py-4 rounded-[10px] bg-[#0B4337] text-sm">
             {options.map((item, idx) => (
               <Listbox.Option
                 key={idx}
