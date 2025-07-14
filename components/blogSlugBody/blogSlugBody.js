@@ -545,29 +545,15 @@ export default function BlogSlugBody() {
       {/* mobile */}
       <div className="block lg:hidden">
         <div className=" pt-[60px] px-4">
-          <BlogSlugComponentList
-            onItemClick={(index) => {
-              const element = sectionRefs.current[index];
-              if (element) {
-                const topOffset =
-                  element.getBoundingClientRect().top + window.scrollY - 120; // header height
-                window.scrollTo({ top: topOffset, behavior: "smooth" });
-              }
-            }}
-          />
+          <BlogSlugComponentList />
 
-          {/* content */}
+          {/* Center */}
           <div className="w-full flex flex-col gap-8 pt-[24px] pb-[81px]">
             {sectionsWithContent.map((section, index) => {
               const isTargetSection =
                 section.title === "What is newsletter advertising?";
               return (
-                <div
-                  key={index}
-                  id={`section-${index}`}
-                  ref={(el) => (sectionRefs.current[index] = el)}
-                  className="scroll-mt-[140px]"
-                >
+                <div key={index} id={`section-${index}`} className="">
                   {/* Inject subscribe box above the specific section */}
                   {isTargetSection && (
                     <div className="block lg:hidden pt-[20px] pb-[21px]">
