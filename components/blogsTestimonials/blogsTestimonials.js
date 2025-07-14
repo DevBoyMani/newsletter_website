@@ -92,7 +92,7 @@ export default function BlogsTestimonials() {
           {/*pagination*/}
           <BlogsPagination totalPages={25} />
           {/* subscribe */}
-          <div className=" py-10 flex justify-center hidden lg:flex">
+          <div className=" py-10 flex justify-center">
             <div className="relative w-full max-w-5xl">
               {/* Background Image */}
               <img
@@ -151,26 +151,36 @@ export default function BlogsTestimonials() {
           {/*pagination*/}
           <BlogsPagination />
           {/* subscribe */}
-          <div className="block lg:hidden">
-            <div className="pt-10 pb-[65px]">
-              <div className="bg-[#DAEBE8] rounded-[10px] px-[30px] py-[30px]">
-                {/* Newsletter Text */}
-                <div className="flex justify-center">
-                  <p className="text-[#000] text-[15px] text-center font-medium leading-[130%] w-full md:w-[60%] pb-8">
-                    Get Sagravia news – our weekly newsletter packed with
-                    insights from our blog, designed to keep Master Marketers
-                    ahead with the latest Paid Social updates and innovations.
-                  </p>
-                </div>
+          <div className="">
+            <div className="pt-10 pb-[65px] flex justify-center">
+              <div className="relative w-full max-w-3xl rounded-[10px] overflow-hidden">
+                {/* Background Image */}
+                <img
+                  src="/blogs/blog-bottom-banner-mobile.png"
+                  alt="Newsletter Background"
+                  className="absolute inset-0 w-full h-full object-cover z-0"
+                />
 
-                {/* Subscribe Button */}
-                <div className="flex justify-center">
-                  <a
-                    href="/"
-                    className="text-white text-[16px] font-[500] text-center bg-[#01261E] rounded-[6px] w-full py-2.5 transition-all hover:bg-[#024b3b]"
-                  >
-                    Subscribe for free
-                  </a>
+                {/* Overlay content */}
+                <div className="relative z-10 p-[30px]">
+                  {/* Newsletter Text */}
+                  <div className="flex justify-center">
+                    <p className="text-[#000] text-[15px] text-center font-medium leading-[130%] w-full md:w-[80%] pb-6">
+                      Get Sagravia news – our weekly newsletter packed with
+                      insights from our blog, designed to keep Master Marketers
+                      ahead with the latest Paid Social updates and innovations.
+                    </p>
+                  </div>
+
+                  {/* Subscribe Button */}
+                  <div className="flex justify-center">
+                    <a
+                      href="/"
+                      className="text-white text-[16px] font-medium text-center bg-[#01261E] rounded-[6px] w-full max-w-xs py-2.5 transition-all hover:bg-[#024b3b]"
+                    >
+                      Subscribe for free
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>

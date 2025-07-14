@@ -345,11 +345,13 @@ export default function BlogSlugBody() {
       {/* desktop */}
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4">
-          <div className="flex md:flex-row justify-start flex-col w-full h-full space-x-4">
+          <div className="flex md:flex-row justify-start flex-col w-full h-full ">
             {/* Left */}
             <div className="max-w-[21%] w-full sticky top-24 self-start">
-              <p className="text-[12px] font-[400] py-2">{scrollPercent}%</p>
-              <div className="bg-[#DAEBE8] py-6 px-4 rounded-[5px]">
+              <p className="text-[12px] font-[400] pb-2 mt-1">
+                {scrollPercent}%
+              </p>
+              <div className="bg-[#DAEBE8] py-[20px] px-[15px] rounded-[5px]">
                 <h3 className="text-[#000] text-[15px] font-[600] pb-6">
                   Table of content
                 </h3>
@@ -401,7 +403,7 @@ export default function BlogSlugBody() {
             </div>
 
             {/* Center */}
-            <div className="md:w-[57%] w-full flex flex-col gap-8">
+            <div className="md:w-[57%] w-full flex flex-col gap-8 pl-[37px] pr-[64px]">
               {sectionsWithContent.map((section, index) => (
                 <div
                   key={index}
@@ -409,7 +411,7 @@ export default function BlogSlugBody() {
                   ref={(el) => (sectionRefs.current[index] = el)}
                   className="scroll-mt-28"
                 >
-                  <h4 className="text-[#000] text-[30px] font-[500] leading-[120%] py-2">
+                  <h4 className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
                     {section.title}
                   </h4>
                   <div>{section.content}</div>
@@ -417,21 +419,21 @@ export default function BlogSlugBody() {
               ))}
 
               {/* 10 */}
-              <div className="pb-4">
+              <div className="">
                 <div className="mt-8">
-                  <div className="pb-4 pt-6 px-6 bg-[#C7A26233] rounded-[7px] ">
-                    <div className="pt-4 pb-2 flex space-x-2">
+                  <div className="px-[30px] pt-[25px] pb-[20px] bg-[#C7A26233] rounded-[7px] ">
+                    <div className="pb-2 flex space-x-2">
                       <img
                         src="/blogs/p-1.png"
                         alt="profile-1"
-                        className="w-10 h-10 object-cover rounded-full"
+                        className="w-10 h-10 object-cover border-[0.5px] border-[#01261E] rounded-full"
                       />
                       <p className="flex items-center gap-2 text-[#000] text-[18px] font-[400] leading-[104%]">
                         <span>John Cena</span>
                       </p>
                     </div>
                     <div className="flex ">
-                      <div className="w-[85%]">
+                      <div className="">
                         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%]">
                           John Felix Anthony Cena is an American actor and
                           professional wrestler. As a wrestler, he has been
@@ -441,7 +443,7 @@ export default function BlogSlugBody() {
                         <div className="pt-4">
                           <a
                             href="/"
-                            className="text-[#000] text-[16px] font-[400] leading-[174%]"
+                            className="text-[#000] text-[16px] font-[400] leading-[174%] hover:underline"
                           >
                             More blogs from John{" "}
                             <span className="text-[20px]">&rarr;</span>
@@ -455,16 +457,16 @@ export default function BlogSlugBody() {
             </div>
 
             {/* right */}
-            <div className="md:w-[21%] w-full pl-9 sticky top-24 self-start">
+            <div className="md:w-[18%] w-full sticky top-24 self-start pt-6">
               <div
                 className="scroll-mt-28"
                 // ref={(el) => (sectionRefs.current[0] = el)}
               >
                 <div className="h-auto">
-                  <p className="text-[14px] font-[500] text-[#000] leading-[174%]">
+                  <p className="text-[14px] pb-[17px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
                     Share this article
                   </p>
-                  <div className="pt-8">
+                  <div className="pt-[34px] pb-[62px]">
                     <div className="flex justify-start space-x-6">
                       <img
                         src="/blogs/blog-x.png"
@@ -488,19 +490,19 @@ export default function BlogSlugBody() {
                       />
                     </div>
                   </div>
-                  <div className="pt-16">
+                  <div className="">
                     <div className="border border-[#01261E] rounded-[10px]">
-                      <div className="py-3 px-3">
+                      <div className="py-[17] px-[15]">
                         <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
                           Sagravia Newsletter
                         </p>
-                        <p className="text-[#01261E] font-[400] text-[12px] leading-[141%]">
+                        <p className="text-[#01261E] font-[400] text-[12px] leading-[141%] pt-[8px]">
                           Do you want to get tips and sfsftactics to grow the
                           way you want?
                         </p>
                         <form
                           onSubmit={handleSubmit}
-                          className="pt-8 space-y-2"
+                          className="pt-[16px] space-y-2"
                         >
                           <input
                             type="email"
@@ -508,16 +510,16 @@ export default function BlogSlugBody() {
                             onChange={(e) => setEmail(e.target.value)}
                             placeholder="Email"
                             required
-                            className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
+                            className="px-2 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full h-[37px] focus:outline-none focus:ring-1 focus:ring-[#01261E]"
                           />
                           <button
                             type="submit"
-                            className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
+                            className="w-full h-[37px] bg-[#01261E] text-[#FFF] text-[14px] rounded-[3px] hover:bg-[#0B4337] transition"
                           >
                             Subscribe for free
                           </button>
                         </form>
-                        <div className="pt-2">
+                        <div className="pt-[2px] pl-[2px]">
                           <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
                             Unsubscribe at any time.{" "}
                             <span className="underline underline-[#767676]">
@@ -542,19 +544,33 @@ export default function BlogSlugBody() {
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="pb-4 pt-16 px-4">
-          <BlogSlugComponentList />
+        <div className=" pt-[60px] px-4">
+          <BlogSlugComponentList
+            onItemClick={(index) => {
+              const element = sectionRefs.current[index];
+              if (element) {
+                const topOffset =
+                  element.getBoundingClientRect().top + window.scrollY - 120; // header height
+                window.scrollTo({ top: topOffset, behavior: "smooth" });
+              }
+            }}
+          />
 
-          {/* Center */}
-          <div className="w-full flex flex-col gap-8 py-4">
+          {/* content */}
+          <div className="w-full flex flex-col gap-8 pt-[24px] pb-[81px]">
             {sectionsWithContent.map((section, index) => {
               const isTargetSection =
                 section.title === "What is newsletter advertising?";
               return (
-                <div key={index} id={`section-${index}`} className="">
+                <div
+                  key={index}
+                  id={`section-${index}`}
+                  ref={(el) => (sectionRefs.current[index] = el)}
+                  className="scroll-mt-[140px]"
+                >
                   {/* Inject subscribe box above the specific section */}
                   {isTargetSection && (
-                    <div className="block lg:hidden mb-4">
+                    <div className="block lg:hidden pt-[20px] pb-[21px]">
                       <div className="border border-[#01261E] rounded-[10px]">
                         <div className="py-3 px-3">
                           <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
@@ -617,7 +633,42 @@ export default function BlogSlugBody() {
             })}
           </div>
 
-          {/* right */}
+          <div className="">
+            <div className="pt-[20px]">
+              <div className="p-[15px] bg-[#C7A26233] rounded-[7px] ">
+                <div className="pb-[12px] flex space-x-2">
+                  <img
+                    src="/blogs/p-1.png"
+                    alt="profile-1"
+                    className="w-10 h-10 object-cover border-[0.5px] border-[#01261E] rounded-full"
+                  />
+                  <p className="flex items-center gap-2 text-[#000] text-[16px] font-[400] leading-[104%]">
+                    <span>John Cena</span>
+                  </p>
+                </div>
+                <div className="flex ">
+                  <div className="">
+                    <p className="text-[#000] text-[14px] font-[400] leading-[174%]">
+                      John Felix Anthony Cena is an American actor and
+                      professional wrestler. As a wrestler, he has been signed
+                      to WWE since 2001, where he is the current Undisputed WWE
+                      Champion in his record 14th reign.
+                    </p>
+                    <div className="pt-4">
+                      <a
+                        href="/"
+                        className="text-[#000] text-[16px] font-[400] leading-[174%] underline"
+                      >
+                        More blogs from John{" "}
+                        <span className="text-[20px]">&rarr;</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className="">
             <div className="h-auto">
               <div className="pt-10">
@@ -668,6 +719,18 @@ export default function BlogSlugBody() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+
+          <div className="pt-[60px]">
+            <p className="text-[14px] pb-[15px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
+              Share this article
+            </p>
+            <div className="flex justify-start space-x-6 pt-[29px]">
+              <img src="/blogs/blog-x.png" alt="x" className="w-8 h-8" />
+              <img src="/blogs/blog-insta.png" alt="x" className="w-8 h-8" />
+              <img src="/blogs/blog-ln.png" alt="x" className="w-8 h-8" />
+              <img src="/blogs/blog-t.png" alt="x" className="w-8 h-8" />
             </div>
           </div>
         </div>

@@ -49,16 +49,16 @@ export default function BlogSlugBottom() {
       {/* desktop */}
       <div className="hidden lg:block">
         <div className="">
-          <div className="pt-20">
+          <div className="pt-[145px]">
             <div className="bg-[#DAEBE8]">
-              <div className="flex flex-row justify-between pt-20 pb-8 md:px-28 ">
+              <div className="flex flex-row justify-between pt-[115px] pb-8 md:px-28 ">
                 <div>
                   <p className="text-[#000] text-[30px] font-[700] leading-[130%]">
                     Suggested articles
                   </p>
                 </div>
                 <div>
-                  <p className="text-[#000] text-[18px] font-[400] leading-[104%]">
+                  <p className="text-[#000] text-[18px] font-[400] leading-[104%] hover:underline">
                     <Link href="/blogs">
                       All Posts <span className="">&rarr;</span>
                     </Link>
@@ -74,16 +74,16 @@ export default function BlogSlugBottom() {
                         <img
                           src={item.image}
                           alt={item.content}
-                          className="w-[267px] h-[267px] object-cover"
+                          className="w-full h-[267px] object-cover rounded-[5px]"
                         />
                       </div>
                     </Link>
 
-                    <div className="pt-4 pb-2 flex space-x-2">
+                    <div className="pt-[21px] pb-[20px] flex space-x-2">
                       <img
                         src={item.profileP}
                         alt={item.profileN}
-                        className="w-6 object-cover"
+                        className="w-6 object-cover rounded-full border-[0.5px] border-[#01261E]"
                       />
                       <p className="flex items-center gap-1 text-[#000] text-[14px] font-[400] leading-[104%]">
                         <span>{item.profileN}</span>
@@ -94,11 +94,11 @@ export default function BlogSlugBottom() {
                       </p>
                     </div>
 
-                    <p className="text-[16px] text-[#000] font-[700] leading-[130%]">
+                    <p className="text-[16px] text-[#000] font-[700] leading-[130%] w-[86%] pb-[17px]">
                       {item.content}
                     </p>
 
-                    <p className="text-[15px] text-[#000] font-[700] leading-[130%] underline py-4">
+                    <p className="text-[15px] text-[#000] font-[700] leading-[130%] underline">
                       {item.readMore}
                     </p>
                   </div>
@@ -112,9 +112,9 @@ export default function BlogSlugBottom() {
       {/* mobile */}
       <div className="block lg:hidden">
         <div className="">
-          <div className="pt-20">
+          <div className="pt-[60px]">
             <div className="bg-[#DAEBE8] px-4">
-              <div className=" pt-14 pb-4">
+              <div className=" pt-[60px] pb-[30px]">
                 <div>
                   <p className="text-[#000] text-[22px] font-[700] leading-[130%]">
                     Suggested articles
@@ -129,7 +129,7 @@ export default function BlogSlugBottom() {
                   msOverflowStyle: "none",
                 }}
               >
-                <div className="flex gap-8 px-4 md:px-28 pt-10 pb-8 min-w-max">
+                <div className="flex gap-8 min-w-max">
                   {articleData.map((item, index) => (
                     <div key={index} className="flex-shrink-0 w-[267px]">
                       <Link href="/blogs/slug">
@@ -142,11 +142,11 @@ export default function BlogSlugBottom() {
                         </div>
                       </Link>
 
-                      <div className="pt-4 pb-2 flex space-x-2">
+                      <div className="pt-[21px] pb-[19px] flex space-x-2">
                         <img
                           src={item.profileP}
                           alt={item.profileN}
-                          className="w-6 h-6 object-cover"
+                          className="w-6 h-6 object-cover rounded-full border-[0.5px] border-[#01261E]"
                         />
                         <p className="flex items-center gap-1 text-[#000] text-[14px] font-[400] leading-[104%]">
                           <span>{item.profileN}</span>
@@ -157,7 +157,7 @@ export default function BlogSlugBottom() {
                         </p>
                       </div>
 
-                      <p className="text-[14px] text-[#000] font-[700] leading-[130%]">
+                      <p className="text-[14px] text-[#000] font-[700] leading-[130%] pb-[40px]">
                         {item.content}
                       </p>
 
@@ -169,7 +169,7 @@ export default function BlogSlugBottom() {
                 </div>
               </div>
 
-              <div className="pt-8 pb-10">
+              <div className="pb-[64px]">
                 <p className="text-[#000] text-[16px] font-[600] leading-[104%]">
                   <Link href="/blogs">
                     All Posts <span className="">&rarr;</span>
