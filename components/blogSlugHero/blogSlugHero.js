@@ -41,7 +41,7 @@ export default function BlogSlugHero() {
                           <img
                             src="/blogs/p-1.png"
                             alt="profile-1"
-                            className="w-7 h-7 object-cover rounded-full"
+                            className="w-7 h-7 object-cover rounded-full border-[0.5px] border-[white]"
                           />
                           <p className="flex items-center gap-2 text-[#FFF] text-[16px] font-[400] leading-[104%]">
                             <span>
@@ -56,7 +56,7 @@ export default function BlogSlugHero() {
                           <img
                             src="/blogs/p-1.png"
                             alt="profile-1"
-                            className="w-7 h-7 object-cover rounded-full"
+                            className="w-7 h-7 object-cover rounded-full border-[0.5px] border-[white]"
                           />
                           <p className="flex items-center gap-2 text-[#FFF] text-[16px] font-[400] leading-[104%]">
                             <span>
@@ -79,7 +79,7 @@ export default function BlogSlugHero() {
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="pt-10 pb-8 px-4 bg-[#01261E]">
+        <div className="pt-[130px] pb-8 px-4 bg-[#01261E]">
           <div className="">
             <div className="">
               <div className="">

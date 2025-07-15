@@ -126,7 +126,7 @@ export default function InThePress() {
       </div>
 
       {/* Navigation Arrows */}
-      <div>
+      <div className="">
         {openItemMobile !== newsData[0].id && (
           <button
             onClick={handlePrev}

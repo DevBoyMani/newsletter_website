@@ -1,5 +1,7 @@
 "use client";
 
+import { motion } from "framer-motion";
+
 import { useEffect, useRef, useState } from "react";
 import ViewAll from "../../components/viewAll/viewAll";
 import Leadership from "../../components/leadership/leadership";
@@ -158,7 +160,7 @@ const Careers = () => {
   };
   // /steps
 
-  // what we offer
+  // what we offer web
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -191,13 +193,50 @@ const Careers = () => {
     };
   }, []);
 
-  // const cardSections = [whatWeOfferCol1, whatWeOfferCol2];
-  // what we offer
+  // what we offer mobile
+  const cardVariants = {
+    hidden: { opacity: 0, y: 40 },
+    visible: (i) => ({
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: i * 0.2,
+        duration: 0.6,
+        ease: "easeOut",
+      },
+    }),
+  };
+
+  const Card = ({ item, index }) => (
+    <motion.div
+      custom={index}
+      variants={cardVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      whileHover={{
+        scale: 1.03,
+        boxShadow: "0px 10px 30px rgba(0, 0, 0, 0.1)",
+        transition: { duration: 0.3 },
+      }}
+      className="border p-[30px] bg-[#B6B6B633] rounded-lg cursor-default"
+    >
+      <img src={item.logo} alt={item.heading} className="w-16 h-auto mb-3" />
+      <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
+        {item.heading}
+      </h3>
+      <p className="text-[#000] text-[16px] font-[400] leading-[149%]">
+        {item.content}
+      </p>
+    </motion.div>
+  );
+
+  // what we  offer/
 
   return (
     <>
-      <div className="md:px-28 px-4 lg:pt-28 pt-10 mx-auto bg-[#FAFAFA]">
-        <div className="mb-8 text-start ">
+      <div className="md:px-28 px-4 lg:pt-28 pt-[120px] mx-auto bg-[#FAFAFA]">
+        <div className="pb-8 text-start ">
           <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">
             Looking for a new role &
           </p>
@@ -368,7 +407,7 @@ const Careers = () => {
       </div>
 
       {/* Mobile view with fallback image */}
-      <div className="block lg:hidden relative py-10">
+      <div className="block lg:hidden relative py-10 bg-[#FAFAFA]">
         <div className="relative h-[470px] w-full">
           <video
             autoPlay
@@ -492,41 +531,21 @@ const Careers = () => {
           </h2>
         </div>
 
-        {/* Cards Section: Column 1 */}
+        {/* Column 1 */}
         <div className="space-y-6 mb-10 bg-[#FAFAFA]">
-          {whatWeOfferCol1.map((item) => (
-            <div key={item.id} className="border p-6 bg-[#B6B6B633]">
-              <img
-                src={item.logo}
-                alt={item.heading}
-                className="w-16 h-16 mb-3"
-              />
-              <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
-                {item.heading}
-              </h3>
-              <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">
-                {item.content}
-              </p>
-            </div>
+          {whatWeOfferCol1.map((item, index) => (
+            <Card key={item.id} item={item} index={index} />
           ))}
         </div>
 
-        {/* Cards Section: Column 2 */}
+        {/* Column 2 */}
         <div className="space-y-6 bg-[#FAFAFA]">
-          {whatWeOfferCol2.map((item) => (
-            <div key={item.id} className="border p-6 bg-[#B6B6B633]">
-              <img
-                src={item.logo}
-                alt={item.heading}
-                className="w-16 h-16 mb-3"
-              />
-              <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
-                {item.heading}
-              </h3>
-              <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">
-                {item.content}
-              </p>
-            </div>
+          {whatWeOfferCol2.map((item, index) => (
+            <Card
+              key={item.id}
+              item={item}
+              index={index + whatWeOfferCol1.length}
+            />
           ))}
         </div>
       </div>
@@ -620,9 +639,14 @@ const Careers = () => {
           className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
         >
           <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
-            SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-            SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-            SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES
           </span>
         </a>
 
@@ -633,9 +657,14 @@ const Careers = () => {
           className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]"
         >
           <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-            SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-            SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
-            SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES SPEAKTOSALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
+            SALES SPEAK TO SALES
           </span>
         </a>
       </div>

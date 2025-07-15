@@ -42,7 +42,7 @@ export default function AdvertiseAdBlocker() {
   return (
     <>
       {/* desktop view */}
-      <div className="bg-[#01261E] px-12 pb-24 pt-20  hidden lg:block">
+      <div className="hidden lg:block bg-[#01261E] px-12 pb-24 pt-20">
         <div>
           <h6 className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
             What we offer, our benefits, simple to learn
@@ -84,12 +84,12 @@ export default function AdvertiseAdBlocker() {
           </div>
         </div>
 
-        <div className="relative pt-8 pb-16">
+        <div className="relative pt-8 pb-16 ">
           <div className="mx-auto max-w-[80%]">
             <img
               src={item.image}
               alt="Adblocker illustration"
-              className="w-full h-[654px] object-cover rounded-[15px]"
+              className="w-full h-[654px] object-cover border-[0.5px] border-[#D3D3D3] rounded-[15px]"
             />
 
             {/* Bottom Shadow */}
@@ -147,7 +147,7 @@ export default function AdvertiseAdBlocker() {
             <img
               src={item.image}
               alt="Adblocker illustration"
-              className="w-full h-auto object-cover rounded-[5px]"
+              className="w-full h-auto object-cover border-[0.5px] border-[#D3D3D3] rounded-[5px]"
             />
 
             {/* Bottom Shadow */}

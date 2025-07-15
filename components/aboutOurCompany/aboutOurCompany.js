@@ -156,7 +156,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 {/* Icon 4 - Bottom Right (Film roll) */}
-                <div className="absolute bottom-[18%] right-[32%] group">
+                <div className="absolute bottom-[16%] right-[32%] group">
                   <img
                     src="/about/ms-round.png"
                     alt="Film"
@@ -178,7 +178,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 {/* Icon 5 - Bottom Left (Building) */}
-                <div className="absolute bottom-[22%] left-[25%] group">
+                <div className="absolute bottom-[32%] left-[27%] group">
                   <img
                     src="/about/ls-round.png"
                     alt="Building"
@@ -200,9 +200,9 @@ export default function AboutOurCompany() {
                 </div>
 
                 {/* Icon 6 - Dubai summary */}
-                <div className="absolute top-[40%] left-[30%] group">
+                {/* <div className="absolute top-[40%] left-[9%] group">
                   <img
-                    src="/about/ds.png"
+                    src="/about/ds-1.png"
                     alt="Capitol"
                     className="w-10 h-10 bg-[#102341] hover:bg-[#102341] rounded-full"
                   />
@@ -217,6 +217,35 @@ export default function AboutOurCompany() {
                       </p>
                     </div>
 
+                    <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+                  </div>
+                </div> */}
+                <div className="absolute top-[40%] left-[9%] group w-10 h-10">
+                  {/* Normal Image */}
+                  <img
+                    src="/about/ds-1.png"
+                    alt="Capitol"
+                    className="w-full h-full bg-[#102341] rounded-full absolute top-0 left-0 opacity-100 group-hover:opacity-0"
+                  />
+
+                  {/* Hover Image */}
+                  <img
+                    src="/about/ds-hover.png"
+                    alt="Capitol Hover"
+                    className="w-full h-full bg-[#102341] rounded-full absolute top-0 left-0 opacity-0 group-hover:opacity-100"
+                  />
+
+                  {/* Tooltip */}
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-2 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[150px]">
+                      <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
+                        Dubai Summary
+                      </p>
+                      <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
+                        Explore Dubai careers with
+                        <br /> our guidance
+                      </p>
+                    </div>
                     <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
                   </div>
                 </div>
@@ -330,7 +359,7 @@ export default function AboutOurCompany() {
             </div>
 
             {/* Icon 4 - Bottom Right (Film roll) */}
-            <div className="absolute bottom-[18%] right-[32%] group">
+            <div className="absolute bottom-[14%] right-[32%] group">
               <img
                 src="/about/ms-round.png"
                 alt="Film"
@@ -352,7 +381,7 @@ export default function AboutOurCompany() {
             </div>
 
             {/* Icon 5 - Bottom Left (Building) */}
-            <div className="absolute bottom-[22%] left-[25%] group">
+            <div className="absolute bottom-[26%] left-[28%] group">
               <img
                 src="/about/ls-round.png"
                 alt="Building"
@@ -374,9 +403,9 @@ export default function AboutOurCompany() {
             </div>
 
             {/* Icon 6 - DS */}
-            <div className="absolute top-[40%] left-[28%] group">
+            <div className="absolute top-[40%] left-[7%] group">
               <img
-                src="/about/ds.png"
+                src="/about/ds-1.png"
                 alt="Capitol"
                 className="w-8 h-8 bg-[#102341] hover:bg-[#102341] rounded-full"
               />

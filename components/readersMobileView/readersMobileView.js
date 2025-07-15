@@ -5,7 +5,7 @@ import HeadingWithUnderline from "../readersPageComponents/stuff/headingWithUnde
 export default function ReadersMobileView() {
   return (
     <>
-      <div className="bg-[#FAFAFA] pt-10">
+      <div className="bg-[#FAFAFA] pt-[80px]">
         <div className="px-4 py-10 mx-auto">
           <h2 className=" text-[#01261E] text-[44px] leading-[107%] font-[GT-Super-Ds-Trial]">
             Step into a world of discovery

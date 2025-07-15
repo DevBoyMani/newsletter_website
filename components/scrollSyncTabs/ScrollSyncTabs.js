@@ -31,10 +31,10 @@ const tabs = [
   {
     id: 4,
     title: "Clear summary for the import new",
-    image: "/readers/clear-summary-for-the-import-news.png",
+    image: "/readers/clear-summary-for-the-import-news-web.png",
     content:
       "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-    imageSize: "w-[492px] h-[377px]",
+    imageSize: "w-[88%]",
   },
   {
     id: 5,
@@ -134,7 +134,7 @@ export default function ScrollSyncTabs() {
                   }`}
                   style={{ borderTop: "1px solid #707170" }}
                 >
-                  <div className="md:w-1/2">
+                  <div className="md:w-[50%] pr-6">
                     <h2 className="text-[32px] font-[500] leading-normal text-[#121212] mb-4">
                       {tab.title}
                     </h2>
@@ -178,7 +178,7 @@ export default function ScrollSyncTabs() {
                     )}
                   </div>
 
-                  <div className="md:w-1/2 mt-6 md:mt-0 relative lg:px-4">
+                  <div className="md:w-[50%] mt-6 md:mt-0 relative flex justify-end items-end">
                     {isThird ? (
                       <video
                         autoPlay

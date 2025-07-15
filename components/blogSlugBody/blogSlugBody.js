@@ -492,7 +492,7 @@ export default function BlogSlugBody() {
                   </div>
                   <div className="">
                     <div className="border border-[#01261E] rounded-[10px]">
-                      <div className="py-[17] px-[15]">
+                      <div className="py-[17px] px-[15px]">
                         <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
                           Sagravia Newsletter
                         </p>

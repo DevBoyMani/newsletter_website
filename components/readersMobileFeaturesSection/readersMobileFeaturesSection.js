@@ -31,10 +31,10 @@ const sections = [
   {
     id: 4,
     title: "4. Clear summary for the import new",
-    src: "/readers/clear-summary.png",
+    src: "/readers/clear-summary-for-the-import-news-mob.png",
     content:
       "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-    imageSize: "w-[60%] ",
+    imageSize: "w-[60%]",
   },
   {
     id: 5,

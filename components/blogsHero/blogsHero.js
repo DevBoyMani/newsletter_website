@@ -157,7 +157,7 @@ export default function BlogsHero() {
 
       {/* mobile view */}
       <div className="block lg:hidden">
-        <div className="pt-[70px] pb-10 px-4 bg-[#01261E]">
+        <div className="pt-[130px] pb-10 px-4 bg-[#01261E]">
           {/*part 1 */}
           <div className=" border-b-[0.5px] border-[#FFFFFF80] pb-6 pt-10">
             <h2 className="text-[#FAFAFA] font-[GT-Super-Ds-Trial] text-[30px] font-[400] leading-[104%] pb-8">

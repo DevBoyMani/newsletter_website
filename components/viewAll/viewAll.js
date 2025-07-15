@@ -181,26 +181,44 @@ export default function ViewAll() {
               </div>
 
               {/* Desktop Hover Content */}
-              <motion.div className="relative hidden lg:block w-full" layout>
-                <AnimatePresence initial={false}>
-                  <motion.div layout className="pb-2">
-                    <h3 className="text-[17px] font-[700] leading-[101%] py-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
-                      {item.experience}
-                    </p>
+              <div className="relative hidden lg:block w-full h-auto">
+                <div className="relative min-h-[140px]">
+                  {" "}
+                  {/* Controls height consistently */}
+                  <AnimatePresence mode="wait">
+                    {hoveredIndex !== index && (
+                      <motion.div
+                        key="default"
+                        className="absolute bottom-0 left-0 right-0 flex flex-col justify-end"
+                        initial={{ opacity: 8, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 10, y: 10 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0, 0] }}
+                      >
+                        <h3 className="text-[17px] font-[700] leading-[101%] py-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
+                          {item.experience}
+                        </p>
+                      </motion.div>
+                    )}
 
                     {hoveredIndex === index && (
                       <motion.div
-                        key="hoverContent"
-                        className="overflow-hidden text-sm text-white"
-                        initial={{ opacity: 0, y: 20 }}
+                        key="hover"
+                        className="absolute bottom-0 left-0 right-0 flex flex-col justify-end"
+                        initial={{ opacity: 8, y: 10 }}
                         animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: 20 }}
-                        transition={{ duration: 0.7, ease: [0.4, 0, 0.2, 1] }}
-                        layout
+                        exit={{ opacity: 10, y: 20 }}
+                        transition={{ duration: 0.3, ease: [0.4, 0, 0, 0] }}
                       >
+                        <h3 className="text-[17px] font-[700] leading-[101%] py-2">
+                          {item.title}
+                        </h3>
+                        <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
+                          {item.experience}
+                        </p>
                         <p className="text-[#FAFAFA] text-[12px] font-[500] leading-normal pt-2">
                           {item.content}
                         </p>
@@ -214,9 +232,9 @@ export default function ViewAll() {
                         </div>
                       </motion.div>
                     )}
-                  </motion.div>
-                </AnimatePresence>
-              </motion.div>
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
           ))}
         </div>

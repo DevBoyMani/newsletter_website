@@ -57,7 +57,7 @@ export default function CareersGraphicDesigner() {
     <>
       {/* desktop */}
       <div className="hidden lg:block">
-        <div className="md:px-28 pt-14 pb-4">
+        <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
             {/* left */}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
@@ -365,10 +365,10 @@ export default function CareersGraphicDesigner() {
       </div>
 
       {/* mobile */}
-      <div className="block lg:hidden">
-        <div className="md:px-28 pt-20 pb-4">
+      <div className="block lg:hidden ">
+        <div className="md:px-28 pt-[140px] pb-[45px] bg-[#FAFAFA]">
           <div className="px-4 w-full">
-            <div className="p-2">
+            <div className="">
               {/* 1 */}
 
               <div className="flex flex-row space-x-2">
@@ -426,7 +426,7 @@ export default function CareersGraphicDesigner() {
                 </p>
               </div>
               {/* 5 */}
-              <div className="px-[16px] py-[30px] bg-[#DAEBE8] rounded-[10px]">
+              <div className="px-[16px] py-[30px] bg-[#DAEBE8] rounded-[5px]">
                 <div className="">
                   <h4 className="text-[#121212] text-[22px] font-[700] leading-[141%] pb-2">
                     Assignment

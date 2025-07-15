@@ -212,7 +212,7 @@ export default function ReadersFooter() {
 
       {/* mobile view */}
       <div className="block lg:hidden bg-[#01261E]">
-        <div className=" md:px-16 pt-[50px] mx-auto ">
+        <div className=" md:px-16 pt-[66px] mx-auto ">
           <div className="px-4 flex flex-col justify-center max-w-[730px] mx-auto text-center">
             <h2 className="text-[#FAFAFA] text-[30px] leading-[normal] font-[300] font-[GT-Super-Ds-Trial] uppercase">
               Sagravia is trusted by 200,000+ people worldwide

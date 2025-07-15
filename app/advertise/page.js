@@ -34,7 +34,7 @@ export default function Advertise() {
 
   const newsData = [
     {
-      logo: "/advertise/blommberg.png",
+      logo: "/advertise/bloomberg.png",
       logoAlt: "Bloomberg",
       logoWidth: 138,
       title:
@@ -71,85 +71,88 @@ export default function Advertise() {
   return (
     <>
       {/* hero section */}
-      <div className="bg-[#FAFAFA] relative hidden lg:block">
-        {/* Top Year Labels */}
-        <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
-          <span className="absolute left-[17%]">2014</span>
-          <span className="absolute left-[38%]">2017</span>
-          <span className="absolute left-[59%]">2020</span>
-          <span className="absolute left-[80%]">2023</span>
-        </div>
+      <div className="bg-[#FAFAFA] hidden lg:block pt-[38px]">
+        <div className=" relative ">
+          {/* Top Year Labels */}
+          <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
+            <span className="absolute left-[17%]">2014</span>
+            <span className="absolute left-[38%]">2017</span>
+            <span className="absolute left-[59%]">2020</span>
+            <span className="absolute left-[80%]">2023</span>
+          </div>
 
-        {/* vertical lines */}
-        <div className="absolute top-20 bottom-[180px] left-[18%] w-px bg-[#716D6D] z-0" />
-        <div className="absolute top-20 bottom-[70px] left-[39%] w-px bg-[#716D6D] z-0" />
-        <div className="absolute top-20 bottom-[270px] left-[60%] w-px bg-[#716D6D] z-0" />
-        <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" />
+          {/* vertical lines */}
+          <div className="absolute top-20 bottom-[180px] left-[18%] w-px bg-[#716D6D] z-0" />
+          <div className="absolute top-20 bottom-[70px] left-[39%] w-px bg-[#716D6D] z-0" />
+          <div className="absolute top-20 bottom-[270px] left-[60%] w-px bg-[#716D6D] z-0" />
+          <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" />
 
-        {/* Text Section */}
-        <div className=" md:px-28 px-4 lg:pt-20 mx-auto">
-          <div className="text-[#01261E]">
-            <h2
-              className="text-[80px] lg:w-[50%] font-[GT-Super-Ds-Trial] leading-[94%]"
-              style={{ textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)" }}
-            >
-              Step into a world of discovery
-            </h2>
-            <p className="text-base py-4 w-[30%] sm:w-[30%]">
-              Explore different categories. Find the best deals. AG1 is a daily
-              health drink packed with nutrients to help alleviate bloating.
-            </p>
-            <div>
-              <Link href="/about">
-                <button className="flex px-[18px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[14px] font-[600] rounded-full hover:bg-[#0B4337]">
-                  About us
-                </button>
-              </Link>
+          {/* Text Section */}
+          <div className=" md:px-28 px-4 lg:pt-20 mx-auto">
+            <div className="text-[#01261E]">
+              <h2
+                className="text-[80px] lg:w-[50%] font-[GT-Super-Ds-Trial] leading-[94%]"
+                style={{ textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)" }}
+              >
+                Step into a world of discovery
+              </h2>
+              <p className="text-base py-4 w-[30%] sm:w-[30%]">
+                Explore different categories. Find the best deals. AG1 is a
+                daily health drink packed with nutrients to help alleviate
+                bloating.
+              </p>
+              <div>
+                <Link href="/about">
+                  <button className="flex px-[18px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[14px] font-[600] rounded-full hover:bg-[#0B4337]">
+                    About us
+                  </button>
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
 
-        {/* Video Section */}
-        <div className="flex justify-center relative md:px-28 mr-0 mt-10">
-          <div className="flex gap-x-2.5 items-end relative z-0 ">
-            {videos.map((video) => (
-              <video
-                key={video.id}
-                src={video.video}
-                autoPlay
-                loop
-                muted
-                playsInline
-                className={`object-cover
+          {/* Video Section */}
+          <div className="flex justify-center relative md:px-28 mr-0 mt-10">
+            <div className="flex gap-x-2.5 items-end relative z-0 ">
+              {videos.map((video) => (
+                <video
+                  key={video.id}
+                  src={video.video}
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  className={`object-cover
                     w-[24%] max-[40%] 
                       ${video.height} ${video.moveUp || ""}`}
-              />
-            ))}
+                />
+              ))}
+            </div>
           </div>
-        </div>
 
-        {/* bottom text  */}
-        <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#716D6D] text-[16px] font-[600] ">
-          <span className="absolute bottom-[66px] left-[14%]">
-            $19.4 trillion
-          </span>
-          <span className="absolute bottom-[14px] left-[36%]">
-            $17.4 trillion
-          </span>
-          <span className="absolute bottom-[148px] left-[57%]">
-            $18.9 trillion
-          </span>
-          <span className="absolute bottom-[250px] left-[78%]">
-            $144 million
-          </span>
-        </div>
+          {/* bottom text  */}
+          <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#716D6D] text-[16px] font-[600] ">
+            <span className="absolute bottom-[66px] left-[14%]">
+              $19.4 trillion
+            </span>
+            <span className="absolute bottom-[14px] left-[36%]">
+              $17.4 trillion
+            </span>
+            <span className="absolute bottom-[148px] left-[57%]">
+              $18.9 trillion
+            </span>
+            <span className="absolute bottom-[250px] left-[78%]">
+              $144 million
+            </span>
+          </div>
 
-        <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
+          <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
 
-        {/* 100K Subscribers Text (Above Gradient) */}
-        <div className="absolute -bottom-4 left-32 text-[10.5vw] font-[700] leading-[94%] tracking-[-1%] z-20 text-center font-[GT-Super-Ds-Trial] ">
-          <span className="text-white">100K </span>
-          <span className="text-[#01261E]">Subscribers</span>
+          {/* 100K Subscribers Text (Above Gradient) */}
+          <div className="absolute -bottom-4 left-32 text-[10.5vw] font-[700] leading-[94%] tracking-[-1%] z-20 text-center font-[GT-Super-Ds-Trial] ">
+            <span className="text-white">100K </span>
+            <span className="text-[#01261E]">Subscribers</span>
+          </div>
         </div>
       </div>
 
@@ -306,6 +309,7 @@ export default function Advertise() {
       {/* new */}
       <AdvertiseNewFaq />
 
+      {/* In the press */}
       <div className="bg-[#FAFAFA] hidden lg:block">
         <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
           <HeadingWithUnderline text="In the press" />
@@ -348,7 +352,7 @@ export default function Advertise() {
       </div>
 
       {/* mobile view for advertise page */}
-      <div className="block lg:hidden py-10">
+      <div className="block lg:hidden bg-[#FAFAFA] pt-[100px] pb-[10px]">
         <AdvertisePageMobileVersion />
       </div>
     </>

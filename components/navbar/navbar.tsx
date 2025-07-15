@@ -13,6 +13,15 @@ const routes = [
   { path: "/readers", name: "Readers" },
 ];
 
+const routesMob = [
+  { path: "/about", name: "About" },
+  { path: "/advertise", name: "Advertise" },
+  { path: "/blogs", name: "Blogs" },
+  { path: "/careers", name: "Careers" },
+  { path: "/readers", name: "Readers" },
+  { path: "/contact", name: "contact" },
+];
+
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [navBgWhite, setNavBgWhite] = useState(false);
@@ -73,12 +82,15 @@ export default function Navbar() {
   // const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-white";
   const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-[#FAFAFA]";
   const mobileHeaderBg = isDarkMobile ? "bg-[#01261E]" : "bg-[#FAFAFA]";
-  const mobileTextColor = isDarkMobile ? "text-white" : "text-black";
+  const mobileTextColor = isDarkMobile ? "text-black" : "text-black";
   const mobileLogoSrc = isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
   const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
+  const mobileNavBorder = isDarkMobile
+    ? "border-b-[1px] border-[#FFFFFF80]"
+    : "border-b-[1px] border-[#12121280]";
 
   return (
-    <nav className="">
+    <>
       {/* === Desktop Header === */}
       <header
         className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
@@ -119,7 +131,7 @@ export default function Navbar() {
                         ? "text-[#C7A262]"
                         : isDarkHeader
                         ? "text-white hover:text-[#C7A262]"
-                        : "text-black hover:text-[#C7A262]"
+                        : "text-black hover:text-[#000]"
                     }`}
                   >
                     <span className="block transition-transform duration-300 transform group-hover:-translate-y-[100%]">
@@ -161,39 +173,41 @@ export default function Navbar() {
 
       {/* === Mobile Header === */}
       <header
-        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-16 ${mobileHeaderBg}`}
+        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[97px] ${mobileHeaderBg}`}
       >
-        <div className="px-4">
-          <div className="flex items-center justify-between border-b border-[#FFFFFF80] py-3">
+        {/* Border line with side cut via margin */}
+        <div className={`${mobileNavBorder} mx-4`}>
+          <div className="flex items-center justify-between h-[97px] px-0">
+            {/* Logo */}
             <Link href="/">
               <div className="w-32">
                 <img src={mobileLogoSrc} alt="Logo" />
               </div>
             </Link>
 
+            {/* Hamburger */}
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 transform transition-transform duration-500 ease-in-out flex flex-col justify-center items-center"
             >
               <div className="relative w-6 h-4 flex flex-col justify-between items-center">
-                {/* Hamburger/X icons */}
                 <span
-                  className={`absolute top-0 left-0 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                  className={`absolute top-0 left-0 w-full h-[2px] ${mobileMenuIconColor} ${
                     isOpen ? "opacity-0" : "top-0 opacity-100"
                   }`}
                 ></span>
                 <span
-                  className={`absolute top-1/2 left-0 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                  className={`absolute top-1/2 left-0 w-full h-[2px] ${mobileMenuIconColor} ${
                     isOpen ? "opacity-0" : "top-[44%] opacity-100"
                   }`}
                 ></span>
                 <span
-                  className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                  className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} ${
                     isOpen ? "rotate-45" : "-translate-y-full opacity-0"
                   }`}
                 ></span>
                 <span
-                  className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} transition-all duration-500 ease-in-out ${
+                  className={`absolute left-0 top-1/2 w-full h-[2px] ${mobileMenuIconColor} ${
                     isOpen ? "-rotate-45" : "translate-y-full opacity-0"
                   }`}
                 ></span>
@@ -201,13 +215,15 @@ export default function Navbar() {
             </button>
           </div>
         </div>
+
+        {/* Mobile nav menu */}
         <div
-          className={`px-4 py-4 mt-16 h-screen fixed top-0 right-0 w-full transition-transform duration-300 ease-out bg-white ${
+          className={`px-4 py-4 mt-[97px] bg-[#FAFAFA] h-screen fixed top-0 right-0 w-full transition-transform duration-300 ease-out ${
             isOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <ul className="space-y-4 text-3xl">
-            {routes.map((route) => (
+            {routesMob.map((route) => (
               <li key={route.path}>
                 <Link
                   href={route.path}
@@ -225,6 +241,6 @@ export default function Navbar() {
           </ul>
         </div>
       </header>
-    </nav>
+    </>
   );
 }

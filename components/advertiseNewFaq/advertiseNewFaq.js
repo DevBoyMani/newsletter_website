@@ -8,7 +8,7 @@ const faqs = [
     id: 1,
     question: "After project completion, who owns the intellectual property?",
     answer:
-      "We recognize the significance of intellectual property rights and their role in fostering innovation and creativity. As such, once a work-for-hire project is completed and all obligations are fulfilled, the intellectual property typically transfers to you, the client. This ensures that you hold the reins to the work we’ve created together, empowering. We recognize the significance of intellectual property rights and their role in fostering innovation and creativity. As such, once a work-for-hire project is completed and all obligations are fulfilled, the intellectual property typically transfers to you, the client. This ensures that you hold the reins to the work we’ve created together, empowering.",
+      "We recognize the significance of intellectual property rights and their role in fostering innovation and creativity. As such, once a work-for-hire project is completed and all obligations are fulfilled, the intellectual property typically transfers to you, the client. This ensures that you hold the reins to the work we’ve created together, empowering.",
   },
   {
     id: 2,
@@ -35,11 +35,12 @@ export default function AdvertiseNewFaq() {
   const [activeId, setActiveId] = useState(faqs[0]?.id);
 
   const handleCardClick = (id) => {
-    setActiveId((prevId) => (prevId === id ? null : id)); // toggle
+    setActiveId((prevId) => (prevId === id ? null : id));
   };
 
   return (
     <div className="bg-[#FAFAFA] md:px-28 py-10 hidden lg:block">
+      {/* Top section */}
       <div className="flex justify-between">
         <div className="text-[#01261E] w-[40%] text-[56px] font-[GT-Super-Ds-Trial] font-[400] leading-[111%]">
           Frequently Asked Questions
@@ -50,6 +51,7 @@ export default function AdvertiseNewFaq() {
         </div>
       </div>
 
+      {/* FAQ Cards */}
       <div className="flex items-start gap-6 py-24 bg-[#f9f9f9]">
         {faqs.map((faq) => {
           const isActive = activeId === faq.id;
@@ -58,43 +60,48 @@ export default function AdvertiseNewFaq() {
             <motion.div
               key={faq.id}
               onClick={() => handleCardClick(faq.id)}
-              className={`relative rounded-[25px] cursor-pointer transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 ${
-                isActive ? "bg-[#00261E] text-white" : "bg-white text-[#7F8382]"
+              className={`relative rounded-[25px] cursor-pointer transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 flex flex-col ${
+                isActive
+                  ? "bg-[#00261E] text-white justify-start"
+                  : "bg-white text-[#7F8382] justify-end"
               }`}
               style={{
-                width: isActive ? 407 : 254,
+                width: isActive ? "33.5%" : "21%",
                 height: 451,
-                padding: 24,
+                padding: isActive
+                  ? "66px 40px 35px 40px"
+                  : "0px 40px 25px 40px",
               }}
             >
-              <div className="flex flex-col justify-start h-full">
-                <motion.h3
-                  initial={false}
-                  animate={{
-                    fontSize: isActive ? "30px" : "24px",
-                    fontWeight: isActive ? 400 : 500,
-                    marginTop: isActive ? 0 : 260,
-                  }}
-                  transition={{ duration: 0.4 }}
-                  className="leading-tight"
-                >
-                  {faq.question}
-                </motion.h3>
+              {/* Question */}
+              <motion.h3
+                initial={false}
+                animate={{
+                  fontSize: isActive ? "30px" : "27px",
+                  fontWeight: isActive ? 400 : 400,
+                }}
+                transition={{ duration: 0.3 }}
+                className="leading-tight font-Manrope w-[85%]"
+              >
+                {faq.question}
+              </motion.h3>
 
+              {/* Answer */}
+              <AnimatePresence>
                 {isActive && (
                   <motion.div
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    transition={{ duration: 0.4 }}
-                    className="mt-6"
+                    // exit={{ opacity: 0, y: 10 }}
+                    // transition={{ duration: 0.4 }}
+                    className="mt-[15px]"
                   >
                     <p className="text-[13px] font-[400] leading-[152%] text-[#FFFFFFB2]">
                       {faq.answer}
                     </p>
                   </motion.div>
                 )}
-              </div>
+              </AnimatePresence>
             </motion.div>
           );
         })}

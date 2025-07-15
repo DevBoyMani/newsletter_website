@@ -43,6 +43,13 @@ export default function AboutNewslettersStatistics() {
     { text: "600 times.", color: "#B3B3B3" },
   ];
 
+  const linesMob = [
+    { text: "Writing awesome", color: "#151515" },
+    { text: "newsletters is hard.", color: "#151515" },
+    { text: "We’ve done it over", color: "#B3B3B3" },
+    { text: "600 times.", color: "#B3B3B3" },
+  ];
+
   return (
     <>
       {/* desktop */}
@@ -141,33 +148,21 @@ export default function AboutNewslettersStatistics() {
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="bg-[#FAFAFA] md:px-28 pt-[24px]">
-          {/*top*/}
-          {/* <div className="w-full px-4 py-6">
-            <h1 className="text-[#151515] text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold">
-              Writing awesome
-              <br />
-              newsletters is hard.
-              <br />
-            </h1>
-            <h1 className="text-[#B3B3B3] text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold">
-              We’ve done it over
-              <br />
-              600 times.
-            </h1>
-          </div> */}
-
+        <div className="bg-[#FAFAFA] pt-[60px]">
           <motion.div
-            className="w-full px-4 py-6"
+            className="w-full px-4 pb-6"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.5 }} // triggers when 50% of block is in view
+            viewport={{ once: false, amount: 0.5 }} // Trigger again every time it's visible
           >
-            {lines.map((line, i) => (
+            {linesMob.map((line, i) => (
               <motion.h1
                 key={i}
                 custom={i}
                 variants={textVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: false, amount: 0.8 }}
                 className="text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold"
                 style={{ color: line.color }}
               >
@@ -176,36 +171,8 @@ export default function AboutNewslettersStatistics() {
             ))}
           </motion.div>
 
-          {/* <div className="border-t md:border-l border-black h-auto mx-2 md:mx-6 mt-10 md:mt-0 self-stretch"></div> */}
-
           {/* bottom*/}
           <div className="w-full">
-            {/* <div className="flex space-x-7 mt-6 pl-14">
-                        {newslettersLine1.map((item) => (
-                            <div key={item.id} className="flex  items-center space-x-2 ">
-                                <img
-                                    src={item.colorImage}
-                                    alt={item.name}
-                                    className="w-2 h-2 object-contain"
-                                />
-                                <p className="text-[14px] font-[600] text-[#151515] leading-[109.922%]">{item.name}</p>
-                            </div>
-                        ))}
-                    </div>
-
-                    <div className="flex space-x-7 mt-2 pl-14">
-                        {newslettersLine2.map((item) => (
-                            <div key={item.id} className="flex items-center space-x-2 mr-0.5">
-                                <img
-                                    src={item.colorImage}
-                                    alt={item.name}
-                                    className="w-2 h-2 object-contain"
-                                />
-                                <p className="text-sm text-[#151515] font-[600] leading-[109.922%]">{item.name}</p>
-                            </div>
-                        ))}
-                    </div> */}
-
             <div className="px-4">
               <div className="grid grid-cols-2 gap-2 ">
                 {newslettersLine.map((item) => (

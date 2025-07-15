@@ -107,7 +107,7 @@ export default function Footer() {
               <div className="max-w-[1710] mx-auto flex flex-col lg:flex-row justify-between gap-10">
                 {/* left section */}
                 <div className="lg:w-1/2">
-                  <h2 className="text-[28px] lg:text-[36px] font-[400] mb-6">
+                  <h2 className="text-[28px] lg:text-[36px] font-[400] pb-6 max-w-[592px]">
                     Subscribe to get tips and tactics to grow the way you want.
                   </h2>
                   <ReadersSubscribe />
@@ -115,7 +115,7 @@ export default function Footer() {
 
                 {/* right section */}
                 <div className="lg:w-1/2 flex flex-row justify-end text-[16px]">
-                  <div className="flex space-x-16 mr-6">
+                  <div className="flex space-x-16 mr-0">
                     <ul className="space-y-2 mr-7">
                       <li>Blog</li>
                       <li>Careers</li>
@@ -136,15 +136,16 @@ export default function Footer() {
           </div>
 
           <div>
-            <div className="flex justify-end border-b pb-8">
+            <div className="flex justify-end pb-8">
               {socialMediaIcons.map((item, index) => (
-                <div className="px-4" key={index}>
+                <div className="pl-[35px]" key={index}>
                   <a href={item.href}>
                     <img src={item.src} alt={item.name} className="w-8 h-8" />
                   </a>
                 </div>
               ))}
             </div>
+            <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] "></div>
             <div className="flex justify-center py-10">
               <p className="text-[14px] text-[#ffffff]">
                 © 2024 Sagravia | All Rights Reserved
@@ -278,7 +279,7 @@ export default function Footer() {
               </div>
 
               {/* divider */}
-              <div className="border-b-[0.5px] py-2 mx-6"></div>
+              <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] py-2 mx-6"></div>
 
               <div className="text-[12px] text-center text-[#95A1BB] pt-4">
                 <p>© 2024 Sagravia | All Rights Reserved</p>
