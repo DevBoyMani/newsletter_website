@@ -136,9 +136,9 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <h1 className="text-[#fff] text-[28px] leading-normal font-[600] ">
+                  <p className="text-[#fff] text-[28px] leading-normal font-[600] ">
                     Contact Information
-                  </h1>
+                  </p>
                   <p className="text-[#C9C9C9] text-[18px] font-[400] leading-normal pt-2">
                     Say something to start a live chat!
                   </p>
@@ -384,9 +384,9 @@ export default function Contact() {
             >
               <div className=" bg-[#01261E] max-h-[387px] rounded-[5px]">
                 <div className="text-center pt-4">
-                  <h1 className="text-[#fff] text-[20px] leading-normal font-[600] ">
+                  <p className="text-[#fff] text-[20px] leading-normal font-[600] ">
                     Contact Information
-                  </h1>
+                  </p>
                   <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2">
                     Say something to start a live chat!
                   </p>

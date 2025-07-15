@@ -1,9 +1,21 @@
 "use client";
-import { usePathname } from "next/navigation";
 
+import { usePathname } from "next/navigation";
+import { Manrope } from "next/font/google";
 import Footer from "@/components/footer/footer";
 import "./globals.css";
 import Navbar from "@/components/navbar/navbar";
+
+const manrope = Manrope({
+  subsets: ["latin"],
+  variable: "--font-manrope",
+});
+
+// export const metadata = {
+//   title: "Sagravia world",
+//   description: "Newsletter company",
+// };
+
 export default function RootLayout({
   children,
 }: {
@@ -19,7 +31,7 @@ export default function RootLayout({
   // pathname === "/readers" ||
   // pathname.startsWith("/careers/");
   return (
-    <html lang="en">
+    <html lang="en" className={manrope.variable}>
       <body>
         <Navbar />
         {children}

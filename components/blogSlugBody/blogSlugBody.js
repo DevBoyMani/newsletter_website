@@ -213,7 +213,7 @@ const sectionsWithContent = [
     title: "Final Thoughts",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
           You can buy newsletter ad space through programmatic direct buys,
           private marketplaces (PMPs), or open exchanges. Programmatic direct
           buys allow you to purchase ad inventory directly from a publisher,
@@ -352,9 +352,9 @@ export default function BlogSlugBody() {
                 {scrollPercent}%
               </p>
               <div className="bg-[#DAEBE8] py-[20px] px-[15px] rounded-[5px]">
-                <h3 className="text-[#000] text-[15px] font-[600] pb-6">
+                <p className="text-[#000] text-[15px] font-[600] pb-6">
                   Table of content
-                </h3>
+                </p>
                 <div className="flex flex-col space-y-4">
                   {/* {tocItems.map((item, index) => (
                   <Link
@@ -411,9 +411,9 @@ export default function BlogSlugBody() {
                   ref={(el) => (sectionRefs.current[index] = el)}
                   className="scroll-mt-28"
                 >
-                  <h4 className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
+                  <p className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
                     {section.title}
-                  </h4>
+                  </p>
                   <div>{section.content}</div>
                 </div>
               ))}
@@ -610,10 +610,12 @@ export default function BlogSlugBody() {
                   )}
 
                   {/* Section heading and content */}
-                  <h4 className="text-[#000] text-[22px] font-[500] leading-[120%] py-2">
+                  <p className="text-[#000] text-[22px] font-[500] leading-[120%] py-2">
                     {section.title}
-                  </h4>
-                  <div>{section.content}</div>
+                  </p>
+                  <div>
+                    <p>{section.content}</p>
+                  </div>
                 </div>
               );
             })}

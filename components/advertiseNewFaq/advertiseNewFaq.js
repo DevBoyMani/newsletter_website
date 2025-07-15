@@ -74,7 +74,7 @@ export default function AdvertiseNewFaq() {
               }}
             >
               {/* Question */}
-              <motion.h3
+              <motion.p
                 initial={false}
                 animate={{
                   fontSize: isActive ? "30px" : "27px",
@@ -84,7 +84,7 @@ export default function AdvertiseNewFaq() {
                 className="leading-tight font-Manrope w-[85%]"
               >
                 {faq.question}
-              </motion.h3>
+              </motion.p>
 
               {/* Answer */}
               <AnimatePresence>

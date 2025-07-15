@@ -142,10 +142,10 @@ export default function AdvertisePageMobileVersion() {
               }}
             >
               <div className="flex flex-col justify-between p-6 h-full">
-                <h4 className="text-white text-lg max-w-[335px]">
+                <p className="text-white text-lg max-w-[335px]">
                   Access all major A2A payment methods via a single API and
                   global settlement with multi-currency support.
-                </h4>
+                </p>
                 <div className="flex justify-start items-center max-w-xl max-h-[20px] pb-6">
                   <Link href="/analytics">
                     <button className="text-[15px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
@@ -203,7 +203,7 @@ export default function AdvertisePageMobileVersion() {
 
       {/* FAQ Section */}
       <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
-        <HeadingWithUnderline text="Frequently Asked Questions" />
+        <HeadingWithUnderline text="Got Questions? We've Got Answers!" />
         <div>
           <MobileFaq />
         </div>

@@ -6,6 +6,35 @@
   --diatype-mono: "Diatype Mono", monospace;
 }
 
+/* fonts */
+
+@font-face {
+  font-family: "GT Super Ds Trial";
+  src: url("/fonts/GT-Super-Ds-Trial.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-heading: "GT Super Ds Trial", serif;
+  --font-content: "Manrope", sans-serif;
+}
+
+body {
+  font-family: var(--font-content);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* fonts */
+
 @layer utilities {
   /* Hide scrollbar for Chrome, Safari and Opera */
   .no-scrollbar::-webkit-scrollbar {

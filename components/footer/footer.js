@@ -107,9 +107,9 @@ export default function Footer() {
               <div className="max-w-[1710] mx-auto flex flex-col lg:flex-row justify-between gap-10">
                 {/* left section */}
                 <div className="lg:w-1/2">
-                  <h2 className="text-[28px] lg:text-[36px] font-[400] pb-6 max-w-[592px]">
+                  <p className="text-[28px] lg:text-[36px] font-[400] pb-6 max-w-[592px]">
                     Subscribe to get tips and tactics to grow the way you want.
-                  </h2>
+                  </p>
                   <ReadersSubscribe />
                 </div>
 

@@ -187,9 +187,9 @@ export default function ReadersNewsletters() {
                     }`}
                   >
                     <span
-                      className={`text-2xl pb-1 pr-1 transition-all duration-700 ease-in-out order-1 ${
+                      className={`text-2xl mr-1.5 transition-all duration-700 ease-in-out order-1 ${
                         data.selected
-                          ? "ml-2 translate-x-0"
+                          ? " translate-x-0"
                           : "group-hover/card:order-2 group-hover/card:ml-2 translate-x-[-2.5px] group-hover/card:translate-x-0"
                       }`}
                     >

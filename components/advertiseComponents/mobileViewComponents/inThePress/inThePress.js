@@ -112,9 +112,9 @@ export default function InThePress() {
             className="w-auto h-[31px]"
           />
 
-          <h4 className="text-[22px] md:text-[26px] font-semibold text-start">
+          <p className="text-[22px] md:text-[26px] font-semibold text-start">
             {currentItem.title}
-          </h4>
+          </p>
           <p className="text-[15px] text-start">{currentItem.description}</p>
           <div className="flex justify-between items-center text-[15px] font-semibold pt-2 pb-8">
             <p>{currentItem.date}</p>

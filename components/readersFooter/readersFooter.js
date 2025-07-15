@@ -191,7 +191,7 @@ export default function ReadersFooter() {
           </div>
 
           <div>
-            <div className="flex justify-end border-b pb-8">
+            <div className="flex justify-end pb-8">
               {socialMediaIcons.map((item, index) => (
                 <div className="px-4" key={index}>
                   <a href={item.href}>
@@ -200,6 +200,7 @@ export default function ReadersFooter() {
                 </div>
               ))}
             </div>
+            <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15]"></div>
             <div className="flex justify-center py-10">
               <p className="text-[14px] text-[#ffffff]">
                 © 2024 Sagravia | All Rights Reserved
@@ -261,73 +262,71 @@ export default function ReadersFooter() {
                     </div>
                   </Link>
                 </div>
-                {/* <div className="text-sm py-1 space-y-2">
-                            <p>The place where newsletters live</p>
-                            <p>Your trusted messenger</p>
-                        </div> */}
               </div>
 
-              {/* right */}
               <div className=" px-6">
                 <div className="flex justify-between">
                   <div className="">
-                    <ul className="flex flex-col">
-                      <li className="text-[16px] font-semibold pb-4">
-                        Learn more
-                      </li>
-
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          About Us
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Readers
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Advertise
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Analytics
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-
-                  <div className="">
                     <ul className="flex flex-col mr-6">
-                      <li className="text-[16px] font-semibold pb-4">More</li>
+                      <li className="text-[16px] font-[600] pb-4">More</li>
 
                       <li className="py-1 ">
-                        <Link href="#" className="text-[14px]">
+                        <Link
+                          href="#"
+                          className="text-[14px] font-[400] font-[400]"
+                        >
                           Blog
                         </Link>
                       </li>
-                      <li className="py-1 text-[14px]">
+                      <li className="py-1 text-[14px] font-[400]">
                         <Link href="#" className="">
                           Careers
                         </Link>
                       </li>
-                      <li className="py-1 text-[14px]">
+                      <li className="py-1 text-[14px] font-[400]">
                         <Link href="#" className="">
                           Privacy Policy
                         </Link>
                       </li>
-                      <li className="py-1 text-[14px]">
+                      <li className="py-1 text-[14px] font-[400]">
                         <Link href="#" className="">
                           Legal
                         </Link>
                       </li>
                     </ul>
                   </div>
+
+                  <div className="">
+                    <ul className="flex flex-col">
+                      <li className="text-[16px] font-[600] pb-4">
+                        Learn more
+                      </li>
+
+                      <li className="py-1 text-[14px] font-[400]">
+                        <Link href="#" className="">
+                          About Us
+                        </Link>
+                      </li>
+                      <li className="py-1 text-[14px] font-[400]">
+                        <Link href="#" className="">
+                          Readers
+                        </Link>
+                      </li>
+                      <li className="py-1 text-[14px] font-[400]">
+                        <Link href="#" className="">
+                          Advertise
+                        </Link>
+                      </li>
+                      <li className="py-1 text-[14px] font-[400]">
+                        <Link href="#" className="">
+                          Analytics
+                        </Link>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
 
-                <div className="pt-12 ">
+                {/* <div className="pt-12 ">
                   <ul className="flex flex-col ">
                     <li className="text-[16px] font-semibold pb-4">
                       Contact Us
@@ -349,10 +348,9 @@ export default function ReadersFooter() {
                       </Link>
                     </li>
                   </ul>
-                </div>
+                </div> */}
               </div>
 
-              {/* social icons */}
               <div>
                 <div className="pt-14 px-4 flex justify-center pb-1">
                   <div className="flex space-x-6 ">
@@ -369,8 +367,7 @@ export default function ReadersFooter() {
                 </div>
               </div>
 
-              {/* divider */}
-              <div className="border-b px-4 py-2 mx-6"></div>
+              <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] py-2 mx-6"></div>
 
               <div className="text-[12px] text-center text-[#95A1BB] py-4">
                 <p>© 2024 Sagravia | All Rights Reserved</p>

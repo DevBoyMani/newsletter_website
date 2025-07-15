@@ -33,9 +33,9 @@ export default function BlogSlugHero() {
                         <span className="text-lg">•</span>
                         <span>5 mins</span>
                       </p>
-                      <h3 className="text-[#FFF] text-[50px] font-[600] leading-[112%] w-full">
+                      <p className="text-[#FFF] text-[50px] font-[600] leading-[112%] w-full">
                         What's the difference between a newsletter and a blog?
-                      </h3>
+                      </p>
                       <div className="flex flex-row space-x-4 pt-2">
                         <div className="pt-4 pb-2 flex space-x-2">
                           <img
@@ -103,10 +103,10 @@ export default function BlogSlugHero() {
                       <span className="text-lg">•</span>
                       <span>5 mins</span>
                     </p>
-                    <h3 className="text-[#FFF] text-[30px] font-[700] leading-normal">
+                    <p className="text-[#FFF] text-[30px] font-[700] leading-normal">
                       Introduction to
                       <br /> Newsletter Advertising
-                    </h3>
+                    </p>
                     <div className="flex flex-row space-x-4 pt-2">
                       <div className="pt-4 pb-2 flex space-x-2">
                         <img

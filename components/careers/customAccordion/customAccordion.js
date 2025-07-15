@@ -99,14 +99,14 @@ export default function CustomAccordion({ onStepChange }) {
                     <span className="text-[11px] bg-[#D6FFEC] px-3 py-1 rounded-full text-[#048B65] font-semibold">
                       Step {item.step}
                     </span>
-                    <h4 className="text-xl font-medium mt-2">{item.title}</h4>
+                    <p className="text-xl font-medium mt-2">{item.title}</p>
                     <p className="text-gray-600 mt-1">{item.content}</p>
                   </div>
                   <ChevronUp className="w-6 h-6" />
                 </div>
               ) : (
                 <div className="flex justify-between items-center">
-                  <h2 className="text-xl font-medium">{item.title}</h2>
+                  <p className="text-xl font-medium">{item.title}</p>
                   <ChevronDown className="w-6 h-6" />
                 </div>
               )}
@@ -161,9 +161,9 @@ export default function CustomAccordion({ onStepChange }) {
                     <span className="block text-[11px] font-[600] leading-[104%] text-[#048B65] bg-[#D6FFEC] px-2 py-1 rounded-[23px] w-fit">
                       Step {currentItem.step}
                     </span>
-                    <h4 className="text-[18px] text-[#01261E] font-[600] leading-[104%] pt-4 pb-3">
+                    <p className="text-[18px] text-[#01261E] font-[600] leading-[104%] pt-4 pb-3">
                       {currentItem.title}
-                    </h4>
+                    </p>
                     <p className="text-[12px] text-[#12121299] font-[600] leading-[104%] overflow-hidden text-ellipsis line-clamp-3 pb-2">
                       {currentItem.content}
                     </p>

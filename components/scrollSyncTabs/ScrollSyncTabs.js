@@ -135,9 +135,9 @@ export default function ScrollSyncTabs() {
                   style={{ borderTop: "1px solid #707170" }}
                 >
                   <div className="md:w-[50%] pr-6">
-                    <h2 className="text-[32px] font-[500] leading-normal text-[#121212] mb-4">
+                    <p className="text-[32px] font-[500] leading-normal text-[#121212] mb-4">
                       {tab.title}
-                    </h2>
+                    </p>
                     <p className="text-[16px] font-[400] leading-normal text-[#121212] mb-4 whitespace-pre-line">
                       {tab.content}
                     </p>

@@ -148,9 +148,9 @@ export default function ReadersMobileNewsletterCards() {
                 <span className="text-[10px] font-[normal] text-[#000000A8]">
                   {item.domain}
                 </span>
-                <h2 className="text-[#2C2C2C] text-[17px] font-[600] leading-[101%] mt-1">
+                <p className="text-[#2C2C2C] text-[17px] font-[600] leading-[101%] mt-1">
                   {item.name}
-                </h2>
+                </p>
                 <p className="text-[13px] text-[#363636] font-[400] leading-[116%] mt-1">
                   {item.content}
                 </p>

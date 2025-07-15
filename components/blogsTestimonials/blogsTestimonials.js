@@ -44,7 +44,7 @@ export default function BlogsTestimonials() {
           <button
             key={index}
             onClick={() => handleClick(index)}
-            className={` md:text-base uppercase py-2 px-3 lg:mr-4  mr-2  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
+            className={` md:text-[16px] font-[600] uppercase py-2 px-3 lg:mr-4  mr-2  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
               activeTab === index
                 ? "text-[#DAEBE8] bg-[#01261E] hover:bg-[#01261E] "
                 : "bg-[#DAEBE8]  hover:text-[#DAEBE8] hover:bg-[#01261E]"
@@ -75,9 +75,9 @@ export default function BlogsTestimonials() {
         <div className="pb-20 pt-10 md:px-28">
           {/* tile */}
           <div className="py-4">
-            <h4 className="text-[24px] text-[#000] font-[700] leading-[104%]">
+            <p className="text-[24px] text-[#000] font-[700] leading-[104%]">
               All articles
-            </h4>
+            </p>
           </div>
           {/* textimonial */}
           <div className="w-full">
@@ -132,9 +132,9 @@ export default function BlogsTestimonials() {
         <div className="px-4">
           {/* tile */}
           <div className="pt-10 pb-4">
-            <h4 className="text-[18px] text-[#000] font-[700] leading-[104%]">
+            <p className="text-[18px] text-[#000] font-[700] leading-[104%]">
               All articles
-            </h4>
+            </p>
           </div>
           {/* textimonial */}
           {/* <div className="w-full">

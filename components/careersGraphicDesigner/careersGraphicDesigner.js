@@ -70,9 +70,9 @@ export default function CareersGraphicDesigner() {
                 </Link>
                 <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                   <div className="">
-                    <h3 className="text-[#fff] text-[20px] font-[600] leading-[141%]">
+                    <p className="text-[#fff] text-[20px] font-[600] leading-[141%]">
                       Apply now!
-                    </h3>
+                    </p>
                     <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">
                       If you're interested in end-to-end development and want to
                       work with cutting-edge technologies, come on board.
@@ -150,9 +150,9 @@ export default function CareersGraphicDesigner() {
                 </div>
                 {/* 4 */}
                 <div className="pt-[68px]">
-                  <h4 className="text-[#121212] text-[18px] font-[700] leading-[141%] py-2">
+                  <p className="text-[#121212] text-[18px] font-[700] leading-[141%] py-2">
                     Position summary
-                  </h4>
+                  </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     As a Payroll Advisor, you will be responsible for supporting
                     and executing payroll operation mandates for our clients.
@@ -165,9 +165,9 @@ export default function CareersGraphicDesigner() {
                 {/* 5 */}
                 <div className="pt-[30px]">
                   <div className="px-[25px] py-[30px] bg-[#DAEBE8] rounded-[10px]">
-                    <h4 className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
+                    <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                       Assignment
-                    </h4>
+                    </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       Do you excel at understanding client needs and turning
                       them into lasting partnerships? Join our team as a Sales
@@ -212,9 +212,9 @@ export default function CareersGraphicDesigner() {
                 </div>
                 {/* 6 */}
                 <div className="pt-[30px]">
-                  <h4 className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
+                  <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Job description
-                  </h4>
+                  </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                     Design an email nurturing campaign that targets leads who
                     have shown interest in your product/service but have not yet
@@ -257,9 +257,9 @@ export default function CareersGraphicDesigner() {
                 </div>
                 {/* 7 */}
                 <div className="pt-[30px]">
-                  <h4 className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
+                  <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Experience
-                  </h4>
+                  </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>Minimum 3 years' experience in payroll operation</li>
                     <li>
@@ -290,9 +290,9 @@ export default function CareersGraphicDesigner() {
                 </div>
                 {/* 8 */}
                 <div className="pt-[30px]">
-                  <h4 className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
+                  <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Benefits
-                  </h4>
+                  </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>100% telecommuting</li>
                     <li>Competitive salary based on experience</li>
@@ -332,9 +332,9 @@ export default function CareersGraphicDesigner() {
                   </p>
                   <div className="mt-8">
                     <div className="px-[30px] py-[35px] bg-[#DAEBE8] rounded-[17px]">
-                      <h5 className="text-[#000] text-[22px] font-[700] leading-[141%]">
+                      <p className="text-[#000] text-[22px] font-[700] leading-[141%]">
                         How to apply
-                      </h5>
+                      </p>
                       <div className="flex flex-row space-x-2 py-3">
                         <div className="w-[85%]">
                           <p className="text-[#000] text-[16px] font-[400] leading-[174%]">
@@ -413,9 +413,9 @@ export default function CareersGraphicDesigner() {
               </div>
               {/* 4 */}
               <div className="py-4">
-                <h4 className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
+                <p className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
                   Position summary
-                </h4>
+                </p>
                 <p className="text-[#121212] text-[14px] font-[400] leading-[141%] py-2">
                   As a Payroll Advisor, you will be responsible for supporting
                   and executing payroll operation mandates for our clients. You
@@ -428,9 +428,9 @@ export default function CareersGraphicDesigner() {
               {/* 5 */}
               <div className="px-[16px] py-[30px] bg-[#DAEBE8] rounded-[5px]">
                 <div className="">
-                  <h4 className="text-[#121212] text-[22px] font-[700] leading-[141%] pb-2">
+                  <p className="text-[#121212] text-[22px] font-[700] leading-[141%] pb-2">
                     Assignment
-                  </h4>
+                  </p>
                   <p className="text-[#121212] text-[14px] font-[400] leading-[141%] py-2">
                     Do you excel at understanding client needs and turning them
                     into lasting partnerships? Join our team as a Sales Manager
@@ -473,9 +473,9 @@ export default function CareersGraphicDesigner() {
               </div>
               {/* 6 */}
               <div className="py-4">
-                <h4 className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
+                <p className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
                   Job description
-                </h4>
+                </p>
                 <p className="text-[#121212] text-[14px] font-[400] leading-[141%] py-2">
                   Design an email nurturing campaign that targets leads who have
                   shown interest in your product/service but have not yet made a
@@ -517,9 +517,9 @@ export default function CareersGraphicDesigner() {
               </div>
               {/* 7 */}
               <div className="pb-4">
-                <h4 className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
+                <p className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
                   Experience
-                </h4>
+                </p>
                 <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] py-2">
                   <li>Minimum 3 years' experience in payroll operation</li>
                   <li>
@@ -545,9 +545,9 @@ export default function CareersGraphicDesigner() {
               </div>
               {/* 8 */}
               <div className="">
-                <h4 className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
+                <p className="text-[#121212] text-[22px] font-[700] leading-[141%] py-2">
                   Benefits
-                </h4>
+                </p>
                 <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-2">
                   <li>100% telecommuting</li>
                   <li>Competitive salary based on experience</li>
@@ -586,9 +586,9 @@ export default function CareersGraphicDesigner() {
                 </p>
                 <div className="w-full bg-[#01261E] mt-10 px-[30px] py-[25px] rounded-[10px]">
                   <div className="">
-                    <h3 className="text-[#fff] text-[20px] font-[600] leading-[141%]">
+                    <p className="text-[#fff] text-[20px] font-[600] leading-[141%]">
                       Apply now!
-                    </h3>
+                    </p>
                     <p className="text-[#fff] text-[14px] font-[300] leading-[141%] py-4">
                       If you're interested in end-to-end development and want to
                       work with cutting-edge technologies, come on board.

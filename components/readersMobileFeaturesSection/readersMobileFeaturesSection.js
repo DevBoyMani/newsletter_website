@@ -71,9 +71,9 @@ export default function ReadersMobileFeaturesSection() {
           <div key={index} className="flex flex-col py-4 items-center">
             {/* Text Content */}
             <div className="w-full px-4">
-              <h2 className="text-[24px] font-[500] text-black ml-2 mb-4 leading-[normal]">
+              <p className="text-[24px] font-[500] text-black ml-2 mb-4 leading-[normal]">
                 {title}
-              </h2>
+              </p>
               <p className="text-black text-[14px] font-[400] pb-6">
                 {content}
               </p>

@@ -205,10 +205,10 @@ export default function Advertise() {
               >
                 <div className="md:flex md:flex-col justify-between md:p-10 h-full">
                   <div className="flex-grow">
-                    <h4 className="text-[#FAFAFA] max-w-[335px] text-[20px]">
+                    <p className="text-[#FAFAFA] max-w-[335px] text-[20px]">
                       Access all major A2A payment methods via a single API and
                       global settlement with multi-currency support.
-                    </h4>
+                    </p>
                   </div>
                   <div>
                     <Link href="/analytics">
@@ -325,7 +325,7 @@ export default function Advertise() {
                   className="h-[31px]"
                   style={{ width: `${item.logoWidth}px` }}
                 />
-                <h4 className="text-[26px] font-semibold">{item.title}</h4>
+                <p className="text-[26px] font-semibold">{item.title}</p>
                 <p className="text-[15px] ">{item.description}</p>
                 <div className="flex justify-between items-center">
                   <p className="text-[15px] font-semibold">{item.date}</p>

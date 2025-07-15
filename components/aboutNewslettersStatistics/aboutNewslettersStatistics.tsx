@@ -78,7 +78,7 @@ export default function AboutNewslettersStatistics() {
               viewport={{ once: true, amount: 0.5 }} // triggers when 50% of block is in view
             >
               {lines.map((line, i) => (
-                <motion.h1
+                <motion.p
                   key={i}
                   custom={i}
                   variants={textVariants}
@@ -86,7 +86,7 @@ export default function AboutNewslettersStatistics() {
                   style={{ color: line.color }}
                 >
                   {line.text}
-                </motion.h1>
+                </motion.p>
               ))}
             </motion.div>
 
@@ -95,14 +95,14 @@ export default function AboutNewslettersStatistics() {
             {/* right */}
             <div className="w-full md:w-1/2">
               <div className="pl-14">
-                <h4 className="text-[#151515] text-[24px] md:text-[27px] font-bold leading-[127%]">
+                <p className="text-[#151515] text-[24px] md:text-[27px] font-bold leading-[127%]">
                   Newsletter <span className="text-[#B3B3B3]">emails</span>
                   <br />
                   <span className="text-[#B3B3B3]">average</span> 20–25% open
                   <br />
                   rates{" "}
                   <span className="text-[#B3B3B3]">across industries.</span>
-                </h4>
+                </p>
               </div>
 
               <div className="flex space-x-7 mt-6 pl-14">
@@ -156,7 +156,7 @@ export default function AboutNewslettersStatistics() {
             viewport={{ once: false, amount: 0.5 }} // Trigger again every time it's visible
           >
             {linesMob.map((line, i) => (
-              <motion.h1
+              <motion.p
                 key={i}
                 custom={i}
                 variants={textVariants}
@@ -167,7 +167,7 @@ export default function AboutNewslettersStatistics() {
                 style={{ color: line.color }}
               >
                 {line.text}
-              </motion.h1>
+              </motion.p>
             ))}
           </motion.div>
 

@@ -38,7 +38,7 @@ const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
         <button
           key={index}
           onClick={() => handleClick(index)}
-          className={` md:text-base uppercase py-2 px-3 lg:mr-4  mr-2  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
+          className={` md:text-[16px] font-[600] uppercase py-2 px-3 lg:mr-4  mr-2  text-[#0C3D3D] rounded-lg transition-all duration-300 ${
             activeTab === index
               ? "text-[#DAEBE8] bg-[#01261E] hover:bg-[#01261E] "
               : "bg-[#DAEBE8]  hover:text-[#DAEBE8] hover:bg-[#01261E]"
@@ -222,9 +222,9 @@ const Careers = () => {
       className="border p-[30px] bg-[#B6B6B633] rounded-lg cursor-default"
     >
       <img src={item.logo} alt={item.heading} className="w-16 h-auto mb-3" />
-      <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
+      <p className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
         {item.heading}
-      </h3>
+      </p>
       <p className="text-[#000] text-[16px] font-[400] leading-[149%]">
         {item.content}
       </p>
@@ -329,34 +329,13 @@ const Careers = () => {
 
       <div className="lg:hidden block py-10 bg-[#FAFAFA]">
         <div className=" lg:pb-20">
-          <div className="w-[80%] px-4 text-[#01261E] text-[30px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] ">
+          <div className="px-4 text-[#01261E] text-[30px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] ">
             How do we work with your application?
           </div>
         </div>
       </div>
 
       <div className="lg:hidden block bg-[#FAFAFA]">
-        {/* <div className="flex flex-col justify-between "> */}
-
-        {/* Left side – Image */}
-        {/* <div className="md:w-[46%] lg:py-0 pb-8">
-                    {activeStepImage ? (
-                      <img
-                        src={activeStepImage.source}
-                        alt={activeStepImage.name}
-                        className="w-[66%] mx-auto"
-                        style={{ maxHeight: '80vh', objectFit: 'contain' }}
-                      />
-                    ) : (
-                      <img
-                        src="/careers/normal-state-image.png"
-                        alt="step doesn't selected"
-                        className="w-[86%] mt-[-80px]"
-                        style={{ maxHeight: '80vh', objectFit: 'contain' }}
-                      />
-                    )}
-                  </div> */}
-
         {/* Right side – Accordion / mobile too*/}
         <div className="">
           <CustomAccordion onStepChange={handleStepChange} />
@@ -474,9 +453,9 @@ const Careers = () => {
                           alt={item.heading}
                           className="w-14 h-14 mb-3"
                         />
-                        <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
+                        <p className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
                           {item.heading}
-                        </h3>
+                        </p>
                         <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">
                           {item.content}
                         </p>
