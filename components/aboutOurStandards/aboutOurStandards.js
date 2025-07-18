@@ -5,6 +5,7 @@ import styles from "../aboutOurCompany.module.css";
 import HeadingWithUnderline from "../advertiseComponents/headingWithUnderline/headingwithUnderline";
 import { useState } from "react";
 import { useRef } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function AboutOurStandards() {
   const [selected, setSelected] = useState("Relevance");
@@ -16,8 +17,13 @@ export default function AboutOurStandards() {
   const handleDotClick = (label) => {
     setSelected(label);
     setTimeout(() => {
-      orbitRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
-    }, 50); // slight delay to allow DOM update if needed
+      if (orbitRef.current) {
+        orbitRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
+        setTimeout(() => {
+          window.scrollBy({ top: -96, behavior: "smooth" }); // adjust -40px as needed
+        }, 300); // match the scrollIntoView duration (~300ms)
+      }
+    }, 50);
   };
 
   // orbit scroll for mobile
@@ -208,19 +214,43 @@ export default function AboutOurStandards() {
 
           <div ref={contentRef} className="">
             {activeContent && (
-              <div>
-                <div className="pt-8 pb-4">
-                  <h5 className=" leading-normal text-[22px] text-[#000] font-[400] underline underline-offset-[6px] decoration-[1px]">
-                    {activeContent.label}
-                  </h5>
-                </div>
-                <p className="text-[14px] font-[400] leading-normal">
-                  {activeContent.p1}
-                </p>
-                <p className="text-[14px] font-[400] leading-normal py-4">
-                  {activeContent.p2}
-                </p>
-              </div>
+              // <div>
+              //   <div className="pt-4 pb-4">
+              //     <h5 className=" leading-normal text-[22px] text-[#000] font-[400] underline underline-offset-[6px] decoration-[1px]">
+              //       {activeContent.label}
+              //     </h5>
+              //   </div>
+              //   <p className="text-[14px] font-[400] leading-normal">
+              //     {activeContent.p1}
+              //   </p>
+              //   <p className="text-[14px] font-[400] leading-normal py-4">
+              //     {activeContent.p2}
+              //   </p>
+              // </div>
+
+              <AnimatePresence mode="wait">
+                {activeContent && (
+                  <motion.div
+                    key={activeContent.label} // this ensures exit/enter triggers on change
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -10 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                  >
+                    <div className="pt-4 pb-4">
+                      <h5 className="leading-normal text-[22px] text-[#000] font-[400] underline underline-offset-[6px] decoration-[1px]">
+                        {activeContent.label}
+                      </h5>
+                    </div>
+                    <p className="text-[14px] font-[400] leading-normal">
+                      {activeContent.p1}
+                    </p>
+                    <p className="text-[14px] font-[400] leading-normal py-4">
+                      {activeContent.p2}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             )}
           </div>
         </div>
