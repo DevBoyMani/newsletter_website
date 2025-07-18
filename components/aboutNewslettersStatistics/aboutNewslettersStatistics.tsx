@@ -153,7 +153,7 @@ export default function AboutNewslettersStatistics() {
             className="w-full px-4 pb-6"
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: false, amount: 0.5 }} // Trigger again every time it's visible
+            viewport={{ once: true, amount: 0.5 }} // Trigger again every time it's visible
           >
             {linesMob.map((line, i) => (
               <motion.p
@@ -162,7 +162,7 @@ export default function AboutNewslettersStatistics() {
                 variants={textVariants}
                 initial="hidden"
                 whileInView="visible"
-                viewport={{ once: false, amount: 0.8 }}
+                viewport={{ once: true, amount: 0.8 }}
                 className="text-[34px] leading-[109.922%] tracking-[-0.6px] font-semibold"
                 style={{ color: line.color }}
               >

@@ -10,26 +10,26 @@ import { AnalyticsChartGS } from "../../../components/analyticsChartGS/analytics
 import AnalyticsSidebar from "../../../components/analyticsSidebar/analyticsSidebar";
 
 const components = {
-  "geopolitical-summary": () => <AnalyticsChartGS/>,
-  "presidential-summary": () => <AnalyticsChartPS/>,
-  "long-and-short": () => <AnalyticsChartGS/>,
-  "business-history": () => <AnalyticsChartPS/>,
-  "photo-summary": () => <AnalyticsChartGS/>,
-  "new-users": () => <AnalyticsChartPS/>,
-  "returning-users": () => <AnalyticsChartGS/>,
-  "organic-search": () => <AnalyticsChartPS/>,
-  "social-media": () => <AnalyticsChartGS/>,
-  "direct-traffic": () => <AnalyticsChartPS/>,
-  "summary": () => <AnalyticsChartGS/>,
-  "summary1": () => <AnalyticsChartPS/>,
-  "Long": () => <AnalyticsChartGS/>,
-  "business": () => <AnalyticsChartPS/>,
-  "photo": () => <AnalyticsChartGS/>,
-  "users": () => <AnalyticsChartPS/>,
-  "returning": () => <AnalyticsChartGS/>,
-  "organic": () => <AnalyticsChartPS/>,
-  "social": () => <AnalyticsChartGS/>,
-  "direct": () => <AnalyticsChartPS/>,
+  "geopolitical-summary": () => <AnalyticsChartGS />,
+  "presidential-summary": () => <AnalyticsChartPS />,
+  "long-and-short": () => <AnalyticsChartGS />,
+  "business-history": () => <AnalyticsChartPS />,
+  "photo-summary": () => <AnalyticsChartGS />,
+  "new-users": () => <AnalyticsChartPS />,
+  "returning-users": () => <AnalyticsChartGS />,
+  "organic-search": () => <AnalyticsChartPS />,
+  "social-media": () => <AnalyticsChartGS />,
+  "direct-traffic": () => <AnalyticsChartPS />,
+  summary: () => <AnalyticsChartGS />,
+  summary1: () => <AnalyticsChartPS />,
+  Long: () => <AnalyticsChartGS />,
+  business: () => <AnalyticsChartPS />,
+  photo: () => <AnalyticsChartGS />,
+  users: () => <AnalyticsChartPS />,
+  returning: () => <AnalyticsChartGS />,
+  organic: () => <AnalyticsChartPS />,
+  social: () => <AnalyticsChartGS />,
+  direct: () => <AnalyticsChartPS />,
 };
 
 const rightSectionNav = [
@@ -67,7 +67,7 @@ export default function AnalyticsSlug() {
     }
   }, [params?.slug]);
 
-   // useEffect(() => {
+  // useEffect(() => {
   //   const scrollContainer = scrollContainerRef.current;
   //   if (!scrollContainer) return;
 
@@ -102,85 +102,85 @@ export default function AnalyticsSlug() {
   //   };
   // }, []);
 
-      useEffect(() => {
-        const handleScrollDesktop = () => {
-          let nextChartIndex = null;
-      
-          rightSectionNav.forEach(({ id }, index) => {
-            const section = document.getElementById(id);
-            if (section) {
-              const rect = section.getBoundingClientRect();
-      
-              if (
-                rect.top < window.innerHeight * 0.3 &&
-                rect.bottom > window.innerHeight * 0.3
-              ) {
-                nextChartIndex = index;
-              }
-            }
-          });
-      
-          if (nextChartIndex !== null) {
-            setActiveChart(nextChartIndex + 1);
-            setActiveChartName(rightSectionNav[nextChartIndex].name);
-          }
-        };
-      
-        const handleScrollMobile = () => {
-          const scrollContainer = scrollContainerRef.current;
-          if (!scrollContainer) return;
-      
-          let nextChartIndex = null;
-      
-          rightSectionNav.forEach(({ id }, index) => {
-            const section = document.getElementById(id);
-            if (section) {
-              const sectionTop = section.offsetTop;
-              const sectionHeight = section.offsetHeight;
-              const scrollTop = scrollContainer.scrollTop;
-              const containerHeight = scrollContainer.offsetHeight;
-      
-              if (
-                scrollTop + containerHeight * 0.3 > sectionTop &&
-                scrollTop + containerHeight * 0.3 < sectionTop + sectionHeight
-              ) {
-                nextChartIndex = index;
-              }
-            }
-          });
-      
-          if (nextChartIndex !== null) {
-            setActiveChart(nextChartIndex + 1);
-            setActiveChartName(rightSectionNav[nextChartIndex].name);
-          }
-        };
-      
-        if (isDesktop) {
-          window.addEventListener("scroll", handleScrollDesktop);
-          return () => window.removeEventListener("scroll", handleScrollDesktop);
-        } else {
-          const scrollContainer = scrollContainerRef.current;
-          if (scrollContainer) {
-            scrollContainer.addEventListener("scroll", handleScrollMobile);
-            return () =>
-              scrollContainer.removeEventListener("scroll", handleScrollMobile);
+  useEffect(() => {
+    const handleScrollDesktop = () => {
+      let nextChartIndex = null;
+
+      rightSectionNav.forEach(({ id }, index) => {
+        const section = document.getElementById(id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+
+          if (
+            rect.top < window.innerHeight * 0.3 &&
+            rect.bottom > window.innerHeight * 0.3
+          ) {
+            nextChartIndex = index;
           }
         }
-      }, [isDesktop]);
-      
-const handleScrollToSection = (event, id, offset = 0) => {
-  event.preventDefault();
-  const section = document.getElementById(id);
-  if (section) {
-    const scrollY = section.getBoundingClientRect().top + window.pageYOffset + offset;
-    window.scrollTo({
-      top: scrollY,
-      behavior: "smooth"
-    });
-  }
-};
-// handleScrollToSection(e, 'sectionId', -80);
+      });
 
+      if (nextChartIndex !== null) {
+        setActiveChart(nextChartIndex + 1);
+        setActiveChartName(rightSectionNav[nextChartIndex].name);
+      }
+    };
+
+    const handleScrollMobile = () => {
+      const scrollContainer = scrollContainerRef.current;
+      if (!scrollContainer) return;
+
+      let nextChartIndex = null;
+
+      rightSectionNav.forEach(({ id }, index) => {
+        const section = document.getElementById(id);
+        if (section) {
+          const sectionTop = section.offsetTop;
+          const sectionHeight = section.offsetHeight;
+          const scrollTop = scrollContainer.scrollTop;
+          const containerHeight = scrollContainer.offsetHeight;
+
+          if (
+            scrollTop + containerHeight * 0.3 > sectionTop &&
+            scrollTop + containerHeight * 0.3 < sectionTop + sectionHeight
+          ) {
+            nextChartIndex = index;
+          }
+        }
+      });
+
+      if (nextChartIndex !== null) {
+        setActiveChart(nextChartIndex + 1);
+        setActiveChartName(rightSectionNav[nextChartIndex].name);
+      }
+    };
+
+    if (isDesktop) {
+      window.addEventListener("scroll", handleScrollDesktop);
+      return () => window.removeEventListener("scroll", handleScrollDesktop);
+    } else {
+      const scrollContainer = scrollContainerRef.current;
+      if (scrollContainer) {
+        scrollContainer.addEventListener("scroll", handleScrollMobile);
+        return () =>
+          scrollContainer.removeEventListener("scroll", handleScrollMobile);
+      }
+    }
+  }, [isDesktop]);
+
+  const handleScrollToSection = (event, id, offset = 0) => {
+    event.preventDefault();
+    const section = document.getElementById(id);
+    if (section) {
+      const scrollY =
+        section.getBoundingClientRect().top + window.pageYOffset + offset;
+      window.scrollTo({
+        top: scrollY,
+        behavior: "smooth",
+      });
+    }
+  };
+  // handleScrollToSection(e, 'sectionId', -80);
 
   const SelectedComponent =
     selectedSlug && components[selectedSlug]
@@ -196,10 +196,12 @@ const handleScrollToSection = (event, id, offset = 0) => {
           <div className="w-[36%] bg-white fixed h-screen ml-8">
             <div className="md:px-6">
               <div className="px-4 text-[24.5px] py-8 hover:underline">
-                <Link href="/analytics" prefetch={true}>&larr; Introduction</Link>
+                <Link href="/analytics" prefetch={true}>
+                  &larr; Introduction
+                </Link>
               </div>
               <div className="pt-6">
-                <h2 className="py-4 mx-0 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
+                <h2 className="py-4 mx-0 text-[32px]  leading-normal w-[80%] border-b border-[#121212]">
                   Building Innovative Digital Solutions
                 </h2>
                 <div
@@ -216,94 +218,94 @@ const handleScrollToSection = (event, id, offset = 0) => {
                 </div>
               </div>
               <div className="w-[80%] mx-0 text-black pt-4 flex justify-between border-t border-[#121212]">
-               <a href="/advertise" className="text-[13px] py-1 hover:underline cursor-pointer">Interested to advertise?</a>
-              {/* <Link href="/contact"
+                <a
+                  href="/advertise"
+                  className="text-[13px] py-1 hover:underline cursor-pointer"
+                >
+                  Interested to advertise?
+                </a>
+                {/* <Link href="/contact"
                  className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
                   Contact Us
               
               </Link> */}
-            </div>
+              </div>
             </div>
           </div>
 
           {/* right */}
-          <div 
-          ref={scrollContainerRef}
-          className="w-[64%] h-full  ml-auto overflow-y-auto rounded-l-3xl relative z-10">
-            <div
-              className="bg-[#01261E]"
-            >
+          <div
+            ref={scrollContainerRef}
+            className="w-[64%] h-full  ml-auto overflow-y-auto rounded-l-3xl relative z-10"
+          >
+            <div className="bg-[#01261E]">
               <div className="h-full flex flex-col">
                 <div className="">
                   <div className="bg-[#01261E] fixed top-0  w-[100%] pt-10 pb-12 z-50 hidden md:block rounded-l-3xl">
                     <div className="mx-[5.5%] 2xl:mx-[8%] 3xl:mx-[16%] w-[100%]">
                       <div className="flex space-x-12 2xl:space-x-16 ">
-                      <div className="">
-                        <div className="space-x-4">
-                          {rightSectionNav.map(({ name, id }) => (
-                            <a
-                              key={id}
-                              className="text-xs text-white border border-white w-full px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-black"
-                              onClick={(event) =>
-                                handleScrollToSection(event, id, -120)
-                              }
-                            >
-                              {name}
-                            </a>
-                          ))}
+                        <div className="">
+                          <div className="space-x-4">
+                            {rightSectionNav.map(({ name, id }) => (
+                              <a
+                                key={id}
+                                className="text-xs text-white border border-white w-full px-5 py-3 rounded-full cursor-pointer hover:bg-white hover:text-black"
+                                onClick={(event) =>
+                                  handleScrollToSection(event, id, -120)
+                                }
+                              >
+                                {name}
+                              </a>
+                            ))}
+                          </div>
+                        </div>
+                        <div className="">
+                          <a
+                            className="text-xs bg-white  rounded-full shadow-lg px-5 py-3"
+                            href="https://www.sagravia.com/"
+                            target="_blank"
+                          >
+                            Visit Website
+                          </a>
                         </div>
                       </div>
-                      <div className="">
-                        <a
-                          className="text-xs bg-white  rounded-full shadow-lg px-5 py-3"
-                          href="https://www.sagravia.com/"
-                          target="_blank"
-                        >
-                          Visit Website
-                        </a>
-                      </div>
-                    </div>
                     </div>
                   </div>
                 </div>
 
-                
-               
-       
-               
-                   {/* Vertical Lines Indicator */}
+                {/* Vertical Lines Indicator */}
                 <div className="fixed top-1/3 right-20  h-full flex flex-col items-center space-y-4 z-10">
-                {rightSectionNav.map((el, index) => (
+                  {rightSectionNav.map((el, index) => (
                     <div
                       key={el.id}
                       className={`h-[43px] w-[2px] transition-all duration-300 ${
-                        activeChart === index + 1 ? "bg-[#fff]" : "bg-[#FFFFFF26]"
+                        activeChart === index + 1
+                          ? "bg-[#fff]"
+                          : "bg-[#FFFFFF26]"
                       }`}
                     />
                   ))}
                 </div>
 
                 <div className="">
-                    <div className="mx-24 lg:mb-28 mt-28">
-                      <div className=" my-10" id="chart1">
-                        <SelectedComponent />
-                      </div>
-                      <div className=" my-10" id="chart2">
-                        <SelectedComponent />
-                      </div>
-                      <div className=" my-10" id="chart3">
-                        <SelectedComponent />
-                      </div>
-                      <div className=" my-10" id="chart4">
-                        <SelectedComponent />
-                      </div>
-                      <div className=" my-10 pb-28" id="chart5">
-                        <SelectedComponent />
-                      </div>
+                  <div className="mx-24 lg:mb-28 mt-28">
+                    <div className=" my-10" id="chart1">
+                      <SelectedComponent />
                     </div>
+                    <div className=" my-10" id="chart2">
+                      <SelectedComponent />
+                    </div>
+                    <div className=" my-10" id="chart3">
+                      <SelectedComponent />
+                    </div>
+                    <div className=" my-10" id="chart4">
+                      <SelectedComponent />
+                    </div>
+                    <div className=" my-10 pb-28" id="chart5">
+                      <SelectedComponent />
+                    </div>
+                  </div>
                 </div>
-             
-               
               </div>
             </div>
           </div>
@@ -325,7 +327,6 @@ const handleScrollToSection = (event, id, offset = 0) => {
                   {activeChart}/{rightSectionNav.length}
                 </span>
               </div>
-
             </div>
           </div>
 
@@ -339,34 +340,53 @@ const handleScrollToSection = (event, id, offset = 0) => {
         </div>
 
         <div className="max-h-[45vh] overflow-y-auto">
-        <div className="max-w-2xl w-full ">
+          <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
             <div className="w-full px-4 py-2 fixed bg-white z-10">
-            <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-4 pb-5 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
-              <div>
-                <Link href="/analytics" prefetch={true} className="cursor-pointer text-[13px] font-semibold py-2 px-2">
-                  About
-                </Link>
-              </div>
-              <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
-                    </div>
-              <div>
-                <Link href="/" prefetch={true} className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl">
-                  Newsletters
-                </Link>
-              </div>
-              <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
-                    </div>
-              <div>
-                <Link href="/contact" prefetch={true} className="cursor-pointer text-[13px] font-semibold py-2 px-2">
-                  Contact
-                </Link>
+              <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-4 pb-5 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
+                <div>
+                  <Link
+                    href="/analytics"
+                    prefetch={true}
+                    className="cursor-pointer text-[13px] font-semibold py-2 px-2"
+                  >
+                    About
+                  </Link>
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src="/dot.png"
+                    alt="dot"
+                    className="w-1 h-1 rounded-full"
+                  />
+                </div>
+                <div>
+                  <Link
+                    href="/"
+                    prefetch={true}
+                    className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
+                  >
+                    Newsletters
+                  </Link>
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src="/dot.png"
+                    alt="dot"
+                    className="w-1 h-1 rounded-full"
+                  />
+                </div>
+                <div>
+                  <Link
+                    href="/contact"
+                    prefetch={true}
+                    className="cursor-pointer text-[13px] font-semibold py-2 px-2"
+                  >
+                    Contact
+                  </Link>
+                </div>
               </div>
             </div>
-          </div>
-
 
             {/* Bottom Section */}
             <div className="pt-14">

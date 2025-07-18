@@ -7,7 +7,7 @@ export default function BlogsHero() {
           {/*part 1 */}
           <div className="flex flex-row justify-between border-b pb-6 pt-20">
             <div className="w-[60%]">
-              <h2 className="text-[#FAFAFA] font-[GT-Super-Ds-Trial] text-[104px] font-[400] leading-[104%]">
+              <h2 className="text-[#FAFAFA]  text-[104px] font-[400] leading-[104%]">
                 Sagravia Blogs
               </h2>
             </div>
@@ -160,7 +160,7 @@ export default function BlogsHero() {
         <div className="pt-[130px] pb-10 px-4 bg-[#01261E]">
           {/*part 1 */}
           <div className=" border-b-[0.5px] border-[#FFFFFF80] pb-6 pt-10">
-            <h2 className="text-[#FAFAFA] font-[GT-Super-Ds-Trial] text-[30px] font-[400] leading-[104%] pb-8">
+            <h2 className="text-[#FAFAFA]  text-[30px] font-[400] leading-[104%] pb-8">
               Sagravia Blogs
             </h2>
             <p className="text-[#FAFAFA] text-[14px] font-[400] leading-[160%]">

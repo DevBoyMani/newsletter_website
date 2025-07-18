@@ -113,7 +113,7 @@ export default function Contact() {
         <div className="md:px-4 lg:pt-20 pt-10 ">
           {/* header */}
           <div className="">
-            <div className="flex justify-center text-[44px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E] py-4">
+            <div className="flex justify-center text-[44px] leading-normal  text-[#01261E] py-4">
               Get in Touch With Us
             </div>
             <div className="flex justify-center text-[18px] font-[500] text-[#717171] leading-normal">
@@ -367,7 +367,7 @@ export default function Contact() {
           {/* header */}
           <div className="w-full px-4 sm:px-0 pb-4">
             <div className="text-center">
-              <div className="text-[30px] leading-normal font-[GT-Super-Ds-Trial] text-[#01261E]">
+              <div className="text-[30px] leading-normal  text-[#01261E]">
                 Get in Touch With Us
               </div>
               <div className="mt-2 text-[14px] font-[500] text-[#717171] leading-normal max-w-[60%] mx-auto">

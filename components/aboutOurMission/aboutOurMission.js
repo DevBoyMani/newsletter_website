@@ -91,7 +91,7 @@ export default function AboutOurMission() {
       {/* desktop */}
       <div className="hidden lg:block">
         <div className="py-10">
-          <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2] font-[GT-Super-Ds-Trial] text-center">
+          <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2]  text-center">
             Our mission
           </h2>
           <p className="text-[#000] text-center text-[18px] font-[400] leading-[150%] tracking-[0.36px]">
@@ -174,7 +174,7 @@ export default function AboutOurMission() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="flex justify-center py-4"
                 >
                   <p className="w-[60%] text-[26px] text-[#000] font-[500] leading-[124.224%] text-center">
@@ -191,6 +191,7 @@ export default function AboutOurMission() {
                   initial="hidden"
                   animate="show"
                   exit="exit"
+                  transition={{ duration: 0.3 }}
                   className="flex justify-center pt-2 min-h-[24px] space-x-1"
                 >
                   <motion.span
@@ -221,7 +222,7 @@ export default function AboutOurMission() {
       {/* mobile */}
       <div className="block lg:hidden" {...swipeHandlers}>
         <div className="py-10">
-          <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2] font-[GT-Super-Ds-Trial] text-center">
+          <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2]  text-center">
             Our mission
           </h2>
           <p className="text-[#000] text-center text-[14px] font-[400] leading-[130%] tracking-[0.28px] px-12">
@@ -286,7 +287,7 @@ export default function AboutOurMission() {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: 20 }}
-                  transition={{ duration: 0.4, ease: "easeInOut" }}
+                  transition={{ duration: 0.3, ease: "easeInOut" }}
                   className="flex justify-center py-4"
                 >
                   <p className="w-[85%] px-4 text-[14px] text-[#000] font-[500] leading-[124.224%] text-center tracking-[0.28px]">
@@ -306,6 +307,7 @@ export default function AboutOurMission() {
                   className="flex flex-col text-center justify-center pt-2 min-h-[24px] space-x-1"
                 >
                   <motion.span
+                    transition={{ duration: 0.2 }}
                     variants={fadeUp}
                     className="font-semibold text-black text-[12px]"
                   >

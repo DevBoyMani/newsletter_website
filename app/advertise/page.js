@@ -91,7 +91,7 @@ export default function Advertise() {
           <div className=" md:px-28 px-4 lg:pt-20 mx-auto">
             <div className="text-[#01261E]">
               <h2
-                className="text-[80px] lg:w-[50%] font-[GT-Super-Ds-Trial] leading-[94%]"
+                className="text-[80px] lg:w-[50%]  leading-[94%]"
                 style={{ textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)" }}
               >
                 Step into a world of discovery
@@ -149,7 +149,7 @@ export default function Advertise() {
           <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
 
           {/* 100K Subscribers Text (Above Gradient) */}
-          <div className="absolute -bottom-4 left-32 text-[10.5vw] font-[700] leading-[94%] tracking-[-1%] z-20 text-center font-[GT-Super-Ds-Trial] ">
+          <div className="absolute -bottom-4 left-32 text-[10.5vw] font-[700] leading-[94%] tracking-[-1%] z-20 text-center  ">
             <span className="text-white">100K </span>
             <span className="text-[#01261E]">Subscribers</span>
           </div>
@@ -292,7 +292,7 @@ export default function Advertise() {
             <div className="px-4 md:px-28 pt-20 pb-10">
               <div className="flex flex-col md:flex-row justify-between px-4">
               <div className="md:w-[40%] lg:py-0 pb-14">
-                <div className="text-[#01261E] text-[56px] leading-[104%] font-[400] font-[GT-Super-Ds-Trial]">
+                <div className="text-[#01261E] text-[56px] leading-[104%] font-[400] ">
                 Got Questions? We've Got Answers!
                 </div>
               </div>

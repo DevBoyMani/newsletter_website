@@ -4,9 +4,23 @@ import Image from "next/image";
 import styles from "../aboutOurCompany.module.css";
 import HeadingWithUnderline from "../advertiseComponents/headingWithUnderline/headingwithUnderline";
 import { useState } from "react";
+import { useRef } from "react";
 
 export default function AboutOurStandards() {
   const [selected, setSelected] = useState("Relevance");
+
+  // orbit scroll for mobile
+  const orbitRef = useRef(null);
+  const contentRef = useRef(null);
+
+  const handleDotClick = (label) => {
+    setSelected(label);
+    setTimeout(() => {
+      orbitRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 50); // slight delay to allow DOM update if needed
+  };
+
+  // orbit scroll for mobile
 
   const buttons = [
     {
@@ -145,7 +159,7 @@ export default function AboutOurStandards() {
             <HeadingWithUnderline text="Our standards" />
           </div>
 
-          <div className="pt-4 pb-2">
+          <div className="pt-4 pb-2" ref={orbitRef}>
             <div className="relative w-full flex justify-center items-center">
               {/* Orbit background image */}
               <video
@@ -169,7 +183,7 @@ export default function AboutOurStandards() {
                     transform: "translate(-50%, -50%)",
                   }}
                   className="absolute flex flex-col items-center space-y-1 cursor-pointer"
-                  onClick={() => setSelected(btn.label)}
+                  onClick={() => handleDotClick(btn.label)}
                 >
                   <span
                     className={`text-[12px] ${
@@ -192,7 +206,7 @@ export default function AboutOurStandards() {
             </div>
           </div>
 
-          <div className="">
+          <div ref={contentRef} className="">
             {activeContent && (
               <div>
                 <div className="pt-8 pb-4">

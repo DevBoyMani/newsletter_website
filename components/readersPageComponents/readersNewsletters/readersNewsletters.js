@@ -208,7 +208,7 @@ export default function ReadersNewsletters() {
                 </div>
               </div>
               {/* Card content */}
-              <div className=" w-full border px-8 rounded-b-[15px] py-4 font-Manrope">
+              <div className=" w-full border px-8 rounded-b-[15px] py-4 font-">
                 <div className="relative h-6 overflow-hidden">
                   <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-0 group-hover/card:-translate-y-6 text-[13px] text-[#000000a8]">
                     {data.topic}

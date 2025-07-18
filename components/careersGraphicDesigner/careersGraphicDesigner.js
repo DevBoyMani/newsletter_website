@@ -128,7 +128,7 @@ export default function CareersGraphicDesigner() {
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
                     Software developer
                   </p>
-                  <h2 className="font-[GT-Super-Ds-Trial] text-[#000] text-[56px] font-[400] leading-[1.2]">
+                  <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
                     Mid or Senior-Level
                     <br /> Software Engineer
                   </h2>
@@ -318,7 +318,7 @@ export default function CareersGraphicDesigner() {
                 </div>
                 {/* 9 */}
                 <div className="pt-[30px] pb-[115px]">
-                  <h2 className="text-[#000] text-[42px] font-[400] leading-normal font-[GT-Super-Ds-Trial]">
+                  <h2 className="text-[#000] text-[42px] font-[400] leading-normal ">
                     Come & join our team
                   </h2>
                   <p className="text-[#000] text-[16px] font-[400] leading-[141%]">
@@ -391,7 +391,7 @@ export default function CareersGraphicDesigner() {
                 <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
                   Software developer
                 </p>
-                <h2 className="font-[GT-Super-Ds-Trial] text-[#01261E] text-[30px] font-[400] leading-[1.2]">
+                <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
                   Mid or Senior-Level
                   <br /> Software Engineer
                 </h2>
@@ -572,7 +572,7 @@ export default function CareersGraphicDesigner() {
               </div>
               {/* 9 */}
               <div className="pt-[55px]">
-                <h2 className="text-[#000] text-[30px] font-[400] leading-normal font-[GT-Super-Ds-Trial]">
+                <h2 className="text-[#000] text-[30px] font-[400] leading-normal ">
                   Come & join our team
                 </h2>
                 <p className="text-[#000] text-[14px] font-[400] leading-[141%]">

@@ -25,16 +25,14 @@ export default function Analytics() {
         <div className="w-[36%] bg-white fixed h-screen ml-8">
           <div className="md:px-6">
             <div className="px-2  py-8 hover:underline">
-         
               <Link href="/">
                 <div className="md:w-40 mt-1">
                   <img src="/logo.png" alt="Logo" />
                 </div>
               </Link>
-             
             </div>
             <div className="pt-6">
-              <h2 className="py-4 mx-0 text-[32px] font-[GT-Super-Ds-Trial] leading-normal w-[80%] border-b border-[#121212]">
+              <h2 className="py-4 mx-0 text-[32px]  leading-normal w-[80%] border-b border-[#121212]">
                 Building Innovative Digital Solutions
               </h2>
               <div
@@ -42,13 +40,18 @@ export default function Analytics() {
               lg:h-[46vh] 
               xl:h-[50vh]
               2xl:h-[60vh] max-h-[64vh]"
-                style={{scrollbarWidth: "none" }}
+                style={{ scrollbarWidth: "none" }}
               >
                 <AnalyticsSidebarHomepage />
               </div>
             </div>
             <div className="w-[80%] mx-0 text-black pt-4 flex justify-between border-t border-[#121212]">
-              <a href="/advertise" className="text-[13px] py-1 hover:underline cursor-pointer">Interested to advertise?</a>
+              <a
+                href="/advertise"
+                className="text-[13px] py-1 hover:underline cursor-pointer"
+              >
+                Interested to advertise?
+              </a>
               {/* <Link href="/contact"
                  className="border border-black text-[13px] px-4 py-1 rounded-3xl cursor-pointer">
                   Contact Us
@@ -117,69 +120,76 @@ export default function Analytics() {
       {/* mobile view */}
       <div className="w-sm lg:hidden block max-h-screen">
         <div className="max-h-[45vh] overflow-hidden">
-            <div className="">
-              <img
-                src="/analytics-home-image-mobile.png"
-                alt="Analytics Home"
-                className="w-full h-[357px]"
-              />
-            </div>
+          <div className="">
+            <img
+              src="/analytics-home-image-mobile.png"
+              alt="Analytics Home"
+              className="w-full h-[357px]"
+            />
+          </div>
         </div>
 
         <div className="max-h-[45vh] overflow-y-auto relative z-10">
-        <div className="max-w-2xl w-full ">
+          <div className="max-w-2xl w-full ">
             {/* Navigation Links */}
-                <div className="w-full px-4 py-2 fixed bg-white z-50">
-                <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-2 pb-2 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
-                    <div>
-                      <Link
-                      prefetch={true}
-                        href="/"
-                        className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
-                      >
-                        About
-                      </Link>
-                    </div>
-                    <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
-                    </div>
-                    <div
-                      className="cursor-pointer text-[13px] font-semibold py-2 px-2"
-                      onClick={() => router.push("/analytics/geopolitical-summary")}
-                    >
-                      Newsletters
-                    </div>
-                    <div className="flex items-center">
-                    <img src="/dot.png" alt="dot" className="w-1 h-1 rounded-full" />
-                    </div>
-                    <div>
-                    <Link
-                     href="/"
-                     prefetch={true}
-                      className="cursor-pointer text-[13px] font-semibold py-2 px-2"
-                      // onClick={() => toggleSection("contact")}
-                    >
-                      Contact
-                    </Link>
-                    </div>
-                </div>
-             
-
+            <div className="w-full px-4 py-2 fixed bg-white z-50">
+              <div className="flex flex-wrap w-full h-full gap-x-3 sm:gap-x-6 pt-2 pb-2 px-2 border-black border-b text-xs sm:text-sm justify-between sm:justify-start items-center">
                 <div>
-                    <div className="bg-white pt-2">
-                        <h4 className="font-[500] leading-[134%] text-[20px]">
-                          Building innovative digital<br/> solutions
-                        </h4>
-                    </div>
+                  <Link
+                    prefetch={true}
+                    href="/"
+                    className="cursor-pointer text-[13px] font-semibold bg-[#121212]/20 py-2 px-2 rounded-3xl"
+                  >
+                    About
+                  </Link>
                 </div>
-              </div>     
+                <div className="flex items-center">
+                  <img
+                    src="/dot.png"
+                    alt="dot"
+                    className="w-1 h-1 rounded-full"
+                  />
+                </div>
+                <div
+                  className="cursor-pointer text-[13px] font-semibold py-2 px-2"
+                  onClick={() => router.push("/analytics/geopolitical-summary")}
+                >
+                  Newsletters
+                </div>
+                <div className="flex items-center">
+                  <img
+                    src="/dot.png"
+                    alt="dot"
+                    className="w-1 h-1 rounded-full"
+                  />
+                </div>
+                <div>
+                  <Link
+                    href="/"
+                    prefetch={true}
+                    className="cursor-pointer text-[13px] font-semibold py-2 px-2"
+                    // onClick={() => toggleSection("contact")}
+                  >
+                    Contact
+                  </Link>
+                </div>
+              </div>
+
+              <div>
+                <div className="bg-white pt-2">
+                  <h4 className="font-[500] leading-[134%] text-[20px]">
+                    Building innovative digital
+                    <br /> solutions
+                  </h4>
+                </div>
+              </div>
+            </div>
 
             {/* Content Sections */}
             <div className="px-4">
               {/* About Section */}
               {openSection === "about" && (
                 <>
-                
                   <div className="pt-32 text-[12px]">
                     <p className="">
                       Creativity has been an integral part of my life. Since
@@ -224,7 +234,6 @@ export default function Analytics() {
                   </div>
                 </>
               )}
-
 
               {/* Newsletters Section
               {openSection === "newsletters" && (

@@ -42,7 +42,7 @@ export default function AdvertiseNewFaq() {
     <div className="bg-[#FAFAFA] md:px-28 py-10 hidden lg:block">
       {/* Top section */}
       <div className="flex justify-between">
-        <div className="text-[#01261E] w-[40%] text-[56px] font-[GT-Super-Ds-Trial] font-[400] leading-[111%]">
+        <div className="text-[#01261E] w-[40%] text-[56px]  font-[400] leading-[111%]">
           Frequently Asked Questions
         </div>
         <div className="mt-16 w-[27%]">
@@ -81,7 +81,7 @@ export default function AdvertiseNewFaq() {
                   fontWeight: isActive ? 400 : 400,
                 }}
                 transition={{ duration: 0.3 }}
-                className="leading-tight font-Manrope w-[85%]"
+                className="leading-tight font- w-[85%]"
               >
                 {faq.question}
               </motion.p>

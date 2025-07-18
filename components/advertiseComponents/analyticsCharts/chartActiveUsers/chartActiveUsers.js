@@ -160,7 +160,7 @@ export function ActiveUsers() {
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font-Manrope font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
+            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
               ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus
@@ -291,7 +291,7 @@ export function ActiveUsers() {
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font-Manrope font-[400px] leading-[1.5]  max-w-[550px] text-[10px] pb-4 pt-4">
+            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[10px] pb-4 pt-4">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
               ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus

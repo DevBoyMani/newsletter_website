@@ -7,7 +7,7 @@ export default function ReadersMobileView() {
     <>
       <div className="bg-[#FAFAFA] pt-[80px]">
         <div className="px-4 py-10 mx-auto">
-          <h2 className=" text-[#01261E] text-[44px] leading-[107%] font-[GT-Super-Ds-Trial]">
+          <h2 className=" text-[#01261E] text-[44px] leading-[107%] ">
             Step into a world of discovery
           </h2>
           <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">

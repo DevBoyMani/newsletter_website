@@ -165,7 +165,7 @@ export function Statistics() {
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font-Manrope font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
+            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus.
               Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel

@@ -47,7 +47,7 @@ export default function AdvertiseAdBlocker() {
           <h6 className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
             What we offer, our benefits, simple to learn
           </h6>
-          <h2 className="flex justify-center py-2 text-center w-[60%] mx-auto text-[56px] text-[#fff] font-[400] leading-[1.2] font-[GT-Super-Ds-Trial]">
+          <h2 className="flex justify-center py-2 text-center w-[60%] mx-auto text-[56px] text-[#fff] font-[400] leading-[1.2] ">
             Maximize potential and Drive Business Success
           </h2>
         </div>
@@ -104,7 +104,7 @@ export default function AdvertiseAdBlocker() {
           <h6 className="flex justify-center pt-4 text-[12px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
             What we offer, our benefits, simple to learn
           </h6>
-          <h2 className="flex justify-center py-2 text-center text-[30px] text-[#fff] font-[400] leading-[1.2] font-[GT-Super-Ds-Trial]">
+          <h2 className="flex justify-center py-2 text-center text-[30px] text-[#fff] font-[400] leading-[1.2] ">
             Maximize potential and
             <br /> Drive Business Success
           </h2>

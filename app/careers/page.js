@@ -241,13 +241,13 @@ const Careers = () => {
             Looking for a new role &
           </p>
           <div className="lg:w-[46%] w-[60%]">
-            <h2 className="text-[53px] leading-[84%] lg:text-[80px] lg:leading-[104%] text-[#01261E] py-2 font-[GT-Super-Ds-Trial]">
+            <h2 className="text-[53px] leading-[84%] lg:text-[80px] lg:leading-[104%] text-[#01261E] py-2 ">
               Ready to make an impact?
             </h2>
           </div>
           <div className="lg:pt-14 pt-8 border-black border-b lg:pb-0 ">
             <div className="flex justify-between">
-              <div className="lg:text-[56px] text-[30px]  text-[#01261E] font-[GT-Super-Ds-Trial] leading-normal">
+              <div className="lg:text-[56px] text-[30px]  text-[#01261E]  leading-normal">
                 Open Positions
               </div>
               <div className="">
@@ -288,7 +288,7 @@ const Careers = () => {
       {/* desktop faq */}
       <div className="hidden lg:block py-10  md:px-28 flex justify-end bg-[#FAFAFA]">
         <div className="lg:pb-20">
-          <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px] font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] lg:text-right">
+          <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px]   font-[400] lg:leading-[104%] leading-[84%] lg:text-right">
             How do we work with <br />
             your application?
           </div>
@@ -329,7 +329,7 @@ const Careers = () => {
 
       <div className="lg:hidden block py-10 bg-[#FAFAFA]">
         <div className=" lg:pb-20">
-          <div className="px-4 text-[#01261E] text-[30px]  font-[GT-Super-Ds-Trial]  font-[400] lg:leading-[104%] leading-[84%] ">
+          <div className="px-4 text-[#01261E] text-[30px]    font-[400] lg:leading-[104%] leading-[84%] ">
             How do we work with your application?
           </div>
         </div>
@@ -359,7 +359,7 @@ const Careers = () => {
             Your browser does not support the video tag.
           </video>
           <div className="absolute top-[10%] left-12 w-[42%] space-y-10 md:px-4">
-            <div className="text-white lg:text-[56px] font-[GT-Super-Ds-Trial] leading-[94%]">
+            <div className="text-white lg:text-[56px]  leading-[94%]">
               Your trusted
               <br /> source for digital
               <br /> insights
@@ -399,7 +399,7 @@ const Careers = () => {
             Your browser does not support the video tag.
           </video>
           <div className="absolute top-[4%] left-4 space-y-10 max-w-[80%]">
-            <div className="text-white text-[39px] leading-[84%] font-[400] font-[GT-Super-Ds-Trial]">
+            <div className="text-white text-[39px] leading-[84%] font-[400] ">
               Your trusted
               <br /> source for digital
               <br /> insights
@@ -423,7 +423,7 @@ const Careers = () => {
               <span className="text-[16px] font-[400] leading-normal ">
                 Become a colleague
               </span>
-              <h2 className="text-[56px] font-[400] leading-normal font-[GT-Super-Ds-Trial]">
+              <h2 className="text-[56px] font-[400] leading-normal ">
                 What we offer
               </h2>
             </div>
@@ -505,7 +505,7 @@ const Careers = () => {
           <span className="text-[16px] font-[400] leading-normal">
             Become a colleague
           </span>
-          <h2 className="text-[34px] font-[400] leading-normal font-[GT-Super-Ds-Trial]">
+          <h2 className="text-[34px] font-[400] leading-normal ">
             What we offer
           </h2>
         </div>
@@ -532,7 +532,7 @@ const Careers = () => {
       {/* What our people have to say*/}
       <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14 bg-[#FAFAFA]">
         <div className="border-b border-black">
-          <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E] font-[GT-Super-Ds-Trial] ">
+          <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E]  ">
             What our people have to say
           </div>
         </div>

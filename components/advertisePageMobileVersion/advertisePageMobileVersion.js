@@ -49,7 +49,7 @@ export default function AdvertisePageMobileVersion() {
         <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" />
 
         <div className="px-4 pt-28 mx-auto max-w-screen-xl">
-          <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] font-[GT-Super-Ds-Trial]">
+          <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] ">
             Step into a world of discovery
           </h2>
           <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
@@ -107,7 +107,7 @@ export default function AdvertisePageMobileVersion() {
         <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
 
         {/* Subscribers Text */}
-        <div className="absolute bottom-0 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start font-[GT-Super-Ds-Trial] ">
+        <div className="absolute bottom-0 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start  ">
           <span className="text-white">100K </span>
           <span className="text-[#01261E]">Subscribers</span>
         </div>
@@ -174,7 +174,7 @@ export default function AdvertisePageMobileVersion() {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center pt-8 pb-4">
-          <h2 className="text-[34px] font-[GT-Super-Ds-Trial] font-[400] leading-normal">
+          <h2 className="text-[34px]  font-[400] leading-normal">
             And that’s not all
           </h2>
           <p className="text-[12px] leading-[125%] font-[400] mt-4 max-w-[60%]">

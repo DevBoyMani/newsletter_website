@@ -83,7 +83,7 @@ export default function ReadersFooter() {
       <div className="hidden lg:block bg-[#01261E]">
         <div className="px-4 md:px-16 py-10 md:pt-[101px] mx-auto ">
           <div className="flex flex-col justify-center max-w-[730px] mx-auto text-center">
-            <h2 className="text-[#FAFAFA] text-[56px] leading-[70px] font-[400] font-[GT-Super-Ds-Trial]">
+            <h2 className="text-[#FAFAFA] text-[56px] leading-[70px] font-[400] ">
               Sagravia is trusted by 200,000+ people worldwide
             </h2>
           </div>
@@ -215,7 +215,7 @@ export default function ReadersFooter() {
       <div className="block lg:hidden bg-[#01261E]">
         <div className=" md:px-16 pt-[66px] mx-auto ">
           <div className="px-4 flex flex-col justify-center max-w-[730px] mx-auto text-center">
-            <h2 className="text-[#FAFAFA] text-[30px] leading-[normal] font-[300] font-[GT-Super-Ds-Trial] uppercase">
+            <h2 className="text-[#FAFAFA] text-[30px] leading-[normal] font-[300]  uppercase">
               Sagravia is trusted by 200,000+ people worldwide
             </h2>
           </div>
