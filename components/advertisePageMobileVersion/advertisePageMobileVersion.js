@@ -36,19 +36,19 @@ export default function AdvertisePageMobileVersion() {
       {/* Hero Section */}
       <div className="bg-[#FAFAFA] relative">
         {/* Top Year Labels */}
-        <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
+        {/* <div className="absolute top-12 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
           <span className="absolute left-[10.5%]">2014</span>
           <span className="absolute left-[34%]">2017</span>
           <span className="absolute left-[58%]">2020</span>
           <span className="absolute left-[82%]">2023</span>
-        </div>
-
+        </div> */}
+        {/* 
         <div className="absolute top-20 bottom-[182px] left-[15%] w-px bg-gray-300 z-0" />
         <div className="absolute top-20 bottom-[70px] left-[38.5%] w-px bg-gray-300 z-0" />
         <div className="absolute top-20 bottom-[270px] left-[62%] w-px bg-gray-300 z-0" />
-        <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" />
+        <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" /> */}
 
-        <div className="px-4 pt-28 mx-auto max-w-screen-xl">
+        <div className="px-4 pt-10 mx-auto max-w-screen-xl">
           <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] ">
             Step into a world of discovery
           </h2>
@@ -84,7 +84,7 @@ export default function AdvertisePageMobileVersion() {
           </div>
         </div>
         {/* bottom text  */}
-        <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-gray-800 text-[16px]">
+        <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px]">
           <span className="absolute bottom-[248px] left-[9.5%]">
             $19.4
             <br /> trillion
@@ -107,9 +107,11 @@ export default function AdvertisePageMobileVersion() {
         <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
 
         {/* Subscribers Text */}
-        <div className="absolute bottom-0 left-4 text-[12.5vw] font-normal leading-[94%] tracking-[-1%] z-20 text-start  ">
-          <span className="text-white">100K </span>
-          <span className="text-[#01261E]">Subscribers</span>
+        <div className="absolute bottom-0 left-0 w-full px-4 text-start z-20">
+          <h2 className="text-[47px] sm:text-[6vw] font-normal leading-[1] tracking-tight text-wrap">
+            <span className="text-white">100K </span>
+            <span className="text-[#01261E]">Subscribers</span>
+          </h2>
         </div>
       </div>
 
@@ -135,20 +137,20 @@ export default function AdvertisePageMobileVersion() {
           <div className="flex flex-col justify-center items-center gap-4">
             <SignInUps />
             <div
-              className="w-full h-[215px] rounded-[8px]"
+              className="w-full h-[215px] rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
               style={{
                 background:
                   "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)",
               }}
             >
               <div className="flex flex-col justify-between p-6 h-full">
-                <p className="text-white text-lg max-w-[335px]">
+                <p className="text-white text-[15px] font-[400] max-w-[335px]">
                   Access all major A2A payment methods via a single API and
                   global settlement with multi-currency support.
                 </p>
                 <div className="flex justify-start items-center max-w-xl max-h-[20px] pb-6">
                   <Link href="/analytics">
-                    <button className="text-[15px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
+                    <button className="text-[14px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
                       Analytics
                     </button>
                   </Link>

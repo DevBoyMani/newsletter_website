@@ -8,7 +8,7 @@ import { useSwipeable } from "react-swipeable";
 const newsData = [
   {
     id: "item-1",
-    logo: "/advertise/blommberg.png",
+    logo: "/advertise/bloomberg.png",
     logoAlt: "Bloomberg",
     logoWidth: 138,
     title:
@@ -135,7 +135,7 @@ export default function InThePress() {
             <img
               src="/advertise/left-new.png"
               alt="Left"
-              className="w-[25px] h-[25px]"
+              className="w-[23px] h-[23px]"
             />
           </button>
         )}
@@ -148,7 +148,7 @@ export default function InThePress() {
             <img
               src="/advertise/right-new.png"
               alt="Right"
-              className="w-[25px] h-[25px]"
+              className="w-[23px] h-[23px]"
             />
           </button>
         )}

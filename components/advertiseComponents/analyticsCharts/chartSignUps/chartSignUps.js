@@ -211,16 +211,14 @@ export function SignInUps() {
             </button>
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
-                <div className="text-[9px] text-[#9291A5]">Sign-ups</div>
+                <div className="text-[11px] text-[#9291A5]">Sign-ups</div>
                 <div className="flex items-center justify-start">
                   <div className="flex items-center justify-start">
-                    <CardDescription className="text-[10px] font-bold text-[#1E1B39]">
+                    <CardDescription className="text-[12px] font-bold text-[#1E1B39]">
                       9,845
                     </CardDescription>
                     <div className="ml-4 ">
-                      <h5 className="text-[8px] text-[#9291A5]">
-                        past 30 days
-                      </h5>
+                      <p className="text-[8px] text-[#9291A5]">past 30 days</p>
                     </div>
                   </div>
                   <div className="flex mr-8 gap-4 text-sm ml-8">
@@ -314,13 +312,13 @@ export function SignInUps() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[9px] text-[#D3D3D3]">Sign-ups</div>
-                <CardDescription className="text-[10px] text-[#DAEBE8] font-bold">
+                <div className="text-[11px] text-[#D3D3D3]">Sign-ups</div>
+                <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
                   9,845
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[10px] pb-4 pt-4">
+            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[11px] pb-4 pt-4">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus.
               Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel

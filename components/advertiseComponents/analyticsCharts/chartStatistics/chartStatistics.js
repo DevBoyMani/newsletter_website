@@ -206,9 +206,9 @@ export function Statistics() {
 
             <CardHeader className="p-0">
               <div className="border-b border-[#515151] pb-2 w-full">
-                <div className="text-[9px] text-[#9291A5]">Statistics</div>
+                <div className="text-[11px] text-[#9291A5]">Statistics</div>
                 <div className="flex flex-wrap items-center justify-start mt-0">
-                  <CardDescription className="text-[10px] text-[#1E1B39] font-bold">
+                  <CardDescription className="text-[12px] text-[#1E1B39] font-bold">
                     Age and gender
                   </CardDescription>
                   <div className="flex gap-3 text-[9px] ml-4 mt-1">
@@ -300,14 +300,14 @@ export function Statistics() {
 
             <CardHeader className="p-0">
               <div className="border-b border-white pb-2">
-                <div className="text-[9px] text-[#D3D3D3]">Statistics</div>
-                <CardDescription className="text-[10px] text-[#DAEBE8] font-bold">
+                <div className="text-[11px] text-[#D3D3D3]">Statistics</div>
+                <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
                   Age and gender
                 </CardDescription>
               </div>
             </CardHeader>
 
-            <div className="text-[#FAFAFA] text-[10px] pt-4 leading-snug font-light">
+            <div className="text-[#FAFAFA] text-[11px] pt-4 leading-snug font-light">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus.
               Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel

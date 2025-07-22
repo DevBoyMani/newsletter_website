@@ -243,8 +243,8 @@ export function ViewsCountry() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#515151] pb-2">
-                <div className="text-[9px] text-[#9291A5]">Statistics</div>
-                <CardDescription className="text-[10px] text-[#1E1B39] font-bold">
+                <div className="text-[11px] text-[#9291A5]">Statistics</div>
+                <CardDescription className="text-[12px] text-[#1E1B39] font-bold">
                   Views by country
                 </CardDescription>
               </div>
@@ -280,16 +280,16 @@ export function ViewsCountry() {
                           className="w-[5px] h-[5px] mr-2"
                         />
 
-                        <div className="text-[#1E1B39] text-[8px] w-10 ">
+                        <div className="text-[#1E1B39] text-[9px] w-10 ">
                           {data.Country}
                         </div>
 
-                        <div className="text-[8px] text-[#515151] w-8 ml-4">
+                        <div className="text-[9px] text-[#515151] w-8 ml-4">
                           {data.percentage}
                         </div>
 
                         <div
-                          className={`text-[8px] ml-4  ${
+                          className={`text-[9px] ml-4  ${
                             data.livePercentage.includes("+")
                               ? "text-green-500"
                               : "text-red-500"
@@ -325,13 +325,13 @@ export function ViewsCountry() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[9px] text-[#D3D3D3]">Statistics</div>
-                <CardDescription className="text-[10px] text-[#DAEBE8] font-bold">
+                <div className="text-[11px] text-[#D3D3D3]">Statistics</div>
+                <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
                   Views by country
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[10px] pb-4 pt-4">
+            <p className="text-[#FAFAFA] font- font-[300px] leading-[1.5]  max-w-[550px] text-[11px] pb-4 pt-4">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
               ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus

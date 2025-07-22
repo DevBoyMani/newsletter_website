@@ -42,7 +42,7 @@ export function AccountReached() {
       <div className="hidden lg:block relative h-full flex justify-center items-center ">
         {/* 3D Perspective Container */}
         <div
-          className="relative w-full h-[365px] transition-transform duration-500"
+          className="relative w-full h-[365px] transition-transform duration-500 "
           style={{
             perspective: "1000px",
             transform: flipped ? "rotateY(180deg)" : "rotateY(0deg)",
@@ -51,7 +51,7 @@ export function AccountReached() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8"
+            className="absolute w-full h-full bg-[#36454F] flex flex-col justify-between p-8"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -65,9 +65,9 @@ export function AccountReached() {
               />
             </button>
             <CardHeader className="p-0">
-              <div className="border-b border-[#515151] pb-2">
-                <div className="text-[18px] text-[#9291A5]">Statistics</div>
-                <CardDescription className="text-[22px] text-[#1E1B39] font-bold">
+              <div className="border-b border-[#e3e1e1] pb-2">
+                <div className="text-[18px] text-[#e3e1e1]">Statistics</div>
+                <CardDescription className="text-[22px] text-[#e8e8ed] font-bold">
                   Account reached
                 </CardDescription>
               </div>
@@ -96,7 +96,8 @@ export function AccountReached() {
                   <XAxis
                     dataKey="month"
                     tickLine={false}
-                    axisLine={true}
+                    // axisLine={true}
+                    axisLine={{ stroke: "#000000" }}
                     tickMargin={8}
                     tickFormatter={(value) => value.slice(0, 3)}
                   />
@@ -168,7 +169,7 @@ export function AccountReached() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6"
+            className="absolute w-full h-full bg-[#36454F] flex flex-col justify-between p-6"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -182,9 +183,9 @@ export function AccountReached() {
               />
             </button>
             <CardHeader className="p-0">
-              <div className="border-b border-[#515151] pb-2">
-                <div className="text-[9px] text-[#9291A5]">Statistics</div>
-                <CardDescription className="text-[10px] text-[#1E1B39] font-bold">
+              <div className="border-b border-[#e3e1e1] pb-2">
+                <div className="text-[11px] text-[#e3e1e1]">Statistics</div>
+                <CardDescription className="text-[12px] text-[#e8e8ed] font-bold">
                   Account reached
                 </CardDescription>
               </div>
@@ -212,13 +213,21 @@ export function AccountReached() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid vertical={false} horizontal={false} />
-                  <XAxis
+                  {/* <XAxis
                     dataKey="month"
                     tickLine={false}
                     axisLine={true}
                     tickMargin={8}
                     tickFormatter={(value) => value.slice(0, 3)}
+                  /> */}
+                  <XAxis
+                    dataKey="month"
+                    tickLine={false}
+                    axisLine={{ stroke: "#000000" }} // customize line above months
+                    tickMargin={8}
+                    tickFormatter={(value) => value.slice(0, 3)}
                   />
+
                   <ChartTooltip
                     cursor={false}
                     content={<ChartTooltipContent indicator="line" />}
@@ -256,13 +265,13 @@ export function AccountReached() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[9px] text-[#D3D3D3]">Statistics</div>
-                <CardDescription className="text-[10px] text-[#DAEBE8] font-bold">
+                <div className="text-[11px] text-[#D3D3D3]">Statistics</div>
+                <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
                   Account reached
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[10px] pb-4 pt-4">
+            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[11px] pb-4 pt-4">
               Etiam et convallis dolor. Praesent pulvinar molestie leo, in
               finibus felis porttitor eget. Suspendisse vel aliquet tellus.
               Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel

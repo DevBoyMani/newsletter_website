@@ -72,23 +72,23 @@ export default function Advertise() {
     <>
       {/* hero section */}
       <div className="bg-[#FAFAFA] hidden lg:block pt-[38px]">
-        <div className=" relative ">
+        <div className=" relative md:px-28">
           {/* Top Year Labels */}
-          <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
+          {/* <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
             <span className="absolute left-[17%]">2014</span>
             <span className="absolute left-[38%]">2017</span>
             <span className="absolute left-[59%]">2020</span>
             <span className="absolute left-[80%]">2023</span>
-          </div>
+          </div> */}
 
           {/* vertical lines */}
-          <div className="absolute top-20 bottom-[180px] left-[18%] w-px bg-[#716D6D] z-0" />
+          {/* <div className="absolute top-20 bottom-[180px] left-[18%] w-px bg-[#716D6D] z-0" />
           <div className="absolute top-20 bottom-[70px] left-[39%] w-px bg-[#716D6D] z-0" />
           <div className="absolute top-20 bottom-[270px] left-[60%] w-px bg-[#716D6D] z-0" />
-          <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" />
+          <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" /> */}
 
           {/* Text Section */}
-          <div className=" md:px-28 px-4 lg:pt-20 mx-auto">
+          <div className="lg:pt-20 mx-auto">
             <div className="text-[#01261E]">
               <h2
                 className="text-[80px] lg:w-[50%]  leading-[94%]"
@@ -96,7 +96,7 @@ export default function Advertise() {
               >
                 Step into a world of discovery
               </h2>
-              <p className="text-base py-4 w-[30%] sm:w-[30%]">
+              <p className="text-[20px] py-4 w-[30%] sm:w-[30%]">
                 Explore different categories. Find the best deals. AG1 is a
                 daily health drink packed with nutrients to help alleviate
                 bloating.
@@ -112,26 +112,28 @@ export default function Advertise() {
           </div>
 
           {/* Video Section */}
-          <div className="flex justify-center relative md:px-28 mr-0 mt-10">
-            <div className="flex gap-x-2.5 items-end relative z-0 ">
-              {videos.map((video) => (
-                <video
-                  key={video.id}
-                  src={video.video}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  className={`object-cover
-                    w-[24%] max-[40%] 
+          <div className="">
+            <div className="flex justify-center relative mt-10 ">
+              <div className="flex space-x-4 items-end relative z-0 w-full">
+                {videos.map((video) => (
+                  <video
+                    key={video.id}
+                    src={video.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={`object-cover
+                    w-[24%] max-w-[40%] 
                       ${video.height} ${video.moveUp || ""}`}
-                />
-              ))}
+                  />
+                ))}
+              </div>
             </div>
           </div>
 
           {/* bottom text  */}
-          <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#716D6D] text-[16px] font-[600] ">
+          <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px] font-[600] ">
             <span className="absolute bottom-[66px] left-[14%]">
               $19.4 trillion
             </span>
@@ -149,9 +151,13 @@ export default function Advertise() {
           <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
 
           {/* 100K Subscribers Text (Above Gradient) */}
-          <div className="absolute -bottom-4 left-32 text-[10.5vw] font-[700] leading-[94%] tracking-[-1%] z-20 text-center  ">
-            <span className="text-white">100K </span>
-            <span className="text-[#01261E]">Subscribers</span>
+          <div className="">
+            <div className="absolute -bottom-4 left-10 text-[11.3vw] font-[700] leading-[94%] tracking-[-1.6px] z-20 text-center w-[94%] max-w-[100%]">
+              <h2>
+                <span className="text-white">100K </span>
+                <span className="text-[#01261E]">Subscribers</span>
+              </h2>
+            </div>
           </div>
         </div>
       </div>
@@ -197,7 +203,7 @@ export default function Advertise() {
             </div>
             <div className="w-full md:w-[35%]">
               <div
-                className="h-[365px] rounded-[8px]"
+                className="h-[365px] rounded-[20px] shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]"
                 style={{
                   background:
                     "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)",

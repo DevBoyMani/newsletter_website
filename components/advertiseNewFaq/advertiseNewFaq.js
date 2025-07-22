@@ -47,7 +47,8 @@ export default function AdvertiseNewFaq() {
         </div>
         <div className="mt-16 w-[27%]">
           Find answers to common questions about our services, project process,
-          and technical expertise
+          and <br />
+          technical expertise
         </div>
       </div>
 
