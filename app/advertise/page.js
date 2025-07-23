@@ -317,7 +317,7 @@ export default function Advertise() {
 
       {/* In the press */}
       <div className="bg-[#FAFAFA] hidden lg:block">
-        <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
+        <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 pb-10">
           <HeadingWithUnderline text="In the press" />
         </div>
 

@@ -39,7 +39,7 @@ export default function AdvertiseNewFaq() {
   };
 
   return (
-    <div className="bg-[#FAFAFA] md:px-28 py-10 hidden lg:block">
+    <div className="bg-[#FAFAFA] md:px-28 pb-[147px] pt-[73px] hidden lg:block">
       {/* Top section */}
       <div className="flex justify-between">
         <div className="text-[#01261E] w-[40%] text-[56px]  font-[400] leading-[111%]">
