@@ -237,7 +237,7 @@ const Careers = () => {
     <>
       <div className="md:px-28 px-4 lg:pt-28 pt-[120px] mx-auto bg-[#FAFAFA]">
         <div className="pb-8 text-start ">
-          <p className="lg:text-2xl text-base font-semibold text-black px-1 uppercase ">
+          <p className="lg:text-[25px] text-[12px] font-[600] text-[020715] px-1 uppercase leading-[104%] tracking-[0.6px] lg:tracking-[1.25px]">
             Looking for a new role &
           </p>
           <div className="lg:w-[46%] w-[60%]">
@@ -482,7 +482,7 @@ const Careers = () => {
                           alt={item.heading}
                           className="w-14 h-14 mb-3"
                         />
-                        <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
+                        <h3 className="text-[#000] font-[manrope] text-[20px] font-[400] mb-4 leading-[128%]">
                           {item.heading}
                         </h3>
                         <p className="text-[#000] text-[16px] font-[400] pb-2 leading-[149%]">
@@ -537,7 +537,7 @@ const Careers = () => {
           </div>
         </div>
 
-        <div className="flex justify-between pb-6 pt-8">
+        <div className="flex justify-between pb-2 pt-8">
           {/* Left Side (Small Images & Content) */}
           <div className="lg:w-[60%]">
             {/* Small Images */}
@@ -567,14 +567,40 @@ const Careers = () => {
             </div>
 
             {/* Dynamic Text Content */}
-            <div className="lg:py-6">
-              <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[400] mb-10 lg:w-[94%]">
+            {/* <div className="lg:py-6">
+              <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[300] mb-10 lg:w-[94%]">
                 {selectedImage.text}
               </p>
               <p className="text-[17px] lg:text-[24px] leading-[130%] font-[400]">
                 {selectedImage.name}
               </p>
               <p className="text-[11px] lg:text-[15px] leading-[130%] font-[300]">
+                {selectedImage.role}
+              </p>
+            </div> */}
+
+            {/* DESKTOP Version — only visible on lg and up */}
+            <div className="hidden lg:block lg:py-6">
+              <p className="text-black text-[24px] leading-[130%] font-[300] mb-6 lg:w-[94%]">
+                {selectedImage.text}
+              </p>
+              <p className="text-[24px] leading-[130%] font-[400]">
+                {selectedImage.name}
+              </p>
+              <p className="text-[15px] leading-[130%] font-[300]">
+                {selectedImage.role}
+              </p>
+            </div>
+
+            {/* MOBILE Version — only visible on < lg screens */}
+            <div className="block lg:hidden min-h-[220px] transition-all duration-300 ease-in-out">
+              <p className="text-black text-[17px] leading-[130%] font-[300] mb-6">
+                {selectedImage.text}
+              </p>
+              <p className="text-[17px] leading-[130%] font-[400]">
+                {selectedImage.name}
+              </p>
+              <p className="text-[11px] leading-[130%] font-[300]">
                 {selectedImage.role}
               </p>
             </div>
@@ -606,8 +632,8 @@ const Careers = () => {
         <div className="lg:w-[50%] mx-auto px-8">
           <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
             If you're looking to grow in a dynamic environment and contribute to
-            something greater, we invite you to explore our open positions and
-            become a part of our journey.
+            something greater, we invite you to explore our open positions
+            <br /> and become a part of our journey.
           </p>
         </div>
 

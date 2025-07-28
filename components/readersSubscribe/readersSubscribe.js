@@ -11,7 +11,7 @@ export function ReadersSubscribe() {
         className="h-[72px] max-w-[580px] flex items-center justify-center rounded-[5px] bg-[#DAEBE8] text-[#01261E] text-2xl font-medium px-6"
       >
         {" "}
-        <span className="mb-1 w-6 h-6 text-2xl">&rarr;</span>
+        <span className="mb-3 w-6 h-6 text-2xl">&rarr;</span>
         {/* <img
        src="/readers/readers-right-arrow-button.png"
        alt="right-arrow"

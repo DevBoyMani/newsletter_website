@@ -227,10 +227,38 @@ const sectionsWithContent = [
   },
 ];
 
+const socialIcons = [
+  {
+    alt: "x",
+    defaultSrc: "/blogs/blog-x.png",
+    hoverSrc: "/blogs/blog-x-hover.png",
+    source: "https://www.presidentialsummary.com/",
+  },
+  {
+    alt: "insta",
+    defaultSrc: "/blogs/blog-insta.png",
+    hoverSrc: "/blogs/blog-insta-hover.png",
+    source: "https://www.geopoliticalsummary.com/",
+  },
+  {
+    alt: "ln",
+    defaultSrc: "/blogs/blog-ln.png",
+    hoverSrc: "/blogs/blog-ln-hover.png",
+    source: "https://www.moviesuggestions.com/",
+  },
+  {
+    alt: "t",
+    defaultSrc: "/blogs/blog-t.png",
+    hoverSrc: "/blogs/blog-t-hover.png",
+    source: "https://www.dubaisummary.com/",
+  },
+];
+
 export default function BlogSlugBody() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollPercent, setScrollPercent] = useState(0);
   const sectionRefs = useRef([0]);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
 
   // useEffect(() => {
   //   const observer = new IntersectionObserver(
@@ -337,7 +365,7 @@ export default function BlogSlugBody() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Subscribed with email:", email);
-    // You can send the email to a backend or API here
+    // the email will send to a backend or API here
   };
 
   return (
@@ -356,26 +384,6 @@ export default function BlogSlugBody() {
                   Table of content
                 </p>
                 <div className="flex flex-col space-y-4">
-                  {/* {tocItems.map((item, index) => (
-                  <Link
-                    key={index}
-                    href={`#section-${index}`}
-                    scroll={false}
-                    className="text-[12px] leading-[143%]"
-                    onClick={() => handleClick(index)}
-                  >
-                    <p
-                      className={`cursor-pointer ${
-                        activeIndex === index
-                          ? "text-[#000] font-[700]"
-                          : "text-[#676A71] font-[400]"
-                      }`}
-                    >
-                      {item.title}
-                    </p>
-                  </Link>
-                ))} */}
-
                   {sectionsWithContent.map((item, index) => (
                     <Link
                       key={index}
@@ -394,6 +402,9 @@ export default function BlogSlugBody() {
                             : "text-[#676A71] font-[400]"
                         }`}
                       >
+                        {activeIndex === index && (
+                          <span className="pr-2">→</span>
+                        )}
                         {item.title}
                       </p>
                     </Link>
@@ -440,7 +451,7 @@ export default function BlogSlugBody() {
                           signed to WWE since 2001, where he is the current
                           Undisputed WWE Champion in his record 14th reign.
                         </p>
-                        <div className="pt-4">
+                        {/* <div className="pt-4">
                           <a
                             href="/"
                             className="text-[#000] text-[16px] font-[400] leading-[174%] hover:underline"
@@ -448,7 +459,7 @@ export default function BlogSlugBody() {
                             More blogs from John{" "}
                             <span className="text-[20px]">&rarr;</span>
                           </a>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   </div>
@@ -468,31 +479,26 @@ export default function BlogSlugBody() {
                   </p>
                   <div className="pt-[34px] pb-[62px]">
                     <div className="flex justify-start space-x-6">
-                      <img
-                        src="/blogs/blog-x.png"
-                        alt="x"
-                        className="w-8 h-8"
-                      />
-                      <img
-                        src="/blogs/blog-insta.png"
-                        alt="x"
-                        className="w-8 h-8"
-                      />
-                      <img
-                        src="/blogs/blog-ln.png"
-                        alt="x"
-                        className="w-8 h-8"
-                      />
-                      <img
-                        src="/blogs/blog-t.png"
-                        alt="x"
-                        className="w-8 h-8"
-                      />
+                      {socialIcons.map((icon, index) => (
+                        <Link href={icon.source} key={index}>
+                          <img
+                            src={
+                              hoveredIndex === index
+                                ? icon.hoverSrc
+                                : icon.defaultSrc
+                            }
+                            alt={icon.alt}
+                            className="w-8 h-8 cursor-pointer"
+                            onMouseEnter={() => setHoveredIndex(index)}
+                            onMouseLeave={() => setHoveredIndex(null)}
+                          />
+                        </Link>
+                      ))}
                     </div>
                   </div>
                   <div className="">
                     <div className="border border-[#01261E] rounded-[10px]">
-                      <div className="py-[17px] px-[15px]">
+                      <div className="py-[16px] px-[15px]">
                         <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
                           Sagravia Newsletter
                         </p>
@@ -544,8 +550,8 @@ export default function BlogSlugBody() {
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className=" pt-[60px] px-4">
-          <BlogSlugComponentList />
+        <div className=" pt-[30px] px-4">
+          {/* <BlogSlugComponentList /> */}
 
           {/* Center */}
           <div className="w-full flex flex-col gap-8 pt-[24px] pb-[81px]">
@@ -554,11 +560,11 @@ export default function BlogSlugBody() {
                 section.title === "What is newsletter advertising?";
               return (
                 <div key={index} id={`section-${index}`} className="">
-                  {/* Inject subscribe box above the specific section */}
+                  {/* Inject subscribe box */}
                   {isTargetSection && (
                     <div className="block lg:hidden pt-[20px] pb-[21px]">
                       <div className="border border-[#01261E] rounded-[10px]">
-                        <div className="py-3 px-3">
+                        <div className="py-[17px] px-[16px]">
                           <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
                             Sagravia Newsletter
                           </p>
@@ -570,8 +576,8 @@ export default function BlogSlugBody() {
                             onSubmit={handleSubmit}
                             className="pt-4 space-y-2"
                           >
-                            <div className="flex flex-row space-x-2">
-                              <div className="w-[60%]">
+                            <div className="space-y-2">
+                              <div className="">
                                 <input
                                   type="email"
                                   value={email}
@@ -581,7 +587,7 @@ export default function BlogSlugBody() {
                                   className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
                                 />
                               </div>
-                              <div className="w-[40%]">
+                              <div className="">
                                 <button
                                   type="submit"
                                   className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
@@ -642,7 +648,7 @@ export default function BlogSlugBody() {
                       to WWE since 2001, where he is the current Undisputed WWE
                       Champion in his record 14th reign.
                     </p>
-                    <div className="pt-4">
+                    {/* <div className="pt-4">
                       <a
                         href="/"
                         className="text-[#000] text-[16px] font-[400] leading-[174%] underline"
@@ -650,7 +656,7 @@ export default function BlogSlugBody() {
                         More blogs from John{" "}
                         <span className="text-[20px]">&rarr;</span>
                       </a>
-                    </div>
+                    </div> */}
                   </div>
                 </div>
               </div>
@@ -661,17 +667,17 @@ export default function BlogSlugBody() {
             <div className="h-auto">
               <div className="pt-10">
                 <div className="border border-[#01261E] rounded-[10px]">
-                  <div className="py-3 px-3">
+                  <div className="py-[17px] px-[16px]">
                     <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
                       Sagravia Newsletter
                     </p>
                     <p className="text-[#01261E] font-[400] text-[14px] leading-[141%]">
-                      Do you want to get tips and sfsftactics to grow
+                      Do you want to get tips and tactics to grow
                       <br /> the way you want?
                     </p>
                     <form onSubmit={handleSubmit} className="pt-4 space-y-2">
-                      <div className="flex flex-row space-x-2">
-                        <div className="w-[60%]">
+                      <div className="space-y-2">
+                        <div className="">
                           <input
                             type="email"
                             value={email}
@@ -681,7 +687,7 @@ export default function BlogSlugBody() {
                             className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
                           />
                         </div>
-                        <div className="w-[40%]">
+                        <div className="">
                           <button
                             type="submit"
                             className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
@@ -714,11 +720,19 @@ export default function BlogSlugBody() {
             <p className="text-[14px] pb-[15px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
               Share this article
             </p>
+
             <div className="flex justify-start space-x-6 pt-[29px]">
-              <img src="/blogs/blog-x.png" alt="x" className="w-8 h-8" />
-              <img src="/blogs/blog-insta.png" alt="x" className="w-8 h-8" />
-              <img src="/blogs/blog-ln.png" alt="x" className="w-8 h-8" />
-              <img src="/blogs/blog-t.png" alt="x" className="w-8 h-8" />
+              {socialIcons.map((icon, index) => (
+                <Link href={icon.source} key={index}>
+                  <img
+                    src={icon.defaultSrc}
+                    alt={icon.alt}
+                    className="w-8 h-8 cursor-pointer"
+                    onMouseEnter={() => setHoveredIndex(index)}
+                    onMouseLeave={() => setHoveredIndex(null)}
+                  />
+                </Link>
+              ))}
             </div>
           </div>
         </div>

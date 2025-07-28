@@ -82,7 +82,7 @@ export default function Footer() {
     <>
       {/* desktop view*/}
       <div className="hidden lg:block bg-[#01261E]">
-        <div className="px-4 md:px-16 mx-auto ">
+        <div className="px-4 md:px-16 mx-auto z-10">
           {/* footer */}
           <div className="relative bg-[#01261E]">
             {/* Background Logo */}

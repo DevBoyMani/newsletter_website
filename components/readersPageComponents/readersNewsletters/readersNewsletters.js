@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Check } from "lucide-react";
 import ReadersNLTest from "../../readersNLTest/readersNLTest";
 
@@ -125,6 +125,13 @@ export default function ReadersNewsletters() {
     }
   };
 
+  useEffect(() => {
+    const selectedCount = testInform.filter((el) => el.selected).length;
+    if (selectedCount > 0) {
+      setShowPopup(true);
+    }
+  }, [testInform]);
+
   return (
     <div className="bg-[#FAFAFA]">
       {/* details */}
@@ -138,7 +145,7 @@ export default function ReadersNewsletters() {
             eget sollicitudin odio. Maecenas tellus sem, fermentu.{" "}
             <a
               href="/contact"
-              className="text-[#C7A262] text-[16px] font-[500] leading-[152%]"
+              className="text-[#C7A262] text-[16px] font-[500] leading-[152%] hover:underline"
             >
               Reach out sales team →
             </a>
@@ -187,7 +194,7 @@ export default function ReadersNewsletters() {
                     }`}
                   >
                     <span
-                      className={`text-2xl mr-1.5 transition-all duration-700 ease-in-out order-1 ${
+                      className={`text-2xl mr-1.5 ease-in-out order-1 ${
                         data.selected
                           ? " translate-x-0"
                           : "group-hover/card:order-2 group-hover/card:ml-2 translate-x-[-2.5px] group-hover/card:translate-x-0"
@@ -256,6 +263,10 @@ export default function ReadersNewsletters() {
         email={email}
         setEmail={handleEmailChange}
         mHandleSubmit={handleSubmit}
+        showPopup={showPopup}
+        setShowPopup={setShowPopup}
+        testInform={testInform}
+        setTestInform={setTestInform}
       />
     </div>
   );

@@ -149,16 +149,16 @@ export default function ViewAll() {
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
             >
-              <h2 className="text-[12px] font-[400] leading-[101%] mt-2">
+              <h2 className="font-[manrope] text-[12px] font-[400] leading-[101%] mt-2">
                 {item.name}
               </h2>
 
               {/* Mobile Content */}
               <div className="block lg:hidden flex-grow min-h-[160px] max-h-[230px]">
                 <div className="mt-4">
-                  <h3 className="text-[14px] font-[700] leading-[101%]">
+                  <h5 className="text-[14px] font-[700] leading-[101%]">
                     {item.title}
-                  </h3>
+                  </h5>
                   <p className="text-[12px] text-[#FFFFFF99] font-[400] leading-[101%] py-1">
                     {item.experience}
                   </p>
@@ -195,7 +195,7 @@ export default function ViewAll() {
                         exit={{ opacity: 10, y: 10 }}
                         transition={{ duration: 0.3, ease: [0.4, 0, 0, 0] }}
                       >
-                        <h3 className="text-[17px] font-[700] leading-[101%] py-2">
+                        <h3 className="text-[16px] font-[500] leading-[101%] py-2">
                           {item.title}
                         </h3>
                         <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">

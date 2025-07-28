@@ -70,26 +70,26 @@ export default function BlogSlugBottom() {
                 {articleData.map((item, index) => (
                   <div key={index} className="">
                     <Link href="/blogs/slug">
-                      <div>
+                      <div className="relative overflow-hidden w-full rounded-[5px]">
                         <img
                           src={item.image}
                           alt={item.content}
-                          className="w-full h-[267px] object-cover rounded-[5px]"
+                          className="w-full h-auto object-cover rounded-[5px] transition duration-300 ease-in-out hover:scale-110"
                         />
                       </div>
                     </Link>
 
-                    <div className="pt-[21px] pb-[20px] flex space-x-2">
+                    <div className="pt-[21px] pb-[20px] flex items-center gap-2">
                       <img
                         src={item.profileP}
                         alt={item.profileN}
-                        className="w-6 object-cover rounded-full border-[0.5px] border-[#01261E]"
+                        className="w-[22px] h-[22px] object-cover rounded-full border border-[#01261E] shrink-0"
                       />
-                      <p className="flex items-center gap-1 text-[#000] text-[14px] font-[400] leading-[104%]">
+                      <p className="flex flex-wrap items-center gap-x-1 text-[#000] text-[0.875rem] font-[400] leading-[104%]">
                         <span>{item.profileN}</span>
-                        <span className="text-[14px]">•</span>
+                        <span className="text-[0.875rem]">•</span>
                         <span>{item.profileA}</span>
-                        <span className="text-[14px]">•</span>
+                        <span className="text-[0.875rem]">•</span>
                         <span>{item.when}</span>
                       </p>
                     </div>
@@ -113,7 +113,7 @@ export default function BlogSlugBottom() {
       <div className="block lg:hidden">
         <div className="">
           <div className="pt-[60px]">
-            <div className="bg-[#DAEBE8] px-4">
+            <div className="bg-[#DAEBE8] pl-4">
               <div className=" pt-[60px] pb-[30px]">
                 <div>
                   <p className="text-[#000] text-[22px] font-[700] leading-[130%]">

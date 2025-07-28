@@ -27,7 +27,7 @@ export default function BlogComboList() {
             }`}
           >
             <p className="ml-4">{selected}</p>
-            <ChevronDownIcon className="absolute right-2 top-2.5 h-5 w-5 text-[#FFF]" />
+            <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6 text-[#FFF]" />
           </Listbox.Button>
 
           <Listbox.Options className="absolute z-10 mt-1 w-full py-4 rounded-[10px] bg-[#0B4337] text-[16px] font-[600] leading-[104%]">

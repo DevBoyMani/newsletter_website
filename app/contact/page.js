@@ -114,7 +114,7 @@ export default function Contact() {
           {/* header */}
           <div className="">
             <div className="flex justify-center text-[44px] leading-normal  text-[#01261E] py-4">
-              Get in Touch With Us
+              <h2>Get in Touch With Us</h2>
             </div>
             <div className="flex justify-center text-[18px] font-[500] text-[#717171] leading-normal">
               Any question or remarks? Just write us a message!
@@ -123,8 +123,8 @@ export default function Contact() {
           {/* contact form */}
           <div className="py-16 md:px-20 mx-auto">
             <div
-              className="flex space-x-2 bg-[#fff] p-2 rounded-[10px]"
-              style={{ boxShadow: "0px 0px 60px 30px rgba(0, 0, 0, 0.03)" }}
+              className="flex space-x-2 bg-[#fff] p-2 rounded-[10px] "
+              style={{ boxShadow: "0 0 60px 30px rgba(0, 0, 0, 0.03)" }}
             >
               {/* left */}
               <div className="relative w-[40.5%] bg-[#01261E] rounded-[10px] px-12 py-10 overflow-hidden">
@@ -167,8 +167,8 @@ export default function Contact() {
                       className="w-6 h-6 object-cover"
                     />
                     <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">
-                      132 Dartmouth Street Boston, Massachusetts 02156 United
-                      States
+                      132 Dartmouth Street Boston,
+                      <br /> Massachusetts 02156 United States
                     </p>
                   </div>
 

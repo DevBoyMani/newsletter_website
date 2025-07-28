@@ -130,7 +130,7 @@ export default function Navbar() {
                       pathname === route.path
                         ? "text-[#C7A262]"
                         : isDarkHeader
-                        ? "text-white hover:text-[#C7A262]"
+                        ? "text-white hover:text-white"
                         : "text-black hover:text-[#000]"
                     }`}
                   >

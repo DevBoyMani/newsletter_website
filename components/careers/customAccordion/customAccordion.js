@@ -99,8 +99,12 @@ export default function CustomAccordion({ onStepChange }) {
                     <span className="text-[11px] bg-[#D6FFEC] px-3 py-1 rounded-full text-[#048B65] font-semibold">
                       Step {item.step}
                     </span>
-                    <p className="text-xl font-medium mt-2">{item.title}</p>
-                    <p className="text-gray-600 mt-1">{item.content}</p>
+                    <p className="text-[20px] font-[500] leading-[104%] mt-2">
+                      {item.title}
+                    </p>
+                    <p className="text-[#12121299] text-[15px] font-[400] leading-[104%] mt-1">
+                      {item.content}
+                    </p>
                   </div>
                   <ChevronUp className="w-6 h-6" />
                 </div>

@@ -179,7 +179,7 @@ h6 {
 }
 
 .animate-scroll-cards {
-  animation: scrollCards 20s linear infinite;
+  animation: scrollCards 10s linear infinite;
 }
 
 .group:hover .animate-scroll-cards {

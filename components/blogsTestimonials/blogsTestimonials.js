@@ -1,11 +1,19 @@
 "use client";
+
+import { useEffect } from "react";
 import { useRef, useState } from "react";
 import BlogsArticles from "../blogsArticles/blogsArticles";
 import BlogsPagination from "../blogsPagination/blogsPagination";
 import BlogComboList from "../blogComboList/blogComboList";
 
 export default function BlogsTestimonials() {
+  const [showPopup, setShowPopup] = useState(false);
   const [activeTab, setActiveTab] = useState(0);
+
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [errors, setErrors] = useState({ name: "", email: "" });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const testimonials = [
     { name: "View All" },
@@ -57,22 +65,47 @@ export default function BlogsTestimonials() {
     );
   };
 
-  //   const testimonials = [
-  //     { name: "View All", component: <ViewAll /> },
-  //     { name: "Design", component: <Design /> },
-  //     { name: "Engineering", component: <Engineering /> },
-  //     { name: "Journalism", component: <Journalism /> },
-  //     { name: "Tech", component: <Tech /> },
-  //     { name: "Leadership", component: <Leadership /> },
-  //     { name: "Marketing", component: <Marketing /> },
-  //     { name: "Others", component: <Others /> },
-  //   ];
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const newErrors = { name: "", email: "" };
+
+    if (!name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      newErrors.email = "Enter a valid email address";
+    }
+
+    setErrors(newErrors);
+
+    // If no errors, save to localStorage and show thank you message
+    if (!newErrors.name && !newErrors.email) {
+      localStorage.setItem("newsletterName", name);
+      localStorage.setItem("newsletterEmail", email);
+      setIsSubmitted(true);
+    }
+  };
+
+  useEffect(() => {
+    if (showPopup) {
+      document.body.style.overflow = "hidden"; // disable scroll
+    } else {
+      document.body.style.overflow = ""; // enable scroll
+    }
+
+    return () => {
+      document.body.style.overflow = ""; // cleanup in case the component unmounts
+    };
+  }, [showPopup]);
 
   return (
     <>
       {/* desktop */}
       <div className="hidden lg:block">
-        <div className="pb-20 pt-10 md:px-28">
+        <div className="pb-20 pt-10 md:px-28 bg-[#FAFAFA]">
           {/* tile */}
           <div className="py-4">
             <p className="text-[24px] text-[#000] font-[700] leading-[104%]">
@@ -114,13 +147,156 @@ export default function BlogsTestimonials() {
 
                 {/* Subscribe Button */}
                 <div className="flex justify-center pb-8">
-                  <a
-                    href="/"
+                  <button
+                    onClick={() => setShowPopup(true)}
                     className="text-white text-[18px] font-[500] text-center bg-[#01261E] rounded-[6px] md:w-[55%] py-2 transition-all hover:bg-[#024b3b]"
                   >
                     Subscribe for free
-                  </a>
+                  </button>
                 </div>
+                {showPopup && (
+                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                    <div className="relative bg-[#01261E] w-[90%] max-w-lg px-[35px]">
+                      <button
+                        onClick={() => setShowPopup(false)}
+                        className="absolute top-3 right-3 text-white text-3xl w-7 h-7"
+                      >
+                        &times;
+                      </button>
+                      <h2 className="text-white font-[manrope] text-[26px] font-bold text-center pt-[30px] pb-[18px]">
+                        Sagravia Weekly Newsletter
+                      </h2>
+                      {/* <form
+                        onSubmit={handleSubmit}
+                        className="bg-white rounded-[14px] pt-[38px] px-[34px] pb-[34px]"
+                      >
+                        <div className="space-y-[24px]">
+                          <div>
+                            <input
+                              type="text"
+                              placeholder="Name*"
+                              onChange={(e) => setName(e.target.value)}
+                              className="w-full pt-[17px] pb-[18px] pl-[15px] text-[14px] rounded-[10px] bg-[#F7F7F7] placeholder:text-[#757575] font-[500] leading-[130%]"
+                            />
+                            {errors.name && (
+                              <p className="text-[12px] text-red-500 mt-1 pl-1">
+                                {errors.name}
+                              </p>
+                            )}
+                          </div>
+                          <div>
+                            <input
+                              type="email"
+                              placeholder="Enter your email*"
+                              onChange={(e) => setEmail(e.target.value)}
+                              className="w-full pt-[17px] pb-[18px] pl-[15px] text-[14px] rounded-[10px] bg-[#F7F7F7] placeholder:text-[#757575] font-[500] leading-[130%]"
+                            />
+                            {errors.email && (
+                              <p className="text-[12px] text-red-500 mt-1 pl-1">
+                                {errors.email}
+                              </p>
+                            )}
+                          </div>
+                        </div>
+                        <div className="mt-[21px]">
+                          <button
+                            type="submit"
+                            className="w-full py-[12px] text-[16px] font-[500] leading-[130%] bg-[#01261E] text-white rounded-[6px] hover:bg-[#024b3b] transition-all"
+                          >
+                            Subscribe for free
+                          </button>
+                        </div>
+                      </form>
+                      <p className="text-white text-[8px] font-[500] leading-[130%] pt-[7px] pb-[26px]">
+                        By clicking “Submit” you agree with our{" "}
+                        <a
+                          href="/terms"
+                          className="text-[#C7A262] underline cursor-pointer"
+                        >
+                          terms of use
+                        </a>{" "}
+                        and{" "}
+                        <a
+                          href="/privacy"
+                          className="text-[#C7A262] underline cursor-pointer"
+                        >
+                          privacy policy
+                        </a>
+                        .
+                      </p> */}
+                      {!isSubmitted ? (
+                        <>
+                          <form
+                            onSubmit={handleSubmit}
+                            className="bg-white rounded-[14px] pt-[38px] px-[34px] pb-[34px]"
+                          >
+                            <div className="space-y-[24px]">
+                              <div>
+                                <input
+                                  type="text"
+                                  placeholder="Name*"
+                                  value={name}
+                                  onChange={(e) => setName(e.target.value)}
+                                  className="w-full pt-[17px] pb-[18px] pl-[15px] text-[14px] rounded-[10px] bg-[#F7F7F7] placeholder:text-[#757575] font-[500] leading-[130%]"
+                                />
+                                {errors.name && (
+                                  <p className="text-[12px] text-red-500 mt-1 pl-1">
+                                    {errors.name}
+                                  </p>
+                                )}
+                              </div>
+                              <div>
+                                <input
+                                  type="email"
+                                  placeholder="Enter your email*"
+                                  value={email}
+                                  onChange={(e) => setEmail(e.target.value)}
+                                  className="w-full pt-[17px] pb-[18px] pl-[15px] text-[14px] rounded-[10px] bg-[#F7F7F7] placeholder:text-[#757575] font-[500] leading-[130%]"
+                                />
+                                {errors.email && (
+                                  <p className="text-[12px] text-red-500 mt-1 pl-1">
+                                    {errors.email}
+                                  </p>
+                                )}
+                              </div>
+                            </div>
+                            <div className="mt-[21px]">
+                              <button
+                                type="submit"
+                                className="w-full py-[12px] text-[16px] font-[500] leading-[130%] bg-[#01261E] text-white rounded-[6px] hover:bg-[#024b3b] transition-all"
+                              >
+                                Subscribe for free
+                              </button>
+                            </div>
+                          </form>
+                          <p className="text-white text-[8px] font-[500] leading-[130%] pt-[7px] pb-[26px]">
+                            By clicking “Submit” you agree with our{" "}
+                            <a
+                              href="/terms"
+                              className="text-[#C7A262] underline cursor-pointer"
+                            >
+                              terms of use
+                            </a>{" "}
+                            and{" "}
+                            <a
+                              href="/privacy"
+                              className="text-[#C7A262] underline cursor-pointer"
+                            >
+                              privacy policy
+                            </a>
+                            .
+                          </p>
+                        </>
+                      ) : (
+                        <div className="flex flex-col items-center justify-center py-12">
+                          <p className="text-white text-[20px] font-[600] leading-[130%] text-center">
+                            Thank you for subscribing!
+                          </p>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -129,7 +305,7 @@ export default function BlogsTestimonials() {
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="px-4">
+        <div className="px-4 bg-[#FAFAFA]">
           {/* tile */}
           <div className="pt-10 pb-4">
             <p className="text-[18px] text-[#000] font-[700] leading-[104%]">
@@ -173,14 +349,87 @@ export default function BlogsTestimonials() {
                   </div>
 
                   {/* Subscribe Button */}
+                  {/* Subscribe Button */}
                   <div className="flex justify-center">
-                    <a
-                      href="/"
+                    <button
+                      onClick={() => {
+                        setShowPopup(true);
+                        setIsSubmitted(false);
+                        setName("");
+                        setEmail("");
+                        setErrors({ name: "", email: "" });
+                      }}
                       className="text-white text-[16px] font-medium text-center bg-[#01261E] rounded-[6px] w-full max-w-xs py-2.5 transition-all hover:bg-[#024b3b]"
                     >
                       Subscribe for free
-                    </a>
+                    </button>
                   </div>
+
+                  {showPopup && (
+                    <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 px-4">
+                      <div className="relative bg-[#01261E] w-full max-w-md rounded-[14px] overflow-hidden px-[20px] pt-[24px] pb-[30px]">
+                        {/* Close Button */}
+                        <button
+                          onClick={() => setShowPopup(false)}
+                          className="absolute top-1 right-3 text-white text-2xl"
+                        >
+                          &times;
+                        </button>
+
+                        <h2 className="text-white font-[manrope] text-[20px] font-bold text-center mb-4">
+                          Sagravia Weekly Newsletter
+                        </h2>
+
+                        {!isSubmitted ? (
+                          <form
+                            onSubmit={handleSubmit}
+                            className="bg-white rounded-[12px] p-[24px] space-y-[20px]"
+                          >
+                            <div>
+                              <input
+                                type="text"
+                                placeholder="Name*"
+                                value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                className="w-full p-3 text-[14px] rounded-[8px] bg-[#F7F7F7] placeholder:text-[#757575]"
+                              />
+                              {errors.name && (
+                                <p className="text-[12px] text-red-500 mt-1 pl-1">
+                                  {errors.name}
+                                </p>
+                              )}
+                            </div>
+                            <div>
+                              <input
+                                type="email"
+                                placeholder="Enter your email*"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                className="w-full p-3 text-[14px] rounded-[8px] bg-[#F7F7F7] placeholder:text-[#757575]"
+                              />
+                              {errors.email && (
+                                <p className="text-[12px] text-red-500 mt-1 pl-1">
+                                  {errors.email}
+                                </p>
+                              )}
+                            </div>
+                            <button
+                              type="submit"
+                              className="w-full py-3 bg-[#01261E] text-white rounded-[6px] hover:bg-[#024b3b] transition-all"
+                            >
+                              Subscribe for free
+                            </button>
+                          </form>
+                        ) : (
+                          <div className="flex items-center justify-center py-12">
+                            <p className="text-white text-[18px] font-semibold text-center">
+                              Thank you for subscribing!
+                            </p>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>

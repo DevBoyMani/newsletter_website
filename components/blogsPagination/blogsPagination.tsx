@@ -94,7 +94,7 @@ export default function BlogsPagination({ totalPages }: PaginationProps) {
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="flex justify-center items-center space-x-2 py-4">
+        <div className="flex justify-center items-center space-x-2 pt-[23px] pb-[47px]">
           <button
             onClick={() => goToPage(currentPage - 1)}
             className="text-[27px] w-[27px] pb-1 pr-4 text-black hover:opacity-70 disabled:opacity-30"

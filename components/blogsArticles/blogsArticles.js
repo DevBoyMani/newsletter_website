@@ -66,18 +66,18 @@ export default function BlogsArticles() {
   return (
     <>
       {/* desktop view */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block ">
         <div className="py-10">
-          <div>
+          <div className="">
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-16">
               {articleData.map((item, index) => (
                 <div key={index} className="">
                   <Link href="/blogs/slug">
-                    <div>
+                    <div className="relative overflow-hidden w-full rounded-[5px]">
                       <img
                         src={item.image}
                         alt={item.content}
-                        className="w-full object-cover"
+                        className="w-full object-cover transition duration-300 ease-in-out hover:scale-110"
                       />
                     </div>
                   </Link>
@@ -114,17 +114,17 @@ export default function BlogsArticles() {
       {/* mobile */}
 
       <div className="block lg:hidden">
-        <div className="py-10">
+        <div className="pt-10">
           <div>
-            <div className="grid grid-cols-1 space-y-0">
+            <div className="grid grid-cols-1 ">
               {articleData.map((item, index) => (
-                <div key={index} className="">
+                <div key={index} className="pt-6">
                   <Link href="/blogs/slug">
                     <div>
                       <img
                         src={item.image}
                         alt={item.content}
-                        className="w-full h-[319px] object-cover"
+                        className="w-full h-[319px] object-cover rounded-[5px]"
                       />
                     </div>
                   </Link>
