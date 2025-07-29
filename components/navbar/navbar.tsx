@@ -60,6 +60,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isBlogPage, pathname, isMobile]);
 
+  // border hide for blog/slug
+  const isBlogSlugPage =
+    pathname.startsWith("/blogs/") && pathname !== "/blogs";
+  const mobileNavBorder = isBlogSlugPage
+    ? "" // no border on /blogs/[slug]
+    : isDarkMobile
+    ? "border-b-[1px] border-[#FFFFFF80]"
+    : "border-b-[1px] border-[#12121280]";
+  // /
+
   // Mobile scroll logic
   useEffect(() => {
     const handleMobileScroll = () => {
@@ -85,9 +95,9 @@ export default function Navbar() {
   const mobileTextColor = isDarkMobile ? "text-black" : "text-black";
   const mobileLogoSrc = isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
   const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
-  const mobileNavBorder = isDarkMobile
-    ? "border-b-[1px] border-[#FFFFFF80]"
-    : "border-b-[1px] border-[#12121280]";
+  // const mobileNavBorder = isDarkMobile
+  //   ? "border-b-[1px] border-[#FFFFFF80]"
+  //   : "border-b-[1px] border-[#12121280]";
 
   return (
     <>
