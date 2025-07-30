@@ -247,8 +247,8 @@ const Careers = () => {
           </div>
           <div className="lg:pt-14 pt-8 border-black border-b lg:pb-0 ">
             <div className="flex justify-between">
-              <div className="lg:text-[56px] text-[30px]  text-[#01261E]  leading-normal">
-                Open Positions
+              <div className="lg:text-[56px] text-[30px]   text-[#01261E]  leading-normal">
+                <h2>Open Positions</h2>
               </div>
               <div className="">
                 <div className="hidden lg:block flex text-[#020715] text-[17px] space-x-4 mt-8">
@@ -289,8 +289,10 @@ const Careers = () => {
       <div className="hidden lg:block py-10  md:px-28 flex justify-end bg-[#FAFAFA]">
         <div className="lg:pb-20">
           <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px]   font-[400] lg:leading-[104%] leading-[84%] lg:text-right">
-            How do we work with <br />
-            your application?
+            <h2>
+              How do we work with <br />
+              your application?
+            </h2>
           </div>
         </div>
       </div>
@@ -330,7 +332,10 @@ const Careers = () => {
       <div className="lg:hidden block py-10 bg-[#FAFAFA]">
         <div className=" lg:pb-20">
           <div className="px-4 text-[#01261E] text-[30px]    font-[400] lg:leading-[104%] leading-[84%] ">
-            How do we work with your application?
+            <h2>
+              How do we work with
+              <br /> your application?
+            </h2>
           </div>
         </div>
       </div>
@@ -360,9 +365,11 @@ const Careers = () => {
           </video>
           <div className="absolute top-[10%] left-12 w-[42%] space-y-10 md:px-4">
             <div className="text-white lg:text-[56px]  leading-[94%]">
-              Your trusted
-              <br /> source for digital
-              <br /> insights
+              <h2>
+                Your trusted
+                <br /> source for digital
+                <br /> insights
+              </h2>
             </div>
             {/* <a
                     href="https://www.sagravia.com/"
@@ -400,9 +407,11 @@ const Careers = () => {
           </video>
           <div className="absolute top-[4%] left-4 space-y-10 max-w-[80%]">
             <div className="text-white text-[39px] leading-[84%] font-[400] ">
-              Your trusted
-              <br /> source for digital
-              <br /> insights
+              <h2>
+                Your trusted
+                <br /> source for digital
+                <br /> insights
+              </h2>
             </div>
             <a
               href=""
@@ -533,7 +542,7 @@ const Careers = () => {
       <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14 bg-[#FAFAFA]">
         <div className="border-b border-black">
           <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E]  ">
-            What our people have to say
+            <h2>What our people have to say</h2>
           </div>
         </div>
 

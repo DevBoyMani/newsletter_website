@@ -158,7 +158,11 @@ export default function ReadersNewsletters() {
                 key={item.id}
                 className="flex flex-col items-start text-center"
               >
-                <img src={item.img} alt={item.text} className="w-18 h-[47px]" />
+                <img
+                  src={item.img}
+                  alt={item.text}
+                  className="w-18 h-[47px] object-contain"
+                />
                 <span className="mt-2 text-[#000] text-[20px] font-[600] leading-[152%]">
                   {item.text}
                 </span>

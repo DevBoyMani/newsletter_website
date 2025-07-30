@@ -111,7 +111,7 @@ export default function ReadersFooter() {
                 {[...feedbackData, ...feedbackData].map((item, index) => (
                   <div
                     key={index}
-                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] pt-[25px] pb-[30px]  rounded-[10px] border border-[#FFFFFF33] shrink-0"
+                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px]  rounded-[10px] border border-[#FFFFFF33] shrink-0"
                   >
                     <div className="flex justify-center lg:justify-start pb-[16px]">
                       {[...Array(5)].map((_, id) => (
@@ -228,7 +228,7 @@ export default function ReadersFooter() {
                 {[...feedbackData, ...feedbackData].map((item, index) => (
                   <div
                     key={index}
-                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] pt-[25px] pb-[30px] rounded-lg border border-[#FFFFFF33] shrink-0"
+                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-lg border border-[#FFFFFF33] shrink-0"
                   >
                     <div className="flex justify-start mb-2">
                       {[...Array(5)].map((_, id) => (
@@ -273,10 +273,7 @@ export default function ReadersFooter() {
                       <li className="text-[16px] font-[600] pb-4">More</li>
 
                       <li className="py-1 ">
-                        <Link
-                          href="#"
-                          className="text-[14px] font-[400] font-[400]"
-                        >
+                        <Link href="#" className="text-[14px] font-[400] ">
                           Blog
                         </Link>
                       </li>
