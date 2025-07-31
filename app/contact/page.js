@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { BiBorderRadius } from "react-icons/bi";
 import ContactComboBox from "../../components/contactComboBox/contactComboBox";
 import ContactPhoneNumberSelection from "../../components/contactPhoneNumberSection/contactPhoneNumberSelection";
@@ -46,6 +46,8 @@ export default function Contact() {
     message: "",
   });
 
+  const [formSubmitted, setFormSubmitted] = useState(false);
+
   const handleChange = (key, value) => {
     setFormData((prev) => ({
       ...prev,
@@ -90,11 +92,6 @@ export default function Contact() {
       newErrors.preferredContact = "Please select a preferred contact method";
     }
 
-    // Optional: Check for message
-    if (!formData.message.trim()) {
-      newErrors.message = "Please enter your message";
-    }
-
     if (Object.keys(newErrors).length > 0) {
       setErrors(newErrors);
       return;
@@ -103,8 +100,25 @@ export default function Contact() {
     setErrors({});
     console.log("Submitted data:", formData);
     localStorage.setItem("contactFormData", JSON.stringify(formData));
-    alert("Form data saved locally!");
+    setFormSubmitted(true);
+
+    //  Reset
+    setFormData({
+      fullName: "",
+      email: "",
+      phone: "",
+      foundUsVia: "",
+      preferredContact: "",
+      message: "",
+    });
   };
+
+  // useEffect(() => {
+  //   if (formSubmitted) {
+  //     const timer = setTimeout(() => setFormSubmitted(false), 5000);
+  //     return () => clearTimeout(timer);
+  //   }
+  // }, [formSubmitted]);
 
   return (
     <>
@@ -340,21 +354,94 @@ export default function Contact() {
                 />
 
                 {/*  message */}
-                <div className="">
+                {/* <div className="">
                   <ContactMessage
                     value={formData.message}
                     onChange={(val) => handleChange("message", val)}
                   />
-                </div>
+                </div> */}
 
-                <div className="flex justify-end mt-4">
+                {/* <div className="flex justify-end mt-4">
                   <button
                     onClick={handleSubmit}
                     className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-full hover:bg-[#014134] transition"
                   >
                     Send message
                   </button>
-                </div>
+                </div> */}
+
+                {/* {formSubmitted && (
+                  <div className="flex items-start gap-2 mt-6 bg-[#F6FFF8] px-4 py-3 rounded-md border border-[#CDF1DA] max-w-md transition-opacity duration-500 ease-in-out opacity-100">
+                    <div className="w-6 h-6 bg-[#6FCF97] rounded-full flex items-center justify-center mt-1">
+                      <svg
+                        className="w-4 h-4 text-white"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="3"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          d="M5 13l4 4L19 7"
+                        />
+                      </svg>
+                    </div>
+                    <div className="text-[#333] text-sm font-medium leading-tight">
+                      Message sent
+                      <p className="text-[#4F4F4F] text-[14px] font-normal mt-0.5">
+                        Thanks for reaching out! We’ll get back to you in 2–3
+                        business days.
+                      </p>
+                    </div>
+                  </div>
+                )} */}
+
+                {!formSubmitted && (
+                  <>
+                    {/* Message input */}
+                    <div className="">
+                      <ContactMessage
+                        value={formData.message}
+                        onChange={(val) => handleChange("message", val)}
+                      />
+                    </div>
+
+                    {/* Submit button */}
+                    <div className="flex justify-end mt-4">
+                      <button
+                        onClick={handleSubmit}
+                        className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-full hover:bg-[#014134] transition"
+                      >
+                        Send message
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* success message - show only if submitted */}
+                {formSubmitted && (
+                  <>
+                    <div className="flex items-start gap-4 mt-[45px] rounded-md transition-opacity duration-500 ease-in-out opacity-100">
+                      <div className="w-7 h-7 rounded-full overflow-hidden">
+                        <img
+                          src="/contact/verified.png"
+                          alt="Success"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="text-[#000] text-[18px] font-[500] leading-[20px] mt-0.5">
+                        Message sent
+                      </div>
+                    </div>
+                    <div className="pt-[17px]">
+                      <p className="text-[#000] text-[14px] font-[300] leading-[20px]">
+                        Thanks for reaching out! We’ll get back to you in 2–3
+                        business days.
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -572,21 +659,50 @@ export default function Contact() {
                 />
 
                 {/*  message */}
-                <div>
-                  <ContactMessage
-                    value={formData.message}
-                    onChange={(val) => handleChange("message", val)}
-                  />
-                </div>
 
-                <div className="flex justify-center  mt-4">
-                  <button
-                    onClick={handleSubmit}
-                    className="w-full py-2.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
-                  >
-                    Send message
-                  </button>
-                </div>
+                {!formSubmitted && (
+                  <>
+                    <div>
+                      <ContactMessage
+                        value={formData.message}
+                        onChange={(val) => handleChange("message", val)}
+                      />
+                    </div>
+
+                    <div className="flex justify-center  mt-4">
+                      <button
+                        onClick={handleSubmit}
+                        className="w-full py-2.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
+                      >
+                        Send message
+                      </button>
+                    </div>
+                  </>
+                )}
+
+                {/* success message - show only if submitted */}
+                {formSubmitted && (
+                  <>
+                    <div className="flex items-start gap-4 mt-[26px] rounded-md transition-opacity duration-500 ease-in-out opacity-100">
+                      <div className="w-7 h-7 rounded-full overflow-hidden">
+                        <img
+                          src="/contact/verified.png"
+                          alt="Success"
+                          className="w-full h-full object-contain"
+                        />
+                      </div>
+                      <div className="text-[#000] text-[18px] font-[500] leading-[20px] mt-0.5">
+                        Message sent
+                      </div>
+                    </div>
+                    <div className="pt-[14px]">
+                      <p className="text-[#000] text-[14px] font-[300] leading-[20px]">
+                        Thanks for reaching out! We’ll get back to you in 2–3
+                        business days.
+                      </p>
+                    </div>
+                  </>
+                )}
               </div>
             </div>
           </div>
