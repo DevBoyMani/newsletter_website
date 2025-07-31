@@ -75,16 +75,23 @@ export default function ReadersNewsletters() {
   ];
 
   const aboutOurInfo = [
-    { id: 1, img: "/readers/newsletters.png", text: "Newsletters" },
+    {
+      id: 1,
+      img: "/readers/newsletters.png",
+      text: "Newsletters",
+      number: "6",
+    },
     {
       id: 2,
       img: "/readers/subscribers.png",
       text: "new subscribers sign up per week",
+      number: "+10K",
     },
     {
       id: 3,
       img: "/readers/openRate.png",
       text: "of subscribers open our news briefing every day.",
+      number: "20%",
     },
   ];
 
@@ -158,12 +165,15 @@ export default function ReadersNewsletters() {
                 key={item.id}
                 className="flex flex-col items-start text-center"
               >
-                <img
+                {/* <img
                   src={item.img}
                   alt={item.text}
                   className="w-18 h-[47px] object-contain"
-                />
-                <span className="mt-2 text-[#000] text-[20px] font-[600] leading-[152%]">
+                /> */}
+                <p className="text-[#000] text-[64px] font-[800] tracking-[-5.12px]">
+                  {item.number}
+                </p>
+                <span className=" text-[#000] text-[20px] font-[600] -mt-[16]">
                   {item.text}
                 </span>
               </div>

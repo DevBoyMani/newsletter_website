@@ -363,12 +363,23 @@ export default function Contact() {
 
       {/* mobile view */}
       <div className="block lg:hidden bg-[#FAFAFA]">
-        <div className="md:px-4 pt-[120px]">
+        <div className="md:px-4 pt-[128px]">
+          {/* buttons */}
+          <div>
+            <div className="flex justify-center space-x-2 pt-[28px] pb-[17px]">
+              <div>
+                <img src="/contact/b-1.jpg" alt="call" className="w-8 h-8 " />
+              </div>
+              <div>
+                <img src="/contact/b-2.jpg" alt="call" className="w-8 h-8" />
+              </div>
+            </div>
+          </div>
           {/* header */}
           <div className="w-full px-4 sm:px-0 pb-4">
             <div className="text-center">
               <div className="text-[30px] leading-normal  text-[#01261E]">
-                Get in Touch With Us
+                <h2>Get in Touch With Us</h2>
               </div>
               <div className="mt-2 text-[14px] font-[500] text-[#717171] leading-normal max-w-[60%] mx-auto">
                 Any question or remarks? Just write us a message!
@@ -483,7 +494,7 @@ export default function Contact() {
                       <input
                         type="text"
                         placeholder="Enter your full name"
-                        className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
+                        className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.fullName
                             ? "text-[#1A1A1A]"
                             : "text-[#8D8D8D]"
@@ -506,7 +517,7 @@ export default function Contact() {
                       <input
                         type="email"
                         placeholder="Enter your email"
-                        className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
+                        className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.fullName
                             ? "text-[#1A1A1A]"
                             : "text-[#8D8D8D]"
@@ -575,25 +586,6 @@ export default function Contact() {
                   >
                     Send message
                   </button>
-                </div>
-
-                <div>
-                  <div className="flex justify-start space-x-2 pt-8">
-                    <div>
-                      <img
-                        src="/contact/b-1.jpg"
-                        alt="call"
-                        className="w-8 h-8 "
-                      />
-                    </div>
-                    <div>
-                      <img
-                        src="/contact/b-2.jpg"
-                        alt="call"
-                        className="w-8 h-8"
-                      />
-                    </div>
-                  </div>
                 </div>
               </div>
             </div>

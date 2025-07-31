@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
 import {
   Listbox,
   ListboxButton,
   ListboxOption,
   ListboxOptions,
-} from '@headlessui/react';
-import { CheckIcon, ChevronDownIcon } from '@heroicons/react/20/solid';
-import clsx from 'clsx';
+} from "@headlessui/react";
+import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
+import clsx from "clsx";
 
 type Option = {
   id: number;
@@ -20,24 +20,28 @@ interface ContactComboBoxProps {
 }
 
 const options: Option[] = [
-  { id: 1, name: 'Select...' },
-  { id: 2, name: 'Google' },
-  { id: 3, name: 'Social Media' },
-  { id: 4, name: 'Friend' },
-  { id: 5, name: 'Other' },
+  { id: 1, name: "Select..." },
+  { id: 2, name: "Google" },
+  { id: 3, name: "Social Media" },
+  { id: 4, name: "Friend" },
+  { id: 5, name: "Other" },
 ];
 
-export default function ContactComboBox({ value, onChange }: ContactComboBoxProps) {
+export default function ContactComboBox({
+  value,
+  onChange,
+}: ContactComboBoxProps) {
   return (
     <div className="">
       <Listbox value={value} onChange={onChange}>
         <div className="relative">
           <ListboxButton
             className={clsx(
-              'relative w-full cursor-default bg-white text-left text-[14px] border-b border-[#8D8D8D] p-1.5 focus:outline-none focus:border-[#01261E]', value.name !== 'Select...' ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'
+              "relative w-full cursor-default bg-white text-left text-[14px] border-b border-[#8D8D8D] py-1.5 focus:outline-none focus:border-[#01261E]",
+              value.name !== "Select..." ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
             )}
           >
-            {value?.name || 'Select...'}
+            {value?.name || "Select..."}
             <ChevronDownIcon
               className="pointer-events-none absolute inset-y-0 right-2 top-2.5 h-5 w-5 text-gray-400"
               aria-hidden="true"
@@ -50,8 +54,8 @@ export default function ContactComboBox({ value, onChange }: ContactComboBoxProp
                 value={option}
                 className={({ active }) =>
                   clsx(
-                    'cursor-default select-none px-4 py-2',
-                    active ? 'bg-[#DAEBE8] text-[#01261E]' : 'text-gray-900'
+                    "cursor-default select-none px-4 py-2",
+                    active ? "bg-[#DAEBE8] text-[#01261E]" : "text-gray-900"
                   )
                 }
               >
@@ -59,8 +63,8 @@ export default function ContactComboBox({ value, onChange }: ContactComboBoxProp
                   <span className="flex items-center gap-2">
                     <CheckIcon
                       className={clsx(
-                        'h-4 w-4',
-                        selected ? 'text-[#01261E]' : 'invisible'
+                        "h-4 w-4",
+                        selected ? "text-[#01261E]" : "invisible"
                       )}
                       aria-hidden="true"
                     />

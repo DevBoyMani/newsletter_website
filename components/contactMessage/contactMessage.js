@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 export default function ContactMessage({ value, onChange }) {
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = useState("");
 
   const handleSend = () => {
     if (message.trim()) {
       onSend?.(message);
-      console.log('Message sent:', message); // Optional: for debugging
-      setMessage(''); // Clear message after sending
+      console.log("Message sent:", message); // Optional: for debugging
+      setMessage(""); // Clear message after sending
     }
   };
 
@@ -23,13 +23,12 @@ export default function ContactMessage({ value, onChange }) {
         value={value}
         onChange={(e) => onChange(e.target.value)}
         placeholder="Write your message here..."
-        className={`w-full h-10 text-[14px] rounded-none border-b border-[#8D8D8D] p-2 focus:outline-none 
+        className={`w-full h-10 text-[14px] rounded-none border-b border-[#8D8D8D] py-2 focus:outline-none 
                   focus:border-[#01261E] bg-transparent resize-none 
-                  focus:placeholder-transparent ${value ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'}`}
-      >
-
-      </textarea>
+                  focus:placeholder-transparent ${
+                    value ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
+                  }`}
+      ></textarea>
     </div>
-
   );
 }

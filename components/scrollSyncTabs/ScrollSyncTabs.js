@@ -132,7 +132,8 @@ export default function ScrollSyncTabs() {
                   className={`flex flex-col md:flex-row md:pt-4 ${
                     idx !== 3 ? "md:py-16" : ""
                   }`}
-                  style={{ borderTop: "1px solid #707170" }}
+                  // style={{ borderTop: "1px solid #707170" }}
+                  style={idx !== 0 ? { borderTop: "1px solid #707170" } : {}}
                 >
                   <div className="md:w-[50%] pr-6">
                     <p className="text-[32px] font-[500] leading-normal text-[#121212] mb-4">

@@ -88,16 +88,13 @@ export default function Navbar() {
 
   if (pathname.includes("/analytics") && !isMobile) return null;
 
-  // Background class
-  // const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-white";
   const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-[#FAFAFA]";
   const mobileHeaderBg = isDarkMobile ? "bg-[#01261E]" : "bg-[#FAFAFA]";
   const mobileTextColor = isDarkMobile ? "text-black" : "text-black";
   const mobileLogoSrc = isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
   const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
-  // const mobileNavBorder = isDarkMobile
-  //   ? "border-b-[1px] border-[#FFFFFF80]"
-  //   : "border-b-[1px] border-[#12121280]";
+
+  const isContactPage = pathname === "/contact";
 
   return (
     <>
@@ -166,7 +163,7 @@ export default function Navbar() {
 
               <Link
                 href="/contact"
-                className={`relative inline-block ml-20 mt-2 px-6 py-2 bg-[#C7A262] text-white lg:text-[16px] font-[600] leading-normal rounded-full overflow-hidden group`}
+                className={`relative inline-block ml-20 mt-2 px-6 py-2 bg-[#C7A262] text-white lg:text-[16px] font-[300] leading-normal rounded-full overflow-hidden group`}
               >
                 {/* Hover animation effect only — same color as base */}
                 <span className="absolute inset-0 bg-[#000] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center z-0"></span>
@@ -183,7 +180,9 @@ export default function Navbar() {
 
       {/* === Mobile Header === */}
       <header
-        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[97px] ${mobileHeaderBg}`}
+        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[97px] ${mobileHeaderBg} ${
+          isContactPage ? "mt-[32px] lg:mt-0" : ""
+        }`}
       >
         {/* Border line with side cut via margin */}
         <div className={`${mobileNavBorder} mx-4`}>

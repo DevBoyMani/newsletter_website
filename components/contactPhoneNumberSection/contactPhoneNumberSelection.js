@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { Listbox } from '@headlessui/react';
-import { useState, useEffect } from 'react';
-import countries from '../../data/countries/countries';
+import { Listbox } from "@headlessui/react";
+import { useState, useEffect } from "react";
+import countries from "../../data/countries/countries";
 
 export default function ContactPhoneNumberSelection({ value, onChange }) {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
@@ -10,8 +10,8 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
   useEffect(() => {
     const detectCountry = async () => {
       try {
-        const res = await fetch('https://geolocation-db.com/json/');
-        if (!res.ok) throw new Error('Request failed');
+        const res = await fetch("https://geolocation-db.com/json/");
+        if (!res.ok) throw new Error("Request failed");
         const data = await res.json();
         const countryCode = data.country_code; // e.g., "IN", "US"
         const match = countries.find((c) => c.code === countryCode);
@@ -19,12 +19,12 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
           setSelectedCountry(match);
         } else {
           // fallback if country not found
-          const fallback = countries.find((c) => c.code === 'US');
+          const fallback = countries.find((c) => c.code === "US");
           if (fallback) setSelectedCountry(fallback);
         }
       } catch (error) {
-        console.error('Failed to detect country:', error);
-        const fallback = countries.find((c) => c.code === 'US');
+        console.error("Failed to detect country:", error);
+        const fallback = countries.find((c) => c.code === "US");
         if (fallback) setSelectedCountry(fallback);
       }
     };
@@ -41,7 +41,7 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
       <div className="flex items-center">
         <Listbox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative">
-            <Listbox.Button className="shrink-0 z-10 inline-flex items-center py-1.5 px-2  text-[#8D8D8D] text-[14px] border-b border-[#8D8D8D] focus:outline-none focus:border-[#01261E]">
+            <Listbox.Button className="shrink-0 z-10 inline-flex items-center py-1.5   text-[#8D8D8D] text-[14px] border-b border-[#8D8D8D] focus:outline-none focus:border-[#01261E]">
               {selectedCountry.flag}
               <span className="ml-1">{selectedCountry.dial_code}</span>
               <svg
@@ -66,7 +66,7 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
                   value={country}
                   className={({ active }) =>
                     `cursor-pointer select-none px-4 py-2 ${
-                      active ? 'bg-gray-100' : 'text-gray-700'
+                      active ? "bg-gray-100" : "text-gray-700"
                     }`
                   }
                 >
@@ -85,7 +85,9 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
           placeholder="Enter your number"
           value={value}
           onChange={handlePhoneChange}
-          className={`border-b text-[14px] border-[#8D8D8D] rounded-none focus:outline-none focus:border-[#01261E] block w-[100%] px-4 py-1.5 focus:placeholder-transparent group focus-within:text-[#01261E] ${value ? 'text-[#1A1A1A]' : 'text-[#8D8D8D]'}`}
+          className={`border-b text-[14px] border-[#8D8D8D] rounded-none focus:outline-none focus:border-[#01261E] block w-[100%] px-4 py-1.5 focus:placeholder-transparent group focus-within:text-[#01261E] ${
+            value ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
+          }`}
         />
       </div>
     </div>
