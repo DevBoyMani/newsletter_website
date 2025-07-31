@@ -37,13 +37,13 @@ export default function AdvertiseAdBlocker() {
       id: 1,
       content:
         "Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t. Reach our audience directly, no filters, no ad blockers.",
-      image: "/advertise/without-ad-blocker-mob.png",
+      image: "/advertise/without-ad-blocker-new-mobile.png",
     },
     {
       id: 2,
       content:
         "Advertisers lose almost 30% of their money to ad blockers. Not with our ads. Advertisers lose almost 30% of their money to ad blockers.",
-      image: "/advertise/with-ad-blocker-mob.png",
+      image: "/advertise/with-ad-blocker-new-mobile.png",
     },
   ];
 

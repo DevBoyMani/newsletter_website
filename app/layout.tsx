@@ -20,10 +20,32 @@ export default function RootLayout({
   const shouldHideFooter =
     pathname.startsWith("/analytics") || pathname === "/readers" || "";
   const isContactPage = pathname === "/contact";
+  const isCareersSlugPage = pathname.startsWith("/careers/");
   return (
     <html lang="en" className={manrope.variable}>
       <body>
-        {/* Show mobile-only banner on /contact page above Navbar */}
+        {/* mobile-only banner on /careers page above Navbar */}
+        {isCareersSlugPage && (
+          <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
+            <div className="bg-[#E5C8CD] w-full px-4 py-[8px] flex items-center justify-center">
+              <span className="text-[#000000] text-[12px] font-[600] leading-normal">
+                The assignment is mandatory.
+              </span>
+              <a
+                href="/schedule-call"
+                className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal"
+              >
+                <span> Go to assignment</span>
+                <img
+                  src="/careers/down.png"
+                  alt="arrow"
+                  className="w-[11px] h-[11px] ml-[15px]"
+                />
+              </a>
+            </div>
+          </div>
+        )}
+        {/* mobile-only banner on /contact page above Navbar */}
         {isContactPage && (
           <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
             <div className="bg-[#01261E] w-full px-4 py-[8px] flex items-center justify-center">

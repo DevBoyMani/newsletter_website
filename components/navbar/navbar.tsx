@@ -95,6 +95,7 @@ export default function Navbar() {
   const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
 
   const isContactPage = pathname === "/contact";
+  const isCareersSlugPage = pathname.startsWith("/careers/");
 
   return (
     <>
@@ -181,7 +182,7 @@ export default function Navbar() {
       {/* === Mobile Header === */}
       <header
         className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[97px] ${mobileHeaderBg} ${
-          isContactPage ? "mt-[32px] lg:mt-0" : ""
+          isContactPage || isCareersSlugPage ? "mt-[32px] lg:mt-0" : ""
         }`}
       >
         {/* Border line with side cut via margin */}
