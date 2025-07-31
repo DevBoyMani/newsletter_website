@@ -277,7 +277,7 @@ export default function Contact() {
                       <input
                         type="text"
                         placeholder="Enter your full name"
-                        className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
+                        className={`w-full text-[14px] border-b border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.fullName
                             ? "text-[#1A1A1A]"
                             : "text-[#8D8D8D]"
@@ -300,7 +300,7 @@ export default function Contact() {
                       <input
                         type="email"
                         placeholder="Enter your email"
-                        className={`w-full text-[14px] border-b border-[#8D8D8D] p-2 focus:outline-none focus:border-b-1 focus:border-[#01261E] focus:placeholder-transparent ${
+                        className={`w-full text-[14px] border-b border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.email ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
                         }`}
                         value={formData.email}
