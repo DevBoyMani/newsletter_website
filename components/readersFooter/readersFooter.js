@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FaStar } from "react-icons/fa";
 import { ReadersSubscribe } from "../readersSubscribe/readersSubscribe";
 import Image from "next/image";
+import { useRef, useState, useEffect } from "react";
 
 const feedbackData = [
   {
@@ -77,6 +78,34 @@ const socialMediaIcons = [
 ];
 
 export default function ReadersFooter() {
+  const scrollRef = useRef(null);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const startX = useRef(0);
+  const scrollLeft = useRef(0);
+
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    startX.current = e.pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5; // scroll speed
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
   return (
     <>
       {/* review section */}
@@ -106,7 +135,7 @@ export default function ReadersFooter() {
             />
 
             {/* Auto-Scrolling Flex Container */}
-            <div className="overflow-hidden">
+            {/* <div className="overflow-hidden">
               <div className="flex gap-6 px-8 animate-scroll-cards">
                 {[...feedbackData, ...feedbackData].map((item, index) => (
                   <div
@@ -128,6 +157,53 @@ export default function ReadersFooter() {
 
                     <div className="text-[#ffffff]">
                       <p className="text-[16px] max-w-[279px] pb-[28px]">
+                        {item.feedback}
+                      </p>
+                      <p className="text-[16px]">{item.userName}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
+            <div
+              className="overflow-hidden"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={handleMouseLeave}
+            >
+              <div
+                ref={scrollRef}
+                className={`flex gap-6 px-8 whitespace-nowrap cursor-grab ${
+                  isHovered ? "pause-animation" : "animate-scroll-cards"
+                }`}
+                style={{
+                  animationPlayState: isHovered ? "paused" : "running",
+                  overflowX: "auto",
+                  scrollbarWidth: "none",
+                  msOverflowStyle: "none",
+                }}
+                onMouseDown={handleMouseDown}
+                onMouseUp={handleMouseUp}
+                onMouseMove={handleMouseMove}
+                onMouseLeave={handleMouseLeave}
+              >
+                {[...feedbackData, ...feedbackData].map((item, index) => (
+                  <div
+                    key={index}
+                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-[10px] border border-[#FFFFFF33] shrink-0 select-none"
+                  >
+                    <div className="flex justify-center lg:justify-start pb-[16px]">
+                      {[...Array(5)].map((_, id) => (
+                        <Image
+                          key={id}
+                          src="/readers/reader-star.png"
+                          alt="star"
+                          width={18}
+                          height={18}
+                        />
+                      ))}
+                    </div>
+                    <div className="text-[#ffffff]">
+                      <p className="text-[16px] max-w-full  whitespace-normal pb-[28px]">
                         {item.feedback}
                       </p>
                       <p className="text-[16px]">{item.userName}</p>
