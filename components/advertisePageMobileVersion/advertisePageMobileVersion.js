@@ -162,7 +162,7 @@ export default function AdvertisePageMobileVersion() {
       </div>
 
       {/* Ad Preview */}
-      <div className="bg-[#FAFAFA] py-10">
+      <div className="bg-[#FAFAFA] pt-10">
         <div className="px-4 py-10">
           <HeadingWithUnderline text="How your ad will look like" />
         </div>
@@ -175,18 +175,19 @@ export default function AdvertisePageMobileVersion() {
           </video>
         </div>
 
-        <div className="flex flex-col items-center justify-center text-center pt-8 pb-4">
+        <div className="flex flex-col items-center justify-center text-center py-[60px]">
           <h2 className="text-[34px]  font-[400] leading-normal">
             And that’s not all
           </h2>
-          <p className="text-[12px] leading-[125%] font-[400] mt-4 max-w-[60%]">
-            Get a personalized demo and discover how Sagravia can help your
-            business
+          <p className="text-[#121212] text-[16px] leading-[125%] font-[400] tracking-[0.8px] py-[30px] text-center">
+            Get a personalized demo and
+            <br /> discover how Sagravia can help
+            <br /> your business
           </p>
 
           <a
             href="#"
-            className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]"
+            className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group bg-[#01261E] text-[#ffffff] font-[800]"
           >
             <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
               SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK

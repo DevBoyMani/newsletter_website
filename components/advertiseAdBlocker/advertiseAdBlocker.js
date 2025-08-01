@@ -61,61 +61,6 @@ export default function AdvertiseAdBlocker() {
   return (
     <>
       {/* desktop view */}
-      {/* <div className="hidden lg:block bg-[#01261E] px-12 pb-24 pt-20">
-        <div>
-          <p className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
-            What we offer, our benefits, simple to learn
-          </p>
-          <h2 className="flex justify-center py-2 text-center w-[60%] mx-auto text-[56px] text-[#fff] font-[400] leading-[1.2] ">
-            Maximize potential and Drive Business Success
-          </h2>
-        </div>
-
-        <div>
-          <p
-            className="text-[#FFFFFFB2] py-4 text-center mx-auto text-[18px] w-[40%] font-[500] leading-[150%] tracking-[0.36px]"
-            dangerouslySetInnerHTML={{ __html: item.content }}
-          />
-        </div>
-
-        <div className="py-4">
-          <div className="flex justify-center space-x-2">
-            <button
-              className={`px-4 py-2 text-[14px] font-[600] leading-normal rounded-[57px] ${
-                currentIndex === 0
-                  ? "bg-[#DAEBE8] text-[#121212]"
-                  : "border border-[#DAEBE8] text-[#DAEBE8]"
-              }`}
-              onClick={() => setCurrentIndex(0)}
-            >
-              Without Ad Blocker
-            </button>
-
-            <button
-              className={`px-4 py-2 text-[14px] font-[600] leading-normal rounded-[57px] ${
-                currentIndex === 1
-                  ? "bg-[#DAEBE8] text-[#121212]"
-                  : "border border-[#DAEBE8] text-[#DAEBE8]"
-              }`}
-              onClick={() => setCurrentIndex(1)}
-            >
-              With Ad Blocker
-            </button>
-          </div>
-        </div>
-
-        <div className="relative pt-8 pb-16 ">
-          <div className="mx-auto max-w-[80%]">
-            <img
-              src={item.image}
-              alt="Adblocker illustration"
-              className="w-full h-[654px] object-cover border-[0.5px] border-[#000000FC] rounded-[15px]"
-            />
-
-            <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-[#01261E] to-transparent z-10 pointer-events-none" />
-          </div>
-        </div>
-      </div> */}
       <div className="hidden lg:block bg-[#01261E] px-12 pb-24 pt-20">
         <div>
           <p className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
@@ -239,7 +184,7 @@ export default function AdvertiseAdBlocker() {
           </div>
         </div>
       </div> */}
-      <div className="block lg:hidden relative bg-[#01261E] py-10 px-4 overflow-hidden">
+      <div className="block lg:hidden relative bg-[#01261E] pt-10 px-0 overflow-hidden">
         <div>
           <h6 className="flex justify-center font-[manrope] pt-4 text-[12px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
             What we offer, our benefits, simple to learn
@@ -282,7 +227,7 @@ export default function AdvertiseAdBlocker() {
           </div>
         </div>
 
-        <div className="relative pt-8 pb-14">
+        <div className="relative pt-0 pb-0">
           <div className="relative w-full">
             {/* <AnimatePresence custom={directionMob} mode="wait">
               <motion.img
