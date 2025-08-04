@@ -6,16 +6,16 @@ import AboutOurStandards from "../../components/aboutOurStandards/aboutOurStanda
 import AboutWhantToJoinOurTeam from "../../components/aboutWhantToJoinOurTeam/aboutWhantToJoinOurTeam";
 
 export default function About() {
-    return (
-        <>
-            <div className="bg-[#FAFAFA]">
-                <AboutHero/>
-                <AboutNewslettersStatistics/>
-                <AboutOurCompany/>
-                <AboutOurMission/>
-                <AboutOurStandards/>
-                <AboutWhantToJoinOurTeam/>
-            </div>
-        </>
-    );
+  return (
+    <>
+      <div className="bg-[#FAFAFA]">
+        <AboutHero />
+        <AboutNewslettersStatistics />
+        <AboutOurCompany />
+        <AboutOurMission />
+        <AboutOurStandards />
+        <AboutWhantToJoinOurTeam />
+      </div>
+    </>
+  );
 }
