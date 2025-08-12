@@ -61,9 +61,10 @@ export default function Navbar() {
   }, [isBlogPage, pathname, isMobile]);
 
   // border hide for blog/slug
-  const isBlogSlugPage =
-    pathname.startsWith("/blogs/") && pathname !== "/blogs";
-  const mobileNavBorder = isBlogSlugPage
+  const noBorderOn =
+    (pathname.startsWith("/blogs/") && pathname !== "/blogs") ||
+    pathname.startsWith("/policy");
+  const mobileNavBorder = noBorderOn
     ? "" // no border on /blogs/[slug]
     : isDarkMobile
     ? "border-b-[1px] border-[#FFFFFF80]"

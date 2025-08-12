@@ -228,9 +228,39 @@ const sectionsWithContent = [
 ];
 
 export default function PolicyMobileVersion() {
+  // mobile version of the page scrolling indigator
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+      const docHeight = document.body.scrollHeight - window.innerHeight;
+      const scrollPercent = (scrollTop / docHeight) * 100;
+
+      const progressBar = document.getElementById("scroll-progress-bar");
+      if (progressBar) {
+        progressBar.style.width = `${scrollPercent}%`;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  // /
   return (
     <>
-      <div className="px-4">
+      <div className="px-4 bg-[#FAFAFA]">
+        {/* Scroll Progress Bar */}
+        <div className=" fixed top-[93px] left-0 w-full z-50 px-0">
+          <div className="h-[4px] w-full ">
+            <div
+              id="scroll-progress-bar"
+              className="h-full bg-[#C7A262]"
+              style={{ width: "0%" }}
+            ></div>
+          </div>
+        </div>
+
         {/* hero */}
         <div className="pt-[125px]">
           <h2 className="text-[30px] font-[400] leading-[104%] text-[#01261E] ">
