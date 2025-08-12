@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import BlogSlugComponentList from "../blogSlugComponentList/blogSlugComponentList";
+import PolicyMobileVersion from "../policyMobileVersion/policyMobileVersion";
 
 // Step 1: Define sections with title and unique content
 const sectionsWithContent = [
@@ -250,32 +251,32 @@ const sectionsWithContent = [
   },
 ];
 
-const socialIcons = [
-  {
-    alt: "x",
-    defaultSrc: "/blogs/blog-x.png",
-    hoverSrc: "/blogs/blog-x-hover.png",
-    source: "https://www.presidentialsummary.com/",
-  },
-  {
-    alt: "insta",
-    defaultSrc: "/blogs/blog-insta.png",
-    hoverSrc: "/blogs/blog-insta-hover.png",
-    source: "https://www.geopoliticalsummary.com/",
-  },
-  {
-    alt: "ln",
-    defaultSrc: "/blogs/blog-ln.png",
-    hoverSrc: "/blogs/blog-ln-hover.png",
-    source: "https://www.moviesuggestions.com/",
-  },
-  {
-    alt: "t",
-    defaultSrc: "/blogs/blog-t.png",
-    hoverSrc: "/blogs/blog-t-hover.png",
-    source: "https://www.dubaisummary.com/",
-  },
-];
+// const socialIcons = [
+//   {
+//     alt: "x",
+//     defaultSrc: "/blogs/blog-x.png",
+//     hoverSrc: "/blogs/blog-x-hover.png",
+//     source: "https://www.presidentialsummary.com/",
+//   },
+//   {
+//     alt: "insta",
+//     defaultSrc: "/blogs/blog-insta.png",
+//     hoverSrc: "/blogs/blog-insta-hover.png",
+//     source: "https://www.geopoliticalsummary.com/",
+//   },
+//   {
+//     alt: "ln",
+//     defaultSrc: "/blogs/blog-ln.png",
+//     hoverSrc: "/blogs/blog-ln-hover.png",
+//     source: "https://www.moviesuggestions.com/",
+//   },
+//   {
+//     alt: "t",
+//     defaultSrc: "/blogs/blog-t.png",
+//     hoverSrc: "/blogs/blog-t-hover.png",
+//     source: "https://www.dubaisummary.com/",
+//   },
+// ];
 
 export default function PolicyBody() {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -405,9 +406,9 @@ export default function PolicyBody() {
                   ref={(el) => (sectionRefs.current[index] = el)}
                   className="scroll-mt-28"
                 >
-                  <p className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[35]">
+                  <div className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[35]">
                     {section.topContent}
-                  </p>
+                  </div>
                   <p className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
                     {section.title}
                   </p>
@@ -461,195 +462,9 @@ export default function PolicyBody() {
       </div>
 
       {/* mobile */}
-      {/* <div className="block lg:hidden">
-        <div className=" pt-[30px] px-4">
-          
-          <div className=" fixed top-[93px] left-0 w-full z-50 px-0">
-            <div className="h-[4px] w-full ">
-              <div
-                id="scroll-progress-bar"
-                className="h-full bg-[#C7A262]"
-                style={{ width: "0%" }}
-              ></div>
-            </div>
-          </div>
-
-
-          <div className="w-full flex flex-col gap-8 pt-[24px] pb-[81px]">
-            {sectionsWithContent.map((section, index) => {
-              const isTargetSection =
-                section.title === "What is newsletter advertising?";
-              return (
-                <div key={index} id={`section-${index}`} className="">
-                  
-                  {isTargetSection && (
-                    <div className="block lg:hidden pt-[20px] pb-[21px]">
-                      <div className="border border-[#01261E] rounded-[10px]">
-                        <div className="py-[17px] px-[16px]">
-                          <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
-                            Sagravia Newsletter
-                          </p>
-                          <p className="text-[#01261E] font-[400] text-[14px] leading-[141%]">
-                            Do you want to get tips and tactics to grow
-                            <br /> the way you want?
-                          </p>
-                          <form
-                            onSubmit={handleSubmit}
-                            className="pt-4 space-y-2"
-                          >
-                            <div className="space-y-2">
-                              <div className="">
-                                <input
-                                  type="email"
-                                  value={email}
-                                  onChange={(e) => setEmail(e.target.value)}
-                                  placeholder="Email"
-                                  required
-                                  className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
-                                />
-                              </div>
-                              <div className="">
-                                <button
-                                  type="submit"
-                                  className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
-                                >
-                                  Subscribe
-                                </button>
-                              </div>
-                            </div>
-                          </form>
-                          <div className="pt-2">
-                            <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
-                              Unsubscribe at any time.{" "}
-                              <span className="underline underline-[#767676]">
-                                Terms
-                              </span>{" "}
-                              &{" "}
-                              <span className="underline underline-[#767676]">
-                                Privacy
-                              </span>
-                              .
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-          
-                  <p className="text-[#000] text-[22px] font-[500] leading-[120%] py-2">
-                    {section.title}
-                  </p>
-                  <div>
-                    <p>{section.content}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="">
-            <div className="pt-[20px]">
-              <div className="p-[15px] bg-[#C7A26233] rounded-[7px] ">
-                <div className="pb-[12px] flex space-x-2">
-                  <img
-                    src="/blogs/p-1.png"
-                    alt="profile-1"
-                    className="w-10 h-10 object-cover border-[0.5px] border-[#01261E] rounded-full"
-                  />
-                  <p className="flex items-center gap-2 text-[#000] text-[16px] font-[400] leading-[104%]">
-                    <span>John Cena</span>
-                  </p>
-                </div>
-                <div className="flex ">
-                  <div className="">
-                    <p className="text-[#000] text-[14px] font-[400] leading-[174%]">
-                      John Felix Anthony Cena is an American actor and
-                      professional wrestler. As a wrestler, he has been signed
-                      to WWE since 2001, where he is the current Undisputed WWE
-                      Champion in his record 14th reign.
-                    </p>
-                    
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="">
-            <div className="h-auto">
-              <div className="pt-10">
-                <div className="border border-[#01261E] rounded-[10px]">
-                  <div className="py-[17px] px-[16px]">
-                    <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
-                      Sagravia Newsletter
-                    </p>
-                    <p className="text-[#01261E] font-[400] text-[14px] leading-[141%]">
-                      Do you want to get tips and tactics to grow
-                      <br /> the way you want?
-                    </p>
-                    <form onSubmit={handleSubmit} className="pt-4 space-y-2">
-                      <div className="space-y-2">
-                        <div className="">
-                          <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Email"
-                            required
-                            className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
-                          />
-                        </div>
-                        <div className="">
-                          <button
-                            type="submit"
-                            className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
-                          >
-                            Subscribe
-                          </button>
-                        </div>
-                      </div>
-                    </form>
-                    <div className="pt-2">
-                      <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
-                        Unsubscribe at any time.{" "}
-                        <span className="underline underline-[#767676]">
-                          Terms
-                        </span>{" "}
-                        &{" "}
-                        <span className="underline underline-[#767676]">
-                          Privacy
-                        </span>
-                        .
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="pt-[60px]">
-            <p className="text-[14px] pb-[15px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
-              Share this article
-            </p>
-
-            <div className="flex justify-start space-x-6 pt-[29px]">
-              {socialIcons.map((icon, index) => (
-                <Link href={icon.source} key={index}>
-                  <img
-                    src={icon.defaultSrc}
-                    alt={icon.alt}
-                    className="w-8 h-8 cursor-pointer"
-                    onMouseEnter={() => setHoveredIndex(index)}
-                    onMouseLeave={() => setHoveredIndex(null)}
-                  />
-                </Link>
-              ))}
-            </div>
-          </div>
-        </div>
-      </div> */}
+      <div className="block lg:hidden">
+        <PolicyMobileVersion />
+      </div>
     </>
   );
 }
