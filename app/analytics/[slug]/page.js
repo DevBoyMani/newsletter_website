@@ -7,10 +7,10 @@ import AnalyticsComboList from "../../../components/analyticsComboList/analytics
 // Page components
 import PresidentialSummaryAnalytics from "../../../components/analyticsPages/analyticsPSComponent/analyticsPSComponent";
 import GeopoliticalSummaryAnalytics from "../../../components/analyticsPages/analyticsGSComponent/analyticsGSComponent";
-// import EconomyAnalytics from "@/components/analyticsPages/EconomyAnalytics";
-// import DefenseAnalytics from "@/components/analyticsPages/DefenseAnalytics";
-// import EnergyAnalytics from "@/components/analyticsPages/EnergyAnalytics";
-// import TechnologyAnalytics from "@/components/analyticsPages/TechnologyAnalytics";
+import BusinessHistoryAnalytics from "../../../components/analyticsPages/analyticsBHComponent/analyticsBHComponent";
+import LongAndShortAnalytics from "../../../components/analyticsPages/analyticsLScomponent/analyticsLSComponent";
+import MovieSuggestionsAnalytics from "../../../components/analyticsPages/analyticsMSComponent/analyticsMSComponent";
+import DubaiSummaryAnalytics from "../../../components/analyticsPages/analyticsDSComponent/analyticsDSComponent";
 
 export default function AnalyticsPage() {
   const { slug } = useParams();
@@ -22,24 +22,19 @@ export default function AnalyticsPage() {
     router.push(`/analytics/${newTopic}`);
   };
 
-  const renderPage = () => {
-    switch (selectedTopic) {
-      case "presidential-summary":
-        return <PresidentialSummaryAnalytics />;
-      case "geopolitical-summary":
-        return <GeopoliticalSummaryAnalytics />;
-      case "economy-summary":
-        return <EconomyAnalytics />;
-      case "defense-summary":
-        return <DefenseAnalytics />;
-      case "energy-summary":
-        return <EnergyAnalytics />;
-      case "technology-summary":
-        return <TechnologyAnalytics />;
-      default:
-        return "Still in progress guys!";
-    }
+  // slugs → components
+  const componentMap = {
+    "presidential-summary": <PresidentialSummaryAnalytics />,
+    "geopolitical-summary": <GeopoliticalSummaryAnalytics />,
+    "business-history": <BusinessHistoryAnalytics />,
+    "long-and-short": <LongAndShortAnalytics />,
+    "movie-suggestions": <MovieSuggestionsAnalytics />,
+    "dubai-summary": <DubaiSummaryAnalytics />,
   };
+
+  const CurrentComponent = componentMap[selectedTopic] || (
+    <p className="text-gray-500">Still in progress guys!</p>
+  );
 
   return (
     <div className="hidden lg:block bg-[#FAFAFA] pb-[60px]">
@@ -71,7 +66,7 @@ export default function AnalyticsPage() {
         </div>
 
         {/* topic analytics */}
-        {renderPage()}
+        {CurrentComponent}
       </div>
     </div>
   );
