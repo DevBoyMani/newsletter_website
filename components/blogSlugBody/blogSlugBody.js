@@ -488,7 +488,7 @@ export default function BlogSlugBody() {
             </div>
 
             {/* right */}
-            <div className="md:w-[18%] w-full sticky top-24 self-start pt-6">
+            <div className="md:w-[22%] w-full sticky top-24 self-start pt-6">
               <div
                 className="scroll-mt-28"
                 // ref={(el) => (sectionRefs.current[0] = el)}
