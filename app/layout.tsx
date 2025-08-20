@@ -17,14 +17,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const shouldHideFooter =
-    pathname.startsWith("/analytics") || pathname === "/readers" || "";
+  const shouldHideFooter = pathname === "/readers" || "";
   const isContactPage = pathname === "/contact";
   const isCareersSlugPage = pathname.startsWith("/careers/");
   return (
     <html lang="en" className={manrope.variable}>
       <body>
-        {/* mobile-only banner on /careers page above Navbar */}
         {isCareersSlugPage && (
           <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
             <div className="bg-[#E5C8CD] w-full px-4 py-[8px] flex items-center justify-center">
@@ -45,7 +43,7 @@ export default function RootLayout({
             </div>
           </div>
         )}
-        {/* mobile-only banner on /contact page above Navbar */}
+
         {isContactPage && (
           <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
             <div className="bg-[#01261E] w-full px-4 py-[8px] flex items-center justify-center">
