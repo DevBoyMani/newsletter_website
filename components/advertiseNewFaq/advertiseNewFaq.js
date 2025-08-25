@@ -42,9 +42,9 @@ export default function AdvertiseNewFaq() {
     <div className="bg-[#FAFAFA] md:px-28 pb-[147px] pt-[73px] hidden lg:block">
       {/* Top section */}
       <div className="flex justify-between">
-        <div className="text-[#01261E] w-[40%] text-[56px]  font-[400] leading-[111%]">
+        <h2 className="text-[#01261E] w-[40%] text-[56px]  font-[400] leading-[111%] ">
           Frequently Asked Questions
-        </div>
+        </h2>
         <div className="mt-16 w-[27%]">
           Find answers to common questions about our services, project process,
           and <br />

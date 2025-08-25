@@ -201,7 +201,7 @@ export default function AdvertiseAdBlocker() {
           </p>
         </div>
 
-        <div className="py-4">
+        <div className="pt-4 pb-[30px]">
           <div className="flex justify-center space-x-2">
             <button
               className={`px-4 py-2 text-[12px] font-[600] leading-normal rounded-[57px] ${
@@ -253,7 +253,7 @@ export default function AdvertiseAdBlocker() {
                 <img
                   src={itemMob.image}
                   alt="Adblocker illustration"
-                  className="w-full h-auto rounded-[5px] z-10"
+                  className="w-full h-auto z-10"
                 />
               </motion.div>
             </AnimatePresence>

@@ -250,7 +250,11 @@ export default function ReadersFooter() {
                     <ul className="space-y-2 mr-7">
                       <li>Blog</li>
                       <li>Careers</li>
-                      <li>Privacy Policy</li>
+                      <li>
+                        <Link target="_blank" href="/policy">
+                          Privacy Policy
+                        </Link>
+                      </li>
                       <li>Legal</li>
                     </ul>
                     <ul className="space-y-2 ">
@@ -359,7 +363,7 @@ export default function ReadersFooter() {
                         </Link>
                       </li>
                       <li className="py-1 text-[14px] font-[400]">
-                        <Link href="#" className="">
+                        <Link target="_blank" href="/policy">
                           Privacy Policy
                         </Link>
                       </li>

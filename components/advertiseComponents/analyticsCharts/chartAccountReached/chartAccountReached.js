@@ -51,7 +51,7 @@ export function AccountReached() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-[#36454F] flex flex-col justify-between p-8"
+            className="absolute w-full h-full bg-White flex flex-col justify-between p-8"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -65,9 +65,9 @@ export function AccountReached() {
               />
             </button>
             <CardHeader className="p-0">
-              <div className="border-b border-[#e3e1e1] pb-2">
-                <div className="text-[18px] text-[#e3e1e1]">Statistics</div>
-                <CardDescription className="text-[22px] text-[#e8e8ed] font-bold">
+              <div className="border-b border-[#515151] pb-2">
+                <div className="text-[18px] text-[#9291A5]">Statistics</div>
+                <CardDescription className="text-[22px] text-[#000] font-bold">
                   Account reached
                 </CardDescription>
               </div>
@@ -169,7 +169,7 @@ export function AccountReached() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-[#36454F] flex flex-col justify-between p-6"
+            className="absolute w-full h-full bg-white flex flex-col justify-between p-6"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -183,9 +183,9 @@ export function AccountReached() {
               />
             </button>
             <CardHeader className="p-0">
-              <div className="border-b border-[#e3e1e1] pb-2">
-                <div className="text-[11px] text-[#e3e1e1]">Statistics</div>
-                <CardDescription className="text-[12px] text-[#e8e8ed] font-bold">
+              <div className="border-b border-[#515151] pb-2">
+                <div className="text-[11px] text-[#9291A5]">Statistics</div>
+                <CardDescription className="text-[12px] text-[#000] font-bold">
                   Account reached
                 </CardDescription>
               </div>
@@ -237,7 +237,7 @@ export function AccountReached() {
                     type="natural"
                     fill="url(#areaGradient)"
                     stroke="#657C75"
-                    strokeWidth={4}
+                    strokeWidth={2}
                     style={{ mixBlendMode: "multiply" }}
                   />
                 </AreaChart>

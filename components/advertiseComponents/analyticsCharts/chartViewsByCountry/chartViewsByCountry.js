@@ -250,14 +250,11 @@ export function ViewsCountry() {
               </div>
             </CardHeader>
             <CardContent className="p-0">
-              <ChartContainer
-                config={chartConfig}
-                className="w-full h-[120px] sm:h-[100px] px-2"
-              >
-                <div className="flex justify-start items-center">
+              <ChartContainer config={chartConfig} className="w-full h-[120px]">
+                <div className="flex justify-start items-center -ml-4">
                   {/* Pie Chart */}
                   <div className="m-0 p-0">
-                    <PieChart width={120} height={120} className="">
+                    <PieChart width={140} height={140} className="">
                       <ChartTooltip
                         cursor={false}
                         content={<ChartTooltipContent hideLabel />}

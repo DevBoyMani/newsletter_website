@@ -183,56 +183,48 @@ export default function ViewAll() {
               {/* Desktop Hover Content */}
               <div className="relative hidden lg:block w-full h-auto">
                 <div className="relative min-h-[140px]">
-                  {" "}
-                  {/* Controls height consistently */}
-                  <AnimatePresence mode="wait">
-                    {hoveredIndex !== index && (
-                      <motion.div
-                        key="default"
-                        className="absolute bottom-0 left-0 right-0 flex flex-col justify-end"
-                        initial={{ opacity: 8, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 10, y: 10 }}
-                        transition={{ duration: 0.3, ease: [0.4, 0, 0, 0] }}
-                      >
-                        <h3 className="text-[16px] font-[500] leading-[101%] py-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
-                          {item.experience}
-                        </p>
-                      </motion.div>
-                    )}
+                  {/* Default Content */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 flex flex-col justify-end transition-all duration-500 ease-in-out ${
+                      hoveredIndex === index
+                        ? "opacity-0 translate-y-6 pointer-events-none"
+                        : "opacity-100 translate-y-0"
+                    }`}
+                  >
+                    <h3 className="text-[17px] font-[700] leading-[101%] py-2 text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
+                      {item.experience}
+                    </p>
+                  </div>
 
-                    {hoveredIndex === index && (
-                      <motion.div
-                        key="hover"
-                        className="absolute bottom-0 left-0 right-0 flex flex-col justify-end"
-                        initial={{ opacity: 8, y: 10 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 10, y: 20 }}
-                        transition={{ duration: 0.3, ease: [0.4, 0, 0, 0] }}
+                  {/* Hover Content */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 flex flex-col justify-end transition-all duration-500 ease-in-out ${
+                      hoveredIndex === index
+                        ? "opacity-100 translate-y-0"
+                        : "opacity-0 translate-y-6 pointer-events-none"
+                    }`}
+                  >
+                    <h3 className="text-[17px] font-[700] leading-[101%] py-2 text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
+                      {item.experience}
+                    </p>
+                    <p className="text-[#FAFAFA] text-[12px] font-[500] leading-normal pt-2">
+                      {item.content}
+                    </p>
+                    <div className="pt-4">
+                      <button
+                        onClick={() => handleImageClick(index)}
+                        className="w-full bg-white/25 text-white py-2 rounded-lg"
                       >
-                        <h3 className="text-[17px] font-[700] leading-[101%] py-2">
-                          {item.title}
-                        </h3>
-                        <p className="text-[14px] text-[#FFFFFF99] leading-[101%]">
-                          {item.experience}
-                        </p>
-                        <p className="text-[#FAFAFA] text-[12px] font-[500] leading-normal pt-2">
-                          {item.content}
-                        </p>
-                        <div className="pt-4">
-                          <button
-                            onClick={() => handleImageClick(index)}
-                            className="w-full bg-white/25 text-white py-2 rounded-lg"
-                          >
-                            {item.button}
-                          </button>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
+                        {item.button}
+                      </button>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

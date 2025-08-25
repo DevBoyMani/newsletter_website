@@ -119,7 +119,11 @@ export default function Footer() {
                     <ul className="space-y-2 mr-7">
                       <li>Blog</li>
                       <li>Careers</li>
-                      <li>Privacy Policy</li>
+                      <li>
+                        <Link target="_blank" href="/policy">
+                          Privacy Policy
+                        </Link>
+                      </li>
                       <li>Legal</li>
                     </ul>
                     <ul className="space-y-2 ">
@@ -194,7 +198,7 @@ export default function Footer() {
                         </Link>
                       </li>
                       <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
+                        <Link target="_blank" href="/policy">
                           Privacy Policy
                         </Link>
                       </li>

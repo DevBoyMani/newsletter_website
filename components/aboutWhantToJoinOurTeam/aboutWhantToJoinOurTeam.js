@@ -68,8 +68,8 @@ export default function AboutWhantToJoinOurTeam() {
         </div>
 
         {/* Content block */}
-        <div className="bg-[#01261E] pt-10 pb-10 px-4 text-center">
-          <h2 className="text-[30px] font-[400] leading-[106%] mb-4 text-white">
+        <div className="bg-[#01261E] pt-[8px] pb-[51px] px-4 text-center">
+          <h2 className="text-[30px] font-[400] leading-[106.68%] mb-4 text-white">
             Want to join our
             <br /> team? We can’t
             <br /> do it alone.

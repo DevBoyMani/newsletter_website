@@ -22,7 +22,7 @@ const componentMap = {
   'ux-designer': () => <CareersUXDesigner/>,
   'full-stack':  () => <CareersFullStack/>,
   'logo-designer':  () => <CareersLogoDesigner/>,
-  'web-designer':  () => <CareersWebDesigner/>,
+  'web-designer':  () => <CareersWebDesigner/>, 
   'backend-dev':  () => <CareersBackendDev/>,
   'software-engineer':  () => <CareersSoftWareEngineer/>,
 };

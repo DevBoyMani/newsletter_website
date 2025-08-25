@@ -152,7 +152,7 @@ export default function Advertise() {
 
           {/* 100K Subscribers Text (Above Gradient) */}
           <div className="">
-            <div className="absolute -bottom-4 left-10 text-[11.3vw] font-[700] leading-[94%] tracking-[-1.6px] z-20 text-center w-[94%] max-w-[100%]">
+            <div className="absolute -bottom-4 text-[11.3vw] font-[700] leading-[94%] tracking-[-1.6px] z-20 text-center max-w-[100%]">
               <h2>
                 <span className="text-white">100K </span>
                 <span className="text-[#01261E]">Subscribers</span>

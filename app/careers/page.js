@@ -15,6 +15,7 @@ import Marketing from "../../components/marketing/marketing";
 import CustomAccordion from "../../components/careers/customAccordion/customAccordion";
 import { doCircle, XCircle } from "lucide-react";
 import Footer from "../../components/footer/footer";
+import Link from "next/link";
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
   const containerRef = useRef(null);
@@ -233,6 +234,20 @@ const Careers = () => {
 
   // what we  offer/
 
+  // new hover effect for fall back button
+  const origins = [
+    "origin-bottom",
+    "origin-bottom-left",
+    "origin-bottom-right",
+    "origin-top",
+  ];
+
+  const [index, setIndex] = useState(0);
+  const originClass = origins[index];
+  const handleHoverOut = () => {
+    setIndex((prev) => (prev + 1) % origins.length);
+  };
+
   return (
     <>
       <div className="md:px-28 px-4 lg:pt-28 pt-[120px] mx-auto bg-[#FAFAFA]">
@@ -371,23 +386,21 @@ const Careers = () => {
                 <br /> insights
               </h2>
             </div>
-            {/* <a
-                    href="https://www.sagravia.com/"
-                    className="inline-block border border-[#DAEBE8] text-[#DAEBE8] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full hover:text-black hover:bg-[#DAEBE8]"
-                  >
-                    Visit Website
-                  </a> */}
-            <a
+
+            <Link
               href="https://www.sagravia.com/"
+              onMouseLeave={handleHoverOut}
               className="relative inline-block border border-[#DAEBE8] text-[#DAEBE8] hover:text-[#000] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full overflow-hidden group"
             >
-              <span className="absolute inset-0 bg-[#DAEBE8] rounded-full scale-0 group-hover:scale-100 transition-transform duration-500 ease-out origin-center z-0"></span>
+              <span
+                className={`absolute inset-0 bg-[#DAEBE8] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-out z-0 ${originClass}`}
+              />
 
               {/* Button text stays white */}
               <span className="relative z-10 transition-colors duration-300">
                 Visit Sagravia
               </span>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

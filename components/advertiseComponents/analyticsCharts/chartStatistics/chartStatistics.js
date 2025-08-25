@@ -20,11 +20,11 @@ import {
 } from "@/components/ui/card";
 
 const chartData = [
-  { ageGroup: "18-24", male: 10, female: 5, percentage: "3.3" },
-  { ageGroup: "25-34", male: 35, female: 20, percentage: "12.7" },
-  { ageGroup: "35-44", male: 45, female: 25, percentage: "15.2" },
-  { ageGroup: "45-64", male: 60, female: 35, percentage: "25.3" },
-  { ageGroup: "65+", male: 80, female: 40, percentage: "33.5" },
+  { ageGroup: "18-24", male: 10, female: 5, percentage: "3.3%" },
+  { ageGroup: "25-34", male: 35, female: 20, percentage: "12.7%" },
+  { ageGroup: "35-44", male: 45, female: 25, percentage: "15.2%" },
+  { ageGroup: "45-64", male: 60, female: 35, percentage: "25.3%" },
+  { ageGroup: "65+", male: 80, female: 40, percentage: "33.5%" },
 ];
 
 const colors = {
@@ -60,6 +60,7 @@ export function Statistics() {
                 className="w-10 h-10"
               />
             </button>
+
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
                 <div className="text-[18px] text-[#9291A5]">Statistics</div>
@@ -69,70 +70,67 @@ export function Statistics() {
                   </CardDescription>
                   <div className="flex ml-8 gap-4 text-sm">
                     <div className="flex items-center gap-2">
-                      <img
-                        src="/advertise/chart-canada.png"
-                        alt="Male"
-                        className="w-2 h-2"
-                      />
+                      <span className="inline-block w-3 h-3 rounded-full bg-[#3C6255]" />
                       <span className="text-[18px]">Male</span>
                     </div>
                     <div className="flex items-center gap-2">
-                      <img
-                        src="/advertise/chart-uk.png"
-                        alt="Female"
-                        className="w-2 h-2"
-                      />
+                      <span className="inline-block w-3 h-3 rounded-full bg-[#E5A800]" />
                       <span className="text-[18px]">Female</span>
                     </div>
                   </div>
                 </div>
               </div>
             </CardHeader>
+
             <CardContent>
               <ResponsiveContainer width="100%" height={250}>
                 <BarChart
                   layout="vertical"
                   data={chartData}
-                  barGap={2}
-                  barSize={14}
-                  margin={{ left: 4, right: 50 }}
+                  barGap={8}
+                  barSize={12}
+                  margin={{ left: 0, right: 40 }}
                 >
-                  <CartesianGrid horizontal={false} strokeDasharray="3 3" />
+                  {/* Hide grid for clean look */}
+                  <CartesianGrid horizontal={false} vertical={false} />
 
+                  {/* Age group labels on the left */}
                   <YAxis
                     dataKey="ageGroup"
-                    orientation="left"
                     type="category"
                     axisLine={false}
                     tickLine={false}
+                    tick={{ fill: "#1E1B39", fontSize: 14 }}
                   />
 
+                  {/* Percentages on the right */}
                   <YAxis
-                    dataKey="percentage"
+                    yAxisId="right"
+                    orientation="right"
                     type="category"
-                    orientation="left"
+                    dataKey="percentage"
                     axisLine={false}
                     tickLine={false}
-                    // tick={{ fill: "#000", fontSize: 12 }}
-                    // tickFormatter={(value) => `${value}%`}
+                    tick={{ fill: "#9291A5", fontSize: 14 }}
                   />
 
                   <XAxis type="number" hide />
+
+                  {/* Tooltip */}
                   <Tooltip cursor={{ fill: "transparent" }} />
 
                   {/* Bars */}
                   <Bar
                     dataKey="male"
                     stackId="a"
-                    fill={colors.male}
-                    radius={[8, 8, 8, 8]}
-                    background={{ fill: "#FFFFFF", radius: 8 }}
+                    fill="#3C6255"
+                    radius={[10, 0, 0, 10]}
                   />
                   <Bar
                     dataKey="female"
                     stackId="a"
-                    fill={colors.female}
-                    radius={[8, 8, 8, 8]}
+                    fill="#E5A800"
+                    radius={[0, 10, 10, 0]}
                   />
                 </BarChart>
               </ResponsiveContainer>
@@ -190,7 +188,7 @@ export function Statistics() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6 "
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -213,19 +211,11 @@ export function Statistics() {
                   </CardDescription>
                   <div className="flex gap-3 text-[9px] ml-4 mt-1">
                     <div className="flex items-center gap-1">
-                      <img
-                        src="/advertise/chart-canada.png"
-                        alt="Male"
-                        className="w-1 h-1"
-                      />
+                      <span className="inline-block w-2 h-2 rounded-full bg-[#3C6255]" />
                       <span>Male</span>
                     </div>
                     <div className="flex items-center gap-1">
-                      <img
-                        src="/advertise/chart-uk.png"
-                        alt="Female"
-                        className="w-1 h-1"
-                      />
+                      <span className="inline-block w-2 h-2 rounded-full bg-[#E5A800]" />
                       <span>Female</span>
                     </div>
                   </div>
@@ -238,41 +228,53 @@ export function Statistics() {
                 <BarChart
                   layout="vertical"
                   data={chartData}
-                  barGap={2}
-                  barSize={14}
-                  margin={{ left: 4, right: 30 }}
+                  barGap={6}
+                  barSize={10}
+                  margin={{ top: 0, right: -20, left: -20, bottom: 0 }}
                 >
-                  <CartesianGrid horizontal={false} strokeDasharray="3 3" />
+                  {/* Clean chart (no extra grid lines) */}
+                  <CartesianGrid horizontal={false} vertical={false} />
+
+                  {/* Age group labels (left) */}
                   <YAxis
                     dataKey="ageGroup"
-                    orientation="left"
                     type="category"
                     axisLine={false}
                     tickLine={false}
-                    tick={{ fontSize: 9 }}
+                    tick={{ fontSize: 9, fill: "#1E1B39" }}
                   />
+
+                  {/* Percentages (right side) */}
                   <YAxis
-                    dataKey="percentage"
+                    yAxisId="right"
+                    orientation="right"
                     type="category"
-                    orientation="left"
+                    dataKey="percentage"
                     axisLine={false}
                     tickLine={false}
-                    tick={{ fontSize: 9 }}
+                    tick={{ fontSize: 9, fill: "#9291A5" }}
                   />
+
                   <XAxis type="number" hide />
                   <Tooltip cursor={{ fill: "transparent" }} />
+
+                  {/* Background Bar (total = male + female) */}
+                  <Bar dataKey="total" fill="#FFF4CC" radius={[8, 8, 8, 8]} />
+
+                  {/* Male */}
                   <Bar
                     dataKey="male"
                     stackId="a"
-                    fill={colors.male}
-                    radius={[8, 8, 8, 8]}
-                    background={{ fill: "#FFFFFF", radius: 8 }}
+                    fill="#657C75"
+                    radius={[8, 0, 0, 8]}
                   />
+
+                  {/* Female */}
                   <Bar
                     dataKey="female"
                     stackId="a"
-                    fill={colors.female}
-                    radius={[8, 8, 8, 8]}
+                    fill="#E19F20"
+                    radius={[0, 8, 8, 0]}
                   />
                 </BarChart>
               </ResponsiveContainer>

@@ -150,22 +150,24 @@ export default function CareersGraphicDesigner() {
                 </div>
                 {/* impact section */}
                 <div className="py-[44px]">
-                  <div className="flex items-center gap-x-2 lg:px-[10px] 2xl:px-[29px] py-[23px] bg-[#FEF5F6] border border-[#E5C8CD]">
+                  <div className="flex items-center lg:px-[10px] 2xl:px-[29px] py-[23px] bg-[#FEF5F6] border border-[#E5C8CD] rounded-[7px]">
                     <img
                       src="/careers/job-alert.png"
                       alt="alert"
-                      className="w-[29px] h-[29px]"
+                      className="w-[21px] h-[21px]"
                     />
-                    <p className="flex items-center gap-x-1 font-[400] text-[16px] text-[#000] leading-normal">
+                    <p className="flex items-center font-[400] text-[16px] text-[#000] leading-normal pl-[20px]">
                       Before applying for the job, completing the task is
                       mandatory.
-                      <span className="flex items-center gap-x-1 font-[600] text-[16px] leading-normal text-[#000] ml-2">
+                      <span className="flex items-center font-[600] text-[16px] leading-normal text-[#000] pl-[9px]">
                         Go to assignment
-                        <img
-                          src="/careers/alert-down.png"
-                          alt="arrow"
-                          className="w-[11px] h-[11px]"
-                        />
+                        <div className="pl-[7px]">
+                          <img
+                            src="/careers/alert-down.png"
+                            alt="arrow"
+                            className="w-[11px] h-[11px]"
+                          />
+                        </div>
                       </span>
                     </p>
                   </div>

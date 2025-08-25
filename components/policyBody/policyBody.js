@@ -383,7 +383,7 @@ export default function PolicyBody() {
   return (
     <>
       {/* desktop */}
-      <div className="hidden lg:block">
+      <div className="hidden lg:block bg-[#FAFAFA]">
         <div className="md:px-28 pt-14 pb-[130px]">
           {/* 1 hero */}
           <div className="pt-[26px]">
@@ -462,7 +462,7 @@ export default function PolicyBody() {
       </div>
 
       {/* mobile */}
-      <div className="block lg:hidden">
+      <div className="block lg:hidden bg-[#FAFAFA]">
         <PolicyMobileVersion />
       </div>
     </>

@@ -211,7 +211,7 @@ export default function ReadersNewsletters() {
                       className={`text-2xl mr-1.5 ease-in-out order-1 ${
                         data.selected
                           ? " translate-x-0"
-                          : "group-hover/card:order-2 group-hover/card:ml-2 translate-x-[-2.5px] group-hover/card:translate-x-0"
+                          : "group-hover/card:order-2 group-hover/card:ml-2 translate-x-[-1.5px] group-hover/card:translate-x-0"
                       }`}
                     >
                       {data.selected ? <Check size={18} /> : "+"}

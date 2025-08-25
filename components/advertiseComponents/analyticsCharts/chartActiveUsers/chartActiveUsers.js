@@ -235,7 +235,7 @@ export function ActiveUsers() {
                     width={20} // Controls the space for the Y-axis labels
                     tickLine={false} // Hides tick marks
                     axisLine={false} // Hides axis line
-                    tick={{ fill: "#515151", fontSize: 12 }} // Custom styling
+                    tick={{ fill: "#515151", fontSize: 8, fontWeight: 400 }} // Custom styling
                     domain={["auto", "auto"]} // Auto-scale
                   />
 
@@ -244,6 +244,7 @@ export function ActiveUsers() {
                     tickLine={false}
                     axisLine={false}
                     tickMargin={8}
+                    tick={{ fill: "#515151", fontSize: 8, fontWeight: 400 }}
                     tickFormatter={(value) => value.slice(0, 3)}
                   />
                   <ChartTooltip
@@ -255,7 +256,7 @@ export function ActiveUsers() {
                     type="linear"
                     fill="url(#areaGradient)"
                     stroke="#657C75"
-                    strokeWidth={4}
+                    strokeWidth={2}
                     // fillOpacity={0.4}
                     // opacity={0.33}
                     // style={{ mixBlendMode: "multiply" }}
