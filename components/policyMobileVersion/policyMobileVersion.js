@@ -251,7 +251,7 @@ export default function PolicyMobileVersion() {
     <>
       <div className="px-4 bg-[#FAFAFA]">
         {/* Scroll Progress Bar */}
-        <div className=" fixed top-[93px] left-0 w-full z-50 px-0">
+        <div className=" fixed top-[125px] left-0 w-full z-50 px-0">
           <div className="h-[4px] w-full ">
             <div
               id="scroll-progress-bar"

@@ -179,9 +179,7 @@ export default function Navbar() {
 
       {/* === Mobile=== */}
       <header
-        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[97px] ${mobileHeaderBg} ${
-          isContactPage || isCareersSlugPage ? "mt-[32px] " : ""
-        }`}
+        className={`block lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 h-[97px] mt-[32px] ${mobileHeaderBg}`}
       >
         {/* Border line with side cut via margin */}
         <div className={`${mobileNavBorder} mx-4`}>
