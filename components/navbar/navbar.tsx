@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
@@ -99,18 +99,22 @@ export default function Navbar() {
   const isCareersSlugPage = pathname.startsWith("/careers/");
 
   // contact button hovering
-  const origins = [
-    "origin-bottom",
-    "origin-bottom-left",
-    "origin-bottom-right",
-    "origin-top",
-  ];
+  const btnRef = useRef<HTMLAnchorElement>(null);
+  const [originStyle, setOriginStyle] = useState<React.CSSProperties>({});
 
-  const [index, setIndex] = useState(0);
-  const originClass = origins[index];
-  const handleHoverOut = () => {
-    setIndex((prev) => (prev + 1) % origins.length);
+  const handleMouseEnter = (e: React.MouseEvent) => {
+    if (!btnRef.current) return;
+
+    const rect = btnRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left; // cursor X inside button
+    const y = e.clientY - rect.top; // cursor Y inside button
+
+    // dynamic transform-origin at cursor point
+    setOriginStyle({
+      transformOrigin: `${x}px ${y}px`,
+    });
   };
+
   return (
     <>
       {/* === Desktop  === */}
@@ -135,7 +139,7 @@ export default function Navbar() {
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`relative group ml-2 md:ml-6 overflow-hidden h-[24px] ${
+                    className={`relative group ml-2 md:ml-6 overflow-hidden h-[26px] ${
                       pathname === route.path
                         ? "text-[#C7A262]"
                         : isDarkHeader
@@ -159,17 +163,17 @@ export default function Navbar() {
               {/* Contact button */}
               <Link
                 href="/contact"
-                onMouseLeave={handleHoverOut} // 🔑 cycle after hover-out
+                ref={btnRef}
+                onMouseEnter={handleMouseEnter}
                 className="relative inline-block ml-20 mt-2 px-6 py-2 bg-[#C7A262] text-white lg:text-[16px] font-[300] rounded-full overflow-hidden group"
               >
-                {/* <span
-                  className={`absolute inset-0 bg-black rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-out z-0 ${originClass}`}
-                ></span> */}
+                {/* Expanding background */}
                 <span
-                  className={`absolute inset-0 bg-black rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-out z-0 ${originClass}`}
+                  style={originStyle}
+                  className="absolute inset-0 bg-black rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out z-0"
                 />
 
-                {/* Text always on top */}
+                {/* Text */}
                 <span className="relative z-10">Contact Sales</span>
               </Link>
             </div>

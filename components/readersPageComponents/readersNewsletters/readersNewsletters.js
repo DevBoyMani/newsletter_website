@@ -201,29 +201,42 @@ export default function ReadersNewsletters() {
                       e.preventDefault();
                       handleAdd(data.id);
                     }}
-                    className={`absolute top-4 left-4 bg-[#FFFFFF] text-black rounded-full h-[30px] flex items-center overflow-hidden transition-all duration-700 ease-in-out ${
+                    className={`absolute top-4 left-4 bg-white text-black rounded-full h-[30px] overflow-hidden transition-all duration-500 ease-in-out
+                    ${
                       data.selected
-                        ? "w-[110px]"
-                        : "w-[30px] group-hover/card:w-[110px]"
-                    }`}
+                        ? "w-[110px] px-3"
+                        : "w-[30px] px-0 group-hover/card:w-[110px] group-hover/card:px-3"
+                    }
+                  `}
                   >
+                    {/* Text */}
                     <span
-                      className={`text-2xl mr-1.5 ease-in-out order-1 ${
+                      className={`inline-block whitespace-nowrap overflow-hidden align-middle transition-all duration-500
+                      ${
                         data.selected
-                          ? " translate-x-0"
-                          : "group-hover/card:order-2 group-hover/card:ml-2 translate-x-[-1.5px] group-hover/card:translate-x-0"
-                      }`}
-                    >
-                      {data.selected ? <Check size={18} /> : "+"}
-                    </span>
-                    <span
-                      className={`text-[14px] whitespace-nowrap ${
-                        data.selected
-                          ? "opacity-100 px-2"
-                          : "opacity-0 group-hover/card:opacity-100 group-hover/card:px-2"
-                      } max-w-[110px] overflow-hidden transition-all duration-700 ease-in-out ml-1`}
+                          ? "max-w-[90px] opacity-100 mr-2" // ✅ keep width for Selected
+                          : "max-w-0 opacity-0 group-hover/card:max-w-[90px] group-hover/card:opacity-100 group-hover/card:mr-2"
+                      }
+                    `}
                     >
                       {data.selected ? "Selected" : "Subscribe"}
+                    </span>
+
+                    {/* Icon */}
+                    <span
+                      className={`absolute top-0 h-[30px] w-[30px] flex items-center justify-center transition-all duration-500
+                      ${
+                        data.selected
+                          ? "right-1.5 translate-x-2"
+                          : "left-1/2 -translate-x-1/2 group-hover/card:left-auto group-hover/card:right-2 group-hover/card:translate-x-3"
+                      }
+                    `}
+                    >
+                      {data.selected ? (
+                        <Check size={20} />
+                      ) : (
+                        <span className="text-2xl">+</span>
+                      )}{" "}
                     </span>
                   </button>
                 </div>

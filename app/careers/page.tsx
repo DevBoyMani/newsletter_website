@@ -235,17 +235,20 @@ const Careers = () => {
   // what we  offer/
 
   // new hover effect for fall back button
-  const origins = [
-    "origin-bottom",
-    "origin-bottom-left",
-    "origin-bottom-right",
-    "origin-top",
-  ];
+  const btnRef = useRef<HTMLAnchorElement>(null);
+  const [originStyle, setOriginStyle] = useState<React.CSSProperties>({});
 
-  const [index, setIndex] = useState(0);
-  const originClass = origins[index];
-  const handleHoverOut = () => {
-    setIndex((prev) => (prev + 1) % origins.length);
+  const handleMouseEnter = (e: React.MouseEvent) => {
+    if (!btnRef.current) return;
+
+    const rect = btnRef.current.getBoundingClientRect();
+    const x = e.clientX - rect.left; // cursor X inside button
+    const y = e.clientY - rect.top; // cursor Y inside button
+
+    // dynamic transform-origin at cursor point
+    setOriginStyle({
+      transformOrigin: `${x}px ${y}px`,
+    });
   };
 
   return (
@@ -389,11 +392,13 @@ const Careers = () => {
 
             <Link
               href="https://www.sagravia.com/"
-              onMouseLeave={handleHoverOut}
+              ref={btnRef}
+              onMouseEnter={handleMouseEnter}
               className="relative inline-block border border-[#DAEBE8] text-[#DAEBE8] hover:text-[#000] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full overflow-hidden group"
             >
               <span
-                className={`absolute inset-0 bg-[#DAEBE8] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-out z-0 ${originClass}`}
+                style={originStyle}
+                className={`absolute inset-0 bg-[#DAEBE8] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-out z-0`}
               />
 
               {/* Button text stays white */}
