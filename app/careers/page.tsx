@@ -13,7 +13,7 @@ import Tech from "../../components/tech/tech";
 import Marketing from "../../components/marketing/marketing";
 // import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
 import CustomAccordion from "../../components/careers/customAccordion/customAccordion";
-import { doCircle, XCircle } from "lucide-react";
+// import { doCircle, XCircle } from "lucide-react";
 import Footer from "../../components/footer/footer";
 import Link from "next/link";
 
