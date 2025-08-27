@@ -32,7 +32,8 @@
     "components/advertiseComponents/analyticsCharts/chartAccountReached/chartAccountReached.js",
     "components/blogsTestimonials/blogsTestimonials.js",
     "components/careers/customAccordion/customAccordion.js",
-    "components/aboutNewslettersStatistics/aboutNewslettersStatistics.jsx"
+    "components/aboutNewslettersStatistics/aboutNewslettersStatistics.jsx",
+    "app/careers/page.js"
   ],
   "exclude": ["node_modules"]
 }

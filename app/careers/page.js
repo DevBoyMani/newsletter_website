@@ -1,7 +1,7 @@
 "use client";
 
+import React from "react";
 import { motion } from "framer-motion";
-
 import { useEffect, useRef, useState } from "react";
 import ViewAll from "../../components/viewAll/viewAll";
 import Leadership from "../../components/leadership/leadership";
@@ -14,7 +14,7 @@ import Marketing from "../../components/marketing/marketing";
 // import {FaqAccordionC} from "../../components/careers/faqAccordionC/faqAccordionC"
 import CustomAccordion from "../../components/careers/customAccordion/customAccordion";
 // import { doCircle, XCircle } from "lucide-react";
-import Footer from "../../components/footer/footer";
+// import Footer from "../../components/footer/footer";
 import Link from "next/link";
 
 const Testimonials = ({ testimonials, activeTab, setActiveTab }) => {
@@ -63,8 +63,8 @@ const steps = [
 const Careers = () => {
   const [activeTab, setActiveTab] = useState(0);
 
-  const [hoverIndexDo, setHoverIndexDo] = useState(null);
-  const [hoverIndexDont, setHoverIndexDont] = useState(null);
+  // const [hoverIndexDo, setHoverIndexDo] = useState(null);
+  // const [hoverIndexDont, setHoverIndexDont] = useState(null);
   const [activeStepImage, setActiveStepImage] = useState(steps?.[1] || null);
 
   const testimonials = [
@@ -235,15 +235,15 @@ const Careers = () => {
   // what we  offer/
 
   // new hover effect for fall back button
-  const btnRef = useRef<HTMLAnchorElement>(null);
-  const [originStyle, setOriginStyle] = useState<React.CSSProperties>({});
+  const btnRef = useRef(null);
+  const [originStyle, setOriginStyle] = useState({});
 
-  const handleMouseEnter = (e: React.MouseEvent) => {
+  const handleMouseEnter = (e) => {
     if (!btnRef.current) return;
 
     const rect = btnRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left; // cursor X inside button
-    const y = e.clientY - rect.top; // cursor Y inside button
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
 
     // dynamic transform-origin at cursor point
     setOriginStyle({
