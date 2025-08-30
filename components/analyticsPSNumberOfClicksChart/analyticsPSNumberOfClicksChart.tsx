@@ -40,7 +40,7 @@ const chartConfig = {
 
 export default function AnalyticsPSNumberOfClicksChart() {
   return (
-    <Card className="p-[24px] h-[465px]">
+    <Card className="py-[40px] px-[35px] h-[465px]">
       <CardHeader>
         <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
           Number of clicks

@@ -14,10 +14,10 @@ export default function BusinessHistoryAnalytics() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-[22px]">
         <div className="relative h-[465px] flex flex-col justify-between rounded-[22px] p-[40px] bg-gradient-to-br from-[#EEDBD7] to-[#887D7B] overflow-hidden">
           <div className="z-10">
-            <p className="text-[16px] font-[400] text-[#01261E] pb-[14px]">
+            <p className=" text-[16px] font-[400] text-[#01261E] pb-[14px]">
               Business History
             </p>
-            <h2 className="w-[56%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
+            <h2 className="font-[manrope] w-[56%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
               Business magnets, their triumphs, and trials
             </h2>
             <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-green-800">

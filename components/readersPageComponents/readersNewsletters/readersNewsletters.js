@@ -204,8 +204,8 @@ export default function ReadersNewsletters() {
                     className={`absolute top-4 left-4 bg-white text-black rounded-full h-[30px] overflow-hidden transition-all duration-500 ease-in-out
                     ${
                       data.selected
-                        ? "w-[110px] px-3"
-                        : "w-[30px] px-0 group-hover/card:w-[110px] group-hover/card:px-3"
+                        ? "w-[115px] px-[13px]"
+                        : "w-[30px] px-0 group-hover/card:w-[110px] group-hover/card:px-[13px]"
                     }
                   `}
                   >
@@ -214,8 +214,8 @@ export default function ReadersNewsletters() {
                       className={`inline-block whitespace-nowrap overflow-hidden align-middle transition-all duration-500
                       ${
                         data.selected
-                          ? "max-w-[90px] opacity-100 mr-2" // ✅ keep width for Selected
-                          : "max-w-0 opacity-0 group-hover/card:max-w-[90px] group-hover/card:opacity-100 group-hover/card:mr-2"
+                          ? "max-w-[90px] opacity-100 -ml-6" // ✅ keep width for Selected
+                          : "max-w-0 opacity-0 group-hover/card:max-w-[115px] group-hover/card:opacity-100 group-hover/card:mr-10"
                       }
                     `}
                     >

@@ -1,6 +1,6 @@
 "use client";
 
-import { PieChart, Pie } from "recharts";
+import { PieChart, Pie, ResponsiveContainer } from "recharts";
 
 import {
   Card,
@@ -19,7 +19,7 @@ const chartData = [
 
 export default function AnalyticsPSAgeChart() {
   return (
-    <Card className="p-[24px] h-[308px]">
+    <Card className="p-[40px] h-[308px]">
       <CardHeader className="">
         <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]d">
           Age
@@ -29,7 +29,7 @@ export default function AnalyticsPSAgeChart() {
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="flex items-center gap-6">
+      <CardContent className="flex justify-between items-center ">
         {/* Legend */}
         <div className="flex flex-col gap-3">
           {chartData.map((item) => (
@@ -46,17 +46,21 @@ export default function AnalyticsPSAgeChart() {
         </div>
 
         {/* Donut Chart */}
-        <div className="w-[160px] h-[160px]">
-          <PieChart width={160} height={160}>
-            <Pie
-              data={chartData}
-              dataKey="value"
-              nameKey="age"
-              innerRadius={50}
-              outerRadius={70}
-              stroke="transparent"
-            />
-          </PieChart>
+        <div className="w-[162px] h-[162px]">
+          {" "}
+          {/* adjust container size */}
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie
+                data={chartData}
+                dataKey="value"
+                nameKey="age"
+                innerRadius="60%" // responsive donut thickness
+                outerRadius="100%" // fills container
+                stroke="transparent"
+              />
+            </PieChart>
+          </ResponsiveContainer>
         </div>
       </CardContent>
     </Card>

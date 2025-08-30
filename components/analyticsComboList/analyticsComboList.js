@@ -63,7 +63,10 @@ export default function AnalyticsComboList({ selected, onChange }) {
                   <Listbox.Option
                     key={item.value}
                     value={item}
-                    className={`text-[16px] font-[400] leading-[104%] bg-[#01261E] text-[#FFFFFF99] py-[10px] hover:text-[#fff] cursor-pointer`}
+                    className="text-[16px] font-[400] leading-[104%] text-[#FFFFFF99] 
+                   cursor-pointer hover:text-[#fff] 
+                   hover:bg-[#0B4337]
+                   -mx-[20px] px-[20px] py-[10px]"
                   >
                     {item.label}
                   </Listbox.Option>

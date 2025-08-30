@@ -253,7 +253,7 @@ const Careers = () => {
 
   return (
     <>
-      <div className="md:px-28 px-4 lg:pt-28 pt-[120px] mx-auto bg-[#FAFAFA]">
+      <div className="md:px-28 px-4 lg:pt-28 pt-[170px] mx-auto bg-[#FAFAFA]">
         <div className="pb-8 text-start ">
           <p className="lg:text-[25px] text-[12px] font-[600] text-[020715] px-1 uppercase leading-[104%] tracking-[0.6px] lg:tracking-[1.25px]">
             Looking for a new role &

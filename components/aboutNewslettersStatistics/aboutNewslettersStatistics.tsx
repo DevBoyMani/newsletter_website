@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { AboutBarChart } from "../aboutBarChart/aboutBarChart";
+import AboutBarChart from "../../components/aboutBarChart/aboutBarChart";
 
 const textVariants = {
   hidden: { opacity: 0, y: 40 },

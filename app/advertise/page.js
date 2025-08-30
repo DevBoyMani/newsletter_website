@@ -1,3 +1,5 @@
+"use client";
+
 import { Component } from "../../components/areaChart/areaChart";
 import { AccountReached } from "../../components/advertiseComponents/analyticsCharts/chartAccountReached/chartAccountReached";
 import { ViewsCountry } from "../../components/advertiseComponents/analyticsCharts/chartViewsByCountry/chartViewsByCountry";
@@ -152,8 +154,8 @@ export default function Advertise() {
 
           {/* 100K Subscribers Text (Above Gradient) */}
           <div className="">
-            <div className="absolute -bottom-4 text-[11.3vw] font-[700] leading-[94%] tracking-[-1.6px] z-20 text-center max-w-[100%]">
-              <h2>
+            <div className="">
+              <h2 className="absolute -bottom-4 font-[700] lg:text-[11.1vw] 2xl:text-[11.3vw] 3xl:text-[11.7vw] leading-[94%] tracking-[-1.6px] z-20 text-center max-w-[100%]">
                 <span className="text-white">100K </span>
                 <span className="text-[#01261E]">Subscribers</span>
               </h2>

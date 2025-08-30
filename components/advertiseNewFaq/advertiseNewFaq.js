@@ -45,9 +45,9 @@ export default function AdvertiseNewFaq() {
         <h2 className="text-[#01261E] w-[40%] text-[56px]  font-[400] leading-[111%] ">
           Frequently Asked Questions
         </h2>
-        <div className="mt-16 w-[27%]">
-          Find answers to common questions about our services, project process,
-          and <br />
+        <div className="mt-16 ">
+          Find answers to common questions about
+          <br /> our services, project process, and <br />
           technical expertise
         </div>
       </div>

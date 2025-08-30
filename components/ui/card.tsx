@@ -8,8 +8,9 @@ const Card = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <div
     ref={ref}
+    // style={boxShadow-}
     className={cn(
-      "lg:rounded-[22px] lg:shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)] rounded-[10px]  bg-card text-card-foreground ",
+      " lg:rounded-[20px] lg:shadow-[0px_4px_21px_0px_rgba(0,0,0,0.05)] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)] rounded-[10px]  bg-card text-card-foreground ",
       className
     )}
     {...props}

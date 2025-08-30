@@ -1,6 +1,5 @@
-"use client"
+"use client";
 
-import { TrendingUp } from "lucide-react"
 import {
   Cell,
   Bar,
@@ -9,54 +8,40 @@ import {
   XAxis,
   YAxis,
   ResponsiveContainer,
-} from "recharts"
-
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart"
+  LabelList,
+  Tooltip,
+} from "recharts";
 
 const chartData = [
-  { month: "January", desktop: 186 },
-  { month: "February", desktop: 305 },
-  { month: "March", desktop: 237 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 209 },
-]
-
-const chartConfig = {
-  desktop: {
-    label: "Desktop",
-  },
-}
+  { name: "A", value: 83 },
+  { name: "B", value: 53 },
+  { name: "C", value: 40 },
+  { name: "D", value: 83 },
+  { name: "E", value: 19 },
+];
 
 const barColors = [
-  "#4D3060",
-  "#6A6F5B",
-  "#8E3321",
-  "#06266D",
-  "#F9D342",
-]
+  "#4D3060", // purple
+  "#6A6F5B", // green
+  "#8E3321", // red
+  "#06266D", // blue
+  "#F9D342", // yellow
+];
 
-export function AboutBarChart() {
+export default function AboutBarChart() {
   return (
-    <Card className="bg-[#FAFAFA] lg:p-6 lg:mx-0 mx-auto border-none shadow-none">
-      <ChartContainer config={chartConfig}>
-        <BarChart width={600} height={300} data={chartData} className="">
-          {/* ✅ Move defs here */}
+    <div className="w-full bg-[#FAFAFA] p-4">
+      <ResponsiveContainer width="100%" height={300}>
+        <BarChart
+          data={chartData}
+          barSize={49}
+          barCategoryGap="10px"
+          barGap={0}
+        >
+          {/* Gradients for each bar */}
           <defs>
             {chartData.map((_, index) => {
-              const color = barColors[index % barColors.length]
+              const color = barColors[index % barColors.length];
               return (
                 <linearGradient
                   id={`barGradient-${index}`}
@@ -68,17 +53,18 @@ export function AboutBarChart() {
                 >
                   <stop offset="0%" stopColor={color} stopOpacity={1} />
                   <stop offset="20%" stopColor={color} stopOpacity={0.7} />
-                  <stop offset="100%" stopColor={color} stopOpacity={0.2} />
+                  <stop offset="100%" stopColor={color} stopOpacity={0.1} />
                 </linearGradient>
-              )
+              );
             })}
           </defs>
 
+          {/* Grid + axes */}
           <CartesianGrid vertical={false} horizontal={false} />
           <XAxis
-            dataKey="none"
+            dataKey="name"
+            tick={false}
             tickLine={false}
-            tickMargin={10}
             axisLine={true}
             label={{
               value: "Newsletters",
@@ -88,16 +74,15 @@ export function AboutBarChart() {
                 fill: "#000",
                 fontSize: 12,
                 fontWeight: 600,
-                lineHeight: "109.922%",
-                textAnchor: "middle"
+                textAnchor: "middle",
               },
             }}
           />
           <YAxis
+            domain={[0, 100]}
             tick={false}
             tickLine={false}
             axisLine={true}
-            tickMargin={8}
             label={{
               value: "Number of newsletters",
               angle: -90,
@@ -107,25 +92,55 @@ export function AboutBarChart() {
                 fill: "#000",
                 fontSize: 12,
                 fontWeight: 600,
-                lineHeight: "109.922%",
-                textAnchor: "middle"
+                textAnchor: "middle",
               },
             }}
           />
-          <ChartTooltip
-            cursor={false}
-            content={<ChartTooltipContent hideLabel />}
-          />
-          <Bar dataKey="desktop" radius={0}>
+
+          {/* Tooltip if needed */}
+          <Tooltip cursor={false} />
+
+          {/* Bars */}
+          <Bar dataKey="value">
             {chartData.map((_, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={`url(#barGradient-${index})`}
-              />
+              <Cell key={`cell-${index}`} fill={`url(#barGradient-${index})`} />
             ))}
+
+            {/* Custom % + top line */}
+            <LabelList
+              dataKey="value"
+              content={({ x, y, value, index }) => {
+                const color = barColors[index % barColors.length];
+                return (
+                  <>
+                    {/* % value */}
+                    <text
+                      x={x + 25}
+                      y={y - 15}
+                      textAnchor="middle"
+                      fill="#000"
+                      fontSize={14}
+                      fontWeight={600}
+                    >
+                      {value}%
+                    </text>
+                    {/* cap line */}
+                    <line
+                      x1={x + 10}
+                      x2={x + 40}
+                      y1={y - 5}
+                      y2={y - 5}
+                      stroke={color}
+                      strokeWidth={4}
+                      strokeLinecap="round"
+                    />
+                  </>
+                );
+              }}
+            />
           </Bar>
         </BarChart>
-      </ChartContainer>
-    </Card>
-  )
+      </ResponsiveContainer>
+    </div>
+  );
 }

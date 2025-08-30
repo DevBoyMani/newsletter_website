@@ -40,7 +40,7 @@ const chartConfig = {
 
 export default function AnalyticsPSNumberOfSubscribersChart() {
   return (
-    <Card className="p-[24px] h-[465px]">
+    <Card className="px-[35px] py-[40px] h-[465px]">
       <CardHeader>
         <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
           Number of subscribers

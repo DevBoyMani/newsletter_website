@@ -17,7 +17,7 @@ export default function MovieSuggestionsAnalytics() {
             <p className="text-[16px] font-[400] text-[#01261E] pb-[14px]">
               Movie Suggestions
             </p>
-            <h2 className="w-[70%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
+            <h2 className="font-[manrope] w-[70%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
               Movies, Videos and Sound
             </h2>
             <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-green-800">

@@ -1,6 +1,6 @@
 "use client";
 
-import { PieChart, Pie, Tooltip } from "recharts";
+import { PieChart, Pie, Tooltip, ResponsiveContainer } from "recharts";
 
 import {
   Card,
@@ -20,7 +20,7 @@ const chartData = [
 
 export default function AnalyticsPSCountryChart() {
   return (
-    <Card className="p-[24px] h-[308px]">
+    <Card className="p-[40px] h-[308px]">
       <CardHeader className="">
         <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
           Country
@@ -31,7 +31,7 @@ export default function AnalyticsPSCountryChart() {
         </CardDescription>
       </CardHeader>
 
-      <CardContent className="flex items-center gap-6">
+      <CardContent className="flex items-center justify-between">
         {/* Legend */}
         <div className="flex flex-col gap-3">
           {chartData.map((item) => (
@@ -48,18 +48,21 @@ export default function AnalyticsPSCountryChart() {
         </div>
 
         {/* Donut Chart */}
-        <div className="w-[160px] h-[160px]">
-          <PieChart width={160} height={160}>
-            <Pie
-              data={chartData}
-              dataKey="value"
-              nameKey="country"
-              innerRadius={50}
-              outerRadius={70}
-              stroke="transparent"
-            />
-            <Tooltip />
-          </PieChart>
+
+        <div className="w-[162px] h-[162px] -mt-5">
+          <ResponsiveContainer width="100%" height="100%">
+            <PieChart>
+              <Pie
+                data={chartData}
+                dataKey="value"
+                nameKey="age"
+                innerRadius="60%" // responsive donut thickness
+                outerRadius="100%" // fills container
+                stroke="transparent"
+              />
+              <Tooltip />
+            </PieChart>
+          </ResponsiveContainer>
         </div>
       </CardContent>
     </Card>

@@ -40,7 +40,7 @@ const chartConfig = {
 
 export default function AnalyticsPSNumberOfOpensChart() {
   return (
-    <Card className="p-[24px] h-[465px]">
+    <Card className="px-[35px] py-[40px] h-[465px]">
       <CardHeader>
         <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
           Number of opens
@@ -106,7 +106,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
       </CardContent>
 
       {/* labels */}
-      <div className="flex gap-6 justify-center items-center pt-[35px]">
+      <div className="flex gap-6 justify-center items-center pt-[25px]">
         <div className="flex items-center gap-2">
           <span className="w-3 h-3 rounded-[2px] bg-[#E19F20]"></span>
           <span className="text-[12px] text-[#464E5F] font-[500] leading-normal">

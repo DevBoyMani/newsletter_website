@@ -17,7 +17,7 @@ export default function GeopoliticalSummaryAnalytics() {
             <p className="text-[16px] font-[400] text-[#01261E] pb-[14px]">
               Geopolitical Summary
             </p>
-            <h2 className="w-[70%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
+            <h2 className="font-[manrope] w-[70%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
               Fact-checked geopolitical news
             </h2>
             <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-green-800">

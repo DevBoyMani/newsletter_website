@@ -1,6 +1,6 @@
 export default function AnalyticsAdCard() {
   return (
-    <div className="h-[308px] max-w-md rounded-[20px] p-10 bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
+    <div className="h-[308px] rounded-[20px] p-[40px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
       <h4 className="text-[22px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] pb-[20px]">
         Advertise with Sagravia
       </h4>
@@ -15,10 +15,10 @@ export default function AnalyticsAdCard() {
       </p>
 
       <div className="flex gap-4">
-        <button className="bg-[#fff] text-[#01261E] text-[14px] font-[600] py-[9px] px-[18px] rounded-full">
+        <button className="bg-[#fff] text-[#01261E] text-[14px] font-[600] py-[9px] px-[20px] rounded-full">
           Contact sales
         </button>
-        <button className="border border-[#fff] text-[#fff] text-[14px] font-[600] py-[9px] px-[18px] rounded-full">
+        <button className="border border-[#fff] text-[#fff] text-[14px] font-[600] py-[9px] px-[20px] rounded-full">
           Visit website
         </button>
       </div>

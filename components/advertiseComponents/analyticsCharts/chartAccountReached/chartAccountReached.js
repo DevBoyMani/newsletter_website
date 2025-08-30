@@ -51,7 +51,7 @@ export function AccountReached() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-White flex flex-col justify-between p-8"
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -169,7 +169,7 @@ export function AccountReached() {
         >
           {/* Front Side */}
           <Card
-            className="absolute w-full h-full bg-white flex flex-col justify-between p-6"
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button

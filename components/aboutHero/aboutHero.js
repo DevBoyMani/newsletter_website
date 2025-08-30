@@ -10,7 +10,7 @@ export default function AboutHero() {
 
       {/* mobile */}
 
-      <div className="block lg:hidden pt-[120px]">
+      <div className="block lg:hidden pt-[150px]">
         <div className="w-full px-4">
           <img
             src="/about/hero-mobile.png"

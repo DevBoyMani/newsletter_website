@@ -34,6 +34,34 @@ const colors = {
   // border: "#515151",
 };
 
+// Custom capsule bar
+const CapsuleBar = ({ x, y, width, height, fill, roundLeft, roundRight }) => {
+  const radius = height / 6; // auto-capsule based on bar thickness
+  return (
+    <path
+      d={`
+        M ${x + (roundLeft ? radius : 0)} ${y}
+        H ${x + width - (roundRight ? radius : 0)}
+        ${
+          roundRight
+            ? `A ${radius} ${radius} 0 0 1 ${
+                x + width - (roundRight ? 0 : radius)
+              } ${y + height}`
+            : ""
+        }
+        H ${x + (roundLeft ? radius : 0)}
+        ${
+          roundLeft
+            ? `A ${radius} ${radius} 0 0 1 ${x + (roundLeft ? 0 : radius)} ${y}`
+            : ""
+        }
+        Z
+      `}
+      fill={fill}
+    />
+  );
+};
+
 export function Statistics() {
   const [flipped, setFlipped] = useState(false);
   return (
@@ -120,17 +148,33 @@ export function Statistics() {
                   <Tooltip cursor={{ fill: "transparent" }} />
 
                   {/* Bars */}
+                  {/* Male Bar (left capsule + rounded junction) */}
+
                   <Bar
                     dataKey="male"
                     stackId="a"
-                    fill="#3C6255"
-                    radius={[10, 0, 0, 10]}
+                    fill="#657C75"
+                    shape={(props) => (
+                      <CapsuleBar
+                        {...props}
+                        roundLeft={true} // keep left rounded
+                        roundRight={true} // no right rounding
+                      />
+                    )}
                   />
+
+                  {/* Female Bar (yellow, right side rounding like current green) */}
                   <Bar
                     dataKey="female"
                     stackId="a"
-                    fill="#E5A800"
-                    radius={[0, 10, 10, 0]}
+                    fill="#E19F20"
+                    shape={(props) => (
+                      <CapsuleBar
+                        {...props}
+                        roundLeft={true} // no left rounding
+                        roundRight={true} // keep right rounded
+                      />
+                    )}
                   />
                 </BarChart>
               </ResponsiveContainer>
@@ -259,22 +303,32 @@ export function Statistics() {
                   <Tooltip cursor={{ fill: "transparent" }} />
 
                   {/* Background Bar (total = male + female) */}
-                  <Bar dataKey="total" fill="#FFF4CC" radius={[8, 8, 8, 8]} />
 
-                  {/* Male */}
                   <Bar
                     dataKey="male"
                     stackId="a"
                     fill="#657C75"
-                    radius={[8, 0, 0, 8]}
+                    shape={(props) => (
+                      <CapsuleBar
+                        {...props}
+                        roundLeft={true} // keep left rounded
+                        roundRight={true} // no right rounding
+                      />
+                    )}
                   />
 
-                  {/* Female */}
+                  {/* Female Bar (yellow, right side rounding like current green) */}
                   <Bar
                     dataKey="female"
                     stackId="a"
                     fill="#E19F20"
-                    radius={[0, 8, 8, 0]}
+                    shape={(props) => (
+                      <CapsuleBar
+                        {...props}
+                        roundLeft={true}
+                        roundRight={true}
+                      />
+                    )}
                   />
                 </BarChart>
               </ResponsiveContainer>
