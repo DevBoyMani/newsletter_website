@@ -33,7 +33,8 @@
     "components/blogsTestimonials/blogsTestimonials.js",
     "components/careers/customAccordion/customAccordion.js",
     "components/aboutNewslettersStatistics/aboutNewslettersStatistics.jsx",
-    "app/careers/page.js"
+    "app/careers/page.js",
+    "tailwind.config.js"
   ],
   "exclude": ["node_modules"]
 }

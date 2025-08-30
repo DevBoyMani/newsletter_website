@@ -86,7 +86,7 @@ export default function Footer() {
           {/* footer */}
           <div className="relative bg-[#01261E]">
             {/* Background Logo */}
-            <div className="absolute -left-16 top-4 opacity-[100%] z-10">
+            <div className="absolute -left-16 top-1 opacity-[100%] z-10">
               <img
                 src="/readers/sagravia-footer-logo.png"
                 alt="background logo"
@@ -94,12 +94,12 @@ export default function Footer() {
               />
             </div>
 
-            {/* Foreground Content */}
+            {/* sagravia logo text */}
             <div className="py-20 flex justify-center relative z-10 ">
               <img
                 src="/readers/sagravia-big-text.png"
                 alt="sagravia"
-                className=" w-[97%] px-4 py-2"
+                className=" w-[97%] -mt-6 ml-6"
               />
             </div>
 

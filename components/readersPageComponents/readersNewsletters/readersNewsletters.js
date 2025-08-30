@@ -204,8 +204,8 @@ export default function ReadersNewsletters() {
                     className={`absolute top-4 left-4 bg-white text-black rounded-full h-[30px] overflow-hidden transition-all duration-500 ease-in-out
                     ${
                       data.selected
-                        ? "w-[115px] px-[13px]"
-                        : "w-[30px] px-0 group-hover/card:w-[110px] group-hover/card:px-[13px]"
+                        ? "w-[115px] px-[32px]"
+                        : "w-[30px] px-0 group-hover/card:w-[115px] group-hover/card:px-[13px]"
                     }
                   `}
                   >
@@ -215,7 +215,7 @@ export default function ReadersNewsletters() {
                       ${
                         data.selected
                           ? "max-w-[90px] opacity-100 -ml-6" // ✅ keep width for Selected
-                          : "max-w-0 opacity-0 group-hover/card:max-w-[115px] group-hover/card:opacity-100 group-hover/card:mr-10"
+                          : "max-w-0 opacity-0 group-hover/card:max-w-[115px] group-hover/card:opacity-100 group-hover/card:mr-10 -ml-0.5"
                       }
                     `}
                     >
@@ -227,8 +227,8 @@ export default function ReadersNewsletters() {
                       className={`absolute top-0 h-[30px] w-[30px] flex items-center justify-center transition-all duration-500
                       ${
                         data.selected
-                          ? "right-1.5 translate-x-2"
-                          : "left-1/2 -translate-x-1/2 group-hover/card:left-auto group-hover/card:right-2 group-hover/card:translate-x-3"
+                          ? "right-3 translate-x-2"
+                          : "left-1/2 -translate-x-1/2 group-hover/card:left-auto group-hover/card:right-3 group-hover/card:translate-x-3"
                       }
                     `}
                     >

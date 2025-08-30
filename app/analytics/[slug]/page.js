@@ -57,7 +57,7 @@ export default function AnalyticsPage() {
               Analytics overview
             </h2>
           </div>
-          <div className="w-[60%] flex justify-end">
+          <div className="w-[60%] flex justify-end items-end">
             <AnalyticsComboList
               selected={selectedTopic}
               onChange={handleTopicChange}

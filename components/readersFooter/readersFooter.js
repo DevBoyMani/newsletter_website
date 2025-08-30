@@ -135,44 +135,15 @@ export default function ReadersFooter() {
             />
 
             {/* Auto-Scrolling Flex Container */}
-            {/* <div className="overflow-hidden">
-              <div className="flex gap-6 px-8 animate-scroll-cards">
-                {[...feedbackData, ...feedbackData].map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px]  rounded-[10px] border border-[#FFFFFF33] shrink-0"
-                  >
-                    <div className="flex justify-center lg:justify-start pb-[16px]">
-                      {[...Array(5)].map((_, id) => (
-                        <Image
-                          key={id}
-                          src="/readers/reader-star.png"
-                          alt="star"
-                          width={18}
-                          height={18}
-                          className=""
-                        />
-                      ))}
-                    </div>
 
-                    <div className="text-[#ffffff]">
-                      <p className="text-[16px] max-w-[279px] pb-[28px]">
-                        {item.feedback}
-                      </p>
-                      <p className="text-[16px]">{item.userName}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div> */}
-            <div
+            {/* <div
               className="overflow-hidden"
               onMouseEnter={() => setIsHovered(true)}
               onMouseLeave={handleMouseLeave}
             >
               <div
                 ref={scrollRef}
-                className={`flex gap-6 px-8 whitespace-nowrap cursor-grab ${
+                className={`flex gap-6 whitespace-nowrap cursor-grab ${
                   isHovered ? "pause-animation" : "animate-scroll-cards"
                 }`}
                 style={{
@@ -189,7 +160,7 @@ export default function ReadersFooter() {
                 {[...feedbackData, ...feedbackData].map((item, index) => (
                   <div
                     key={index}
-                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-[10px] border border-[#FFFFFF33] shrink-0 select-none"
+                    className="min-w-[317px] w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-[10px] border border-[#FFFFFF33] shrink-0 select-none"
                   >
                     <div className="flex justify-center lg:justify-start pb-[16px]">
                       {[...Array(5)].map((_, id) => (
@@ -204,6 +175,59 @@ export default function ReadersFooter() {
                     </div>
                     <div className="text-[#ffffff]">
                       <p className="text-[16px] max-w-full  whitespace-normal pb-[28px]">
+                        {item.feedback}
+                      </p>
+                      <p className="text-[16px]">{item.userName}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div> */}
+            <div
+              className="overflow-hidden cursor-grab"
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={handleMouseLeave}
+              onMouseDown={handleMouseDown}
+              onMouseUp={handleMouseUp}
+              onMouseMove={handleMouseMove}
+              ref={scrollRef} // ✅ scrolling happens here
+              style={{
+                overflowX: isHovered ? "auto" : "hidden", // enable scroll only on hover
+                scrollbarWidth: "none", // hide scrollbar
+                msOverflowStyle: "none",
+              }}
+            >
+              {/* animated track */}
+              <div
+                className={`${
+                  isHovered ? "pause-animation" : "animate-scroll-cards"
+                }`}
+                style={{
+                  display: "inline-flex", // keeps widths consistent
+                  gap: "24px",
+                  animationPlayState: isHovered ? "paused" : "running",
+                }}
+              >
+                {[...feedbackData, ...feedbackData].map((item, index) => (
+                  <div
+                    key={index}
+                    className="min-w-[317px] w-[317px] h-auto bg-[#FFFFFF0D] 
+                  pl-[17px] pr-[21px] py-[25px] rounded-[10px] 
+                  border border-[#FFFFFF33] shrink-0 select-none"
+                  >
+                    <div className="flex justify-center lg:justify-start pb-[16px]">
+                      {[...Array(5)].map((_, id) => (
+                        <Image
+                          key={id}
+                          src="/readers/reader-star.png"
+                          alt="star"
+                          width={18}
+                          height={18}
+                        />
+                      ))}
+                    </div>
+                    <div className="text-[#ffffff]">
+                      <p className="text-[16px] max-w-full whitespace-normal pb-[28px]">
                         {item.feedback}
                       </p>
                       <p className="text-[16px]">{item.userName}</p>
@@ -230,7 +254,7 @@ export default function ReadersFooter() {
               <img
                 src="/readers/sagravia-big-text.png"
                 alt="sagravia"
-                className=" w-[97%] px-4 py-2"
+                className=" w-[97%] ml-9"
               />
             </div>
 

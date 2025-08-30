@@ -52,7 +52,7 @@ export default function AnalyticsComboList({ selected, onChange }) {
               {open ? (
                 <ChevronUpIcon className="absolute right-2 top-2 h-6 w-6 text-white" />
               ) : (
-                <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6 text-white" />
+                <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6  text-white" />
               )}
             </Listbox.Button>
 
