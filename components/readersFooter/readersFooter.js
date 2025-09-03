@@ -79,8 +79,11 @@ const socialMediaIcons = [
 
 export default function ReadersFooter() {
   const scrollRef = useRef(null);
+  const mobileScrollRef = useRef(null);
+  const cardsRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
@@ -105,6 +108,34 @@ export default function ReadersFooter() {
     const x = e.pageX - scrollRef.current.offsetLeft;
     const walk = (x - startX.current) * 1.5; // scroll speed
     scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  // mobile Touch Events (Mobile)
+  const handleTouchStart = (e) => {
+    setIsDragging(true);
+    startX.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    scrollLeft.current = scrollRef.current.scrollLeft;
+
+    // pause animation while touching
+    if (cardsRef.current) {
+      cardsRef.current.classList.add("paused");
+    }
+  };
+
+  const handleTouchMove = (e) => {
+    if (!isDragging) return;
+    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX.current) * 1.5;
+    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+  };
+
+  const handleTouchEnd = () => {
+    setIsDragging(false);
+
+    // resume animation
+    if (cardsRef.current) {
+      cardsRef.current.classList.remove("paused");
+    }
   };
   return (
     <>
@@ -326,35 +357,41 @@ export default function ReadersFooter() {
             </h2>
           </div>
 
-          <div className="relative group overflow-hidden ">
-            <div className="overflow-hidden">
-              <div className="flex gap-6 pt-[60px] animate-scroll-cards">
-                {[...feedbackData, ...feedbackData].map((item, index) => (
-                  <div
-                    key={index}
-                    className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-lg border border-[#FFFFFF33] shrink-0"
-                  >
-                    <div className="flex justify-start mb-2">
-                      {[...Array(5)].map((_, id) => (
-                        <Image
-                          key={id}
-                          src="/readers/reader-star.png"
-                          alt="star"
-                          width={18}
-                          height={18}
-                          className=""
-                        />
-                      ))}
-                    </div>
-                    <div className="text-[#ffffff]">
-                      <p className="text-[16px] max-w-[279px]">
-                        {item.feedback}
-                      </p>
-                      <p className="text-[16px] mt-4">{item.userName}</p>
-                    </div>
+          <div
+            ref={mobileScrollRef}
+            className="overflow-x-scroll cursor-grab"
+            style={{
+              WebkitOverflowScrolling: "touch",
+              scrollbarWidth: "none", // hide scrollbar
+              msOverflowStyle: "none",
+            }}
+            onTouchStart={handleTouchStart}
+            onTouchMove={handleTouchMove}
+            onTouchEnd={handleTouchEnd}
+          >
+            <div className="flex gap-6 pt-[60px] readers-footer-mobile-animate-scroll-cards">
+              {[...feedbackData, ...feedbackData].map((item, index) => (
+                <div
+                  key={index}
+                  className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-lg border border-[#FFFFFF33] shrink-0"
+                >
+                  <div className="flex justify-start mb-2">
+                    {[...Array(5)].map((_, id) => (
+                      <Image
+                        key={id}
+                        src="/readers/reader-star.png"
+                        alt="star"
+                        width={18}
+                        height={18}
+                      />
+                    ))}
                   </div>
-                ))}
-              </div>
+                  <div className="text-[#ffffff]">
+                    <p className="text-[16px] max-w-[279px]">{item.feedback}</p>
+                    <p className="text-[16px] mt-4">{item.userName}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
 

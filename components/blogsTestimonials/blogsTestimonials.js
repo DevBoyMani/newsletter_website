@@ -155,7 +155,7 @@ export default function BlogsTestimonials() {
                   </button>
                 </div>
                 {showPopup && (
-                  <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+                  <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50">
                     <div className="relative bg-[#01261E] w-[90%] max-w-lg px-[35px]">
                       <button
                         onClick={() => setShowPopup(false)}
@@ -166,64 +166,6 @@ export default function BlogsTestimonials() {
                       <h2 className="text-white font-[manrope] text-[26px] font-bold text-center pt-[30px] pb-[18px]">
                         Sagravia Weekly Newsletter
                       </h2>
-                      {/* <form
-                        onSubmit={handleSubmit}
-                        className="bg-white rounded-[14px] pt-[38px] px-[34px] pb-[34px]"
-                      >
-                        <div className="space-y-[24px]">
-                          <div>
-                            <input
-                              type="text"
-                              placeholder="Name*"
-                              onChange={(e) => setName(e.target.value)}
-                              className="w-full pt-[17px] pb-[18px] pl-[15px] text-[14px] rounded-[10px] bg-[#F7F7F7] placeholder:text-[#757575] font-[500] leading-[130%]"
-                            />
-                            {errors.name && (
-                              <p className="text-[12px] text-red-500 mt-1 pl-1">
-                                {errors.name}
-                              </p>
-                            )}
-                          </div>
-                          <div>
-                            <input
-                              type="email"
-                              placeholder="Enter your email*"
-                              onChange={(e) => setEmail(e.target.value)}
-                              className="w-full pt-[17px] pb-[18px] pl-[15px] text-[14px] rounded-[10px] bg-[#F7F7F7] placeholder:text-[#757575] font-[500] leading-[130%]"
-                            />
-                            {errors.email && (
-                              <p className="text-[12px] text-red-500 mt-1 pl-1">
-                                {errors.email}
-                              </p>
-                            )}
-                          </div>
-                        </div>
-                        <div className="mt-[21px]">
-                          <button
-                            type="submit"
-                            className="w-full py-[12px] text-[16px] font-[500] leading-[130%] bg-[#01261E] text-white rounded-[6px] hover:bg-[#024b3b] transition-all"
-                          >
-                            Subscribe for free
-                          </button>
-                        </div>
-                      </form>
-                      <p className="text-white text-[8px] font-[500] leading-[130%] pt-[7px] pb-[26px]">
-                        By clicking “Submit” you agree with our{" "}
-                        <a
-                          href="/terms"
-                          className="text-[#C7A262] underline cursor-pointer"
-                        >
-                          terms of use
-                        </a>{" "}
-                        and{" "}
-                        <a
-                          href="/privacy"
-                          className="text-[#C7A262] underline cursor-pointer"
-                        >
-                          privacy policy
-                        </a>
-                        .
-                      </p> */}
                       {!isSubmitted ? (
                         <>
                           <form

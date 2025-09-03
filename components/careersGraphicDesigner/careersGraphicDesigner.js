@@ -149,7 +149,7 @@ export default function CareersGraphicDesigner() {
                   </div>
                 </div>
                 {/* impact section */}
-                <div className="py-[44px]">
+                {/* <div className="py-[44px]">
                   <div className="flex items-center lg:px-[10px] 2xl:px-[29px] py-[23px] bg-[#FEF5F6] border border-[#E5C8CD] rounded-[7px]">
                     <img
                       src="/careers/job-alert.png"
@@ -171,11 +171,21 @@ export default function CareersGraphicDesigner() {
                       </span>
                     </p>
                   </div>
+                </div> */}
+
+                <div className="py-[45px]">
+                  <Link href="#">
+                    <img
+                      src="/careers/careers-web-banner.png"
+                      alt="banner-image"
+                      className=""
+                    />
+                  </Link>
                 </div>
 
                 {/* 4 */}
-                <div className="pt-[68px]">
-                  <p className="text-[#121212] text-[18px] font-[700] leading-[141%] py-2">
+                <div className="">
+                  <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">

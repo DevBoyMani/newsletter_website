@@ -100,8 +100,8 @@ export default function AboutOurCompany() {
                       className="w-10 h-10 bg-[#4D3060] hover:bg-[#684182] rounded-full"
                     />
                   </a>
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-2 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
-                    <div className="w-[150px]">
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
+                    <div className="w-[185px]">
                       <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                         Presidential Summary
                       </p>
@@ -127,8 +127,8 @@ export default function AboutOurCompany() {
                       className="w-10 h-10 bg-[#06266D] hover:bg-[#0A338C] rounded-full"
                     />
                   </a>
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div className="w-[150px]">
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[185px]">
                       <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                         Geopolitical Summary
                       </p>
@@ -151,8 +151,8 @@ export default function AboutOurCompany() {
                       className="w-10 h-10 bg-[#8E3321] hover:bg-[#A23E2B] rounded-full"
                     />
                   </a>
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div className="w-[150px]">
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[185px]">
                       <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                         Business History
                       </p>
@@ -176,8 +176,8 @@ export default function AboutOurCompany() {
                       className="w-10 h-10 bg-[#161B21] hover:bg-[#2D3844] rounded-full"
                     />
                   </a>
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div className="w-[150px]">
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[185px]">
                       <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                         Movie Suggestions
                       </p>
@@ -200,8 +200,8 @@ export default function AboutOurCompany() {
                       className="w-10 h-10 bg-[#6A6F5B] hover:bg-[#737961] rounded-full"
                     />
                   </a>
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-3 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div className="w-[150px]">
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[185px]">
                       <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                         Long and Short
                       </p>
@@ -254,8 +254,8 @@ export default function AboutOurCompany() {
                   </a>
 
                   {/* Tooltip */}
-                  <div className="absolute -top-20 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-2 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
-                    <div className="w-[150px]">
+                  <div className="absolute -top-[65px] left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[185px]">
                       <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                         Dubai Summary
                       </p>

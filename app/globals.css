@@ -179,10 +179,29 @@ h6 {
 }
 
 .animate-scroll-cards {
-  animation: scrollCards 10s linear infinite;
+  animation: scrollCards 15s linear infinite;
 }
 
 .group:hover .animate-scroll-cards {
+  animation-play-state: paused;
+}
+
+@keyframes readers-footer-mobile-animate-scroll-cards {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.readers-footer-mobile-animate-scroll-cards {
+  display: flex;
+  animation: readers-footer-mobile-animate-scroll-cards 4s linear infinite;
+  will-change: transform; /* smoother performance */
+}
+
+.readers-footer-mobile-animate-scroll-cards.paused {
   animation-play-state: paused;
 }
 

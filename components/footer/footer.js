@@ -95,7 +95,7 @@ export default function Footer() {
             </div>
 
             {/* sagravia logo text */}
-            <div className="py-20 flex justify-center relative z-10 ">
+            <div className="py-20 flex justify-center relative z-0 ">
               <img
                 src="/readers/sagravia-big-text.png"
                 alt="sagravia"

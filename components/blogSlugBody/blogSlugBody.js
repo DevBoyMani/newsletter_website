@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import BlogSlugComponentList from "../blogSlugComponentList/blogSlugComponentList";
+import { motion, AnimatePresence } from "framer-motion";
 
 // Step 1: Define sections with title and unique content
 const sectionsWithContent = [
@@ -259,38 +260,8 @@ export default function BlogSlugBody() {
   const [scrollPercent, setScrollPercent] = useState(0);
   const sectionRefs = useRef([0]);
   const [hoveredIndex, setHoveredIndex] = useState(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if (entry.isIntersecting) {
-  //           const index = sectionRefs.current.findIndex(
-  //             (ref) => ref === entry.target
-  //           );
-  //           if (index !== -1) {
-  //             setActiveIndex(index);
-  //           }
-  //         }
-  //       });
-  //     },
-  //     {
-  //       root: null,
-  //       rootMargin: "0px 0px -60% 0px", // Trigger earlier when section top enters view
-  //       threshold: 0.1, // Lower = more sensitive
-  //     }
-  //   );
-
-  //   sectionRefs.current.forEach((ref) => {
-  //     if (ref) observer.observe(ref);
-  //   });
-
-  //   return () => {
-  //     sectionRefs.current.forEach((ref) => {
-  //       if (ref) observer.unobserve(ref);
-  //     });
-  //   };
-  // }, []);
+  const [email, setEmail] = useState("");
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -360,11 +331,12 @@ export default function BlogSlugBody() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const [email, setEmail] = useState("");
+  // const [email, setEmail] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Subscribed with email:", email);
+    setShowPopup(true);
     // the email will send to a backend or API here
   };
 
@@ -488,10 +460,9 @@ export default function BlogSlugBody() {
             </div>
 
             {/* right */}
-            <div className="md:w-[22%] w-full sticky top-24 self-start pt-6">
+            {/* <div className="md:w-[22%] w-full sticky top-24 self-start pt-6">
               <div
                 className="scroll-mt-28"
-                // ref={(el) => (sectionRefs.current[0] = el)}
               >
                 <div className="h-auto">
                   <p className="text-[14px] pb-[17px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
@@ -563,6 +534,102 @@ export default function BlogSlugBody() {
                   </div>
                 </div>
               </div>
+            </div> */}
+            <div className="md:w-[22%] w-full sticky top-24 self-start pt-6">
+              <div className="h-auto">
+                <p className="text-[14px] pb-[17px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
+                  Share this article
+                </p>
+                <div className="pt-[34px] pb-[62px]">
+                  <div className="flex justify-start space-x-6">
+                    {socialIcons.map((icon, index) => (
+                      <Link href={icon.source} key={index}>
+                        <img
+                          src={
+                            hoveredIndex === index
+                              ? icon.hoverSrc
+                              : icon.defaultSrc
+                          }
+                          alt={icon.alt}
+                          className="w-8 h-8 cursor-pointer"
+                          onMouseEnter={() => setHoveredIndex(index)}
+                          onMouseLeave={() => setHoveredIndex(null)}
+                        />
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+                <div className="border border-[#01261E] rounded-[10px] relative">
+                  <div className="py-[16px] px-[15px]">
+                    <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
+                      Sagravia Newsletter
+                    </p>
+                    <p className="text-[#01261E] font-[400] text-[12px] leading-[141%] pt-[8px]">
+                      Do you want to get tips and tactics to grow the way you
+                      want?
+                    </p>
+
+                    {/* form */}
+                    <form
+                      onSubmit={handleSubmit}
+                      className="pt-[16px] space-y-2"
+                    >
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={(e) => setEmail(e.target.value)}
+                        placeholder="Email"
+                        required
+                        className="px-2 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full h-[37px] focus:outline-none focus:ring-1 focus:ring-[#01261E]"
+                      />
+                      <button
+                        type="submit"
+                        className="w-full h-[37px] bg-[#01261E] text-[#FFF] text-[14px] rounded-[3px] hover:bg-[#0B4337] transition"
+                      >
+                        Subscribe for free
+                      </button>
+                    </form>
+
+                    <div className="pt-[5px] pl-[2px]">
+                      <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
+                        Unsubscribe at any time.{" "}
+                        <span className="underline">Terms</span> &{" "}
+                        <span className="underline">Privacy</span>.
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* popup */}
+                  <AnimatePresence>
+                    {showPopup && (
+                      <motion.div
+                        initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                        animate={{ scale: 1, opacity: 1, y: 0 }}
+                        exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                        transition={{ duration: 0.4, ease: "easeOut" }}
+                        className="absolute inset-0 bg-[#01261E] rounded-[10px] px-[35px] py-[65px] shadow-lg z-10"
+                      >
+                        <div className="flex justify-end -mt-[40px]">
+                          <button
+                            onClick={() => setShowPopup(false)}
+                            className="text-white text-[20px]"
+                          >
+                            x
+                          </button>
+                        </div>
+                        <div className="flex flex-col items-center text-center justify-center mt-6">
+                          <p className="text-[#fff] font-[400] text-[22px] leading-[112%]">
+                            Thank you!
+                            <br />
+                            Check your email
+                            <br /> to verify.
+                          </p>
+                        </div>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -593,7 +660,7 @@ export default function BlogSlugBody() {
                   {/* Inject subscribe box */}
                   {isTargetSection && (
                     <div className="block lg:hidden pt-[20px] pb-[21px]">
-                      <div className="border border-[#01261E] rounded-[10px]">
+                      <div className="border border-[#01261E] rounded-[10px] relative">
                         <div className="py-[17px] px-[16px]">
                           <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
                             Sagravia Newsletter
@@ -607,39 +674,59 @@ export default function BlogSlugBody() {
                             className="pt-4 space-y-2"
                           >
                             <div className="space-y-2">
-                              <div className="">
-                                <input
-                                  type="email"
-                                  value={email}
-                                  onChange={(e) => setEmail(e.target.value)}
-                                  placeholder="Email"
-                                  required
-                                  className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
-                                />
-                              </div>
-                              <div className="">
-                                <button
-                                  type="submit"
-                                  className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
-                                >
-                                  Subscribe
-                                </button>
-                              </div>
+                              <input
+                                type="email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Email"
+                                required
+                                className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
+                              />
+                              <button
+                                type="submit"
+                                className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
+                              >
+                                Subscribe
+                              </button>
                             </div>
                           </form>
                           <div className="pt-2">
                             <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
                               Unsubscribe at any time.{" "}
-                              <span className="underline underline-[#767676]">
-                                Terms
-                              </span>{" "}
-                              &{" "}
-                              <span className="underline underline-[#767676]">
-                                Privacy
-                              </span>
-                              .
+                              <span className="underline">Terms</span> &{" "}
+                              <span className="underline">Privacy</span>.
                             </p>
                           </div>
+
+                          {/* ✅ Popup */}
+                          <AnimatePresence>
+                            {showPopup && (
+                              <motion.div
+                                initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                                animate={{ scale: 1, opacity: 1, y: 0 }}
+                                exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                                transition={{ duration: 0.4, ease: "easeOut" }}
+                                className="absolute inset-0 bg-[#01261E] rounded-[10px] px-[35px] py-[65px] shadow-lg z-10"
+                              >
+                                <div className="flex justify-end -mt-[40px]">
+                                  <button
+                                    onClick={() => setShowPopup(false)}
+                                    className="text-white text-[20px]"
+                                  >
+                                    ×
+                                  </button>
+                                </div>
+                                <div className="flex flex-col items-center text-center justify-center mt-6">
+                                  <p className="text-[#fff] font-[400] text-[22px] leading-[112%]">
+                                    Thank you!
+                                    <br />
+                                    Check your email
+                                    <br /> to verify.
+                                  </p>
+                                </div>
+                              </motion.div>
+                            )}
+                          </AnimatePresence>
                         </div>
                       </div>
                     </div>
@@ -696,18 +783,18 @@ export default function BlogSlugBody() {
           <div className="">
             <div className="h-auto">
               <div className="pt-10">
-                <div className="border border-[#01261E] rounded-[10px]">
-                  <div className="py-[17px] px-[16px]">
-                    <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
-                      Sagravia Newsletter
-                    </p>
-                    <p className="text-[#01261E] font-[400] text-[14px] leading-[141%]">
-                      Do you want to get tips and tactics to grow
-                      <br /> the way you want?
-                    </p>
-                    <form onSubmit={handleSubmit} className="pt-4 space-y-2">
-                      <div className="space-y-2">
-                        <div className="">
+                <div className="block lg:hidden pt-[20px] pb-[21px]">
+                  <div className="border border-[#01261E] rounded-[10px] relative">
+                    <div className="py-[17px] px-[16px]">
+                      <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
+                        Sagravia Newsletter
+                      </p>
+                      <p className="text-[#01261E] font-[400] text-[14px] leading-[141%]">
+                        Do you want to get tips and tactics to grow
+                        <br /> the way you want?
+                      </p>
+                      <form onSubmit={handleSubmit} className="pt-4 space-y-2">
+                        <div className="space-y-2">
                           <input
                             type="email"
                             value={email}
@@ -716,8 +803,6 @@ export default function BlogSlugBody() {
                             required
                             className="px-4 py-1.5 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full focus:outline-none focus:ring-1 focus:ring-[#01261E]"
                           />
-                        </div>
-                        <div className="">
                           <button
                             type="submit"
                             className="w-full bg-[#01261E] text-[#FFF] text-[14px] px-4 py-1.5 rounded-[3px] hover:bg-[#0B4337] transition"
@@ -725,20 +810,44 @@ export default function BlogSlugBody() {
                             Subscribe
                           </button>
                         </div>
+                      </form>
+                      <div className="pt-2">
+                        <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
+                          Unsubscribe at any time.{" "}
+                          <span className="underline">Terms</span> &{" "}
+                          <span className="underline">Privacy</span>.
+                        </p>
                       </div>
-                    </form>
-                    <div className="pt-2">
-                      <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
-                        Unsubscribe at any time.{" "}
-                        <span className="underline underline-[#767676]">
-                          Terms
-                        </span>{" "}
-                        &{" "}
-                        <span className="underline underline-[#767676]">
-                          Privacy
-                        </span>
-                        .
-                      </p>
+
+                      {/* ✅ Popup */}
+                      <AnimatePresence>
+                        {showPopup && (
+                          <motion.div
+                            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                            animate={{ scale: 1, opacity: 1, y: 0 }}
+                            exit={{ scale: 0.8, opacity: 0, y: 20 }}
+                            transition={{ duration: 0.4, ease: "easeOut" }}
+                            className="absolute inset-0 bg-[#01261E] rounded-[10px] px-[35px] py-[65px] shadow-lg z-10"
+                          >
+                            <div className="flex justify-end -mt-[40px]">
+                              <button
+                                onClick={() => setShowPopup(false)}
+                                className="text-white text-[20px]"
+                              >
+                                ×
+                              </button>
+                            </div>
+                            <div className="flex flex-col items-center text-center justify-center mt-6">
+                              <p className="text-[#fff] font-[400] text-[22px] leading-[112%]">
+                                Thank you!
+                                <br />
+                                Check your email
+                                <br /> to verify.
+                              </p>
+                            </div>
+                          </motion.div>
+                        )}
+                      </AnimatePresence>
                     </div>
                   </div>
                 </div>
