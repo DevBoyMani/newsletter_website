@@ -16,6 +16,7 @@ import AdvertiseAdBlocker from "../../components/advertiseAdBlocker/advertiseAdB
 import AdvertiseNewFaq from "../../components/advertiseNewFaq/advertiseNewFaq";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
+import CustomizedHoverButton from "../../components/customizedHoverButton/customizedHoverButton";
 
 export default function Advertise() {
   const videos = [
@@ -70,40 +71,6 @@ export default function Advertise() {
       link: "#",
     },
   ];
-
-  // b-1
-  const analyticsBtnRef = useRef(null);
-  const [originStyle, setOriginStyle] = useState({});
-
-  const handleMouseEnter = (e) => {
-    if (!analyticsBtnRef.current) return;
-
-    const rect = analyticsBtnRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // ripple starts at cursor
-    setOriginStyle({
-      transformOrigin: `${x}px ${y}px`,
-    });
-  };
-
-  // b-2
-  const seeMoreBtnRef = useRef(null);
-  const [originStyleB2, setOriginStyleB2] = useState({});
-
-  const handleMouseEnterB2 = (e) => {
-    if (!seeMoreBtnRef.current) return;
-
-    const rect = seeMoreBtnRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    // ripple starts at cursor
-    setOriginStyleB2({
-      transformOrigin: `${x}px ${y}px`,
-    });
-  };
 
   return (
     <>
@@ -254,29 +221,20 @@ export default function Advertise() {
                     </p>
                   </div>
                   <div>
-                    {/* <Link href="/analytics">
-                      <button className="flex px-4 py-1 text-[#FAFAFA] text-lg rounded-full border border-[#FAFAFA] p-2 hover:bg-[#ffffff] hover:text-[#01261E]">
-                        Analytics
-                      </button>
-                    </Link> */}
-
-                    <Link
-                      href="https://www.sagravia.com/"
-                      ref={analyticsBtnRef}
-                      onMouseEnter={handleMouseEnter}
-                      className="relative inline-block border border-[#FAFAFA] text-white hover:text-black lg:text-[14px] font-[600] leading-normal px-4 py-2 rounded-full overflow-hidden group"
-                    >
-                      {/* Expanding background */}
-                      <span
-                        style={originStyle}
-                        className="absolute inset-0 bg-white rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out z-0"
-                      />
-
-                      {/* Text */}
-                      <span className="relative z-10 transition-colors duration-300">
-                        Analytics
-                      </span>
-                    </Link>
+                    <CustomizedHoverButton
+                      href="/analytics"
+                      label="Analytics"
+                      fontSize="14px"
+                      fontWeight="600"
+                      width="123px"
+                      height="37px"
+                      borderColor="#DAEBE8"
+                      // bgColor="#C7A262"
+                      hoverBgColor="#DAEBE8"
+                      hoverText="black"
+                      textColor="#DAEBE8"
+                      padding="px-[24px] py-[9px]"
+                    />
                   </div>
                 </div>
               </div>
@@ -410,23 +368,19 @@ export default function Advertise() {
             </a>
           </div> */}
           <div className="px-20 py-20 flex justify-center">
-            <Link
+            <CustomizedHoverButton
               href="#"
-              ref={seeMoreBtnRef}
-              onMouseEnter={handleMouseEnterB2}
-              className="relative w-[198px] h-[45px] flex justify-center items-center border border-[#121212] rounded-[45px] text-[23px] hover:text-[#ffffff] text-[#121212] font-[600] overflow-hidden group"
-            >
-              {/* Background animation layer */}
-              <span
-                style={originStyleB2}
-                className="absolute inset-0 bg-[#01261E] rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-out z-0"
-              />
-
-              {/* Button text */}
-              <span className="relative z-10 transition-colors duration-300">
-                See more
-              </span>
-            </Link>
+              label="See more"
+              fontSize="23px"
+              fontWeight="600"
+              width="198px"
+              height="45px"
+              borderColor="#121212"
+              hoverBgColor="#01261E"
+              hoverText="#ffffff"
+              textColor="#121212"
+              padding="px-[30px] py-[17px]"
+            />
           </div>
         </div>
       </div>

@@ -4,6 +4,8 @@ import Link from "next/link";
 import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
+import { Customized } from "recharts";
+import CustomizedHoverButton from "../../components/customizedHoverButton/customizedHoverButton";
 
 const routes = [
   { path: "/about", name: "About" },
@@ -99,21 +101,20 @@ export default function Navbar() {
   const isCareersSlugPage = pathname.startsWith("/careers/");
 
   // contact button hovering
-  const btnRef = useRef<HTMLAnchorElement>(null);
-  const [originStyle, setOriginStyle] = useState<React.CSSProperties>({});
+  // const btnRef = useRef<HTMLAnchorElement>(null);
+  // const [originStyle, setOriginStyle] = useState<React.CSSProperties>({});
 
-  const handleMouseEnter = (e: React.MouseEvent) => {
-    if (!btnRef.current) return;
+  // const handleMouseEnter = (e: React.MouseEvent) => {
+  //   if (!btnRef.current) return;
 
-    const rect = btnRef.current.getBoundingClientRect();
-    const x = e.clientX - rect.left; // cursor X inside button
-    const y = e.clientY - rect.top; // cursor Y inside button
+  //   const rect = btnRef.current.getBoundingClientRect();
+  //   const x = e.clientX - rect.left;
+  //   const y = e.clientY - rect.top;
 
-    // dynamic transform-origin at cursor point
-    setOriginStyle({
-      transformOrigin: `${x}px ${y}px`,
-    });
-  };
+  //   setOriginStyle({
+  //     transformOrigin: `${x}px ${y}px`,
+  //   });
+  // };
 
   return (
     <>
@@ -133,13 +134,13 @@ export default function Navbar() {
               </div>
             </Link>
 
-            <div className="lg:text-[17px] font-[400] flex items-center text-xl">
+            <div className=" font-[400] flex items-center">
               <div className="flex items-center space-x-4">
                 {routes.map((route) => (
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`relative group ml-2 md:ml-6 overflow-hidden h-[26px] ${
+                    className={`relative group lg:text-[17px] ml-2 md:ml-6 overflow-hidden h-[26px] ${
                       pathname === route.path
                         ? "text-[#C7A262]"
                         : isDarkHeader
@@ -160,22 +161,21 @@ export default function Navbar() {
                 ))}
               </div>
 
-              {/* Contact button */}
-              <Link
+              <CustomizedHoverButton
                 href="/contact"
-                ref={btnRef}
-                onMouseEnter={handleMouseEnter}
-                className="relative inline-block ml-20 mt-2 px-6 py-2 bg-[#C7A262] text-white lg:text-[16px] font-[300] rounded-full overflow-hidden group"
-              >
-                {/* Expanding background */}
-                <span
-                  style={originStyle}
-                  className="absolute inset-0 bg-black rounded-full scale-0 group-hover:scale-100 transition-transform duration-300 ease-in-out z-0"
-                />
-
-                {/* Text */}
-                <span className="relative z-10">Contact Sales</span>
-              </Link>
+                label="Contact Sales"
+                fontSize="16px"
+                fontWeight="300"
+                // width="135px"
+                // height="42px"
+                // borderColor="#C7A262"
+                hoverText="#ffffff"
+                bgColor="#C7A262"
+                hoverBgColor="#000"
+                textColor="#fff"
+                padding="px-6 py-2"
+                margin="ml-20"
+              />
             </div>
           </div>
         </div>
