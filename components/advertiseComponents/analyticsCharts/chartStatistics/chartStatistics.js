@@ -34,32 +34,83 @@ const colors = {
   // border: "#515151",
 };
 
-// Custom capsule bar
-const CapsuleBar = ({ x, y, width, height, fill, roundLeft, roundRight }) => {
-  const radius = height / 6; // auto-capsule based on bar thickness
-  return (
-    <path
-      d={`
-        M ${x + (roundLeft ? radius : 0)} ${y}
-        H ${x + width - (roundRight ? radius : 0)}
-        ${
-          roundRight
-            ? `A ${radius} ${radius} 0 0 1 ${
-                x + width - (roundRight ? 0 : radius)
-              } ${y + height}`
-            : ""
-        }
-        H ${x + (roundLeft ? radius : 0)}
-        ${
-          roundLeft
-            ? `A ${radius} ${radius} 0 0 1 ${x + (roundLeft ? 0 : radius)} ${y}`
-            : ""
-        }
-        Z
-      `}
-      fill={fill}
-    />
-  );
+// Custom capsule bar with proper center corners
+// Custom capsule bar with proper center corners
+const CapsuleBar = ({
+  x,
+  y,
+  width,
+  height,
+  fill,
+  isFirst,
+  isLast,
+  isSingle,
+}) => {
+  const radius = height / 2; // Full capsule radius
+
+  // For single bars (only one gender in this age group)
+  if (isSingle) {
+    return (
+      <path
+        d={`
+          M ${x + radius} ${y}
+          H ${x + width - radius}
+          A ${radius} ${radius} 0 0 1 ${x + width} ${y + radius}
+          V ${y + height - radius}
+          A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
+          H ${x + radius}
+          A ${radius} ${radius} 0 0 1 ${x} ${y + height - radius}
+          V ${y + radius}
+          A ${radius} ${radius} 0 0 1 ${x + radius} ${y}
+          Z
+        `}
+        fill={fill}
+      />
+    );
+  }
+
+  // For first part of a stacked bar (male - both sides rounded)
+  if (isFirst) {
+    return (
+      <path
+        d={`
+          M ${x + radius} ${y}
+          H ${x + width - radius}
+          A ${radius} ${radius} 0 0 1 ${x + width} ${y + radius}
+          V ${y + height - radius}
+          A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
+          H ${x + radius}
+          A ${radius} ${radius} 0 0 1 ${x} ${y + height - radius}
+          V ${y + radius}
+          A ${radius} ${radius} 0 0 1 ${x + radius} ${y}
+          Z
+        `}
+        fill={fill}
+      />
+    );
+  }
+
+  // For last part of a stacked bar (female - right side rounded)
+  if (isLast) {
+    return (
+      <path
+        d={`
+          M ${x} ${y}
+          H ${x + width - radius}
+          A ${radius} ${radius} 0 0 1 ${x + width} ${y + radius}
+          V ${y + height - radius}
+          A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
+          H ${x}
+          V ${y}
+          Z
+        `}
+        fill={fill}
+      />
+    );
+  }
+
+  // For middle parts (no rounding)
+  return <rect x={x} y={y} width={width} height={height} fill={fill} />;
 };
 
 export function Statistics() {
@@ -148,33 +199,49 @@ export function Statistics() {
                   <Tooltip cursor={{ fill: "transparent" }} />
 
                   {/* Bars */}
-                  {/* Male Bar (left capsule + rounded junction) */}
-
+                  {/* Male Bar - first part of the stack (left side rounded) */}
+                  {/* Male Bar - first part of the stack (both sides rounded) */}
                   <Bar
                     dataKey="male"
                     stackId="a"
                     fill="#657C75"
-                    shape={(props) => (
-                      <CapsuleBar
-                        {...props}
-                        roundLeft={true} // keep left rounded
-                        roundRight={true} // no right rounding
-                      />
-                    )}
+                    shape={(props) => {
+                      const { x, y, width, height } = props;
+                      return (
+                        <CapsuleBar
+                          x={x}
+                          y={y}
+                          width={width}
+                          height={height}
+                          fill="#657C75"
+                          isFirst={true}
+                          isLast={false}
+                          isSingle={false}
+                        />
+                      );
+                    }}
                   />
 
-                  {/* Female Bar (yellow, right side rounding like current green) */}
+                  {/* Female Bar - last part of the stack (right side rounded) */}
                   <Bar
                     dataKey="female"
                     stackId="a"
                     fill="#E19F20"
-                    shape={(props) => (
-                      <CapsuleBar
-                        {...props}
-                        roundLeft={true} // no left rounding
-                        roundRight={true} // keep right rounded
-                      />
-                    )}
+                    shape={(props) => {
+                      const { x, y, width, height } = props;
+                      return (
+                        <CapsuleBar
+                          x={x}
+                          y={y}
+                          width={width}
+                          height={height}
+                          fill="#E19F20"
+                          isFirst={false}
+                          isLast={true}
+                          isSingle={false}
+                        />
+                      );
+                    }}
                   />
                 </BarChart>
               </ResponsiveContainer>
