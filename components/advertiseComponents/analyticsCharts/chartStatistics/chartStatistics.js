@@ -34,83 +34,41 @@ const colors = {
   // border: "#515151",
 };
 
-// Custom capsule bar with proper center corners
-// Custom capsule bar with proper center corners
-const CapsuleBar = ({
-  x,
-  y,
-  width,
-  height,
-  fill,
-  isFirst,
-  isLast,
-  isSingle,
-}) => {
-  const radius = height / 2; // Full capsule radius
+// Custom capsule bar
+// Male Capsule Bar (both ends rounded)
+// Male Capsule Bar (both ends rounded)
+const MaleCapsuleBar = ({ x, y, width, height, fill }) => {
+  const radius = height / 2;
+  return (
+    <rect
+      x={x}
+      y={y}
+      width={width}
+      height={height}
+      rx={radius}
+      ry={radius}
+      fill={fill}
+    />
+  );
+};
 
-  // For single bars (only one gender in this age group)
-  if (isSingle) {
-    return (
-      <path
-        d={`
-          M ${x + radius} ${y}
-          H ${x + width - radius}
-          A ${radius} ${radius} 0 0 1 ${x + width} ${y + radius}
-          V ${y + height - radius}
-          A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
-          H ${x + radius}
-          A ${radius} ${radius} 0 0 1 ${x} ${y + height - radius}
-          V ${y + radius}
-          A ${radius} ${radius} 0 0 1 ${x + radius} ${y}
-          Z
-        `}
-        fill={fill}
-      />
-    );
-  }
-
-  // For first part of a stacked bar (male - both sides rounded)
-  if (isFirst) {
-    return (
-      <path
-        d={`
-          M ${x + radius} ${y}
-          H ${x + width - radius}
-          A ${radius} ${radius} 0 0 1 ${x + width} ${y + radius}
-          V ${y + height - radius}
-          A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
-          H ${x + radius}
-          A ${radius} ${radius} 0 0 1 ${x} ${y + height - radius}
-          V ${y + radius}
-          A ${radius} ${radius} 0 0 1 ${x + radius} ${y}
-          Z
-        `}
-        fill={fill}
-      />
-    );
-  }
-
-  // For last part of a stacked bar (female - right side rounded)
-  if (isLast) {
-    return (
-      <path
-        d={`
-          M ${x} ${y}
-          H ${x + width - radius}
-          A ${radius} ${radius} 0 0 1 ${x + width} ${y + radius}
-          V ${y + height - radius}
-          A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
-          H ${x}
-          V ${y}
-          Z
-        `}
-        fill={fill}
-      />
-    );
-  }
-
-  // For middle parts (no rounding)
-  return <rect x={x} y={y} width={width} height={height} fill={fill} />;
+// Female Bar (left side curve merging with male, no gap)
+const FemaleMergeBar = ({ x, y, width, height, fill }) => {
+  const radius = height / 2;
+  const overlap = 6; // small overlap to kill the gap
+  return (
+    <path
+      d={`
+        M ${x - overlap} ${y}
+        H ${x + width - radius}
+        A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
+        H ${x - overlap}
+        A ${radius} ${radius} 0 0 0 ${x - overlap} ${y}
+        Z
+      `}
+      fill={fill}
+    />
+  );
 };
 
 export function Statistics() {
@@ -199,48 +157,20 @@ export function Statistics() {
                   <Tooltip cursor={{ fill: "transparent" }} />
 
                   {/* Bars */}
-                  {/* male */}
+                  {/* Male Bar (left capsule + rounded junction) */}
+
                   <Bar
                     dataKey="male"
                     stackId="a"
-                    fill="#657C75"
-                    shape={(props) => {
-                      const { x, y, width, height } = props;
-                      return (
-                        <CapsuleBar
-                          x={x}
-                          y={y}
-                          width={width}
-                          height={height}
-                          fill="#657C75"
-                          isFirst={true}
-                          isLast={false}
-                          isSingle={false}
-                        />
-                      );
-                    }}
+                    fill={colors.male}
+                    shape={(props) => <MaleCapsuleBar {...props} />}
                   />
 
-                  {/* female */}
                   <Bar
                     dataKey="female"
                     stackId="a"
-                    fill="#E19F20"
-                    shape={(props) => {
-                      const { x, y, width, height } = props;
-                      return (
-                        <CapsuleBar
-                          x={x}
-                          y={y}
-                          width={width}
-                          height={height}
-                          fill="#E19F20"
-                          isFirst={false}
-                          isLast={true}
-                          isSingle={false}
-                        />
-                      );
-                    }}
+                    fill={colors.female}
+                    shape={(props) => <FemaleMergeBar {...props} />}
                   />
                 </BarChart>
               </ResponsiveContainer>
@@ -373,28 +303,15 @@ export function Statistics() {
                   <Bar
                     dataKey="male"
                     stackId="a"
-                    fill="#657C75"
-                    shape={(props) => (
-                      <CapsuleBar
-                        {...props}
-                        roundLeft={true} // keep left rounded
-                        roundRight={true} // no right rounding
-                      />
-                    )}
+                    fill={colors.male}
+                    shape={(props) => <MaleCapsuleBar {...props} />}
                   />
 
-                  {/* Female Bar (yellow, right side rounding like current green) */}
                   <Bar
                     dataKey="female"
                     stackId="a"
-                    fill="#E19F20"
-                    shape={(props) => (
-                      <CapsuleBar
-                        {...props}
-                        roundLeft={true}
-                        roundRight={true}
-                      />
-                    )}
+                    fill={colors.female}
+                    shape={(props) => <FemaleMergeBar {...props} />}
                   />
                 </BarChart>
               </ResponsiveContainer>
