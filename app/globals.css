@@ -186,22 +186,28 @@ h6 {
   animation-play-state: paused;
 }
 
-@keyframes readers-footer-mobile-animate-scroll-cards {
+/* Define the scrolling animation */
+@keyframes mobile-scroll {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-100%);
+    /* Scroll the length of one set of duplicated feedback data */
+    transform: translateX(calc(-317px * 8 - 6px * 8));
   }
 }
 
 .readers-footer-mobile-animate-scroll-cards {
-  display: flex;
-  animation: readers-footer-mobile-animate-scroll-cards 4s linear infinite;
-  will-change: transform; /* smoother performance */
+  /* Apply the animation */
+  animation: mobile-scroll 25s linear infinite;
+  /* Ensure the animation can be paused */
+  animation-play-state: running;
+  /* Prevent layout shift on pause/resume */
+  will-change: transform;
 }
 
-.readers-footer-mobile-animate-scroll-cards.paused {
+/* Optional: Pause animation on hover for desktop if needed */
+.readers-footer-mobile-animate-scroll-cards:hover {
   animation-play-state: paused;
 }
 

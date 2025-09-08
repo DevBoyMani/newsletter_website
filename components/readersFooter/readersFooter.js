@@ -79,11 +79,9 @@ const socialMediaIcons = [
 
 export default function ReadersFooter() {
   const scrollRef = useRef(null);
-  const mobileScrollRef = useRef(null);
-  const cardsRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);
+  const mobileScrollRef = useRef(null); // Ref for the mobile scroll container
   const [isDragging, setIsDragging] = useState(false);
-
   const startX = useRef(0);
   const scrollLeft = useRef(0);
 
@@ -113,28 +111,37 @@ export default function ReadersFooter() {
   // mobile Touch Events (Mobile)
   const handleTouchStart = (e) => {
     setIsDragging(true);
-    startX.current = e.touches[0].pageX - scrollRef.current.offsetLeft;
-    scrollLeft.current = scrollRef.current.scrollLeft;
+    startX.current = e.touches[0].pageX - mobileScrollRef.current.offsetLeft; // Use mobileScrollRef
+    scrollLeft.current = mobileScrollRef.current.scrollLeft; // Use mobileScrollRef
 
-    // pause animation while touching
-    if (cardsRef.current) {
-      cardsRef.current.classList.add("paused");
+    // Pause the CSS animation on the animated container
+    const animatedContainer = document.querySelector(
+      ".readers-footer-mobile-animate-scroll-cards"
+    );
+    if (animatedContainer) {
+      animatedContainer.style.animationPlayState = "paused";
     }
   };
 
   const handleTouchMove = (e) => {
     if (!isDragging) return;
-    const x = e.touches[0].pageX - scrollRef.current.offsetLeft;
+    const x = e.touches[0].pageX - mobileScrollRef.current.offsetLeft; // Use mobileScrollRef
     const walk = (x - startX.current) * 1.5;
-    scrollRef.current.scrollLeft = scrollLeft.current - walk;
+    mobileScrollRef.current.scrollLeft = scrollLeft.current - walk; // Use mobileScrollRef
   };
 
   const handleTouchEnd = () => {
     setIsDragging(false);
 
-    // resume animation
-    if (cardsRef.current) {
-      cardsRef.current.classList.remove("paused");
+    // Resume the CSS animation
+    const animatedContainer = document.querySelector(
+      ".readers-footer-mobile-animate-scroll-cards"
+    );
+    if (animatedContainer) {
+      // Add a small delay before restarting to avoid jumpiness
+      setTimeout(() => {
+        animatedContainer.style.animationPlayState = "running";
+      }, 50);
     }
   };
   return (
