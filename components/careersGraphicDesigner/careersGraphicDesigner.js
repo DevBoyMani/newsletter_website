@@ -173,7 +173,37 @@ export default function CareersGraphicDesigner() {
                   </div>
                 </div> */}
 
-                <div className="py-[45px]">
+                <div className="py-[44px]">
+                  <div className="flex items-center px-4 md:px-6 lg:px-8 py-6 bg-[#FEF5F6] border border-[#E5C8CD] rounded-lg">
+                    <div className="flex-shrink-0">
+                      <img
+                        src="/careers/job-alert.png"
+                        alt="alert"
+                        className="w-[21px] h-[21px]"
+                      />
+                    </div>
+                    <div className="flex flex-wrap items-center ml-5">
+                      <span className="text-base text-[#000] mr-2">
+                        Before applying for the job, completing the task is
+                        mandatory.
+                      </span>
+                      <div className="flex items-center font-[600] text-[#000]">
+                        <span className="whitespace-nowrap">
+                          Go to assignment
+                        </span>
+                        <div className="ml-2">
+                          <img
+                            src="/careers/alert-down.png"
+                            alt="arrow"
+                            className="w-3 h-3"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* <div className="py-[45px]">
                   <Link href="#">
                     <img
                       src="/careers/careers-web-banner.png"
@@ -181,7 +211,7 @@ export default function CareersGraphicDesigner() {
                       className=""
                     />
                   </Link>
-                </div>
+                </div> */}
 
                 {/* 4 */}
                 <div className="">

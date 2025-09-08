@@ -107,8 +107,8 @@ export default function AdvertisePageMobileVersion() {
         <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
 
         {/* Subscribers Text */}
-        <div className="absolute bottom-0 left-0 w-full px-4 text-start z-20">
-          <h2 className="text-[47px] sm:text-[6vw] font-normal leading-[1] tracking-tight text-wrap">
+        <div className="absolute -bottom-1 left-4 w-full text-start z-20">
+          <h2 className="text-[13.5vw] font-normal leading-[1] tracking-tight text-wrap">
             <span className="text-white">100K </span>
             <span className="text-[#01261E]">Subscribers</span>
           </h2>

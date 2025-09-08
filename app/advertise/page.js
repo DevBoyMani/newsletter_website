@@ -116,7 +116,7 @@ export default function Advertise() {
           </div>
 
           {/* Video Section */}
-          <div className="">
+          {/* <div className="">
             <div className="flex justify-center relative mt-10 ">
               <div className="flex space-x-4 items-end relative z-0 w-full">
                 {videos.map((video) => (
@@ -133,6 +133,36 @@ export default function Advertise() {
                   />
                 ))}
               </div>
+            </div>
+          </div> */}
+
+          {/* Video + Text Section */}
+          <div className="relative w-full mt-10">
+            {/* Videos */}
+            <div className="flex justify-center relative">
+              <div className="flex space-x-4 items-end relative z-0 w-full">
+                {videos.map((video) => (
+                  <video
+                    key={video.id}
+                    src={video.video}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className={`object-cover w-[24%] max-w-[40%] ${
+                      video.height
+                    } ${video.moveUp || ""}`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            {/* 100K Subscribers Text */}
+            <div className="absolute -bottom-4 left-[49.7%] -translate-x-1/2 z-20 text-center">
+              <h2 className="font-[700] sm:text-[10vw] lg:text-[11.4vw] 2xl:text-[11.4vw] [1650px]:text-[13vw] [1800px]:text-[13vw] leading-[94%] tracking-[-1.6px] whitespace-nowrap">
+                <span className="text-white">100K </span>
+                <span className="text-[#01261E]">Subscribers</span>
+              </h2>
             </div>
           </div>
 
@@ -155,14 +185,14 @@ export default function Advertise() {
           <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
 
           {/* 100K Subscribers Text (Above Gradient) */}
-          <div className="">
+          {/* <div className="">
             <div className="">
               <h2 className="absolute -bottom-4 font-[700] lg:text-[11.1vw] 2xl:text-[11.3vw] 3xl:text-[11.7vw] leading-[94%] tracking-[-1.6px] z-20 text-center max-w-[100%]">
                 <span className="text-white">100K </span>
                 <span className="text-[#01261E]">Subscribers</span>
               </h2>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
 
