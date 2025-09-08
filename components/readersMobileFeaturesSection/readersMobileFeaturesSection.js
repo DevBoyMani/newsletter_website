@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
 
 const sections = [
@@ -48,6 +48,39 @@ const sections = [
 
 export default function ReadersMobileFeaturesSection() {
   const [mode, setMode] = useState("dark");
+  const videoRef = useRef(null);
+  const [isVideoInView, setIsVideoInView] = useState(false);
+  console.log(isVideoInView);
+
+  // Set up Intersection Observer to detect when the video is in view
+  useEffect(() => {
+    const videoElement = videoRef.current;
+    if (!videoElement) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        setIsVideoInView(entry.isIntersecting);
+
+        // Play/pause based on visibility
+        if (entry.isIntersecting) {
+          videoElement.play().catch((error) => {
+            console.log("Autoplay prevented:", error);
+          });
+        } else {
+          videoElement.pause();
+        }
+      },
+      { threshold: 0.5 } // Trigger when 50% of video is visible
+    );
+
+    observer.observe(videoElement);
+
+    return () => {
+      if (videoElement) {
+        observer.unobserve(videoElement);
+      }
+    };
+  }, []);
 
   const handleModeChange = () => {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
@@ -135,12 +168,13 @@ export default function ReadersMobileFeaturesSection() {
               >
                 {isThird && videoSrc ? (
                   <video
-                    autoPlay
+                    ref={videoRef}
                     playsInline
                     muted
                     loop
                     preload="auto"
                     className={`object-cover w-full ${imageSize ?? "h-auto"}`}
+                    // Removed autoPlay attribute
                   >
                     <source src={videoSrc} type="video/mp4" />
                     Your browser does not support the video tag.

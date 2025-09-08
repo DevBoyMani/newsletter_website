@@ -199,8 +199,7 @@ export function Statistics() {
                   <Tooltip cursor={{ fill: "transparent" }} />
 
                   {/* Bars */}
-                  {/* Male Bar - first part of the stack (left side rounded) */}
-                  {/* Male Bar - first part of the stack (both sides rounded) */}
+                  {/* male */}
                   <Bar
                     dataKey="male"
                     stackId="a"
@@ -222,7 +221,7 @@ export function Statistics() {
                     }}
                   />
 
-                  {/* Female Bar - last part of the stack (right side rounded) */}
+                  {/* female */}
                   <Bar
                     dataKey="female"
                     stackId="a"
