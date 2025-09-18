@@ -25,7 +25,8 @@ export default function AnalyticsPSAgeChart() {
           Age
         </CardTitle>
         <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] mt-0">
-          This chart shows the age distribution of our audience.
+          This chart shows the age distribution of <br />
+          our audience.
         </CardDescription>
       </CardHeader>
 
@@ -38,7 +39,7 @@ export default function AnalyticsPSAgeChart() {
                 className="w-3 h-3 rounded-sm"
                 style={{ backgroundColor: item.fill }}
               />
-              <span className="text-[#464E5F] text-[12px] font-[manrope] font-[500] leading-normal ">
+              <span className="text-[#464E5F] text-[14px] font-[manrope] font-[500] leading-normal ">
                 {item.age}
               </span>
             </div>
@@ -46,7 +47,7 @@ export default function AnalyticsPSAgeChart() {
         </div>
 
         {/* Donut Chart */}
-        <div className="w-[162px] h-[162px]">
+        <div className="w-[50%] max-w-[162px] aspect-square">
           {" "}
           {/* adjust container size */}
           <ResponsiveContainer width="100%" height="100%">

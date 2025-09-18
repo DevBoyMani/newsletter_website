@@ -1,3 +1,5 @@
+import CustomizedHoverButton from "../customizedHoverButton/customizedHoverButton";
+
 export default function AnalyticsAdCard() {
   return (
     <div className="h-[308px] rounded-[20px] p-[40px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
@@ -8,19 +10,41 @@ export default function AnalyticsAdCard() {
         Promote your brand to a targeted, engaged audience. We offer flexible ad
         options to fit your goals and budget.
       </p>
-      <p className="text-[14px] leading-[139%] text-[#fff] pb-[36px]">
+      <p className="text-[14px] leading-[139%] text-[#fff] lg:pb-[36px]">
         Email us at{" "}
         <span className="font-[700] text-[#fff]">sales@sagravia.com</span> or
         click the button below.
       </p>
 
       <div className="flex gap-4">
-        <button className="bg-[#fff] text-[#01261E] text-[14px] font-[600] py-[9px] px-[20px] rounded-full">
-          Contact sales
-        </button>
-        <button className="border border-[#fff] text-[#fff] text-[14px] font-[600] py-[9px] px-[20px] rounded-full">
-          Visit website
-        </button>
+        <CustomizedHoverButton
+          href="#"
+          label="Contact sales"
+          fontSize="14px"
+          fontWeight="600"
+          width="129px"
+          // height="45px"
+          // borderColor="#0B4337"
+          bgColor="#fff"
+          hoverBgColor="#0B4337"
+          hoverText="#ffffff"
+          textColor="#01261E"
+          padding=" py-[9px]"
+        />
+
+        <CustomizedHoverButton
+          href="#"
+          label="Visit website"
+          fontSize="14px"
+          fontWeight="600"
+          width="129px"
+          // height="45px"
+          borderColor="#fff"
+          hoverBgColor="#fff"
+          hoverText="#01261E"
+          textColor="#fff"
+          padding="py-[9px]"
+        />
       </div>
     </div>
   );

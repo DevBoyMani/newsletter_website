@@ -2,8 +2,11 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import BlogSlugComponentList from "../blogSlugComponentList/blogSlugComponentList";
+// import BlogSlugComponentList from "../blogSlugComponentList/blogSlugComponentList";
 import { motion, AnimatePresence } from "framer-motion";
+import BodyLeft from "../../components/bodyLeft/bodyLeft";
+import BodyCenter from "../../components/bodyCenter/bodyCenter";
+import BodyRight from "../../components/bodyRight/bodyRight";
 
 // Step 1: Define sections with title and unique content
 const sectionsWithContent = [
@@ -253,6 +256,18 @@ const socialIcons = [
     hoverSrc: "/blogs/blog-t-hover.png",
     source: "https://www.dubaisummary.com/",
   },
+  {
+    alt: "threads",
+    defaultSrc: "/blogs/blog-threads.png",
+    hoverSrc: "/blogs/blog-threads-hover.png",
+    source: "https://www.dubaisummary.com/",
+  },
+  {
+    alt: "fb",
+    defaultSrc: "/blogs/blog-fb.png",
+    hoverSrc: "/blogs/blog-fb-hover.png",
+    source: "https://www.dubaisummary.com/",
+  },
 ];
 
 export default function BlogSlugBody() {
@@ -332,7 +347,6 @@ export default function BlogSlugBody() {
   }, []);
 
   // const [email, setEmail] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("Subscribed with email:", email);
@@ -341,7 +355,6 @@ export default function BlogSlugBody() {
   };
 
   // mobile version of the page scrolling indigator
-
   useEffect(() => {
     const handleScroll = () => {
       const scrollTop = window.scrollY;
@@ -363,280 +376,35 @@ export default function BlogSlugBody() {
   return (
     <>
       {/* desktop */}
-      <div className="hidden lg:block">
-        <div className="md:px-28 pt-14 pb-4">
-          <div className="flex md:flex-row justify-start flex-col w-full h-full ">
-            {/* Left */}
-            <div className="max-w-[21%] w-full sticky top-24 self-start">
-              <p className="text-[12px] font-[400] pb-2 mt-1">
-                {scrollPercent}%
-              </p>
-              <div className="bg-[#DAEBE8] py-[20px] px-[15px] rounded-[5px]">
-                <p className="text-[#000] text-[15px] font-[600] pb-6">
-                  Table of content
-                </p>
-                <div className="flex flex-col space-y-4">
-                  {sectionsWithContent.map((item, index) => (
-                    <Link
-                      key={index}
-                      href={`#section-${index}`}
-                      scroll={true}
-                      onClick={(e) => {
-                        e.preventDefault(); // <- important!
-                        handleClick(index);
-                      }}
-                      className="text-[12px] leading-[143%]"
-                    >
-                      <p
-                        className={`cursor-pointer ${
-                          activeIndex === index
-                            ? "text-[#000] font-[400]"
-                            : "text-[#676A71] font-[400]"
-                        }`}
-                      >
-                        {activeIndex === index && (
-                          <span className="pr-2">→</span>
-                        )}
-                        {item.title}
-                      </p>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            {/* Center */}
-            <div className="md:w-[57%] w-full flex flex-col gap-8 pl-[37px] pr-[64px]">
-              {sectionsWithContent.map((section, index) => (
-                <div
-                  key={index}
-                  id={`section-${index}`}
-                  ref={(el) => (sectionRefs.current[index] = el)}
-                  className="scroll-mt-28"
-                >
-                  <p className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
-                    {section.title}
-                  </p>
-                  <div>{section.content}</div>
-                </div>
-              ))}
-
-              {/* 10 */}
-              <div className="">
-                <div className="mt-8">
-                  <div className="px-[30px] pt-[25px] pb-[20px] bg-[#C7A26233] rounded-[7px] ">
-                    <div className="pb-2 flex space-x-2">
-                      <img
-                        src="/blogs/p-1.png"
-                        alt="profile-1"
-                        className="w-10 h-10 object-cover border-[0.5px] border-[#01261E] rounded-full"
-                      />
-                      <p className="flex items-center gap-2 text-[#000] text-[18px] font-[400] leading-[104%]">
-                        <span>John Cena</span>
-                      </p>
-                    </div>
-                    <div className="flex ">
-                      <div className="">
-                        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%]">
-                          John Felix Anthony Cena is an American actor and
-                          professional wrestler. As a wrestler, he has been
-                          signed to WWE since 2001, where he is the current
-                          Undisputed WWE Champion in his record 14th reign.
-                        </p>
-                        {/* <div className="pt-4">
-                          <a
-                            href="/"
-                            className="text-[#000] text-[16px] font-[400] leading-[174%] hover:underline"
-                          >
-                            More blogs from John{" "}
-                            <span className="text-[20px]">&rarr;</span>
-                          </a>
-                        </div> */}
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* right */}
-            {/* <div className="md:w-[22%] w-full sticky top-24 self-start pt-6">
-              <div
-                className="scroll-mt-28"
-              >
-                <div className="h-auto">
-                  <p className="text-[14px] pb-[17px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
-                    Share this article
-                  </p>
-                  <div className="pt-[34px] pb-[62px]">
-                    <div className="flex justify-start space-x-6">
-                      {socialIcons.map((icon, index) => (
-                        <Link href={icon.source} key={index}>
-                          <img
-                            src={
-                              hoveredIndex === index
-                                ? icon.hoverSrc
-                                : icon.defaultSrc
-                            }
-                            alt={icon.alt}
-                            className="w-8 h-8 cursor-pointer"
-                            onMouseEnter={() => setHoveredIndex(index)}
-                            onMouseLeave={() => setHoveredIndex(null)}
-                          />
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="">
-                    <div className="border border-[#01261E] rounded-[10px]">
-                      <div className="py-[16px] px-[15px]">
-                        <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
-                          Sagravia Newsletter
-                        </p>
-                        <p className="text-[#01261E] font-[400] text-[12px] leading-[141%] pt-[8px]">
-                          Do you want to get tips and sfsftactics to grow the
-                          way you want?
-                        </p>
-                        <form
-                          onSubmit={handleSubmit}
-                          className="pt-[16px] space-y-2"
-                        >
-                          <input
-                            type="email"
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                            placeholder="Email"
-                            required
-                            className="px-2 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full h-[37px] focus:outline-none focus:ring-1 focus:ring-[#01261E]"
-                          />
-                          <button
-                            type="submit"
-                            className="w-full h-[37px] bg-[#01261E] text-[#FFF] text-[14px] rounded-[3px] hover:bg-[#0B4337] transition"
-                          >
-                            Subscribe for free
-                          </button>
-                        </form>
-                        <div className="pt-[2px] pl-[2px]">
-                          <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
-                            Unsubscribe at any time.{" "}
-                            <span className="underline underline-[#767676]">
-                              Terms
-                            </span>{" "}
-                            &{" "}
-                            <span className="underline underline-[#767676]">
-                              Privacy
-                            </span>
-                            .
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div> */}
-            <div className="md:w-[22%] w-full sticky top-24 self-start pt-6">
-              <div className="h-auto">
-                <p className="text-[14px] pb-[17px] font-[500] text-[#000] leading-[174%] border-b border-[#E8ECF0]">
-                  Share this article
-                </p>
-                <div className="pt-[34px] pb-[62px]">
-                  <div className="flex justify-start space-x-6">
-                    {socialIcons.map((icon, index) => (
-                      <Link href={icon.source} key={index}>
-                        <img
-                          src={
-                            hoveredIndex === index
-                              ? icon.hoverSrc
-                              : icon.defaultSrc
-                          }
-                          alt={icon.alt}
-                          className="w-8 h-8 cursor-pointer"
-                          onMouseEnter={() => setHoveredIndex(index)}
-                          onMouseLeave={() => setHoveredIndex(null)}
-                        />
-                      </Link>
-                    ))}
-                  </div>
-                </div>
-                <div className="border border-[#01261E] rounded-[10px] relative">
-                  <div className="py-[16px] px-[15px]">
-                    <p className="text-[#01261E] font-[800] text-[16px] leading-normal">
-                      Sagravia Newsletter
-                    </p>
-                    <p className="text-[#01261E] font-[400] text-[12px] leading-[141%] pt-[8px]">
-                      Do you want to get tips and tactics to grow the way you
-                      want?
-                    </p>
-
-                    {/* form */}
-                    <form
-                      onSubmit={handleSubmit}
-                      className="pt-[16px] space-y-2"
-                    >
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                        required
-                        className="px-2 rounded-[3px] border border-[#9CA3AF] text-[14px] w-full h-[37px] focus:outline-none focus:ring-1 focus:ring-[#01261E]"
-                      />
-                      <button
-                        type="submit"
-                        className="w-full h-[37px] bg-[#01261E] text-[#FFF] text-[14px] rounded-[3px] hover:bg-[#0B4337] transition"
-                      >
-                        Subscribe for free
-                      </button>
-                    </form>
-
-                    <div className="pt-[5px] pl-[2px]">
-                      <p className="text-[#767676] font-[400] text-[8px] leading-[141%]">
-                        Unsubscribe at any time.{" "}
-                        <span className="underline">Terms</span> &{" "}
-                        <span className="underline">Privacy</span>.
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* popup */}
-                  <AnimatePresence>
-                    {showPopup && (
-                      <motion.div
-                        initial={{ scale: 0.8, opacity: 0, y: 20 }}
-                        animate={{ scale: 1, opacity: 1, y: 0 }}
-                        exit={{ scale: 0.8, opacity: 0, y: 20 }}
-                        transition={{ duration: 0.4, ease: "easeOut" }}
-                        className="absolute inset-0 bg-[#01261E] rounded-[10px] px-[35px] py-[65px] shadow-lg z-10"
-                      >
-                        <div className="flex justify-end -mt-[40px]">
-                          <button
-                            onClick={() => setShowPopup(false)}
-                            className="text-white text-[20px]"
-                          >
-                            x
-                          </button>
-                        </div>
-                        <div className="flex flex-col items-center text-center justify-center mt-6">
-                          <p className="text-[#fff] font-[400] text-[22px] leading-[112%]">
-                            Thank you!
-                            <br />
-                            Check your email
-                            <br /> to verify.
-                          </p>
-                        </div>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
-              </div>
-            </div>
+      <div className="bg-[#FAFAFA] hidden lg:block">
+        <div className="md:px-28 pt-14 pb-[145px]">
+          <div className="flex md:flex-row justify-start flex-col w-full h-full">
+            <BodyLeft
+              scrollPercent={scrollPercent}
+              sectionsWithContent={sectionsWithContent}
+              activeIndex={activeIndex}
+              handleClick={handleClick}
+            />
+            <BodyCenter
+              sectionsWithContent={sectionsWithContent}
+              sectionRefs={sectionRefs}
+            />
+            <BodyRight
+              socialIcons={socialIcons}
+              hoveredIndex={hoveredIndex}
+              setHoveredIndex={setHoveredIndex}
+              email={email}
+              setEmail={setEmail}
+              handleSubmit={handleSubmit}
+              showPopup={showPopup}
+              setShowPopup={setShowPopup}
+            />
           </div>
         </div>
       </div>
 
-      {/* mobile */}
-      <div className="block lg:hidden">
+      {/* mobile version*/}
+      <div className="bg-[#FAFAFA] block lg:hidden">
         <div className=" pt-[30px] px-4">
           {/* <BlogSlugComponentList /> */}
           {/* Scroll Progress Bar */}
@@ -650,7 +418,6 @@ export default function BlogSlugBody() {
             </div>
           </div>
 
-          {/* Center */}
           <div className="w-full flex flex-col gap-8 pt-[24px] pb-[81px]">
             {sectionsWithContent.map((section, index) => {
               const isTargetSection =

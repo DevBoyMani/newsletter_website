@@ -160,7 +160,7 @@ export default function Advertise() {
             {/* 100K Subscribers Text */}
             <div className="absolute -bottom-4 left-[49.7%] -translate-x-1/2 z-20 text-center">
               <h2 className="font-[700] sm:text-[10vw] lg:text-[11.4vw] 2xl:text-[11.4vw] [1650px]:text-[13vw] [1800px]:text-[13vw] leading-[94%] tracking-[-1.6px] whitespace-nowrap">
-                <span className="text-white">100K </span>
+                <span className="text-white">100k </span>
                 <span className="text-[#01261E]">Subscribers</span>
               </h2>
             </div>

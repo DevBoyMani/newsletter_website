@@ -81,7 +81,7 @@ export default function Footer() {
   return (
     <>
       {/* desktop view*/}
-      <div className="hidden lg:block bg-[#01261E]">
+      <div id="site-footer" className="hidden lg:block bg-[#01261E]">
         <div className="px-4 md:px-16 mx-auto z-10">
           {/* footer */}
           <div className="relative bg-[#01261E]">
@@ -162,7 +162,7 @@ export default function Footer() {
 
       {/* mobile view */}
 
-      <div className="block lg:hidden bg-[#01261E]">
+      <div id="mob-site-footer" className="block lg:hidden bg-[#01261E]">
         <div className="px-4 py-9 mx-auto ">
           <div className="block lg:hidden bg-[#01261E] text-white">
             <div className="md:px-14">

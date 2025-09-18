@@ -109,7 +109,7 @@ export default function AdvertisePageMobileVersion() {
         {/* Subscribers Text */}
         <div className="absolute -bottom-1 left-4 w-full text-start z-20">
           <h2 className="text-[13.5vw] font-normal leading-[1] tracking-tight text-wrap">
-            <span className="text-white">100K </span>
+            <span className="text-white">100k </span>
             <span className="text-[#01261E]">Subscribers</span>
           </h2>
         </div>

@@ -5,7 +5,7 @@ import { useEffect, useState, useRef } from "react";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 import { Customized } from "recharts";
-import CustomizedHoverButton from "../../components/customizedHoverButton/customizedHoverButton";
+import CustomizedHoverButton from "../customizedHoverButton/customizedHoverButton";
 
 const routes = [
   { path: "/about", name: "About" },
@@ -29,13 +29,15 @@ export default function Navbar() {
   const [navBgWhite, setNavBgWhite] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [mobileNavWhite, setMobileNavWhite] = useState(false);
+  const [footerInView, setFooterInView] = useState(false);
+  const [mobFooterInView, setMobFooterInView] = useState(false);
   const pathname = usePathname();
 
   const isBlogPage = pathname.startsWith("/blogs");
   const isDarkHeader = isBlogPage && !navBgWhite;
   const isDarkMobile = isBlogPage && !mobileNavWhite;
 
-  // Detect desktop vs mobile
+  //  mobile
   useEffect(() => {
     const handleResize = () => {
       const isMobileNow = window.innerWidth < 1024;
@@ -61,6 +63,145 @@ export default function Navbar() {
     }
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isBlogPage, pathname, isMobile]);
+
+  // nav bg color will change based on the effect while the footer comes to the view port
+  // useEffect(() => {
+  //   if (typeof window === "undefined") return;
+
+  //   let observer: IntersectionObserver | null = null;
+  //   let attempts = 0;
+  //   const maxAttempts = 30;
+  //   // ids to watch (handles either one or both footers)
+  //   const footerIds = ["site-footer", "mob-site-footer"];
+
+  //   const HEADER_HEIGHT = 90; // adjust to your fixed header height (px)
+  //   const rootMargin = `-${HEADER_HEIGHT}px 0px 0px 0px`; // move intersection point up by header height
+
+  //   const initObserver = () => {
+  //     const elements = footerIds
+  //       .map((id) => document.getElementById(id))
+  //       .filter(Boolean) as HTMLElement[];
+
+  //     if (elements.length === 0) {
+  //       // retry if footer not yet mounted
+  //       if (attempts++ < maxAttempts) {
+  //         setTimeout(initObserver, 200);
+  //       }
+  //       return;
+  //     }
+
+  //     observer = new IntersectionObserver(
+  //       (entries) => {
+  //         entries.forEach((entry) => {
+  //           const id = entry.target.id;
+  //           // set the appropriate state per id
+  //           if (id === "site-footer") {
+  //             setFooterInView(entry.isIntersecting);
+  //           } else if (id === "mob-site-footer") {
+  //             setMobFooterInView(entry.isIntersecting);
+  //           }
+
+  //           // optional: set a unified state if you want one flag for all devices
+  //           // setFooterInView(entry.isIntersecting || footerInView /* previous state */)
+  //         });
+  //       },
+  //       { root: null, threshold: 0.05, rootMargin }
+  //     );
+
+  //     elements.forEach((el) => observer!.observe(el));
+  //   };
+
+  //   initObserver();
+
+  //   // fallback: if IntersectionObserver isn't supported or is flaky, also check on scroll
+  //   const scrollFallback = () => {
+  //     footerIds.forEach((id) => {
+  //       const el = document.getElementById(id);
+  //       if (!el) return;
+  //       const rect = el.getBoundingClientRect();
+  //       const inView = rect.top < window.innerHeight && rect.bottom > 0;
+  //       if (id === "site-footer") setFooterInView(inView);
+  //       if (id === "mob-site-footer") setMobFooterInView(inView);
+  //     });
+  //   };
+
+  //   window.addEventListener("scroll", scrollFallback, { passive: true });
+  //   window.addEventListener("resize", scrollFallback);
+
+  //   return () => {
+  //     observer?.disconnect();
+  //     window.removeEventListener("scroll", scrollFallback);
+  //     window.removeEventListener("resize", scrollFallback);
+  //   };
+  // }, []);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    let timeoutId: NodeJS.Timeout | null = null;
+    let animationFrameId: number | null = null;
+
+    const checkNavbarFooterContact = () => {
+      const navbar = document.querySelector('nav, header, [role="navigation"]');
+      const desktopFooter = document.getElementById("site-footer");
+      const mobileFooter = document.getElementById("mob-site-footer");
+
+      if (!navbar) return;
+
+      const navbarRect = navbar.getBoundingClientRect();
+      const navbarBottom = navbarRect.bottom;
+
+      // Check desktop footer contact
+      if (desktopFooter) {
+        const footerRect = desktopFooter.getBoundingClientRect();
+        const footerTop = footerRect.top;
+        setFooterInView(navbarBottom >= footerTop);
+      }
+
+      // Check mobile footer contact - more sensitive detection
+      if (mobileFooter) {
+        const footerRect = mobileFooter.getBoundingClientRect();
+        const footerTop = footerRect.top;
+
+        // For mobile, use a smaller threshold for instant detection
+        const isTouching = navbarBottom >= footerTop - 5; // 5px buffer for instant detection
+        setMobFooterInView(isTouching);
+      }
+    };
+
+    // Use requestAnimationFrame for smoother mobile performance
+    const handleScroll = () => {
+      if (timeoutId) clearTimeout(timeoutId);
+
+      // Cancel previous animation frame if exists
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+      // Use requestAnimationFrame for instant response on mobile
+      animationFrameId = requestAnimationFrame(checkNavbarFooterContact);
+
+      // Also set timeout for resize events
+      timeoutId = setTimeout(checkNavbarFooterContact, 10);
+    };
+
+    // Initial check
+    checkNavbarFooterContact();
+
+    // Add event listeners with better options for mobile
+    window.addEventListener("scroll", handleScroll, {
+      passive: true,
+      capture: true,
+    });
+    window.addEventListener("resize", handleScroll, { passive: true });
+    window.addEventListener("touchmove", handleScroll, { passive: true });
+
+    return () => {
+      if (timeoutId) clearTimeout(timeoutId);
+      if (animationFrameId) cancelAnimationFrame(animationFrameId);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      window.removeEventListener("touchmove", handleScroll);
+    };
+  }, [setFooterInView, setMobFooterInView]);
 
   // border hide for blog/slug
   const noBorderOn =
@@ -91,30 +232,20 @@ export default function Navbar() {
 
   if (pathname.includes("/analytics") && !isMobile) return null;
 
-  const headerBg = isDarkHeader ? "bg-[#01261E]" : "bg-[#FAFAFA]";
-  const mobileHeaderBg = isDarkMobile ? "bg-[#01261E]" : "bg-[#FAFAFA]";
-  const mobileTextColor = isDarkMobile ? "text-black" : "text-black";
-  const mobileLogoSrc = isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
-  const mobileMenuIconColor = isDarkMobile ? "bg-white" : "bg-black";
+  const headerBg =
+    footerInView || isDarkHeader ? "bg-[#01261E]" : "bg-[#FAFAFA]";
+
+  const mobileHeaderBg =
+    mobFooterInView || isDarkMobile ? "bg-[#01261E]" : "bg-[#FAFAFA]";
+  const mobileTextColor =
+    mobFooterInView || isDarkMobile ? "text-black" : "text-black";
+  const mobileLogoSrc =
+    mobFooterInView || isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
+  const mobileMenuIconColor =
+    mobFooterInView || isDarkMobile ? "bg-white" : "bg-black";
 
   const isContactPage = pathname === "/contact";
   const isCareersSlugPage = pathname.startsWith("/careers/");
-
-  // contact button hovering
-  // const btnRef = useRef<HTMLAnchorElement>(null);
-  // const [originStyle, setOriginStyle] = useState<React.CSSProperties>({});
-
-  // const handleMouseEnter = (e: React.MouseEvent) => {
-  //   if (!btnRef.current) return;
-
-  //   const rect = btnRef.current.getBoundingClientRect();
-  //   const x = e.clientX - rect.left;
-  //   const y = e.clientY - rect.top;
-
-  //   setOriginStyle({
-  //     transformOrigin: `${x}px ${y}px`,
-  //   });
-  // };
 
   return (
     <>
@@ -127,7 +258,11 @@ export default function Navbar() {
             <Link href="/">
               <div className="w-32 md:w-36">
                 <img
-                  src={isDarkHeader ? "/blogs/logo-white.png" : "/logo.png"}
+                  src={
+                    footerInView || isDarkHeader
+                      ? "/blogs/logo-white.png"
+                      : "/logo.png"
+                  }
                   alt="Logo"
                   className="mt-3"
                 />
@@ -143,7 +278,7 @@ export default function Navbar() {
                     className={`relative group lg:text-[17px] ml-2 md:ml-6 overflow-hidden h-[26px] ${
                       pathname === route.path
                         ? "text-[#C7A262]"
-                        : isDarkHeader
+                        : footerInView || isDarkHeader
                         ? "text-white"
                         : "text-black"
                     }`}

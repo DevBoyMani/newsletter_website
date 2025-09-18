@@ -34,7 +34,9 @@
     "components/careers/customAccordion/customAccordion.js",
     "components/aboutNewslettersStatistics/aboutNewslettersStatistics.jsx",
     "app/careers/page.js",
-    "tailwind.config.js"
+    "tailwind.config.js",
+    "app/layout.js",
+    "components/navbar/navbar.tsx"
   ],
   "exclude": ["node_modules"]
 }

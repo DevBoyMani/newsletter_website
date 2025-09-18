@@ -49,7 +49,7 @@ export default function BlogSlugBottom() {
       {/* desktop */}
       <div className="hidden lg:block">
         <div className="">
-          <div className="pt-[145px]">
+          <div className="">
             <div className="bg-[#DAEBE8]">
               <div className="flex flex-row justify-between pt-[115px] pb-8 md:px-28 ">
                 <div>

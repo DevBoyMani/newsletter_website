@@ -25,7 +25,7 @@ export default function AnalyticsPSCountryChart() {
         <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
           Country
         </CardTitle>
-        <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] mt-0">
+        <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px]">
           This chart displays the geographic distribution of our audience by
           country, highlighting where our users are located.
         </CardDescription>
@@ -49,7 +49,7 @@ export default function AnalyticsPSCountryChart() {
 
         {/* Donut Chart */}
 
-        <div className="w-[162px] h-[162px] -mt-5">
+        <div className="w-[50%] max-w-[162px] aspect-square -mt-2">
           <ResponsiveContainer width="100%" height="100%">
             <PieChart>
               <Pie

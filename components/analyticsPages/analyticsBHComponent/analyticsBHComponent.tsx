@@ -12,7 +12,7 @@ export default function BusinessHistoryAnalytics() {
     <>
       {/* 1-row*/}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-[22px]">
-        <div className="relative h-[465px] flex flex-col justify-between rounded-[22px] p-[40px] bg-gradient-to-br from-[#EEDBD7] to-[#887D7B] overflow-hidden">
+        <div className="relative h-[465px] flex flex-col justify-between rounded-[22px] p-[40px] bg-[url('/analytics/bg-bh.png')] bg-cover bg-center overflow-hidden">
           <div className="z-10">
             <p className=" text-[16px] font-[400] text-[#01261E] pb-[14px]">
               Business History

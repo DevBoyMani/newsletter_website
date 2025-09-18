@@ -174,7 +174,7 @@ export default function CareersGraphicDesigner() {
                 </div> */}
 
                 <div className="py-[44px]">
-                  <div className="flex items-center px-4 md:px-6 lg:px-8 py-6 bg-[#FEF5F6] border border-[#E5C8CD] rounded-lg">
+                  <div className="flex items-center px-4 md:px-6 lg:px-8 py-6 bg-[#FEF5F6] border border-[#E5C8CD] rounded-lg max-w-[794px]">
                     <div className="flex-shrink-0">
                       <img
                         src="/careers/job-alert.png"

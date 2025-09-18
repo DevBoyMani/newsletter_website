@@ -106,7 +106,8 @@ export default function AdvertiseAdBlocker() {
 
         <div className="relative pt-8 pb-[92px] overflow-hidden">
           <div className="mx-auto max-w-[80%] relative">
-            <AnimatePresence custom={direction} mode="wait">
+            {/* with animation */}
+            {/* <AnimatePresence custom={direction} mode="wait">
               <motion.div
                 key={item.image}
                 initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
@@ -121,9 +122,17 @@ export default function AdvertiseAdBlocker() {
                   className="w-full h-full object-cover rounded-[15px]"
                 />
               </motion.div>
-            </AnimatePresence>
-
-            {/* <div className="absolute bottom-0 left-0 w-full h-[50vh] bg-gradient-to-t from-[#01261E] to-transparent z-10 pointer-events-none" /> */}
+            </AnimatePresence> */}
+            {/* with animation */}
+            {/* without animation */}
+            <div key={item.image} className="w-full h-full">
+              <img
+                src={item.image}
+                alt="Adblocker illustration"
+                className="w-full h-full object-cover rounded-[15px]"
+              />
+            </div>
+            {/* without animation */}
           </div>
         </div>
       </div>
@@ -229,19 +238,8 @@ export default function AdvertiseAdBlocker() {
 
         <div className="relative pt-0 pb-0">
           <div className="relative w-full">
+            {/* with animation */}
             {/* <AnimatePresence custom={directionMob} mode="wait">
-              <motion.img
-                key={itemMob.image}
-                src={itemMob.image}
-                alt="Adblocker illustration"
-                initial={{ x: directionMob > 0 ? 100 : -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: directionMob > 0 ? -100 : 100, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="absolute top-0 left-0 w-full h-full object-cover rounded-[5px] z-10"
-              />
-            </AnimatePresence> */}
-            <AnimatePresence custom={directionMob} mode="wait">
               <motion.div
                 key={itemMob.image}
                 initial={{ x: directionMob > 0 ? 100 : -100, opacity: 0 }}
@@ -256,9 +254,18 @@ export default function AdvertiseAdBlocker() {
                   className="w-full h-auto z-10"
                 />
               </motion.div>
-            </AnimatePresence>
+            </AnimatePresence> */}
+            {/* with animation */}
 
-            {/* <div className="absolute bottom-0 left-0 w-full h-[20vh] bg-gradient-to-t from-[#01261E] via-[#01261E]/90 to-transparent z-10 pointer-events-none" /> */}
+            {/* without animation */}
+            <div key={itemMob.image} className="w-full">
+              <img
+                src={itemMob.image}
+                alt="Adblocker illustration"
+                className="w-full h-auto z-10"
+              />
+            </div>
+            {/* without animation */}
           </div>
         </div>
       </div>
