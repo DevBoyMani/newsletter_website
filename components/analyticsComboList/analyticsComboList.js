@@ -2,6 +2,7 @@
 
 import { Listbox } from "@headlessui/react";
 import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import Image from "next/image";
 
 const options = [
   { label: "Presidential Summary", value: "presidential-summary" },
@@ -50,9 +51,23 @@ export default function AnalyticsComboList({ selected, onChange }) {
             <Listbox.Button className="relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-full py-2 focus:outline-none text-[#fff] font-[400] leading-normal">
               <p className="ml-4">{selectedOption.label}</p>
               {open ? (
-                <ChevronUpIcon className="absolute right-2 top-2 h-6 w-6 text-white" />
+                // <ChevronUpIcon className="absolute right-2 top-2 h-6 w-6 text-white" />
+                <Image
+                  src="/analytics/icon-up.png" // your up arrow image
+                  alt="Up"
+                  width={12}
+                  height={7}
+                  className="absolute right-6 top-4"
+                />
               ) : (
-                <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6  text-white" />
+                // <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6  text-white" />
+                <Image
+                  src="/analytics/icon-down.png" // your down arrow image
+                  alt="Down"
+                  width={12}
+                  height={7}
+                  className="absolute right-6 top-4"
+                />
               )}
             </Listbox.Button>
 

@@ -162,7 +162,8 @@ export default function Footer() {
 
       {/* mobile view */}
 
-      <div id="mob-site-footer" className="block lg:hidden bg-[#01261E]">
+      {/* id="mob-site-footer" */}
+      <div className="block lg:hidden bg-[#01261E]">
         <div className="px-4 py-9 mx-auto ">
           <div className="block lg:hidden bg-[#01261E] text-white">
             <div className="md:px-14">
