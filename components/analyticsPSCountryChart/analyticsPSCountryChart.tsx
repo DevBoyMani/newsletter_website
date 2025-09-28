@@ -71,7 +71,7 @@ export default function AnalyticsPSCountryChart() {
         </Card>
       </div>
       {/* mobile */}
-      <div className="block lg:hidden">
+      <div className="block lg:hidden ">
         <Card className="px-[16px] pt-[16px]">
           <CardHeader className="">
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">

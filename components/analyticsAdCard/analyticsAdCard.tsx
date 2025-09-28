@@ -85,7 +85,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
         </div>
       </div>
       {/* mobile */}
-      <div className="block lg:hidden pb-[70px]">
+      {/* <div className="block lg:hidden pb-[70px]">
         <div className="px-[16px] pt-[16px] rounded-[10px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
           <h4 className="text-[16px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] ">
             Advertise with Sagravia
@@ -101,41 +101,14 @@ export default function AnalyticsAdCard({ id = 0 }) {
           </p>
 
           <div className="flex gap-4 pt-[25px] pb-[16px]">
-            {/* <CustomizedHoverButton
-          href="#"
-          label="Contact sales"
-          fontSize="14px"
-          fontWeight="600"
-          width="129px"
-          height="45px"
-          borderColor="#0B4337"
-          bgColor="#fff"
-          hoverBgColor="#0B4337"
-          hoverText="#ffffff"
-          textColor="#01261E"
-          padding=" py-[9px]"
-        /> */}
-
+         
             <Link href="/contact">
               <button className="bg-[#fff] text-[#01261E] font-[600] text-[12px] w-[129px] py-[9px] rounded-[57px]  border border-[#fff]">
                 Contact sales
               </button>
             </Link>
 
-            {/* <CustomizedHoverButton
-              href={matchedLink.source}
-              target={matchedLink.target}
-              label="Visit website"
-              fontSize="12px"
-              fontWeight="600"
-              width="129px"
-              // height="45px"
-              borderColor="#fff"
-              hoverBgColor="#fff"
-              hoverText="#01261E"
-              textColor="#fff"
-              padding="py-[9px]"
-            /> */}
+            
             {matchedLink && (
               <CustomizedHoverButton
                 href={matchedLink.source}
@@ -153,7 +126,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
             )}
           </div>
         </div>
-      </div>
+      </div> */}
     </>
   );
 }

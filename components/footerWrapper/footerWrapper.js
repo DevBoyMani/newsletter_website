@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import Footer from "../../components/footer/footer";
+import Link from "next/link";
 
 export default function FooterWrapper() {
   const pathname = usePathname();
@@ -19,8 +20,8 @@ export default function FooterWrapper() {
             <span className="text-[#000000] text-[12px] font-[600] leading-normal">
               The assignment is mandatory.
             </span>
-            <a
-              href="/schedule-call"
+            <Link
+              href="/careers/slug"
               className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
             >
               <span>Go to assignment</span>
@@ -29,7 +30,7 @@ export default function FooterWrapper() {
                 alt="arrow"
                 className="w-[11px] h-[11px] ml-[15px]"
               />
-            </a>
+            </Link>
           </div>
         </div>
       )}
@@ -41,8 +42,8 @@ export default function FooterWrapper() {
             <span className="text-[#ffffff] text-[12px] font-[600] leading-normal">
               Want to advertise with us?
             </span>
-            <a
-              href="/schedule-call"
+            <Link
+              href="/advertise"
               className="ml-2 text-[#C7A262] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal"
             >
               <span>SCHEDULE A CALL</span>
@@ -51,7 +52,7 @@ export default function FooterWrapper() {
                 alt="arrow"
                 className="w-[11px] h-[11px] ml-[15px]"
               />
-            </a>
+            </Link>
           </div>
         </div>
       )}

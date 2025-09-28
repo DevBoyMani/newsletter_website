@@ -73,7 +73,7 @@ export default function AnalyticsPage() {
       </div>
 
       {/* mobile view */}
-      <div className="block lg:hidden bg-[#FAFAFA] pt-[160px] ">
+      <div className="block lg:hidden bg-[#FAFAFA] pt-[160px] pb-[70px]">
         <AnalyticsComboList
           selected={selectedTopic}
           onChange={handleTopicChange}
