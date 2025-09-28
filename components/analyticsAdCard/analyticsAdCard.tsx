@@ -52,7 +52,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
               </button>
             </Link>
 
-            <CustomizedHoverButton
+            {/* <CustomizedHoverButton
               href={matchedLink.source}
               target={matchedLink.target}
               label="Visit website"
@@ -65,7 +65,22 @@ export default function AnalyticsAdCard({ id = 0 }) {
               hoverText="#01261E"
               textColor="#fff"
               padding="py-[9px]"
-            />
+            /> */}
+            {matchedLink && (
+              <CustomizedHoverButton
+                href={matchedLink.source}
+                target={matchedLink.target}
+                label="Visit website"
+                fontSize="14px"
+                fontWeight="600"
+                width="129px"
+                borderColor="#fff"
+                hoverBgColor="#fff"
+                hoverText="#01261E"
+                textColor="#fff"
+                padding="py-[9px]"
+              />
+            )}
           </div>
         </div>
       </div>
@@ -107,7 +122,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
               </button>
             </Link>
 
-            <CustomizedHoverButton
+            {/* <CustomizedHoverButton
               href={matchedLink.source}
               target={matchedLink.target}
               label="Visit website"
@@ -120,7 +135,22 @@ export default function AnalyticsAdCard({ id = 0 }) {
               hoverText="#01261E"
               textColor="#fff"
               padding="py-[9px]"
-            />
+            /> */}
+            {matchedLink && (
+              <CustomizedHoverButton
+                href={matchedLink.source}
+                target={matchedLink.target}
+                label="Visit website"
+                fontSize="14px"
+                fontWeight="600"
+                width="129px"
+                borderColor="#fff"
+                hoverBgColor="#fff"
+                hoverText="#01261E"
+                textColor="#fff"
+                padding="py-[9px]"
+              />
+            )}
           </div>
         </div>
       </div>
