@@ -225,3 +225,8 @@ h6 {
   text-indent: -1.4em; /* pull first line back to show bullet at start */
 }
 /*careers/slug   */
+
+/* .nav-colored {
+  background-color: #01261e;
+  transition: background-color 0.3s ease;
+} */

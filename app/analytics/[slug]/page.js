@@ -37,37 +37,51 @@ export default function AnalyticsPage() {
   );
 
   return (
-    <div className="hidden lg:block bg-[#FAFAFA] pb-[60px]">
-      <div className="px-[33px]">
-        {/* logo */}
-        <Link href="/">
-          <div className="pt-[30px]">
-            <img
-              src="/logo.png"
-              alt="Sagravia Logo"
-              className="w-32 md:w-36 cursor-pointer"
-            />
-          </div>
-        </Link>
+    <>
+      {/* desktop view */}
+      <div className="hidden lg:block bg-[#FAFAFA] pb-[60px]">
+        <div className="px-[33px]">
+          {/* logo */}
+          <Link href="/">
+            <div className="pt-[30px]">
+              <img
+                src="/logo.png"
+                alt="Sagravia Logo"
+                className="w-32 md:w-36 cursor-pointer"
+              />
+            </div>
+          </Link>
 
-        {/* heading */}
-        <div className="flex justify-between pt-[37px]">
-          <div className="w-[40%]">
-            <h2 className="text-[47px] font-[400] leading-normal font-[manrope] text-[#000]">
-              Analytics overview
-            </h2>
+          {/* heading */}
+          <div className="flex justify-between pt-[37px]">
+            <div className="w-[40%]">
+              <h2 className="text-[47px] font-[400] leading-normal font-[manrope] text-[#000]">
+                Analytics overview
+              </h2>
+            </div>
+            <div className="w-[60%] flex justify-end items-end">
+              <AnalyticsComboList
+                selected={selectedTopic}
+                onChange={handleTopicChange}
+              />
+            </div>
           </div>
-          <div className="w-[60%] flex justify-end items-end">
-            <AnalyticsComboList
-              selected={selectedTopic}
-              onChange={handleTopicChange}
-            />
-          </div>
+
+          {/* topic analytics */}
+          {CurrentComponent}
         </div>
+      </div>
+
+      {/* mobile view */}
+      <div className="block lg:hidden bg-[#FAFAFA] pt-[160px] ">
+        <AnalyticsComboList
+          selected={selectedTopic}
+          onChange={handleTopicChange}
+        />
 
         {/* topic analytics */}
         {CurrentComponent}
       </div>
-    </div>
+    </>
   );
 }

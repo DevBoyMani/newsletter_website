@@ -29,6 +29,7 @@ export default function Navbar() {
   const [navBgWhite, setNavBgWhite] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [mobileNavWhite, setMobileNavWhite] = useState(false);
+  const [adBlockerInView, setAdBlockerInView] = useState(false);
   const [footerInView, setFooterInView] = useState(false);
   const [mobFooterInView, setMobFooterInView] = useState(false);
   const pathname = usePathname();
@@ -64,76 +65,75 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isBlogPage, pathname, isMobile]);
 
-  // nav bg color will change based on the effect while the footer comes to the view port
+  //  site-footer
+
   // useEffect(() => {
   //   if (typeof window === "undefined") return;
 
-  //   let observer: IntersectionObserver | null = null;
-  //   let attempts = 0;
-  //   const maxAttempts = 30;
-  //   // ids to watch (handles either one or both footers)
-  //   const footerIds = ["site-footer", "mob-site-footer"];
+  //   let timeoutId: NodeJS.Timeout | null = null;
+  //   let animationFrameId: number | null = null;
 
-  //   const HEADER_HEIGHT = 90; // adjust to your fixed header height (px)
-  //   const rootMargin = `-${HEADER_HEIGHT}px 0px 0px 0px`; // move intersection point up by header height
+  //   const checkNavbarFooterContact = () => {
+  //     const navbar = document.querySelector('nav, header, [role="navigation"]');
+  //     const desktopFooter = document.getElementById("site-footer");
+  //     const mobileFooter = document.getElementById("mob-site-footer");
 
-  //   const initObserver = () => {
-  //     const elements = footerIds
-  //       .map((id) => document.getElementById(id))
-  //       .filter(Boolean) as HTMLElement[];
+  //     if (!navbar) return;
 
-  //     if (elements.length === 0) {
-  //       // retry if footer not yet mounted
-  //       if (attempts++ < maxAttempts) {
-  //         setTimeout(initObserver, 200);
-  //       }
-  //       return;
+  //     const navbarRect = navbar.getBoundingClientRect();
+  //     const navbarBottom = navbarRect.bottom;
+
+  //     // Check desktop footer contact
+  //     if (desktopFooter) {
+  //       const footerRect = desktopFooter.getBoundingClientRect();
+  //       const footerTop = footerRect.top;
+  //       setFooterInView(navbarBottom >= footerTop);
   //     }
 
-  //     observer = new IntersectionObserver(
-  //       (entries) => {
-  //         entries.forEach((entry) => {
-  //           const id = entry.target.id;
-  //           // set the appropriate state per id
-  //           if (id === "site-footer") {
-  //             setFooterInView(entry.isIntersecting);
-  //           } else if (id === "mob-site-footer") {
-  //             setMobFooterInView(entry.isIntersecting);
-  //           }
+  //     // Check mobile footer contact - more sensitive detection
+  //     if (mobileFooter) {
+  //       const footerRect = mobileFooter.getBoundingClientRect();
+  //       const footerTop = footerRect.top;
 
-  //           // optional: set a unified state if you want one flag for all devices
-  //           // setFooterInView(entry.isIntersecting || footerInView /* previous state */)
-  //         });
-  //       },
-  //       { root: null, threshold: 0.05, rootMargin }
-  //     );
-
-  //     elements.forEach((el) => observer!.observe(el));
+  //       // For mobile, use a smaller threshold for instant detection
+  //       const isTouching = navbarBottom >= footerTop - 5; // 5px buffer for instant detection
+  //       setMobFooterInView(isTouching);
+  //     }
   //   };
 
-  //   initObserver();
+  //   // Use requestAnimationFrame for smoother mobile performance
+  //   const handleScroll = () => {
+  //     if (timeoutId) clearTimeout(timeoutId);
 
-  //   // fallback: if IntersectionObserver isn't supported or is flaky, also check on scroll
-  //   const scrollFallback = () => {
-  //     footerIds.forEach((id) => {
-  //       const el = document.getElementById(id);
-  //       if (!el) return;
-  //       const rect = el.getBoundingClientRect();
-  //       const inView = rect.top < window.innerHeight && rect.bottom > 0;
-  //       if (id === "site-footer") setFooterInView(inView);
-  //       if (id === "mob-site-footer") setMobFooterInView(inView);
-  //     });
+  //     // Cancel previous animation frame if exists
+  //     if (animationFrameId) cancelAnimationFrame(animationFrameId);
+
+  //     // Use requestAnimationFrame for instant response on mobile
+  //     animationFrameId = requestAnimationFrame(checkNavbarFooterContact);
+
+  //     // Also set timeout for resize events
+  //     timeoutId = setTimeout(checkNavbarFooterContact, 10);
   //   };
 
-  //   window.addEventListener("scroll", scrollFallback, { passive: true });
-  //   window.addEventListener("resize", scrollFallback);
+  //   // Initial check
+  //   checkNavbarFooterContact();
+
+  //   // Add event listeners with better options for mobile
+  //   window.addEventListener("scroll", handleScroll, {
+  //     passive: true,
+  //     capture: true,
+  //   });
+  //   window.addEventListener("resize", handleScroll, { passive: true });
+  //   window.addEventListener("touchmove", handleScroll, { passive: true });
 
   //   return () => {
-  //     observer?.disconnect();
-  //     window.removeEventListener("scroll", scrollFallback);
-  //     window.removeEventListener("resize", scrollFallback);
+  //     if (timeoutId) clearTimeout(timeoutId);
+  //     if (animationFrameId) cancelAnimationFrame(animationFrameId);
+  //     window.removeEventListener("scroll", handleScroll);
+  //     window.removeEventListener("resize", handleScroll);
+  //     window.removeEventListener("touchmove", handleScroll);
   //   };
-  // }, []);
+  // }, [setFooterInView, setMobFooterInView]);
 
   useEffect(() => {
     if (typeof window === "undefined") return;
@@ -141,52 +141,68 @@ export default function Navbar() {
     let timeoutId: NodeJS.Timeout | null = null;
     let animationFrameId: number | null = null;
 
-    const checkNavbarFooterContact = () => {
+    const checkNavbarSections = () => {
       const navbar = document.querySelector('nav, header, [role="navigation"]');
       const desktopFooter = document.getElementById("site-footer");
       const mobileFooter = document.getElementById("mob-site-footer");
+      const adBlocker = document.getElementById("ad-blocker");
 
       if (!navbar) return;
 
       const navbarRect = navbar.getBoundingClientRect();
       const navbarBottom = navbarRect.bottom;
 
-      // Check desktop footer contact
+      // ✅ Check if inside ad-blocker section
+      // if (adBlocker) {
+      //   const adRect = adBlocker.getBoundingClientRect();
+
+      //   const isInAdBlocker =
+      //     navbarBottom >= adRect.top && navbarBottom <= adRect.bottom;
+
+      //   if (isInAdBlocker) {
+      //     navbar.classList.add("nav-colored");
+      //   } else {
+      //     navbar.classList.remove("nav-colored");
+      //   }
+      // }
+      // ✅ Check if inside ad-blocker section
+      if (adBlocker) {
+        const adRect = adBlocker.getBoundingClientRect();
+
+        const isInAdBlocker =
+          navbarBottom >= adRect.top && navbarBottom <= adRect.bottom;
+
+        setAdBlockerInView(isInAdBlocker);
+      }
+
+      // ✅ Check desktop footer
       if (desktopFooter) {
         const footerRect = desktopFooter.getBoundingClientRect();
         const footerTop = footerRect.top;
         setFooterInView(navbarBottom >= footerTop);
       }
 
-      // Check mobile footer contact - more sensitive detection
+      // ✅ Check mobile footer
       if (mobileFooter) {
         const footerRect = mobileFooter.getBoundingClientRect();
         const footerTop = footerRect.top;
 
-        // For mobile, use a smaller threshold for instant detection
-        const isTouching = navbarBottom >= footerTop - 5; // 5px buffer for instant detection
+        const isTouching = navbarBottom >= footerTop - 5;
         setMobFooterInView(isTouching);
       }
     };
 
-    // Use requestAnimationFrame for smoother mobile performance
     const handleScroll = () => {
       if (timeoutId) clearTimeout(timeoutId);
-
-      // Cancel previous animation frame if exists
       if (animationFrameId) cancelAnimationFrame(animationFrameId);
 
-      // Use requestAnimationFrame for instant response on mobile
-      animationFrameId = requestAnimationFrame(checkNavbarFooterContact);
-
-      // Also set timeout for resize events
-      timeoutId = setTimeout(checkNavbarFooterContact, 10);
+      animationFrameId = requestAnimationFrame(checkNavbarSections);
+      timeoutId = setTimeout(checkNavbarSections, 10);
     };
 
     // Initial check
-    checkNavbarFooterContact();
+    checkNavbarSections();
 
-    // Add event listeners with better options for mobile
     window.addEventListener("scroll", handleScroll, {
       passive: true,
       capture: true,
@@ -202,6 +218,8 @@ export default function Navbar() {
       window.removeEventListener("touchmove", handleScroll);
     };
   }, [setFooterInView, setMobFooterInView]);
+
+  //  site-footer
 
   // border hide for blog/slug
   const noBorderOn =
@@ -233,16 +251,29 @@ export default function Navbar() {
   if (pathname.includes("/analytics") && !isMobile) return null;
 
   const headerBg =
-    footerInView || isDarkHeader ? "bg-[#01261E]" : "bg-[#FAFAFA]";
+    footerInView || adBlockerInView || isDarkHeader
+      ? "bg-[#01261E]"
+      : "bg-[#FAFAFA]";
 
   const mobileHeaderBg =
-    mobFooterInView || isDarkMobile ? "bg-[#01261E]" : "bg-[#FAFAFA]";
+    mobFooterInView || adBlockerInView || isDarkMobile
+      ? "bg-[#01261E]"
+      : "bg-[#FAFAFA]";
+
   const mobileTextColor =
-    mobFooterInView || isDarkMobile ? "text-black" : "text-black";
+    mobFooterInView || adBlockerInView || isDarkMobile
+      ? "text-black"
+      : "text-black";
+
   const mobileLogoSrc =
-    mobFooterInView || isDarkMobile ? "/blogs/logo-white.png" : "/logo.png";
+    mobFooterInView || adBlockerInView || isDarkMobile
+      ? "/blogs/logo-white.png"
+      : "/logo.png";
+
   const mobileMenuIconColor =
-    mobFooterInView || isDarkMobile ? "bg-white" : "bg-black";
+    mobFooterInView || adBlockerInView || isDarkMobile
+      ? "bg-white"
+      : "bg-black";
 
   const isContactPage = pathname === "/contact";
   const isCareersSlugPage = pathname.startsWith("/careers/");
@@ -259,7 +290,7 @@ export default function Navbar() {
               <div className="w-32 md:w-36">
                 <img
                   src={
-                    footerInView || isDarkHeader
+                    footerInView || adBlockerInView || isDarkHeader
                       ? "/blogs/logo-white.png"
                       : "/logo.png"
                   }
@@ -278,7 +309,7 @@ export default function Navbar() {
                     className={`relative group lg:text-[17px] ml-2 md:ml-6 overflow-hidden h-[26px] ${
                       pathname === route.path
                         ? "text-[#C7A262]"
-                        : footerInView || isDarkHeader
+                        : footerInView || adBlockerInView || isDarkHeader
                         ? "text-white"
                         : "text-black"
                     }`}

@@ -250,12 +250,12 @@ const socialIcons = [
     hoverSrc: "/blogs/blog-ln-hover.png",
     source: "https://www.moviesuggestions.com/",
   },
-  {
-    alt: "t",
-    defaultSrc: "/blogs/blog-t.png",
-    hoverSrc: "/blogs/blog-t-hover.png",
-    source: "https://www.dubaisummary.com/",
-  },
+  // {
+  //   alt: "t",
+  //   defaultSrc: "/blogs/blog-t.png",
+  //   hoverSrc: "/blogs/blog-t-hover.png",
+  //   source: "https://www.dubaisummary.com/",
+  // },
   {
     alt: "threads",
     defaultSrc: "/blogs/blog-threads.png",

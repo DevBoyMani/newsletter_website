@@ -44,11 +44,11 @@ export default function AnalyticsComboList({ selected, onChange }) {
     //   </Listbox>
     // </div>
 
-    <div className="w-full max-w-[40%]">
+    <div className="px-4 pb-[32px] pt-[2px] lg:pb-0 lg:px-0 w-full lg:max-w-[40%] z-10">
       <Listbox value={selectedOption} onChange={(opt) => onChange(opt.value)}>
         {({ open }) => (
           <div className="relative">
-            <Listbox.Button className="relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-full py-2 focus:outline-none text-[#fff] font-[400] leading-normal">
+            <Listbox.Button className="relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-full py-2 focus:outline-none text-[#fff] font-[600] lg:font-[400] leading-normal">
               <p className="ml-4">{selectedOption.label}</p>
               {open ? (
                 // <ChevronUpIcon className="absolute right-2 top-2 h-6 w-6 text-white" />

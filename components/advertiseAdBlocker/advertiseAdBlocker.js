@@ -61,7 +61,10 @@ export default function AdvertiseAdBlocker() {
   return (
     <>
       {/* desktop view */}
-      <div className="hidden lg:block bg-[#01261E] px-12 pb-24 pt-20">
+      <div
+        id="ad-blocker"
+        className="hidden lg:block bg-[#01261E] px-12 pb-24 pt-20"
+      >
         <div>
           <p className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
             What we offer, our benefits, simple to learn
