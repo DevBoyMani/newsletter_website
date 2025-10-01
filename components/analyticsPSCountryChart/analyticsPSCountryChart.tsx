@@ -77,7 +77,7 @@ export default function AnalyticsPSCountryChart() {
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Country
             </CardTitle>
-            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] pb-[20px] mt-0">
+            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[130%] pt-[6px] pb-[20px] mt-0">
               This chart displays the geographic distribution of our audience by
               country, highlighting where our users are located.
             </CardDescription>

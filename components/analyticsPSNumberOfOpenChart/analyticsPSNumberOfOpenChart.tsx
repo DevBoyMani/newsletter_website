@@ -142,7 +142,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Number of opens
             </CardTitle>
-            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] mt-0">
+            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[130%] pt-[6px] mt-0">
               This chart tracks how many times emails or content have been
               opened by users over time. It helps measure engagement and the
               effectiveness of our communication. A higher number of opens often

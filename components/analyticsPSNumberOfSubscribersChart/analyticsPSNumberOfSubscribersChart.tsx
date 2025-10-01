@@ -139,7 +139,7 @@ export default function AnalyticsPSNumberOfSubscribersChart() {
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Number of subscribers
             </CardTitle>
-            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] mt-0">
+            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[130%] pt-[6px] mt-0">
               This chart illustrates the growth in the number of subscribers
               over time, reflecting audience interest and retention.
             </CardDescription>
