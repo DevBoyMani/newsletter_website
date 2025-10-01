@@ -183,7 +183,7 @@ export default function CareersGraphicDesigner() {
                       />
                     </div>
                     <div className="flex flex-wrap items-center ml-5">
-                      <span className="text-base 2xl:text-[] text-[#000] mr-2">
+                      <span className="text-[16px] text-[#000] mr-2">
                         Before applying for the job, completing the task is
                         mandatory.
                       </span>
@@ -195,7 +195,7 @@ export default function CareersGraphicDesigner() {
                           <img
                             src="/careers/alert-down.png"
                             alt="arrow"
-                            className="w-3 h-3"
+                            className="w-3 h-full"
                           />
                         </div>
                       </div>
