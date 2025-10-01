@@ -56,11 +56,11 @@ export default function AnalyticsPSNumberOfOpensChart() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="pt-[27px]">
+          <CardContent className="pt-[20px]">
             <ChartContainer config={chartConfig} className="w-full h-[220px]">
               <LineChart
                 data={chartData}
-                margin={{ top: 20, right: 20, left: 0, bottom: 20 }}
+                margin={{ top: 0, right: 10, left: 10, bottom: 0 }}
               >
                 <CartesianGrid vertical={false} stroke="#E5E7EB" />
                 <XAxis
@@ -74,6 +74,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
+                  width={25}
                 />
 
                 {/* Tooltip with moving vertical line */}
@@ -109,7 +110,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
           </CardContent>
 
           {/* labels */}
-          <div className="flex gap-6 justify-center items-center pt-[25px]">
+          <div className="flex gap-6 justify-center items-center pt-[36px]">
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-[2px] bg-[#E19F20]"></span>
               <span className="text-[12px] text-[#464E5F] font-[500] leading-normal">
@@ -141,7 +142,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Number of opens
             </CardTitle>
-            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[12px] mt-0">
+            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] mt-0">
               This chart tracks how many times emails or content have been
               opened by users over time. It helps measure engagement and the
               effectiveness of our communication. A higher number of opens often
@@ -149,62 +150,67 @@ export default function AnalyticsPSNumberOfOpensChart() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="pt-[18px]">
-            <ChartContainer config={chartConfig} className="w-full h-[200px]">
-              <LineChart
-                data={chartData}
-                margin={{ top: 20, right: 20, left: 0, bottom: 20 }}
-              >
-                <CartesianGrid vertical={false} stroke="#E5E7EB" />
-                <XAxis
-                  dataKey="year"
-                  axisLine={false}
-                  tickLine={false}
-                  tickMargin={10}
-                  tick={{ fontSize: 8, fill: "#77838F" }}
-                />
-                <YAxis
-                  domain={[0.5, 0.9]}
-                  axisLine={false}
-                  tickLine={false}
-                  tickMargin={10}
-                  tick={{ fontSize: 8, fill: "#77838F" }}
-                />
+          <CardContent className="pt-[17px] px-0">
+            <div className="w-[100%] overflow-visible">
+              <ChartContainer config={chartConfig} className="w-full h-full">
+                <LineChart
+                  data={chartData}
+                  margin={{ top: 0, right: 5, left: 5, bottom: 0 }}
+                  width={500} // Force wider width
+                >
+                  <CartesianGrid vertical={false} stroke="#E5E7EB" />
+                  <XAxis
+                    dataKey="year"
+                    axisLine={false}
+                    tickLine={false}
+                    tickMargin={10}
+                    tick={{ fontSize: 8, fill: "#77838F" }}
+                    // width={10}
+                  />
+                  <YAxis
+                    domain={[0.5, 0.9]}
+                    axisLine={false}
+                    tickLine={false}
+                    tickMargin={10}
+                    tick={{ fontSize: 8, fill: "#77838F" }}
+                    width={25}
+                  />
 
-                {/* Tooltip with moving vertical line */}
-                <Tooltip
-                  cursor={{ stroke: "#000", strokeDasharray: "3 3" }}
-                  content={<ChartTooltipContent />}
-                />
+                  {/* Tooltip with moving vertical line */}
+                  <Tooltip
+                    cursor={{ stroke: "#000", strokeDasharray: "3 3" }}
+                    content={<ChartTooltipContent />}
+                  />
 
-                {/* Lines */}
-                <Line
-                  dataKey="loyal"
-                  type="monotone"
-                  stroke={chartConfig.loyal.color}
-                  strokeWidth={2.5}
-                  dot={false}
-                />
-                <Line
-                  dataKey="new"
-                  type="monotone"
-                  stroke={chartConfig.new.color}
-                  strokeWidth={2.5}
-                  dot={false}
-                />
-                <Line
-                  dataKey="unique"
-                  type="monotone"
-                  stroke={chartConfig.unique.color}
-                  strokeWidth={2.5}
-                  dot={false}
-                />
-              </LineChart>
-            </ChartContainer>
+                  {/* Lines */}
+                  <Line
+                    dataKey="loyal"
+                    type="monotone"
+                    stroke={chartConfig.loyal.color}
+                    strokeWidth={2.5}
+                    dot={false}
+                  />
+                  <Line
+                    dataKey="new"
+                    type="monotone"
+                    stroke={chartConfig.new.color}
+                    strokeWidth={2.5}
+                    dot={false}
+                  />
+                  <Line
+                    dataKey="unique"
+                    type="monotone"
+                    stroke={chartConfig.unique.color}
+                    strokeWidth={2.5}
+                    dot={false}
+                  />
+                </LineChart>
+              </ChartContainer>
+            </div>
           </CardContent>
 
           {/* labels */}
-          <div className="flex gap-6 justify-center items-center pb-[16px]">
+          <div className="flex gap-6 justify-center items-center pb-[16px] pt-[15px]">
             <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">

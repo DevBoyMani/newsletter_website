@@ -85,7 +85,7 @@ export default function PresidentialSummaryAnalytics() {
           </div>
 
           {/* Charts + cards stacked */}
-          <div className="space-y-6 mt-6">
+          <div className="space-y-[32px] mt-6">
             <AnalyticsPSNumberOfOpensChart />
             <AnalyticsPSNumberOfClicksChart />
             <AnalyticsPSNumberOfSubscribersChart />

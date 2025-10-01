@@ -334,7 +334,7 @@ export default function Navbar() {
                 fontWeight="300"
                 // width="135px"
                 // height="42px"
-                // borderColor="#C7A262"
+                // hoverBorderColor="#C7A262"
                 hoverText="#ffffff"
                 bgColor="#C7A262"
                 hoverBgColor="#000"

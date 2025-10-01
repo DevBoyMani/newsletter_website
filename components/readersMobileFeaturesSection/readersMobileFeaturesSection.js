@@ -23,10 +23,10 @@ const sections = [
   {
     id: 3,
     title: "3. Fact checked and human written",
-    videoSrc: "/readers/fact-checked-video.mp4",
+    src: "/readers/fact-checked-mobile.png",
     content:
       "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-    imageSize: " h-[375px]",
+    // imageSize: "h-[444px]",
   },
   {
     id: 4,
@@ -48,39 +48,6 @@ const sections = [
 
 export default function ReadersMobileFeaturesSection() {
   const [mode, setMode] = useState("dark");
-  const videoRef = useRef(null);
-  const [isVideoInView, setIsVideoInView] = useState(false);
-  console.log(isVideoInView);
-
-  // Set up Intersection Observer to detect when the video is in view
-  useEffect(() => {
-    const videoElement = videoRef.current;
-    if (!videoElement) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        setIsVideoInView(entry.isIntersecting);
-
-        // Play/pause based on visibility
-        if (entry.isIntersecting) {
-          videoElement.play().catch((error) => {
-            console.log("Autoplay prevented:", error);
-          });
-        } else {
-          videoElement.pause();
-        }
-      },
-      { threshold: 0.5 } // Trigger when 50% of video is visible
-    );
-
-    observer.observe(videoElement);
-
-    return () => {
-      if (videoElement) {
-        observer.unobserve(videoElement);
-      }
-    };
-  }, []);
 
   const handleModeChange = () => {
     setMode((prev) => (prev === "dark" ? "light" : "dark"));
@@ -89,7 +56,7 @@ export default function ReadersMobileFeaturesSection() {
   return (
     <div className="bg-[#FAFAFA] pb-10 mx-auto">
       {/* Features Loop */}
-      {sections.map(({ title, content, src, videoSrc, imageSize }, index) => {
+      {sections.map(({ title, content, src, imageSize }, index) => {
         const isFirst = index === 0;
         const isThird = index === 2;
         const isFourth = index === 3;
@@ -159,36 +126,21 @@ export default function ReadersMobileFeaturesSection() {
               // Normal sections
               <div
                 className={`w-full ${
-                  isThird && videoSrc
+                  isThird
                     ? ""
                     : isFourth
                     ? "" // No padding on 4th section image
                     : "px-4"
                 }`}
               >
-                {isThird && videoSrc ? (
-                  <video
-                    ref={videoRef}
-                    playsInline
-                    muted
-                    loop
-                    preload="auto"
-                    className={`object-cover w-full ${imageSize ?? "h-auto"}`}
-                    // Removed autoPlay attribute
-                  >
-                    <source src={videoSrc} type="video/mp4" />
-                    Your browser does not support the video tag.
-                  </video>
-                ) : (
-                  imageSrc && (
-                    <img
-                      src={imageSrc}
-                      alt={title}
-                      className={`object-cover rounded-md w-full ${
-                        imageSize ?? "h-auto"
-                      }`}
-                    />
-                  )
+                {imageSrc && (
+                  <img
+                    src={imageSrc}
+                    alt={title}
+                    className={`object-cover w-full ${
+                      isThird ? "w-[50%] h-[444px]" : ""
+                    } ${isThird ? {} : "rounded-md"} ${imageSize ?? "h-auto"}`}
+                  />
                 )}
               </div>
             )}

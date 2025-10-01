@@ -23,7 +23,7 @@ const tabs = [
   {
     id: 3,
     title: "Fact checked and human written",
-    image: "/readers/fact-checked-video.mp4",
+    image: "/readers/fact-checked.png",
     content:
       "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
     // imageSize: "w-[431px] h-[518px]",
@@ -179,7 +179,7 @@ export default function ScrollSyncTabs() {
                     )}
                   </div>
 
-                  <div className="md:w-[50%] mt-6 md:mt-0 relative flex justify-end items-end">
+                  {/* <div className="md:w-[50%] mt-6 md:mt-0 relative flex justify-end items-end">
                     {isThird ? (
                       <video
                         autoPlay
@@ -189,6 +189,25 @@ export default function ScrollSyncTabs() {
                       >
                         <source src={tab.image} type="video/mp4" />
                       </video>
+                    ) : (
+                      <img
+                        src={imageSrc}
+                        alt={tab.title}
+                        className={`object-cover rounded-md ${
+                          tab.imageSize ?? "w-full h-auto"
+                        }`}
+                      />
+                    )}
+                  </div> */}
+                  <div className="md:w-[50%] mt-6 md:mt-0 relative flex justify-end items-end">
+                    {isThird ? (
+                      <img
+                        src={imageSrc}
+                        alt={tab.title}
+                        className={`object-cover rounded-[30px] ${
+                          tab.imageSize ?? "w-full h-auto"
+                        }`}
+                      />
                     ) : (
                       <img
                         src={imageSrc}
