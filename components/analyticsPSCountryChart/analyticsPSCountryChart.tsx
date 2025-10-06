@@ -87,7 +87,10 @@ export default function AnalyticsPSCountryChart() {
             {/* Legend */}
             <div className="flex flex-col gap-[16px] mt-5 pt-0">
               {chartData.map((item) => (
-                <div key={item.country} className="flex items-center gap-2">
+                <div
+                  key={item.country}
+                  className="flex items-center gap-[13px] h-[15px]"
+                >
                   <span
                     className="w-3 h-3 rounded-[2px]"
                     style={{ backgroundColor: item.fill }}
