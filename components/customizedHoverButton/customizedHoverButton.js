@@ -49,15 +49,24 @@ export default function CustomizedHoverButton({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={`relative inline-flex items-center justify-center rounded-full ${padding} ${margin} overflow-hidden group text-center transition-colors duration-300`}
+      // style={{
+      //   width,
+      //   height,
+      //   border: borderColor
+      //     ? `1px solid ${isHovered ? hoverBgColor : borderColor}`
+      //     : "none",
+      //   backgroundColor: bgColor,
+      //   color: isHovered ? hoverText : textColor,
+
+      // }}
       style={{
         width,
         height,
         border: borderColor
           ? `1px solid ${isHovered ? hoverBgColor : borderColor}`
           : "none",
-        backgroundColor: bgColor,
+        backgroundColor: isHovered ? hoverBgColor : bgColor, // dynamically change
         color: isHovered ? hoverText : textColor,
-        // hoverBorderColor: hoverBorderColor ?
       }}
     >
       {/* Expanding hover background */}

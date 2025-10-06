@@ -76,7 +76,7 @@ export default function AnalyticsPSAgeChart() {
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Age
             </CardTitle>
-            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[130%] pt-[6px] pb-[20px] mt-0">
+            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] pb-[20px] mt-0">
               This chart shows the age distribution of <br />
               our audience.
             </CardDescription>
@@ -84,7 +84,7 @@ export default function AnalyticsPSAgeChart() {
 
           <CardContent className="flex justify-between items-center pb-[16px] -mt-9">
             {/* Legend */}
-            <div className="flex flex-col justify-start items-start gap-[16px] mt-0 pt-0">
+            <div className="flex flex-col justify-start items-start gap-[14px] mt-0 pt-0">
               {chartData.map((item) => (
                 <div key={item.age} className="flex items-center gap-2 ">
                   <span

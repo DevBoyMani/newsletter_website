@@ -11,10 +11,12 @@ export default function BodyRight({
   showPopup,
   setShowPopup,
 }) {
+  // only clear email after successful submit
   const onSubmit = async (e) => {
     e.preventDefault();
     try {
       await Promise.resolve(handleSubmit?.(e));
+      setEmail(""); // clear only after submit
     } finally {
       setShowPopup(true);
     }
@@ -40,11 +42,11 @@ export default function BodyRight({
         ))}
       </div>
 
-      <div className="border border-[#01261E] rounded-[10px] relative overflow-hidden min-h-[210px]">
+      <div className="relative overflow-hidden min-h-[210px]">
         <LayoutGroup id="subscribe">
           {/* Content fades out; keep it mounted but non-interactive during popup */}
           <motion.div
-            className="px-[15px]"
+            className="px-[15px] border border-[#01261E] rounded-[10px]"
             initial={false}
             animate={{ opacity: showPopup ? 0 : 1, y: showPopup ? 8 : 0 }}
             style={{ pointerEvents: showPopup ? "none" : "auto" }}
@@ -107,11 +109,22 @@ export default function BodyRight({
                   scale: 0.8,
                   transition: { duration: 0.2 },
                 }}
-                className="absolute inset-0 bg-[#01261E] shadow-lg z-10 flex flex-col justify-center items-center"
-                style={{ borderRadius: 10 }}
+                className="absolute inset-0 bg-[#01261E] shadow-lg z-10 flex flex-col justify-center items-center border border-[#01261E] rounded-[10px]"
+                // style={{ borderRadius: 10 }}
               >
-                <button
+                {/* <button
                   onClick={() => setShowPopup(false)}
+                  className="absolute top-4 right-4 text-white text-[20px] hover:scale-110 transition"
+                  aria-label="Close"
+                >
+                  ✕
+                </button> */}
+                <button
+                  onClick={() => {
+                    setShowPopup(false);
+                    // Optional: comment out next line if you DON'T want to clear the input
+                    // setEmail("");
+                  }}
                   className="absolute top-4 right-4 text-white text-[20px] hover:scale-110 transition"
                   aria-label="Close"
                 >

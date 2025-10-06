@@ -139,7 +139,7 @@ export default function AnalyticsPSNumberOfClicksChart() {
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Number of clicks
             </CardTitle>
-            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[130%] pt-[6px] mt-0">
+            <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
               This chart shows the total number of clicks over time, helping
               track user engagement and activity.
             </CardDescription>
