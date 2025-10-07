@@ -83,13 +83,13 @@ export default function AnalyticsPSCountryChart() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex items-center justify-between pb-[16px] -mt-7">
+          <CardContent className="flex items-center justify-between pb-[16px] -mt-10">
             {/* Legend */}
-            <div className="flex flex-col gap-[16px] mt-5 pt-0">
+            <div className="flex flex-col gap-[10px] mt-5 pt-0">
               {chartData.map((item) => (
                 <div
                   key={item.country}
-                  className="flex items-center gap-[13px] h-[15px]"
+                  className="flex items-center gap-[13px] h-[16px]"
                 >
                   <span
                     className="w-3 h-3 rounded-[2px]"
