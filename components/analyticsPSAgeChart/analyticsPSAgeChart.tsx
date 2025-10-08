@@ -82,9 +82,9 @@ export default function AnalyticsPSAgeChart() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex justify-between items-center pb-[16px] -mt-11">
+          <CardContent className="flex justify-between items-center pb-[16px] -mt-9">
             {/* Legend */}
-            <div className="flex flex-col justify-start items-start gap-[10px]">
+            <div className="flex flex-col gap-[10px] -mt-5">
               {chartData.map((item) => (
                 <div
                   key={item.age}
