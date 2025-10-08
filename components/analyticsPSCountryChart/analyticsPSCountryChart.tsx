@@ -104,7 +104,7 @@ export default function AnalyticsPSCountryChart() {
 
             {/* Donut Chart */}
 
-            <div className="w-[45%] max-w-[160px] aspect-square -mt-2">
+            <div className="w-[45%] max-w-[160px] aspect-square mt-0">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
