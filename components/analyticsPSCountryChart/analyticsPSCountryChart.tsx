@@ -85,7 +85,7 @@ export default function AnalyticsPSCountryChart() {
 
           <CardContent className="flex items-center justify-between pb-[16px] -mt-9">
             {/* Legend */}
-            <div className="flex flex-col gap-[10px] mt-7 pt-0">
+            <div className="flex flex-col gap-[10px]">
               {chartData.map((item) => (
                 <div
                   key={item.country}

@@ -85,30 +85,28 @@ export default function AnalyticsAdCard({ id = 0 }) {
         </div>
       </div>
       {/* mobile */}
-      {/* <div className="block lg:hidden pb-[70px]">
-        <div className="px-[16px] pt-[16px] rounded-[10px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
+      <div className="block lg:hidden">
+        <div className="flex flex-col px-[16px] pt-[16px] h-[215px] rounded-[10px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
           <h4 className="text-[16px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] ">
             Advertise with Sagravia
           </h4>
-          <p className="text-[12px] font-[400] leading-[139%] text-[#fff] pt-[12px]">
+          <p className="text-[12px] font-[400] leading-[140%] text-[#fff] pt-[12px]">
             Promote your brand to a targeted, engaged audience. We offer
             flexible ad options to fit your goals and budget.
           </p>
-          <p className="text-[14px] leading-[139%] text-[#fff] ">
+          <p className="text-[12px] leading-[139%] text-[#fff] pt-[12px]">
             Email us at{" "}
             <span className="font-[700] text-[#fff]">sales@sagravia.com</span>{" "}
             or click the button below.
           </p>
 
-          <div className="flex gap-4 pt-[25px] pb-[16px]">
-         
+          <div className="flex gap-[10px] pt-[12px] pb-[16px] mt-auto">
             <Link href="/contact">
-              <button className="bg-[#fff] text-[#01261E] font-[600] text-[12px] w-[129px] py-[9px] rounded-[57px]  border border-[#fff]">
+              <button className="bg-[#fff] text-[#01261E] font-[600] text-[14px] w-[129px] py-[8.5px] rounded-[57px]  border border-[#fff]">
                 Contact sales
               </button>
             </Link>
 
-            
             {matchedLink && (
               <CustomizedHoverButton
                 href={matchedLink.source}
@@ -121,12 +119,12 @@ export default function AnalyticsAdCard({ id = 0 }) {
                 hoverBgColor="#fff"
                 hoverText="#01261E"
                 textColor="#fff"
-                padding="py-[9px]"
+                padding="py-[8.5px]"
               />
             )}
           </div>
         </div>
-      </div> */}
+      </div>
     </>
   );
 }
