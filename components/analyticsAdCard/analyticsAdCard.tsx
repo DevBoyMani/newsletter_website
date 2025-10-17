@@ -86,7 +86,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
       </div>
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="flex flex-col px-[16px] p-[16px] h-[230px] rounded-[10px] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat text-[#fff]">
+        <div className="flex flex-col px-[16px] p-[16px] h-[233px] rounded-[10px] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat text-[#fff]">
           <h4 className="text-[20px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] ">
             Advertise with Sagravia
           </h4>
