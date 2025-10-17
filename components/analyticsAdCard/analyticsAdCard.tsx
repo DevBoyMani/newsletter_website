@@ -16,7 +16,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
     <>
       {/* desktop */}
       <div className="lg:block hidden">
-        <div className="h-[308px] rounded-[20px] p-[40px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
+        <div className="h-[308px] rounded-[20px] p-[40px] text-[#fff] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat">
           <h4 className="text-[22px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] pb-[20px]">
             Advertise with Sagravia
           </h4>
@@ -86,15 +86,15 @@ export default function AnalyticsAdCard({ id = 0 }) {
       </div>
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="flex flex-col px-[16px] pt-[16px] h-[215px] rounded-[10px] bg-gradient-to-br from-[#116150] to-[#01261E] text-[#fff]">
-          <h4 className="text-[16px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] ">
+        <div className="flex flex-col px-[16px] p-[16px] h-[230px] rounded-[10px] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat text-[#fff]">
+          <h4 className="text-[20px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] ">
             Advertise with Sagravia
           </h4>
-          <p className="text-[12px] font-[400] leading-[140%] text-[#fff] pt-[12px]">
+          <p className="text-[14px] font-[400] leading-[140%] text-[#fff] pt-[20px]">
             Promote your brand to a targeted, engaged audience. We offer
             flexible ad options to fit your goals and budget.
           </p>
-          <p className="text-[12px] leading-[139%] text-[#fff] pt-[12px]">
+          <p className="text-[14px] leading-[139%] text-[#fff] pt-[12px]">
             Email us at{" "}
             <span className="font-[700] text-[#fff]">sales@sagravia.com</span>{" "}
             or click the button below.
@@ -102,7 +102,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
 
           <div className="flex gap-[10px] pt-[12px] pb-[16px] mt-auto">
             <Link href="/contact">
-              <button className="bg-[#fff] text-[#01261E] font-[600] text-[14px] w-[129px] py-[8.5px] rounded-[57px]  border border-[#fff]">
+              <button className="bg-[#fff] text-[#01261E] font-[600] text-[14px] w-[129px] py-[7px] rounded-[57px]  border border-[#fff]">
                 Contact sales
               </button>
             </Link>
@@ -119,7 +119,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
                 hoverBgColor="#fff"
                 hoverText="#01261E"
                 textColor="#fff"
-                padding="py-[8.5px]"
+                padding="py-[7px]"
               />
             )}
           </div>
