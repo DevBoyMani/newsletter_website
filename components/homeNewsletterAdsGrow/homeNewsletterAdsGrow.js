@@ -105,7 +105,7 @@ export default function HomeNewsletterAdsGrow() {
           <div className="flex space-x-[40px]">
             {/* Left Card */}
             <div className="w-1/2">
-              <div className="bg-white rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)] overflow-hidden">
+              <div className="bg-white rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)] overflow-hidden max-h-[380px]">
                 <img
                   src="/home/rect-1.png"
                   alt="ad blocker"
@@ -132,7 +132,7 @@ export default function HomeNewsletterAdsGrow() {
 
             {/* Right Card */}
             <div className="w-1/2">
-              <div className="bg-white rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)] overflow-hidden">
+              <div className="bg-white rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)] overflow-hidden max-h-[380px]">
                 <img
                   src="/home/rect-2.png"
                   alt="newsletter reach"
