@@ -61,7 +61,7 @@ export default function Hero() {
                     key={company.id}
                     src={company.logo}
                     alt={company.name}
-                    className="w-[100px] h-[28px] object-contain"
+                    className="w-[100px] h-[47px] object-contain"
                   />
                 ))}
               </div>
