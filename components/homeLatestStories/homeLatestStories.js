@@ -224,7 +224,7 @@ export default function HomeLatestStrories() {
                   className="flex-1 min-w-[300px] bg-[#fff] rounded-[15px] shadow-[0_0_44px_0_rgba(102,102,102,0.25)]
         group overflow-hidden transition-shadow duration-500 
         hover:shadow-[0_0_55px_0_rgba(102,102,102,0.3)] cursor-pointer
-        h-[540px]"
+        h-[490px]"
                 >
                   <div className="flex flex-col items-stretch transition-all duration-500 h-full">
                     {/* Image Section */}
@@ -232,7 +232,7 @@ export default function HomeLatestStrories() {
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="rounded-[15px] w-full h-[300px] object-cover transition-all duration-500 group-hover:h-[280px]"
+                        className="rounded-[15px] h-[270px] object-cover transition-all duration-500 group-hover:h-[250px] w-full"
                       />
                     </div>
 
@@ -251,13 +251,13 @@ export default function HomeLatestStrories() {
 
                       {/* Bottom “Read more” section (stays fixed at bottom) */}
                       <div className="mt-auto max-h-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-[60px]">
-                        <div className="translate-y-[100%] opacity-0 group-hover:translate-y-1 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-250">
+                        <div className="translate-y-[100%]  opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-250">
                           <div className="flex justify-between items-center pt-[10px]">
-                            <p className="text-[#000] text-[15px] font-[400] leading-[24px]">
+                            <p className="text-[#000] text-[16px] font-[600] leading-[24px]">
                               Read more
                             </p>
                             <a href={post.link}>
-                              <span className="text-[#000] text-[26px]">
+                              <span className="text-[#000] text-[30px]">
                                 &#62;
                               </span>
                             </a>
