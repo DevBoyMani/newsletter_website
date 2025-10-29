@@ -10,9 +10,7 @@
 
 @font-face {
   font-family: "GT Super Ds Trial";
-  src: url("/fonts/GT-Super-Ds-Trial.woff2") format("woff2");
-  font-weight: normal;
-  font-style: normal;
+  src: url("/fonts/GT-Super-Display-Regular-Trial.otf") format("opentype");
 }
 
 :root {

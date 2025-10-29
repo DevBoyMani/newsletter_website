@@ -21,18 +21,20 @@ export default function Hero() {
         <div className="pt-[142px] pl-[110px] flex">
           {/* left */}
           <div className="w-[41%]">
-            <h2 className="w-full text-[80px] font-[400] leading-[94%] text-[#01261E]">
-              Feed your and
-              <br /> knowledge
-              <br /> and expand your
-              <br /> knowledge
+            <h2
+              className={` w-full text-[80px] font-[400] leading-[94%] text-[#01261E] shadow-[0_4px_4px_rgba(31,25,25,0.00)]`}
+            >
+              Feed your and knowledge and expand your knowledge
             </h2>
-            <p className="text-[#121212] pt-[32px] w-[80%] text-[18px] font-[400] leading-[168%]">
+            <p
+              className={`text-[#121212] pt-[32px] w-[455px] text-[18px] font-[400] leading-[168%]`}
+            >
               Explore different categories. Find the best deals. AG1 is a daily
               health drink packed with nutrients to help alleviate bloating.
             </p>
             <div className="pt-[32px]">
-              <button className="bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] font-[600] text-[#fff] rounded-[57px]">
+              {/* w-[43%] */}
+              <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] font-[600] text-[#fff] rounded-[57px] leading-normal">
                 Get started for free
               </button>
             </div>

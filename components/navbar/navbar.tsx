@@ -280,11 +280,11 @@ export default function Navbar() {
 
   return (
     <>
-      {/* === Desktop  === */}
+      {/* === Desktop  ===  */}
       <header
-        className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg}`}
+        className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg} py-[12px]`}
       >
-        <div className="w-[86%] h-[61px] mx-auto my-auto">
+        <div className="w-[86%] mx-auto">
           <div className="flex items-center justify-between">
             <Link href="/">
               <div className="w-32 md:w-36">
@@ -295,18 +295,18 @@ export default function Navbar() {
                       : "/logo.png"
                   }
                   alt="Logo"
-                  className="mt-3"
+                  className=""
                 />
               </div>
             </Link>
 
             <div className=" font-[400] flex items-center">
-              <div className="flex items-center space-x-4">
+              <div className="flex items-center gap-[30px]">
                 {routes.map((route) => (
                   <Link
                     key={route.path}
                     href={route.path}
-                    className={`relative group lg:text-[17px] ml-2 md:ml-6 overflow-hidden h-[26px] ${
+                    className={`relative group lg:text-[17px] overflow-hidden ${
                       pathname === route.path
                         ? "text-[#C7A262]"
                         : footerInView || adBlockerInView || isDarkHeader
@@ -340,7 +340,7 @@ export default function Navbar() {
                 hoverBgColor="#000"
                 textColor="#fff"
                 padding="px-6 py-2"
-                margin="ml-20"
+                margin="ml-[120px]"
               />
             </div>
           </div>
