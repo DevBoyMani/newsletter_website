@@ -17,14 +17,14 @@ export default function HomePopularNewsletters() {
             </p>
             <Link
               href="/readers#ourNewsletters"
-              className="mt-8 text-[18px] text-[#000] font-[400] leading-[104%]"
+              className="mt-8 text-[18px] text-[#000] font-[400] leading-[104%] hover:underline"
             >
               All newsletters &rarr;
             </Link>
           </div>
 
           {/* card */}
-          <div className="flex gap-[24px] pt-[35px] w-full">
+          <div className="flex lg:flex-row flex-col gap-[24px] pt-[35px] w-full">
             {/* 1 */}
             <div className="flex-1 bg-[#FFF] rounded-[10px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)]">
               <div className="p-[32px]">
@@ -41,13 +41,15 @@ export default function HomePopularNewsletters() {
                 <p className="pt-[24px] text-[#010205] text-[26px] font-[600] leading-[150%] tracking-[-0.78px]">
                   Presidential Summary
                 </p>
-                <div className="pt-[56px] flex items-center gap-[19px]">
-                  <p className="w-[68%] text-[#878C91] text-[14px] font-[500] leading-[160%]">
+                <div className="pt-[56px] flex justify-between items-center gap-[19px]">
+                  {/* w-[68%] */}
+                  <p className="w-[220px] text-[#878C91] text-[14px] font-[500] leading-[160%]">
                     We are the top digital marketing agency for branding corp.
                     We offer a full rang engine.
                   </p>
-                  <div className="w-[32%]">
-                    <button className="group relative w-full flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[12px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
+                  {/* w-[32%] */}
+                  <div className="w-[88px]">
+                    <button className="group relative w-full flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[8px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
                       <img
                         src="/home/r-arr.png"
                         alt="Green Arrow"
@@ -79,13 +81,15 @@ export default function HomePopularNewsletters() {
                 <p className="pt-[24px] text-[#010205] text-[26px] font-[600] leading-[150%] tracking-[-0.78px]">
                   Geopolitical Summary
                 </p>
-                <div className="pt-[56px] flex items-center gap-[19px]">
-                  <p className="w-[68%] text-[#878C91] text-[14px] font-[500] leading-[160%]">
+                <div className="pt-[56px] flex justify-between items-center gap-[19px]">
+                  {/* w-[68%] */}
+                  <p className="w-[220px] text-[#878C91] text-[14px] font-[500] leading-[160%]">
                     Working with this digital marketing agency has been a true
                     partnership.
                   </p>
-                  <div className="w-[32%]">
-                    <button className="group relative w-full flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[12px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
+                  {/* w-[32%] */}
+                  <div className="w-[88px]">
+                    <button className="group relative w-full flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[8px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
                       <img
                         src="/home/r-arr.png"
                         alt="Green Arrow"
@@ -117,13 +121,15 @@ export default function HomePopularNewsletters() {
                 <p className="pt-[24px] text-[#010205] text-[26px] font-[600] leading-[150%] tracking-[-0.78px]">
                   Business History
                 </p>
-                <div className="pt-[56px] flex items-center gap-[19px]">
-                  <p className="w-[68%] text-[#878C91] text-[14px] font-[500] leading-[160%]">
+                <div className="pt-[56px] flex justify-between items-center gap-[19px]">
+                  {/* w-[68%] */}
+                  <p className="w-[220px] text-[#878C91] text-[14px] font-[500] leading-[160%]">
                     What sets this digital marketing agency apart is their
                     commitment to transparency.
                   </p>
-                  <div className="w-[32%]">
-                    <button className="group relative w-full flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[12px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
+                  {/* w-[32%] */}
+                  <div className="w-[88px]">
+                    <button className="group relative w-full flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[8px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
                       <img
                         src="/home/r-arr.png"
                         alt="Green Arrow"

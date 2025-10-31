@@ -43,7 +43,7 @@ export default function Hero() {
           <div className="w-[59%]">
             <div className="relative right-0">
               <img
-                src="/home/hero-image.png"
+                src="/home/hero-image-new.png"
                 alt="Home hero image"
                 className=""
               />

@@ -37,7 +37,7 @@ export default function HomeSocialConversations() {
       <div className="bg-[#FAFAFA]">
         <div className="pt-[80px] lg:pt-[141px]">
           <div
-            className="bg-[url('/home/conversations.png')] 
+            className="bg-[url('/home/conversations-new.png')] 
                  bg-contain lg:bg-[length:100%_auto] bg-no-repeat bg-center
                  w-full min-h-[400px] md:min-h-[600px] lg:min-h-[1058px] 2xl:min-h-[1258px] 
                  relative"

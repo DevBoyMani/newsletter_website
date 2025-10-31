@@ -6,7 +6,7 @@ export default function HomeLatestStrories() {
       date: "Oct 25, 2025",
       image: "/home/blog-pic-first.png",
       description:
-        "The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par. The Return C++ SDK is now fully on.",
+        "The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par. The Return C++ SDK is now fully on.The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par. The Return C++ SDK is now fully on.",
       link: "#",
     },
     {
@@ -46,223 +46,56 @@ export default function HomeLatestStrories() {
             </div>
           </div>
           {/* cards */}
-          {/* <div className="pt-[56px]">
-            <div className="flex flex-row gap-[21px]">
-       
-              <div className="flex-1 bg-[#fff] rounded-[15px] shadow-[0_0_44px_0_rgba(102,102,102,0.25)] group overflow-hidden transition-all duration-500 hover:shadow-[0_0_55px_0_rgba(102,102,102,0.3)] cursor-pointer">
-                <div className="flex flex-col items-stretch transition-all duration-500">
-                 
-                  <div className="px-[8px] pt-[8px] transition-all duration-500">
-                    <img
-                      src="/home/blog-pic-first.png"
-                      alt="blog first pic"
-                      className="rounded-[15px] w-full h-[300px] object-cover transition-all duration-500 group-hover:h-[280px]"
-                    />
-                  </div>
-
-                  <div className="px-[15px] py-[23px] font-[manrope] transition-all duration-500 group-hover:-translate-y-[-4px]">
-             
-                    <div className="transition-all duration-500">
-                      <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
-                        First blog post
-                      </h3>
-
-                      <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] pt-[20px]">
-                        The Return C++ SDK is now fully on par with our two
-                        other SDKs in Ptthon. The Return C++ SDK is now fully on
-                        par with our two other SDKs in Ptthon. The Return C++
-                        SDK is now fully on par. The Return C++ SDK is now fully
-                        on.
-                      </p>
-
-                   
-                      <div className="max-h-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-[60px]">
-                        <div className="translate-y-[100%] opacity-0 group-hover:translate-y-1 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-250">
-                          <div className="flex justify-between items-center pt-[10px]">
-                            <p className="text-[#000] text-[15px] font-[400] leading-[24px]">
-                              Read more
-                            </p>
-                            <a href="#">
-                              <span className="text-[#000] text-[26px]">
-                                &#62;
-                              </span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-          
-              <div className=" bg-[#fff] rounded-[15px] shadow-[0_0_44px_0_rgba(102,102,102,0.25)]">
-                <div className="flex flex-col items-stretch">
-                  <div className="px-[8px] pt-[8px]">
-                    <img
-                      src="/home/blog-pic-first.png"
-                      alt="blog first pic"
-                      className="rounded-[15px]"
-                    />
-                  </div>
-                  <div className="px-[15px] py-[23px]">
-                    <div className="flex flex-col ">
-                      <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
-                        First blog post
-                      </h3>
-                      <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] pt-[20px]">
-                        The Return C++ SDK is now fully on par with our two
-                        other SDKs in Ptthon. The Return C++ SDK is now fully on
-                        par with our two other SDKs in Ptthon. The Return C++
-                        SDK is now fully on par. The Return C++ SDK is now fully
-                        on{" "}
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="flex-1 bg-[#fff] rounded-[15px] shadow-[0_0_44px_0_rgba(102,102,102,0.25)] group overflow-hidden transition-all duration-500 hover:shadow-[0_0_55px_0_rgba(102,102,102,0.3)] cursor-pointer">
-                <div className="flex flex-col items-stretch transition-all duration-500">
-               
-                  <div className="px-[8px] pt-[8px] transition-all duration-500">
-                    <img
-                      src="/home/blog-pic-first.png"
-                      alt="blog first pic"
-                      className="rounded-[15px] w-full h-[300px] object-cover transition-all duration-500 group-hover:h-[280px]"
-                    />
-                  </div>
-
-         
-                  <div className="px-[15px] py-[23px] font-[manrope] transition-all duration-500 group-hover:-translate-y-[-4px]">
-         
-                    <div className="transition-all duration-500">
-                      <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
-                        First blog post
-                      </h3>
-
-                      <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] pt-[20px]">
-                        The Return C++ SDK is now fully on par with our two
-                        other SDKs in Ptthon. The Return C++ SDK is now fully on
-                        par with our two other SDKs in Ptthon. The Return C++
-                        SDK is now fully on par. The Return C++ SDK is now fully
-                        on.
-                      </p>
-
-      
-                      <div className="max-h-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-[60px]">
-                        <div className="translate-y-[100%] opacity-0 group-hover:translate-y-1 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-250">
-                          <div className="flex justify-between items-center pt-[10px]">
-                            <p className="text-[#000] text-[15px] font-[400] leading-[24px]">
-                              Read more
-                            </p>
-                            <a href="#">
-                              <span className="text-[#000] text-[26px]">
-                                &#62;
-                              </span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-  
-              <div className="flex-1 bg-[#fff] rounded-[15px] shadow-[0_0_44px_0_rgba(102,102,102,0.25)] group overflow-hidden transition-all duration-500 hover:shadow-[0_0_55px_0_rgba(102,102,102,0.3)] cursor-pointer">
-                <div className="flex flex-col items-stretch transition-all duration-500">
-
-                  <div className="px-[8px] pt-[8px] transition-all duration-500">
-                    <img
-                      src="/home/blog-pic-first.png"
-                      alt="blog first pic"
-                      className="rounded-[15px] w-full h-[300px] object-cover transition-all duration-500 group-hover:h-[280px]"
-                    />
-                  </div>
-
-        
-                  <div className="px-[15px] py-[23px] font-[manrope] transition-all duration-500 group-hover:-translate-y-[-4px]">
-                
-                    <div className="transition-all duration-500">
-                      <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
-                        First blog post
-                      </h3>
-
-                      <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] pt-[20px]">
-                        The Return C++ SDK is now fully on par with our two
-                        other SDKs in Ptthon. The Return C++ SDK is now fully on
-                        par with our two other SDKs in Ptthon. The Return C++
-                        SDK is now fully on par. The Return C++ SDK is now fully
-                        on.
-                      </p>
-
-              
-                      <div className="max-h-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-[60px]">
-                        <div className="translate-y-[100%] opacity-0 group-hover:translate-y-1 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-250">
-                          <div className="flex justify-between items-center pt-[10px]">
-                            <p className="text-[#000] text-[15px] font-[400] leading-[24px]">
-                              Read more
-                            </p>
-                            <a href="#">
-                              <span className="text-[#000] text-[26px]">
-                                &#62;
-                              </span>
-                            </a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
           <div className="pt-[56px]">
             <div className="flex flex-row gap-[21px] flex-wrap items-stretch">
               {blogPosts.map((post) => (
                 <div
                   key={post.id}
-                  className="flex-1 min-w-[300px] bg-[#fff] rounded-[15px] shadow-[0_0_44px_0_rgba(102,102,102,0.25)]
-        group overflow-hidden transition-shadow duration-500 
-        hover:shadow-[0_0_55px_0_rgba(102,102,102,0.3)] cursor-pointer
-        h-[490px]"
+                  className="group flex-1 min-w-[300px] bg-[#fff] border border-[#E7E9ED] rounded-[15px] flex flex-col transition-shadow duration-500 
+          shadow-[0_0_20px_0_rgba(102,102,102,0.15)] hover:shadow-[0_0_30px_0_rgba(102,102,102,0.25)] cursor-pointer overflow-hidden relative"
                 >
-                  <div className="flex flex-col items-stretch transition-all duration-500 h-full">
-                    {/* Image Section */}
-                    <div className="px-[8px] pt-[8px] transition-all duration-500">
+                  {/* Image Section (fixed top, no movement) */}
+                  <div className="p-[5px]">
+                    <div className="w-full h-full overflow-hidden rounded-[15px]">
                       <img
                         src={post.image}
                         alt={post.title}
-                        className="rounded-[15px] h-[270px] object-cover transition-all duration-500 group-hover:h-[250px] w-full"
+                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.02]"
                       />
                     </div>
+                  </div>
 
-                    {/* Text Section */}
-                    <div className="px-[15px] py-[23px] font-[manrope] flex flex-col flex-1 transition-all duration-500 group-hover:-translate-y-[2px]">
-                      {/* Top Content */}
-                      <div>
-                        <h3 className="text-[#000] text-[20px] font-[500] leading-[22px] font-[manrope]">
-                          {post.title}
-                        </h3>
+                  {/* Text + Read More wrapper that animates upward */}
+                  <div
+                    className="flex flex-col flex-1 transition-transform duration-500 ease-out
+            group-hover:-translate-y-[12px] relative"
+                  >
+                    {/* Title and Description */}
+                    <div className="pt-[24px] px-[15px] flex flex-col flex-1">
+                      <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
+                        {post.title}
+                      </h3>
+                      <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] py-[20px] flex-1 group-hover:-translate-y-[12px] transition-transform duration-500 ease-in-out">
+                        {post.description}
+                      </p>
+                    </div>
 
-                        <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] pt-[20px]">
-                          {post.description}
+                    {/* Bottom “Read more” Section */}
+                    <div
+                      className="absolute -bottom-5 left-0 w-full px-[15px] pb-[20px] 
+              translate-y-full opacity-0 pointer-events-none
+              group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto
+              transition-all duration-500 ease-out"
+                    >
+                      <div className="flex items-center justify-between">
+                        <p className="text-[#000000] text-[15px] font-[500] leading-[24px]">
+                          Read more
                         </p>
-                      </div>
-
-                      {/* Bottom “Read more” section (stays fixed at bottom) */}
-                      <div className="mt-auto max-h-0 overflow-hidden transition-all duration-500 ease-out group-hover:max-h-[60px]">
-                        <div className="translate-y-[100%]  opacity-0 group-hover:-translate-y-2 group-hover:opacity-100 transition-all duration-500 ease-in-out delay-250">
-                          <div className="flex justify-between items-center pt-[10px]">
-                            <p className="text-[#000] text-[16px] font-[600] leading-[24px]">
-                              Read more
-                            </p>
-                            <a href={post.link}>
-                              <span className="text-[#000] text-[30px]">
-                                &#62;
-                              </span>
-                            </a>
-                          </div>
-                        </div>
+                        <a href={post.link}>
+                          <span className="text-[#161C2D] text-[26px] leading-none">
+                            &#62;
+                          </span>
+                        </a>
                       </div>
                     </div>
                   </div>
