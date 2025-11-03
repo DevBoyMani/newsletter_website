@@ -337,7 +337,7 @@ export default function Navbar() {
                 // hoverBorderColor="#C7A262"
                 hoverText="#ffffff"
                 bgColor="#C7A262"
-                hoverBgColor="#000"
+                hoverBgColor="#01261E"
                 textColor="#fff"
                 padding="px-6 py-2"
                 margin="ml-[120px]"

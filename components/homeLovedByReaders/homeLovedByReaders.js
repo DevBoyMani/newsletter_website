@@ -29,10 +29,7 @@ export default function HomeLovedByReaders() {
                     <p className="text-[#161C2D] text-[21px] font-[400] leading-[32px] tracking-[-0.5px] pt-[24px]">
                       “It always keeps me updated even on the go and every day I
                       find news I hadn't heard anywhere else. Keep up the good
-                      work and let the haters hate.It always keeps me updated
-                      even on the go and every day I find news I hadn't heard
-                      anywhere else. Keep up the good work and let the haters
-                      hate.”
+                      work and let the haters hate".
                     </p>
                     <div className="flex-1" />
                     <p className="text-[#161C2D] text-[17px] font-[400] leading-[29px] tracking-[-0.2px] pt-[23px] mt-auto">

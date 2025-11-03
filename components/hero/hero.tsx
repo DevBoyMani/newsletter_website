@@ -34,7 +34,7 @@ export default function Hero() {
             </p>
             <div className="pt-[32px]">
               {/* w-[43%] */}
-              <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] font-[600] text-[#fff] rounded-[57px] leading-normal">
+              <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] text-[#fff] rounded-[57px] leading-normal font-[400]">
                 Get started for free
               </button>
             </div>

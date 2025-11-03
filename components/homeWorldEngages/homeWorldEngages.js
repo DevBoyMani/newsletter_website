@@ -44,7 +44,7 @@ export default function HomeWorldEngages() {
                         and topics, we uncover the trends that shape public
                         interest and influence discourse.
                       </p>
-                      <button className="mt-[34px] w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[70px] text-[16px] font-[500] leading-[30px] tracking-[-0.15px]">
+                      <button className="mt-[34px] w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[70px] text-[16px] font-[400] leading-[30px] tracking-[-0.15px]">
                         View analytics <span className="text-[14px]">→</span>
                       </button>
                     </div>
