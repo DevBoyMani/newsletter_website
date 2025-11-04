@@ -3,38 +3,7 @@ export default function HomeSocialConversations() {
     <>
       {/* desktop */}
 
-      {/* <div className="bg-[#FAFAFA]">
-        <div className="pt-[141px]">
-
-          <div
-            className="bg-[url('/home/conversations.png')] 
-                 bg-cover bg-no-repeat 
-                 min-h-[1058px] w-full relative"
-          >
-     
-            <div className="absolute left-[183px] top-[135px]">
-              <div className="flex items-center gap-[8px]">
-                <div className="w-[18px] h-[18px]">
-                  <img
-                    src="/home/star.png"
-                    alt="star"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <p className="text-[#000] text-[24px] font-[400] leading-[24px] tracking-[-0.24px]">
-                  Introducing social media
-                </p>
-              </div>
-
-              <h2 className="mt-[18px] text-[#01261E] text-[56px] font-[400] leading-[104%] tracking-[-1.76px] w-[40%]">
-                Where global stories meet social conversations
-              </h2>
-            </div>
-          </div>
-        </div>
-      </div>
-       */}
-      <div className="bg-[#FAFAFA]">
+      <div className="hidden lg:block bg-[#FAFAFA]">
         <div className="pt-[80px] lg:pt-[141px]">
           <div
             className="bg-[url('/home/conversations-new.png')] 

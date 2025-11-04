@@ -1,11 +1,12 @@
 import AnalyticsPSNumberOfClicksChart from "@/components/analyticsPSNumberOfClicksChart/analyticsPSNumberOfClicksChart";
-import HomeAutoScrollImages from "../../components/homeAutoScrollImages/homeAutoScrollImages";
+import HomeAutoScrollImages from "../homeAutoScrollCharts/homeAutoScrollCharts";
+import HomeAutoScrollCharts from "../homeAutoScrollCharts/homeAutoScrollCharts";
 
 export default function HomeWorldEngages() {
   return (
     <>
       {/* desktop */}
-      <div className="bg-[#FAFAFA]">
+      <div className="hidden lg:block bg-[#FAFAFA]">
         <div className="pt-[85px] pb-[70px] px-[110px]">
           {/* 1 */}
           <div className="flex justify-between">
@@ -20,31 +21,61 @@ export default function HomeWorldEngages() {
             </p>
           </div>
           {/* 2 */}
-          <div className="pt-[63px]">
-            <div className="flex justify-between gap-[106px]">
+          <div className="pt-[63px] overflow-hidden">
+            <div className="flex flex-row justify-between items-stretch gap-[4vw] xl:gap-[106px]">
               {/* Left side - Carousel */}
-              <div className="w-[50%] flex justify-center items-center">
-                <HomeAutoScrollImages />
+              <div className="flex-1 flex justify-center items-center min-w-0">
+                <div
+                  className="relative w-full"
+                  style={{
+                    aspectRatio: "16/9",
+                    minHeight: "320px",
+                    maxHeight: "600px",
+                  }}
+                >
+                  <HomeAutoScrollCharts />
+                </div>
               </div>
 
               {/* Right side - Text section */}
-              <div className="w-[50%]">
+              <div className="flex-1 min-w-0">
                 <div
-                  className="bg-[url('/home/map-bg-3.png')] bg-contain lg:bg-cover bg-no-repeat bg-center 
-               w-full aspect-[16/9] relative"
+                  className="relative w-full bg-[url('/home/map-bg-3.png')] bg-contain xl:bg-cover bg-no-repeat bg-center"
+                  style={{
+                    aspectRatio: "16/9",
+                    maxHeight: "600px",
+                    minHeight: "320px",
+                  }}
                 >
-                  <div className="flex flex-col justify-center h-full">
-                    <div className="pl-[85px] pt-[25px] pb-[20px] pr-[12px]">
-                      <h2 className="font-[manrope] text-[33px] font-[500] text-[#151515] leading-[37px] tracking-[-0.33px]">
+                  <div className="absolute inset-0 flex flex-col justify-start mt-[8px]">
+                    <div className="px-[3vw] xl:pl-[85px] xl:pr-[12px] pt-[25px] pb-[20px]">
+                      <h2
+                        className="font-[manrope] font-[500] text-[#151515] tracking-[-0.33px]"
+                        style={{
+                          fontSize: "clamp(22px, 2vw, 33px)",
+                          lineHeight: "1.2",
+                        }}
+                      >
                         Global Reader Analytics
                         <br /> anywhere around the world
                       </h2>
-                      <p className="mt-[16px] text-[19px] text-[#000] leading-[145%] tracking-[-0.57px]">
+                      <p
+                        className="mt-[16px] text-[#000] tracking-[-0.57px]"
+                        style={{
+                          fontSize: "clamp(15px, 1.2vw, 19px)",
+                          lineHeight: "1.45",
+                        }}
+                      >
                         By tracking readership across continents, time zones,
                         and topics, we uncover the trends that shape public
                         interest and influence discourse.
                       </p>
-                      <button className="mt-[34px] w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[70px] text-[16px] font-[400] leading-[30px] tracking-[-0.15px]">
+                      <button
+                        className="mt-[34px] w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[70px] font-[400] leading-[30px] tracking-[-0.15px]"
+                        style={{
+                          fontSize: "clamp(14px, 1vw, 16px)",
+                        }}
+                      >
                         View analytics <span className="text-[14px]">→</span>
                       </button>
                     </div>

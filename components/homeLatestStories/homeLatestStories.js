@@ -31,7 +31,7 @@ export default function HomeLatestStrories() {
   return (
     <>
       {/* desktop */}
-      <div className="bg-[#FAFAFA]">
+      <div className="hidden lg:block bg-[#FAFAFA]">
         {/* latest stories */}
         <div className="px-[110px] pt-[100px] pb-[80px]">
           <div className="">

@@ -228,3 +228,28 @@ h6 {
   background-color: #01261e;
   transition: background-color 0.3s ease;
 } */
+
+/* home */
+
+@keyframes scroll-company {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-company {
+  display: flex;
+  animation: scroll-company 10s linear infinite;
+  animation-timing-function: linear;
+  will-change: transform;
+  width: max-content;
+  /* make sure it can't cause scrollbars in parent */
+}
+
+/* parent hover stops the animation so user can inspect logos */
+.scroll-company-wrapper:hover .animate-scroll-company {
+  animation-play-state: paused;
+}

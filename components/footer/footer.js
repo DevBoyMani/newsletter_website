@@ -174,7 +174,7 @@ export default function Footer() {
       {/* old footer */}
 
       {/* new */}
-      <div id="site-footer" className="bg-[#01261E]">
+      <div id="site-footer" className="bg-[#01261E] hidden lg:block">
         <div className="pt-[120px] px-[110px]">
           <div className="flex flex-row justify-between items-start">
             {/* left */}
