@@ -2,7 +2,6 @@ export default function HomeSocialConversations() {
   return (
     <>
       {/* desktop */}
-
       <div className="hidden lg:block bg-[#FAFAFA]">
         <div className="pt-[80px] lg:pt-[141px]">
           <div
@@ -35,6 +34,51 @@ export default function HomeSocialConversations() {
                      leading-[110%] md:leading-[108%] lg:leading-[104%] 
                      tracking-[-0.96px] md:tracking-[-1.32px] lg:tracking-[-1.76px] 
                      w-full lg:w-[40%]"
+              >
+                Where global stories meet social conversations
+              </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* mobile */}
+
+      <div className="block lg:hidden bg-[#FAFAFA]">
+        <div className="pt-[40px]">
+          <div
+            className="relative w-full 
+                 bg-[url('/home/conversations-new-home.png')]
+                 bg-cover bg-no-repeat bg-center
+                 min-h-[350px] sm:min-h-[400px] 
+                 flex items-start justify-start"
+          >
+            {/* Content container */}
+            <div
+              className="absolute top-[20px] sm:top-[40px] left-[40px] sm:left-[85px] 
+                   w-[50%] sm:w-[50%]"
+            >
+              {/* Tagline */}
+              <div className="flex items-center gap-[8px]">
+                <div className="w-[12px] h-[12px]">
+                  <img
+                    src="/home/star.png"
+                    alt="star"
+                    className="w-full h-full object-contain"
+                  />
+                </div>
+                <p className="text-[#000] text-[12px] sm:text-[13px] font-[400] leading-[24px] tracking-[-0.24px]">
+                  Introducing social media
+                </p>
+              </div>
+
+              {/* Heading */}
+              <h2
+                className="mt-[6px]
+                     text-[#01261E] 
+                     text-[24px] sm:text-[26px] 
+                     font-[400] leading-[107%] tracking-[-0.3px] 
+                     "
               >
                 Where global stories meet social conversations
               </h2>

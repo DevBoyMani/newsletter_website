@@ -121,10 +121,10 @@ export default function HomeScrollNumberOfSubscribersChart() {
         </Card>
       </div>
       {/* mobile */}
-      <div className="block lg:hidden">
-        <Card className="px-[16px] pt-[16px]">
+      <div className="block lg:hidden bg-[#fff]">
+        <Card className="px-[16px] pt-[16px] rounded-[5px] h-full">
           <CardHeader>
-            <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
+            <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
               Number of subscribers
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
@@ -133,9 +133,9 @@ export default function HomeScrollNumberOfSubscribersChart() {
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="pt-[17px]">
+          <CardContent className="pt-[10px]">
             <div className="w-[100%]  overflow-visible">
-              <ChartContainer config={chartConfig} className="w-full full">
+              <ChartContainer config={chartConfig} className="w-full h-[125px]">
                 <LineChart
                   data={chartData}
                   margin={{ top: 0, right: 5, left: 5, bottom: 0 }}
@@ -192,21 +192,7 @@ export default function HomeScrollNumberOfSubscribersChart() {
           </CardContent>
 
           {/* labels */}
-          <div className="flex gap-6 justify-center items-center pb-[16px] pt-[15px]">
-            {/* <div className="flex items-center gap-2">
-          <span className="w-3 h-3 rounded-[2px] bg-[#E19F20]"></span>
-          <span className="text-[12px] text-[#464E5F] font-[500] leading-normal">
-            Lead Customers
-          </span>
-        </div>
-
-        <div className="flex items-center gap-2">
-          <span className="w-3 h-3 rounded-[2px] bg-[#9A4831]"></span>
-          <span className="text-[12px] text-[#464E5F] font-[500] leading-normal">
-            New Customers
-          </span>
-        </div> */}
-
+          <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
             <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">

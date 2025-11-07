@@ -6,7 +6,7 @@ export default function HomeLatestStrories() {
       date: "Oct 25, 2025",
       image: "/home/blog-pic-first.png",
       description:
-        "The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par. The Return C++ SDK is now fully on.The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par with our two other SDKs in Python. The Return C++ SDK is now fully on par. The Return C++ SDK is now fully on.",
+        "The Return C++ SDK is now fully on par with our two other SDKs in Ptthon. The Return C++ SDK is now fully on par with our two other SDKs in Ptthon. The Return C++ SDK is now fully on par. The Return C++  SDK is now fully on ",
       link: "#",
     },
     {
@@ -15,7 +15,7 @@ export default function HomeLatestStrories() {
       date: "Oct 26, 2025",
       image: "/home/blog-pic-first.png",
       description:
-        "The Return C++ SDK is now fully on par with our two other SDKs in Ptthon. The Return C++ SDK is now fully on par with our two other SDKs in Ptthon. The Return C++ SDK is now fully on par. The Return C++  SDK is now fully on ",
+        "The Return C++ SDK is now fully on par with our two other SDKs in Ptthon. The Return C++",
       link: "#",
     },
     {
@@ -92,9 +92,11 @@ export default function HomeLatestStrories() {
                           Read more
                         </p>
                         <a href={post.link}>
-                          <span className="text-[#161C2D] text-[26px] leading-none">
-                            &#62;
-                          </span>
+                          <img
+                            src="/home/nl-arr.png"
+                            alt="newsletter source arrow"
+                            className="w-3 h-3"
+                          />
                         </a>
                       </div>
                     </div>
@@ -148,6 +150,108 @@ export default function HomeLatestStrories() {
             <a
               href="#"
               className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]"
+            >
+              <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+                SPEAK TO SALES
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      {/* mobile */}
+      <div className="block lg:hidden bg-[#FAFAFA]">
+        {/* latest stories */}
+        <div className="px-4 pt-[46px] pb-[55px]">
+          <div className="flex flex-col justify-center items-center">
+            <h2 className="text-center w-[243px] text-[30px]  text-[#121212] font-[400] leading-[120%]">
+              Latest stories from
+              <br /> the blog
+            </h2>
+            <p className="pt-[25px] text-center text-[14px] text-[#121212] font-[400] leading-[145%] tracking-[0.7px] w-[295px]">
+              Discover hundreds of technical articles & open-source projects and
+              radically improve your stack.
+            </p>
+          </div>
+
+          {/* Cards - Single Column */}
+          <div className="pt-[40px] flex flex-col gap-[25px] items-center">
+            {blogPosts.map((post) => (
+              <div
+                key={post.id}
+                className="w-full max-w-[800px] bg-[#fff] border border-[#E7E9ED] rounded-[15px] shadow-[0_0_20px_0_rgba(102,102,102,0.15)] overflow-hidden"
+              >
+                {/* Image */}
+                <div className="w-full h-[250px] p-1">
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover rounded-[15px]"
+                  />
+                </div>
+
+                {/* Text Section */}
+                <div className="px-[15px] py-[20px] flex flex-col justify-between min-h-[200px]">
+                  <div>
+                    <h3 className="text-[#000] text-[16px] font-[400] leading-[22px] font-[manrope]">
+                      {post.title}
+                    </h3>
+                    <p className="text-[#878C91] text-[14px] font-[400] leading-[160%] pt-[15px]">
+                      {post.description}
+                    </p>
+                  </div>
+
+                  {/* Read More */}
+                  <div className="pt-[15px] flex items-center justify-between ">
+                    <p className="text-[#000000] text-[15px] font-[500] leading-[24px]">
+                      Read more
+                    </p>
+                    <a href={post.link}>
+                      <img
+                        src="/home/nl-arr.png"
+                        alt="newsletter source arrow"
+                        className="w-2.5 h-2.5"
+                      />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* contact our team */}
+
+        <div className="pt-[20px] bg-[#FAFAFA]">
+          <div className="flex flex-col items-center justify-center text-center px-[53px] pt-[35px] pb-[60px]">
+            <div className="">
+              <h2
+                className="text-[34px] font-[400] leading-[normal]"
+                style={{ fontFamily: "GT Super Ds Trial" }}
+              >
+                And that’s not all
+              </h2>
+            </div>
+
+            <div className="pt-[30px]">
+              <p className="w-[252px] text-[16px] font-[400] leading-[125%] tracking-[0.8px] text-center">
+                Get a personalized demo and discover how sagravia can help your
+                business
+              </p>
+            </div>
+            {/* Moving Text mobile*/}
+
+            <a
+              href="/contact"
+              className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-[30px] bg-[#01261E] text-[#ffffff]  font-[800]"
             >
               <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
                 SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES

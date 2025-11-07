@@ -110,7 +110,7 @@ export default function Hero() {
         </div>
 
         {/* 2 — Trusted Companies */}
-        <div className="py-12 overflow-hidden bg-[#FAFAFA]">
+        <div className="pt-[20] pb-[24px] overflow-hidden bg-[#FAFAFA]">
           <div className="relative w-full scroll-company-wrapper">
             {/* Left gradient shadow */}
             <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />

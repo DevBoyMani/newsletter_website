@@ -342,11 +342,9 @@ const Careers = () => {
           </div>
         </div>
       </div>
-
       {/*/ desktop faq */}
 
       {/* mobile faq */}
-
       <div className="lg:hidden block py-10 bg-[#FAFAFA]">
         <div className=" lg:pb-20">
           <div className="px-4 text-[#01261E] text-[30px]    font-[400] lg:leading-[104%] leading-[84%] ">
@@ -364,9 +362,7 @@ const Careers = () => {
           <CustomAccordion onStepChange={handleStepChange} />
         </div>
       </div>
-      {/* </div> */}
-
-      {/*/ faq */}
+      {/*/mobile faq */}
 
       {/* Desktop view with fallback image */}
       <div className="hidden lg:block relative py-10 bg-[#FAFAFA]">
@@ -526,7 +522,7 @@ const Careers = () => {
       </div>
 
       {/* What we offer mobile*/}
-      <div className="block lg:hidden px-4 pb-10 pt-10 block md:hidden bg-[#FAFAFA]">
+      <div className="block lg:hidden px-4 pb-10 pt-10 bg-[#FAFAFA]">
         {/* Top Section: Heading */}
         <div className="mb-10 text-[#000]">
           <span className="text-[16px] font-[400] leading-normal">
@@ -647,7 +643,6 @@ const Careers = () => {
       </div>
 
       {/* contact our team */}
-
       <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32 pb-16 bg-[#FAFAFA]">
         <h2
           className="text-[34px] lg:text-[56px] font-[400]"
