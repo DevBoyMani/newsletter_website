@@ -30,7 +30,7 @@ export default function HomeWorldEngages() {
                   className="relative w-full"
                   style={{
                     aspectRatio: "16/9",
-                    minHeight: "320px",
+                    minHeight: "400px",
                     maxHeight: "600px",
                   }}
                 >
@@ -41,11 +41,11 @@ export default function HomeWorldEngages() {
               {/* Right side - Text section */}
               <div className="flex-1 min-w-0">
                 <div
-                  className="relative w-full bg-[url('/home/map-bg-3.png')] bg-contain xl:bg-cover bg-no-repeat bg-center"
+                  className="relative w-full bg-[url('/home/map-bg-3.png')] bg-contain bg-no-repeat bg-top"
                   style={{
                     aspectRatio: "16/9",
+                    minHeight: "400px",
                     maxHeight: "600px",
-                    minHeight: "320px",
                   }}
                 >
                   <div className="absolute inset-0 flex flex-col justify-start mt-[8px]">

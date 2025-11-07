@@ -157,32 +157,38 @@ export default function HomeLovedByReaders() {
       </div>
 
       {/* mobile */}
+      {/* --- Mobile Section (fixed scroll issue + responsive layout) --- */}
       <div className="block lg:hidden bg-[#FAFAFA]">
         {/* Section Heading */}
         <div className="px-4">
-          <h2 className="text-[30px] font-[400] text-center text-[#121212] pt-[39px] leading-[120%]">
+          <h2 className="text-[28px] sm:text-[30px] font-[400] text-center text-[#121212] pt-[36px] sm:pt-[39px] leading-[120%]">
             Loved by readers
           </h2>
-          <p className="text-center text-[14px] text-[#121212] font-[400] leading-[145%] tracking-[0.7px] max-w-[295px] mx-auto pt-[25px]">
+          <p className="text-center text-[14px] text-[#121212] font-[400] leading-[145%] tracking-[0.7px] max-w-[295px] mx-auto pt-[20px] sm:pt-[25px]">
             With lots of unique blocks, you can easily build a page without
             coding. Build your next landing page.
           </p>
         </div>
 
         {/* Scrollable Cards */}
-        <div className="pt-[50px]">
+        <div className="pt-[40px] sm:pt-[50px] pb-[20px]">
           <div
             ref={scrollRef}
             className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-4 pb-6 pt-2 no-scrollbar px-[12px]"
             onScroll={handleScroll}
           >
             {/* Spacer before first card */}
-            <div className="flex-shrink-0 w-[8%]" />
+            <div className="flex-shrink-0 w-[6%]" />
 
             {cardsData.map((item, index) => (
               <motion.div
                 key={item.id}
-                className={`flex-shrink-0 w-[263px] h-[285px] bg-white border border-[#E7E9ED] rounded-[10px] p-[25px] snap-center shadow-[0_0_10px_rgba(0,0,0,0.04)] flex flex-col justify-between`}
+                className={`flex-shrink-0 w-[240px] sm:w-[263px] bg-white border border-[#E7E9ED] rounded-[10px] p-[20px] sm:p-[25px] snap-center shadow-[0_0_10px_rgba(0,0,0,0.04)] flex flex-col justify-between transition-all duration-300`}
+                style={{
+                  height: activeIndex === index ? "auto" : "auto", // Let height adjust naturally
+                  minHeight: 260,
+                  maxHeight: 320,
+                }}
                 animate={{
                   scale: activeIndex === index ? 1.05 : 0.92,
                   opacity: activeIndex === index ? 1 : 0.7,
@@ -199,13 +205,13 @@ export default function HomeLovedByReaders() {
 
                 {/* Middle content */}
                 <div className="flex-1 flex flex-col justify-between">
-                  <p className="text-[#161C2D] text-[16px] leading-[24px] font-[400] tracking-[-0.5px] pt-[18px]">
+                  <p className="text-[#161C2D] text-[15px] sm:text-[16px] leading-[24px] font-[400] tracking-[-0.5px] pt-[16px] sm:pt-[18px]">
                     “{item.text}”
                   </p>
 
                   {/* Bottom content */}
                   <div className="pt-4">
-                    <p className="text-[#161C2D] text-[13px] font-[400] leading-[29px] tracking-[-0.2px]">
+                    <p className="text-[#161C2D] text-[13px] font-[400] leading-[22px] tracking-[-0.2px]">
                       {item.name}
                       <span className="ml-[6px] text-[rgba(22,28,45,0.7)]">
                         {item.location}
@@ -217,12 +223,12 @@ export default function HomeLovedByReaders() {
             ))}
 
             {/* Spacer after last card */}
-            <div className="flex-shrink-0 w-[8%]" />
+            <div className="flex-shrink-0 w-[6%]" />
           </div>
         </div>
 
-        {/* Indicator Line */}
-        <div className="relative pt-[30px] pb-[34px] flex justify-center">
+        {/* Indicator Line (independent) */}
+        <div className="relative pt-[24px] pb-[30px] flex justify-center">
           <div className="w-full max-w-[111px] h-[1.5px] bg-[#E6E6E6] rounded-full relative overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 h-full bg-[#161C2D] rounded-full"

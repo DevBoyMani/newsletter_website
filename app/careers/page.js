@@ -256,11 +256,11 @@ const Careers = () => {
       <div className="md:px-28 px-4 lg:pt-28 pt-[170px] mx-auto bg-[#FAFAFA]">
         <div className="pb-8 text-start ">
           <p className="lg:text-[25px] text-[12px] font-[600] text-[020715] px-1 uppercase leading-[104%] tracking-[0.6px] lg:tracking-[1.25px]">
-            Looking for a new role &
+            Tired of endless job searching?
           </p>
           <div className="lg:w-[46%] w-[60%]">
             <h2 className="text-[53px] leading-[84%] lg:text-[80px] lg:leading-[104%] text-[#01261E] py-2 ">
-              Ready to make an impact?
+              Join a team built on trust
             </h2>
           </div>
           <div className="lg:pt-14 pt-8 border-black border-b lg:pb-0 ">
@@ -308,8 +308,8 @@ const Careers = () => {
         <div className="lg:pb-20">
           <div className="px-4 text-[#01261E] lg:text-[56px] text-[51px]   font-[400] lg:leading-[104%] leading-[84%] lg:text-right">
             <h2>
-              How do we work with <br />
-              your application?
+              What happens when
+              <br /> you apply?
             </h2>
           </div>
         </div>

@@ -43,7 +43,7 @@ export default function HomeScrollNumberOfOpensChart() {
     <>
       {/* desktop */}
       <div className="lg:block hidden w-full">
-        <Card className="p-[30px]">
+        <Card className="p-[30px] h-full">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Number of opens

@@ -78,47 +78,40 @@ export default function Hero() {
       <div className="block lg:hidden">
         <div className="bg-[#FAFAFA] pt-[144px] px-4">
           {/* 1 — Hero Section */}
-          <div className="">
-            <h2 className="text-[44px] font-[400] leading-[107%] text-[#01261E] w-[344px]">
-              Feed your
-              <br /> and knowledge
-              <br /> and expand your
-              <br /> knowledge
+          <div>
+            <h2 className="text-[44px] font-[400] leading-[110%] text-[#01261E] max-w-[344px]">
+              Feed your and knowledge and expand your knowledge
             </h2>
+
             <p className="text-[#121212] pt-[14px] text-[14px] font-[400] leading-[145%]">
               Explore different categories. Find the best deals. AG1 is a daily
               health drink packed with nutrients to help alleviate bloating.
             </p>
 
             <div className="pt-6">
-              <button className="w-[111px] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
+              <button className="max-w-[111px] min-w-[20%] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
                 Get started
               </button>
             </div>
           </div>
         </div>
 
-        {/* (Image) */}
+        {/* Image */}
         <div className="bg-[#FAFAFA]">
-          <div className="-mt-[60px] ">
+          <div className="-mt-[40px]">
             <img
               src="/home/hero-image-new-mobile.png"
               alt="Home hero image"
-              className="w-full h-full"
+              className="w-full h-auto"
             />
           </div>
         </div>
 
         {/* 2 — Trusted Companies */}
-        <div className="pt-[20] pb-[24px] overflow-hidden bg-[#FAFAFA]">
+        <div className="pt-[20px] pb-[24px] overflow-hidden bg-[#FAFAFA]">
           <div className="relative w-full scroll-company-wrapper">
-            {/* Left gradient shadow */}
             <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
-
-            {/* Right gradient shadow */}
             <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
-
-            {/* Scrolling logos */}
             <div className="flex animate-scroll-company gap-6 sm:gap-10 items-center">
               {trustedCompanies
                 .concat(trustedCompanies)
