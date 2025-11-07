@@ -193,13 +193,15 @@ export default function HomeLovedByReaders() {
                 animate={{
                   scale:
                     activeIndex === index
-                      ? window.innerWidth <= 380
-                        ? 1.02
-                        : window.innerWidth <= 430
-                        ? 1.035
-                        : window.innerWidth <= 500
-                        ? 1.045
-                        : 1.05
+                      ? typeof window !== "undefined"
+                        ? window.innerWidth <= 380
+                          ? 1.02
+                          : window.innerWidth <= 430
+                          ? 1.035
+                          : window.innerWidth <= 500
+                          ? 1.045
+                          : 1.05
+                        : 1
                       : 0.92,
                 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
