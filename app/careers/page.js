@@ -81,27 +81,27 @@ const Careers = () => {
   const images = [
     {
       id: 1,
-      smallSrc: "/careers/coo.png",
-      fullSrc: "/careers/coo-full.png",
-      text: "Explore different categories. Find the best deals. AG1 is a daily health drink packed with nutrients to help alleviate bloating.",
-      name: "Martine",
-      role: "COO",
+      smallSrc: "/careers/mani-small.png",
+      fullSrc: "/careers/mani-big.png",
+      text: "“Working here genuinely feels like being part of something that’s growing fast but still thoughtful. We move quickly, test ideas, and actually see them go live.”",
+      name: "Mani",
+      role: "Junior Technology Specialist",
     },
     {
       id: 2,
-      smallSrc: "/careers/ceo.png",
-      fullSrc: "/careers/ceo-full.png",
-      text: "“Our approach is to stay lean and adaptable, allowing us to swiftly address challenges and seize opportunities in our quest for global reach.“",
-      name: "Alan",
-      role: "CEO",
+      smallSrc: "/careers/trisha-small.png",
+      fullSrc: "/careers/trisha-big.png",
+      text: "“There’s a strong culture of clarity. We don’t do unnecessary meetings. Everyone respects time, and the work is focused. It’s the first place where I’ve seen efficiency practiced daily.”",
+      name: "Trisha",
+      role: "Social Media Manager",
     },
     {
       id: 3,
-      smallSrc: "/careers/cto.png",
-      fullSrc: "/careers/cto-full.png",
-      text: "Developing and implementing a technology strategy that aligns with the company's overall business goals.",
-      name: "Mark",
-      role: "CTO",
+      smallSrc: "/careers/hidi-small.png",
+      fullSrc: "/careers/hidi-big.png",
+      text: "“The environment balances independence with support. You’re trusted to do your job, but you’re not left alone when you need guidance.”",
+      name: "Heidi",
+      role: "Content Writer",
     },
   ];
 
@@ -112,45 +112,76 @@ const Careers = () => {
       id: 1,
       logo: "/careers/supportive.png",
       heading: "Supportive and collaborative environment",
-      content:
-        "We believe the best ideas come from teamwork. Everyone is encouraged to share their thoughts, and contributions are recognized and celebrated.",
+      content: (
+        <>
+          We believe the best ideas come from teamwork. Our motto:{" "}
+          <strong>there are no stupid ideas</strong>.
+        </>
+      ),
     },
     {
       id: 2,
       logo: "/careers/trust.png",
       heading: "We trust our employees",
-      content:
-        "We trust our employees to deliver results without micromanagement. Once a task is assigned, you have the autonomy to get it done your way.",
+      content: (
+        <>
+          <strong>We don’t micromanage</strong>. If you take ownership, you
+          don’t need someone watching your screen. You receive the goal, the
+          context, and the deadline, and how you get there is your
+          responsibility.
+        </>
+      ),
     },
     {
       id: 3,
       logo: "/careers/benefits.png",
-      heading: "Benefits",
-      content:
-        "Competitive salary, insurance, group RRSP with employer participation, four weeks' vacation upon arrival, telemedicine and employee assistance programs, National PayrolI Institute membership, full working equipment, home office allowance...",
+      heading: "High standards, always",
+      content: (
+        <>
+          We take pride in doing things well. Details matter, writing matters,
+          clarity matters. If something can be improved, we improve it.{" "}
+          <strong>Quality is the way we work</strong> (and live) every day.
+        </>
+      ),
     },
   ];
   const whatWeOfferCol2 = [
     {
       id: 1,
       logo: "/careers/create-opportunities.png",
-      heading: "Create opportunities for growth",
-      content:
-        "We invest in your development by providing opportunities to learn, grow, and take on new challenges. Your success is our success.",
+      heading: "We invest in potential",
+      content: (
+        <>
+          You don’t need years of experience to join. We teach and support those
+          who show{" "}
+          <strong>ownership, consistency, initiative, and adaptability</strong>.
+          Skill can be developed. Discipline and attitude come first.
+        </>
+      ),
     },
     {
       id: 2,
       logo: "/careers/flexibility.png",
       heading: "Flexibility and work-life balance",
-      content:
-        "Our remote-friendly culture allows you to work where you’re most comfortable. We respect your personal time and prioritize a healthy work-life balance.",
+      content: (
+        <>
+          We don’t need you to sit at a desk all day. If you can take a call
+          from the beach and still deliver your work{" "}
+          <strong>on time and at a high standard</strong>, that works for us.
+        </>
+      ),
     },
     {
       id: 3,
       logo: "/careers/celebrate-diversity.png",
-      heading: "Celebrate diversity and inclusion",
-      content:
-        "We invest in your development by providing opportunities to learn, grow, and take on new challenges. Your success is our success.",
+      heading: "Diversity and inclusion",
+      content: (
+        <>
+          We don’t do diversity because it is a requirement. We do it because it
+          makes the work (and workplace) better. And we look for people who{" "}
+          <strong>think differently</strong>, not just look different.
+        </>
+      ),
     },
   ];
 
@@ -258,7 +289,7 @@ const Careers = () => {
           <p className="lg:text-[25px] text-[12px] font-[600] text-[020715] px-1 uppercase leading-[104%] tracking-[0.6px] lg:tracking-[1.25px]">
             Tired of endless job searching?
           </p>
-          <div className="lg:w-[46%] w-[60%]">
+          <div className="lg:w-[46%] w-[80%]">
             <h2 className="text-[53px] leading-[84%] lg:text-[80px] lg:leading-[104%] text-[#01261E] py-2 ">
               Join a team built on trust
             </h2>
@@ -377,20 +408,18 @@ const Careers = () => {
             <source src="/careers/careers-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute top-[10%] left-12 w-[42%] space-y-10 md:px-4">
-            <div className="text-white lg:text-[56px]  leading-[94%]">
-              <h2>
-                Your trusted
-                <br /> source for digital
-                <br /> insights
+          <div className="absolute top-[10%] left-12 md:px-4">
+            <div className="text-white">
+              <h2 className="w-[572px] text-[56px] leading-[107%] font-[400]">
+                We are a remote team, connected by purpose, not office walls
               </h2>
             </div>
 
             <Link
-              href="https://www.sagravia.com/"
+              href="/about"
               ref={btnRef}
               onMouseEnter={handleMouseEnter}
-              className="relative inline-block border border-[#DAEBE8] text-[#DAEBE8] hover:text-[#000] lg:text-[14px] font-[600] leading-normal mt-4 px-4 py-2 rounded-full overflow-hidden group"
+              className="relative inline-block border border-[#DAEBE8] text-[#DAEBE8] hover:text-[#000] lg:text-[14px] font-[600] leading-normal mt-[24px] w-[123px]  py-2 rounded-full overflow-hidden group"
             >
               <span
                 style={originStyle}
@@ -398,8 +427,8 @@ const Careers = () => {
               />
 
               {/* Button text stays white */}
-              <span className="relative z-10 transition-colors duration-300">
-                Visit Sagravia
+              <span className="relative z-10 transition-colors duration-300 flex justify-center text-center">
+                About us
               </span>
             </Link>
           </div>
@@ -419,17 +448,15 @@ const Careers = () => {
             <source src="/careers/career-mobile-video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute top-[4%] left-4 space-y-10 max-w-[80%]">
-            <div className="text-white text-[39px] leading-[84%] font-[400] ">
-              <h2>
-                Your trusted
-                <br /> source for digital
-                <br /> insights
+          <div className="absolute top-[4%] left-4">
+            <div className="text-white ">
+              <h2 className="w-[316px] text-[39px] leading-[103%] font-[400] ">
+                We are a remote team, connected by purpose, not office walls
               </h2>
             </div>
             <a
-              href=""
-              className="inline-block border border-[#FAFAFA] text-[#FAFAFA] text-[15px] mt-4 px-5 py-2 rounded-[57px] leading-normal"
+              href="/about"
+              className="inline-block border border-[#FAFAFA] text-[#FAFAFA] text-[14px] mt-[17px] w-[96px] text-center py-1.5 rounded-[57px] leading-normal"
             >
               About Us
             </a>
@@ -444,7 +471,7 @@ const Careers = () => {
           <div className="w-[40%] sticky top-28 h-fit">
             <div className="text-[#000]">
               <span className="text-[16px] font-[400] leading-normal ">
-                Become a colleague
+                Join our dream team
               </span>
               <h2 className="text-[56px] font-[400] leading-normal ">
                 What we offer
@@ -469,7 +496,7 @@ const Careers = () => {
                     {whatWeOfferCol1.map((item) => (
                       <div
                         key={item.id}
-                        className="border p-5 max-w-[280px] bg-[#B6B6B633]"
+                        className="border p-5 max-w-[300px] bg-[#B6B6B633]"
                       >
                         <img
                           src={item.logo}
@@ -498,7 +525,7 @@ const Careers = () => {
                     {whatWeOfferCol2.map((item) => (
                       <div
                         key={item.id}
-                        className="border p-5 max-w-[280px] bg-[#B6B6B633]"
+                        className="border p-5 max-w-[300px] bg-[#B6B6B633]"
                       >
                         <img
                           src={item.logo}
@@ -526,7 +553,7 @@ const Careers = () => {
         {/* Top Section: Heading */}
         <div className="mb-10 text-[#000]">
           <span className="text-[16px] font-[400] leading-normal">
-            Become a colleague
+            Join our dream team
           </span>
           <h2 className="text-[34px] font-[400] leading-normal ">
             What we offer
@@ -553,14 +580,14 @@ const Careers = () => {
       </div>
 
       {/* What our people have to say*/}
-      <div className="md:px-28 px-4  py-10 md:pt-12 md:pb-14 bg-[#FAFAFA]">
+      <div className="md:px-28 px-4  py-10 md:pt-[60px] md:pb-[150px] bg-[#FAFAFA]">
         <div className="border-b border-black">
           <div className="text-[30px] lg:text-[56px] lg:w-full leading-normal lg:font-[400] text-[#01261E]  ">
             <h2>What our people have to say</h2>
           </div>
         </div>
 
-        <div className="flex justify-between pb-2 pt-8">
+        <div className="flex justify-between pt-8">
           {/* Left Side (Small Images & Content) */}
           <div className="lg:w-[60%]">
             {/* Small Images */}
@@ -589,53 +616,52 @@ const Careers = () => {
               ))}
             </div>
 
-            {/* Dynamic Text Content */}
-            {/* <div className="lg:py-6">
-              <p className="text-black text-[17px] lg:text-[24px] leading-[130%] font-[300] mb-10 lg:w-[94%]">
-                {selectedImage.text}
-              </p>
-              <p className="text-[17px] lg:text-[24px] leading-[130%] font-[400]">
-                {selectedImage.name}
-              </p>
-              <p className="text-[11px] lg:text-[15px] leading-[130%] font-[300]">
-                {selectedImage.role}
-              </p>
-            </div> */}
-
-            {/* DESKTOP Version — only visible on lg and up */}
+            {/*desktop content */}
             <div className="hidden lg:block lg:py-6">
-              <p className="text-black text-[24px] leading-[130%] font-[300] mb-6 lg:w-[94%]">
-                {selectedImage.text}
-              </p>
-              <p className="text-[24px] leading-[130%] font-[400]">
-                {selectedImage.name}
-              </p>
-              <p className="text-[15px] leading-[130%] font-[300]">
-                {selectedImage.role}
-              </p>
+              <div className="flex flex-col h-full min-h-[200px]">
+                <div className="flex-1">
+                  <p className="text-black text-[24px] leading-[130%] font-[300] mb-6 lg:w-[94%]">
+                    {selectedImage.text}
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <p className="text-[24px] leading-[130%] font-[400]">
+                    {selectedImage.name}
+                  </p>
+                  <p className="text-[15px] leading-[130%] font-[300]">
+                    {selectedImage.role}
+                  </p>
+                </div>
+              </div>
             </div>
 
-            {/* MOBILE Version — only visible on < lg screens */}
-            <div className="block lg:hidden min-h-[220px] transition-all duration-300 ease-in-out">
-              <p className="text-black text-[17px] leading-[130%] font-[300] mb-6">
-                {selectedImage.text}
-              </p>
-              <p className="text-[17px] leading-[130%] font-[400]">
-                {selectedImage.name}
-              </p>
-              <p className="text-[11px] leading-[130%] font-[300]">
-                {selectedImage.role}
-              </p>
+            {/*mobile content*/}
+            <div className="block lg:hidden transition-all duration-300 ease-in-out">
+              <div className="flex flex-col justify-between min-h-[170px]">
+                <div className="flex-1 overflow-hidden">
+                  <p className="text-black text-[17px] leading-[130%] font-[300] mb-6">
+                    {selectedImage.text}
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <p className="text-[17px] leading-[130%] font-[400]">
+                    {selectedImage.name}
+                  </p>
+                  <p className="text-[11px] leading-[130%] font-[300]">
+                    {selectedImage.role}
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
 
           {/* Right Side (Large Image) */}
-          <div className="hidden lg:block w-[30%] md:py-8">
+          <div className="hidden lg:block w-[30%] md:pt-8">
             <div>
               <img
                 src={selectedImage.fullSrc}
                 alt="selected"
-                className="w-300"
+                className="w-300 rounded-[15px]"
               />
             </div>
           </div>
@@ -643,7 +669,7 @@ const Careers = () => {
       </div>
 
       {/* contact our team */}
-      <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32 pb-16 bg-[#FAFAFA]">
+      {/* <div className="flex flex-col items-center justify-center text-center lg:pt-10 lg:pb-32 pb-16 bg-[#FAFAFA]">
         <h2
           className="text-[34px] lg:text-[56px] font-[400]"
           style={{ fontFamily: "GT Super Ds Trial" }}
@@ -659,7 +685,7 @@ const Careers = () => {
           </p>
         </div>
 
-        {/* Moving Text desktop*/}
+       
 
         <a
           href="/contact"
@@ -677,7 +703,7 @@ const Careers = () => {
           </span>
         </a>
 
-        {/* Moving Text mobile*/}
+     
 
         <a
           href="#"
@@ -694,7 +720,7 @@ const Careers = () => {
             SALES SPEAK TO SALES
           </span>
         </a>
-      </div>
+      </div> */}
     </>
   );
 };
