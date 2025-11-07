@@ -89,7 +89,7 @@ export default function Hero() {
             </p>
 
             <div className="pt-6">
-              <button className="w-[40%] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
+              <button className="w-[111px] sm:w-[118px] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
                 Get started
               </button>
             </div>

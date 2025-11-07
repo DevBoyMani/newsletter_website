@@ -157,7 +157,7 @@ export default function HomeLovedByReaders() {
       </div>
 
       {/* mobile */}
-      {/* --- Mobile Section (fixed scroll issue + responsive layout) --- */}
+
       <div className="block lg:hidden bg-[#FAFAFA]">
         {/* Section Heading */}
         <div className="px-4">
@@ -174,24 +174,33 @@ export default function HomeLovedByReaders() {
         <div className="pt-[40px] sm:pt-[50px] pb-[20px]">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth space-x-4 pb-6 pt-2 no-scrollbar px-[12px]"
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-[clamp(12px,4vw,20px)] pb-6 pt-2 no-scrollbar px-[clamp(14px,5vw,22px)]"
             onScroll={handleScroll}
           >
             {/* Spacer before first card */}
-            <div className="flex-shrink-0 w-[6%]" />
+            <div className="flex-shrink-0 w-[clamp(8%,10vw,10%)]" />
 
             {cardsData.map((item, index) => (
               <motion.div
                 key={item.id}
-                className={`flex-shrink-0 w-[240px] sm:w-[263px] bg-white border border-[#E7E9ED] rounded-[10px] p-[20px] sm:p-[25px] snap-center shadow-[0_0_10px_rgba(0,0,0,0.04)] flex flex-col justify-between transition-all duration-300`}
+                className={`flex-shrink-0 bg-white border border-[#E7E9ED] rounded-[10px] p-[clamp(18px,5vw,24px)] snap-center shadow-[0_0_10px_rgba(0,0,0,0.05)] flex flex-col justify-between transition-all duration-300`}
                 style={{
-                  height: activeIndex === index ? "auto" : "auto", // Let height adjust naturally
-                  minHeight: 260,
-                  maxHeight: 320,
+                  // 👇 dynamic responsive sizing (perfect between 320px–450px)
+                  width: "clamp(200px, 70vw, 300px)",
+                  minHeight: "250px",
+                  maxHeight: "330px",
                 }}
                 animate={{
-                  scale: activeIndex === index ? 1.05 : 0.92,
-                  opacity: activeIndex === index ? 1 : 0.7,
+                  scale:
+                    activeIndex === index
+                      ? window.innerWidth <= 380
+                        ? 1.02
+                        : window.innerWidth <= 430
+                        ? 1.035
+                        : window.innerWidth <= 500
+                        ? 1.045
+                        : 1.05
+                      : 0.92,
                 }}
                 transition={{ type: "spring", stiffness: 260, damping: 22 }}
               >
@@ -203,13 +212,11 @@ export default function HomeLovedByReaders() {
                   />
                 </div>
 
-                {/* Middle content */}
                 <div className="flex-1 flex flex-col justify-between">
                   <p className="text-[#161C2D] text-[15px] sm:text-[16px] leading-[24px] font-[400] tracking-[-0.5px] pt-[16px] sm:pt-[18px]">
                     “{item.text}”
                   </p>
 
-                  {/* Bottom content */}
                   <div className="pt-4">
                     <p className="text-[#161C2D] text-[13px] font-[400] leading-[22px] tracking-[-0.2px]">
                       {item.name}
@@ -223,11 +230,11 @@ export default function HomeLovedByReaders() {
             ))}
 
             {/* Spacer after last card */}
-            <div className="flex-shrink-0 w-[6%]" />
+            <div className="flex-shrink-0 w-[clamp(8%,10vw,10%)]" />
           </div>
         </div>
 
-        {/* Indicator Line (independent) */}
+        {/* Indicator Line */}
         <div className="relative pt-[24px] pb-[30px] flex justify-center">
           <div className="w-full max-w-[111px] h-[1.5px] bg-[#E6E6E6] rounded-full relative overflow-hidden">
             <motion.div
