@@ -16,7 +16,7 @@ const CareersPeopleSay = () => {
       id: 2,
       smallSrc: "/careers/trisha-small.png",
       fullSrc: "/careers/trisha-big.png",
-      text: "“There’s a strong culture of clarity. We don’t do unnecessary meetings. Everyone respects time, and the work is focused. It’s the first place where I’ve seen efficiency practiced daily.”",
+      text: "“This company has an amazing culture that values work-life balance. I’ve learned so much here, and the supportive, helpful team makes every day enjoyable and motivating. Truly a great workplace.”",
       name: "Trisha",
       role: "Social Media Manager",
     },
@@ -24,7 +24,7 @@ const CareersPeopleSay = () => {
       id: 3,
       smallSrc: "/careers/hidi-small.png",
       fullSrc: "/careers/hidi-big.png",
-      text: "“The environment balances independence with support. You’re trusted to do your job, but you’re not left alone when you need guidance.”",
+      text: "“This job enables me to combine my interests, such as media literacy and geopolitics, to inform others without being overly sensational or polarizing. Working with an international team helps me gain new perspectives.”",
       name: "Heidi",
       role: "Content Writer",
     },
@@ -59,7 +59,7 @@ const CareersPeopleSay = () => {
                   <img
                     src={image.smallSrc}
                     alt={`image-${image.id}`}
-                    className="w-14 h-14"
+                    className="w-14 h-14 rounded-full object-cover"
                   />
                 </button>
               ))}
@@ -124,7 +124,7 @@ const CareersPeopleSay = () => {
               <img
                 src={image.smallSrc}
                 alt={`image-${image.id}`}
-                className="w-12 h-12"
+                className="w-12 h-12 rounded-full object-cover"
               />
             </button>
           ))}

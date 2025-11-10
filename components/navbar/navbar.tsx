@@ -10,7 +10,7 @@ import CustomizedHoverButton from "../customizedHoverButton/customizedHoverButto
 const routes = [
   { path: "/about", name: "About" },
   { path: "/advertise", name: "Advertise" },
-  { path: "/blogs", name: "Blogs" },
+  // { path: "/blogs", name: "Blogs" },
   { path: "/careers", name: "Careers" },
   { path: "/readers", name: "Readers" },
 ];
@@ -18,7 +18,7 @@ const routes = [
 const routesMob = [
   { path: "/about", name: "About" },
   { path: "/advertise", name: "Advertise" },
-  { path: "/blogs", name: "Blogs" },
+  // { path: "/blogs", name: "Blogs" },
   { path: "/careers", name: "Careers" },
   { path: "/readers", name: "Readers" },
   { path: "/contact", name: "contact" },

@@ -6,7 +6,7 @@ import Leadership from "../../components/leadership/leadership";
 import Others from "../../components/others/others";
 import Design from "../../components/design/design";
 import Engineering from "../../components/engineering/engineering";
-import Journalism from "../../components/journalism/journalism";
+import Editorial from "../../components/editorial/editorial";
 import Tech from "../../components/tech/tech";
 import Marketing from "../../components/marketing/marketing";
 
@@ -29,14 +29,14 @@ const Careers = () => {
   ];
 
   const testimonials = [
-    { name: "View All", component: <ViewAll /> },
-    { name: "Design", component: <Design /> },
-    { name: "Engineering", component: <Engineering /> },
-    { name: "Journalism", component: <Journalism /> },
-    { name: "Tech", component: <Tech /> },
-    { name: "Leadership", component: <Leadership /> },
-    { name: "Marketing", component: <Marketing /> },
-    { name: "Others", component: <Others /> },
+    { name: "View All" },
+    { name: "Design" },
+    { name: "Engineering" },
+    { name: "Editorial" },
+    { name: "Tech" },
+    // { name: "Leadership" },
+    { name: "Marketing" },
+    { name: "Others" },
   ];
 
   const handleStepChange = (stepNumber) => {
@@ -88,7 +88,7 @@ const Careers = () => {
       </div>
       {/* Active Tab Section */}
       <div className="mt-0 md:px-28 px-4 bg-[#FAFAFA]">
-        {testimonials[activeTab].component}
+        <ViewAll activeCategory={testimonials[activeTab].name} />
       </div>
       <CareersStepAccordionSection
         activeStepImage={activeStepImage}

@@ -8,6 +8,7 @@ import CareersLogoDesigner from "../../../components/careersLogoDesigner/careers
 import CareersWebDesigner from "../../../components/careersWebDesigner/careersWebDesigner";
 import CareersBackendDev from "../../../components/careersBackendDev/careersBackendDev";
 import CareersSoftWareEngineer from "../../../components/careersSoftwareEngineer/careersSoftwareEngineer";
+import ContentWriterLondon from "../../../components/contentWriterLondon/contentWriterLondon";
 // import dynamic from 'next/dynamic';
 
 // Lazy import your components
@@ -19,6 +20,7 @@ import CareersSoftWareEngineer from "../../../components/careersSoftwareEngineer
 
 const componentMap = {
   "graphic-designer": () => <CareersGraphicDesigner />,
+  "content-writer-london": () => <ContentWriterLondon />,
   "ux-designer": () => <CareersUXDesigner />,
   "full-stack": () => <CareersFullStack />,
   "logo-designer": () => <CareersLogoDesigner />,

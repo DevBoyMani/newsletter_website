@@ -33,7 +33,7 @@ export default function HomeLatestStrories() {
       {/* desktop */}
       <div className="hidden lg:block bg-[#FAFAFA]">
         {/* latest stories */}
-        <div className="px-[110px] pt-[100px] pb-[80px]">
+        {/* <div className="px-[110px] pt-[100px] pb-[80px]">
           <div className="">
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-center text-[56px] text-[#01261E] font-[400] leading-[48px] tracking-[-1.2px]">
@@ -45,7 +45,7 @@ export default function HomeLatestStrories() {
               </p>
             </div>
           </div>
-          {/* cards */}
+     
           <div className="pt-[56px]">
             <div className="flex flex-row gap-[21px] flex-wrap items-stretch">
               {blogPosts.map((post) => (
@@ -54,7 +54,7 @@ export default function HomeLatestStrories() {
                   className="group flex-1 min-w-[300px] bg-[#fff] border border-[#E7E9ED] rounded-[15px] flex flex-col transition-shadow duration-500 
           shadow-[0_0_20px_0_rgba(102,102,102,0.15)] hover:shadow-[0_0_30px_0_rgba(102,102,102,0.25)] cursor-pointer overflow-hidden relative"
                 >
-                  {/* Image Section (fixed top, no movement) */}
+                
                   <div className="p-[5px]">
                     <div className="w-full h-full overflow-hidden rounded-[15px]">
                       <img
@@ -65,12 +65,12 @@ export default function HomeLatestStrories() {
                     </div>
                   </div>
 
-                  {/* Text + Read More wrapper that animates upward */}
+                 
                   <div
                     className="flex flex-col flex-1 transition-transform duration-500 ease-out
             group-hover:-translate-y-[12px] relative"
                   >
-                    {/* Title and Description */}
+                
                     <div className="pt-[24px] px-[15px] flex flex-col flex-1">
                       <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
                         {post.title}
@@ -80,7 +80,7 @@ export default function HomeLatestStrories() {
                       </p>
                     </div>
 
-                    {/* Bottom “Read more” Section */}
+                
                     <div
                       className="absolute -bottom-5 left-0 w-full px-[15px] pb-[20px] 
               translate-y-full opacity-0 pointer-events-none
@@ -105,7 +105,7 @@ export default function HomeLatestStrories() {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
         {/* need to create separate component */}
         {/* contact our team */}
         <div>
@@ -166,7 +166,7 @@ export default function HomeLatestStrories() {
       {/* mobile */}
       <div className="block lg:hidden bg-[#FAFAFA]">
         {/* latest stories */}
-        <div className="px-4 pt-[46px] pb-[55px]">
+        {/* <div className="px-4 pt-[46px] pb-[55px]">
           <div className="flex flex-col justify-center items-center">
             <h2 className="text-center w-[243px] text-[30px]  text-[#121212] font-[400] leading-[120%]">
               Latest stories from
@@ -178,14 +178,14 @@ export default function HomeLatestStrories() {
             </p>
           </div>
 
-          {/* Cards - Single Column */}
+        
           <div className="pt-[40px] flex flex-col gap-[25px] items-center">
             {blogPosts.map((post) => (
               <div
                 key={post.id}
                 className="w-full max-w-[800px] bg-[#fff] border border-[#E7E9ED] rounded-[15px] shadow-[0_0_20px_0_rgba(102,102,102,0.15)] overflow-hidden"
               >
-                {/* Image */}
+              
                 <div className="w-full h-[250px] p-1">
                   <img
                     src={post.image}
@@ -194,7 +194,7 @@ export default function HomeLatestStrories() {
                   />
                 </div>
 
-                {/* Text Section */}
+                
                 <div className="px-[15px] py-[20px] flex flex-col justify-between min-h-[200px]">
                   <div>
                     <h3 className="text-[#000] text-[16px] font-[400] leading-[22px] font-[manrope]">
@@ -205,7 +205,7 @@ export default function HomeLatestStrories() {
                     </p>
                   </div>
 
-                  {/* Read More */}
+                
                   <div className="pt-[15px] flex items-center justify-between ">
                     <p className="text-[#000000] text-[15px] font-[500] leading-[24px]">
                       Read more
@@ -222,10 +222,9 @@ export default function HomeLatestStrories() {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
 
         {/* contact our team */}
-
         <div className="pt-[20px] bg-[#FAFAFA]">
           <div className="flex flex-col items-center justify-center text-center px-[53px] pt-[35px] pb-[60px]">
             <div className="">
