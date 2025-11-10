@@ -20,10 +20,11 @@ const chartData = [
   { name: "E", value: 19 },
 ];
 
+// Define your static color array
 const barColors = [
   "#4D3060", // purple
-  "#6A6F5B", // green
-  "#8E3321", // red
+  "url(#greenGradient)", // replace green with gradient
+  "#80011F", // red
   "#06266D", // blue
   "#F9D342", // yellow
 ];
@@ -38,25 +39,12 @@ export default function AboutBarChart() {
           barCategoryGap="10px"
           barGap={0}
         >
-          {/* Gradients for each bar */}
+          {/* ✅ Define your gradient here */}
           <defs>
-            {chartData.map((_, index) => {
-              const color = barColors[index % barColors.length];
-              return (
-                <linearGradient
-                  id={`barGradient-${index}`}
-                  key={`grad-${index}`}
-                  x1="0"
-                  y1="0"
-                  x2="0"
-                  y2="1"
-                >
-                  <stop offset="0%" stopColor={color} stopOpacity={1} />
-                  <stop offset="20%" stopColor={color} stopOpacity={0.7} />
-                  <stop offset="100%" stopColor={color} stopOpacity={0.1} />
-                </linearGradient>
-              );
-            })}
+            <linearGradient id="greenGradient" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="9.09%" stopColor="#EECA66" />
+              <stop offset="95.69%" stopColor="#102341" />
+            </linearGradient>
           </defs>
 
           {/* Grid + axes */}
@@ -84,7 +72,7 @@ export default function AboutBarChart() {
             tickLine={false}
             axisLine={true}
             label={{
-              value: "Number of newsletters",
+              value: "Average open rate",
               angle: -90,
               position: "insideLeft",
               offset: 25,
@@ -97,13 +85,16 @@ export default function AboutBarChart() {
             }}
           />
 
-          {/* Tooltip if needed */}
+          {/* Tooltip */}
           <Tooltip cursor={false} />
 
           {/* Bars */}
           <Bar dataKey="value">
             {chartData.map((_, index) => (
-              <Cell key={`cell-${index}`} fill={`url(#barGradient-${index})`} />
+              <Cell
+                key={`cell-${index}`}
+                fill={barColors[index % barColors.length]}
+              />
             ))}
 
             {/* Custom % + top line */}
@@ -130,7 +121,7 @@ export default function AboutBarChart() {
                       x2={x + 40}
                       y1={y - 5}
                       y2={y - 5}
-                      stroke={color}
+                      stroke={color.startsWith("url") ? "#EECA66" : color}
                       strokeWidth={4}
                       strokeLinecap="round"
                     />

@@ -251,33 +251,6 @@ const sectionsWithContent = [
   },
 ];
 
-// const socialIcons = [
-//   {
-//     alt: "x",
-//     defaultSrc: "/blogs/blog-x.png",
-//     hoverSrc: "/blogs/blog-x-hover.png",
-//     source: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     alt: "insta",
-//     defaultSrc: "/blogs/blog-insta.png",
-//     hoverSrc: "/blogs/blog-insta-hover.png",
-//     source: "https://www.geopoliticalsummary.com/",
-//   },
-//   {
-//     alt: "ln",
-//     defaultSrc: "/blogs/blog-ln.png",
-//     hoverSrc: "/blogs/blog-ln-hover.png",
-//     source: "https://www.moviesuggestions.com/",
-//   },
-//   {
-//     alt: "t",
-//     defaultSrc: "/blogs/blog-t.png",
-//     hoverSrc: "/blogs/blog-t-hover.png",
-//     source: "https://www.dubaisummary.com/",
-//   },
-// ];
-
 export default function PolicyBody() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollPercent, setScrollPercent] = useState(0);

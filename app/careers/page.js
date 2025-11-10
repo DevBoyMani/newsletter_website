@@ -90,16 +90,12 @@ const Careers = () => {
       <div className="mt-0 md:px-28 px-4 bg-[#FAFAFA]">
         {testimonials[activeTab].component}
       </div>
-      {/* Step Accordion Section */}
       <CareersStepAccordionSection
         activeStepImage={activeStepImage}
         handleStepChange={handleStepChange}
       />
-      {/* Video Section */}
       <CareersVideoBanner />
-      {/* What We Offer */}
       <CareersWhatWeOffer />
-      {/* people say */}
       <CareersPeopleSay />
     </>
   );

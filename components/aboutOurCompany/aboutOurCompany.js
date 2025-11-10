@@ -56,15 +56,17 @@ export default function AboutOurCompany() {
                 <HeadingWithUnderline text="Our company" />
 
                 <p className="pt-8 text-[#000] text-[18px] font-[400] leading-[135%] tracking-[0.36px]">
-                  We began as a single newsletter with one goal: delivering
-                  fresh, unbiased news to help you stay updated on the day’s
-                  most important topics. 
+                  We began as a single newsletter with a simple purpose: to
+                  deliver news that is clear, factual, and useful. No noise, no
+                  sensationalism, no guessing games.
                 </p>
 
                 <p className="py-4 text-[#000] text-[18px] font-[400] leading-[135%] tracking-[0.36px]">
-                  We began as a single newsletter with one goal: delivering
-                  fresh, unbiased news to help you stay updated on the day’s
-                  most important topics. 
+                  As our readership grew, we learned something important. People
+                  wanted the same level of clarity in more areas of life. So we
+                  expanded carefully and deliberately. Today, we are a network
+                  of specialized newsletters, each written by people who know
+                  their field and care about getting it right.
                 </p>
 
                 <div className="md:w-[32%] w-full mt-6">
@@ -279,15 +281,17 @@ export default function AboutOurCompany() {
           <HeadingWithUnderline text="Our company" />
 
           <p className="pt-4 text-[#000] text-[14px] font-[400] leading-normal ">
-            We began as a single newsletter with one goal: delivering fresh,
-            unbiased news to help you stay updated on the day’s most important
-            topics. 
+            We began as a single newsletter with a simple purpose: to deliver
+            news that is clear, factual, and useful. No noise, no
+            sensationalism, no guessing games.
           </p>
 
           <p className="py-4 text-[#000] text-[14px] font-[400] leading-normal ">
-            We began as a single newsletter with one goal: delivering fresh,
-            unbiased news to help you stay updated on the day’s most important
-            topics. 
+            As our readership grew, we learned something important. People
+            wanted the same level of clarity in more areas of life. So we
+            expanded carefully and deliberately. Today, we are a network of
+            specialized newsletters, each written by people who know their field
+            and care about getting it right.
           </p>
 
           <div className="w-fit mt-2">

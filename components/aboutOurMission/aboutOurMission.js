@@ -3,6 +3,34 @@
 import { useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
+
+const componentData = [
+  {
+    id: 1,
+    headerImageActive: "/about/bsh-black.png",
+    headerImageInactive: "/about/bsh-gray.png",
+    mainContent: `“One of the smartest ad buys we made this year. The editorial tone aligned with high-intent readers, and the audience quality of Dubai Summary is good. We saw click-through rates 4x higher than Google AdWords”`,
+    subContentL: "Faik Serkan Ergun",
+    subContentR: "CEO, BSH Hausgeräte",
+  },
+  {
+    id: 2,
+    headerImageActive: "/about/tbh-black.png",
+    headerImageInactive: "/about/tbh-gray.png",
+    mainContent: `"The knowledge exchange between teams is very helpful and the results are brilliant. There’s no big point we’re not satisfied with."`,
+    subContentL: "Shahid Akhtar",
+    subContentR: "Owner, The Barber Shop",
+  },
+  {
+    id: 3,
+    headerImageActive: "/about/sac-black.png",
+    headerImageInactive: "/about/sac-gray.png",
+    mainContent: `"Reliable marketing partner to work with, have a really strong team of digital marketers. Even better is the level of creativity they put into their design work. Not incomparable to others."`,
+    subContentL: "Harish T S",
+    subContentR: "Franchisee Owner, SellAnyCar",
+  },
+];
+
 // Variants for staggered animation
 const container = {
   hidden: { opacity: 0, y: -10 },
@@ -32,33 +60,6 @@ const fadeUp = {
 };
 
 export default function AboutOurMission() {
-  const componentData = [
-    {
-      id: 1,
-      headerImageActive: "/about/dell-dark.png",
-      headerImageInactive: "/about/dell.png",
-      mainContent: `"At Dell, we value innovation and reliability—and working with your company has been a seamless partnership marked by professionalism, forward-thinking solutions, and exceptional collaboration."`,
-      subContentL: "Beth Everett",
-      subContentR: "Marketing & Communications Manager, Dell",
-    },
-    {
-      id: 2,
-      headerImageActive: "/about/coinbase-dark.png",
-      headerImageInactive: "/about/coinbase.png",
-      mainContent: `"At Coinbase, we prioritize trust and innovation in the digital economy, and partnering with your company has exemplified those values through secure, efficient, and forward-looking collaboration."`,
-      subContentL: "Jordan Reeves",
-      subContentR: "Senior Partnership Manager, Coinbase",
-    },
-    {
-      id: 3,
-      headerImageActive: "/about/fuji-dark.png",
-      headerImageInactive: "/about/fuji.png",
-      mainContent: `"At Fujifilm, we appreciate creativity and precision, and working with your company has demonstrated a shared commitment to excellence, innovation, and impactful collaboration."`,
-      subContentL: "Alicia Kim",
-      subContentR: "Head of Media Relations, FujiFilm",
-    },
-  ];
-
   const [direction, setDirection] = useState("forward");
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -94,9 +95,9 @@ export default function AboutOurMission() {
           <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2]  text-center">
             Our mission
           </h2>
-          <p className="text-[#000] text-center text-[18px] font-[400] leading-[150%] tracking-[0.36px]">
-            Our mission is to keep the world informed and curious,
-            <br /> one newsletter at a time.
+          <p className="text-[#000] text-center text-[18px] font-[400] leading-[150%] tracking-[0.36px] w-[577px] mx-auto">
+            Our mission is to summarize the truth of what is happening in the
+            world in a way that is clear and easy to understand.
           </p>
         </div>
 
@@ -226,8 +227,8 @@ export default function AboutOurMission() {
             Our mission
           </h2>
           <p className="text-[#000] text-center text-[14px] font-[400] leading-[130%] tracking-[0.28px] px-12">
-            Our mission is to keep the world informed and curious, one
-            newsletter at a time.
+            Our mission is to summarize the truth of what is happening in the
+            world in a way that is clear and easy to understand.
           </p>
         </div>
 

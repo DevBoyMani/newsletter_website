@@ -113,13 +113,6 @@ export default function Contact() {
     });
   };
 
-  // useEffect(() => {
-  //   if (formSubmitted) {
-  //     const timer = setTimeout(() => setFormSubmitted(false), 5000);
-  //     return () => clearTimeout(timer);
-  //   }
-  // }, [formSubmitted]);
-
   return (
     <>
       {/* desktop view */}

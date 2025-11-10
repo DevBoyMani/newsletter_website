@@ -10,6 +10,7 @@ import HeadingWithUnderline from "../../components/readersPageComponents/stuff/h
 export default function ReadersPage() {
   return (
     <>
+      {/* web */}
       <div className="hidden lg:block bg-[#FAFAFA]">
         <ReadersHero />
 
@@ -25,7 +26,7 @@ export default function ReadersPage() {
 
         <ReadersFooter />
       </div>
-
+      {/* mobile */}
       <div className="block lg:hidden">
         <ReadersMobileView />
         <ReadersFooterMobile />

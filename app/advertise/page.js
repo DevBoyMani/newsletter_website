@@ -336,26 +336,6 @@ export default function Advertise() {
 
       {/* faq */}
 
-      {/* old */}
-      {/* <div className="bg-[#FAFAFA] relative hidden lg:block">
-            <div className="px-4 md:px-28 pt-20 pb-10">
-              <div className="flex flex-col md:flex-row justify-between px-4">
-              <div className="md:w-[40%] lg:py-0 pb-14">
-                <div className="text-[#01261E] text-[56px] leading-[104%] font-[400] ">
-                Got Questions? We've Got Answers!
-                </div>
-              </div>
-
-              <div className="md:w-[44%] ">
-                <div className="text-black">
-                <AdvertiseFaq/>
-                </div>
-              </div>
-            </div>
-            </div>
-          </div> */}
-
-      {/* new */}
       <AdvertiseNewFaq />
 
       {/* In the press */}
