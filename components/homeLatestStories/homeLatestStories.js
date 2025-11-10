@@ -117,12 +117,11 @@ export default function HomeLatestStrories() {
               Contact our team
             </h2>
 
-            <div className="lg:w-[50%] mx-auto px-8">
+            <div className="w-[640px] mx-auto px-8">
               <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
                 If you're looking to grow in a dynamic environment and
                 contribute to something greater, we invite you to explore our
-                open positions
-                <br /> and become a part of our journey.
+                open positions and become a part of our journey.
               </p>
             </div>
 
@@ -133,21 +132,18 @@ export default function HomeLatestStrories() {
               className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
             >
               <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE
               </span>
             </a>
 
             {/* Moving Text mobile*/}
 
-            <a
+            {/* <a
               href="#"
               className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]"
             >
@@ -162,7 +158,7 @@ export default function HomeLatestStrories() {
                 SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
                 SPEAK TO SALES
               </span>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>
@@ -254,15 +250,12 @@ export default function HomeLatestStrories() {
               className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-[30px] bg-[#01261E] text-[#ffffff]  font-[800]"
             >
               <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE ADVERTISE ADVERTISE
               </span>
             </a>
           </div>

@@ -7,7 +7,8 @@ export default function Hero() {
   const [email, setEmail] = useState("");
   const trustedCompanies = [
     { id: 1, name: "autio", logo: "/home/autio.png" },
-    { id: 2, name: "Going", logo: "/home/going.png" },
+    // { id: 2, name: "Going", logo: "/home/going.png" },
+    { id: 2, name: "Zoho", logo: "/home/zoho.png" },
     { id: 3, name: "an", logo: "/home/an.png" },
     { id: 4, name: "gagg", logo: "/home/gagg.png" },
     { id: 5, name: "guide", logo: "/home/guide.png" },
