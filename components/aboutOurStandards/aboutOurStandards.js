@@ -59,7 +59,7 @@ const buttons = [
 ];
 
 export default function AboutOurStandards() {
-  const [selected, setSelected] = useState("Relevance");
+  const [selected, setSelected] = useState("Accuracy");
 
   // orbit scroll for mobile
   const orbitRef = useRef(null);
