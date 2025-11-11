@@ -16,17 +16,17 @@ const chartData = [
   { name: "A", value: 83 },
   { name: "B", value: 53 },
   { name: "C", value: 40 },
-  { name: "D", value: 83 },
-  { name: "E", value: 19 },
+  // { name: "D", value: 83 },
+  // { name: "E", value: 19 },
 ];
 
 // Define your static color array
 const barColors = [
   "#4D3060", // purple
-  "url(#greenGradient)", // replace green with gradient
-  "#80011F", // red
   "#06266D", // blue
-  "#F9D342", // yellow
+  "url(#greenGradient)", // replace green with gradient
+  // "#80011F", // red
+  // "#F9D342", // yellow
 ];
 
 export default function AboutBarChart() {

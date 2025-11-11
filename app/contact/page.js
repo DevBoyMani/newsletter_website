@@ -25,13 +25,13 @@ const socialMediaIcons = [
     href: "https://www.presidentialsummary.com/",
   },
   {
-    name: "tiktok",
-    src: "/readers/tiktok.png",
+    name: "facebook",
+    src: "/contact/fb.png",
     href: "https://www.presidentialsummary.com/",
   },
   {
-    name: "t",
-    src: "/readers/t.png",
+    name: "threads",
+    src: "/contact/threads.png",
     href: "https://www.presidentialsummary.com/",
   },
 ];
@@ -185,7 +185,7 @@ export default function Contact() {
                       {/* Left Button */}
                       <button className="group relative flex items-center justify-center w-[151px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]">
                         {/* Expanding circle animation */}
-                        <span className="absolute left-[18px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
+                        <span className="absolute left-[19px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
 
                         {/* Content wrapper (centered area) */}
                         <span className="relative z-10 flex items-center justify-center w-full overflow-hidden">
@@ -210,7 +210,7 @@ export default function Contact() {
                       {/* Right Button */}
                       <button className="group relative flex items-center justify-center w-[135px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]">
                         {/* Expanding circle animation */}
-                        <span className="absolute right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
+                        <span className="absolute right-[20px] top-1/2 translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
 
                         {/* Content wrapper */}
                         <span className="relative z-10 flex items-center justify-center w-full overflow-hidden">

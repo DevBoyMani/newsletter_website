@@ -18,26 +18,28 @@ const textVariants = {
 
 export default function AboutNewslettersStatistics() {
   const newslettersLine1 = [
-    { id: 1, name: "Geopolitical Summary", colorImage: "about/gs.png" },
+    { id: 1, name: "Presidential Summary", colorImage: "about/ps.png" },
+    { id: 2, name: "Geopolitical Summary", colorImage: "about/gs.png" },
     // { id: 2, name: "Long and Short", colorImage: "about/ls.png" },
-    { id: 2, name: "Dubai Summary", colorImage: "about/ds-small.png" },
-    { id: 3, name: "Movie Suggestions", colorImage: "about/ms.png" },
+    { id: 3, name: "Dubai Summary", colorImage: "about/ds-small.png" },
+    // { id: 3, name: "Movie Suggestions", colorImage: "about/ms.png" },
   ];
-  const newslettersLine2 = [
-    { id: 4, name: "Presidential Summary", colorImage: "about/ps.png" },
-    // { id: 5, name: "Business History", colorImage: "about/bh.png" },
-    { id: 5, name: "London Summary", colorImage: "about/las-small.png" },
-  ];
+  // const newslettersLine2 = [
+  //   { id: 4, name: "Presidential Summary", colorImage: "about/ps.png" },
+  //   { id: 5, name: "Business History", colorImage: "about/bh.png" },
+  //   { id: 5, name: "London Summary", colorImage: "about/las-small.png" },
+  // ];
 
   // mobile data
   const newslettersLine = [
-    { id: 1, name: "Geopolitical Summary", colorImage: "about/gs.png" },
+    { id: 1, name: "Presidential Summary", colorImage: "about/ps.png" },
+    { id: 2, name: "Geopolitical Summary", colorImage: "about/gs.png" },
     // { id: 2, name: "Long and Short", colorImage: "about/ls.png" },
-    { id: 2, name: "Dubai Summary", colorImage: "about/ds-small.png" },
-    { id: 3, name: "Movie Suggestions", colorImage: "about/ms.png" },
-    { id: 4, name: "Presidential Summary", colorImage: "about/ps.png" },
+    { id: 3, name: "Dubai Summary", colorImage: "about/ds-small.png" },
+    // { id: 4, name: "Movie Suggestions", colorImage: "about/ms.png" },
+
     // { id: 5, name: "Business History", colorImage: "about/bh.png" },
-    { id: 5, name: "London Summary", colorImage: "about/las-small.png" },
+    // { id: 5, name: "London Summary", colorImage: "about/las-small.png" },
   ];
 
   const lines = [
@@ -109,7 +111,7 @@ export default function AboutNewslettersStatistics() {
                 ))}
               </div>
 
-              <div className="flex space-x-7 mt-2 pl-14">
+              {/* <div className="flex space-x-7 mt-2 pl-14">
                 {newslettersLine2.map((item) => (
                   <div
                     key={item.id}
@@ -125,7 +127,7 @@ export default function AboutNewslettersStatistics() {
                     </p>
                   </div>
                 ))}
-              </div>
+              </div> */}
 
               <div className="py-10">
                 <AboutBarChart />
