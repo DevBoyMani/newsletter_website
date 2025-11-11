@@ -355,7 +355,7 @@ export default function Navbar() {
         <div className={`${mobileNavBorder} mx-4`}>
           <div className="flex items-center justify-between h-[97px] px-0">
             {/* Logo */}
-            <Link href="/">
+            <Link href="/" onClick={() => setIsOpen(false)}>
               <div className="w-32">
                 <img src={mobileLogoSrc} alt="Logo" />
               </div>
