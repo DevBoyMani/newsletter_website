@@ -68,7 +68,7 @@ export default function HomeAutoScrollCharts() {
               exit={{ x: -80, opacity: 0 }}
               transition={{ duration: 0.4, ease: "easeInOut" }}
             >
-              <div className="w-full h-full">{charts[currentIndex]}</div>
+              <div className="w-full h-full ">{charts[currentIndex]}</div>
             </motion.div>
           </AnimatePresence>
         </div>

@@ -157,7 +157,6 @@ export default function HomeLovedByReaders() {
       </div>
 
       {/* mobile */}
-
       <div className="block lg:hidden bg-[#FAFAFA]">
         {/* Section Heading */}
         <div className="px-4">
@@ -171,10 +170,10 @@ export default function HomeLovedByReaders() {
         </div>
 
         {/* Scrollable Cards */}
-        <div className="pt-[40px] sm:pt-[50px] pb-[20px]">
+        <div className="pt-[40px] sm:pt-[50px]">
           <div
             ref={scrollRef}
-            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-[clamp(12px,4vw,20px)] pb-6 pt-2 no-scrollbar px-[clamp(14px,5vw,22px)]"
+            className="flex overflow-x-auto snap-x snap-mandatory scroll-smooth gap-[clamp(12px,4vw,20px)] pb-[15px] pt-2 no-scrollbar px-[clamp(14px,5vw,22px)]"
             onScroll={handleScroll}
           >
             {/* Spacer before first card */}
@@ -183,7 +182,7 @@ export default function HomeLovedByReaders() {
             {cardsData.map((item, index) => (
               <motion.div
                 key={item.id}
-                className={`flex-shrink-0 bg-white border border-[#E7E9ED] rounded-[10px] p-[clamp(18px,5vw,24px)] snap-center shadow-[0_0_10px_rgba(0,0,0,0.05)] flex flex-col justify-between transition-all duration-300`}
+                className={`flex-shrink-0 bg-white border border-[#E7E9ED] rounded-[10px] p-[clamp(18px,5vw,24px)] snap-center flex flex-col justify-between transition-all duration-300`}
                 style={{
                   // 👇 dynamic responsive sizing (perfect between 320px–450px)
                   width: "clamp(200px, 70vw, 300px)",
@@ -237,7 +236,7 @@ export default function HomeLovedByReaders() {
         </div>
 
         {/* Indicator Line */}
-        <div className="relative pt-[24px] pb-[30px] flex justify-center">
+        <div className="relative pt-[15px] pb-[30px] flex justify-center">
           <div className="w-full max-w-[111px] h-[1.5px] bg-[#E6E6E6] rounded-full relative overflow-hidden">
             <motion.div
               className="absolute top-0 left-0 h-full bg-[#161C2D] rounded-full"

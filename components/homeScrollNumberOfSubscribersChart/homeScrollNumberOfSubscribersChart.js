@@ -122,7 +122,7 @@ export default function HomeScrollNumberOfSubscribersChart() {
       </div>
       {/* mobile */}
       <div className="block lg:hidden bg-[#fff]">
-        <Card className="px-[16px] pt-[16px] rounded-[5px] h-full">
+        <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
               Number of subscribers

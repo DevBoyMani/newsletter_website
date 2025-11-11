@@ -14,6 +14,15 @@ export default function Hero() {
     { id: 5, name: "guide", logo: "/home/guide.png" },
   ];
 
+  const trustedCompaniesMob = [
+    { id: 1, name: "autio", logo: "/home/autio-mob.png" },
+    // { id: 2, name: "Going", logo: "/home/going.png" },
+    { id: 2, name: "Zoho", logo: "/home/zoho-mob.png" },
+    { id: 3, name: "an", logo: "/home/an-mob.png" },
+    { id: 4, name: "gagg", logo: "/home/gaggenau-mob.png" },
+    { id: 5, name: "guide", logo: "/home/guide-mob.png" },
+  ];
+
   return (
     <>
       {/* desktop */}
@@ -113,9 +122,9 @@ export default function Hero() {
           <div className="relative w-full scroll-company-wrapper">
             <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />
             <div className="pointer-events-none absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-[#FAFAFA] to-transparent z-10" />
-            <div className="flex animate-scroll-company gap-6 sm:gap-10 items-center">
-              {trustedCompanies
-                .concat(trustedCompanies)
+            <div className="flex animate-scroll-company items-center">
+              {trustedCompaniesMob
+                .concat(trustedCompaniesMob)
                 .map((company, index) => (
                   <img
                     key={index}
