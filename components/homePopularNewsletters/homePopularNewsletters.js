@@ -58,7 +58,7 @@ export default function HomePopularNewsletters() {
             </p>
             <Link
               href="/readers#ourNewsletters"
-              className="mt-8 text-[18px] text-[#000] font-[400] leading-[104%] hover:underline"
+              className="mt-8 text-[18px] text-[#000] font-[400] leading-[104%] hover:underline underline-offset-[6px]"
             >
               All newsletters &rarr;
             </Link>
@@ -99,7 +99,7 @@ export default function HomePopularNewsletters() {
                     {card.title}
                   </p>
 
-                  <div className="pt-[56px] flex justify-between items-start flex-wrap gap-[19px] ">
+                  <div className="pt-[56px] flex justify-between items-end flex-wrap gap-[19px] ">
                     <p className="flex-1 text-[#878C91] text-[14px] font-[500] leading-[160%] min-w-[150px]">
                       {card.desc}
                     </p>

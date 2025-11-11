@@ -180,59 +180,54 @@ export default function Contact() {
                   </div>
 
                   {/* flex button */}
-                  <div className="">
-                    <div className="flex flex-wrap md:flex-nowrap w-full gap-2">
+                  <div className="mt-2">
+                    <div className="flex flex-wrap md:flex-nowrap w-full gap-[20px]">
                       {/* Left Button */}
-                      <button className="group relative flex items-center justify-center md:w-[40%] lg:w-[45%] gap-2 py-2 rounded-full overflow-hidden text-sm md:text-[14px] lg:text-[16px] font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-500 ease-in-out hover:border-none hover:bg-[#01261E]">
-                        {/* Background hover effect */}
-                        <span className="absolute left-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[24px] rounded-full bg-[#01261E] transition-transform duration-500 ease-in-out z-10" />
+                      <button className="group relative flex items-center justify-center w-[151px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]">
+                        {/* Expanding circle animation */}
+                        <span className="absolute left-[18px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
 
-                        {/* Dot */}
-                        <span className="relative -left-2 z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-500 ease-in-out"></span>
-
-                        {/* Text wrapper */}
-                        <span className="relative flex items-center min-w-0 whitespace-nowrap z-10 overflow-hidden">
-                          {/* Normal state text */}
-                          <span className="block group-hover:opacity-0 ">
-                            Schedule a call
+                        {/* Content wrapper (centered area) */}
+                        <span className="relative z-10 flex items-center justify-center w-full overflow-hidden">
+                          {/* Normal state (dot + text) */}
+                          <span className="flex items-center justify-center gap-[8px] transition-all duration-500 ease-in-out group-hover:translate-x-[-100%] group-hover:opacity-0">
+                            <span className="w-2 h-2 bg-[#01261E] rounded-full transition-all duration-500 ease-in-out" />
+                            <span className="text-[#01261E]">
+                              Schedule a call
+                            </span>
                           </span>
 
-                          {/* Hover state sliding text */}
-                          <span className="absolute left-0 top-0 translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out whitespace-nowrap text-white pr-6">
-                            Schedule a call
+                          {/* Hover state (text + arrow) */}
+                          <span className="absolute inset-0 flex items-center justify-center gap-[8px] text-white translate-x-[100%] opacity-0 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
+                            <span>Schedule a call</span>
+                            <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-[2px]">
+                              →
+                            </span>
                           </span>
-                        </span>
-
-                        {/* Arrow */}
-                        <span className="relative group-hover:inline hidden z-10 text-[#01261E] group-hover:text-white transition-colors duration-500 ease-in-out">
-                          →
                         </span>
                       </button>
 
                       {/* Right Button */}
-                      <button className="group relative flex items-center justify-center md:w-[40%] lg:w-[45%] gap-2 py-2 rounded-full overflow-hidden text-sm md:text-[14px] lg:text-[16px] font-[500] leading-normal text-[#01261E] bg-[#DAEBE8] transition-all duration-500 ease-in-out hover:border-none hover:bg-[#01261E]">
-                        {/* Background hover effect */}
-                        <span className="absolute right-0 top-0 h-full w-full scale-0 group-hover:scale-100 origin-[155px] rounded-full bg-[#01261E] transition-transform duration-500 ease-in-out z-10" />
+                      <button className="group relative flex items-center justify-center w-[135px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]">
+                        {/* Expanding circle animation */}
+                        <span className="absolute right-1/2 top-1/2 translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
 
-                        <span className="relative -left-2 group-hover:inline hidden z-10 text-[#01261E] group-hover:text-white transition-colors duration-500 ease-in-out">
-                          →
-                        </span>
-
-                        {/* Text wrapper */}
-                        <span className="relative flex items-center min-w-0 whitespace-nowrap z-10 overflow-hidden">
-                          {/* Normal state text */}
-                          <span className="block group-hover:opacity-0 ">
-                            Chat with us
+                        {/* Content wrapper */}
+                        <span className="relative z-10 flex items-center justify-center w-full overflow-hidden">
+                          {/* Normal state (text + dot) */}
+                          <span className="flex items-center justify-center gap-[8px] transition-all duration-500 ease-in-out group-hover:translate-x-[100%] group-hover:opacity-0">
+                            <span className="text-[#01261E]">Chat with us</span>
+                            <span className="w-2 h-2 bg-[#01261E] rounded-full transition-all duration-500 ease-in-out" />
                           </span>
 
-                          {/* Hover state sliding text */}
-                          <span className="absolute right-0 top-0 flex items-center -translate-x-full group-hover:translate-x-0 opacity-0 group-hover:opacity-100 transition-all duration-500 ease-in-out whitespace-nowrap text-white">
+                          {/* Hover state (arrow + text) */}
+                          <span className="absolute inset-0 flex items-center justify-center gap-[8px] text-white -translate-x-[100%] opacity-0 transition-all duration-500 ease-in-out group-hover:translate-x-0 group-hover:opacity-100">
+                            <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-[2px]">
+                              →
+                            </span>
                             <span>Chat with us</span>
                           </span>
                         </span>
-
-                        {/* Dot */}
-                        <span className="relative -right-3 z-10 w-2 h-2 bg-[#01261E] rounded-full group-hover:opacity-0 transition-opacity duration-500 ease-in-out"></span>
                       </button>
                     </div>
                   </div>
@@ -404,7 +399,7 @@ export default function Contact() {
                     <div className="flex justify-end mt-4">
                       <button
                         onClick={handleSubmit}
-                        className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-full hover:bg-[#014134] transition"
+                        className="px-[40px] py-[10px] bg-[#01261E] text-white text-[16px] font-[500] rounded-full hover:bg-[#014134] transition leading-normal"
                       >
                         Send message
                       </button>
