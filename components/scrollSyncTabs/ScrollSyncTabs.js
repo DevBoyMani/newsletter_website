@@ -18,7 +18,7 @@ const tabs = [
     image: "/readers/nl-image-for-features.png",
     content:
       "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-    imageSize: "w-[431px] h-[379px]",
+    imageSize: "w-[431px]",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const tabs = [
     image: "/readers/fact-checked.png",
     content:
       "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
-    // imageSize: "w-[431px] h-[518px]",
+    imageSize: "w-[431px] ",
   },
   {
     id: 4,
