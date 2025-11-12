@@ -42,7 +42,7 @@ export default function Hero() {
               >
                 Explore different categories. Find the best deals. AG1 is a
                 daily health drink packed with nutrients to help alleviate
-                bloating.
+                bloating..
               </p>
               <div className="pt-[32px]">
                 {/* w-[43%] */}
@@ -87,6 +87,7 @@ export default function Hero() {
       {/* Mobile */}
       <div className="block lg:hidden">
         <div className="bg-[#FAFAFA] pt-[144px] px-4">
+          {/* 1 — Hero Section */}
           {/* 1 — Hero Section */}
           <div>
             <h2 className="text-[44px] font-[400] leading-[110%] text-[#01261E] max-w-[344px]">
