@@ -113,28 +113,53 @@ export default function Contact() {
     });
   };
 
+  useEffect(() => {
+    // Load Chatra script dynamically
+    (function (d, w, c) {
+      w.ChatraID = "aH58HozYPtMden4C9";
+      var s = d.createElement("script");
+      w[c] =
+        w[c] ||
+        function () {
+          (w[c].q = w[c].q || []).push(arguments);
+        };
+      s.async = true;
+      s.src = "https://call.chatra.io/chatra.js";
+      if (d.head) d.head.appendChild(s);
+    })(document, window, "Chatra");
+  }, []);
+
+  // Function to open chat when button clicked
+  const openChat = () => {
+    if (typeof window !== "undefined" && window.Chatra) {
+      window.Chatra("openChat", true);
+    } else {
+      console.warn("Chatra is not loaded yet!");
+    }
+  };
+
   return (
     <>
       {/* desktop view */}
       <div className="hidden lg:block bg-[#FAFAFA]">
-        <div className="md:px-4 lg:pt-20 pt-10 ">
+        <div className="pt-[133px]">
           {/* header */}
           <div className="">
-            <div className="flex justify-center text-[44px] leading-normal  text-[#01261E] py-4">
-              <h2>Get in Touch With Us</h2>
+            <div className="flex justify-center text-[44px] leading-normal text-[#01261E]">
+              <h2>Let’s connect</h2>
             </div>
-            <div className="flex justify-center text-[18px] font-[500] text-[#717171] leading-normal">
-              Any question or remarks? Just write us a message!
+            <div className="flex justify-center text-[18px] font-[500] text-[#717171] leading-normal pt-[20px]">
+              Our team usually replies within a few hours.
             </div>
           </div>
           {/* contact form */}
-          <div className="py-16 md:px-20 mx-auto">
+          <div className="py-[50px] px-[113px] mx-auto">
             <div
               className="flex space-x-2 bg-[#fff] p-2 rounded-[10px] "
               style={{ boxShadow: "0 0 60px 30px rgba(0, 0, 0, 0.03)" }}
             >
               {/* left */}
-              <div className="relative w-[40.5%] bg-[#01261E] rounded-[10px] px-12 py-10 overflow-hidden">
+              <div className="relative w-[40.5%] bg-[#01261E] rounded-[10px] px-[44px] pt-[40px] overflow-hidden">
                 <div className="absolute bottom-0 right-0 h-auto opacity-100 pointer-events-none z-0">
                   <img
                     src="/contact/contact-background-circle.png"
@@ -144,10 +169,11 @@ export default function Contact() {
                 </div>
                 <div>
                   <p className="text-[#fff] text-[28px] leading-normal font-[600] ">
-                    Contact Information
+                    Contact details
                   </p>
-                  <p className="text-[#C9C9C9] text-[18px] font-[400] leading-normal pt-2">
-                    Say something to start a live chat!
+                  <p className="text-[#C9C9C9] text-[18px] font-[400] leading-normal pt-2 w-[377px]">
+                    Whether you want to advertise, send feedback, or just say
+                    hello, we’d love to hear from you.
                   </p>
                 </div>
                 <div className="relative pt-16 z-10">
@@ -158,13 +184,13 @@ export default function Contact() {
                       className="w-6 h-6"
                     />
                     <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">
-                      +1012 3456 789
+                      +1 218 500 0099
                     </p>
                   </div>
                   <div className="flex pb-10">
                     <img src="/contact/sms.jpg" alt="sms" className="w-6 h-6" />
                     <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">
-                      demo@gmail.com
+                      contact@houseofsummary.com
                     </p>
                   </div>
                   <div className="flex pb-10">
@@ -174,8 +200,8 @@ export default function Contact() {
                       className="w-6 h-6 object-cover"
                     />
                     <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">
-                      132 Dartmouth Street Boston,
-                      <br /> Massachusetts 02156 United States
+                      30 N Gould St, Ste N, Sheridan, WY,
+                      <br /> 82801, United States
                     </p>
                   </div>
 
@@ -183,7 +209,10 @@ export default function Contact() {
                   <div className="mt-2">
                     <div className="flex flex-wrap md:flex-nowrap w-full gap-[20px]">
                       {/* Left Button */}
-                      <button className="group relative flex items-center justify-center w-[151px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]">
+                      <button
+                        onClick={openChat}
+                        className="group relative flex items-center justify-center w-[151px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]"
+                      >
                         {/* Expanding circle animation */}
                         <span className="absolute left-[19px] top-1/2 -translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
 
@@ -233,20 +262,19 @@ export default function Contact() {
                   </div>
 
                   {/* social icons */}
-                  <div>
-                    <div>
-                      <div className="pt-28 flex justify-start pb-1">
-                        <div className="flex space-x-6 ">
-                          {socialMediaIcons.map((icons, index) => (
-                            <a key={index} href={icons.href} target="_blank">
-                              <img
-                                src={icons.src}
-                                alt={icons.name}
-                                className="w-6 h-6 cursor-pointer"
-                              />
-                            </a>
-                          ))}
-                        </div>
+
+                  <div className="pb-[30px]">
+                    <div className="pt-28 flex justify-start">
+                      <div className="flex space-x-6 ">
+                        {socialMediaIcons.map((icons, index) => (
+                          <a key={index} href={icons.href} target="_blank">
+                            <img
+                              src={icons.src}
+                              alt={icons.name}
+                              className="w-6 h-6 cursor-pointer"
+                            />
+                          </a>
+                        ))}
                       </div>
                     </div>
                   </div>
@@ -254,17 +282,17 @@ export default function Contact() {
               </div>
 
               {/* right */}
-              <div className="w-[59.5%] px-12 py-10">
+              <div className="w-[59.5%] px-[50px] py-[60px]">
                 <form>
                   {/* row-1 */}
                   <div className="flex flex-col md:flex-row gap-8 text-[#000]">
                     <div className="flex-1 pb-10 group focus-within:text-[#01261E]">
                       <label className="block mb-2 text-[16px] font-[500] leading-[20px]">
-                        Full Name <span className=" text-[#EB5757]">*</span>{" "}
+                        Name <span className=" text-[#EB5757]">*</span>{" "}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter your full name"
+                        placeholder="John"
                         className={`w-full text-[14px] border-b border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.fullName
                             ? "text-[#1A1A1A]"
@@ -287,7 +315,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
-                        placeholder="Enter your email"
+                        placeholder="john@doe.com"
                         className={`w-full text-[14px] border-b border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.email ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
                         }`}
@@ -454,10 +482,11 @@ export default function Contact() {
           <div className="w-full px-4 sm:px-0 pb-4">
             <div className="text-center">
               <div className="text-[30px] leading-normal  text-[#01261E]">
-                <h2>Get in Touch With Us</h2>
+                <h2>Let’s connect</h2>
               </div>
               <div className="mt-2 text-[14px] font-[500] text-[#717171] leading-normal max-w-[60%] mx-auto">
-                Any question or remarks? Just write us a message!
+                Our team usually replies within
+                <br /> a few hours.
               </div>
             </div>
           </div>
@@ -468,13 +497,14 @@ export default function Contact() {
               className=" bg-[#fff] p-2 rounded-[10px]"
               style={{ boxShadow: "0px 0px 60px 30px rgba(0, 0, 0, 0.03)" }}
             >
-              <div className=" bg-[#01261E] max-h-[387px] rounded-[5px]">
+              <div className=" bg-[#01261E] rounded-[5px]">
                 <div className="text-center pt-4">
                   <p className="text-[#fff] text-[20px] leading-normal font-[600] ">
-                    Contact Information
+                    Contact details
                   </p>
-                  <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2">
-                    Say something to start a live chat!
+                  <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2 w-[172px] mx-auto">
+                    Whether you want to advertise, send feedback, or just say
+                    hello, we’d love to hear from you.
                   </p>
                 </div>
                 <div className="pt-4">
@@ -488,7 +518,7 @@ export default function Contact() {
                     </div>
                     <div className="flex justify-center">
                       <p className="text-[#fff] text-[12px] leading-normal font-[400]">
-                        +1012 3456 789
+                        +1 218 500 0099
                       </p>
                     </div>
                   </div>
@@ -506,7 +536,7 @@ export default function Contact() {
                     </div>
                     <div className="flex justify-center">
                       <p className="text-[#fff] text-[12px] leading-normal font-[400]">
-                        +1012 demo@gmail.com
+                        contact@houseofsummary.com
                       </p>
                     </div>
                   </div>
@@ -520,9 +550,8 @@ export default function Contact() {
                     </div>
                     <div className="flex items-center justify-center">
                       <p className=" text-[#fff] text-center text-[12px] leading-normal font-[400]">
-                        132 Dartmouth Street Boston,
-                        <br />
-                        Massachusetts 02156 United States
+                        30 N Gould St, Ste N, Sheridan, WY,
+                        <br /> 82801, United States
                       </p>
                     </div>
                   </div>
@@ -563,12 +592,12 @@ export default function Contact() {
                   <div className="text-[#8D8D8D]">
                     <div className="pb-6 group focus-within:text-[#01261E]">
                       <label className="block mb-1 text-[16px] font-[500] leading-[20px]">
-                        Full Name{" "}
+                        Name{" "}
                         <span className="text-[12px] text-[#EB5757]">*</span>{" "}
                       </label>
                       <input
                         type="text"
-                        placeholder="Enter your full name"
+                        placeholder="John"
                         className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.fullName
                             ? "text-[#1A1A1A]"
@@ -591,7 +620,7 @@ export default function Contact() {
                       </label>
                       <input
                         type="email"
-                        placeholder="Enter your email"
+                        placeholder="john@doe.com"
                         className={`w-full text-[14px] border-b rounded-none border-[#8D8D8D] py-2 focus:outline-none focus:border-b-1 group focus:border-[#01261E] focus:placeholder-transparent ${
                           formData.fullName
                             ? "text-[#1A1A1A]"

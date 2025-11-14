@@ -23,7 +23,7 @@ export default function BusinessHistoryAnalytics() {
                 Business magnets, their triumphs, and trials
               </h2>
               <a href="" target="_blank">
-                <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-green-800">
+                <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                   Visit website
                 </button>
               </a>
@@ -65,7 +65,7 @@ export default function BusinessHistoryAnalytics() {
               </p>
               <div className="pt-[15px]">
                 <a href="https://www.businesshistory.co/" target="_blank">
-                  <button className="text-[14px] px-[18px] py-[9px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
+                  <button className="text-[14px] px-[18px] py-[8px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                     Visit website
                   </button>
                 </a>

@@ -29,8 +29,8 @@ export default function AnalyticsPSCountryChart() {
               Country
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] pb-[20px]">
-              This chart displays the geographic distribution of our audience by
-              country, highlighting where our users are located.
+              Most of our readers are US-based, while we have a growing
+              influence in Europe and Asia.
             </CardDescription>
           </CardHeader>
 
@@ -78,8 +78,8 @@ export default function AnalyticsPSCountryChart() {
               Country
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] pb-[20px] mt-0">
-              This chart displays the geographic distribution of our audience by
-              country, highlighting where our users are located.
+              Most of our readers are US-based, while we have a growing
+              influence in Europe and Asia.
             </CardDescription>
           </CardHeader>
 

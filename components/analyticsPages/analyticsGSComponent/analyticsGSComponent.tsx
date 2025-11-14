@@ -20,10 +20,11 @@ export default function GeopoliticalSummaryAnalytics() {
                 Geopolitical Summary
               </p>
               <h2 className="font-[manrope] w-[70%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
-                Fact-checked geopolitical news
+                Fact-checked
+                <br /> geopolitical news
               </h2>
               <a href="https://www.geopoliticalsummary.com/" target="_blank">
-                <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-green-800">
+                <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                   Visit website
                 </button>
               </a>
@@ -61,7 +62,8 @@ export default function GeopoliticalSummaryAnalytics() {
                   Geopolitical Summary
                 </h4>
                 <p className="font-[500] text-[12px] pt-[12px] leading-[137%]">
-                  Fact-checked geopolitical news, Fact-
+                  Fact-checked
+                  <br /> geopolitical news, Fact-
                   <br />
                   checked geopolitical news
                 </p>
@@ -70,7 +72,7 @@ export default function GeopoliticalSummaryAnalytics() {
                     href="https://www.geopoliticalsummary.com/"
                     target="_blank"
                   >
-                    <button className="text-[14px] px-[18px] py-[9px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
+                    <button className="text-[14px] px-[18px] py-[8px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                       Visit website
                     </button>
                   </a>

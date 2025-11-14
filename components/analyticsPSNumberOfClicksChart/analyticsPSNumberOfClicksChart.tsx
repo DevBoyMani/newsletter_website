@@ -46,11 +46,11 @@ export default function AnalyticsPSNumberOfClicksChart() {
         <Card className="py-[40px] px-[35px] h-[465px]">
           <CardHeader>
             <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of clicks
+              Daily ad clicks
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] mt-0">
-              This chart shows the total number of clicks over time, helping
-              track user engagement and activity.
+              Tracks the number of clicks of your ads every day. This is where
+              attention becomes revenue.
             </CardDescription>
           </CardHeader>
 
@@ -137,11 +137,11 @@ export default function AnalyticsPSNumberOfClicksChart() {
         <Card className="px-[16px] pt-[16px]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of clicks
+              Daily ad clicks
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
-              This chart shows the total number of clicks over time, helping
-              track user engagement and activity.
+              Tracks the number of clicks of your ads every day. This is where
+              attention becomes revenue.
             </CardDescription>
           </CardHeader>
 

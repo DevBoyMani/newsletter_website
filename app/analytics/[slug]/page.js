@@ -26,9 +26,9 @@ export default function AnalyticsPage() {
   const componentMap = {
     "presidential-summary": <PresidentialSummaryAnalytics />,
     "geopolitical-summary": <GeopoliticalSummaryAnalytics />,
-    "business-history": <BusinessHistoryAnalytics />,
-    "long-and-short": <LongAndShortAnalytics />,
-    "movie-suggestions": <MovieSuggestionsAnalytics />,
+    // "business-history": <BusinessHistoryAnalytics />,
+    // "long-and-short": <LongAndShortAnalytics />,
+    // "movie-suggestions": <MovieSuggestionsAnalytics />,
     "dubai-summary": <DubaiSummaryAnalytics />,
   };
 

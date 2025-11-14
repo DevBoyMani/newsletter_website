@@ -7,9 +7,9 @@ import Image from "next/image";
 const options = [
   { label: "Presidential Summary", value: "presidential-summary" },
   { label: "Geopolitical Summary", value: "geopolitical-summary" },
-  { label: "Business History", value: "business-history" },
-  { label: "Long and Short", value: "long-and-short" },
-  { label: "Movie Suggestions", value: "movie-suggestions" },
+  // { label: "Business History", value: "business-history" },
+  // { label: "Long and Short", value: "long-and-short" },
+  // { label: "Movie Suggestions", value: "movie-suggestions" },
   { label: "Dubai Summary", value: "dubai-summary" },
 ];
 

@@ -46,13 +46,11 @@ export default function AnalyticsPSNumberOfOpensChart() {
         <Card className="px-[35px] py-[40px] h-[465px]">
           <CardHeader>
             <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of opens
+              Daily newsletter reads
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] mt-0">
-              This chart tracks how many times emails or content have been
-              opened by users over time. It helps measure engagement and the
-              effectiveness of our communication. A higher number of opens often
-              indicates strong interest or successful messaging.
+              Total number people who read the newsletter every day. A direct
+              signal of reader engagement.
             </CardDescription>
           </CardHeader>
 
@@ -114,7 +112,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
             <div className="flex items-center gap-2">
               <span className="w-3 h-3 rounded-[2px] bg-[#E19F20]"></span>
               <span className="text-[12px] text-[#464E5F] font-[500] leading-normal">
-                Lead Customers
+                Loyal Customers
               </span>
             </div>
 
@@ -140,13 +138,11 @@ export default function AnalyticsPSNumberOfOpensChart() {
         <Card className="px-[16px] pt-[16px]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of opens
+              Daily newsletter reads
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
-              This chart tracks how many times emails or content have been
-              opened by users over time. It helps measure engagement and the
-              effectiveness of our communication. A higher number of opens often
-              indicates strong interest or successful messaging.
+              Total number people who read the newsletter every day. A direct
+              signal of reader engagement.
             </CardDescription>
           </CardHeader>
 
@@ -214,7 +210,7 @@ export default function AnalyticsPSNumberOfOpensChart() {
             <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Lead Customers
+                Loyal Customers
               </span>
             </div>
 

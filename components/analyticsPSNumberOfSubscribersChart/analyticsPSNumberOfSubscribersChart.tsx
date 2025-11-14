@@ -46,11 +46,11 @@ export default function AnalyticsPSNumberOfSubscribersChart() {
         <Card className="px-[35px] py-[40px] h-[465px]">
           <CardHeader>
             <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of subscribers
+              Subscriber growth over time
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] mt-0">
-              This chart illustrates the growth in the number of subscribers
-              over time, reflecting audience interest and retention.
+              Shows how quickly our audience is growing; reflecting influence
+              and reader demand.
             </CardDescription>
           </CardHeader>
 
@@ -137,11 +137,11 @@ export default function AnalyticsPSNumberOfSubscribersChart() {
         <Card className="px-[16px] pt-[16px]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of subscribers
+              Subscriber growth over time
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
-              This chart illustrates the growth in the number of subscribers
-              over time, reflecting audience interest and retention.
+              Shows how quickly our audience is growing; reflecting influence
+              and reader demand.
             </CardDescription>
           </CardHeader>
 

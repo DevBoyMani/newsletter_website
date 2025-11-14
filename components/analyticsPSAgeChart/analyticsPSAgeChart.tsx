@@ -28,8 +28,7 @@ export default function AnalyticsPSAgeChart() {
               Age
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] pb-[35px] mt-0 ">
-              This chart shows the age distribution of <br />
-              our audience.
+              Our readers are experienced professionals in prime earning age.
             </CardDescription>
           </CardHeader>
 
@@ -77,8 +76,7 @@ export default function AnalyticsPSAgeChart() {
               Age
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] pb-[20px] mt-0">
-              This chart shows the age distribution of <br />
-              our audience.
+              Our readers are experienced professionals in prime earning age.
             </CardDescription>
           </CardHeader>
 

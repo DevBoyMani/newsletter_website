@@ -21,10 +21,11 @@ export default function DubaiSummaryAnalytics() {
                 Dubai Summary
               </p>
               <h2 className="font-[manrope] w-[70%] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
-                Dubai for tourists, expats, and locals
+                The city that moves
+                <br /> the world
               </h2>
               <a href="https://www.dubaisummary.com/" target="_blank">
-                <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-green-800">
+                <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                   Visit website
                 </button>
               </a>
@@ -59,14 +60,13 @@ export default function DubaiSummaryAnalytics() {
                 Dubai Summary
               </h4>
               <p className="font-[500] text-[12px] pt-[12px] leading-[137%]">
-                Dubai, in one email. For tourists,
-                <br /> expats, and locals, this is the pulse
-                <br /> of Dubai.
+                The city that moves
+                <br /> the world
               </p>
               <div className="pt-[15px]">
                 <a href="https://www.dubaisummary.com/" target="_blank">
                   {" "}
-                  <button className="text-[14px] px-[18px] py-[9px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
+                  <button className="text-[14px] px-[18px] py-[8px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                     Visit website
                   </button>
                 </a>

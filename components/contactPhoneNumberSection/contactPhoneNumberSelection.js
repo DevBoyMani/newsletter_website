@@ -82,7 +82,7 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
 
         <input
           type="tel"
-          placeholder="Enter your number"
+          placeholder=""
           value={value}
           onChange={handlePhoneChange}
           className={`border-b text-[14px] border-[#8D8D8D] rounded-none focus:outline-none focus:border-[#01261E] block w-[100%] px-4 py-1.5 focus:placeholder-transparent group focus-within:text-[#01261E] ${

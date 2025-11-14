@@ -22,7 +22,8 @@ export default function PresidentialSummaryAnalytics() {
                 Presidential Summary
               </p>
               <h2 className="w-[70%] font-[manrope] text-[#000] text-[38px] font-[700] leading-[105%] pb-[32px]">
-                Summarizing daily headlines
+                Key events <br />
+                with context
               </h2>
               <a href="https://www.presidentialsummary.com/" target="_blank">
                 <button className="text-[14px] px-4 py-2 bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
@@ -65,12 +66,12 @@ export default function PresidentialSummaryAnalytics() {
                 Presidential Summary
               </h4>
               <p className="font-[500] text-[12px] pt-[12px] leading-[137%]">
-                Serve as a versatile marketing tool for
-                <br /> businesses and organizations.
+                Key events <br />
+                with context
               </p>
               <div className="pt-[15px]">
                 <a href="https://www.presidentialsummary.com/" target="_blank">
-                  <button className="text-[14px] px-[18px] py-[9px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
+                  <button className="text-[14px] px-[18px] py-[8px] font-[600] bg-[#01261E] text-white rounded-full shadow hover:bg-[#0B4337]">
                     Visit website
                   </button>
                 </a>

@@ -6,50 +6,6 @@ import { ReadersSubscribe } from "../readersSubscribe/readersSubscribe";
 import Image from "next/image";
 import { useState } from "react";
 
-// const feedbackData = [
-//   {
-//     userName: "Ava Wilson",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Jaxx Sanchez",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Ava Wilson",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Jaxx Sanchez",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Ava Wilson",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Jaxx Sanchez",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Ava Wilson",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-//   {
-//     userName: "Jaxx Sanchez",
-//     feedback:
-//       "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-//   },
-
-// ];
-
 const socialMediaIcons = [
   {
     name: "x",
@@ -91,89 +47,6 @@ export default function Footer() {
   return (
     <>
       {/* desktop view*/}
-
-      {/* old footer */}
-      {/* <div id="site-footer" className="hidden lg:block bg-[#01261E]">
-        <div className="px-4 md:px-16 mx-auto z-10">
-      
-          <div className="relative bg-[#01261E]">
-          
-            <div className="absolute -left-16 top-1 opacity-[100%] z-10">
-              <img
-                src="/readers/sagravia-footer-logo.png"
-                alt="background logo"
-                className="w-82"
-              />
-            </div>
-
-         
-            <div className="py-20 flex justify-center relative z-0 ">
-              <img
-                src="/readers/sagravia-big-text.png"
-                alt="sagravia"
-                className=" w-[97%] -mt-6 ml-6"
-              />
-            </div>
-
-            <div className=" py-16 text-white relative z-10">
-              <div className="max-w-[1710] mx-auto flex flex-col lg:flex-row justify-between gap-10">
-          
-                <div className="lg:w-1/2">
-                  <p className="text-[28px] lg:text-[36px] font-[400] pb-6 max-w-[592px]">
-                    Subscribe to get tips and tactics to grow the way you want.
-                  </p>
-                  <ReadersSubscribe />
-                </div>
-
-
-                <div className="lg:w-1/2 flex flex-row justify-end text-[16px]">
-                  <div className="flex space-x-16 mr-0">
-                    <ul className="space-y-2 mr-7">
-                      <li>Blog</li>
-                      <li>Careers</li>
-                      <li>
-                        <Link target="_blank" href="/policy">
-                          Privacy Policy
-                        </Link>
-                      </li>
-                      <li>Legal</li>
-                    </ul>
-                    <ul className="space-y-2 ">
-                      <li>About Us</li>
-                      <li>For Readers</li>
-                      <li>Advertise</li>
-                      <li>Analytics</li>
-                      <li>Contact Sales</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex justify-end pb-8">
-              {socialMediaIcons.map((item, index) => (
-                <div className="pl-[35px]" key={index}>
-                  <a href={item.href}>
-                    <img src={item.src} alt={item.name} className="w-8 h-8" />
-                  </a>
-                </div>
-              ))}
-            </div>
-            <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] "></div>
-            <div className="flex justify-center py-10">
-              <p className="text-[14px] text-[#ffffff]">
-                © 2024 Sagravia | All Rights Reserved
-              </p>
-            </div>
-          </div>
-
-        </div>
-      </div> */}
-      {/* old footer */}
-
-      {/* new */}
       <div id="site-footer" className="bg-[#01261E] hidden lg:block">
         <div className="pt-[120px] px-[110px]">
           <div className="flex flex-row justify-between items-start">
@@ -182,14 +55,14 @@ export default function Footer() {
               <p className="text-[#C7A262] text-[16px] font-[500] leading-[49px]">
                 CONTACT US
               </p>
-              <h2 className="w-[464px] text-[40px] font-[manrope] font-[500] leading-[49px] text-[#fff]">
-                Let’s Discuss Your Vision. Advertise with us
+              <h2 className="w-[464px] text-[40px] font-[manrope] font-[400] leading-[49px] text-[#fff]">
+                Serious readers. Smart brands. The connection starts here.
               </h2>
 
               {/* Email box */}
-              <div className="flex items-center justify-between w-fit mt-[40px] px-[26px] py-[5.5px] rounded-[44px] border border-dashed border-[#EFEFEF57] bg-[#DAEBE84A] gap-3">
+              <div className="flex items-center justify-between w-fit mt-[36px] px-[26px] py-[5.5px] rounded-[44px] border border-dashed border-[#EFEFEF57] bg-[#DAEBE84A] gap-3">
                 <p className="text-[#fff] text-[17px] font-[300] leading-[31px] tracking-[-0.167px]">
-                  advertise@hos.com
+                  sales@houseofsummary.com
                 </p>
                 <img
                   src="/home/copy.png"
@@ -221,6 +94,9 @@ export default function Footer() {
                 <li className="text-[#EFEDFD99] pt-4">
                   <Link href="/careers">Careers</Link>
                 </li>
+                <li className="text-[#EFEDFD99] pt-4">
+                  <Link href="/contact">Contact</Link>
+                </li>
               </ul>
 
               {/* 2 */}
@@ -235,16 +111,16 @@ export default function Footer() {
                 <li className="text-[#EFEDFD99] pt-4">
                   <Link href="/analytics">Analytics</Link>
                 </li>
-                <li className="text-[#EFEDFD99] pt-4">
+                {/* <li className="text-[#EFEDFD99] pt-4">
                   <Link href="/blog">Blog</Link>
-                </li>
+                </li> */}
               </ul>
 
               {/* 3 */}
               <ul>
                 <li className="tracking-[0.16px] text-[#fff]">LEGAL</li>
                 <li className="text-[#EFEDFD99] pt-4">
-                  <Link href="/policy">Legal</Link>
+                  <Link href="/policy">Privacy policy</Link>
                 </li>
                 <li className="text-[#EFEDFD99] pt-4">
                   <Link href="/policy">Terms of use</Link>
@@ -262,29 +138,30 @@ export default function Footer() {
             <div className="flex flex-row gap-[40px] mt-[136px]">
               <div className="flex flex-row gap-[11px] items-center">
                 <img
-                  src="/home/whatsapp-qr.png"
+                  src="/whatsapp-us-qr.png"
                   alt="whatsapp qr"
-                  className="w-[72px] h-[72px] object-contain"
+                  className="w-[72px] h-[72px] object-contain rounded-[6px]"
                 />
                 <div>
                   <p className="text-[#fff] text-[16px] font-[500] ">
                     WHATSAPP US
                   </p>
                   <p className="text-[#FFFFFF80] w-[175px] pt-[7px] leading-[130%]">
-                    Use your phone to try the feature via QR code
+                    Scan and send us a WhatsApp message
                   </p>
                 </div>
               </div>
               <div className="flex flex-row gap-[11px] items-center">
                 <img
-                  src="/home/text-us-qr.png"
+                  src="/text-us-qr.png"
                   alt="text qr"
-                  className="w-[72px] h-[72px] object-contain"
+                  className="w-[72px] h-[72px] object-contain rounded-[6px]"
                 />
                 <div>
                   <p className="text-[#fff] text-[16px] font-[500] ">TEXT US</p>
                   <p className="text-[#FFFFFF80] w-[175px] pt-[7px] leading-[130%]">
-                    Use your phone to try the feature via QR code
+                    Scan and send
+                    <br /> us an SMS
                   </p>
                 </div>
               </div>
@@ -293,7 +170,7 @@ export default function Footer() {
           <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] mt-[26px]"></div>
           <div className="pt-[80px]">
             <div className="flex flex-row items-center justify-between">
-              <div className="text-[#fff] text-[16px] font-[400] leading-[49px] uppercase ">
+              <div className="text-[#fff] text-[16px] font-[400] leading-[49px]">
                 © 2025 House of Summary. All rights reserved.
               </div>
               <div className="flex justify-end items-center">
@@ -303,7 +180,7 @@ export default function Footer() {
                       <img
                         src={item.src}
                         alt={item.name}
-                        className="w-[18px] h-[18px]"
+                        className="w-[24px] h-[24px]"
                       />
                     </a>
                   </div>
@@ -322,90 +199,88 @@ export default function Footer() {
           </div>
         </div>
       </div>
-      {/* new */}
-      {/* desktop view*/}
 
       {/* mobile view */}
       {/* id="mob-site-footer" */}
       <div className="block lg:hidden bg-[#01261E]">
-        <div className="px-4 py-9 mx-auto ">
-          <div className="block lg:hidden bg-[#01261E] text-white">
-            <div className="md:px-14">
-              <div className="px-4 pb-10">
-                <div className="">
-                  <Link href="/">
-                    <div className="w-32 md:w-48">
-                      <img src="/light-logo.png" alt="Logo" />
-                    </div>
-                  </Link>
+        <div className="px-4 py-[34px] mx-auto ">
+          <div className="bg-[#01261E] text-white">
+            <div className="px-4 pb-10">
+              <Link href="/">
+                <div className="w-32 md:w-48">
+                  <img src="/light-logo.png" alt="Logo" />
                 </div>
-                {/* <div className="text-sm py-1 space-y-2">
+              </Link>
+
+              {/* <div className="text-sm py-1 space-y-2">
                             <p>The place where newsletters live</p>
                             <p>Your trusted messenger</p>
                         </div> */}
-              </div>
+            </div>
 
-              {/* right */}
-              <div className=" px-6">
-                <div className="flex justify-between">
-                  <div className="">
-                    <ul className="flex flex-col mr-6">
-                      <li className="text-[16px] font-semibold pb-4">More</li>
+            <div className=" px-4">
+              <div className="flex justify-between">
+                {/* left */}
+                <ul className="flex flex-col mr-6">
+                  <li className="text-[16px] font-[600] pb-[12px]">Legal</li>
 
-                      <li className="py-1 ">
+                  {/* <li className="py-1 ">
                         <Link href="#" className="text-[14px]">
                           Blog
                         </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Careers
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link target="_blank" href="/policy">
-                          Privacy Policy
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Legal
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
+                      </li> */}
+                  <li className="py-1 text-[14px]">
+                    <Link href="/policy" className="font-[400]">
+                      Privacy policy
+                    </Link>
+                  </li>
+                  <li className="py-1 text-[14px] font-[400]">
+                    <Link href="/policy">Terms of use</Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/policy" className="font-[400]">
+                      Cookie policy
+                    </Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/policy" className="font-[400]">
+                      Refund policy
+                    </Link>
+                  </li>
+                </ul>
+                {/* right */}
+                <ul className="flex flex-col">
+                  <li className="text-[16px] font-[600] pb-[12px]">More</li>
 
-                  <div className="">
-                    <ul className="flex flex-col">
-                      <li className="text-[16px] font-semibold pb-4">
-                        Learn more
-                      </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/about" className="font-[400]">
+                      About Us
+                    </Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/readers" className="font-[400]">
+                      Readers
+                    </Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/advertise" className="font-[400]">
+                      Advertise
+                    </Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/analytics" className="font-[400]">
+                      Analytics
+                    </Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
+                    <Link href="/contact" className="font-[400]">
+                      Contact
+                    </Link>
+                  </li>
+                </ul>
+              </div>
 
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          About Us
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Readers
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Advertise
-                        </Link>
-                      </li>
-                      <li className="py-1 text-[14px]">
-                        <Link href="#" className="">
-                          Analytics
-                        </Link>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
-                {/* <div className="pt-12 ">
+              {/* <div className="pt-12 ">
                   <ul className="flex flex-col ">
                     <li className="text-[16px] font-semibold pb-4">
                       Contact Us
@@ -428,31 +303,31 @@ export default function Footer() {
                     </li>
                   </ul>
                 </div> */}
-              </div>
+            </div>
 
-              {/* social icons */}
-              <div>
-                <div className="pt-14 px-4 flex justify-center pb-1">
-                  <div className="flex space-x-6 ">
-                    {socialMediaIcons.map((icons, index) => (
-                      <a key={index} href={icons.href} target="_blank">
-                        <img
-                          src={icons.src}
-                          alt={icons.name}
-                          className="w-6 h-6 cursor-pointer"
-                        />
-                      </a>
-                    ))}
-                  </div>
-                </div>
+            {/* social icons */}
+            <div className="pt-[52px] px-4 flex justify-center">
+              <div className="flex space-x-6 ">
+                {socialMediaIcons.map((icons, index) => (
+                  <a key={index} href={icons.href} target="_blank">
+                    <img
+                      src={icons.src}
+                      alt={icons.name}
+                      className="w-5 h-5 cursor-pointer"
+                    />
+                  </a>
+                ))}
               </div>
+            </div>
 
-              {/* divider */}
-              <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] py-2 mx-6"></div>
+            {/* divider */}
+            <div className="border-b-[0.5px] border-[#FFF] opacity-[0.15] pt-[20px] mx-6"></div>
 
-              <div className="text-[12px] text-center text-[#95A1BB] pt-4">
-                <p>© 2024 Sagravia | All Rights Reserved</p>
-              </div>
+            <div className="text-[12px] font-[400] text-center text-[#95A1BB] pt-2 leading-[22px]">
+              <p>
+                © 2025 House of Summary
+                <br /> All rights reserved
+              </p>
             </div>
           </div>
         </div>

@@ -18,16 +18,26 @@ export default function AnalyticsAdCard({ id = 0 }) {
       <div className="lg:block hidden">
         <div className="h-[308px] rounded-[20px] p-[40px] text-[#fff] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat">
           <h4 className="text-[22px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] pb-[20px]">
-            Advertise with Sagravia
+            Advertise with us
           </h4>
           <p className="text-[14px] font-[400] leading-[139%] text-[#fff] pb-[19px]">
-            Promote your brand to a targeted, engaged audience. We offer
-            flexible ad options to fit your goals and budget.
+            Reach a highly engaged audience that values quality and takes
+            action. Schedule a call with the sales team by clicking on the
+            button below.
           </p>
           <p className="text-[14px] leading-[139%] text-[#fff] lg:pb-[36px]">
-            Email us at{" "}
-            <span className="font-[700] text-[#fff]">sales@sagravia.com</span>{" "}
-            or click the button below.
+            Email sales at{" "}
+            <span className="font-[700] text-[#fff]">sales@sagravia.com </span>{" "}
+            or
+            <br /> WhatsApp us at{" "}
+            <a
+              className="underline underline-offset-4 decoration-[2px]"
+              href="https://wa.me/12185000099 "
+              target="_blank"
+            >
+              +1 218 500 0099
+            </a>
+            .
           </p>
 
           <div className="flex gap-4">
@@ -48,7 +58,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
 
             <Link href="/contact">
               <button className="bg-[#fff] text-[#01261E] font-[600] text-[14px] w-[129px] py-[9px] rounded-[57px]  border border-[#fff]">
-                Contact sales
+                Advertise now
               </button>
             </Link>
 
@@ -68,9 +78,10 @@ export default function AnalyticsAdCard({ id = 0 }) {
             /> */}
             {matchedLink && (
               <CustomizedHoverButton
-                href={matchedLink.source}
-                target={matchedLink.target}
-                label="Visit website"
+                // href={matchedLink.source}
+                // target={matchedLink.target}
+                href="/"
+                label="Homepage"
                 fontSize="14px"
                 fontWeight="600"
                 width="129px"
