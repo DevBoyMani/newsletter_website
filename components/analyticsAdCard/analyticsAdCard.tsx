@@ -97,32 +97,43 @@ export default function AnalyticsAdCard({ id = 0 }) {
       </div>
       {/* mobile */}
       <div className="block lg:hidden">
-        <div className="flex flex-col px-[16px] p-[16px] h-[233px] rounded-[10px] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat text-[#fff]">
+        <div className="flex flex-col px-[16px] p-[16px] rounded-[10px] bg-[url('/analytics/ad-bg.png')] bg-cover bg-center bg-no-repeat text-[#fff]">
           <h4 className="text-[20px] font-[600] leading-[22px] tracking-[0.5px] font-[manrope] ">
-            Advertise with Sagravia
+            Advertise with us
           </h4>
           <p className="text-[14px] font-[400] leading-[140%] text-[#fff] pt-[20px]">
-            Promote your brand to a targeted, engaged audience. We offer
-            flexible ad options to fit your goals and budget.
+            Reach a highly engaged audience that values quality and takes
+            action. Schedule a call with the sales team by clicking on the
+            button below.
           </p>
           <p className="text-[14px] leading-[139%] text-[#fff] pt-[12px]">
-            Email us at{" "}
-            <span className="font-[700] text-[#fff]">sales@sagravia.com</span>{" "}
-            or click the button below.
+            Email sales at{" "}
+            <span className="font-[700] text-[#fff]">sales@sagravia.com </span>{" "}
+            or
+            <br /> WhatsApp us at{" "}
+            <a
+              className="underline underline-offset-4 decoration-[2px]"
+              href="https://wa.me/12185000099 "
+              target="_blank"
+            >
+              +1 218 500 0099
+            </a>
+            .
           </p>
 
-          <div className="flex gap-[10px] pt-[12px] pb-[16px] mt-auto">
+          <div className="flex gap-[10px] pt-[22px] mt-auto">
             <Link href="/contact">
               <button className="bg-[#fff] text-[#01261E] font-[600] text-[14px] w-[129px] py-[7px] rounded-[57px]  border border-[#fff]">
-                Contact sales
+                Advertise now
               </button>
             </Link>
 
             {matchedLink && (
               <CustomizedHoverButton
-                href={matchedLink.source}
-                target={matchedLink.target}
-                label="Visit website"
+                // href={matchedLink.source}
+                // target={matchedLink.target}
+                href="/"
+                label="Homepage"
                 fontSize="14px"
                 fontWeight="600"
                 width="129px"
