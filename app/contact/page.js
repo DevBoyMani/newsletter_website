@@ -113,28 +113,35 @@ export default function Contact() {
     });
   };
 
+  // Simplified Chatra integration
   useEffect(() => {
-    // Load Chatra script dynamically
-    (function (d, w, c) {
-      w.ChatraID = "aH58HozYPtMden4C9";
-      var s = d.createElement("script");
-      w[c] =
-        w[c] ||
-        function () {
-          (w[c].q = w[c].q || []).push(arguments);
-        };
-      s.async = true;
-      s.src = "https://call.chatra.io/chatra.js";
-      if (d.head) d.head.appendChild(s);
-    })(document, window, "Chatra");
+    // Initialize Chatra
+    window.ChatraID = "aH58HozYPtMden4C9";
+
+    // Load Chatra script
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = "https://call.chatra.io/chatra.js";
+    document.head.appendChild(script);
+
+    // Set ready state when Chatra loads
+    script.onload = () => {
+      if (window.Chatra) {
+        window.Chatra("on", "ready", () => {
+          setChatraReady(true);
+          console.log("Chatra ready!");
+        });
+      }
+    };
   }, []);
 
-  // Function to open chat when button clicked
   const openChat = () => {
-    if (typeof window !== "undefined" && window.Chatra) {
-      window.Chatra("openChat", true);
+    if (window.Chatra) {
+      window.Chatra("openChat");
     } else {
-      console.warn("Chatra is not loaded yet!");
+      // Fallback: open in new tab or show message
+      console.log("Chatra not available");
+      alert("Chat is currently unavailable. Please try again later.");
     }
   };
 
@@ -210,7 +217,12 @@ export default function Contact() {
                     <div className="flex flex-wrap md:flex-nowrap w-full gap-[20px]">
                       {/* Left Button */}
                       <button
-                        onClick={openChat}
+                        onClick={() =>
+                          window.open(
+                            "https://cal.com/houseofsummary",
+                            "_blank"
+                          )
+                        }
                         className="group relative flex items-center justify-center w-[151px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]"
                       >
                         {/* Expanding circle animation */}
@@ -237,7 +249,10 @@ export default function Contact() {
                       </button>
 
                       {/* Right Button */}
-                      <button className="group relative flex items-center justify-center w-[135px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]">
+                      <button
+                        onClick={openChat}
+                        className="group relative flex items-center justify-center w-[135px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]"
+                      >
                         {/* Expanding circle animation */}
                         <span className="absolute right-[20px] top-1/2 translate-x-1/2 -translate-y-1/2 w-0 h-0 rounded-full bg-[#01261E] transition-all duration-500 ease-in-out group-hover:w-[160%] group-hover:h-[400%]" />
 
@@ -470,12 +485,16 @@ export default function Contact() {
           {/* buttons */}
           <div>
             <div className="flex justify-center space-x-2 pt-[28px] pb-[17px]">
-              <div>
+              <button
+                onClick={() =>
+                  window.open("https://cal.com/houseofsummary", "_blank")
+                }
+              >
                 <img src="/contact/b-1.jpg" alt="call" className="w-8 h-8 " />
-              </div>
-              <div>
+              </button>
+              <button onClick={openChat}>
                 <img src="/contact/b-2.jpg" alt="call" className="w-8 h-8" />
-              </div>
+              </button>
             </div>
           </div>
           {/* header */}
