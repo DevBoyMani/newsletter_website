@@ -1,8 +1,10 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Check } from "lucide-react";
 import ReadersNLTest from "../../readersNLTest/readersNLTest";
+import HeadingWithUnderline from "../stuff/headingWithUnderline/headingwithUnderline";
+import { useSearchParams } from "next/navigation";
 
 export default function ReadersNewsletters() {
   const datas = [
@@ -99,7 +101,9 @@ export default function ReadersNewsletters() {
   const [email, setEmail] = useState("");
   const [details, setDetails] = useState({ ids: [], email: "" });
   const [showPopup, setShowPopup] = useState(false);
+  const params = useSearchParams();
 
+  // const sectionRefs = useRef([]);
   const handleAdd = (id) => {
     const newArr = testInform.map((el) =>
       el.id === id ? { ...el, selected: !el.selected } : el
@@ -139,9 +143,28 @@ export default function ReadersNewsletters() {
     }
   }, [testInform]);
 
+  // smooth scroll the click from home page more nls ( trick pharams)
+  useEffect(() => {
+    const target = params.get("scrollTo");
+    if (!target) return;
+
+    const section = document.querySelector(`#${target}`);
+    if (!section) return;
+
+    const yOffset = -100; // your custom offset
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    setTimeout(() => {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 200); // delay to ensure layout is rendered
+  }, [params]);
   return (
-    <div className="bg-[#FAFAFA]">
+    <div id="ourNewsletters" className="bg-[#FAFAFA]">
       {/* details */}
+      <div className="px-4 md:px-28 pt-10 w-[58%]">
+        <HeadingWithUnderline text="Our newsletters" />
+      </div>
       <div className="pt-[30px] pb-[56px] md:px-28">
         <div className="w-[46%]">
           <p className="text-[#000] text-[16px] font-[400] leading-[152%]">

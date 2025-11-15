@@ -31,33 +31,34 @@ export default function Hero() {
           {/* 1 */}
           <div className="pt-[142px] pl-[110px] flex">
             {/* left */}
-            <div className="w-[41%]">
+            <div className="w-[50%]">
               <h2
                 className={` w-full text-[80px] font-[400] leading-[94%] text-[#01261E] shadow-[0_4px_4px_rgba(31,25,25,0.00)]`}
               >
-                Feed your and knowledge and expand your knowledge
+                Summary is where decision makers read, and the right brands are
+                seen.
               </h2>
               <p
                 className={`text-[#121212] pt-[32px] w-[455px] text-[18px] font-[400] leading-[168%]`}
               >
-                Explore different categories. Find the best deals. AG1 is a
-                daily health drink packed with nutrients to help alleviate
-                bloating..
+                In a world full of AI summaries, ours are written by humans. In
+                a world full of noise, our audience comes here to think. Reach
+                them here.
               </p>
               <div className="pt-[32px]">
                 {/* w-[43%] */}
                 <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] text-[#fff] rounded-[57px] leading-normal font-[400]">
-                  Get started for free
+                  Advertise your brand
                 </button>
               </div>
             </div>
             {/* right */}
-            <div className="w-[59%]">
+            <div className="w-[50%]">
               <div className="relative right-0">
                 <img
                   src="/home/hero-image-new.png"
                   alt="Home hero image"
-                  className=""
+                  className="object-contain w-full"
                 />
               </div>
             </div>
@@ -66,7 +67,7 @@ export default function Hero() {
           <div className="px-[110px] py-[41px] pt-[90px] pb-[40px]">
             <div className="flex">
               <div className="w-[30%] font-[Manrope] text-[14px] font-[300] leading-[169%] tracking-[2.5px] uppercase">
-                Trusted by thousands of companies in 100+ countries
+                Trusted by reliable partners who share our mission globally
               </div>
               <div className="w-[70%]">
                 <div className="flex flex-wrap justify-end items-center gap-[40px]">
@@ -84,19 +85,22 @@ export default function Hero() {
           </div>
         </div>
       </div>
+
       {/* Mobile */}
       <div className="block lg:hidden">
         <div className="bg-[#FAFAFA] pt-[144px] px-4">
           {/* 1 — Hero Section */}
-          {/* 1 — Hero Section */}
+
           <div>
             <h2 className="text-[44px] font-[400] leading-[110%] text-[#01261E] max-w-[344px]">
-              Feed your and knowledge and expand your knowledge
+              Summary is where decision makers read, and the right brands are
+              seen.
             </h2>
 
             <p className="text-[#121212] pt-[14px] text-[14px] font-[400] leading-[145%]">
-              Explore different categories. Find the best deals. AG1 is a daily
-              health drink packed with nutrients to help alleviate bloating.
+              In a world full of AI summaries, ours are written by humans. In a
+              world full of noise, our audience comes here to think. Reach them
+              here.
             </p>
 
             <div className="pt-6">

@@ -46,11 +46,11 @@ export default function HomeScrollNumberOfClicksChart() {
         <Card className="p-[30px]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of clicks
+              Clicks
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] mt-0">
-              This chart shows the total number of clicks over time, helping
-              track user engagement and activity.
+              Number of times readers click on sponsored content. It shows how
+              our audience responds to messaging and calls-to-action.
             </CardDescription>
           </CardHeader>
 
@@ -112,18 +112,18 @@ export default function HomeScrollNumberOfClicksChart() {
           {/* labels */}
           <div className="flex gap-6 justify-center items-center pt-[9.5px]">
             <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span>
+              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                New Customers
+                Click count
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
                 Unique Customers
               </span>
-            </div>
+            </div> */}
           </div>
         </Card>
       </div>
@@ -132,11 +132,11 @@ export default function HomeScrollNumberOfClicksChart() {
         <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
-              Number of clicks
+              Clicks
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
-              This chart illustrates the growth in the number of subscribers
-              over time, reflecting audience interest and retention.
+              Number of times readers click on sponsored content. It shows how
+              our audience responds to messaging and calls-to-action.
             </CardDescription>
           </CardHeader>
 
@@ -201,18 +201,18 @@ export default function HomeScrollNumberOfClicksChart() {
           {/* labels */}
           <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
             <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span>
+              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                New Customers
+                Click count
               </span>
             </div>
-
+            {/* 
             <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
                 Unique Customers
               </span>
-            </div>
+            </div> */}
           </div>
         </Card>
       </div>

@@ -15,27 +15,30 @@ export default function HomePopularNewsletters() {
       activeImg: "/home/ps-color.png",
       inactiveImg: "/home/ps-gray.png",
       title: "Presidential Summary",
-      desc: "We are the top digital marketing agency for branding corp. We offer a full rang engine.",
+      desc: "Start your day informed with the most important news and global developments.",
       color: "#4D3060",
       source: "https://www.presidentialsummary.com/",
+      when: "Mon-Sat",
     },
     {
       id: 1,
       activeImg: "/home/gs-color.png",
       inactiveImg: "/home/gs-gray.png",
       title: "Geopolitical Summary",
-      desc: "Working with this digital marketing agency has been a true partnership.",
+      desc: "A daily guide to how countries influence each other, compete, and negotiate power.",
       color: "#06266D",
       source: "https://www.geopoliticalsummary.com/",
+      when: "Mon-Sat",
     },
     {
       id: 2,
       activeImg: "/home/ds-color.png",
       inactiveImg: "/home/ds-gray.png",
       title: "Dubai Summary",
-      desc: "What sets this digital marketing agency apart is their commitment to transparency.",
+      desc: "Part of our City Summary collection. Dubai’s business, policy shifts, and culture news.",
       color: "#EECA66",
       source: "https://www.dubaisummary.com/",
+      when: "Weekdays",
     },
   ];
 
@@ -52,16 +55,16 @@ export default function HomePopularNewsletters() {
           </h2>
           <div className="flex justify-between pt-[35px]">
             <p className="w-[42%] text-[#737373] text-[16px] font-[400] leading-[149%]">
-              We are the top digital marketing agency for branding corp. We
-              offer a full range of services to help clients improve their
-              search engine rankings and drive more traffic to their websites.
+              News should inform you, not exhaust you. We turn complex stories
+              into clear and thoughtful summaries, written by humans with good
+              judgment.
             </p>
-            <Link
-              href="/readers#ourNewsletters"
+            <a
+              href="/readers?scrollTo=ourNewsletters"
               className="mt-8 text-[18px] text-[#000] font-[400] leading-[104%] hover:underline underline-offset-[6px]"
             >
               All newsletters &rarr;
-            </Link>
+            </a>
           </div>
 
           {/* card */}
@@ -70,17 +73,20 @@ export default function HomePopularNewsletters() {
               {
                 dot: "/home/ps-dot.png",
                 title: "Presidential Summary",
-                desc: "We are the top digital marketing agency for branding corp. We offer a full rang engine.",
+                desc: "Start your day informed with the most important news and global developments.",
+                when: "Mon-Sat",
               },
               {
                 dot: "/home/gs-dot.png",
                 title: "Geopolitical Summary",
-                desc: "Working with this digital marketing agency has been a true partnership.",
+                desc: "A daily guide to how countries influence each other, compete, and negotiate power.",
+                when: "Mon-Sat",
               },
               {
                 dot: "/home/bh-dot.png",
                 title: "Business History",
-                desc: "What sets this digital marketing agency apart is their commitment to transparency.",
+                desc: "Part of our City Summary collection. Dubai’s business, policy shifts, and culture news.",
+                when: "Weekdays",
               },
             ].map((card, i) => (
               <div
@@ -91,7 +97,7 @@ export default function HomePopularNewsletters() {
                   <div className="flex justify-between items-center">
                     <img src={card.dot} alt="" className="w-[14px] h-[14px]" />
                     <p className="text-[#878C91] text-[14px] font-[500] leading-[160%] whitespace-nowrap">
-                      Daily news
+                      {card.when}
                     </p>
                   </div>
 

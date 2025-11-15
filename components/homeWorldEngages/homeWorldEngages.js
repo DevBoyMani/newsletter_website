@@ -17,8 +17,8 @@ export default function HomeWorldEngages() {
             </h2>
             <p className="text-[#878C91] text-right w-[38%] mt-10 text-[15px] font-[500] leading-[140%]">
               Understanding your audience means understanding the world. Our
-              analytics go beyond numbers - they reveal how, when, and where
-              people engage with global stories.
+              analytics show not just how many people read, but where, when, and
+              why they engage with our content and with our partners.
             </p>
           </div>
           {/* 2 */}
@@ -57,8 +57,8 @@ export default function HomeWorldEngages() {
                           lineHeight: "1.2",
                         }}
                       >
-                        Global Reader Analytics
-                        <br /> anywhere around the world
+                        Global reader analytics,
+                        <br /> wherever they are
                       </h2>
                       <p
                         className="mt-[16px] text-[#000] tracking-[-0.57px]"
@@ -67,18 +67,19 @@ export default function HomeWorldEngages() {
                           lineHeight: "1.45",
                         }}
                       >
-                        By tracking readership across continents, time zones,
-                        and topics, we uncover the trends that shape public
-                        interest and influence discourse.
+                        By tracking readership across continents, we measure how
+                        audiences engage with sponsored content, so your
+                        campaigns are guided by evidence, not assumptions.
                       </p>
-                      <button
+                      <a
+                        href="/analytics"
                         className="mt-[34px] w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[70px] font-[400] leading-[30px] tracking-[-0.15px]"
                         style={{
                           fontSize: "clamp(14px, 1vw, 16px)",
                         }}
                       >
                         View analytics <span className="text-[14px]">→</span>
-                      </button>
+                      </a>
                     </div>
                   </div>
                 </div>
@@ -98,9 +99,9 @@ export default function HomeWorldEngages() {
               <br /> engages with news
             </h2>
             <p className="text-[#000] pt-[25px] text-[14px] font-[400] leading-normal">
-              We are the top digital marketing agency for branding corp. We
-              offer a full range of services to help clients improve their
-              search engine rankings and drive more traffic to their websites.
+              Understanding your audience means understanding the world. Our
+              analytics show not just how many people read, but where, when, and
+              why they engage with our content and with our partners.
             </p>
           </div>
           {/* 2 */}
@@ -121,14 +122,14 @@ export default function HomeWorldEngages() {
                 <div className="absolute inset-0 flex flex-col justify-start">
                   <div className=" pb-[20px]">
                     <h2 className="px-4 font-[Manrope] font-[400] text-[#151515] tracking-[-0.24px] leading-[28px] text-[22px] sm:text-[26px] md:text-[30px] ">
-                      Global Reader Analytics
-                      <br /> anywhere around the world
+                      Global reader analytics,
+                      <br /> wherever they are
                     </h2>
 
                     <p className="px-4 mt-[15px] text-[#000] tracking-[-0.43px] leading-[19px] text-[14px] sm:text-[16px] md:text-[18px]">
-                      By tracking readership across continents, time zones, and
-                      topics, we uncover the trends that shape public interest
-                      and influence discourse.
+                      By tracking readership across continents, we measure how
+                      audiences engage with sponsored content, so your campaigns
+                      are guided by evidence, not assumptions.
                     </p>
 
                     <div className="pl-4 mt-[20px]">

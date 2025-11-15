@@ -14,9 +14,6 @@ export default function ReadersPage() {
       <div className="hidden lg:block bg-[#FAFAFA]">
         <ReadersHero />
 
-        <div id="ourNewsletters" className="px-4 md:px-28 pt-10 w-[58%]">
-          <HeadingWithUnderline text="Our newsletters" />
-        </div>
         <ReadersNewsletters />
 
         <div className="px-4 md:px-28 py-10 w-[58%]">

@@ -1,10 +1,14 @@
 export default function AboutHero() {
   return (
     <>
-      <div className="hidden lg:block">
-        <div className="relative bg-white">
-          <div className="px-2">
-            <img src="/about/hero.png" alt="About us hero" className="w-full" />
+      <div className="hidden lg:block px-[110px]">
+        <div className="relative bg-[#FAFAFA]">
+          <div className="px-2 pt-[124px]">
+            <img
+              src="/about/hero-2.png"
+              alt="About us hero"
+              className="w-full"
+            />
           </div>
 
           {/* Text overlay (scales with image width) */}
@@ -16,8 +20,8 @@ export default function AboutHero() {
             <h2
               className="absolute font-[700]"
               style={{
-                left: "8vw",
-                top: "35.5vw",
+                left: "1vw",
+                top: "36.5vw",
                 fontSize: "6.6vw",
                 letterSpacing: "0.4vw",
                 transform: "translateY(-50%)",
@@ -30,8 +34,8 @@ export default function AboutHero() {
             <h2
               className="absolute font-[700]"
               style={{
-                left: "9vw",
-                top: "39vw",
+                left: "1.5vw",
+                top: "40vw",
                 fontSize: "11.7vw",
                 letterSpacing: "0.7vw",
               }}
@@ -43,8 +47,8 @@ export default function AboutHero() {
             <h2
               className="absolute font-[700]"
               style={{
-                left: "17vw",
-                top: "50.5vw",
+                left: "8.2vw",
+                top: "51vw",
                 fontSize: "9vw",
                 letterSpacing: "0.55vw",
               }}
@@ -57,8 +61,8 @@ export default function AboutHero() {
           <div
             className="absolute"
             style={{
-              bottom: "6vw",
-              right: "7vw",
+              bottom: "0vw",
+              right: "0vw",
               maxWidth: "20vw",
             }}
           >
@@ -78,10 +82,14 @@ export default function AboutHero() {
       </div>
 
       {/* mobile */}
-      <div className="block lg:hidden pt-[135px]">
-        <div className="relative bg-white">
+      <div className="block lg:hidden pt-[150px]">
+        <div className="relative bg-[#FAFAFA] px-4">
           <div className="px-0">
-            <img src="/about/hero.png" alt="About us hero" className="w-full" />
+            <img
+              src="/about/hero-2.png"
+              alt="About us hero"
+              className="w-full"
+            />
           </div>
 
           {/* Text overlay (scales with image width) */}
@@ -93,8 +101,8 @@ export default function AboutHero() {
             <h2
               className="absolute font-[700]"
               style={{
-                left: "8vw",
-                top: "35.5vw",
+                left: "6vw",
+                top: "31.5vw",
                 fontSize: "6.6vw",
                 letterSpacing: "0.4vw",
                 transform: "translateY(-50%)",
@@ -108,7 +116,7 @@ export default function AboutHero() {
               className="absolute font-[700]"
               style={{
                 left: "9vw",
-                top: "39vw",
+                top: "36vw",
                 fontSize: "11.7vw",
                 letterSpacing: "0.7vw",
               }}
@@ -121,7 +129,7 @@ export default function AboutHero() {
               className="absolute font-[700]"
               style={{
                 left: "17vw",
-                top: "50.5vw",
+                top: "48vw",
                 fontSize: "9vw",
                 letterSpacing: "0.55vw",
               }}

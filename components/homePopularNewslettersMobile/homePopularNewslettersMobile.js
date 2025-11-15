@@ -35,9 +35,8 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
         Popular newsletters
       </h2>
       <p className="text-[#000] text-[14px] font-[400] leading-[19px] pt-[25px]">
-        We are the top digital marketing agency for branding corp. We offer a
-        full range of services to help clients improve their search engine
-        rankings and drive more traffic to their websites.
+        News should inform you, not exhaust you. We turn complex stories into
+        clear and thoughtful summaries, written by humans with good judgment.
       </p>
 
       {/* Buttons Row */}
@@ -66,9 +65,12 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
         <div className="mt-5">
           <Link href="/readers">
             <div className="flex items-center gap-1">
-              <p className="text-[15px] text-[#000] font-[600] hover:underline leading-[104%]">
+              <a
+                href="/readers?scrollTo=ourNewsletters"
+                className="text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
+              >
                 See all{" "}
-              </p>
+              </a>
               <span>
                 <img
                   src="/home/popular-nls-r-arr.png"
@@ -100,7 +102,7 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
                   style={{ backgroundColor: cardsMobile[activeIndex].color }}
                 ></span>
                 <p className="text-[#878C91] text-[14px] font-[500] leading-[160%]">
-                  Daily news
+                  {cardsMobile[activeIndex].when}
                 </p>
               </div>
 

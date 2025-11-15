@@ -11,17 +11,17 @@ const routes = [
   { path: "/about", name: "About" },
   { path: "/advertise", name: "Advertise" },
   // { path: "/blogs", name: "Blogs" },
-  { path: "/careers", name: "Careers" },
   { path: "/readers", name: "Readers" },
+  { path: "/careers", name: "Careers" },
 ];
 
 const routesMob = [
   { path: "/about", name: "About" },
   { path: "/advertise", name: "Advertise" },
   // { path: "/blogs", name: "Blogs" },
-  { path: "/careers", name: "Careers" },
   { path: "/readers", name: "Readers" },
-  { path: "/contact", name: "contact" },
+  { path: "/careers", name: "Careers" },
+  { path: "/contact", name: "Advertise now" },
 ];
 
 export default function Navbar() {
@@ -329,7 +329,7 @@ export default function Navbar() {
 
               <CustomizedHoverButton
                 href="/contact"
-                label="Contact Sales"
+                label="Advertise now"
                 fontSize="16px"
                 fontWeight="300"
                 // width="135px"

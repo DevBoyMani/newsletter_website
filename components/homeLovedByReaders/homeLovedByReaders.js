@@ -9,12 +9,12 @@ const cardsData = [
     img: "/home/l-b-r-gs-logo.png",
     text: "It always keeps me updated even on the go and every day I find news I hadn't heard anywhere else. Keep up the good work and let the haters hate.",
     name: "Michael Albert",
-    location: "Atlanta, Georgia",
+    location: "Altanta, Georgia",
   },
   {
     id: 1,
     img: "/home/l-b-r-ps-logo.png",
-    text: "I am a newsletter writer too and I was too lazy to subscribe to your newsletter but I am now proud to say I am a convert.",
+    text: "I am a newsletter writer too and I was too lazy to subscribe to your newsletter but I am now proud to say I am a convert",
     name: "Dr Miro Bada",
     location: "Austin, Texas",
   },
@@ -22,7 +22,7 @@ const cardsData = [
     id: 2,
     img: "/home/l-b-r-gs-logo.png",
     text: "I'm getting more of my kids to read this. Sometimes don't agree with your analysis. But real professionals understand that we have nothing without a dialectic and robust debate.",
-    name: "Nickoai Pokrovsky",
+    name: "Nikolai Pokrovsky",
     location: "Franklin Lakes, NJ",
   },
 ];
@@ -64,11 +64,11 @@ export default function HomeLovedByReaders() {
           <div className="pt-[110px] pb-[80px] px-[165px]">
             <div className="flex flex-col justify-center items-center">
               <h2 className="text-center text-[56px] text-[#01261E] font-[400] leading-[48px] tracking-[-1.2px]">
-                Loved by readers
+                What readers say
               </h2>
               <p className="pt-[26px] text-center text-[19px] text-[#161C2D] font-[400] leading-[32px] tracking-[-0.2px] w-[50%]">
-                With lots of unique blocks, you can easily build a page without
-                coding. Build your next landing page.
+                Our readers come from all walks of life. <br />
+                Here’s how our work fits into theirs.
               </p>
             </div>
             {/* cards */}
@@ -87,7 +87,7 @@ export default function HomeLovedByReaders() {
                       <p className="text-[#161C2D] text-[21px] font-[400] leading-[32px] tracking-[-0.5px] pt-[24px]">
                         “It always keeps me updated even on the go and every day
                         I find news I hadn't heard anywhere else. Keep up the
-                        good work and let the haters hate".
+                        good work and let the haters hate.”
                       </p>
                       <div className="flex-1" />
                       <p className="text-[#161C2D] text-[17px] font-[400] leading-[29px] tracking-[-0.2px] pt-[23px] mt-auto">
@@ -142,7 +142,7 @@ export default function HomeLovedByReaders() {
                       </p>
                       <div className="flex-1" />
                       <p className="text-[#161C2D] text-[17px] font-[400] leading-[29px] tracking-[-0.2px] pt-[23px] mt-auto">
-                        Nickoai Pokrovsky
+                        Nikolai Pokrovsky
                         <span className="ml-[9px] text-[rgba(22,28,45,0.7)]">
                           Franklin Lakes, NJ
                         </span>
@@ -161,11 +161,11 @@ export default function HomeLovedByReaders() {
         {/* Section Heading */}
         <div className="px-4">
           <h2 className="text-[28px] sm:text-[30px] font-[400] text-center text-[#121212] pt-[36px] sm:pt-[39px] leading-[120%]">
-            Loved by readers
+            What readers say
           </h2>
           <p className="text-center text-[14px] text-[#121212] font-[400] leading-[145%] tracking-[0.7px] max-w-[295px] mx-auto pt-[20px] sm:pt-[25px]">
-            With lots of unique blocks, you can easily build a page without
-            coding. Build your next landing page.
+            Our readers come from all walks of life. <br />
+            Here’s how our work fits into theirs.
           </p>
         </div>
 

@@ -61,7 +61,7 @@ export default function AboutNewslettersStatistics() {
       {/* desktop */}
       <div className="hidden lg:block">
         <div className="bg-[#FAFAFA] md:px-28">
-          <div className="flex flex-col md:flex-row justify-start items-start py-10">
+          <div className="flex flex-col md:flex-row justify-start items-start pb-10 pt-[164px]">
             {/* left */}
             <motion.div
               className="w-full md:w-1/2 mb-8"

@@ -114,14 +114,14 @@ export default function HomeLatestStrories() {
               className="text-[34px] lg:text-[56px] font-[400]"
               style={{ fontFamily: "GT Super Ds Trial" }}
             >
-              Contact our team
+              Advertise with us
             </h2>
 
             <div className="w-[640px] mx-auto px-8">
               <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
-                If you're looking to grow in a dynamic environment and
-                contribute to something greater, we invite you to explore our
-                open positions and become a part of our journey.
+                Our readers pay attention. They trust what we share and they act
+                on it. If your brand has something real to offer, let’s talk and
+                see if we’re a good fit.
               </p>
             </div>
 
@@ -232,14 +232,15 @@ export default function HomeLatestStrories() {
                 className="text-[34px] font-[400] leading-[normal]"
                 style={{ fontFamily: "GT Super Ds Trial" }}
               >
-                And that’s not all
+                Advertise with us
               </h2>
             </div>
 
             <div className="pt-[30px]">
               <p className="w-[252px] text-[16px] font-[400] leading-[125%] tracking-[0.8px] text-center">
-                Get a personalized demo and discover how sagravia can help your
-                business
+                Our readers pay attention. They trust what we share and they act
+                on it. If your brand has something real to offer, let’s talk and
+                see if we’re a good fit.
               </p>
             </div>
             {/* Moving Text mobile*/}

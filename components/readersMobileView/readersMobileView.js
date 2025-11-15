@@ -1,8 +1,29 @@
+"use client";
+
+import { useSearchParams } from "next/navigation";
 import ReadersMobileFeaturesSection from "../readersMobileFeaturesSection/readersMobileFeaturesSection";
 import ReadersMobileNewsletterCards from "../readersMobileNewsletterCards/readersMobileNewsletterCards";
 import HeadingWithUnderline from "../readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
+import { useEffect } from "react";
 
 export default function ReadersMobileView() {
+  const params = useSearchParams();
+  // smooth scroll the click from home page more nls ( trick pharams)
+  useEffect(() => {
+    const target = params.get("scrollTo");
+    if (!target) return;
+
+    const section = document.querySelector(`#${target}`);
+    if (!section) return;
+
+    const yOffset = -100; // your custom offset
+    const y =
+      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    setTimeout(() => {
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }, 200); // delay to ensure layout is rendered
+  }, [params]);
   return (
     <>
       <div className="bg-[#FAFAFA] pt-[110px]">
@@ -35,7 +56,7 @@ export default function ReadersMobileView() {
         </div>
 
         {/* newsletters section */}
-        <div className="px-4 py-10 mx-auto">
+        <div id="ourNewsletters" className="px-4 py-10 mx-auto">
           <HeadingWithUnderline text="Our Newsletters" />
           <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
             Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget

@@ -46,11 +46,11 @@ export default function HomeScrollNumberOfSubscribersChart() {
         <Card className="p-[30px]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of subscribers
+              Emails sent
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] mt-0">
-              This chart illustrates the growth in the number of subscribers
-              over time, reflecting audience interest and retention.
+              Number of emails sent each month, reflecting subscriber growth and
+              overall reach.
             </CardDescription>
           </CardHeader>
 
@@ -112,9 +112,9 @@ export default function HomeScrollNumberOfSubscribersChart() {
           {/* labels */}
           <div className="flex gap-6 justify-center items-center pt-[9.5px]">
             <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
+              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Unique Customers
+                Number of emails sent
               </span>
             </div>
           </div>
@@ -125,11 +125,11 @@ export default function HomeScrollNumberOfSubscribersChart() {
         <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
-              Number of subscribers
+              Emails sent
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
-              This chart illustrates the growth in the number of subscribers
-              over time, reflecting audience interest and retention.
+              Number of emails sent each month, reflecting subscriber growth and
+              overall reach.
             </CardDescription>
           </CardHeader>
 
@@ -194,9 +194,9 @@ export default function HomeScrollNumberOfSubscribersChart() {
           {/* labels */}
           <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
             <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
+              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Unique Customers
+                Number of emails sent
               </span>
             </div>
           </div>

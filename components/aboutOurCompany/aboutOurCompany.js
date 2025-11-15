@@ -145,7 +145,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 {/* Icon 3 - Middle Right (B&H) */}
-                <div className="absolute top-[38%] right-[23%] group">
+                {/* <div className="absolute top-[38%] right-[23%] group">
                   <a href="https://www.businesshistory.co/" target="_blank">
                     <img
                       src="/about/bh-round.png"
@@ -167,10 +167,10 @@ export default function AboutOurCompany() {
 
                     <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
                   </div>
-                </div>
+                </div> */}
 
-                {/* Icon 4 - Bottom Right (Film roll) */}
-                <div className="absolute bottom-[16%] right-[32%] group">
+                {/* Icon 4 - Bottom Right ms */}
+                {/* <div className="absolute bottom-[16%] right-[32%] group">
                   <a href="https://www.moviesuggestions.com/" target="_blank">
                     <img
                       src="/about/ms-round.png"
@@ -191,10 +191,33 @@ export default function AboutOurCompany() {
 
                     <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
                   </div>
+                </div> */}
+
+                {/* london */}
+                <div className="absolute bottom-[16%] right-[32%] group">
+                  <a href="https://www.londonsummary.com/" target="_blank">
+                    <img
+                      src="/about/london-round.png"
+                      alt="london"
+                      className="w-10 h-10 bg-[#80011F] hover:bg-[#AA0028] rounded-full object-contain p-1"
+                    />
+                  </a>
+                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-[15px] py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                    <div className="w-[185px]">
+                      <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
+                        London Summary
+                      </p>
+                      <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
+                        Capital, historical, diverse, modern
+                      </p>
+                    </div>
+
+                    <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+                  </div>
                 </div>
 
                 {/* Icon 5 - Bottom Left (Building) */}
-                <div className="absolute bottom-[32%] left-[27%] group">
+                {/* <div className="absolute bottom-[32%] left-[27%] group">
                   <a href="https://www.longandshort.com/" target="_blank">
                     <img
                       src="/about/ls-round.png"
@@ -215,29 +238,9 @@ export default function AboutOurCompany() {
 
                     <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
                   </div>
-                </div>
+                </div> */}
 
                 {/* Icon 6 - Dubai summary */}
-                {/* <div className="absolute top-[40%] left-[9%] group">
-                  <img
-                    src="/about/ds-1.png"
-                    alt="Capitol"
-                    className="w-10 h-10 bg-[#102341] hover:bg-[#102341] rounded-full"
-                  />
-                  <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs px-2 py-1 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
-                    <div className="w-[150px]">
-                      <p className="text-[12px] text-center font-[600] leading-[135%] tracking-[0.24px]">
-                        Dubai Summary
-                      </p>
-                      <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
-                        Explore Dubai careers with
-                        <br /> our guidance
-                      </p>
-                    </div>
-
-                    <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
-                  </div>
-                </div> */}
                 <div className="absolute top-[40%] left-[9%] group w-10 h-10">
                   {/* Normal Image */}
                   <a href="https://www.dubaisummary.com/" target="_blank">
@@ -362,7 +365,7 @@ export default function AboutOurCompany() {
             </div>
 
             {/* Icon 3 - Middle Right (B&H) */}
-            <div className="absolute top-[38%] right-[23%] group">
+            {/* <div className="absolute top-[38%] right-[23%] group">
               <a href="https://www.businesshistory.co/" target="_blank">
                 <img
                   src="/about/bh-round.png"
@@ -384,10 +387,10 @@ export default function AboutOurCompany() {
 
                 <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
               </div>
-            </div>
+            </div> */}
 
             {/* Icon 4 - Bottom Right (Film roll) */}
-            <div className="absolute bottom-[14%] right-[32%] group">
+            {/* <div className="absolute bottom-[14%] right-[32%] group">
               <a href="https://www.moviesuggestions.com/" target="_blank">
                 <img
                   src="/about/ms-round.png"
@@ -408,10 +411,32 @@ export default function AboutOurCompany() {
 
                 <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
               </div>
+            </div> */}
+            {/* london */}
+            <div className="absolute bottom-[14%] right-[32%] group">
+              <a href="https://www.londonsummary.com/" target="_blank">
+                <img
+                  src="/about/london-round.png"
+                  alt="london"
+                  className="w-8 h-8 bg-[#80011F] hover:bg-[#AA0028] rounded-full object-contain p-1"
+                />
+              </a>
+              <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+                <div className="w-[150px]">
+                  <p className="text-[10px] text-center font-[600] leading-[135%] tracking-[0.24px]">
+                    London Summary
+                  </p>
+                  <p className="text-[10px] text-center leading-[135%] tracking-[0.24px]">
+                    Capital, historical, diverse, modern
+                  </p>
+                </div>
+
+                <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
+              </div>
             </div>
 
             {/* Icon 5 - Bottom Left (Building) */}
-            <div className="absolute bottom-[25%] left-[28%] group">
+            {/* <div className="absolute bottom-[25%] left-[28%] group">
               <a href="https://www.longandshort.com/" target="_blank">
                 <img
                   src="/about/ls-round.png"
@@ -432,7 +457,7 @@ export default function AboutOurCompany() {
 
                 <div className="absolute left-10 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
               </div>
-            </div>
+            </div> */}
 
             {/* Icon 6 - DS */}
             <div className="absolute top-[40%] left-[7%] group">

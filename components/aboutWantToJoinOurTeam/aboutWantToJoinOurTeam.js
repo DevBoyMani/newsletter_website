@@ -16,7 +16,7 @@ export default function AboutWantToJoinOurTeam() {
           </div>
           <div className="w-[10%] mx-auto py-6">
             <a
-              href="/about"
+              href="/careers"
               className="block text-center bg-[#01261E] hover:bg-[#014134] text-white text-[14px] font-[600] px-4 py-2 rounded-full w-full"
             >
               Join our team
@@ -51,7 +51,7 @@ export default function AboutWantToJoinOurTeam() {
 
           <div className="pt-[30px]">
             <a
-              href="/about"
+              href="/careers"
               className="bg-[#E1F4EF] text-[#01261E] text-[14px] font-[500] py-2 px-5 rounded-full mb-2 inline-block"
             >
               See open positions

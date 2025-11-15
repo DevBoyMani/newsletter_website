@@ -46,13 +46,11 @@ export default function HomeScrollNumberOfOpensChart() {
         <Card className="p-[30px] h-full">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
-              Number of opens
+              Emails opened
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[120.222%] pt-[6px] mt-0">
-              This chart tracks how many times emails or content have been
-              opened by users over time. It helps measure engagement and the
-              effectiveness of our communication. A higher number of opens often
-              indicates strong interest or successful messaging.
+              Number of emails opened each month, measuring audience interest,
+              trust, and retained attention.
             </CardDescription>
           </CardHeader>
 
@@ -114,13 +112,13 @@ export default function HomeScrollNumberOfOpensChart() {
           {/* labels */}
           <div className="flex gap-6 justify-center items-center pt-[9.5px]">
             <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span>
+              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Lead Customers
+                Number of emails opened opens
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
                 New Customers
@@ -132,7 +130,7 @@ export default function HomeScrollNumberOfOpensChart() {
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
                 Unique Customers
               </span>
-            </div>
+            </div> */}
           </div>
         </Card>
       </div>
@@ -144,12 +142,11 @@ export default function HomeScrollNumberOfOpensChart() {
         >
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
-              Number of opens
+              Emails opened
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] mt-0">
-              This chart tracks how many times emails or content have been
-              opened by users over time. It helps measure engagement and the
-              effectiveness.
+              Number of emails opened each month, measuring audience interest,
+              trust, and retained attention.
             </CardDescription>
           </CardHeader>
 
@@ -215,13 +212,13 @@ export default function HomeScrollNumberOfOpensChart() {
           {/* labels */}
           <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
             <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span>
+              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Lead Customers
+                Number of emails opened opens
               </span>
             </div>
 
-            <div className="flex items-center gap-2">
+            {/* <div className="flex items-center gap-2">
               <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span>
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
                 New Customers
@@ -233,7 +230,7 @@ export default function HomeScrollNumberOfOpensChart() {
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
                 Unique Customers
               </span>
-            </div>
+            </div> */}
           </div>
         </Card>
       </div>

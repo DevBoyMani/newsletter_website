@@ -8,8 +8,14 @@ export default function HomeNewsletterAdsGrow() {
       image: "/home/peoples-mobile.png",
       icon: "/home/reach-everyone-logo.png",
       title: "Reach everyone the same day",
-      description:
-        "When a newsletter goes out, it lands in thousands of inboxes instantly. No waiting for algorithms or hoping people are online at the right time.",
+      description: (
+        <>
+          When a newsletter goes out, it lands directly in thousands of inboxes
+          instantly. No waiting for social media algorithms or hoping people are
+          online at the right time.{" "}
+          <strong>Your message arrives. People read it</strong>. Simple.
+        </>
+      ),
       imgPosition: "right",
     },
     {
@@ -17,16 +23,28 @@ export default function HomeNewsletterAdsGrow() {
       image: "/home/rect-1-mobile.png",
       icon: "/home/ad-blocker-red.png",
       title: "Ad blockers don’t stop email ads",
-      description:
-        "Your ad goes straight to the inbox, so it’s seen by real people — not blocked or hidden.",
+      description: (
+        <>
+          Ad blockers are designed to stop ads on websites, but{" "}
+          <strong>they don’t work on emails</strong>. When someone subscribes to
+          a newsletter, your message arrives as part of the content they asked
+          to receive.
+        </>
+      ),
     },
     {
       id: 3,
       image: "/home/rect-2-mobile.png",
       icon: "/home/ad.png",
       title: "No banner blindness",
-      description:
-        "People notice newsletter ads because they appear inside content they already enjoy reading.",
+      description: (
+        <>
+          People have trained themselves to ignore online ads and this is called
+          banner blindness. Newsletter ads appear inside the reading flow, where
+          <strong>attention is already present</strong>, so they actually get
+          noticed.
+        </>
+      ),
     },
   ];
 
@@ -63,9 +81,10 @@ export default function HomeNewsletterAdsGrow() {
                   </p>
                 </div>
                 <p className="w-[85%] pt-[15px] text-[#878C91] text-[16px] font-[500] leading-[22.4px] tracking-[0.2px]">
-                  When a newsletter goes out, it lands in thousands of inboxes
-                  instantly. No waiting for social media algorithms or hoping
-                  people are online at the right time.
+                  When a newsletter goes out, it lands directly in thousands of
+                  inboxes instantly. No waiting for social media algorithms or
+                  hoping people are online at the right time.{" "}
+                  <strong>Your message arrives. People read it</strong>. Simple.
                 </p>
               </div>
               <div className="w-[50%]">
@@ -80,66 +99,6 @@ export default function HomeNewsletterAdsGrow() {
             </div>
           </div>
 
-          {/* 2 */}
-          {/* <div>
-            <div className="flex space-x-[40px]">
-              <div className="w-[50%]">
-                <div className="flex flex-col bg-[#fff] rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)]">
-                  <div className="h-[342px] max-h-[400px]">
-                    <img
-                      src="/home/rect-1.png"
-                      alt="ad blocker"
-                      className="w-full h-full"
-                    />
-                    <div className="p-[25px]">
-                      <div className="flex">
-                        <img
-                          src="/home/reach-everyone-logo.png"
-                          alt="peoples"
-                          className="w-6 h-6"
-                        />
-                        <p className="pl-4 text-[#000] text-[18px] font-[400] tracking-[0.2px]">
-                          Ad blockers don’t stop email ads
-                        </p>
-                      </div>
-                      <p className="text-[#878C91] text-[16px] font-[500] leading-[22.4px] tracking-[0.2px] pt-[15px]">
-                        Your ad goes straight to the inbox, so it’s seen by real
-                        people, not blocked or hidden like most online ads.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <div className="w-[50%]">
-                <div className="flex flex-col bg-[#fff] rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)]">
-                  <div className="h-[342px] max-h-[400px]">
-                    <img
-                      src="/home/rect-1.png"
-                      alt="ad blocker"
-                      className="w-full h-full"
-                    />
-                    <div className="p-[25px]">
-                      <div className="flex">
-                        <img
-                          src="/home/reach-everyone-logo.png"
-                          alt="peoples"
-                          className="w-6 h-6"
-                        />
-                        <p className="pl-4 text-[#000] text-[18px] font-[400] tracking-[0.2px]">
-                          Ad blockers don’t stop email ads
-                        </p>
-                      </div>
-                      <p className="text-[#878C91] text-[16px] font-[500] leading-[22.4px] tracking-[0.2px] pt-[15px]">
-                        Your ad goes straight to the inbox, so it’s seen by real
-                        people, not blocked or hidden like most online ads.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div> */}
           {/* 2 */}
           <div className="flex space-x-[40px]">
             {/* Left Card */}
@@ -163,8 +122,10 @@ export default function HomeNewsletterAdsGrow() {
                     </p>
                   </div>
                   <p className="pt-[15px] text-[#878C91] text-[16px] font-[500] leading-[22.4px] tracking-[0.2px]">
-                    Your ad goes straight to the inbox, so it’s seen by real
-                    people, not blocked or hidden like most online ads.
+                    Ad blockers are designed to stop ads on websites, but{" "}
+                    <strong>they don’t work on emails</strong>. When someone
+                    subscribes to a newsletter, your message arrives as part of
+                    the content they asked to receive.
                   </p>
                 </div>
               </div>
@@ -187,8 +148,11 @@ export default function HomeNewsletterAdsGrow() {
                     </p>
                   </div>
                   <p className="pt-[15px] text-[#878C91] text-[16px] font-[500] leading-[22.4px] tracking-[0.2px]">
-                    People actually notice newsletter ads because they appear
-                    inside content they already enjoy reading.
+                    People have trained themselves to ignore online ads and this
+                    is called banner blindness. Newsletter ads appear inside the
+                    reading flow, where{" "}
+                    <strong>attention is already present</strong>, so they
+                    actually get noticed.
                   </p>
                 </div>
               </div>
