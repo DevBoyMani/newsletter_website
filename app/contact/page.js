@@ -218,10 +218,7 @@ export default function Contact() {
                       {/* Left Button */}
                       <button
                         onClick={() =>
-                          window.open(
-                            "https://cal.com/houseofsummary",
-                            "_blank"
-                          )
+                          window.open("https://cal.com/summary/", "_blank")
                         }
                         className="group relative flex items-center justify-center w-[151px] py-[7px] rounded-full overflow-hidden text-[14px] leading-normal font-[500] bg-[#DAEBE8] text-[#01261E] transition-all duration-500 ease-in-out hover:bg-[#01261E]"
                       >
@@ -487,7 +484,7 @@ export default function Contact() {
             <div className="flex justify-center space-x-2 pt-[28px] pb-[17px]">
               <button
                 onClick={() =>
-                  window.open("https://cal.com/houseofsummary", "_blank")
+                  window.open("https://cal.com/summary/", "_blank")
                 }
               >
                 <img src="/contact/b-1.jpg" alt="call" className="w-8 h-8 " />

@@ -20,17 +20,6 @@ export default function ReadersNewsletters() {
       footerButton: "Learn More",
     },
     {
-      id: 2,
-      headerButton: "Subscribe",
-      image: "/readers/n-ms.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Movie Suggestions",
-      paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      footerButton: "Learn More",
-    },
-    {
       id: 3,
       headerButton: "Subscribe",
       image: "/readers/n-ps.png",
@@ -41,6 +30,29 @@ export default function ReadersNewsletters() {
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
     },
+    {
+      id: 6,
+      headerButton: "Subscribe",
+      image: "/readers/n-ds.png",
+      topic: "News",
+      when: "weekly",
+      heading: "Dubai Summary",
+      paragraph:
+        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+      footerButton: "Learn More",
+    },
+    {
+      id: 2,
+      headerButton: "Subscribe",
+      image: "/readers/n-ms.png",
+      topic: "News",
+      when: "weekly",
+      heading: "Movie Suggestions",
+      paragraph:
+        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+      footerButton: "Learn More",
+    },
+
     {
       id: 4,
       headerButton: "Subscribe",
@@ -63,17 +75,7 @@ export default function ReadersNewsletters() {
         "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
       footerButton: "Learn More",
     },
-    {
-      id: 6,
-      headerButton: "Subscribe",
-      image: "/readers/n-ds.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Dubai Summary",
-      paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      footerButton: "Learn More",
-    },
+    
   ];
 
   const aboutOurInfo = [
@@ -81,19 +83,19 @@ export default function ReadersNewsletters() {
       id: 1,
       img: "/readers/newsletters.png",
       text: "Newsletters",
-      number: "6",
+      number: "4",
     },
     {
       id: 2,
       img: "/readers/subscribers.png",
-      text: "new subscribers sign up per week",
+      text: "New readers join us every week",
       number: "+10K",
     },
     {
       id: 3,
       img: "/readers/openRate.png",
-      text: "of subscribers open our news briefing every day.",
-      number: "20%",
+      text: "ad per edition; full focus, no clutter",
+      number: "Only 1",
     },
   ];
 
@@ -168,16 +170,14 @@ export default function ReadersNewsletters() {
       <div className="pt-[30px] pb-[56px] md:px-28">
         <div className="w-[46%]">
           <p className="text-[#000] text-[16px] font-[400] leading-[152%]">
-            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
-            sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
-            auctor id libero. Interdum et malesuada fames ac ante ipsum primis
-            in faucibus.Proin et pulvinar risus, quis hendrerit nisi. Vestibulum
-            eget sollicitudin odio. Maecenas tellus sem, fermentu.{" "}
+            Our editors review an overwhelming number of sources, remove the
+            noise, and surface only what matters. Readers stay informed with
+            clarity and precision, without wasting time or attention.{" "}
             <a
               href="/contact"
               className="text-[#C7A262] text-[16px] font-[500] leading-[152%] hover:underline"
             >
-              Reach out sales team →
+              Explore advertising opportunities →
             </a>
           </p>
         </div>

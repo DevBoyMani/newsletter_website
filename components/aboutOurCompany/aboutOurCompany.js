@@ -71,7 +71,7 @@ export default function AboutOurCompany() {
 
                 <div className="md:w-[32%] w-full mt-6">
                   <a
-                    href="/"
+                    href="/readers"
                     className="block text-center bg-[#01261E] hover:bg-[#014134] text-white text-[14px] font-[600] px-4 py-2 rounded-full w-full"
                   >
                     View Newsletters
@@ -299,7 +299,7 @@ export default function AboutOurCompany() {
 
           <div className="w-fit mt-2">
             <a
-              href="/"
+              href="/readers"
               className="block text-center bg-[#01261E] hover:bg-[#014134] text-[#FAFAFA] text-[14px] font-[300] tracking-[0.14px] px-4 py-2 rounded-full "
             >
               View Newsletters
