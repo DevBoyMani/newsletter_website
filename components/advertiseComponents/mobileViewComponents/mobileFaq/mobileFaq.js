@@ -8,34 +8,28 @@ import {
 export function MobileFaq() {
   const faqData = [
     {
-      heading: "Recruitment team chat",
+      heading: "Can I sponsor multiple newsletters at once?",
       content:
-        "Absolutely, we cater to clients from different time zones and have worked with clients from almost every continent (just not Antarctica - still working on that!).",
+        "Yes. Most advertisers do. We operate multiple newsletters across business, geopolitics, current affairs, movies, and city-focused audiences. You can sponsor one or bundle several depending on your campaign goals. Multi-newsletter buys often get priority placement and better pricing.",
       value: "item-1",
     },
     {
-      heading: "Team member interview",
+      heading: "Do you help with ad copy and design?",
       content:
-        "Help your new team understand your field of knowledge. At White Widget, we understand the importance of synchronization in our project workflow, regardless of geographical boundaries. Once a project kicks off, our team diligently works to identify and establish overlapping working hours that suit both our client and our team.",
+        "Yes. We know our audience better than any external copywriter. We help write or refine your copy, suggest hooks, and optimize for clicks. If you don’t have creatives, we can also design a clean visual asset that matches the newsletter style.",
       value: "item-2",
     },
     {
-      heading: "Technical exercise",
+      heading: "Can I include a tracking link or UTM parameters?",
       content:
-        "Put your skills to the test and show us how you shine. At White Widget, we understand the importance of synchronization in our project workflow, regardless of geographical boundaries. Once a project kicks off, our team diligently works to identify and establish overlapping working hours that suit both our client and our team. This approach ensures that communication remains seamless and efficient collaboration is maintained throughout the duration of the project.",
+        "Absolutely. We encourage tracking links and UTM parameters, and we can even generate them for you so you can measure performance in Google Analytics, HubSpot, or whatever dashboard you worship. After the campaign, we send a performance report that includes impressions (send count), opens, clicks, and CTR so you know exactly how your ad performed.",
       value: "item-3",
     },
     {
-      heading: "Leadership chat",
+      heading: "Do you guarantee results?",
       content:
-        "Help us get to know you beyond your CV. Absolutely, we cater to clients from different time zones and have worked with clients from almost every continent",
+        "We guarantee visibility, not specific outcomes. Your brand will be placed in front of a highly engaged audience with strong attention and high intent. However, the number of clicks or conversions ultimately depends on your offer, landing page experience, and timing. We operate with transparency, not unrealistic promises.",
       value: "item-4",
-    },
-    {
-      heading: "Offer time",
-      content:
-        "You're now just a signature away from joining the greatest team. This approach ensures that communication remains seamless and efficient collaboration is maintained throughout the duration of the project.",
-      value: "item-5",
     },
   ];
 
@@ -43,7 +37,7 @@ export function MobileFaq() {
     <Accordion type="single" collapsible className="w-full pt-10 px-4">
       {faqData.map((item) => (
         <AccordionItem key={item.value} value={item.value}>
-          <AccordionTrigger className="data-[state=open]:text-[#01261E] text-[#01261E] font-[400] text-[16px] font-[manrope]">
+          <AccordionTrigger className="data-[state=open]:text-[#01261E] text-[#01261E] font-[400] text-[16px] font-[manrope] text-left">
             {item.heading}
           </AccordionTrigger>
           <AccordionContent className="text-[#12121299] text-[14px] font-[400] leading-[150%]">

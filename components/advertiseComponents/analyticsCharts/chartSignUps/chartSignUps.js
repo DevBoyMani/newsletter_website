@@ -67,11 +67,11 @@ export function SignInUps() {
             </button>
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
-                <div className="text-[18px] text-[#9291A5]">Sign-ups</div>
+                <div className="text-[18px] text-[#9291A5]">Campaigns</div>
                 <div className="flex items-center justify-between">
                   <div className="flex items-center justify-start">
                     <CardDescription className="text-[22px] font-bold text-[#1E1B39]">
-                      9,845
+                      Ad click activity
                     </CardDescription>
                     <div className="ml-4 ">
                       <h5 className="text-sm text-[#9291A5]">past 30 days</h5>
@@ -168,19 +168,19 @@ export function SignInUps() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[18px] text-[#D3D3D3]">Sign-ups</div>
+                <div className="text-[18px] text-[#D3D3D3]">Campaigns</div>
                 <CardDescription className="text-[22px] text-[#DAEBE8] font-bold">
-                  9,845
+                  Ad click activity
                 </CardDescription>
               </div>
             </CardHeader>
             <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
-              Etiam et convallis dolor. Praesent pulvinar molestie leo, in
-              finibus felis porttitor eget. Suspendisse vel aliquet tellus.
-              Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel
-              faucibus ut, pulvinar vitae orci. Cras ac venenatis mi. Maecenas
-              lobortis nisi enim, eget accumsan risus viverra in. Nunc semper
-              neque porta ipsum porta dignissim.
+              This chart measures how many readers interact directly with
+              advertisements by clicking through. It reflects engagement beyond
+              impressions; a key metric for evaluating campaign effectiveness
+              and reader interest. For advertisers, strong click activity means
+              your placements don’t just reach an audience, they motivate action
+              and deliver measurable results.
             </p>
           </Card>
         </div>
@@ -211,11 +211,11 @@ export function SignInUps() {
             </button>
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
-                <div className="text-[11px] text-[#9291A5]">Sign-ups</div>
+                <div className="text-[11px] text-[#9291A5]">Campaigns</div>
                 <div className="flex items-center justify-start">
                   <div className="flex items-center justify-start">
                     <CardDescription className="text-[12px] font-bold text-[#1E1B39]">
-                      9,845
+                      Ad click activity
                     </CardDescription>
                     <div className="ml-4 ">
                       <p className="text-[8px] text-[#9291A5]">past 30 days</p>
@@ -312,19 +312,19 @@ export function SignInUps() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[11px] text-[#D3D3D3]">Sign-ups</div>
+                <div className="text-[11px] text-[#D3D3D3]">Campaigns</div>
                 <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
-                  9,845
+                  Ad click activity
                 </CardDescription>
               </div>
             </CardHeader>
             <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[11px] pb-4 pt-4">
-              Etiam et convallis dolor. Praesent pulvinar molestie leo, in
-              finibus felis porttitor eget. Suspendisse vel aliquet tellus.
-              Pellentesque vel lorem purus. Sed sapien ipsum, vehicula vel
-              faucibus ut, pulvinar vitae orci. Cras ac venenatis mi. Maecenas
-              lobortis nisi enim, eget accumsan risus viverra in. Nunc semper
-              neque porta ipsum porta dignissim.
+              This chart measures how many readers interact directly with
+              advertisements by clicking through. It reflects engagement beyond
+              impressions; a key metric for evaluating campaign effectiveness
+              and reader interest. For advertisers, strong click activity means
+              your placements don’t just reach an audience, they motivate action
+              and deliver measurable results.
             </p>
           </Card>
         </div>

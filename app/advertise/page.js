@@ -98,17 +98,16 @@ export default function Advertise() {
                 className="text-[80px] lg:w-[50%]  leading-[94%]"
                 style={{ textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)" }}
               >
-                Step into a world of discovery
+                90,367 people would have seen your brand yesterday
               </h2>
               <p className="text-[20px] py-4 w-[30%] sm:w-[30%]">
-                Explore different categories. Find the best deals. AG1 is a
-                daily health drink packed with nutrients to help alleviate
-                bloating.
+                Make your brand part of their morning ritual. Not their ignored
+                ad inventory.
               </p>
               <div>
                 <Link href="/about">
                   <button className="flex px-[18px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[14px] font-[600] rounded-full hover:bg-[#0B4337]">
-                    About us
+                    Advertise now
                   </button>
                 </Link>
               </div>
@@ -160,14 +159,13 @@ export default function Advertise() {
             {/* 100K Subscribers Text */}
             <div className="absolute -bottom-4 left-[49.7%] -translate-x-1/2 z-20 text-center">
               <h2 className="font-[700] sm:text-[10vw] lg:text-[11.4vw] 2xl:text-[11.4vw] [1650px]:text-[13vw] [1800px]:text-[13vw] leading-[94%] tracking-[-1.6px] whitespace-nowrap">
-                <span className="text-white">100k </span>
+                <span className="text-white">400k </span>
                 <span className="text-[#01261E]">Subscribers</span>
               </h2>
             </div>
           </div>
 
-          {/* bottom text  */}
-          <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px] font-[600] ">
+          {/* <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px] font-[600] ">
             <span className="absolute bottom-[66px] left-[14%]">
               $19.4 trillion
             </span>
@@ -180,7 +178,7 @@ export default function Advertise() {
             <span className="absolute bottom-[250px] left-[78%]">
               $144 million
             </span>
-          </div>
+          </div> */}
 
           <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
 
@@ -246,17 +244,19 @@ export default function Advertise() {
                 <div className="md:flex md:flex-col justify-between md:p-10 h-full">
                   <div className="flex-grow">
                     <p className="text-[#FAFAFA] max-w-[335px] text-[20px]">
-                      Access all major A2A payment methods via a single API and
-                      global settlement with multi-currency support.
+                      This is where precision meets perspective. Explore
+                      detailed analytics for every newsletter to see how
+                      influence, attention, and conversion intertwine across our
+                      newsletter portfolio.
                     </p>
                   </div>
                   <div>
                     <CustomizedHoverButton
                       href="/analytics"
-                      label="Analytics"
+                      label="See analytics"
                       fontSize="14px"
                       fontWeight="600"
-                      width="123px"
+                      width="fit"
                       height="37px"
                       borderColor="#DAEBE8"
                       // bgColor="#C7A262"
@@ -276,7 +276,7 @@ export default function Advertise() {
       {/*text with video section */}
       <div className="bg-[#FAFAFA] hidden lg:block">
         <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 py-10">
-          <HeadingWithUnderline text="How your ad will look like" />
+          <HeadingWithUnderline text="What your ads will look like" />
         </div>
 
         <div className="w-full h-[962px] relative overflow-hidden">
@@ -300,16 +300,18 @@ export default function Advertise() {
 
         <div className="flex my-0 flex-col items-center justify-center text-center pt-10 pb-40">
           <h2
-            className="text-[80px] font-[400]"
+            className="text-[80px] font-[400] leading-[1]"
             style={{ fontFamily: "GT Super Ds Trial" }}
           >
-            And that’s not all
+            The most valuable real
+            <br /> estate is the inbox
           </h2>
 
-          <div className="w-[390px] mx-auto">
+          <div className="w-[537px] mx-auto pt-[30px]">
             <p className="text-[20px] font-[400] leading-[1.5]">
-              Get a personalized demo and discover how Sagravia can help your
-              business
+              The inbox gives your brand a direct path to the reader. No
+              algorithms, no ad blockers, no visual clutter. Just undivided
+              attention.
             </p>
           </div>
 
@@ -318,12 +320,13 @@ export default function Advertise() {
             href="#"
             className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
           >
-            <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
-              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
-              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
-              SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
-              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform uppercase duration-500 ease-in-out animate-scroll group-hover:pause group">
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise
             </span>
           </a>
         </div>
@@ -339,7 +342,7 @@ export default function Advertise() {
       <AdvertiseNewFaq />
 
       {/* In the press */}
-      <div className="bg-[#FAFAFA] hidden lg:block">
+      {/* <div className="bg-[#FAFAFA] hidden lg:block">
         <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 pb-10">
           <HeadingWithUnderline text="In the press" />
         </div>
@@ -369,14 +372,7 @@ export default function Advertise() {
             ))}
           </div>
 
-          {/* <div className="px-20 py-20 flex justify-center ">
-            <a
-              href=""
-              className="w-[198px] h-[45px] flex justify-center items-center border border-[#121212] rounded-[45px] text-[23px] text-[#121212] font-[600] hover:bg-[#01261E] hover:text-[#ffffff] transition"
-            >
-              See more
-            </a>
-          </div> */}
+         
           <div className="px-20 py-20 flex justify-center">
             <CustomizedHoverButton
               href="#"
@@ -393,7 +389,7 @@ export default function Advertise() {
             />
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* mobile view for advertise page */}
       <div className="block lg:hidden bg-[#FAFAFA] pt-[100px] pb-[10px]">

@@ -50,16 +50,16 @@ export default function AdvertisePageMobileVersion() {
 
         <div className="px-4 pt-10 mx-auto max-w-screen-xl">
           <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] ">
-            Step into a world of discovery
+            90,367 people would have seen your brand yesterday
           </h2>
           <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
-            Explore different categories. Find the best deals. AG1 is a daily
-            health drink packed with nutrients to help alleviate bloating.
+            Make your brand part of their morning ritual. Not their ignored ad
+            inventory.
           </p>
           <div className="absolute top-100 left-[4%] z-20">
             <Link href="/about">
               <button className="flex px-[14px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[13px] font-[600] rounded-full border hover:bg-[#0B4337]">
-                About us
+                Advertise now
               </button>
             </Link>
           </div>
@@ -83,8 +83,8 @@ export default function AdvertisePageMobileVersion() {
             ))}
           </div>
         </div>
-        {/* bottom text  */}
-        <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px]">
+
+        {/* <div className="absolute bottom-[0px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px]">
           <span className="absolute bottom-[248px] left-[9.5%]">
             $19.4
             <br /> trillion
@@ -101,7 +101,7 @@ export default function AdvertisePageMobileVersion() {
             $144
             <br /> million
           </span>
-        </div>
+        </div> */}
 
         {/* Gradient */}
         <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
@@ -109,7 +109,7 @@ export default function AdvertisePageMobileVersion() {
         {/* Subscribers Text */}
         <div className="absolute -bottom-1 left-4 w-full text-start z-20">
           <h2 className="text-[13.5vw] font-normal leading-[1] tracking-tight text-wrap">
-            <span className="text-white">100k </span>
+            <span className="text-white">400k </span>
             <span className="text-[#01261E]">Subscribers</span>
           </h2>
         </div>
@@ -145,13 +145,15 @@ export default function AdvertisePageMobileVersion() {
             >
               <div className="flex flex-col justify-between p-6 h-full">
                 <p className="text-white text-[15px] font-[400] max-w-[335px]">
-                  Access all major A2A payment methods via a single API and
-                  global settlement with multi-currency support.
+                  This is where precision meets perspective. Explore detailed
+                  analytics for every newsletter to see how influence,
+                  attention, and conversion intertwine across our newsletter
+                  portfolio.
                 </p>
-                <div className="flex justify-start items-center max-w-xl max-h-[20px] pb-6">
+                <div className="flex justify-start items-center w-fit max-h-[20px] pb-6">
                   <Link href="/analytics">
                     <button className="text-[14px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
-                      Analytics
+                      See analytics
                     </button>
                   </Link>
                 </div>
@@ -164,7 +166,7 @@ export default function AdvertisePageMobileVersion() {
       {/* Ad Preview */}
       <div className="bg-[#FAFAFA] pt-10">
         <div className="px-4 py-10">
-          <HeadingWithUnderline text="How your ad will look like" />
+          <HeadingWithUnderline text="What your ads will look like" />
         </div>
         <div className="flex w-full max-h-[213px] relative overflow-hidden">
           <video autoPlay loop muted playsInline className=" object-cover">
@@ -176,25 +178,24 @@ export default function AdvertisePageMobileVersion() {
         </div>
 
         <div className="flex flex-col items-center justify-center text-center py-[60px]">
-          <h2 className="text-[34px]  font-[400] leading-normal">
-            And that’s not all
+          <h2 className="text-[34px]  font-[400] leading-[1]">
+            The most valuable real estate is the inbox
           </h2>
           <p className="text-[#121212] text-[16px] leading-[125%] font-[400] tracking-[0.8px] py-[30px] text-center">
-            Get a personalized demo and
-            <br /> discover how Sagravia can help
-            <br /> your business
+            The inbox gives your brand a direct path to the reader. No
+            algorithms, no ad blockers, no visual clutter. Just undivided
+            attention.
           </p>
 
           <a
             href="#"
             className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group bg-[#01261E] text-[#ffffff] font-[800]"
           >
-            <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
-              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO
-              SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-              SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK
-              TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
+            <span className="flex py-2 justify-end items-center text-[37px] uppercase whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise Advertise Advertise
+              Advertise Advertise Advertise Advertise
             </span>
           </a>
         </div>
@@ -205,18 +206,18 @@ export default function AdvertisePageMobileVersion() {
       <AdvertiseAdBlocker />
 
       {/* FAQ Section */}
-      <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
-        <HeadingWithUnderline text="Got Questions? We've Got Answers!" />
+      <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-[57px]">
+        <HeadingWithUnderline text="Frequently Asked Questions" />
         <div>
           <MobileFaq />
         </div>
       </div>
 
       {/* In the Press */}
-      <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
+      {/* <div className="bg-[#FAFAFA] px-4 md:px-28 pt-10 pb-10">
         <HeadingWithUnderline text="In the press" />
         <InThePress />
-      </div>
+      </div> */}
     </>
   );
 }

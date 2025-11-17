@@ -115,9 +115,9 @@ export function ViewsCountry() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#515151] pb-2">
-                <div className="text-[18px] text-[#9291A5]">Statistics</div>
+                <div className="text-[18px] text-[#9291A5]">Engagement</div>
                 <CardDescription className="text-[22px] text-[#1E1B39] font-bold">
-                  Views by country
+                  Number of emails opened
                 </CardDescription>
               </div>
             </CardHeader>
@@ -200,17 +200,18 @@ export function ViewsCountry() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[18px] text-[#D3D3D3]">Statistics</div>
+                <div className="text-[18px] text-[#D3D3D3]">Engagement</div>
                 <CardDescription className="text-[22px] text-[#DAEBE8] font-bold">
-                  Views by country
+                  Number of emails opened
                 </CardDescription>
               </div>
             </CardHeader>
             <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
-              Etiam et convallis dolor. Praesent pulvinar molestie leo, in
-              finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
-              ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus
-              viverra in. Nunc semper neque porta ipsum porta dignissim.
+              This chart reflects how many newsletters are actively opened by
+              readers. It shows how many people choose to read and interact with
+              our content. For advertisers, this translates directly into the
+              number of eyes on your campaign and the genuine reach of each
+              placement.
             </p>
           </Card>
         </div>
@@ -243,9 +244,9 @@ export function ViewsCountry() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#515151] pb-2">
-                <div className="text-[11px] text-[#9291A5]">Statistics</div>
+                <div className="text-[11px] text-[#9291A5]">Engagement</div>
                 <CardDescription className="text-[12px] text-[#1E1B39] font-bold">
-                  Views by country
+                  Number of emails opened
                 </CardDescription>
               </div>
             </CardHeader>
@@ -322,17 +323,18 @@ export function ViewsCountry() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[11px] text-[#D3D3D3]">Statistics</div>
+                <div className="text-[11px] text-[#D3D3D3]">Engagement</div>
                 <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
-                  Views by country
+                  Number of emails opened
                 </CardDescription>
               </div>
             </CardHeader>
             <p className="text-[#FAFAFA] font- font-[300px] leading-[1.5]  max-w-[550px] text-[11px] pb-4 pt-4">
-              Etiam et convallis dolor. Praesent pulvinar molestie leo, in
-              finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
-              ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus
-              viverra in. Nunc semper neque porta ipsum porta dignissim.
+              This chart reflects how many newsletters are actively opened by
+              readers. It shows how many people choose to read and interact with
+              our content. For advertisers, this translates directly into the
+              number of eyes on your campaign and the genuine reach of each
+              placement.
             </p>
           </Card>
         </div>

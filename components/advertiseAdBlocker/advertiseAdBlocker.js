@@ -8,7 +8,7 @@ export default function AdvertiseAdBlocker() {
     {
       id: 1,
       content:
-        "Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t. Reach our audience directly, <br/>no filters, no ad blockers.",
+        "Our newsletters land in the inbox with zero noise, zero competing banners, and zero ad blockers. Your brand becomes part of the reading experience, not an interruption.",
       image: "/advertise/without-ad-blocker.png",
     },
     {
@@ -67,10 +67,11 @@ export default function AdvertiseAdBlocker() {
       >
         <div>
           <p className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
-            What we offer, our benefits, simple to learn
+            The inbox is new prime real estate
           </p>
-          <h2 className="flex justify-center py-2 text-center w-[60%] mx-auto text-[56px] text-white font-[400] leading-[1.2]">
-            Maximize potential and Drive Business Success
+          <h2 className="flex justify-center py-2 text-center mx-auto text-[56px] text-white font-[400] leading-[1.2]">
+            Web ads get blocked. Social
+            <br /> ads get ignored.
           </h2>
         </div>
 
@@ -141,69 +142,14 @@ export default function AdvertiseAdBlocker() {
       </div>
 
       {/* mobile view */}
-      {/* <div className="block lg:hidden relative bg-[#01261E] py-10 px-4">
-        <div>
-          <h6 className="flex justify-center pt-4 text-[12px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
-            What we offer, our benefits, simple to learn
-          </h6>
-          <h2 className="flex justify-center py-2 text-center text-[30px] text-[#fff] font-[400] leading-[1.2] ">
-            Maximize potential and
-            <br /> Drive Business Success
-          </h2>
-        </div>
-
-        <div>
-          <p className="text-[#FFFFFFB2] py-4 px-8 text-center mx-auto text-[14px]  font-[500] leading-[150%] tracking-[0.36px]">
-            {itemMob.content}
-          </p>
-        </div>
-
-        <div className="py-4">
-          <div className="flex justify-center space-x-2">
-            <button
-              className={`px-4 py-2 text-[12px] font-[600] leading-normal rounded-[57px] ${
-                currentIndexMob === 0
-                  ? "bg-[#DAEBE8] text-[#121212]"
-                  : "border border-[#DAEBE8] text-[#DAEBE8]"
-              }`}
-              onClick={() => handleChangeMob}
-            >
-              Without Ad Blocker
-            </button>
-
-            <button
-              className={`px-4 py-2 text-[12px] font-[600] leading-normal rounded-[57px] ${
-                currentIndexMob === 1
-                  ? "bg-[#DAEBE8] text-[#121212]"
-                  : "border border-[#DAEBE8] text-[#DAEBE8]"
-              }`}
-              onClick={() => setCurrentIndexMob(1)}
-            >
-              With Ad Blocker
-            </button>
-          </div>
-        </div>
-
-        <div className="relative pt-8 pb-16">
-          <div className="place-items-center">
-            <img
-              src={itemMob.image}
-              alt="Adblocker illustration"
-              className="w-full h-auto object-cover border-[0.5px] border-[#D3D3D3] rounded-[5px]"
-            />
-
-            <div className="absolute bottom-0 left-0 w-full h-[28vh] bg-gradient-to-t from-[#01261E] via-[#01261E]/90 to-transparent z-10 pointer-events-none" />
-          </div>
-        </div>
-      </div> */}
       <div className="block lg:hidden relative bg-[#01261E] pt-10 px-0 overflow-hidden">
         <div>
           <h6 className="flex justify-center font-[manrope] pt-4 text-[12px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
-            What we offer, our benefits, simple to learn
+            The inbox is new prime real estate
           </h6>
           <h2 className="flex justify-center py-2 text-center text-[30px] text-white font-[400] leading-[1.2]">
-            Maximize potential and
-            <br /> Drive Business Success
+            Web ads get blocked. Social
+            <br /> ads get ignored.
           </h2>
         </div>
 

@@ -63,9 +63,9 @@ export function ActiveUsers() {
             </button>
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
-                <div className="text-[18px] text-[#9291A5]">Active users</div>
+                <div className="text-[18px] text-[#9291A5]">Audience</div>
                 <CardDescription className="text-[22px] font-bold text-[#1E1B39] mt-0">
-                  6,345
+                  Geographic distribution
                 </CardDescription>
               </div>
             </CardHeader>
@@ -154,17 +154,16 @@ export function ActiveUsers() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[18px] text-[#D3D3D3]">Statistics</div>
+                <div className="text-[18px] text-[#D3D3D3]">Audience</div>
                 <CardDescription className="text-[22px] text-[#DAEBE8] font-bold">
-                  6,345
+                  Geographic distribution
                 </CardDescription>
               </div>
             </CardHeader>
             <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
-              Etiam et convallis dolor. Praesent pulvinar molestie leo, in
-              finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
-              ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus
-              viverra in. Nunc semper neque porta ipsum porta dignissim.
+              This chart shows where our readers are located across key global
+              regions. Understanding where your audience is most active helps
+              make campaigns to specific markets.
             </p>
           </Card>
         </div>
@@ -194,9 +193,9 @@ export function ActiveUsers() {
             </button>
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
-                <div className="text-[11px] text-[#9291A5]">Active users</div>
+                <div className="text-[11px] text-[#9291A5]">Audience</div>
                 <CardDescription className="text-[12px] font-bold text-[#1E1B39] mt-0">
-                  6,345
+                  Geographic distribution
                 </CardDescription>
               </div>
             </CardHeader>
@@ -286,17 +285,16 @@ export function ActiveUsers() {
             </button>
             <CardHeader className="p-0">
               <div className="border-b border-[#ffffff] pb-2">
-                <div className="text-[11px] text-[#D3D3D3]">Statistics</div>
+                <div className="text-[11px] text-[#D3D3D3]">Audience</div>
                 <CardDescription className="text-[12px] text-[#DAEBE8] font-bold">
-                  6,345
+                  Geographic distribution
                 </CardDescription>
               </div>
             </CardHeader>
             <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[11px] pb-4 pt-4">
-              Etiam et convallis dolor. Praesent pulvinar molestie leo, in
-              finibus felis porttitor eget. Suspendisse vel aliquet tellus. Cras
-              ac venenatis mi. Maecenas lobortis nisi enim, eget accumsan risus
-              viverra in. Nunc semper neque porta ipsum porta dignissim.
+              This chart shows where our readers are located across key global
+              regions. Understanding where your audience is most active helps
+              make campaigns to specific markets.
             </p>
           </Card>
         </div>
