@@ -5,7 +5,6 @@ import { Check } from "lucide-react";
 import ReadersNLTest from "../../readersNLTest/readersNLTest";
 import HeadingWithUnderline from "../stuff/headingWithUnderline/headingwithUnderline";
 import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
 
 export default function ReadersNewsletters() {
   const datas = [
@@ -161,166 +160,164 @@ export default function ReadersNewsletters() {
     }, 200); // delay to ensure layout is rendered
   }, [params]);
   return (
-    <Suspense fallback={null}>
-      <div id="ourNewsletters" className="bg-[#FAFAFA]">
-        {/* details */}
-        <div className="px-4 md:px-28 pt-10 w-[58%]">
-          <HeadingWithUnderline text="Our newsletters" />
+    <div id="ourNewsletters" className="bg-[#FAFAFA]">
+      {/* details */}
+      <div className="px-4 md:px-28 pt-10 w-[58%]">
+        <HeadingWithUnderline text="Our newsletters" />
+      </div>
+      <div className="pt-[30px] pb-[56px] md:px-28">
+        <div className="w-[46%]">
+          <p className="text-[#000] text-[16px] font-[400] leading-[152%]">
+            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
+            sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
+            auctor id libero. Interdum et malesuada fames ac ante ipsum primis
+            in faucibus.Proin et pulvinar risus, quis hendrerit nisi. Vestibulum
+            eget sollicitudin odio. Maecenas tellus sem, fermentu.{" "}
+            <a
+              href="/contact"
+              className="text-[#C7A262] text-[16px] font-[500] leading-[152%] hover:underline"
+            >
+              Reach out sales team →
+            </a>
+          </p>
         </div>
-        <div className="pt-[30px] pb-[56px] md:px-28">
-          <div className="w-[46%]">
-            <p className="text-[#000] text-[16px] font-[400] leading-[152%]">
-              Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
-              sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
-              auctor id libero. Interdum et malesuada fames ac ante ipsum primis
-              in faucibus.Proin et pulvinar risus, quis hendrerit nisi.
-              Vestibulum eget sollicitudin odio. Maecenas tellus sem, fermentu.{" "}
-              <a
-                href="/contact"
-                className="text-[#C7A262] text-[16px] font-[500] leading-[152%] hover:underline"
+        <div className="pt-[56px]">
+          <div className="flex flex-row justify-between gap-6">
+            {aboutOurInfo.map((item) => (
+              <div
+                key={item.id}
+                className="flex flex-col items-start text-center"
               >
-                Reach out sales team →
-              </a>
-            </p>
-          </div>
-          <div className="pt-[56px]">
-            <div className="flex flex-row justify-between gap-6">
-              {aboutOurInfo.map((item) => (
-                <div
-                  key={item.id}
-                  className="flex flex-col items-start text-center"
-                >
-                  {/* <img
+                {/* <img
                   src={item.img}
                   alt={item.text}
                   className="w-18 h-[47px] object-contain"
                 /> */}
-                  <p className="text-[#000] text-[64px] font-[800] tracking-[-5.12px]">
-                    {item.number}
-                  </p>
-                  <span className=" text-[#000] text-[20px] font-[600] -mt-[16]">
-                    {item.text}
-                  </span>
-                </div>
-              ))}
-            </div>
+                <p className="text-[#000] text-[64px] font-[800] tracking-[-5.12px]">
+                  {item.number}
+                </p>
+                <span className=" text-[#000] text-[20px] font-[600] -mt-[16]">
+                  {item.text}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
-        {/* newsletter */}
-        <div className="px-4 md:px-28 py-10">
-          <div className="grid gap-6 lg:grid-cols-3">
-            {testInform.map((data) => (
-              <div
-                key={data.id}
-                className="group/card flex flex-col items-start cursor-pointer"
-              >
-                <div className="w-full relative">
-                  <img
-                    src={data.image}
-                    alt={data.heading}
-                    className="w-full rounded-t-[15px]"
-                  />
-                  <div className="group/card">
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-                        handleAdd(data.id);
-                      }}
-                      className={`absolute top-4 left-4 bg-white text-black rounded-full h-[30px] overflow-hidden transition-all duration-500 ease-in-out
+      </div>
+      {/* newsletter */}
+      <div className="px-4 md:px-28 py-10">
+        <div className="grid gap-6 lg:grid-cols-3">
+          {testInform.map((data) => (
+            <div
+              key={data.id}
+              className="group/card flex flex-col items-start cursor-pointer"
+            >
+              <div className="w-full relative">
+                <img
+                  src={data.image}
+                  alt={data.heading}
+                  className="w-full rounded-t-[15px]"
+                />
+                <div className="group/card">
+                  <button
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleAdd(data.id);
+                    }}
+                    className={`absolute top-4 left-4 bg-white text-black rounded-full h-[30px] overflow-hidden transition-all duration-500 ease-in-out
                     ${
                       data.selected
                         ? "w-[115px] px-[32px]"
                         : "w-[30px] px-0 group-hover/card:w-[115px] group-hover/card:px-[13px]"
                     }
                   `}
-                    >
-                      {/* Text */}
-                      <span
-                        className={`inline-block whitespace-nowrap overflow-hidden align-middle transition-all duration-500
+                  >
+                    {/* Text */}
+                    <span
+                      className={`inline-block whitespace-nowrap overflow-hidden align-middle transition-all duration-500
                       ${
                         data.selected
                           ? "max-w-[90px] opacity-100 -ml-6" // ✅ keep width for Selected
                           : "max-w-0 opacity-0 group-hover/card:max-w-[115px] group-hover/card:opacity-100 group-hover/card:mr-10 -ml-0.5"
                       }
                     `}
-                      >
-                        {data.selected ? "Selected" : "Subscribe"}
-                      </span>
+                    >
+                      {data.selected ? "Selected" : "Subscribe"}
+                    </span>
 
-                      {/* Icon */}
-                      <span
-                        className={`absolute top-0 h-[30px] w-[30px] flex items-center justify-center transition-all duration-500
+                    {/* Icon */}
+                    <span
+                      className={`absolute top-0 h-[30px] w-[30px] flex items-center justify-center transition-all duration-500
                       ${
                         data.selected
                           ? "right-3 translate-x-2"
                           : "left-1/2 -translate-x-1/2 group-hover/card:left-auto group-hover/card:right-3 group-hover/card:translate-x-3"
                       }
                     `}
-                      >
-                        {data.selected ? (
-                          <Check size={20} />
-                        ) : (
-                          <span className="text-2xl">+</span>
-                        )}{" "}
-                      </span>
-                    </button>
-                  </div>
-                </div>
-                {/* Card content */}
-                <div className=" w-full border px-8 rounded-b-[15px] py-4 font-">
-                  <div className="relative h-6 overflow-hidden">
-                    <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-0 group-hover/card:-translate-y-6 text-[13px] text-[#000000a8]">
-                      {data.topic}
+                    >
+                      {data.selected ? (
+                        <Check size={20} />
+                      ) : (
+                        <span className="text-2xl">+</span>
+                      )}{" "}
                     </span>
-                    <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-6 group-hover/card:translate-y-0 text-[13px] text-[#000000a8]">
-                      {data.when}
-                    </span>
-                  </div>
-
-                  <div className="text-[22px] text-[#2C2C2C] font-[600] leading-[101.19%]">
-                    {data.heading}
-                  </div>
-                  <div className=" text-[15px] font-[400] text-[#5A5A5A] mt-6 leading-[166%]">
-                    {data.paragraph}
-                  </div>
-                  <div className="mt-4">
-                    <button className=" border border-[#01261E] flex items-center justify-between w-[60%] py-2 px-4 rounded-full hover:bg-[#0B4337] text-white text bg-[#01261E]">
-                      <span className="font-[400] text-[13px]">
-                        {data.footerButton}
-                      </span>
-
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 60 32"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="w-[30px] h-[28px]"
-                      >
-                        <line x1="16" y1="16" x2="50" y2="16" />
-                        <polyline points="42 6 54 16 42 26" />
-                      </svg>
-                    </button>
-                  </div>
+                  </button>
                 </div>
               </div>
-            ))}
-          </div>
-        </div>
+              {/* Card content */}
+              <div className=" w-full border px-8 rounded-b-[15px] py-4 font-">
+                <div className="relative h-6 overflow-hidden">
+                  <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-0 group-hover/card:-translate-y-6 text-[13px] text-[#000000a8]">
+                    {data.topic}
+                  </span>
+                  <span className="block absolute inset-0 transform transition-transform duration-300 translate-y-6 group-hover/card:translate-y-0 text-[13px] text-[#000000a8]">
+                    {data.when}
+                  </span>
+                </div>
 
-        <ReadersNLTest
-          count={testInform.filter((el) => el.selected).length}
-          email={email}
-          setEmail={handleEmailChange}
-          mHandleSubmit={handleSubmit}
-          showPopup={showPopup}
-          setShowPopup={setShowPopup}
-          testInform={testInform}
-          setTestInform={setTestInform}
-        />
+                <div className="text-[22px] text-[#2C2C2C] font-[600] leading-[101.19%]">
+                  {data.heading}
+                </div>
+                <div className=" text-[15px] font-[400] text-[#5A5A5A] mt-6 leading-[166%]">
+                  {data.paragraph}
+                </div>
+                <div className="mt-4">
+                  <button className=" border border-[#01261E] flex items-center justify-between w-[60%] py-2 px-4 rounded-full hover:bg-[#0B4337] text-white text bg-[#01261E]">
+                    <span className="font-[400] text-[13px]">
+                      {data.footerButton}
+                    </span>
+
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 60 32"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="w-[30px] h-[28px]"
+                    >
+                      <line x1="16" y1="16" x2="50" y2="16" />
+                      <polyline points="42 6 54 16 42 26" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
-    </Suspense>
+
+      <ReadersNLTest
+        count={testInform.filter((el) => el.selected).length}
+        email={email}
+        setEmail={handleEmailChange}
+        mHandleSubmit={handleSubmit}
+        showPopup={showPopup}
+        setShowPopup={setShowPopup}
+        testInform={testInform}
+        setTestInform={setTestInform}
+      />
+    </div>
   );
 }

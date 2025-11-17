@@ -1,3 +1,4 @@
+import { Suspense } from "react";
 import ReadersFeatureSection from "../../components/readersFeatureSection/readersFeatureSection";
 import ReadersFeatures from "../../components/readersFeatureSection/readersFeatureSection";
 import ReadersFooter from "../../components/readersFooter/readersFooter";
@@ -14,7 +15,9 @@ export default function ReadersPage() {
       <div className="hidden lg:block bg-[#FAFAFA]">
         <ReadersHero />
 
-        <ReadersNewsletters />
+        <Suspense fallback={null}>
+          <ReadersNewsletters />
+        </Suspense>
 
         <div className="px-4 md:px-28 py-10 w-[58%]">
           <HeadingWithUnderline text="Features" />
@@ -25,7 +28,10 @@ export default function ReadersPage() {
       </div>
       {/* mobile */}
       <div className="block lg:hidden">
-        <ReadersMobileView />
+        <Suspense fallback={null}>
+          <ReadersMobileView />
+        </Suspense>
+
         <ReadersFooterMobile />
       </div>
     </>

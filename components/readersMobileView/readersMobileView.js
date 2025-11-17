@@ -5,7 +5,6 @@ import ReadersMobileFeaturesSection from "../readersMobileFeaturesSection/reader
 import ReadersMobileNewsletterCards from "../readersMobileNewsletterCards/readersMobileNewsletterCards";
 import HeadingWithUnderline from "../readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 import { useEffect } from "react";
-import { Suspense } from "react";
 
 export default function ReadersMobileView() {
   const params = useSearchParams();
@@ -57,21 +56,21 @@ export default function ReadersMobileView() {
         </div>
 
         {/* newsletters section */}
-        <Suspense fallback={null}>
-          <div id="ourNewsletters" className="px-4 py-10 mx-auto">
-            <HeadingWithUnderline text="Our Newsletters" />
-            <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
-              Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
-              sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
-              auctor id libero. Interdum et malesuada fames ac ante ipsum primis
-              in faucibus. Sed eu nulla felis. Quisque eget viverra massa. Donec
-              posuere, sapien vel facilisis dictum, turpis mi tempus mauris, in
-              ullamcorper libero turpis sed mauris. Nulla eu blandit nunc, ut
-              suscipit dolor. Quisque dictum pellentesque tellus sed porta.
-            </p>
-            <ReadersMobileNewsletterCards />
-          </div>
-        </Suspense>
+
+        <div id="ourNewsletters" className="px-4 py-10 mx-auto">
+          <HeadingWithUnderline text="Our Newsletters" />
+          <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
+            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
+            sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
+            auctor id libero. Interdum et malesuada fames ac ante ipsum primis
+            in faucibus. Sed eu nulla felis. Quisque eget viverra massa. Donec
+            posuere, sapien vel facilisis dictum, turpis mi tempus mauris, in
+            ullamcorper libero turpis sed mauris. Nulla eu blandit nunc, ut
+            suscipit dolor. Quisque dictum pellentesque tellus sed porta.
+          </p>
+          <ReadersMobileNewsletterCards />
+        </div>
+
         {/* Features section */}
         <div className="py-10 mx-auto">
           <div className="px-4">
