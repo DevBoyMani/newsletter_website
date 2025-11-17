@@ -108,8 +108,8 @@ export default function AboutOurCompany() {
                         Presidential Summary
                       </p>
                       <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
-                        Global affairs and
-                        <br /> business news
+                        Morning briefing on
+                        <br /> key world events
                       </p>
                     </div>
 
@@ -135,8 +135,8 @@ export default function AboutOurCompany() {
                         Geopolitical Summary
                       </p>
                       <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
-                        International relations
-                        <br /> newsletter
+                        Daily insights for
+                        <br /> global power shifts
                       </p>
                     </div>
 
@@ -208,7 +208,8 @@ export default function AboutOurCompany() {
                         London Summary
                       </p>
                       <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
-                        Capital, historical, diverse, modern
+                        London’s stories and
+                        <br /> shifts in one place
                       </p>
                     </div>
 
@@ -265,8 +266,8 @@ export default function AboutOurCompany() {
                         Dubai Summary
                       </p>
                       <p className="text-[12px] text-center leading-[135%] tracking-[0.24px]">
-                        Explore Dubai careers with
-                        <br /> our guidance
+                        The pulse of Dubai
+                        <br /> in one email
                       </p>
                     </div>
                     <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
@@ -331,8 +332,8 @@ export default function AboutOurCompany() {
                     Presidential Summary
                   </p>
                   <p className="text-[10px] text-center leading-[135%] tracking-[0.24px]">
-                    Global affairs and
-                    <br /> business news
+                    Morning briefing on
+                    <br /> key world events
                   </p>
                 </div>
 
@@ -355,8 +356,8 @@ export default function AboutOurCompany() {
                     Geopolitical Summary
                   </p>
                   <p className="text-[10px] text-center leading-[135%] tracking-[0.24px]">
-                    International relations
-                    <br /> newsletter
+                    Daily insights for
+                    <br /> global power shifts
                   </p>
                 </div>
 
@@ -427,7 +428,8 @@ export default function AboutOurCompany() {
                     London Summary
                   </p>
                   <p className="text-[10px] text-center leading-[135%] tracking-[0.24px]">
-                    Capital, historical, diverse, modern
+                    London’s stories and
+                    <br /> shifts in one place
                   </p>
                 </div>
 
@@ -474,7 +476,8 @@ export default function AboutOurCompany() {
                     Dubai Summary
                   </p>
                   <p className="text-[10px] text-center leading-[135%] tracking-[0.24px]">
-                    Explore Dubai careers
+                    The pulse of Dubai
+                    <br /> in one email
                   </p>
                 </div>
 

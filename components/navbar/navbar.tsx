@@ -8,7 +8,7 @@ import { Customized } from "recharts";
 import CustomizedHoverButton from "../customizedHoverButton/customizedHoverButton";
 
 const routes = [
-  { path: "/about", name: "About" },
+  { path: "/about", name: "About us" },
   { path: "/advertise", name: "Advertise" },
   // { path: "/blogs", name: "Blogs" },
   { path: "/readers", name: "Readers" },
@@ -16,7 +16,7 @@ const routes = [
 ];
 
 const routesMob = [
-  { path: "/about", name: "About" },
+  { path: "/about", name: "About us" },
   { path: "/advertise", name: "Advertise" },
   // { path: "/blogs", name: "Blogs" },
   { path: "/readers", name: "Readers" },
@@ -267,7 +267,7 @@ export default function Navbar() {
 
   const mobileLogoSrc =
     mobFooterInView || adBlockerInView || isDarkMobile
-      ? "/blogs/logo-white.png"
+      ? "/light-logo.png"
       : "/logo.png";
 
   const mobileMenuIconColor =
@@ -290,7 +290,7 @@ export default function Navbar() {
               <img
                 src={
                   footerInView || adBlockerInView || isDarkHeader
-                    ? "/blogs/logo-white.png"
+                    ? "/light-logo.png"
                     : "/logo.png"
                 }
                 alt="Logo"

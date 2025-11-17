@@ -51,64 +51,56 @@ export default function AdvertiseNewFaq() {
       </div>
 
       {/* FAQ Cards */}
-      <div className="flex items-start gap-6 pt-24 bg-[#f9f9f9]">
+      <div className="flex items-start gap-6 py-24 bg-[#f9f9f9]">
         {faqs.map((faq) => {
           const isActive = activeId === faq.id;
 
           return (
             <motion.div
               key={faq.id}
-              layout
               onClick={() => handleCardClick(faq.id)}
-              className={`relative rounded-[25px] cursor-pointer overflow-hidden flex-shrink-0 flex flex-col transition-colors duration-300 ${
-                isActive ? "bg-[#00261E] text-white" : "bg-white text-[#7F8382]"
+              className={`relative rounded-[25px] cursor-pointer transition-all duration-300 ease-in-out overflow-hidden flex-shrink-0 flex flex-col ${
+                isActive
+                  ? "bg-[#00261E] text-white justify-end"
+                  : "bg-white text-[#7F8382] justify-end"
               }`}
               style={{
                 width: isActive ? "33.5%" : "21%",
                 height: 451,
+                padding: isActive
+                  ? "66px 40px 35px 40px"
+                  : "0px 40px 25px 40px",
               }}
             >
-              {/* Inner wrapper to control padding without jump */}
-              <motion.div
-                layout
-                transition={{ type: "spring", stiffness: 200, damping: 24 }}
-                className="flex flex-col justify-end"
-                style={{
-                  padding: isActive
-                    ? "66px 40px 35px 40px"
-                    : "40px 40px 25px 40px",
+              {/* Question */}
+              <motion.p
+                initial={false}
+                animate={{
+                  fontSize: isActive ? "30px" : "27px",
+                  fontWeight: isActive ? 400 : 400,
                 }}
+                transition={{ duration: 0.3 }}
+                className="leading-tight font- w-[85%]"
               >
-                {/* Question */}
-                <motion.p
-                  layout="position"
-                  animate={{
-                    fontSize: isActive ? "30px" : "27px",
-                  }}
-                  transition={{ duration: 0.25 }}
-                  className="leading-tight w-[85%]"
-                >
-                  {faq.question}
-                </motion.p>
+                {faq.question}
+              </motion.p>
 
-                {/* Answer */}
-                <AnimatePresence>
-                  {isActive && (
-                    <motion.div
-                      key="answer"
-                      initial={{ opacity: 0, y: 30 }} // starts lower, so animation goes upward (smooth)
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: 30 }}
-                      transition={{ duration: 0.3 }}
-                      className="mt-[15px]"
-                    >
-                      <p className="text-[13px] font-[400] leading-[152%] text-[#FFFFFFB2]">
-                        {faq.answer}
-                      </p>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
+              {/* Answer */}
+              <AnimatePresence>
+                {isActive && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    // exit={{ opacity: 0, y: 10 }}
+                    // transition={{ duration: 0.4 }}
+                    className="mt-[15px]"
+                  >
+                    <p className="text-[13px] font-[400] leading-[152%] text-[#FFFFFFB2]">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </motion.div>
           );
         })}

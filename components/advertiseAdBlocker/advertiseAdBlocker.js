@@ -8,13 +8,13 @@ export default function AdvertiseAdBlocker() {
     {
       id: 1,
       content:
-        "Our newsletters land in the inbox with zero noise, zero competing banners, and zero ad blockers. Your brand becomes part of the reading experience, not an interruption.",
+        "This is how the internet normally looks. Your campaigns appear across websites  giving you broad visibility wherever your audience browses. However...",
       image: "/advertise/without-ad-blocker.png",
     },
     {
       id: 2,
       content:
-        "Advertisers lose almost 30% of their money to ad blockers. Not with our ads. Advertisers lose almost 30% of their <br/>money to ad blockers.",
+        "This is what your audience sees with an ad blocker. Your web ads disappear entirely, but in email inbox they stay visible every time. Over 40% of internet users have ad blockers.",
       image: "/advertise/with-ad-blocker.png",
     },
   ];
@@ -36,13 +36,13 @@ export default function AdvertiseAdBlocker() {
     {
       id: 1,
       content:
-        "Ad blockers can’t stop your ads here. Web ads get blocked. Newsletter ads don’t. Reach our audience directly, no filters, no ad blockers.",
+        "This is how the internet normally looks. Your campaigns appear across websites  giving you broad visibility wherever your audience browses. However...",
       image: "/advertise/without-ad-blocker-new-mobile.png",
     },
     {
       id: 2,
       content:
-        "Advertisers lose almost 30% of their money to ad blockers. Not with our ads. Advertisers lose almost 30% of their money to ad blockers.",
+        "This is what your audience sees with an ad blocker. Your web ads disappear entirely, but in email inbox they stay visible every time. Over 40% of internet users have ad blockers.",
       image: "/advertise/with-ad-blocker-new-mobile.png",
     },
   ];
@@ -71,7 +71,7 @@ export default function AdvertiseAdBlocker() {
           </p>
           <h2 className="flex justify-center py-2 text-center mx-auto text-[56px] text-white font-[400] leading-[1.2]">
             Web ads get blocked. Social
-            <br /> ads get ignored.
+            <br /> ads get ignored. Ours don’t.
           </h2>
         </div>
 
@@ -149,7 +149,7 @@ export default function AdvertiseAdBlocker() {
           </h6>
           <h2 className="flex justify-center py-2 text-center text-[30px] text-white font-[400] leading-[1.2]">
             Web ads get blocked. Social
-            <br /> ads get ignored.
+            <br /> ads get ignored. Ours don’t.
           </h2>
         </div>
 
