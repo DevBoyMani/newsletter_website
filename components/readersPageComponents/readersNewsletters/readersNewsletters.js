@@ -5,6 +5,7 @@ import { Check } from "lucide-react";
 import ReadersNLTest from "../../readersNLTest/readersNLTest";
 import HeadingWithUnderline from "../stuff/headingWithUnderline/headingwithUnderline";
 import { useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function ReadersNewsletters() {
   const datas = [
@@ -12,70 +13,104 @@ export default function ReadersNewsletters() {
       id: 1,
       headerButton: "Subscribe",
       image: "/readers/n-gs.png",
-      topic: "News",
-      when: "weekly",
+      topic: "Geopolitics",
+      when: "Mon-Sat",
       heading: "Geopolitical Summary",
       paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+        "Clear, concise daily overview of global events. Conflicts, power shifts, and diplomacy summarized with care, so you stay informed without wasting hours on the news.",
       footerButton: "Learn More",
-    },
-    {
-      id: 3,
-      headerButton: "Subscribe",
-      image: "/readers/n-ps.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Presidential Summary",
-      paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      footerButton: "Learn More",
-    },
-    {
-      id: 6,
-      headerButton: "Subscribe",
-      image: "/readers/n-ds.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Dubai Summary",
-      paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      footerButton: "Learn More",
+      btnBg: "#01261E",
+      btnHover: "#0B4337",
+      textColor: "#fff",
+      arrowColor: "#fff",
+      border: "#01261E",
+      source: "https://www.geopoliticalsummary.com/",
     },
     {
       id: 2,
       headerButton: "Subscribe",
-      image: "/readers/n-ms.png",
+      image: "/readers/n-ps.png",
       topic: "News",
-      when: "weekly",
-      heading: "Movie Suggestions",
+      when: "Mon-Sat",
+      heading: "Presidential Summary",
       paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+        "Truthful and unbiased summaries of key events in politics, business, culture, and sports stories shaping our time without drowning in endless headlines.",
       footerButton: "Learn More",
+      btnBg: "#01261E",
+      btnHover: "#0B4337",
+      textColor: "#fff",
+      arrowColor: "#fff",
+      border: "#01261E",
+      source: "https://www.presidentialsummary.com/",
     },
-
+    {
+      id: 3,
+      headerButton: "Subscribe",
+      image: "/readers/n-ds.png",
+      topic: "City series",
+      when: "Weekdays",
+      heading: "Dubai Summary",
+      paragraph:
+        "A daily overview of the Dubai’s news, people, business, and culture, intelligently summarised so you stay connected to Dubai’s pulse in one elegant read.",
+      footerButton: "Learn More",
+      btnBg: "#01261E",
+      btnHover: "#0B4337",
+      textColor: "#fff",
+      arrowColor: "#fff",
+      border: "#01261E",
+      source: "https://www.dubaisummary.com/",
+    },
     {
       id: 4,
       headerButton: "Subscribe",
-      image: "/readers/n-bh.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Business History",
+      image: "/readers/n-ds.png",
+      topic: "City series",
+      when: "Weekdays",
+      heading: "London Summary",
       paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+        "Your window into London’s heartbeat. From markets and policy to culture, Crown and daily life, summarized with clarity and elegance.",
       footerButton: "Learn More",
+      btnBg: "#C6C5C0",
+      btnHover: "#C6C5C010",
+      textColor: "#000",
+      arrowColor: "#000",
+      border: "#C6C5C0",
+      source: "https://www.londonsummary.com/",
     },
-    {
-      id: 5,
-      headerButton: "Subscribe",
-      image: "/readers/n-ls.png",
-      topic: "News",
-      when: "weekly",
-      heading: "Long and Short",
-      paragraph:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      footerButton: "Learn More",
-    },
-    
+    // {
+    //   id: 2,
+    //   headerButton: "Subscribe",
+    //   image: "/readers/n-ms.png",
+    //   topic: "News",
+    //   when: "weekly",
+    //   heading: "Movie Suggestions",
+    //   paragraph:
+    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+    //   footerButton: "Learn More",
+    // },
+
+    // {
+    //   id: 4,
+    //   headerButton: "Subscribe",
+    //   image: "/readers/n-bh.png",
+    //   topic: "News",
+    //   when: "weekly",
+    //   heading: "Business History",
+    //   paragraph:
+    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+    //   footerButton: "Learn More",
+    // },
+    // {
+    //   id: 5,
+    //   headerButton: "Subscribe",
+    //   image: "/readers/n-ls.png",
+    //   topic: "News",
+    //   when: "weekly",
+    //   heading: "Long and Short",
+    //   paragraph:
+    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+    //   footerButton: "Learn More",
+    // },
   ];
 
   const aboutOurInfo = [
@@ -237,7 +272,7 @@ export default function ReadersNewsletters() {
                       className={`inline-block whitespace-nowrap overflow-hidden align-middle transition-all duration-500
                       ${
                         data.selected
-                          ? "max-w-[90px] opacity-100 -ml-6" // ✅ keep width for Selected
+                          ? "max-w-[90px] opacity-100 -ml-6"
                           : "max-w-0 opacity-0 group-hover/card:max-w-[115px] group-hover/card:opacity-100 group-hover/card:mr-10 -ml-0.5"
                       }
                     `}
@@ -282,25 +317,39 @@ export default function ReadersNewsletters() {
                   {data.paragraph}
                 </div>
                 <div className="mt-4">
-                  <button className=" border border-[#01261E] flex items-center justify-between w-[60%] py-2 px-4 rounded-full hover:bg-[#0B4337] text-white text bg-[#01261E]">
-                    <span className="font-[400] text-[13px]">
-                      {data.footerButton}
-                    </span>
-
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 60 32"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="w-[30px] h-[28px]"
+                  <Link href={data.source} target="_blank">
+                    <button
+                      style={{
+                        border: `1px solid ${data.border}`,
+                        color: data.textColor,
+                        "--bgColor": data.btnBg,
+                        "--hoverColor": data.btnHover,
+                      }}
+                      className="
+                      flex items-center justify-between w-[223px] py-2 px-4 rounded-full 
+                      [background-color:var(--bgColor)]
+                      hover:[background-color:var(--hoverColor)]
+                    "
                     >
-                      <line x1="16" y1="16" x2="50" y2="16" />
-                      <polyline points="42 6 54 16 42 26" />
-                    </svg>
-                  </button>
+                      <span className="font-[400] text-[13px]">
+                        {data.footerButton}
+                      </span>
+
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 60 32"
+                        fill="none"
+                        stroke={data.textColor}
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="w-[30px] h-[28px]"
+                      >
+                        <line x1="16" y1="16" x2="50" y2="16" />
+                        <polyline points="42 6 54 16 42 26" />
+                      </svg>
+                    </button>
+                  </Link>
                 </div>
               </div>
             </div>

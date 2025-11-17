@@ -8,74 +8,64 @@ import { useRef, useState, useEffect } from "react";
 
 const feedbackData = [
   {
-    userName: "Ava Wilson",
+    id: 1,
+    userName: "Natalie, Hungary",
     feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "I just wanted to take a moment to sincerely thank you for this newsletter. It's made a real difference in my life, saving me time, money, and the mental clutter.",
   },
   {
-    userName: "Jaxx Sanchez",
+    id: 2,
+    userName: "Michael, Georgia",
     feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "It always keeps me updated even on the go and every day I find news I hadn't heard anywhere else. Keep up the good work and let the haters hate.",
   },
   {
-    userName: "Ava Wilson",
+    id: 3,
+    userName: "Miro, Texas",
     feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "I am a newsletter writer too and I was too lazy to subscribe to your newsletter but I am now proud to say I am a convert!",
   },
   {
-    userName: "Jaxx Sanchez",
+    id: 4,
+    userName: "Nikolai, New Jersey",
     feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "I'm getting more of my kids to read this. Sometimes don't agree with your analysis. But real professionals understand that we have nothing without a dialectic and robust debate.",
   },
   {
-    userName: "Ava Wilson",
+    id: 5,
+    userName: "Jonathan,  UK",
     feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-  },
-  {
-    userName: "Jaxx Sanchez",
-    feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-  },
-  {
-    userName: "Ava Wilson",
-    feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
-  },
-  {
-    userName: "Jaxx Sanchez",
-    feedback:
-      "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.",
+      "It's good. I can get the key topline facts and then if I want to follow up in more detail do a broader search online.",
   },
 ];
 
-const socialMediaIcons = [
-  {
-    name: "x",
-    src: "/readers/x.png",
-    href: "https://www.presidentialsummary.com/",
-  },
-  {
-    name: "insta",
-    src: "/readers/insta.png",
-    href: "https://www.presidentialsummary.com/",
-  },
-  {
-    name: "ln",
-    src: "/readers/ln.png",
-    href: "https://www.presidentialsummary.com/",
-  },
-  {
-    name: "tiktok",
-    src: "/readers/tiktok.png",
-    href: "https://www.presidentialsummary.com/",
-  },
-  {
-    name: "t",
-    src: "/readers/t.png",
-    href: "https://www.presidentialsummary.com/",
-  },
-];
+// const socialMediaIcons = [
+//   {
+//     name: "x",
+//     src: "/readers/x.png",
+//     href: "https://www.presidentialsummary.com/",
+//   },
+//   {
+//     name: "insta",
+//     src: "/readers/insta.png",
+//     href: "https://www.presidentialsummary.com/",
+//   },
+//   {
+//     name: "ln",
+//     src: "/readers/ln.png",
+//     href: "https://www.presidentialsummary.com/",
+//   },
+//   {
+//     name: "tiktok",
+//     src: "/readers/tiktok.png",
+//     href: "https://www.presidentialsummary.com/",
+//   },
+//   {
+//     name: "t",
+//     src: "/readers/t.png",
+//     href: "https://www.presidentialsummary.com/",
+//   },
+// ];
 
 export default function ReadersFooterMobile() {
   const mobileScrollRef = useRef(null); // Ref for the mobile scroll container
@@ -124,12 +114,12 @@ export default function ReadersFooterMobile() {
       {/* mobile view */}
       {/* id="mob-site-footer" */}
       <div className="block lg:hidden bg-[#01261E]">
-        <div className=" md:px-16 pt-[66px] mx-auto ">
+        <div className=" md:px-16 pt-[66px] pb-[26px] mx-auto ">
           <div className="px-4 flex flex-col justify-center mx-auto text-center">
             <h2 className="text-[#FAFAFA] text-[30px] leading-[normal] font-[400]">
-              Sagravia is trusted by
-              <br /> 200,000+ people
-              <br /> worldwide
+              House of Summary is
+              <br /> trusted by 400,000+
+              <br /> people worldwide
             </h2>
           </div>
 
@@ -149,7 +139,9 @@ export default function ReadersFooterMobile() {
               {[...feedbackData, ...feedbackData].map((item, index) => (
                 <div
                   key={index}
-                  className="w-[317px] h-auto bg-[#FFFFFF0D] pl-[17px] pr-[21px] py-[25px] rounded-lg border border-[#FFFFFF33] shrink-0"
+                  className="w-[317px] h-full bg-[#FFFFFF0D] 
+               pl-[17px] pr-[21px] py-[25px] rounded-lg 
+              border border-[#FFFFFF33] shrink-0"
                 >
                   <div className="flex justify-start mb-2">
                     {[...Array(5)].map((_, id) => (
@@ -162,16 +154,17 @@ export default function ReadersFooterMobile() {
                       />
                     ))}
                   </div>
-                  <div className="text-[#ffffff]">
+
+                  <div className="text-[#ffffff] flex flex-col h-full min-h-[180px]">
                     <p className="text-[16px] max-w-[279px]">{item.feedback}</p>
-                    <p className="text-[16px] mt-4">{item.userName}</p>
+                    <p className="text-[16px] mt-auto">{item.userName}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
 
-          <div className="block lg:hidden bg-[#01261E] text-white">
+          {/* <div className="block lg:hidden bg-[#01261E] text-white">
             <div className="md:px-14 pt-12 ">
               <div className="px-4 pb-10">
                 <div className="">
@@ -241,30 +234,6 @@ export default function ReadersFooterMobile() {
                     </ul>
                   </div>
                 </div>
-
-                {/* <div className="pt-12 ">
-                  <ul className="flex flex-col ">
-                    <li className="text-[16px] font-semibold pb-4">
-                      Contact Us
-                    </li>
-
-                    <li href="#" className="py-1 text-[14px]">
-                      <Link href="#" className="">
-                        info@sagravia.com
-                      </Link>
-                    </li>
-                    <li href="#" className="py-1 text-[14px]">
-                      <Link href="#" className="">
-                        +1-2345-6789
-                      </Link>
-                    </li>
-                    <li href="#" className="py-1 text-[14px]">
-                      <Link href="#" className="">
-                        123 Ave, New York, USA
-                      </Link>
-                    </li>
-                  </ul>
-                </div> */}
               </div>
 
               <div>
@@ -289,7 +258,7 @@ export default function ReadersFooterMobile() {
                 <p>© 2024 Sagravia | All Rights Reserved</p>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>

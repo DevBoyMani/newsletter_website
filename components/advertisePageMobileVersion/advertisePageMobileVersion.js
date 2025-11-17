@@ -57,7 +57,7 @@ export default function AdvertisePageMobileVersion() {
             inventory.
           </p>
           <div className="absolute top-100 left-[4%] z-20">
-            <Link href="/about">
+            <Link href="/contact">
               <button className="flex px-[14px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[13px] font-[600] rounded-full border hover:bg-[#0B4337]">
                 Advertise now
               </button>

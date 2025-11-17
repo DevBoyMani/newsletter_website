@@ -105,7 +105,7 @@ export default function Advertise() {
                 ad inventory.
               </p>
               <div>
-                <Link href="/about">
+                <Link href="/contact">
                   <button className="flex px-[18px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[14px] font-[600] rounded-full hover:bg-[#0B4337]">
                     Advertise now
                   </button>

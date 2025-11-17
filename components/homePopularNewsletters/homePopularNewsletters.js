@@ -75,18 +75,21 @@ export default function HomePopularNewsletters() {
                 title: "Presidential Summary",
                 desc: "Start your day informed with the most important news and global developments.",
                 when: "Mon-Sat",
+                source: "https://www.presidentialsummary.com/",
               },
               {
                 dot: "/home/gs-dot.png",
                 title: "Geopolitical Summary",
                 desc: "A daily guide to how countries influence each other, compete, and negotiate power.",
                 when: "Mon-Sat",
+                source: "https://www.geopoliticalsummary.com/",
               },
               {
-                dot: "/home/bh-dot.png",
-                title: "Business History",
+                dot: "/home/ls-dot.png",
+                title: "Dubai Summary",
                 desc: "Part of our City Summary collection. Dubai’s business, policy shifts, and culture news.",
                 when: "Weekdays",
+                source: "https://www.dubaisummary.com/",
               },
             ].map((card, i) => (
               <div
@@ -111,18 +114,20 @@ export default function HomePopularNewsletters() {
                     </p>
 
                     <div className="flex-shrink-0">
-                      <button className="group relative flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[8px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
-                        <img
-                          src="/home/r-arr.png"
-                          alt="Green Arrow"
-                          className="w-6 absolute transition-opacity duration-300 group-hover:opacity-0"
-                        />
-                        <img
-                          src="/home/w-r-arr.png"
-                          alt="White Arrow"
-                          className="w-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
-                        />
-                      </button>
+                      <a href={card.source} target="_blank">
+                        <button className="group relative flex justify-center items-center border border-[#01261E] hover:bg-[#0B4337] rounded-[70px] py-[8px] px-[32px] transition-all duration-300 hover:scale-[1.05]">
+                          <img
+                            src="/home/r-arr.png"
+                            alt="Green Arrow"
+                            className="w-6 absolute transition-opacity duration-300 group-hover:opacity-0"
+                          />
+                          <img
+                            src="/home/w-r-arr.png"
+                            alt="White Arrow"
+                            className="w-6 transition-opacity duration-300 opacity-0 group-hover:opacity-100"
+                          />
+                        </button>
+                      </a>
                     </div>
                   </div>
                 </div>

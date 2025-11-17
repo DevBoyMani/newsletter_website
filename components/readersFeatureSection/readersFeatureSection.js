@@ -118,12 +118,8 @@ export default function ReadersFeatureSection() {
     <>
       <div className="bg-[#FAFAFA] px-4 md:px-28 w-[54.5%]">
         <p className="text-black md:text-[16px] ">
-          Integer convallis dapibus blandit. Proin dapibus vel eros id
-          imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare
-          ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis
-          lobortis tempor velit, a dapibus risus vestibulum a. Maecenas
-          fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit
-          euismod quam eros sit amet est.
+          Our editors check every story for truth, context, and balance. The
+          result is a newsletter that feels calm in a world that rarely pauses.
         </p>
       </div>
 

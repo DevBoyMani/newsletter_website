@@ -5,6 +5,7 @@ import ReadersMobileFeaturesSection from "../readersMobileFeaturesSection/reader
 import ReadersMobileNewsletterCards from "../readersMobileNewsletterCards/readersMobileNewsletterCards";
 import HeadingWithUnderline from "../readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 import { useEffect } from "react";
+import Link from "next/link";
 
 export default function ReadersMobileView() {
   const params = useSearchParams();
@@ -29,12 +30,17 @@ export default function ReadersMobileView() {
       <div className="bg-[#FAFAFA] pt-[110px]">
         <div className="px-4 py-10 mx-auto">
           <h2 className=" text-[#01261E] text-[44px] leading-[107%] ">
-            Step into a world of discovery
+            For the readers still left in the world.
           </h2>
           <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
-            Explore different categories. Find the best deals. AG1 is a daily
-            health drink packed with nutrients to help alleviate bloating.
+            Our newsletters are written for those who seek meaning, not just
+            empty updates.
           </p>
+          <Link href="/about">
+            <button className="flex px-[16px] py-[7px] bg-[#01261E] text-[#FAFAFA] text-[13px] font-[500] rounded-full border hover:bg-[#0B4337]">
+              About us
+            </button>
+          </Link>
         </div>
         <div className="px-4 pb-10 mx-auto">
           <div className="w-full h-full">
@@ -60,13 +66,16 @@ export default function ReadersMobileView() {
         <div id="ourNewsletters" className="px-4 py-10 mx-auto">
           <HeadingWithUnderline text="Our Newsletters" />
           <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
-            Proin et pulvinar risus, quis hendrerit nisi. Vestibulum eget
-            sollicitudin odio. Maecenas tellus sem, fermentum id aliquam et,
-            auctor id libero. Interdum et malesuada fames ac ante ipsum primis
-            in faucibus. Sed eu nulla felis. Quisque eget viverra massa. Donec
-            posuere, sapien vel facilisis dictum, turpis mi tempus mauris, in
-            ullamcorper libero turpis sed mauris. Nulla eu blandit nunc, ut
-            suscipit dolor. Quisque dictum pellentesque tellus sed porta.
+            Our editors review an overwhelming number of sources, remove the
+            noise, and surface only what matters. Readers stay informed with
+            clarity and precision, without wasting time or attention.
+            <br />
+            <a
+              href="/contact"
+              className="text-[#C7A262] text-[14px] font-[400] hover:underline"
+            >
+              Explore advertising opportunities →
+            </a>
           </p>
           <ReadersMobileNewsletterCards />
         </div>
@@ -77,12 +86,9 @@ export default function ReadersMobileView() {
             <HeadingWithUnderline text="Features" />
           </div>
           <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4 px-4">
-            Integer convallis dapibus blandit. Proin dapibus vel eros id
-            imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare
-            ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis
-            lobortis tempor velit, a dapibus risus vestibulum a. Maecenas
-            fringilla, ligula in finibus pretium, sem odio commodo nisl,
-            hendrerit euismod quam eros sit amet est.
+            Our editors check every story for truth, context, and balance. The
+            result is a newsletter that feels calm in a world that rarely
+            pauses.
           </p>
           <ReadersMobileFeaturesSection />
         </div>

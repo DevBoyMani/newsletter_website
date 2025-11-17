@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function FooterWrapper() {
   const pathname = usePathname();
 
-  const shouldHideFooter = pathname === "/readers";
+  // const shouldHideFooter = pathname === "/readers";
   const isCareersSlugPage = pathname.startsWith("/careers/");
   const showContactBanner = !isCareersSlugPage;
 
@@ -58,7 +58,8 @@ export default function FooterWrapper() {
       )}
 
       {/* Common footer (everywhere except /readers) */}
-      {!shouldHideFooter && <Footer />}
+      {/* {!shouldHideFooter && <Footer />} */}
+      <Footer />
     </>
   );
 }

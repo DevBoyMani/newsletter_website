@@ -5,6 +5,7 @@ import { FaStar } from "react-icons/fa";
 import { ReadersSubscribe } from "../readersSubscribe/readersSubscribe";
 import Image from "next/image";
 import { useState } from "react";
+// import { usePathname } from "next/navigation";
 
 const socialMediaIcons = [
   {
@@ -35,6 +36,9 @@ const socialMediaIcons = [
 ];
 
 export default function Footer() {
+  // const pathname = usePathname();
+  // const isReadersPage = pathname === "/readers";
+
   const [showPopup, setShowPopup] = useState(false);
   const handleCopy = () => {
     const email = "careers@sagravia.com";
@@ -55,9 +59,14 @@ export default function Footer() {
               <p className="text-[#C7A262] text-[16px] font-[500] leading-[49px]">
                 CONTACT US
               </p>
-              <h2 className="w-[464px] text-[40px] font-[manrope] font-[400] leading-[49px] text-[#fff]">
+              <h2 className="w-[455px] text-[40px] font-[manrope] font-[400] leading-[49px] text-[#fff]">
                 Serious readers. Smart brands. The connection starts here.
               </h2>
+              {/* <h2 className="w-[455px] text-[40px] font-[manrope] font-[400] leading-[49px] text-[#fff]">
+                {isReadersPage
+                  ? "Stay informed. Stay ahead. Join the global community of serious readers."
+                  : "Serious readers. Smart brands. The connection starts here."}
+              </h2> */}
 
               {/* Email box */}
               <div className="flex items-center justify-between w-fit mt-[36px] px-[26px] py-[5.5px] rounded-[44px] border border-dashed border-[#EFEFEF57] bg-[#DAEBE84A] gap-3">

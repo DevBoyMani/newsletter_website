@@ -8,49 +8,50 @@ export default function ReadersMobileNewsletterCards() {
   const newsLetterData = [
     {
       id: 1,
-      domain: "NEWS",
-      name: "Presidential Summary",
-      image: "/readers/ps.png",
-      content:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      learnMore: "https://www.presidentialsummary.com/",
-    },
-    {
-      id: 2,
-      domain: "Politics",
+      domain: "Geopolitics",
       name: "Geopolitical Summary",
       image: "/readers/gs.png",
       content:
-        "By examining key political, economic, and security dynamics, we help readers stay informed about the forces driving international relations and decision-making.",
-      learnMore: "https://www.presidentialsummary.com/",
+        "Clear, concise daily overview of global events. Conflicts, power shifts, and diplomacy summarized with care, so you stay informed without wasting hours on the news.",
+      learnMore: "https://www.geopoliticalsummary.com/",
     },
     {
+      id: 2,
+      domain: "News",
+      name: "Presidential Summary",
+      image: "/readers/ps.png",
+      content:
+        "Truthful and unbiased summaries of key events in politics, business, culture, and sports stories shaping our time without drowning in endless headlines.",
+      learnMore: "https://www.presidentialsummary.com/",
+    },
+
+    {
       id: 3,
-      domain: "Business",
-      name: "Business History",
+      domain: "City series",
+      name: "Dubai Summary",
       image: "/readers/bh.png",
       content:
-        "Our mission is to make historical business knowledge accessible and relevant for entrepreneurs, executives, researchers.",
-      learnMore: "https://www.presidentialsummary.com/",
+        "A daily overview of the Dubai’s news, people, business, and culture, intelligently summarised so you stay connected to Dubai’s pulse in one elegant read.",
+      learnMore: "https://www.dubaisummary.com/",
     },
     {
       id: 4,
-      domain: "Finance",
-      name: "Long and Short",
+      domain: "City series",
+      name: "London Summary",
       image: "/readers/ls.jpg",
       content:
-        "We cover key topics such as market trends, investment strategies, risk management, and economic developments, delivering in-depth analysis in a format that is accessible.",
-      learnMore: "https://www.presidentialsummary.com/",
+        "Your window into London’s heartbeat. From markets and policy to culture, Crown and daily life, summarized with clarity and elegance.",
+      learnMore: "https://www.londonsummary.com/",
     },
-    {
-      id: 5,
-      domain: "Entertainment",
-      name: "Movie Suggestions",
-      image: "/readers/ms.png",
-      content:
-        "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-      learnMore: "https://www.presidentialsummary.com/",
-    },
+    // {
+    //   id: 5,
+    //   domain: "Entertainment",
+    //   name: "Movie Suggestions",
+    //   image: "/readers/ms.png",
+    //   content:
+    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
+    //   learnMore: "https://www.presidentialsummary.com/",
+    // },
   ];
 
   const [showPopup, setShowPopup] = useState(false);

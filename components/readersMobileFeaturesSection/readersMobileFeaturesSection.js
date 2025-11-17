@@ -6,42 +6,42 @@ import { motion } from "framer-motion";
 const sections = [
   {
     id: 1,
-    title: "1. Supports dark mode",
+    title: "Beautiful on dark mode",
     //   src:"/readers/supports-dark-mode.png",
     content:
-      "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      "Reading should feel effortless. Our layout adapts to low light, reducing eye strain and making late night reading genuinely enjoyable.",
     imageSize: "",
   },
   {
     id: 2,
-    title: "2. High quality pictures for context",
+    title: "High quality pictures for context",
     src: "/readers/nl-image-for-features.png",
     content:
-      "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      "We use images with intention. Every picture adds clarity, helps you understand the story faster, and gives you visual context without overwhelming your reading flow.",
     imageSize: "w-[431px] h-[379px]",
   },
   {
     id: 3,
-    title: "3. Fact checked and human written",
+    title: "Human written and fact checked",
     src: "/readers/fact-checked-mobile.png",
     content:
-      "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      "We don’t publish until every claim is confirmed. Our editors validate sources, check dates, trace data, and ensure context so you never get half-truths or headlines without substance.",
     // imageSize: "h-[444px]",
   },
   {
     id: 4,
-    title: "4. Clear summary for the import new",
+    title: "Clear summary for important news",
     src: "/readers/clear-summary-for-the-import-news-mob.png",
     content:
-      "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      "We monitor the world’s most credible news outlets, filter out the noise, and summarize only what matters. You stay informed in minutes instead of losing hours on endless articles.",
     imageSize: "w-[60%]",
   },
   {
     id: 5,
-    title: "5. We don’t link to any paywalled sites",
+    title: "We don’t link to any paywalled sites",
     src: "/readers/we-dont-think.png",
     content:
-      "AG1 is proudly NSF Integer convallis dapibus blandit. Proin dapibus vel eros id imperdiet. Fusce vel venenatis elit. Nunc imperdiet orci ac ornare ornare. Morbi vitae tincidunt ipsum, vitae tincidunt elit. Duis lobortis tempor velit, a dapibus risus vestibulum a. Maecenas fringilla, ligula in finibus pretium, sem odio commodo nisl, hendrerit euismod quam eros sit amet est.",
+      "You will never hit a paywall from us. Every link we share is open, accessible, and worth your attention.",
     imageSize: " h-auto",
   },
 ];

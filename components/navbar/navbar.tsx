@@ -282,67 +282,65 @@ export default function Navbar() {
     <>
       {/* === Desktop  ===  */}
       <header
-        className={`hidden lg:block fixed top-0 left-0 right-0 z-50 transition-colors duration-300 ${headerBg} py-[12px]`}
+        className={`hidden lg:block fixed top-0 left-0 w-full px-[110px] py-[12px] z-50 transition-colors duration-300 ${headerBg}`}
       >
-        <div className="w-[86%] mx-auto">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <div className="w-32 md:w-36">
-                <img
-                  src={
-                    footerInView || adBlockerInView || isDarkHeader
-                      ? "/blogs/logo-white.png"
-                      : "/logo.png"
-                  }
-                  alt="Logo"
-                  className=""
-                />
-              </div>
-            </Link>
-
-            <div className=" font-[400] flex items-center">
-              <div className="flex items-center gap-[30px]">
-                {routes.map((route) => (
-                  <Link
-                    key={route.path}
-                    href={route.path}
-                    className={`relative group lg:text-[17px] overflow-hidden ${
-                      pathname === route.path
-                        ? "text-[#C7A262]"
-                        : footerInView || adBlockerInView || isDarkHeader
-                        ? "text-white"
-                        : "text-black"
-                    }`}
-                  >
-                    {/* Default state */}
-                    <span className="block transform transition-transform duration-500 ease-out group-hover:-translate-y-full">
-                      {route.name}
-                    </span>
-
-                    {/* Hover state (slides in from bottom) */}
-                    <span className="block absolute left-0 top-0 transform translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0">
-                      {route.name}
-                    </span>
-                  </Link>
-                ))}
-              </div>
-
-              <CustomizedHoverButton
-                href="/contact"
-                label="Advertise now"
-                fontSize="16px"
-                fontWeight="300"
-                // width="135px"
-                // height="42px"
-                // hoverBorderColor="#C7A262"
-                hoverText="#ffffff"
-                bgColor="#C7A262"
-                hoverBgColor="#01261E"
-                textColor="#fff"
-                padding="px-6 py-2"
-                margin="ml-[120px]"
+        <div className="flex items-center justify-between">
+          <Link href="/">
+            <div className="w-32 md:w-36">
+              <img
+                src={
+                  footerInView || adBlockerInView || isDarkHeader
+                    ? "/blogs/logo-white.png"
+                    : "/logo.png"
+                }
+                alt="Logo"
+                className=""
               />
             </div>
+          </Link>
+
+          <div className=" font-[400] flex items-center">
+            <div className="flex items-center gap-[30px]">
+              {routes.map((route) => (
+                <Link
+                  key={route.path}
+                  href={route.path}
+                  className={`relative group lg:text-[17px] overflow-hidden ${
+                    pathname === route.path
+                      ? "text-[#C7A262]"
+                      : footerInView || adBlockerInView || isDarkHeader
+                      ? "text-white"
+                      : "text-black"
+                  }`}
+                >
+                  {/* Default state */}
+                  <span className="block transform transition-transform duration-500 ease-out group-hover:-translate-y-full">
+                    {route.name}
+                  </span>
+
+                  {/* Hover state (slides in from bottom) */}
+                  <span className="block absolute left-0 top-0 transform translate-y-full transition-transform duration-500 ease-out group-hover:translate-y-0">
+                    {route.name}
+                  </span>
+                </Link>
+              ))}
+            </div>
+
+            <CustomizedHoverButton
+              href="/contact"
+              label="Advertise now"
+              fontSize="16px"
+              fontWeight="300"
+              // width="135px"
+              // height="42px"
+              // hoverBorderColor="#C7A262"
+              hoverText="#ffffff"
+              bgColor="#C7A262"
+              hoverBgColor="#01261E"
+              textColor="#fff"
+              padding="px-6 py-2"
+              margin="ml-[120px]"
+            />
           </div>
         </div>
       </header>

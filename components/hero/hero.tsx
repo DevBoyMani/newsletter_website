@@ -1,5 +1,6 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 import { FaStar } from "react-icons/fa";
 
@@ -47,9 +48,11 @@ export default function Hero() {
               </p>
               <div className="pt-[32px]">
                 {/* w-[43%] */}
-                <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] text-[#fff] rounded-[57px] leading-normal font-[400]">
-                  Advertise your brand
-                </button>
+                <Link href="/advertise">
+                  <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] text-[#fff] rounded-[57px] leading-normal font-[400]">
+                    Advertise your brand
+                  </button>
+                </Link>
               </div>
             </div>
             {/* right */}
@@ -104,9 +107,11 @@ export default function Hero() {
             </p>
 
             <div className="pt-6">
-              <button className="w-[111px] sm:w-[118px] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
-                Get started
-              </button>
+              <Link href="/advertise">
+                <button className="w-[111px] sm:w-[118px] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
+                  Advertise
+                </button>
+              </Link>
             </div>
           </div>
         </div>
