@@ -120,8 +120,8 @@ export default function HomeLatestStrories() {
             <div className="w-[640px] mx-auto px-8">
               <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
                 Our readers pay attention. They trust what we share and they act
-                on it. If your brand has something real to offer, let’s talk and
-                see if we’re a good fit.
+                on it. If your brand aligns with that level of quality, let’s
+                talk and see if we’re a good fit.
               </p>
             </div>
 
@@ -132,12 +132,12 @@ export default function HomeLatestStrories() {
               className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
             >
               <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
               </span>
             </a>
 
@@ -239,8 +239,8 @@ export default function HomeLatestStrories() {
             <div className="pt-[30px]">
               <p className="w-[252px] text-[16px] font-[400] leading-[125%] tracking-[0.8px] text-center">
                 Our readers pay attention. They trust what we share and they act
-                on it. If your brand has something real to offer, let’s talk and
-                see if we’re a good fit.
+                on it. If your brand aligns with that level of quality, let’s
+                talk and see if we’re a good fit.
               </p>
             </div>
             {/* Moving Text mobile*/}
@@ -250,12 +250,12 @@ export default function HomeLatestStrories() {
               className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-[30px] bg-[#01261E] text-[#ffffff]  font-[800]"
             >
               <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE ADVERTISE
-                ADVERTISE ADVERTISE ADVERTISE
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
               </span>
             </a>
           </div>

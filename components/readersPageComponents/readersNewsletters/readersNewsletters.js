@@ -63,19 +63,20 @@ export default function ReadersNewsletters() {
     {
       id: 4,
       headerButton: "Subscribe",
-      image: "/readers/n-ds.png",
+      image: "/readers/n-ls.png",
       topic: "City series",
       when: "Weekdays",
       heading: "London Summary",
       paragraph:
         "Your window into London’s heartbeat. From markets and policy to culture, Crown and daily life, summarized with clarity and elegance.",
-      footerButton: "Learn More",
+      footerButton: "Coming soon",
       btnBg: "#C6C5C0",
-      btnHover: "#C6C5C010",
+      btnHover: "#C6C5C0",
       textColor: "#000",
       arrowColor: "#000",
       border: "#C6C5C0",
-      source: "https://www.londonsummary.com/",
+      // source: "https://www.londonsummary.com/",
+      source: "#",
     },
     // {
     //   id: 2,
@@ -217,11 +218,11 @@ export default function ReadersNewsletters() {
           </p>
         </div>
         <div className="pt-[56px]">
-          <div className="flex flex-row justify-between gap-6">
+          <div className="flex flex-row justify-between">
             {aboutOurInfo.map((item) => (
               <div
                 key={item.id}
-                className="flex flex-col items-start text-center"
+                className="flex flex-col items-start text-center gap-[0px]"
               >
                 {/* <img
                   src={item.img}
@@ -231,7 +232,7 @@ export default function ReadersNewsletters() {
                 <p className="text-[#000] text-[64px] font-[800] tracking-[-5.12px]">
                   {item.number}
                 </p>
-                <span className=" text-[#000] text-[20px] font-[600] -mt-[16]">
+                <span className=" text-[#000] text-[20px] font-[600]">
                   {item.text}
                 </span>
               </div>

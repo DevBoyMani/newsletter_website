@@ -88,11 +88,11 @@ export default function AboutNewslettersStatistics() {
             <div className="w-full md:w-1/2">
               <div className="pl-14">
                 <p className="text-[#151515] text-[24px] md:text-[27px] font-bold leading-[127%]">
-                  Average <span className="text-[#B3B3B3]">newsletter</span>
+                  Our emails have been
                   <br />
-                  <span className="text-[#B3B3B3]">open rates</span> are around
+                  read<span className="text-[#B3B3B3]"> over 1.5 million</span>
                   <br />
-                  <span className="text-[#B3B3B3]">20–25%</span>.
+                  times.
                 </p>
               </div>
 

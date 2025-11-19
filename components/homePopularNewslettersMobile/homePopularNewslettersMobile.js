@@ -35,8 +35,8 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
         Popular newsletters
       </h2>
       <p className="text-[#000] text-[14px] font-[400] leading-[19px] pt-[25px]">
-        News should inform you, not exhaust you. We turn complex stories into
-        clear and thoughtful summaries, written by humans with good judgment.
+        News should inform, not exhaust. We turn complex stories into clear and
+        thoughtful summaries, written by humans with good judgment.
       </p>
 
       {/* Buttons Row */}

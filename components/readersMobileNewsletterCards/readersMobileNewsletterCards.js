@@ -14,6 +14,7 @@ export default function ReadersMobileNewsletterCards() {
       content:
         "Clear, concise daily overview of global events. Conflicts, power shifts, and diplomacy summarized with care, so you stay informed without wasting hours on the news.",
       learnMore: "https://www.geopoliticalsummary.com/",
+      btnText: "Learn More",
     },
     {
       id: 2,
@@ -23,25 +24,28 @@ export default function ReadersMobileNewsletterCards() {
       content:
         "Truthful and unbiased summaries of key events in politics, business, culture, and sports stories shaping our time without drowning in endless headlines.",
       learnMore: "https://www.presidentialsummary.com/",
+      btnText: "Learn More",
     },
 
     {
       id: 3,
       domain: "City series",
       name: "Dubai Summary",
-      image: "/readers/bh.png",
+      image: "/readers/m-ds.png",
       content:
         "A daily overview of the Dubai’s news, people, business, and culture, intelligently summarised so you stay connected to Dubai’s pulse in one elegant read.",
       learnMore: "https://www.dubaisummary.com/",
+      btnText: "Learn More",
     },
     {
       id: 4,
       domain: "City series",
       name: "London Summary",
-      image: "/readers/ls.jpg",
+      image: "/readers/m-ls.png",
       content:
         "Your window into London’s heartbeat. From markets and policy to culture, Crown and daily life, summarized with clarity and elegance.",
-      learnMore: "https://www.londonsummary.com/",
+      learnMore: "#",
+      btnText: "Coming soon",
     },
     // {
     //   id: 5,
@@ -148,7 +152,7 @@ export default function ReadersMobileNewsletterCards() {
                 rel="noopener noreferrer"
                 className="text-[13px] text-[#01261E] font-[500] mt-2 underline"
               >
-                Learn more
+                {item.btnText}
               </a>
             </div>
           </div>

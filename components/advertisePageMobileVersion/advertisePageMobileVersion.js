@@ -53,7 +53,7 @@ export default function AdvertisePageMobileVersion() {
             90,367 people would have seen your brand yesterday
           </h2>
           <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
-            Make your brand part of their morning ritual. Not their ignored ad
+            Make your brand part of their morning ritual. Not ignored ad
             inventory.
           </p>
           <div className="absolute top-100 left-[4%] z-20">
@@ -109,7 +109,7 @@ export default function AdvertisePageMobileVersion() {
         {/* Subscribers Text */}
         <div className="absolute -bottom-1 left-4 w-full text-start z-20">
           <h2 className="text-[13.5vw] font-normal leading-[1] tracking-tight text-wrap">
-            <span className="text-white">400k </span>
+            <span className="text-white">500k </span>
             <span className="text-[#01261E]">Subscribers</span>
           </h2>
         </div>
@@ -188,14 +188,16 @@ export default function AdvertisePageMobileVersion() {
           </p>
 
           <a
-            href="#"
+            href="/contact"
             className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group bg-[#01261E] text-[#ffffff] font-[800]"
           >
             <span className="flex py-2 justify-end items-center text-[37px] uppercase whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
             </span>
           </a>
         </div>

@@ -67,7 +67,7 @@ export default function AdvertiseAdBlocker() {
       >
         <div>
           <p className="flex justify-center pt-4 text-[16px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
-            The inbox is new prime real estate
+            Your message always gets seen
           </p>
           <h2 className="flex justify-center py-2 text-center mx-auto text-[56px] text-white font-[400] leading-[1.2]">
             Web ads get blocked. Social
@@ -145,7 +145,7 @@ export default function AdvertiseAdBlocker() {
       <div className="block lg:hidden relative bg-[#01261E] pt-10 px-0 overflow-hidden">
         <div>
           <h6 className="flex justify-center font-[manrope] pt-4 text-[12px] text-[#C7A262] font-[500] leading-[150%] tracking-[0.32px]">
-            The inbox is new prime real estate
+            Your message always gets seen
           </h6>
           <h2 className="flex justify-center py-2 text-center text-[30px] text-white font-[400] leading-[1.2]">
             Web ads get blocked. Social

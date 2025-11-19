@@ -55,8 +55,8 @@ export default function HomePopularNewsletters() {
           </h2>
           <div className="flex justify-between pt-[35px]">
             <p className="w-[42%] text-[#737373] text-[16px] font-[400] leading-[149%]">
-              News should inform you, not exhaust you. We turn complex stories
-              into clear and thoughtful summaries, written by humans with good
+              News should inform, not exhaust. We turn complex stories into
+              clear and thoughtful summaries, written by humans with good
               judgment.
             </p>
             <a

@@ -101,8 +101,8 @@ export default function Advertise() {
                 90,367 people would have seen your brand yesterday
               </h2>
               <p className="text-[20px] py-4 w-[30%] sm:w-[30%]">
-                Make your brand part of their morning ritual. Not their ignored
-                ad inventory.
+                Make your brand part of their morning ritual. Not ignored ad
+                inventory.
               </p>
               <div>
                 <Link href="/contact">
@@ -159,7 +159,7 @@ export default function Advertise() {
             {/* 100K Subscribers Text */}
             <div className="absolute -bottom-4 left-[49.7%] -translate-x-1/2 z-20 text-center">
               <h2 className="font-[700] sm:text-[10vw] lg:text-[11.4vw] 2xl:text-[11.4vw] [1650px]:text-[13vw] [1800px]:text-[13vw] leading-[94%] tracking-[-1.6px] whitespace-nowrap">
-                <span className="text-white">400k </span>
+                <span className="text-white">500k </span>
                 <span className="text-[#01261E]">Subscribers</span>
               </h2>
             </div>
@@ -317,16 +317,16 @@ export default function Advertise() {
 
           {/* Moving Text */}
           <a
-            href="#"
+            href="/contact"
             className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
           >
             <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform uppercase duration-500 ease-in-out animate-scroll group-hover:pause group">
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise Advertise Advertise Advertise
-              Advertise Advertise Advertise
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
+              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
             </span>
           </a>
         </div>
