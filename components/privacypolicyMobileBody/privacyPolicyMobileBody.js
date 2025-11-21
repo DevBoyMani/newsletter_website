@@ -8,7 +8,7 @@ const sectionsWithContent = [
     title: "Information We Collect",
     topContent: (
       <>
-        <p className="text-[16px] text-[#000000] font-[400] leading-normal">
+        <p className="lg:text-[16px] text-[14px] text-[#000000] font-[400] leading-normal">
           House of Summary ("Website") is a website owned and operated by House
           of Summary LLC. We are committed to protecting your privacy. This
           Privacy Policy explains how we collect, use, disclose, and safeguard
@@ -507,7 +507,7 @@ export default function PrivacyPolicyMobileBody() {
             Privacy Policy
           </h2>
           <p className="text-[15px] text-[#6B6B6F] font-[400] leading-[157%] pt-[16px] pb-[35px]">
-            Latest updated 24 June 2025
+            Latest updated November 15, 2025
           </p>
         </div>
 

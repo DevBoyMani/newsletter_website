@@ -8,639 +8,167 @@ import CookiePolicyMobileBody from "../../components/cookiePolicyMobileBody/cook
 const sectionsWithContent = [
   {
     id: 1,
-    title: "Information We Collect",
+    title: "What Are Cookies?",
     topContent: (
       <>
-        <p className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[35]">
+        <p className="text-[16px] text-[#000000] font-[400] leading-[157%]">
           House of Summary ("Website") is a website owned and operated by House
-          of Summary LLC. We are committed to protecting your privacy. This
-          Privacy Policy explains how we collect, use, disclose, and safeguard
-          your information when you visit our Website and subscribe to our
-          newsletter. Please read this Privacy Policy carefully. By accessing or
-          using the Website, you agree to the collection and use of information
-          in accordance with this policy.
+          of Summary LLC. Our website uses cookies and similar tracking
+          technologies to enhance your browsing experience, analyze website
+          traffic, and personalize content. This Cookie Policy explains what
+          cookies are, how we use them, and how you can manage your cookie
+          preferences.
         </p>
       </>
     ),
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          1.1 Personal Information
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          The marketing world is constantly evolving, and email marketing is the
-          future of advertising. It is a fast, flexible, and cost-effective way
-          to promote products or services. Email has become a daily habit for
-          many. It is perceived as reliable, safe, and free from intrusive
-          pop-ups, malicious bots, or fraud. This trust translates into higher
-          engagement in email newsletters than in other marketing channels.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          The marketing world is constantly evolving, and email marketing is the
-          future of advertising. It is a fast, flexible, and cost-effective way
-          to promote products or services. Email has become a daily habit for
-          many. It is perceived as reliable, safe, and free from intrusive
-          pop-ups, malicious bots, or fraud. This trust translates into higher
-          engagement in email newsletters than in other marketing channels.
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%]">
+          Cookies are small text files stored on your device (computer, tablet,
+          or mobile) when you visit a website. They help the website recognize
+          your device on subsequent visits, enabling various features and
+          functionalities.
         </p>
       </>
     ),
   },
   {
     id: 2,
-    title: "How We Use Your Information",
+    title: "Types of Cookies We Use",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Email marketing is a broad umbrella, and one of the most effective
-          ways to leverage it is through newsletter advertising. It is a
-          powerful strategy that is taking the marketing world by storm.
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
+          We use the following types of cookies on our website:
         </p>
-        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
+        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] ">
           <li>
-            There are 4.5 billion email users, and this is expected to reach 4.8
-            billion by 2027.
+            Essential Cookies: These cookies are necessary for the website to
+            function properly. They enable basic functionalities such as page
+            navigation and access to secure areas of the website. Without these
+            cookies, the website cannot operate efficiently.
           </li>
           <li>
-            4 in 5 customers prefer email over any other form of communication.
+            Performance Cookies: These cookies collect information about how
+            visitors use our website, such as which pages are visited most
+            often. This information is used to improve the website’s performance
+            and user experience. These cookies do not collect personal
+            information.
           </li>
           <li>
-            95% of marketers agree it delivers excellent return on investment
-            (ROI).
+            Functional Cookies: These cookies allow the website to remember
+            choices you make (such as your username, language, or region) and
+            provide enhanced, personalized features. They may also be used to
+            provide services you have requested, such as watching a video or
+            commenting on a blog.
           </li>
           <li>
-            Email marketing revenue is expected to grow by 287% worldwide by
-            2032.
-          </li>
-          <li>
-            Hands-on experience with more than one payroll software (Dayforce,
-            ADP WFN, UKG, Workday, Employeur D, Nethris...)
-          </li>
-          <li>
-            Email open rates range from 15-25%, 275% better than organic social
-            media engagement. 
+            Marketing Cookies: These cookies track your browsing habits to
+            deliver advertisements relevant to you and your interests. They also
+            help measure the effectiveness of advertising campaigns. These
+            cookies may be set by third-party advertising networks with our
+            permission.
           </li>
         </ul>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          While social media offers broad reach and engagement, newsletter
-          advertising often provides a more targeted and focused audience,
-          potentially leading to higher conversion rates and a stronger return
-          on investment. Unlike intrusive ads on platforms like YouTube,
-          newsletters are a deliberate choice made by the user. They can’t be
-          skipped, but are actively chosen by users.
-        </p>
       </>
     ),
   },
   {
     id: 3,
-    title: "Sharing Your Information",
+    title: "How We Use Cookies",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
+          We use cookies to:
         </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
+
+        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] ">
+          <li>
+            Enhance your browsing experience by remembering your preferences and
+            settings.
+          </li>
+          <li>
+            Understand how you use our website and improve its performance and
+            functionality.
+          </li>
+        </ul>
       </>
     ),
   },
   {
     id: 4,
-    title: "Data Security",
+    title: "Third-Party Cookies",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%]">
+          In addition to our own cookies, we may also use various third-party
+          cookies to report usage statistics of the website, deliver
+          advertisements, and improve the overall user experience. These third
+          parties may include analytics providers, advertising networks, and
+          social media platforms.
         </p>
       </>
     ),
   },
   {
     id: 5,
-    title: "Cookies and Tracking Technologies",
+    title: "Your Cookie Choices",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
-          You can buy newsletter ad space through programmatic direct buys,
-          private marketplaces (PMPs), or open exchanges. Programmatic direct
-          buys allow you to purchase ad inventory directly from a publisher,
-          creating a one-to-one relationship. Private marketplaces (PMPs) offer
-          exclusive access to premium ad slots, while open exchanges function as
-          public auctions where multiple advertisers bid for available
-          inventory.
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
+          You have the right to manage your cookie preferences. Most web
+          browsers automatically accept cookies, but you can usually modify your
+          browser settings to decline cookies if you prefer. Please note that
+          disabling cookies may affect the functionality and features of our
+          website.
         </p>
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
+          To manage your cookie preferences:
+        </p>
+        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] ">
+          <li>
+            Browser Settings: You can adjust your browser settings to block or
+            alert you about cookies. Check your browser’s help section for
+            instructions on how to do this.
+          </li>
+          <li>
+            Opt-Out Tools: Some third parties provide opt-out tools to manage
+            cookies used for advertising purposes. Examples include the Network
+            Advertising Initiative (NAI) opt-out page and the Digital
+            Advertising Alliance (DAA) opt-out page.
+          </li>
+        </ul>
       </>
     ),
   },
   {
     id: 6,
-    title: "Third-Party Links",
+    title: "Changes to This Cookie Policy",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%]">
+          We may update this Cookie Policy from time to time to reflect changes
+          in our practices or for other operational, legal, or regulatory
+          reasons. We will notify you of any significant changes by posting the
+          new Cookie Policy on this page. We encourage you to review this Cookie
+          Policy periodically for any updates.
         </p>
       </>
     ),
   },
   {
     id: 7,
-    title: "Children's Privacy",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 8,
-    title: "Your Rights",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
-          You can buy newsletter ad space through programmatic direct buys,
-          private marketplaces (PMPs), or open exchanges. Programmatic direct
-          buys allow you to purchase ad inventory directly from a publisher,
-          creating a one-to-one relationship. Private marketplaces (PMPs) offer
-          exclusive access to premium ad slots, while open exchanges function as
-          public auctions where multiple advertisers bid for available
-          inventory.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 9,
-    title: "CAN-SPAM Act Compliance",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 10,
-    title: "GDPR Compliance",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 11,
-    title: "California Privacy Rights Act (CPRA) Compliance",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
-          You can buy newsletter ad space through programmatic direct buys,
-          private marketplaces (PMPs), or open exchanges. Programmatic direct
-          buys allow you to purchase ad inventory directly from a publisher,
-          creating a one-to-one relationship. Private marketplaces (PMPs) offer
-          exclusive access to premium ad slots, while open exchanges function as
-          public auctions where multiple advertisers bid for available
-          inventory.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 12,
-    title: "Changes to This Privacy Policy",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 13,
     title: "Contact Information",
     content: (
       <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
+        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] ">
+          If you have any questions about this Policy, please contact us at
+          contact@houseofsummary.com.
         </p>
       </>
     ),
   },
 ];
-
+const navbarHeight = 65;
 export default function CookiePolicyBody() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollPercent, setScrollPercent] = useState(0);
@@ -648,49 +176,34 @@ export default function CookiePolicyBody() {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the entry with the highest intersection ratio
-        let maxRatio = 0;
-        let mostVisibleIndex = -1;
+    const handleScroll = () => {
+      const triggerPosition = navbarHeight + 80;
 
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            mostVisibleIndex = sectionRefs.current.findIndex(
-              (ref) => ref === entry.target
-            );
-          }
-        });
+      sectionRefs.current.forEach((section, index) => {
+        if (!section) return;
 
-        if (mostVisibleIndex !== -1) {
-          setActiveIndex(mostVisibleIndex);
+        const rect = section.getBoundingClientRect();
+
+        if (rect.top <= triggerPosition && rect.bottom > triggerPosition + 50) {
+          setActiveIndex(index);
         }
-      },
-      {
-        root: null,
-        rootMargin: "-40% 0px -50% 0px",
-        threshold: Array.from({ length: 101 }, (_, i) => i / 100), // finer ratio detection
-      }
-    );
-
-    sectionRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      sectionRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
       });
     };
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const handleClick = (index) => {
     const element = sectionRefs.current[index];
     if (element) {
-      const topOffset =
-        element.getBoundingClientRect().top + window.scrollY - 100; // Adjust -100 based on your `top-24`
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
+      const y =
+        element.getBoundingClientRect().top +
+        window.scrollY -
+        (navbarHeight + 20);
+      window.scrollTo({ top: y, behavior: "smooth" });
     }
   };
 
@@ -750,18 +263,18 @@ export default function CookiePolicyBody() {
         <div className="md:px-28 pt-14 pb-[130px]">
           {/* 1 hero */}
           <div className="pt-[26px]">
-            <h2 className="text-[56px] font-[400] leading-[104%] text-[#000] ">
-              Privacy Policy
+            <h2 className="text-[56px] font-[400] leading-[104%] text-[#000]">
+              Cookie Policy
             </h2>
             <p className="text-[16px] text-[#595959] font-[500] leading-[157%] py-[35px]">
-              Latest updated November 15, 2025
+              Latest updated November 15, 2025 Latest updated November 15, 2025
             </p>
           </div>
 
           {/* 2 */}
           <div className="flex md:flex-row justify-between flex-col w-full h-full ">
             {/* left*/}
-            <div className="md:w-[68%] w-full flex flex-col gap-8 ">
+            <div className="md:w-[68%] w-full flex flex-col">
               {sectionsWithContent.map((section, index) => (
                 <div
                   key={index}
@@ -769,13 +282,13 @@ export default function CookiePolicyBody() {
                   ref={(el) => (sectionRefs.current[index] = el)}
                   className="scroll-mt-28"
                 >
-                  <div className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[35]">
+                  <div className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[16px]">
                     {section.topContent}
                   </div>
-                  <p className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
+                  <p className="text-[#000] text-[30px] font-[500] leading-[120%] pt-[24px] pb-[13px]">
                     {section.title}
                   </p>
-                  <div>{section.content}</div>
+                  <div className="pb-[16px]">{section.content}</div>
                 </div>
               ))}
             </div>
