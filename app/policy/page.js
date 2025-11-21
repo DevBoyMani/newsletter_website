@@ -1,11 +1,5 @@
-// import PolicyHero from "../../components/policyHero/policyHero";
-import PolicyBody from "../../components/policyBody/policyBody";
+import { redirect } from "next/navigation";
 
 export default function Policy() {
-  return (
-    <>
-      {/* <PolicyHero /> */}
-      <PolicyBody />
-    </>
-  );
+  redirect("/policy/privacy-policy");
 }

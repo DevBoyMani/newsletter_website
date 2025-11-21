@@ -2,8 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
-import BlogSlugComponentList from "../blogSlugComponentList/blogSlugComponentList";
-import PolicyMobileVersion from "../policyMobileVersion/policyMobileVersion";
+import CookiePolicyMobileBody from "../../components/cookiePolicyMobileBody/cookiePolicyMobileBody";
 
 // Step 1: Define sections with title and unique content
 const sectionsWithContent = [
@@ -642,7 +641,7 @@ const sectionsWithContent = [
   },
 ];
 
-export default function PolicyBody() {
+export default function CookiePolicyBody() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [scrollPercent, setScrollPercent] = useState(0);
   const sectionRefs = useRef([0]);
@@ -827,7 +826,7 @@ export default function PolicyBody() {
 
       {/* mobile */}
       <div className="block lg:hidden bg-[#FAFAFA]">
-        <PolicyMobileVersion />
+        <CookiePolicyMobileBody />
       </div>
     </>
   );

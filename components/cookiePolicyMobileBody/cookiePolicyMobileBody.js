@@ -227,7 +227,7 @@ const sectionsWithContent = [
   },
 ];
 
-export default function PolicyMobileVersion() {
+export default function CookiePolicyMobileBody() {
   // mobile version of the page scrolling indigator
 
   useEffect(() => {

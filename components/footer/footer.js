@@ -129,16 +129,16 @@ export default function Footer() {
               <ul>
                 <li className="tracking-[0.16px] text-[#fff]">LEGAL</li>
                 <li className="text-[#EFEDFD99] pt-4">
-                  <Link href="/policy">Privacy policy</Link>
+                  <Link href="/policy/privacy-policy">Privacy policy</Link>
                 </li>
                 <li className="text-[#EFEDFD99] pt-4">
-                  <Link href="/policy">Terms of use</Link>
+                  <Link href="/policy/terms-of-use">Terms of use</Link>
                 </li>
                 <li className="text-[#EFEDFD99] pt-4">
-                  <Link href="/policy">Cookie policy</Link>
+                  <Link href="/policy/cookie-policy">Cookie policy</Link>
                 </li>
                 <li className="text-[#EFEDFD99] pt-4">
-                  <Link href="/policy">Refund policy</Link>
+                  <Link href="/policy/refund-policy">Refund policy</Link>
                 </li>
               </ul>
             </div>
@@ -239,20 +239,20 @@ export default function Footer() {
                         </Link>
                       </li> */}
                   <li className="py-1 text-[14px]">
-                    <Link href="/policy" className="font-[400]">
+                    <Link href="/policy/privacy-policy" className="font-[400]">
                       Privacy policy
                     </Link>
                   </li>
                   <li className="py-1 text-[14px] font-[400]">
-                    <Link href="/policy">Terms of use</Link>
+                    <Link href="/policy/terms-of-use">Terms of use</Link>
                   </li>
                   <li className="py-1 text-[14px]">
-                    <Link href="/policy" className="font-[400]">
+                    <Link href="/policy/cookie-policy" className="font-[400]">
                       Cookie policy
                     </Link>
                   </li>
                   <li className="py-1 text-[14px]">
-                    <Link href="/policy" className="font-[400]">
+                    <Link href="/policy/refund-policy" className="font-[400]">
                       Refund policy
                     </Link>
                   </li>
