@@ -43,7 +43,7 @@ export default function FooterWrapper() {
               Want to advertise with us?
             </span>
             <Link
-              href="/advertise"
+              href="/contact"
               className="ml-2 text-[#C7A262] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal"
             >
               <span>SCHEDULE A CALL</span>

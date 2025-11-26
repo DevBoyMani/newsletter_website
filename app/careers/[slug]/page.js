@@ -1,7 +1,7 @@
 "use client";
 
 import { useParams } from "next/navigation";
-import CareersGraphicDesigner from "../../../components/careersGraphicDesigner/careersGraphicDesigner";
+import SocialMediaIntern from "../../../components/socialMediaIntern/socialMediaIntern";
 import CareersUXDesigner from "../../../components/careersUXDesigner/careersUXDesigner";
 import CareersFullStack from "../../../components/careersFullStack/careersFullStack";
 import CareersLogoDesigner from "../../../components/careersLogoDesigner/careersLogoDesigner";
@@ -19,14 +19,14 @@ import ContentWriterLondon from "../../../components/contentWriterLondon/content
 // const SoftwareEngineer = dynamic(() => import('@/components/careers/SoftwareEngineer'));
 
 const componentMap = {
-  "graphic-designer": () => <CareersGraphicDesigner />,
-  "content-writer-london": () => <ContentWriterLondon />,
-  "ux-designer": () => <CareersUXDesigner />,
-  "full-stack": () => <CareersFullStack />,
-  "logo-designer": () => <CareersLogoDesigner />,
-  "web-designer": () => <CareersWebDesigner />,
-  "backend-dev": () => <CareersBackendDev />,
-  "software-engineer": () => <CareersSoftWareEngineer />,
+  "marketing-social": () => <SocialMediaIntern />,
+  "python-developer": () => <CareersUXDesigner />,
+  "content-writer-london-summary": () => <ContentWriterLondon />,
+  "seo-manager": () => <CareersFullStack />,
+  "leadership-ad-sales": () => <CareersLogoDesigner />,
+  "legal-compliance-officer": () => <CareersWebDesigner />,
+  "brand-partnerships-manager": () => <CareersBackendDev />,
+  "video-editor": () => <CareersSoftWareEngineer />,
 };
 
 export default function CareersSlug() {

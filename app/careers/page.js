@@ -31,10 +31,10 @@ const Careers = () => {
   const testimonials = [
     { name: "View All" },
     { name: "Design" },
-    { name: "Engineering" },
+    // { name: "Engineering" },
     { name: "Editorial" },
     { name: "Tech" },
-    // { name: "Leadership" },
+    { name: "Leadership" },
     { name: "Marketing" },
     { name: "Others" },
   ];

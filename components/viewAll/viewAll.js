@@ -11,254 +11,142 @@ export default function ViewAll({ activeCategory }) {
     setActiveSection(activeSection === section ? 1 : section);
   };
 
-  // const images = [
-  //   {
-  //     tag: "design",
-  //     popupSalary: "$50,000 - $70,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     popupContent2:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-  //     name: "Design",
-  //     title: "Graphic Designer",
-  //     experience: "Senior",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry. ",
-  //     button: "Apply",
-  //     theme: "#E19F20",
-  //     slug: "graphic-designer",
-  //   },
-  //   {
-  //     popupSalary: "$40,000 - $80,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     name: "UX/UI",
-  //     title: "UX Designer",
-  //     experience: "Mid-Level",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry. ",
-  //     button: "Apply",
-  //     theme: "#582719",
-  //     slug: "ux-designer",
-  //   },
-  //   {
-  //     popupSalary: "$40,000 - $70,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     popupContent2:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-  //     name: "Web Dev",
-  //     title: "Full-Stack Developer",
-  //     experience: "Junior",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-  //     button: "Apply",
-  //     theme: "#092236",
-  //     slug: "full-stack",
-  //   },
-  //   {
-  //     popupSalary: "$50,000 - $80,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     popupContent2:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-  //     name: "Design",
-  //     title: "logo Designer",
-  //     experience: "Senior",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-  //     button: "Apply",
-  //     theme: "#1A1A1A",
-  //     slug: "logo-designer",
-  //   },
-  //   {
-  //     popupSalary: "$40,000 - $70,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     popupContent2:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-  //     name: "UX/UI",
-  //     title: "web Designer",
-  //     experience: "Mid-Level",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-  //     button: "Apply",
-  //     theme: "#394E65",
-  //     slug: "web-designer",
-  //   },
-  //   {
-  //     popupSalary: "$30,000 - $60,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     popupContent2:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-  //     name: "Web Dev",
-  //     title: "Backend Developer",
-  //     experience: "Junior",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry. ",
-  //     button: "Apply",
-  //     theme: "#657C75",
-  //     slug: "backend-dev",
-  //   },
-  //   {
-  //     popupSalary: "$50,000 - $80,000",
-  //     popupVenue: "remote",
-  //     popupContent1:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-  //     popupContent2:
-  //       "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-  //     name: "Software Engineer",
-  //     title: "Programmer",
-  //     experience: "Junior",
-  //     content:
-  //       "You'll play a key role in scaling our platform as we strive to lead the branded payments industry. ",
-  //     button: "Apply",
-  //     theme: "#01261E",
-  //     slug: "software-engineer",
-  //   },
-  // ];
-
   const images = [
     {
-      tag: "design",
-      name: "Design",
-      title: "Graphic Designer",
-      experience: "Senior",
+      tag: "marketing",
+      name: "Marketing",
+      title: "Social Media Intern",
+      experience: "Entry",
       content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$50,000 - $70,000",
+        "Create, publish, and analyze daily social content to grow readership and brand reach across major platforms with hands-on strategy experience.",
+      popupSalary: "Internship",
       popupVenue: "remote",
       popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
+        "Join our editorial team as a Social Media Intern and help shape how our newsletters show up across Facebook, Instagram, Threads, X, Reddit, and LinkedIn. You will publish daily content, write sharp hooks, and manage a consistent calendar.",
       popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
+        "You will monitor comments and trends, track analytics, and test ideas that turn readers into subscribers. Expect hands-on guidance, real responsibility, and weekly feedback that strengthens storytelling, design judgment, and data-driven decision making.",
       button: "Apply",
       theme: "#E19F20",
-      slug: "graphic-designer",
-    },
-    {
-      tag: "design",
-      name: "UX/UI",
-      title: "UX Designer",
-      experience: "Mid-Level",
-      content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$40,000 - $80,000",
-      popupVenue: "remote",
-      popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-      button: "Apply",
-      theme: "#582719",
-      slug: "ux-designer",
+      slug: "marketing-social",
     },
     {
       tag: "tech",
-      name: "Web Dev",
-      title: "Full-Stack Developer",
-      experience: "Junior",
-      content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$40,000 - $70,000",
-      popupVenue: "remote",
-      popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-      popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-      button: "Apply",
-      theme: "#092236",
-      slug: "full-stack",
-    },
-    {
-      tag: "design",
-      name: "Design",
-      title: "Logo Designer",
+      name: "Tech",
+      title: "Python Developer",
       experience: "Senior",
       content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$50,000 - $80,000",
+        "Build automations, data pipelines, and backend systems that power our growing network of newsletters and analytics infrastructure.",
+      popupSalary: "$24,000–$36,000",
       popupVenue: "remote",
       popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
+        "We’re looking for a Python Developer who can turn ideas into smart, scalable systems. You’ll work on everything from data scraping to automation scripts and backend integrations that keep our media network running smoothly.",
       popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
+        "This is a hands-on role that blends engineering and creativity. You’ll collaborate with our editorial and analytics teams to build tools that save hours, power insights, and help us grow faster.",
       button: "Apply",
-      theme: "#1A1A1A",
-      slug: "logo-designer",
-    },
-    {
-      tag: "design",
-      name: "UX/UI",
-      title: "Web Designer",
-      experience: "Mid-Level",
-      content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$40,000 - $70,000",
-      popupVenue: "remote",
-      popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-      popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-      button: "Apply",
-      theme: "#394E65",
-      slug: "web-designer",
-    },
-    {
-      tag: "tech",
-      name: "Web Dev",
-      title: "Backend Developer",
-      experience: "Junior",
-      content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$30,000 - $60,000",
-      popupVenue: "remote",
-      popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-      popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-      button: "Apply",
-      theme: "#657C75",
-      slug: "backend-dev",
-    },
-    {
-      tag: "tech",
-      name: "Software Engineer",
-      title: "Programmer",
-      experience: "Junior",
-      content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$50,000 - $80,000",
-      popupVenue: "remote",
-      popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
-      popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
-      button: "Apply",
-      theme: "#01261E",
-      slug: "software-engineer",
+      theme: "#582719",
+      slug: "python-developer",
     },
     {
       tag: "editorial",
-      name: "Content Writer – London",
+      name: "Editorial",
       title: "Content Writer",
-      experience: "Junior",
+      experience: "Mid-level",
       content:
-        "You'll play a key role in scaling our platform as we strive to lead the branded payments industry.",
-      popupSalary: "$50,000 - $80,000",
+        "Write sharp, witty, and insightful stories that capture London’s people, culture, and city life for a fast-growing daily newsletter.",
+      popupSalary: "$12,000–$24,000",
       popupVenue: "remote",
       popupContent1:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase. The campaign should use a Marketing Automation Platform (like HubSpot, Marketo, or Pardot) and include the following:",
+        "London Summary is looking for a writer who knows the city beyond its headlines. Someone who sees stories in the everyday, from a new café in Shoreditch to a tech boom in Canary Wharf.",
       popupContent2:
-        "Design an email nurturing campaign that targets leads who have shown interest in your product/service but have not yet made a purchase.",
+        "You’ll help build one of London’s most distinctive newsletters, writing pieces that inform, entertain, and connect readers to the pulse of the city.",
       button: "Apply",
       theme: "#016788",
-      slug: "content-writer-london",
+      slug: "content-writer-london-summary",
+    },
+    {
+      tag: "others",
+      name: "Other",
+      title: "SEO Manager",
+      experience: "Senior",
+      content:
+        "Drive organic growth across a global network of newsletters by building and optimizing data-driven SEO strategies.",
+      popupSalary: "$12,000–$18,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is looking for an SEO Manager who blends analytical precision with creative insight. You’ll help our network of newsletters reach millions more readers organically.",
+      popupContent2:
+        "This is a hands-on role where strategy meets execution: analyzing data, improving infrastructure, and driving measurable audience growth",
+      button: "Apply",
+      theme: "#092236",
+      slug: "seo-manager",
+    },
+    {
+      tag: "leadership",
+      name: "Leadership",
+      title: "Head of Ad Sales",
+      experience: "Senior",
+      content:
+        "Lead and scale ad sales across a global network of newsletters by building premium partnerships and driving revenue growth.",
+      popupSalary: "$24,000–$36,000 + performance incentives",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is seeking a strategic, relationship-driven Head of Ad Sales to lead monetization across our fast-growing portfolio of newsletters.",
+      popupContent2:
+        "This is a leadership role for someone who thrives at the intersection of media, sales, and strategy, turning brand relationships into long-term revenue partnerships and premium advertising experiences.",
+      button: "Apply",
+      theme: "#1A1A1A",
+      slug: "leadership-ad-sales",
+    },
+    {
+      tag: "others",
+      name: "Other",
+      title: "Legal & Compliance Officer",
+      experience: "Senior",
+      content:
+        "Oversee legal, regulatory, and compliance functions across an international media group operating newsletters in the US, EU, and UAE.",
+      popupSalary: "$24,000–$36,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is seeking a Legal & Compliance Officer to manage and oversee legal, regulatory, and compliance activities across its international portfolio of media brands.",
+      popupContent2:
+        "This is a strategic and detail-oriented role for someone who can bridge legal precision with commercial awareness, ensuring operational integrity and compliance across multiple jurisdictions.",
+      button: "Apply",
+      theme: "#394E65",
+      slug: "legal-compliance-officer",
+    },
+    {
+      tag: "marketing",
+      name: "Marketing",
+      title: "Brand Partnerships Manager",
+      experience: "Mid-level",
+      content:
+        "Lead global brand collaborations and sponsorships, driving creative, data-backed campaigns across House of Summary’s international newsletter network.",
+      popupSalary: "$24,000–$36,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is hiring a Brand Partnerships Manager to develop and manage strategic relationships with top global brands. You’ll lead sponsorships, integrated marketing campaigns, and creative partnerships.",
+      popupContent2:
+        "This role blends creativity with commercial insight, ideal for someone who understands brand storytelling, audience growth, and performance metrics that drive meaningful results.",
+      button: "Apply",
+      theme: "#657C75",
+      slug: "brand-partnerships-manager",
+    },
+    {
+      tag: "design",
+      name: "Design",
+      title: "Video Editor",
+      experience: "Mid-level",
+      content:
+        "Edit and produce short-form video content and reels that bring House of Summary’s storytelling and brand identity to life.",
+      popupSalary: "$12,000–$24,000",
+      popupVenue: "remote",
+      popupContent1:
+        "We’re looking for a Video Editor (Reels) who can turn ideas into visually compelling short-form content. You’ll edit fast-paced, on-brand videos for our newsletters and social media channels, shaping narratives that connect with a global audience.",
+      popupContent2:
+        "This role suits someone creative and detail-oriented who understands pacing, hooks, and trends, and can adapt serious topics like geopolitics and business into engaging visuals.",
+      button: "Apply",
+      theme: "#01261E",
+      slug: "video-editor",
     },
   ];
 
@@ -289,7 +177,7 @@ export default function ViewAll({ activeCategory }) {
             return (
               <div
                 key={index}
-                className="group relative w-full h-[230px] lg:h-[316px] text-white p-3 lg:p-4 rounded-[14px] overflow-hidden flex flex-col justify-between cursor-pointer transform-gpu transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+                className="group relative w-full h-[270px] lg:h-[316px] text-white p-3 lg:p-4 rounded-[14px] overflow-hidden flex flex-col justify-between cursor-pointer transform-gpu transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
                 style={{
                   backgroundColor: item.theme,
                   // expose theme for hue-preserving darken
@@ -337,8 +225,8 @@ export default function ViewAll({ activeCategory }) {
                   {item.name}
                 </h2>
 
-                {/* ===== MOBILE CONTENT (unchanged) ===== */}
-                <div className="relative z-10 block lg:hidden flex-grow min-h-[160px] max-h-[230px]">
+                {/* ===== MOBILE CONTENT SIMPLE VERSION ===== */}
+                <div className="relative z-10 block lg:hidden flex flex-col h-full">
                   <div className="mt-4">
                     <h5 className="text-[14px] font-[700] leading-[101%]">
                       {item.title}
@@ -347,20 +235,22 @@ export default function ViewAll({ activeCategory }) {
                       {item.experience}
                     </p>
                   </div>
-                  <div className="flex flex-col justify-between min-h-[160px] max-h-[230px]">
-                    <div className="mt-auto">
-                      <p className="text-[11px] leading-normal text-white/90">
-                        {item.content}
-                      </p>
-                    </div>
-                    <div className="pb-6 pt-4">
-                      <button
-                        onClick={() => handleImageClick(index)}
-                        className="text-[12px] w-full bg-white/10 text-white py-1 rounded-[6px]"
-                      >
-                        {item.button}
-                      </button>
-                    </div>
+
+                  {/* Content that grows but doesn't scroll */}
+                  <div className="flex-1">
+                    <p className="text-[11px] leading-normal text-white/90">
+                      {item.content}
+                    </p>
+                  </div>
+
+                  {/* Button at bottom */}
+                  <div className="pt-4">
+                    <button
+                      onClick={() => handleImageClick(index)}
+                      className="text-[12px] w-full bg-white/10 text-white py-1.5 rounded-[6px]"
+                    >
+                      {item.button}
+                    </button>
                   </div>
                 </div>
 
