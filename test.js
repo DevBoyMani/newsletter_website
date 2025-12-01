@@ -1,832 +1,400 @@
 "use client";
+import { useState } from "react";
 
-import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
-import TermsOfUseMobileBody from "../../components/termsOfUseMobileBody/termsOfUseMobileBody";
-
-// Step 1: Define sections with title and unique content
-const sectionsWithContent = [
-  {
-    id: 1,
-    title: "Information We Collect",
-    topContent: (
-      <>
-        <p className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[35]">
-          House of Summary ("Website") is a website owned and operated by House
-          of Summary LLC. We are committed to protecting your privacy. This
-          Privacy Policy explains how we collect, use, disclose, and safeguard
-          your information when you visit our Website and subscribe to our
-          newsletter. Please read this Privacy Policy carefully. By accessing or
-          using the Website, you agree to the collection and use of information
-          in accordance with this policy.
-        </p>
-      </>
-    ),
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          1.1 Personal Information
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          The marketing world is constantly evolving, and email marketing is the
-          future of advertising. It is a fast, flexible, and cost-effective way
-          to promote products or services. Email has become a daily habit for
-          many. It is perceived as reliable, safe, and free from intrusive
-          pop-ups, malicious bots, or fraud. This trust translates into higher
-          engagement in email newsletters than in other marketing channels.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          The marketing world is constantly evolving, and email marketing is the
-          future of advertising. It is a fast, flexible, and cost-effective way
-          to promote products or services. Email has become a daily habit for
-          many. It is perceived as reliable, safe, and free from intrusive
-          pop-ups, malicious bots, or fraud. This trust translates into higher
-          engagement in email newsletters than in other marketing channels.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 2,
-    title: "How We Use Your Information",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Email marketing is a broad umbrella, and one of the most effective
-          ways to leverage it is through newsletter advertising. It is a
-          powerful strategy that is taking the marketing world by storm.
-        </p>
-        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          <li>
-            There are 4.5 billion email users, and this is expected to reach 4.8
-            billion by 2027.
-          </li>
-          <li>
-            4 in 5 customers prefer email over any other form of communication.
-          </li>
-          <li>
-            95% of marketers agree it delivers excellent return on investment
-            (ROI).
-          </li>
-          <li>
-            Email marketing revenue is expected to grow by 287% worldwide by
-            2032.
-          </li>
-          <li>
-            Hands-on experience with more than one payroll software (Dayforce,
-            ADP WFN, UKG, Workday, Employeur D, Nethris...)
-          </li>
-          <li>
-            Email open rates range from 15-25%, 275% better than organic social
-            media engagement. 
-          </li>
-        </ul>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          While social media offers broad reach and engagement, newsletter
-          advertising often provides a more targeted and focused audience,
-          potentially leading to higher conversion rates and a stronger return
-          on investment. Unlike intrusive ads on platforms like YouTube,
-          newsletters are a deliberate choice made by the user. They can’t be
-          skipped, but are actively chosen by users.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 3,
-    title: "Sharing Your Information",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 4,
-    title: "Data Security",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 5,
-    title: "Cookies and Tracking Technologies",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
-          You can buy newsletter ad space through programmatic direct buys,
-          private marketplaces (PMPs), or open exchanges. Programmatic direct
-          buys allow you to purchase ad inventory directly from a publisher,
-          creating a one-to-one relationship. Private marketplaces (PMPs) offer
-          exclusive access to premium ad slots, while open exchanges function as
-          public auctions where multiple advertisers bid for available
-          inventory.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 6,
-    title: "Third-Party Links",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 7,
-    title: "Children's Privacy",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 8,
-    title: "Your Rights",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
-          You can buy newsletter ad space through programmatic direct buys,
-          private marketplaces (PMPs), or open exchanges. Programmatic direct
-          buys allow you to purchase ad inventory directly from a publisher,
-          creating a one-to-one relationship. Private marketplaces (PMPs) offer
-          exclusive access to premium ad slots, while open exchanges function as
-          public auctions where multiple advertisers bid for available
-          inventory.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 9,
-    title: "CAN-SPAM Act Compliance",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 10,
-    title: "GDPR Compliance",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 11,
-    title: "California Privacy Rights Act (CPRA) Compliance",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2">
-          You can buy newsletter ad space through programmatic direct buys,
-          private marketplaces (PMPs), or open exchanges. Programmatic direct
-          buys allow you to purchase ad inventory directly from a publisher,
-          creating a one-to-one relationship. Private marketplaces (PMPs) offer
-          exclusive access to premium ad slots, while open exchanges function as
-          public auctions where multiple advertisers bid for available
-          inventory.
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 12,
-    title: "Changes to This Privacy Policy",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletter advertising is a partnership between advertisers and
-          newsletter publishers, offering a direct and highly targeted way to
-          reach audiences. Instead of curating content and building a mailing
-          list from scratch, businesses can leverage established newsletters
-          that have already cultivated a dedicated readership.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters are entirely optional. Businesses can only reach out to
-          customers after they subscribe. When a customer takes the extra step
-          of joining a mailing list, they are essentially signaling that they
-          want to hear more from the brand. They’re interested in the brand, the
-          latest updates, exclusive offers, discounts and more.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          These are not passive consumers but engaged customers who trust the
-          brand and want to stay connected. Given how frequently the average
-          person checks their email, newsletters become more than a marketing
-          tool by seamlessly but a lifestyle add-on.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          In its simplest form, newsletter advertising means paying a publisher
-          to place your ad within their content. These newsletters have already
-          built a loyal community around their niches. By partnering with them,
-          you gain access to a highly engaged audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Imagine you're a business selling supplements and vitamins. By placing
-          ads in a well-established health and lifestyle newsletter, you
-          instantly reach an audience actively seeking wellness tips, a
-          concentrated pool of people already interested in products like yours.
-          This targeted approach ensures your ad lands in front of the right
-          eyes rather than being ignored by an uninterested audience.
-          <br />
-          Newsletters bridge the gap between businesses and highly relevant
-          consumers, making ads more impactful and effective
-        </p>
-      </>
-    ),
-  },
-  {
-    id: 13,
-    title: "Contact Information",
-    content: (
-      <>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Adblockers
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          More and more users are now installing ad blockers, preventing ads
-          from interrupting their experience but making it harder for businesses
-          to reach their audience.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          As a result, advertisers pay for ad placements, but with ad blockers
-          in place, many ads never even reach their audience. This makes their
-          campaign efforts ineffective.
-        </p>
-        {/* <div className="py-4">
-          <img
-            src="/blogs/blog-s-1.png"
-            alt="image-1"
-            className="w-full object-cover "
-          />
-        </div> */}
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters bypass ad blockers since email ads don’t function like
-          traditional media ads. This means that with newsletter ads, you reach
-          your intended audience and achieve the ROI and engagement you planned
-          for your campaign.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; No Algorithms
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Social media and search engines rely on constantly evolving
-          algorithms. With ever-shifting content rules, social media can be
-          unpredictable. Since algorithms determine ad exposure, content ad
-          visibility can be negatively impacted or even buried in searches,
-          making it harder to track progress.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters offer a more reliable option. They don’t operate under
-          algorithmic preferences but instead, work on a simple and direct
-          approach. Newsletters go straight to subscribers’ inboxes, giving you
-          full control over who sees your content without fighting for
-          visibility.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pt-2 pl-2">
-          &bull; Niche Markets
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters have their own personality and brand identity, making them
-          a helpful partner for advertisers. Finding a newsletter that
-          complements the advertiser's brand allows it to reach a focused and
-          engaged mailing list.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          One of the biggest strengths of newsletter advertising is its ability
-          to target niche audiences. By partnering with the relevant
-          newsletters, advertisers ensure their message reaches the right
-          people.
-        </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] py-2">
-          Newsletters exist in every industry, from real estate to tech and
-          beyond. They offer a direct medium to the ideal customers. The right
-          partnership allows advertisers to leverage the authority a newsletter
-          has built and bridges the gap between interest and expertise.
-        </p>
-      </>
-    ),
-  },
-];
-
-export default function TermsOfUseBody() {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const [scrollPercent, setScrollPercent] = useState(0);
-  const sectionRefs = useRef([0]);
+export default function ViewAll({ activeCategory }) {
+  const [selectedIndex, setSelectedIndex] = useState(null);
   const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [activeSection, setActiveSection] = useState(null);
+  const [isMobile, setIsMobile] = useState(null);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        // Find the entry with the highest intersection ratio
-        let maxRatio = 0;
-        let mostVisibleIndex = -1;
-
-        entries.forEach((entry) => {
-          if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
-            maxRatio = entry.intersectionRatio;
-            mostVisibleIndex = sectionRefs.current.findIndex(
-              (ref) => ref === entry.target
-            );
-          }
-        });
-
-        if (mostVisibleIndex !== -1) {
-          setActiveIndex(mostVisibleIndex);
-        }
-      },
-      {
-        root: null,
-        rootMargin: "-40% 0px -50% 0px",
-        threshold: Array.from({ length: 101 }, (_, i) => i / 100), // finer ratio detection
-      }
-    );
-
-    sectionRefs.current.forEach((ref) => {
-      if (ref) observer.observe(ref);
-    });
-
-    return () => {
-      sectionRefs.current.forEach((ref) => {
-        if (ref) observer.unobserve(ref);
-      });
-    };
-  }, []);
-
-  const handleClick = (index) => {
-    const element = sectionRefs.current[index];
-    if (element) {
-      const topOffset =
-        element.getBoundingClientRect().top + window.scrollY - 100;
-      window.scrollTo({ top: topOffset, behavior: "smooth" });
-    }
+  const toggleSection = (section) => {
+    setActiveSection(activeSection === section ? 1 : section);
   };
 
-  // Scroll percentage tracker
-  useEffect(() => {
-    const handleScroll = () => {
-      const container = sectionRefs.current[0]?.parentElement;
-      if (!container) return;
+  const images = [
+    {
+      tag: "marketing",
+      name: "Marketing",
+      title: "Social Media Intern",
+      experience: "Entry",
+      content:
+        "Create, publish, and analyze daily social content to grow readership and brand reach across major platforms with hands-on strategy experience.",
+      popupSalary: "Internship",
+      popupVenue: "remote",
+      popupContent1:
+        "Join our editorial team as a Social Media Intern and help shape how our newsletters show up across Facebook, Instagram, Threads, X, Reddit, and LinkedIn. You will publish daily content, write sharp hooks, and manage a consistent calendar.",
+      popupContent2:
+        "You will monitor comments and trends, track analytics, and test ideas that turn readers into subscribers. Expect hands-on guidance, real responsibility, and weekly feedback that strengthens storytelling, design judgment, and data-driven decision making.",
+      button: "Apply",
+      theme: "#E19F20",
+      slug: "marketing-social",
+    },
+    {
+      tag: "tech",
+      name: "Tech",
+      title: "Python Developer",
+      experience: "Senior",
+      content:
+        "Build automations, data pipelines, and backend systems that power our growing network of newsletters and analytics infrastructure.",
+      popupSalary: "$24,000–$36,000",
+      popupVenue: "remote",
+      popupContent1:
+        "We’re looking for a Python Developer who can turn ideas into smart, scalable systems. You’ll work on everything from data scraping to automation scripts and backend integrations that keep our media network running smoothly.",
+      popupContent2:
+        "This is a hands-on role that blends engineering and creativity. You’ll collaborate with our editorial and analytics teams to build tools that save hours, power insights, and help us grow faster.",
+      button: "Apply",
+      theme: "#582719",
+      slug: "python-developer",
+    },
+    {
+      tag: "editorial",
+      name: "Editorial",
+      title: "Content Writer",
+      experience: "Mid-level",
+      content:
+        "Write sharp, witty, and insightful stories that capture London’s people, culture, and city life for a fast-growing daily newsletter.",
+      popupSalary: "$12,000–$24,000",
+      popupVenue: "remote",
+      popupContent1:
+        "London Summary is looking for a writer who knows the city beyond its headlines. Someone who sees stories in the everyday, from a new café in Shoreditch to a tech boom in Canary Wharf.",
+      popupContent2:
+        "You’ll help build one of London’s most distinctive newsletters, writing pieces that inform, entertain, and connect readers to the pulse of the city.",
+      button: "Apply",
+      theme: "#016788",
+      slug: "content-writer-london-summary",
+    },
+    {
+      tag: "others",
+      name: "Other",
+      title: "SEO Manager",
+      experience: "Senior",
+      content:
+        "Drive organic growth across a global network of newsletters by building and optimizing data-driven SEO strategies.",
+      popupSalary: "$12,000–$18,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is looking for an SEO Manager who blends analytical precision with creative insight. You’ll help our network of newsletters reach millions more readers organically.",
+      popupContent2:
+        "This is a hands-on role where strategy meets execution: analyzing data, improving infrastructure, and driving measurable audience growth",
+      button: "Apply",
+      theme: "#092236",
+      slug: "seo-manager",
+    },
+    {
+      tag: "leadership",
+      name: "Leadership",
+      title: "Head of Ad Sales",
+      experience: "Senior",
+      content:
+        "Lead and scale ad sales across a global network of newsletters by building premium partnerships and driving revenue growth.",
+      popupSalary: "$24,000–$36,000 + performance incentives",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is seeking a strategic, relationship-driven Head of Ad Sales to lead monetization across our fast-growing portfolio of newsletters.",
+      popupContent2:
+        "This is a leadership role for someone who thrives at the intersection of media, sales, and strategy, turning brand relationships into long-term revenue partnerships and premium advertising experiences.",
+      button: "Apply",
+      theme: "#1A1A1A",
+      slug: "leadership-ad-sales",
+    },
+    {
+      tag: "others",
+      name: "Other",
+      title: "Legal & Compliance Officer",
+      experience: "Senior",
+      content:
+        "Oversee legal, regulatory, and compliance functions across an international media group operating newsletters in the US, EU, and UAE.",
+      popupSalary: "$24,000–$36,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is seeking a Legal & Compliance Officer to manage and oversee legal, regulatory, and compliance activities across its international portfolio of media brands.",
+      popupContent2:
+        "This is a strategic and detail-oriented role for someone who can bridge legal precision with commercial awareness, ensuring operational integrity and compliance across multiple jurisdictions.",
+      button: "Apply",
+      theme: "#394E65",
+      slug: "legal-compliance-officer",
+    },
+    {
+      tag: "marketing",
+      name: "Marketing",
+      title: "Brand Partnerships Manager",
+      experience: "Mid-level",
+      content:
+        "Lead global brand collaborations and sponsorships, driving creative, data-backed campaigns across House of Summary’s international newsletter network.",
+      popupSalary: "$24,000–$36,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is hiring a Brand Partnerships Manager to develop and manage strategic relationships with top global brands. You’ll lead sponsorships, integrated marketing campaigns, and creative partnerships.",
+      popupContent2:
+        "This role blends creativity with commercial insight, ideal for someone who understands brand storytelling, audience growth, and performance metrics that drive meaningful results.",
+      button: "Apply",
+      theme: "#657C75",
+      slug: "brand-partnerships-manager",
+    },
+    {
+      tag: "design",
+      name: "Design",
+      title: "Video Editor",
+      experience: "Mid-level",
+      content:
+        "Edit and produce short-form video content and reels that bring House of Summary’s storytelling and brand identity to life.",
+      popupSalary: "$12,000–$24,000",
+      popupVenue: "remote",
+      popupContent1:
+        "We’re looking for a Video Editor (Reels) who can turn ideas into visually compelling short-form content. You’ll edit fast-paced, on-brand videos for our newsletters and social media channels, shaping narratives that connect with a global audience.",
+      popupContent2:
+        "This role suits someone creative and detail-oriented who understands pacing, hooks, and trends, and can adapt serious topics like geopolitics and business into engaging visuals.",
+      button: "Apply",
+      theme: "#01261E",
+      slug: "video-editor",
+    },
+  ];
 
-      const offsetTop = container.offsetTop;
-      const scrollTop = window.scrollY;
-      const contentHeight = container.scrollHeight;
-      const windowHeight = window.innerHeight;
-      const maxScroll = contentHeight - windowHeight + offsetTop;
-      let percent = ((scrollTop - offsetTop) / (maxScroll - offsetTop)) * 100;
-
-      percent = Math.min(100, Math.max(0, percent));
-      setScrollPercent(Math.round(percent));
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const [email, setEmail] = useState("");
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Subscribed with email:", email);
-    // the email will send to a backend or API here
+  const handleImageClick = (index) => {
+    setSelectedIndex(index);
+    document.body.style.overflow = "hidden";
   };
+  const closeSidebar = () => {
+    setSelectedIndex(null);
+    document.body.style.overflow = "auto";
+  };
+  // Filter jobs dynamically
 
-  // mobile version of the page scrolling indigator
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.body.scrollHeight - window.innerHeight;
-      const scrollPercent = (scrollTop / docHeight) * 100;
-
-      const progressBar = document.getElementById("scroll-progress-bar");
-      if (progressBar) {
-        progressBar.style.width = `${scrollPercent}%`;
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  // /
+  const filteredImages =
+    activeCategory === "View All"
+      ? images
+      : images.filter(
+          (item) => item.tag.toLowerCase() === activeCategory.toLowerCase()
+        );
 
   return (
     <>
-      {/* desktop */}
-      <div className="hidden lg:block bg-[#FAFAFA]">
-        <div className="md:px-28 pt-14 pb-[130px]">
-          {/* 1 hero */}
-          <div className="pt-[26px]">
-            <h2 className="text-[56px] font-[400] leading-[104%] text-[#000] ">
-              Privacy Policy
-            </h2>
-            <p className="text-[16px] text-[#595959] font-[500] leading-[157%] py-[35px]">
-              Latest updated November 15, 2025
-            </p>
-          </div>
+      <div className="text-white py-10 lg:py-8 mx-auto relative">
+        <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-5 gap-x-4 gap-y-4">
+          {filteredImages.map((item, index) => {
+            const isHover = hoveredIndex === index;
 
-          {/* 2 */}
-          <div className="flex md:flex-row justify-between flex-col w-full h-full ">
-            {/* left*/}
-            <div className="md:w-[68%] w-full flex flex-col gap-8 ">
-              {sectionsWithContent.map((section, index) => (
+            return (
+              <div
+                key={index}
+                className="group relative w-full h-[270px] lg:h-[316px] text-white p-3 lg:p-4 rounded-[14px] overflow-hidden flex flex-col justify-between cursor-pointer transform-gpu transition-transform duration-300 hover:-translate-y-1.5 hover:shadow-2xl"
+                style={{
+                  backgroundColor: item.theme,
+                  // expose theme for hue-preserving darken
+                  "--card": item.theme,
+                }}
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
+              >
+                {/* ==== Pipe-style bottom→top curtain using clip-path (perfectly follows radius) ==== */}
                 <div
-                  key={index}
-                  id={`section-${index}`}
-                  ref={(el) => (sectionRefs.current[index] = el)}
-                  className="scroll-mt-28"
-                >
-                  <div className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[35]">
-                    {section.topContent}
-                  </div>
-                  <p className="text-[#000] text-[30px] font-[500] leading-[120%] pb-2 pt-6">
-                    {section.title}
-                  </p>
-                  <div>{section.content}</div>
-                </div>
-              ))}
-            </div>
+                  className="pointer-events-none absolute inset-0 z-0 hidden lg:block will-change-transform"
+                  style={{
+                    // start fully clipped from the top (100%), end unclipped (0%)
+                    // rounded corners match via "round 14px"
+                    clipPath: "inset(var(--wipe, 100%) 0 0 0 round 14px)",
+                    transition:
+                      "clip-path 380ms cubic-bezier(0.2,0.65,0.3,0.9)",
+                    // same hue, deeper darken than before (≈20%)
+                    background: "color-mix(in oklab, var(--card) 80%, black)",
+                    // small translateZ to avoid banding
+                    transform: "translateZ(0)",
+                    // on hover flip the CSS variable:
+                    ["--wipe"]: hoveredIndex === index ? "0%" : "100%",
+                  }}
+                />
 
-            {/*right*/}
-            <div className="max-w-[21%] w-full sticky top-24 self-start">
-              <div className="">
-                <p className="text-[12px] font-[400] pb-2 text-right">
-                  {scrollPercent}%
-                </p>
-                <div className="bg-[#DAEBE8] py-[20px] px-[15px] rounded-[5px]">
-                  <p className="text-[#000] text-[15px] font-[600] pb-6">
-                    Table of content
-                  </p>
-                  <div className="flex flex-col space-y-4">
-                    {sectionsWithContent.map((item, index) => (
-                      <Link
-                        key={index}
-                        href={`#section-${index}`}
-                        scroll={true}
-                        onClick={(e) => {
-                          e.preventDefault(); // <- important!
-                          handleClick(index);
-                        }}
-                        className="text-[12px] leading-[143%]"
-                      >
-                        <p
-                          className={`cursor-pointer ${
-                            activeIndex === index
-                              ? "text-[#000] font-[400]"
-                              : "text-[#676A71] font-[400]"
-                          }`}
-                        >
-                          {activeIndex === index && (
-                            <span className="pr-2">→</span>
-                          )}
-                          {item.title}
-                        </p>
-                      </Link>
-                    ))}
+                {/* thin sheen at leading edge (subtle) */}
+                <div
+                  className="pointer-events-none absolute inset-x-0 top-0 z-0 hidden lg:block"
+                  style={{
+                    height: 12,
+                    clipPath: "inset(var(--wipe, 100%) 0 0 0 round 14px)",
+                    transition:
+                      "clip-path 380ms cubic-bezier(0.2,0.65,0.3,0.9)",
+                    background:
+                      "linear-gradient(to bottom, rgba(255,255,255,0.18), rgba(255,255,255,0))",
+                    mixBlendMode: "overlay",
+                    transform: "translateZ(0)",
+                    ["--wipe"]: hoveredIndex === index ? "0%" : "100%",
+                  }}
+                />
+
+                {/* Top label (unchanged) */}
+                <h2 className="relative z-10 font-[manrope] text-[12px] font-[400] leading-[101%] mt-2">
+                  {item.name}
+                </h2>
+
+                {/* ===== MOBILE CONTENT SIMPLE VERSION ===== */}
+                <div className="relative z-10 block lg:hidden flex flex-col h-full">
+                  <div className="mt-4">
+                    <h5 className="text-[14px] font-[700] leading-[101%]">
+                      {item.title}
+                    </h5>
+                    <p className="text-[12px] text-white/60 font-[400] leading-[101%] py-1">
+                      {item.experience}
+                    </p>
                   </div>
+
+                  {/* Content that grows but doesn't scroll */}
+                  <div className="flex-1">
+                    <p className="text-[11px] leading-normal text-white/90">
+                      {item.content}
+                    </p>
+                  </div>
+
+                  {/* Button at bottom */}
+                  <div className="pt-4">
+                    <button
+                      onClick={() => handleImageClick(index)}
+                      className="text-[12px] w-full bg-white/10 text-white py-1.5 rounded-[6px]"
+                    >
+                      {item.button}
+                    </button>
+                  </div>
+                </div>
+
+                {/* ===== DESKTOP CONTENT (tighter stagger & distances) ===== */}
+                <div className="relative z-10 hidden lg:block w-full h-auto">
+                  <div className="relative min-h-[140px]">
+                    {/* Rest state (fades out a bit quicker) */}
+                    <div
+                      className={`absolute bottom-0 left-0 right-0 flex flex-col justify-end transition-all duration-220 ease-out ${
+                        hoveredIndex === index
+                          ? "opacity-0 translate-y-1 pointer-events-none"
+                          : "opacity-100 translate-y-0"
+                      }`}
+                    >
+                      <h3 className="text-[17px] font-[700] leading-[101%] py-2 text-white">
+                        {item.title}
+                      </h3>
+                      <p className="text-[14px] text-white/75 leading-[101%]">
+                        {item.experience}
+                      </p>
+                    </div>
+
+                    {/* Hover reveal (shorter travel: ~6–8px; staggered) */}
+                    <div className="absolute bottom-0 left-0 right-0">
+                      <h3
+                        className={`text-[17px] font-[700] leading-[101%] py-2 text-white transition-[opacity,transform] duration-260 ${
+                          hoveredIndex === index
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-2"
+                        }`}
+                        style={{
+                          transitionDelay:
+                            hoveredIndex === index ? "80ms" : "0ms",
+                        }}
+                      >
+                        {item.title}
+                      </h3>
+
+                      <p
+                        className={`text-[14px] text-white/85 leading-[101%] transition-[opacity,transform] duration-260 ${
+                          hoveredIndex === index
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-2"
+                        }`}
+                        style={{
+                          transitionDelay:
+                            hoveredIndex === index ? "160ms" : "0ms",
+                        }}
+                      >
+                        {item.experience}
+                      </p>
+
+                      <p
+                        className={`text-[12px] text-white/95 leading-normal pt-2 transition-[opacity,transform] duration-260 ${
+                          hoveredIndex === index
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-2"
+                        }`}
+                        style={{
+                          transitionDelay:
+                            hoveredIndex === index ? "240ms" : "0ms",
+                        }}
+                      >
+                        {item.content}
+                      </p>
+
+                      <div
+                        className={`pt-4 transition-[opacity,transform] duration-260 ${
+                          hoveredIndex === index
+                            ? "opacity-100 translate-y-0"
+                            : "opacity-0 translate-y-2"
+                        }`}
+                        style={{
+                          transitionDelay:
+                            hoveredIndex === index ? "320ms" : "0ms",
+                        }}
+                      >
+                        <button
+                          onClick={() => handleImageClick(index)}
+                          className="w-full bg-white/25 hover:bg-white/30 text-white py-2 rounded-lg transition-colors"
+                        >
+                          {item.button}
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* subtle inner ring on hover (Pipe vibe) */}
+                <span className="pointer-events-none absolute inset-0 rounded-[14px] ring-0 ring-transparent group-hover:ring-1 group-hover:ring-white/25 transition-[ring] duration-200" />
+              </div>
+            );
+          })}
+        </div>
+
+        {/* ====== popup ====== */}
+        {selectedIndex !== null && (
+          <div
+            className="fixed inset-0 bg-[#121212CC] flex justify-end items-center z-50 px-4"
+            onClick={closeSidebar}
+          >
+            <div
+              className="w-full md:w-[27%] h-fit bg-[#DAEBE8] shadow-lg transition-transform duration-300 relative flex flex-col lg:mr-4 mx-6 mt-8 rounded-[10px]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <div className="flex-1 overflow-y-auto pb-6 px-6 pt-4">
+                <div className="flex justify-end items-center">
+                  <button
+                    onClick={closeSidebar}
+                    className="w-7 h-7 text-xl text-black flex items-center justify-center rounded-lg"
+                  >
+                    ✕
+                  </button>
+                </div>
+                <p className="text-[16px] font-[300] leading-[108%] tracking-[0.32px] uppercase text-[#000]">
+                  {images[selectedIndex].popupVenue}
+                </p>
+                <h4 className="text-[22px] font-[500] leading-[108%] tracking-[0.88px] text-[#020715] py-2">
+                  {images[selectedIndex].title}
+                </h4>
+                {/* <p className="text-[12px] font-[400] leading-[108%] tracking-[0.32px] uppercase text-[#000] pb-2">
+                  {images[selectedIndex].type}
+                </p> */}
+                <p className="text-[16px] text-[#000] font-[300] leading-[108%] tracking-[0.64px] ">
+                  {images[selectedIndex].popupSalary}
+                </p>
+                <p className="text-[#000] text-[14px] font-[400] leading-[135%] pt-4 pb-4">
+                  {images[selectedIndex].popupContent1}
+                </p>
+                <p className="text-sm text-black">
+                  {images[selectedIndex].popupContent2}
+                </p>
+                <div className="flex justify-end mt-4">
+                  <a
+                    href={`/careers/${images[selectedIndex].slug}`}
+                    className="flex justify-center w-full px-14 py-2 bg-[#01261E] text-white text-[18px] font-[500] rounded-[6px] hover:bg-[#014134] transition"
+                  >
+                    Assignment
+                  </a>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* mobile */}
-      <div className="block lg:hidden bg-[#FAFAFA]">
-        <TermsOfUseMobileBody />
+        )}
       </div>
     </>
   );
