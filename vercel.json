@@ -1,7 +1,7 @@
 {
   "crons": [
     {
-      "path": "/api/cron/refresh-website-totals",
+      "path": "/api/cron/refresh-website-totals?secret=vqGXUejQrJ3u8vp2geQt",
       "schedule": "0 0,12 * * *"
     }
   ]
