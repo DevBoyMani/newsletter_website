@@ -9,27 +9,17 @@ import {
   YAxis,
   ResponsiveContainer,
   LabelList,
-  Tooltip,
 } from "recharts";
 
-const chartData = [
-  { name: "A", value: 83 },
-  { name: "B", value: 53 },
-  { name: "C", value: 40 },
-  // { name: "D", value: 83 },
-  // { name: "E", value: 19 },
-];
+// fallback if website_id has no color
+function getFallbackColorForIndex(index) {
+  const hue = (index * 53) % 360;
+  return `hsl(${hue}, 70%, 45%)`;
+}
 
-// Define your static color array
-const barColors = [
-  "#4D3060", // purple
-  "#06266D", // blue
-  "url(#greenGradient)", // replace green with gradient
-  // "#80011F", // red
-  // "#F9D342", // yellow
-];
+export default function AboutBarChart({ data, websiteColorMap = {} }) {
+  const chartData = Array.isArray(data) ? data : [];
 
-export default function AboutBarChart() {
   return (
     <div className="w-full bg-[#FAFAFA] p-4">
       <ResponsiveContainer width="100%" height={300}>
@@ -85,23 +75,28 @@ export default function AboutBarChart() {
             }}
           />
 
-          {/* Tooltip */}
-          <Tooltip cursor={false} />
-
           {/* Bars */}
           <Bar dataKey="value">
-            {chartData.map((_, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={barColors[index % barColors.length]}
-              />
-            ))}
+            {chartData.map((item, index) => {
+              const color =
+                websiteColorMap[item.website_id] ||
+                getFallbackColorForIndex(index);
+
+              return <Cell key={`cell-${index}`} fill={color} />;
+            })}
 
             {/* Custom % + top line */}
             <LabelList
               dataKey="value"
               content={({ x, y, value, index }) => {
-                const color = barColors[index % barColors.length];
+                const item = chartData[index];
+                const color =
+                  websiteColorMap[item.website_id] ||
+                  getFallbackColorForIndex(index);
+
+                const isGradient =
+                  typeof color === "string" && color.startsWith("url");
+
                 return (
                   <>
                     {/* % value */}
@@ -121,7 +116,7 @@ export default function AboutBarChart() {
                       x2={x + 40}
                       y1={y - 5}
                       y2={y - 5}
-                      stroke={color.startsWith("url") ? "#EECA66" : color}
+                      stroke={isGradient ? "#EECA66" : color}
                       strokeWidth={4}
                       strokeLinecap="round"
                     />

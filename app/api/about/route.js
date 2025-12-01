@@ -8,7 +8,7 @@ export async function GET(req) {
 
     if (!websiteIdsParam) {
       return NextResponse.json(
-        { error: "website_ids is required (e.g. ?website_ids=1,2,3)" },
+        { error: "website_ids is required (e.g. ?website_ids=1,3,7)" },
         { status: 400 }
       );
     }
@@ -27,104 +27,43 @@ export async function GET(req) {
       );
     }
 
-    // Optional date filters
-    const fromParam = searchParams.get("from"); // "2025-11-01"
-    const toParam = searchParams.get("to"); // "2025-11-28"
-
-    // Default: last 90 days window
-    const now = new Date();
-    const defaultTo = new Date(
-      now.getFullYear(),
-      now.getMonth(),
-      now.getDate()
-    );
-    const defaultFrom = new Date(defaultTo);
-    defaultFrom.setDate(defaultFrom.getDate() - 90);
-
-    const fromDate = fromParam ? new Date(fromParam) : defaultFrom;
-    const toDate = toParam ? new Date(toParam) : defaultTo;
-
-    // Convert to ISO date-only strings
-    const fromStr = fromDate.toISOString().slice(0, 10);
-    const toStr = toDate.toISOString().slice(0, 10);
-
-    // 1) Get website info
-    const websitesSql = `
-      SELECT id AS website_id, name AS website_name
-      FROM websites
-      WHERE id = ANY($1)
-      ORDER BY id;
-    `;
-
-    // 2) Get total_reads per website (via campaigns in date window)
-    const opensSql = `
+    const sql = `
       SELECT
-        c.website_id,
-        COUNT(eo.id) AS total_reads
-      FROM campaigns c
-      JOIN emails_open eo ON eo.campaign_id = c.id
-      WHERE c.website_id = ANY($1)
-        AND c.date >= $2
-        AND c.date < $3
-      GROUP BY c.website_id;
+        w.id AS website_id,
+        w.name AS website_name,
+        COALESCE(t.total_reads, 0) AS total_reads,
+        COALESCE(t.total_sent, 0)  AS total_sent,
+        COALESCE(cstats.campaigns_count, 0) AS campaigns_count
+      FROM websites w
+      LEFT JOIN website_email_totals t
+        ON t.website_id = w.id
+      LEFT JOIN (
+        SELECT
+          website_id,
+          COUNT(*) AS campaigns_count
+        FROM campaigns
+        WHERE website_id = ANY($1)
+        GROUP BY website_id
+      ) cstats
+        ON cstats.website_id = w.id
+      WHERE w.id = ANY($1)
+      ORDER BY w.id;
     `;
 
-    // 3) Get total_sent per website (via campaigns in date window)
-    const sentSql = `
-      SELECT
-        c.website_id,
-        COUNT(es.id) AS total_sent
-      FROM campaigns c
-      JOIN emails_sent es ON es.campaign_id = c.id
-      WHERE c.website_id = ANY($1)
-        AND c.date >= $2
-        AND c.date < $3
-      GROUP BY c.website_id;
-    `;
-
-    const values = [websiteIds, fromStr, toStr];
-
-    // (Optional) log timing to see DB time vs total time
-    const t0 = Date.now();
-    const [websitesRes, opensRes, sentRes] = await Promise.all([
-      query(websitesSql, [websiteIds]),
-      query(opensSql, values),
-      query(sentSql, values),
-    ]);
-    console.log(
-      "GET /api/about DB total ms:",
-      Date.now() - t0,
-      "range:",
-      fromStr,
-      "to",
-      toStr
-    );
-
-    const websites = websitesRes.rows;
-
-    const opensByWebsite = new Map();
-    const sentByWebsite = new Map();
-
-    for (const row of opensRes.rows) {
-      opensByWebsite.set(Number(row.website_id), Number(row.total_reads) || 0);
-    }
-
-    for (const row of sentRes.rows) {
-      sentByWebsite.set(Number(row.website_id), Number(row.total_sent) || 0);
-    }
+    const { rows } = await query(sql, [websiteIds]);
 
     const formatter = new Intl.NumberFormat("en-US");
 
-    const result = websites.map((w) => {
-      const websiteId = Number(w.website_id);
-      const totalReads = opensByWebsite.get(websiteId) ?? 0;
-      const totalSent = sentByWebsite.get(websiteId) ?? 0;
+    const result = rows.map((row) => {
+      const totalReads = Number(row.total_reads) || 0;
+      const totalSent = Number(row.total_sent) || 0;
+      const campaignsCount = Number(row.campaigns_count) || 0;
 
       const avgOpenRate = totalSent > 0 ? (totalReads / totalSent) * 100 : 0;
 
       return {
-        website_id: websiteId,
-        website_name: w.website_name,
+        website_id: row.website_id,
+        website_name: row.website_name,
 
         total_reads: totalReads,
         total_reads_formatted: formatter.format(totalReads),
@@ -132,8 +71,11 @@ export async function GET(req) {
         total_sent: totalSent,
         total_sent_formatted: formatter.format(totalSent),
 
+        campaigns_count: campaignsCount,
+        campaigns_count_formatted: formatter.format(campaignsCount),
+
         average_open_rate: Number(avgOpenRate.toFixed(2)),
-        average_open_rate_formatted: `${avgOpenRate.toFixed(1)}%`,
+        average_open_rate_formatted: `${avgOpenRate.toFixed(2)}%`,
       };
     });
 
