@@ -3,7 +3,7 @@ import { query } from "@/lib/db";
 
 const CRON_SECRET = process.env.CRON_SECRET; // set this in env
 
-export async function GET() {
+export async function GET(req) {
   // Simple auth so random people can't hit this
   const authHeader = req.headers.get("x-cron-secret");
   if (!CRON_SECRET || authHeader !== CRON_SECRET) {
