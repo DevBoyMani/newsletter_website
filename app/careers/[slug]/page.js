@@ -2,13 +2,14 @@
 
 import { useParams } from "next/navigation";
 import SocialMediaIntern from "../../../components/socialMediaIntern/socialMediaIntern";
-import CareersUXDesigner from "../../../components/careersUXDesigner/careersUXDesigner";
+import PythonDeveloper from "../../../components/pythonDeveloper/pythonDeveloper";
 import CareersFullStack from "../../../components/careersFullStack/careersFullStack";
 import CareersLogoDesigner from "../../../components/careersLogoDesigner/careersLogoDesigner";
 import CareersWebDesigner from "../../../components/careersWebDesigner/careersWebDesigner";
 import CareersBackendDev from "../../../components/careersBackendDev/careersBackendDev";
 import CareersSoftWareEngineer from "../../../components/careersSoftwareEngineer/careersSoftwareEngineer";
 import ContentWriterLondon from "../../../components/contentWriterLondon/contentWriterLondon";
+
 // import dynamic from 'next/dynamic';
 
 // Lazy import your components
@@ -20,7 +21,7 @@ import ContentWriterLondon from "../../../components/contentWriterLondon/content
 
 const componentMap = {
   "marketing-social": () => <SocialMediaIntern />,
-  "python-developer": () => <CareersUXDesigner />,
+  "python-developer": () => <PythonDeveloper />,
   "content-writer-london-summary": () => <ContentWriterLondon />,
   "seo-manager": () => <CareersFullStack />,
   "leadership-ad-sales": () => <CareersLogoDesigner />,

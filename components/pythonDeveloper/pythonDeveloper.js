@@ -2,14 +2,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const jobCriteria = [
-  { label: "Experience level", data: "Entry", id: "1" },
-  { label: "Type", data: "Part Time", id: "2" },
+  { label: "Experience level", data: "Senior", id: "1" },
+  { label: "Type", data: "Full-time", id: "2" },
   { label: "Location", data: "100% Remote", id: "3" },
-  { label: "Salary range", data: "Internship", id: "4" },
-  { label: "Work hours", data: "20–25 hours per week", id: "5" },
+  {
+    label: "Salary range",
+    data: "$24,000–$36,000 (depending on experience)",
+    id: "4",
+  },
+  { label: "Work hours", data: "40 hours per week", id: "5" },
 ];
 
-export default function SocialMediaIntern() {
+export default function PythonDeveloper() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -59,7 +63,7 @@ export default function SocialMediaIntern() {
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
-            {/* left */}
+            {/* left default*/}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
               <div className="h-auto">
                 <Link
@@ -115,7 +119,7 @@ export default function SocialMediaIntern() {
                       Remote
                     </p>
                     <p className="py-1 px-[12px] bg-[#DAEBE8] text-[15px] text-[#000] font-[400] leading-normal text-center items-center flex justify-center rounded-[5px]">
-                      Part-time
+                      Full-time
                     </p>
                   </div>
                   {/* date */}
@@ -128,10 +132,10 @@ export default function SocialMediaIntern() {
                 {/* 2 */}
                 <div className="pt-[30px]">
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
-                    Marketing
+                    Tech
                   </p>
                   <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
-                    Social Media Intern
+                    Python Developer
                   </h2>
                 </div>
                 {/* 3 */}
@@ -149,7 +153,7 @@ export default function SocialMediaIntern() {
                     ))}
                   </div>
                 </div>
-                {/* assignment navigation label */}
+                {/* assignment navigation label default*/}
                 <div className="py-[44px]">
                   <div className="flex items-center px-4 md:px-6 lg:px-8 py-6 bg-[#FEF5F6] border border-[#E5C8CD] rounded-lg max-w-[720px]">
                     <div className="flex-shrink-0">
@@ -202,10 +206,11 @@ export default function SocialMediaIntern() {
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    Help grow our newsletters across social platforms through
-                    daily content, smart copy, and iterative testing. You will
-                    learn how to turn attention into measurable actions while
-                    keeping our brand voice sharp and consistent.
+                    As a Python Developer, you’ll help build the systems that
+                    keep our network of newsletters running efficiently. From
+                    data pipelines to automation scripts and analytics
+                    dashboards, you’ll be creating tools that scale with our
+                    growth.
                   </p>
                 </div>
                 {/* assignment */}
@@ -215,81 +220,90 @@ export default function SocialMediaIntern() {
                       Assignment
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      We’d love to see how you think about social media; how you
-                      plan, create, and communicate ideas that work.
+                      We want to see how you think, structure your logic, and
+                      work with data.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <strong>Your task:</strong>
+                      Your task is to create a small, clean Python project that
+                      does one useful thing well. Choose one of the options
+                      below and focus on writing clear, working code.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Imagine you’re managing social media for one of our
-                      newsletters:
+                      <strong>1. Data Aggregator</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <span className="mx-6">-</span>
-                      <a
-                        href="https://www.presidentialsummary.com/"
-                        target="_blank"
-                      >
-                        <span className="underline">Presidential Summary</span>
-                      </a>
-                      &nbsp; (global news)
-                      <br />
-                      <span className="mx-6">-</span>
-                      <a
-                        href="https://www.geopoliticalsummary.com/"
-                        target="_blank"
-                      >
-                        <span className="underline">Geopolitical Summary</span>
-                      </a>
-                      &nbsp;(international politics)
-                      <br />
-                      <span className="mx-6">-</span>
-                      <a href="https://www.dubaisummary.com/" target="_blank">
-                        <span className="underline">Dubai Summary</span>
-                      </a>{" "}
-                      &nbsp;(UAE news and lifestyle)
+                      Fetch data from a public API (for example: NewsAPI,
+                      CoinGecko, or OpenWeatherMap), clean it, and save it
+                      locally as a CSV or JSON file.
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Then, show a short analysis, such as top items, averages,
+                      or frequency counts.
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <strong>2. Newsletter Metrics Parser</strong>
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Use or simulate newsletter data (opens, clicks, etc.).
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Write a script that calculates engagement rates and shows
+                      a short summary like:
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                      Pick one newsletter and create a short 3-day content plan
-                      for it.
+                      <strong>Newsletter:</strong> Presidential Summary
+                      <br />
+                      <strong>Open Rate:</strong> 54.3%
+                      <br />
+                      <strong>CTR:</strong> 6.7%
+                      <br />
+                      <strong>Week-over-week Growth:</strong> +12%
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <strong>What to include:</strong>
+                      Bonus: Add a simple Matplotlib chart.
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <strong>3. Simple Web Scraper</strong>
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Scrape 10-20 recent article titles and URLs from a public
+                      news or blog site using requests and BeautifulSoup.
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Save them to CSV and print which words appear most often
+                      in the titles.
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      (Avoid sites that block scraping or require a login.)
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <strong>Requirements:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="mx-6">-</span>
-                      Which newsletter did you choose and why?
+                      Use Python 3.8+
                       <br />
                       <span className="mx-6">-</span>
-                      Who is the typical audience? (Age, interests, and why
-                      they’d follow this account)
+                      Allowed libraries: requests, pandas, matplotlib,
+                      beautifulsoup4, etc.
                       <br />
                       <span className="mx-6">-</span>
-                      Three posts for three days:
+                      Clean, readable code with comments or docstrings
                       <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Give each post a title or hook
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Add a short caption (1-2 sentences)
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Say which platform it’s for (e.g., Instagram, Threads,
-                      LinkedIn)
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Add a quick note on why it would perform well
+                      <span className="mx-6">-</span>
+                      Output should be easy to understand (in terminal or as a
+                      file)
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="mx-6">-</span>
-                      Send your short plan as a 1-page PDF
+                      Send your script (or GitHub link) and a short note on what
+                      you built
                       <br />
                       <span className="mx-6">-</span>
-                      Subject line: Social Media Intern – [Your Name]
+                      Subject line: Python Developer – [Your Name]
                       <br />
                       <span className="mx-6">-</span>
                       Email it to careers@houseofsummary.com
@@ -302,15 +316,18 @@ export default function SocialMediaIntern() {
                     Job description
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                    As a Social Media Intern, you’ll create and publish
-                    short-form posts and videos across all major platforms.
-                    You’ll write catchy captions, manage posting calendars, and
-                    monitor trends and audience engagement in real time. Working
-                    closely with our editorial and analytics teams, you’ll help
-                    refine strategies and discover what makes content perform.
-                    This internship offers a unique opportunity to learn the ins
-                    and outs of digital media, brand storytelling, and audience
-                    psychology while building a strong creative portfolio.
+                    As a Python Developer, you’ll design, build, and maintain
+                    scalable scripts and microservices that power data
+                    pipelines, automation tools, and analytics across our brand
+                    network. You’ll integrate APIs, streamline workflows, and
+                    develop solutions that make our systems smarter and faster.
+                    Working closely with editorial, analytics, and design teams,
+                    you’ll turn repetitive tasks into efficient processes, build
+                    integrations between platforms, and experiment with
+                    predictive models for audience insights. This role is
+                    perfect for someone who enjoys solving complex problems,
+                    writing clean and reliable code, and seeing their
+                    automations quietly run the world in the background.
                   </p>
                 </div>
                 {/* experience*/}
@@ -320,17 +337,20 @@ export default function SocialMediaIntern() {
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>
-                      Familiarity with Facebook, Instagram, Threads, X, Reddit,
-                      and LinkedIn
+                      Strong proficiency in Python 3.x (Pandas, Requests,
+                      Asyncio, Selenium, etc.)
                     </li>
-                    <li>Strong writing and basic visual judgment</li>
+                    <li>Experience with APIs, scraping, and automation</li>
                     <li>
-                      Organized, reliable, and curious about analytics and
-                      testing
+                      Familiarity with SQL databases (PostgreSQL, SQLite,
+                      BigQuery)
                     </li>
                     <li>
-                      Bonus: experience with creator collaborations or analytics
-                      tools
+                      Bonus: Experience with ML frameworks (Scikit-learn,
+                      XGBoost)
+                    </li>
+                    <li>
+                      Knowledge of version control (Git) and deployment tools
                     </li>
                   </ul>
                 </div>
@@ -340,17 +360,16 @@ export default function SocialMediaIntern() {
                     Benefits
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>Real ownership of posts and weekly campaigns</li>
-                    <li>Mentorship from editors and marketers</li>
-                    <li>Portfolio pieces with measurable outcomes</li>
-                    <li>Flexible schedule and fully remote setup</li>
                     <li>
-                      Potential for extension or recommendation based on
-                      performance
+                      Direct impact on thousands of readers through automation
                     </li>
+                    <li>Collaborative, fast-moving environment</li>
+                    <li>Flexible hours and fully remote</li>
+                    <li>Freedom to experiment and build real systems</li>
+                    <li>Results that run quietly while you sleep</li>
                   </ul>
                 </div>
-                {/* join our team & how to apply */}
+                {/* join our team & how to apply default*/}
                 <div className="pt-[30px] pb-[115px]">
                   <h2 className="text-[#000] text-[42px] font-[400] leading-normal ">
                     Join our team
