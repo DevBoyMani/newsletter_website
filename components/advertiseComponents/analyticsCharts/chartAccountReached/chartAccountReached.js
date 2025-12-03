@@ -1,46 +1,69 @@
 "use client";
 
-import { Plus, X } from "lucide-react";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
 } from "@/components/ui/card";
-import {
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
 
-// Sample Chart Data
-const chartData = [
-  { month: "January", desktop: 86 },
-  { month: "February", desktop: 5 },
-  { month: "March", desktop: 37 },
-  { month: "April", desktop: 73 },
-  { month: "May", desktop: 9 },
-  { month: "June", desktop: 14 },
-];
-
-// Fix: Properly Define `chartConfig`
 const chartConfig = {
-  desktop: {
-    label: "Desktop",
-    color: "#8CFAE2", // Example color
+  subscribers: {
+    label: "Subscribers",
+    color: "#8CFAE2",
   },
 };
 
-export function AccountReached() {
+// ⬇️ Custom tooltip: same bubble + vertical line, but ONLY number on second line
+function SubscribersTooltip({ active, payload, label }) {
+  if (!active || !payload || !payload.length) return null;
+
+  const value = payload[0]?.value ?? 0;
+  const formatted = new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 0,
+  }).format(Number(value) || 0);
+
+  return (
+    <div className="rounded-2xl bg-white px-4 py-3 shadow-[0_12px_40px_rgba(15,23,42,0.12)] border flex items-stretch gap-3 text-sm">
+      {/* vertical line */}
+      <div className="w-[3px] rounded-full bg-[#01261E]" />
+
+      {/* text block */}
+      <div className="flex flex-col gap-1">
+        <div className="font-medium text-[#111827]">{label}</div>
+        {/* just the number – no 'subscribers' */}
+        <div className="font-semibold text-[#111827]">{formatted}</div>
+      </div>
+    </div>
+  );
+}
+
+export function AccountReached(props) {
+  const { subscribersMonthly = [] } = props || {};
   const [flipped, setFlipped] = useState(false);
+
+  const chartData = useMemo(
+    () =>
+      subscribersMonthly.map((item) => {
+        const d = new Date(item.month);
+        const monthLabel = isNaN(d.getTime())
+          ? item.month
+          : d.toLocaleString("en-US", { month: "short" }); // Jan, Feb, ...
+        return {
+          month: monthLabel,
+          subscribers: item.count,
+        };
+      }),
+    [subscribersMonthly]
+  );
 
   return (
     <>
       {/* desktop view */}
       <div className="hidden lg:block relative h-full flex justify-center items-center ">
-        {/* 3D Perspective Container */}
         <div
           className="relative w-full h-[365px] transition-transform duration-500 "
           style={{
@@ -96,17 +119,15 @@ export function AccountReached() {
                   <XAxis
                     dataKey="month"
                     tickLine={false}
-                    // axisLine={true}
                     axisLine={{ stroke: "#000000" }}
                     tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
                   />
                   <ChartTooltip
                     cursor={false}
-                    content={<ChartTooltipContent indicator="line" />}
+                    content={<SubscribersTooltip />}
                   />
                   <Area
-                    dataKey="desktop"
+                    dataKey="subscribers"
                     type="natural"
                     fill="url(#areaGradient)"
                     stroke="#657C75"
@@ -156,7 +177,6 @@ export function AccountReached() {
 
       {/* mobile view */}
       <div className="block lg:hidden relative w-full h-full flex justify-center items-center ">
-        {/* 3D Perspective Container */}
         <div
           className="relative w-full h-[215px] transition-transform duration-500"
           style={{
@@ -211,27 +231,19 @@ export function AccountReached() {
                     </linearGradient>
                   </defs>
                   <CartesianGrid vertical={false} horizontal={false} />
-                  {/* <XAxis
-                    dataKey="month"
-                    tickLine={false}
-                    axisLine={true}
-                    tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
-                  /> */}
                   <XAxis
                     dataKey="month"
                     tickLine={false}
-                    axisLine={{ stroke: "#000000" }} // customize line above months
+                    axisLine={{ stroke: "#000000" }}
                     tickMargin={8}
-                    tickFormatter={(value) => value.slice(0, 3)}
                   />
 
                   <ChartTooltip
                     cursor={false}
-                    content={<ChartTooltipContent indicator="line" />}
+                    content={<SubscribersTooltip />}
                   />
                   <Area
-                    dataKey="desktop"
+                    dataKey="subscribers"
                     type="natural"
                     fill="url(#areaGradient)"
                     stroke="#657C75"

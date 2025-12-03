@@ -1,46 +1,92 @@
 "use client";
 
-import { Plus, X } from "lucide-react";
-import { useState } from "react";
-import { TrendingUp } from "lucide-react";
+import { useState, useMemo } from "react";
 import { CartesianGrid, Line, LineChart, XAxis, YAxis } from "recharts";
 
 import {
   Card,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
-import {
-  ChartConfig,
-  ChartContainer,
-  ChartTooltip,
-  ChartTooltipContent,
-} from "@/components/ui/chart";
-const chartData = [
-  { week: "week1", desktop: 186, mobile: 80 },
-  { week: "week2", desktop: 305, mobile: 200 },
-  { week: "week3", desktop: 237, mobile: 120 },
-  { week: "week4", desktop: 73, mobile: 190 },
-  { week: "week5", desktop: 209, mobile: 130 },
-  { week: "week6", desktop: 214, mobile: 140 },
-];
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 
 const chartConfig = {
-  desktop: {
+  lastMonth: {
     label: "Last Month",
-    // color: "hsl(var(--chart-1))",
+    color: "#657C75",
   },
-  mobile: {
+  thisMonth: {
     label: "This Month",
-    // color: "hsl(var(--chart-2))",
+    color: "#E19F20",
   },
 };
 
-export function SignInUps() {
+// Format y-axis values with commas
+const formatNumber = (value) =>
+  new Intl.NumberFormat("en-US", {
+    maximumFractionDigits: 0,
+  }).format(Number(value) || 0);
+
+// Bubble tooltip
+function ClickTooltip({ active, payload, label }) {
+  if (!active || !payload || !payload.length) return null;
+
+  const labelMap = {
+    lastMonth: "Last Month",
+    thisMonth: "This Month",
+  };
+
+  const rows = payload.map((item) => {
+    const key = item.dataKey || item.name;
+    const labelText = labelMap[key] || key;
+    const value = formatNumber(item.value || 0);
+
+    return {
+      id: key,
+      label: labelText,
+      color: item.color || "#657C75",
+      value,
+    };
+  });
+
+  return (
+    <div className="rounded-2xl bg-white px-4 py-3 shadow-[0_12px_40px_rgba(15,23,42,0.12)] border flex flex-col gap-2 text-sm">
+      {/* Top: week label */}
+      <div className="font-medium text-[#111827]">{label}</div>
+
+      {/* Rows for each series */}
+      <div className="flex flex-col gap-1">
+        {rows.map((row) => (
+          <div key={row.id} className="flex items-center gap-2">
+            <span
+              className="h-[10px] w-[10px] rounded-[4px]"
+              style={{ backgroundColor: row.color }}
+            />
+            <span className="text-[#6B7280]">{row.label}</span>
+            <span className="font-semibold text-[#111827]">{row.value}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+export function SignInUps(props) {
+  const { adClickActivity = [] } = props || {};
   const [flipped, setFlipped] = useState(false);
+
+  // Shape incoming API data
+  const chartData = useMemo(
+    () =>
+      adClickActivity.map((item) => ({
+        week: item.week,
+        lastMonth: item.lastMonth,
+        thisMonth: item.thisMonth,
+      })),
+    [adClickActivity]
+  );
+
   return (
     <>
       {/* desktop view */}
@@ -54,6 +100,7 @@ export function SignInUps() {
             transformStyle: "preserve-3d",
           }}
         >
+          {/* Front */}
           <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8">
             <button
               onClick={() => setFlipped(true)}
@@ -81,7 +128,7 @@ export function SignInUps() {
                     <div className="flex items-center gap-2">
                       <img
                         src="/advertise/chart-canada.png"
-                        alt="Male"
+                        alt="Last Month"
                         className="w-2 h-2"
                       />
                       <span className="text-[18px]">Last Month</span>
@@ -89,7 +136,7 @@ export function SignInUps() {
                     <div className="flex items-center gap-2">
                       <img
                         src="/advertise/chart-uk.png"
-                        alt="Female"
+                        alt="This Month"
                         className="w-2 h-2"
                       />
                       <span className="text-[18px]">This Month</span>
@@ -99,25 +146,25 @@ export function SignInUps() {
               </div>
             </CardHeader>
             <CardContent>
-              <ChartContainer
-                config={chartConfig}
-                className="w-full h-[250px] px-4"
-              >
+              <ChartContainer config={chartConfig} className="w-full h-[250px]">
                 <LineChart
                   accessibilityLayer
                   data={chartData}
                   margin={{
-                    left: 12,
-                    right: 12,
+                    left: 40, // extra space so Y-axis labels don't get cut
+                    right: 20,
+                    top: 10,
+                    bottom: 10,
                   }}
                 >
                   <CartesianGrid vertical={false} />
                   <YAxis
-                    width={20} // Controls the space for the Y-axis labels
-                    tickLine={true} // Hides tick marks
-                    axisLine={true} // Hides axis line
-                    tick={{ fill: "#515151", fontSize: 12 }} // Custom styling
-                    domain={["auto", "auto"]} // Auto-scale
+                    width={40}
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#515151", fontSize: 12 }}
+                    tickFormatter={formatNumber}
+                    domain={["auto", "auto"]}
                   />
                   <XAxis
                     dataKey="week"
@@ -126,19 +173,16 @@ export function SignInUps() {
                     tickMargin={8}
                     tickFormatter={(value) => value.slice(0, 6)}
                   />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent />}
-                  />
+                  <ChartTooltip cursor={false} content={<ClickTooltip />} />
                   <Line
-                    dataKey="desktop"
+                    dataKey="lastMonth"
                     type="linear"
                     stroke="#657C75"
                     strokeWidth={2}
                     dot={false}
                   />
                   <Line
-                    dataKey="mobile"
+                    dataKey="thisMonth"
                     type="linear"
                     stroke="#E19F20"
                     strokeWidth={2}
@@ -148,6 +192,7 @@ export function SignInUps() {
               </ChartContainer>
             </CardContent>
           </Card>
+
           {/* Back Side */}
           <Card
             className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8"
@@ -187,7 +232,6 @@ export function SignInUps() {
       </div>
 
       {/* mobile view */}
-
       <div className="block lg:hidden relative w-full h-full flex justify-center items-center mt-4">
         {/* 3D Perspective Container */}
         <div
@@ -198,6 +242,7 @@ export function SignInUps() {
             transformStyle: "preserve-3d",
           }}
         >
+          {/* Front */}
           <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6">
             <button
               onClick={() => setFlipped(true)}
@@ -225,7 +270,7 @@ export function SignInUps() {
                     <div className="flex items-center gap-2">
                       <img
                         src="/advertise/chart-canada.png"
-                        alt="Male"
+                        alt="Last Month"
                         className="w-[5px] h-[5px]"
                       />
                       <span className="text-[8px]">Last Month</span>
@@ -233,7 +278,7 @@ export function SignInUps() {
                     <div className="flex items-center gap-2">
                       <img
                         src="/advertise/chart-uk.png"
-                        alt="Female"
+                        alt="This Month"
                         className="w-[5px] h-[5px]"
                       />
                       <span className="text-[8px]">This Month</span>
@@ -251,38 +296,39 @@ export function SignInUps() {
                   accessibilityLayer
                   data={chartData}
                   margin={{
-                    left: 12,
-                    right: 12,
+                    left: 36,
+                    right: 16,
+                    top: 8,
+                    bottom: 8,
                   }}
                 >
                   <CartesianGrid vertical={false} />
                   <YAxis
-                    width={20} // Controls the space for the Y-axis labels
-                    tickLine={true} // Hides tick marks
-                    axisLine={true} // Hides axis line
-                    tick={{ fill: "#515151", fontSize: 12 }} // Custom styling
-                    domain={["auto", "auto"]} // Auto-scale
+                    width={32}
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fill: "#515151", fontSize: 10 }}
+                    tickFormatter={formatNumber}
+                    domain={["auto", "auto"]}
                   />
                   <XAxis
                     dataKey="week"
                     tickLine={true}
                     axisLine={true}
-                    tickMargin={8}
+                    tickMargin={6}
                     tickFormatter={(value) => value.slice(0, 6)}
+                    tick={{ fill: "#515151", fontSize: 10 }}
                   />
-                  <ChartTooltip
-                    cursor={false}
-                    content={<ChartTooltipContent />}
-                  />
+                  <ChartTooltip cursor={false} content={<ClickTooltip />} />
                   <Line
-                    dataKey="desktop"
+                    dataKey="lastMonth"
                     type="linear"
                     stroke="#657C75"
                     strokeWidth={2}
                     dot={false}
                   />
                   <Line
-                    dataKey="mobile"
+                    dataKey="thisMonth"
                     type="linear"
                     stroke="#E19F20"
                     strokeWidth={2}
@@ -292,7 +338,8 @@ export function SignInUps() {
               </ChartContainer>
             </CardContent>
           </Card>
-          {/* Back Side */}
+
+          {/* Back */}
           <Card
             className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6"
             style={{

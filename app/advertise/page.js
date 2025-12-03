@@ -1,24 +1,99 @@
 "use client";
 
-import { Component } from "../../components/areaChart/areaChart";
+import { useState } from "react";
+
 import { AccountReached } from "../../components/advertiseComponents/analyticsCharts/chartAccountReached/chartAccountReached";
 import { ViewsCountry } from "../../components/advertiseComponents/analyticsCharts/chartViewsByCountry/chartViewsByCountry";
 import { ActiveUsers } from "../../components/advertiseComponents/analyticsCharts/chartActiveUsers/chartActiveUsers";
 import { Statistics } from "../../components/advertiseComponents/analyticsCharts/chartStatistics/chartStatistics";
 import { SignInUps } from "../../components/advertiseComponents/analyticsCharts/chartSignUps/chartSignUps";
 import HeadingWithUnderline from "../../components/advertiseComponents/headingWithUnderline/headingwithUnderline";
-import { H2Icon } from "@heroicons/react/16/solid";
-import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/advertiseFaq";
 
 import AdvertisePageMobileVersion from "../../components/advertisePageMobileVersion/advertisePageMobileVersion";
-import { Agdasima } from "next/font/google";
 import AdvertiseAdBlocker from "../../components/advertiseAdBlocker/advertiseAdBlocker";
 import AdvertiseNewFaq from "../../components/advertiseNewFaq/advertiseNewFaq";
 import Link from "next/link";
-import { useEffect, useRef, useState } from "react";
 import CustomizedHoverButton from "../../components/customizedHoverButton/customizedHoverButton";
 
+// 🔹 Static analytics data (no API)
+const ADVERTISE_ANALYTICS = {
+  subscribersMonthly: [
+    { month: "2025-01-01", count: 34804 },
+    { month: "2025-02-01", count: 87146 },
+    { month: "2025-03-01", count: 148011 },
+    { month: "2025-04-01", count: 247353 },
+    { month: "2025-05-01", count: 315951 },
+    { month: "2025-06-01", count: 371467 },
+    { month: "2025-07-01", count: 512739 },
+    { month: "2025-08-01", count: 1095335 },
+    { month: "2025-09-01", count: 665106 },
+    { month: "2025-10-01", count: 456244 },
+    { month: "2025-11-01", count: 899518 },
+    { month: "2025-12-01", count: 114759 },
+  ],
+  opensByCountry: [
+    {
+      country: "United States",
+      uniqueOpeners: 276628,
+      totalOpens: 6851111,
+      totalPercentage: 74.89,
+    },
+    {
+      country: "United Arab Emirates",
+      uniqueOpeners: 67545,
+      totalOpens: 968173,
+      totalPercentage: 10.58,
+    },
+    {
+      country: "United Kingdom",
+      uniqueOpeners: 5636,
+      totalOpens: 135758,
+      totalPercentage: 1.48,
+    },
+    {
+      country: "India",
+      uniqueOpeners: 3972,
+      totalOpens: 125463,
+      totalPercentage: 1.37,
+    },
+    {
+      country: "Australia",
+      uniqueOpeners: 1496,
+      totalOpens: 61834,
+      totalPercentage: 0.68,
+    },
+  ],
+  opensMonthly: [
+    { month: "2025-01-01", count: 39387 },
+    { month: "2025-02-01", count: 108552 },
+    { month: "2025-03-01", count: 116890 },
+    { month: "2025-04-01", count: 118543 },
+    { month: "2025-05-01", count: 216723 },
+    { month: "2025-06-01", count: 605858 },
+    { month: "2025-07-01", count: 1077545 },
+    { month: "2025-08-01", count: 1217666 },
+    { month: "2025-09-01", count: 1443895 },
+    { month: "2025-10-01", count: 1618392 },
+    { month: "2025-11-01", count: 2321448 },
+    { month: "2025-12-01", count: 276395 },
+  ],
+  opensByGender: [
+    { gender: "male", totalOpeners: 64532, percentage: 57.69 },
+    { gender: "female", totalOpeners: 47326, percentage: 42.31 },
+    { gender: "unknown", totalOpeners: 3, percentage: 0 },
+  ],
+  adClickActivity: [
+    { week: "week 1", lastMonth: 914, thisMonth: 10265 },
+    { week: "week 2", lastMonth: 688, thisMonth: 13072 },
+    { week: "week 3", lastMonth: 9547, thisMonth: 19801 },
+    { week: "week 4", lastMonth: 7733, thisMonth: 7032 },
+  ],
+};
+
 export default function Advertise() {
+  // In case later you want to toggle between different presets, etc.
+  const [analyticsData] = useState(ADVERTISE_ANALYTICS);
+
   const videos = [
     { video: "/advertise/v-1.mp4", id: "video1", height: "h-[694px]" },
     { video: "/advertise/v-2.mp4", id: "video2", height: "h-[644px]" },
@@ -36,61 +111,40 @@ export default function Advertise() {
     },
   ];
 
-  const newsData = [
-    {
-      logo: "/advertise/bloomberg.png",
-      logoAlt: "Bloomberg",
-      logoWidth: 138,
-      title:
-        "LARK advises FSN Capital and its portfolio company TASKING on the acquisition of LDRA",
-      description:
-        "Tasking GmbH, a leading provider of embedded software development tools, has acquired LDRA, a UK-based software company.",
-      date: "JANUARY 25, 2025",
-      link: "#",
-    },
-    {
-      logo: "/advertise/bbc.png",
-      logoAlt: "BBC",
-      logoWidth: 108,
-      title:
-        "LARK advises FSN Capital and its portfolio company TASKING on the acquisition of LDRA",
-      description:
-        "Tasking GmbH, a leading provider of embedded software development tools, has acquired LDRA, a UK-based software company.",
-      date: "JANUARY 25, 2025",
-      link: "#",
-    },
-    {
-      logo: "/advertise/cnn.png",
-      logoAlt: "CNN",
-      logoWidth: 60,
-      title:
-        "LARK advises FSN Capital and its portfolio company TASKING on the acquisition of LDRA",
-      description:
-        "Tasking GmbH, a leading provider of embedded software development tools, has acquired LDRA, a UK-based software company.",
-      date: "JANUARY 25, 2025",
-      link: "#",
-    },
-  ];
+  function ClickTooltip({ active, payload, label }) {
+    if (!active || !payload || !payload.length) return null;
+
+    const item = payload[0];
+    const value = item.value || 0;
+
+    const formatted = new Intl.NumberFormat("en-US", {
+      maximumFractionDigits: 0,
+    }).format(value);
+
+    return (
+      <div className="rounded-2xl bg-white px-4 py-3 shadow-[0_12px_40px_rgba(15,23,42,0.12)] border flex items-stretch gap-3 text-sm">
+        {/* vertical colored line */}
+        <div
+          className="w-[3px] rounded-full"
+          style={{ backgroundColor: item.color || "#657C75" }}
+        />
+
+        <div className="flex flex-col gap-1">
+          {/* Week */}
+          <div className="font-medium text-[#111827]">{label}</div>
+
+          {/* Count */}
+          <div className="font-semibold text-[#111827]">{formatted}</div>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <>
       {/* hero section */}
       <div className="bg-[#FAFAFA] hidden lg:block pt-[38px]">
         <div className=" relative md:px-28">
-          {/* Top Year Labels */}
-          {/* <div className="hidden lg:block absolute top-14 left-0 right-0 flex justify-between text-gray-500 text-[16px] px-[10%]">
-            <span className="absolute left-[17%]">2014</span>
-            <span className="absolute left-[38%]">2017</span>
-            <span className="absolute left-[59%]">2020</span>
-            <span className="absolute left-[80%]">2023</span>
-          </div> */}
-
-          {/* vertical lines */}
-          {/* <div className="absolute top-20 bottom-[180px] left-[18%] w-px bg-[#716D6D] z-0" />
-          <div className="absolute top-20 bottom-[70px] left-[39%] w-px bg-[#716D6D] z-0" />
-          <div className="absolute top-20 bottom-[270px] left-[60%] w-px bg-[#716D6D] z-0" />
-          <div className="absolute top-20 bottom-[390px] left-[81%] w-px bg-[#716D6D] z-0" /> */}
-
           {/* Text Section */}
           <div className="lg:pt-20 mx-auto">
             <div className="text-[#01261E]">
@@ -113,28 +167,6 @@ export default function Advertise() {
               </div>
             </div>
           </div>
-
-          {/* Video Section */}
-          {/* <div className="">
-            <div className="flex justify-center relative mt-10 ">
-              <div className="flex space-x-4 items-end relative z-0 w-full">
-                {videos.map((video) => (
-                  <video
-                    key={video.id}
-                    src={video.video}
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                    className={`object-cover
-                    w-[24%] max-w-[40%] 
-                      ${video.height} ${video.moveUp || ""}`}
-                  />
-                ))}
-              </div>
-            </div>
-          </div> */}
-
           {/* Video + Text Section */}
           <div className="relative w-full mt-10">
             {/* Videos */}
@@ -156,7 +188,7 @@ export default function Advertise() {
               </div>
             </div>
 
-            {/* 100K Subscribers Text */}
+            {/* 500K Subscribers Text */}
             <div className="absolute -bottom-4 left-[49.7%] -translate-x-1/2 z-20 text-center">
               <h2 className="font-[700] sm:text-[10vw] lg:text-[11.4vw] 2xl:text-[11.4vw] [1650px]:text-[13vw] [1800px]:text-[13vw] leading-[94%] tracking-[-1.6px] whitespace-nowrap">
                 <span className="text-white">500k </span>
@@ -165,32 +197,7 @@ export default function Advertise() {
             </div>
           </div>
 
-          {/* <div className="hidden lg:block absolute bottom-[600px] left-0 right-0 flex justify-between text-[#f0efed] text-[16px] font-[600] ">
-            <span className="absolute bottom-[66px] left-[14%]">
-              $19.4 trillion
-            </span>
-            <span className="absolute bottom-[14px] left-[36%]">
-              $17.4 trillion
-            </span>
-            <span className="absolute bottom-[148px] left-[57%]">
-              $18.9 trillion
-            </span>
-            <span className="absolute bottom-[250px] left-[78%]">
-              $144 million
-            </span>
-          </div> */}
-
           <div className="px-28 absolute -bottom-1 left-0 w-full h-[35vh] bg-gradient-to-t from-[#FAFAFA] to-transparent z-10"></div>
-
-          {/* 100K Subscribers Text (Above Gradient) */}
-          {/* <div className="">
-            <div className="">
-              <h2 className="absolute -bottom-4 font-[700] lg:text-[11.1vw] 2xl:text-[11.3vw] 3xl:text-[11.7vw] leading-[94%] tracking-[-1.6px] z-20 text-center max-w-[100%]">
-                <span className="text-white">100K </span>
-                <span className="text-[#01261E]">Subscribers</span>
-              </h2>
-            </div>
-          </div> */}
         </div>
       </div>
 
@@ -205,10 +212,16 @@ export default function Advertise() {
           {/* #1 */}
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
             <div className="w-full md:w-[45%]">
-              <AccountReached />
+              <AccountReached
+                subscribersMonthly={analyticsData.subscribersMonthly}
+                isLoading={false}
+              />
             </div>
             <div className="w-full md:w-[35%]">
-              <ViewsCountry />
+              {/* later we can pass opensByCountry here */}
+              <ViewsCountry
+                opensByCountry={ADVERTISE_ANALYTICS.opensByCountry}
+              />{" "}
             </div>
           </div>
 
@@ -216,12 +229,12 @@ export default function Advertise() {
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
             <div className="w-full md:w-[35%]">
               <div>
-                <ActiveUsers />
+                <ActiveUsers opensMonthly={ADVERTISE_ANALYTICS.opensMonthly} />
               </div>
             </div>
             <div className="w-full md:w-[45%]">
               <div>
-                <Statistics />
+                <Statistics opensByGender={ADVERTISE_ANALYTICS.opensByGender} />
               </div>
             </div>
           </div>
@@ -230,7 +243,9 @@ export default function Advertise() {
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
             <div className="w-full md:w-[45%]">
               <div>
-                <SignInUps />
+                <SignInUps
+                  adClickActivity={ADVERTISE_ANALYTICS.adClickActivity}
+                />
               </div>
             </div>
             <div className="w-full md:w-[35%]">
@@ -259,7 +274,6 @@ export default function Advertise() {
                       width="fit"
                       height="37px"
                       borderColor="#DAEBE8"
-                      // bgColor="#C7A262"
                       hoverBgColor="#DAEBE8"
                       hoverText="black"
                       textColor="#DAEBE8"
@@ -293,7 +307,6 @@ export default function Advertise() {
                 src="/advertise/advertise-page-video.mp4"
                 type="video/mp4"
               />
-              {/* <source src="/advertise/advertise-page-video.webm" type="video/webm" /> */}
             </video>
           </div>
         </div>
@@ -315,7 +328,6 @@ export default function Advertise() {
             </p>
           </div>
 
-          {/* Moving Text */}
           <a
             href="/contact"
             className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
@@ -338,58 +350,7 @@ export default function Advertise() {
       </div>
 
       {/* faq */}
-
       <AdvertiseNewFaq />
-
-      {/* In the press */}
-      {/* <div className="bg-[#FAFAFA] hidden lg:block">
-        <div className="px-4 sm:px-10 xl:px-28 2xl:px-28 pb-10">
-          <HeadingWithUnderline text="In the press" />
-        </div>
-
-        <div className="px-4 md:px-32 pb-20 pt-10">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {newsData.map((item, index) => (
-              <div key={index} className="space-y-3">
-                <img
-                  src={item.logo}
-                  alt={item.logoAlt}
-                  className="h-[31px]"
-                  style={{ width: `${item.logoWidth}px` }}
-                />
-                <p className="text-[26px] font-semibold">{item.title}</p>
-                <p className="text-[15px] ">{item.description}</p>
-                <div className="flex justify-between items-center">
-                  <p className="text-[15px] font-semibold">{item.date}</p>
-                  <a
-                    href={item.link}
-                    className="text-[15px] font-semibold text-black hover:underline"
-                  >
-                    READ MORE
-                  </a>
-                </div>
-              </div>
-            ))}
-          </div>
-
-         
-          <div className="px-20 py-20 flex justify-center">
-            <CustomizedHoverButton
-              href="#"
-              label="See more"
-              fontSize="23px"
-              fontWeight="600"
-              width="198px"
-              height="45px"
-              borderColor="#121212"
-              hoverBgColor="#01261E"
-              hoverText="#ffffff"
-              textColor="#121212"
-              padding="px-[30px] py-[17px]"
-            />
-          </div>
-        </div>
-      </div> */}
 
       {/* mobile view for advertise page */}
       <div className="block lg:hidden bg-[#FAFAFA] pt-[100px] pb-[10px]">

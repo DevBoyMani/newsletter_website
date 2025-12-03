@@ -1,83 +1,77 @@
 "use client";
 
-import { Plus, X } from "lucide-react";
-import { useState } from "react";
-import {
-  Bar,
-  BarChart,
-  CartesianGrid,
-  XAxis,
-  YAxis,
-  Tooltip,
-  ResponsiveContainer,
-} from "recharts";
+import { useState, useMemo } from "react";
+import { Pie, PieChart } from "recharts";
+
 import {
   Card,
   CardContent,
   CardDescription,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
+import { ChartContainer, ChartTooltip } from "@/components/ui/chart";
 
-const chartData = [
-  { ageGroup: "18-24", male: 10, female: 5, percentage: "3.3%" },
-  { ageGroup: "25-34", male: 35, female: 20, percentage: "12.7%" },
-  { ageGroup: "35-44", male: 45, female: 25, percentage: "15.2%" },
-  { ageGroup: "45-64", male: 60, female: 35, percentage: "25.3%" },
-  { ageGroup: "65+", male: 80, female: 40, percentage: "33.5%" },
-];
-
-const colors = {
-  male: "#657C75",
-  female: "#E19F20",
-  // background: "#DAEBE8",
-  // border: "#515151",
+const chartConfig = {
+  male: {
+    label: "Male",
+    color: "#3C6255",
+  },
+  female: {
+    label: "Female",
+    color: "#E5A800",
+  },
 };
 
-// Custom capsule bar
-// Male Capsule Bar (both ends rounded)
-// Male Capsule Bar (both ends rounded)
-const MaleCapsuleBar = ({ x, y, width, height, fill }) => {
-  const radius = height / 2;
+// Geo-style pill tooltip, but for gender
+function GenderTooltip({ active, payload }) {
+  if (!active || !payload || !payload.length) return null;
+
+  const item = payload[0];
+  const name = item.name;
+  const slicePayload = item.payload || {};
+  const percentage = slicePayload.percentage ?? "";
+
   return (
-    <rect
-      x={x}
-      y={y}
-      width={width}
-      height={height}
-      rx={radius}
-      ry={radius}
-      fill={fill}
-    />
+    <div className="flex items-center gap-2 rounded-[999px] border border-[#E5E7EB] bg-white px-4 py-2 text-sm shadow-[0px_22px_45px_rgba(15,23,42,0.18)]">
+      <span
+        className="h-[10px] w-[10px] rounded-[4px]"
+        style={{ backgroundColor: slicePayload.fill || "#394E65" }}
+      />
+      <span className="font-medium text-[#111827] whitespace-nowrap">
+        {name}
+      </span>
+      {/* show only percentage, no raw totalOpeners */}
+      {percentage && (
+        <span className="font-semibold text-[#111827]">{percentage}</span>
+      )}
+    </div>
   );
-};
+}
 
-// Female Bar (left side curve merging with male, no gap)
-const FemaleMergeBar = ({ x, y, width, height, fill }) => {
-  const radius = height / 2;
-  const overlap = 6; // small overlap to kill the gap
-  return (
-    <path
-      d={`
-        M ${x - overlap} ${y}
-        H ${x + width - radius}
-        A ${radius} ${radius} 0 0 1 ${x + width - radius} ${y + height}
-        H ${x - overlap}
-        A ${radius} ${radius} 0 0 0 ${x - overlap} ${y}
-        Z
-      `}
-      fill={fill}
-    />
-  );
-};
-
-export function Statistics() {
+export function Statistics(props) {
+  const { opensByGender = [] } = props || {};
   const [flipped, setFlipped] = useState(false);
+
+  const chartData = useMemo(() => {
+    return opensByGender
+      .filter((g) => g.gender === "male" || g.gender === "female")
+      .map((g) => {
+        const isMale = g.gender === "male";
+        return {
+          name: isMale ? "Male" : "Female",
+          key: isMale ? "male" : "female",
+          // Used only for slice size, never displayed
+          value: g.totalOpeners,
+          percentage: `${g.percentage.toFixed(2)}%`,
+          fill: isMale ? "#3C6255" : "#E5A800",
+        };
+      });
+  }, [opensByGender]);
+
   return (
     <>
       {/* desktop view */}
       <div className="hidden lg:block relative w-full h-full flex justify-center items-center ">
-        {/* 3D Perspective Container */}
         <div
           className="relative w-full h-[365px] transition-transform duration-500"
           style={{
@@ -86,7 +80,11 @@ export function Statistics() {
             transformStyle: "preserve-3d",
           }}
         >
-          <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8">
+          {/* Front */}
+          <Card
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8"
+            style={{ backfaceVisibility: "hidden" }}
+          >
             <button
               onClick={() => setFlipped(true)}
               className="absolute top-6 right-8 rounded-full "
@@ -101,83 +99,62 @@ export function Statistics() {
             <CardHeader className="p-0">
               <div className="w-full border-b border-[#515151] pb-2">
                 <div className="text-[18px] text-[#9291A5]">Audience</div>
-                <div className="flex items-center justify-start">
-                  <CardDescription className="text-[22px] text-[#1E1B39] font-bold">
-                    Gender distribution
-                  </CardDescription>
-                  <div className="flex ml-8 gap-4 text-sm">
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block w-3 h-3 rounded-full bg-[#3C6255]" />
-                      <span className="text-[18px]">Male</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="inline-block w-3 h-3 rounded-full bg-[#E5A800]" />
-                      <span className="text-[18px]">Female</span>
-                    </div>
-                  </div>
-                </div>
+                <CardDescription className="text-[22px] text-[#1E1B39] font-bold">
+                  Gender distribution
+                </CardDescription>
               </div>
             </CardHeader>
 
             <CardContent>
-              <ResponsiveContainer width="100%" height={250}>
-                <BarChart
-                  layout="vertical"
-                  data={chartData}
-                  barGap={8}
-                  barSize={12}
-                  margin={{ left: 0, right: 40 }}
-                >
-                  {/* Hide grid for clean look */}
-                  <CartesianGrid horizontal={false} vertical={false} />
+              <ChartContainer
+                config={chartConfig}
+                className="w-full h-[200px] px-4"
+              >
+                <div className="flex justify-center items-center">
+                  {/* Pie */}
+                  <div>
+                    <PieChart width={200} height={200}>
+                      <ChartTooltip
+                        cursor={false}
+                        content={<GenderTooltip />}
+                      />
+                      <Pie
+                        data={chartData}
+                        dataKey="value"
+                        nameKey="name"
+                        strokeWidth={0}
+                      />
+                    </PieChart>
+                  </div>
 
-                  {/* Age group labels on the left */}
-                  <YAxis
-                    dataKey="ageGroup"
-                    type="category"
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: "#1E1B39", fontSize: 14 }}
-                  />
-
-                  {/* Percentages on the right */}
-                  <YAxis
-                    yAxisId="right"
-                    orientation="right"
-                    type="category"
-                    dataKey="percentage"
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fill: "#9291A5", fontSize: 14 }}
-                  />
-
-                  <XAxis type="number" hide />
-
-                  {/* Tooltip */}
-                  <Tooltip cursor={{ fill: "transparent" }} />
-
-                  {/* Bars */}
-                  {/* Male Bar (left capsule + rounded junction) */}
-
-                  <Bar
-                    dataKey="male"
-                    stackId="a"
-                    fill={colors.male}
-                    shape={(props) => <MaleCapsuleBar {...props} />}
-                  />
-
-                  <Bar
-                    dataKey="female"
-                    stackId="a"
-                    fill={colors.female}
-                    shape={(props) => <FemaleMergeBar {...props} />}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
+                  {/* Legend */}
+                  <div className="ml-6 space-y-3">
+                    {chartData.map((item) => (
+                      <div
+                        key={item.key}
+                        className="flex items-center justify-between w-full gap-4"
+                      >
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="inline-block w-3 h-3 rounded-full"
+                            style={{ backgroundColor: item.fill }}
+                          />
+                          <span className="text-[#1E1B39] text-sm">
+                            {item.name}
+                          </span>
+                        </div>
+                        <span className="text-sm text-[#9291A5]">
+                          {item.percentage}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ChartContainer>
             </CardContent>
           </Card>
 
-          {/* Back Side */}
+          {/* Back */}
           <Card
             className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8"
             style={{
@@ -203,13 +180,11 @@ export function Statistics() {
                 </CardDescription>
               </div>
             </CardHeader>
-            <p className="text-[#FAFAFA] font- font-[400px] leading-[1.5]  max-w-[550px] text-[20px] pb-4 pt-8">
+            <p className="text-[#FAFAFA] font-[400] leading-[1.5] max-w-[550px] text-[20px] pb-4 pt-8">
               This chart shows the gender composition of our readership. It
               helps advertisers understand the balance of male and female
-              audiences engaging with our content. These insights allow for more
-              precise campaign targeting and better alignment between brand
-              messaging and audience demographics. A balanced gender mix
-              indicates broad appeal and diverse readership.
+              audiences engaging with our content and align campaigns with who’s
+              actually reading.
             </p>
           </Card>
         </div>
@@ -217,7 +192,6 @@ export function Statistics() {
 
       {/* mobile view */}
       <div className="block lg:hidden relative w-full flex justify-center items-center">
-        {/* Inner Flip Layer */}
         <div
           className="relative w-full h-[215px] transition-transform duration-500"
           style={{
@@ -226,7 +200,7 @@ export function Statistics() {
             transformStyle: "preserve-3d",
           }}
         >
-          {/* Front Side */}
+          {/* Front */}
           <Card
             className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6"
             style={{ backfaceVisibility: "hidden" }}
@@ -249,76 +223,60 @@ export function Statistics() {
                   <CardDescription className="text-[12px] text-[#1E1B39] font-bold">
                     Gender distribution
                   </CardDescription>
-                  <div className="flex gap-3 text-[9px] ml-4 mt-1">
-                    <div className="flex items-center gap-1">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#3C6255]" />
-                      <span>Male</span>
-                    </div>
-                    <div className="flex items-center gap-1">
-                      <span className="inline-block w-2 h-2 rounded-full bg-[#E5A800]" />
-                      <span>Female</span>
-                    </div>
-                  </div>
                 </div>
               </div>
             </CardHeader>
 
             <CardContent className="p-0 pt-2">
-              <ResponsiveContainer width="100%" height={120}>
-                <BarChart
-                  layout="vertical"
-                  data={chartData}
-                  barGap={6}
-                  barSize={10}
-                  margin={{ top: 0, right: -20, left: -20, bottom: 0 }}
-                >
-                  {/* Clean chart (no extra grid lines) */}
-                  <CartesianGrid horizontal={false} vertical={false} />
+              <ChartContainer
+                config={chartConfig}
+                className="w-full h-[120px] sm:h-[100px] px-0"
+              >
+                <div className="flex justify-start items-center -ml-2">
+                  {/* Pie */}
+                  <div>
+                    <PieChart width={140} height={140}>
+                      <ChartTooltip
+                        cursor={false}
+                        content={<GenderTooltip />}
+                      />
+                      <Pie
+                        data={chartData}
+                        dataKey="value"
+                        nameKey="name"
+                        strokeWidth={0}
+                      />
+                    </PieChart>
+                  </div>
 
-                  {/* Age group labels (left) */}
-                  <YAxis
-                    dataKey="ageGroup"
-                    type="category"
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fontSize: 9, fill: "#1E1B39" }}
-                  />
-
-                  {/* Percentages (right side) */}
-                  <YAxis
-                    yAxisId="right"
-                    orientation="right"
-                    type="category"
-                    dataKey="percentage"
-                    axisLine={false}
-                    tickLine={false}
-                    tick={{ fontSize: 9, fill: "#9291A5" }}
-                  />
-
-                  <XAxis type="number" hide />
-                  <Tooltip cursor={{ fill: "transparent" }} />
-
-                  {/* Background Bar (total = male + female) */}
-
-                  <Bar
-                    dataKey="male"
-                    stackId="a"
-                    fill={colors.male}
-                    shape={(props) => <MaleCapsuleBar {...props} />}
-                  />
-
-                  <Bar
-                    dataKey="female"
-                    stackId="a"
-                    fill={colors.female}
-                    shape={(props) => <FemaleMergeBar {...props} />}
-                  />
-                </BarChart>
-              </ResponsiveContainer>
+                  {/* Legend */}
+                  <div className="w-full space-y-2 mx-2">
+                    {chartData.map((item) => (
+                      <div
+                        key={item.key}
+                        className="flex items-center justify-between"
+                      >
+                        <div className="flex items-center gap-2">
+                          <span
+                            className="inline-block w-2 h-2 rounded-full"
+                            style={{ backgroundColor: item.fill }}
+                          />
+                          <span className="text-[#1E1B39] text-[9px]">
+                            {item.name}
+                          </span>
+                        </div>
+                        <span className="text-[9px] text-[#9291A5]">
+                          {item.percentage}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </ChartContainer>
             </CardContent>
           </Card>
 
-          {/* Back Side */}
+          {/* Back */}
           <Card
             className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6 rounded-xl shadow-md"
             style={{
@@ -348,11 +306,8 @@ export function Statistics() {
 
             <div className="text-[#FAFAFA] text-[11px] pt-4 leading-snug font-light">
               This chart shows the gender composition of our readership. It
-              helps advertisers understand the balance of male and female
-              audiences engaging with our content. These insights allow for more
-              precise campaign targeting and better alignment between brand
-              messaging and audience demographics. A balanced gender mix
-              indicates broad appeal and diverse readership.
+              helps advertisers understand who engages with our content and tune
+              campaigns for better resonance.
             </div>
           </Card>
         </div>
