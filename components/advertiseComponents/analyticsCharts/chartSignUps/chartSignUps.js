@@ -118,7 +118,7 @@ export function SignInUps(props) {
                 <div className="flex items-center justify-between">
                   <div className="flex items-center justify-start">
                     <CardDescription className="text-[22px] font-bold text-[#1E1B39]">
-                      Ad click activity
+                      Ad clicks
                     </CardDescription>
                     <div className="ml-4 ">
                       <h5 className="text-sm text-[#9291A5]">past 30 days</h5>

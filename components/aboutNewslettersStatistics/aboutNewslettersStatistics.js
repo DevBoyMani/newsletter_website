@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import AboutBarChart from "../aboutBarChart/aboutBarChart";
-
+import selectedIds from "../../data/selectedWebsites";
 const textVariants = {
   hidden: { opacity: 0, y: 40 },
   visible: (i) => ({
@@ -72,7 +72,7 @@ export default function AboutNewslettersStatistics() {
   useEffect(() => {
     async function fetchStats() {
       try {
-        const res = await fetch("/api/about?website_ids=1,3,7");
+        const res = await fetch(`/api/about?website_ids=${selectedIds}`);
         if (!res.ok) {
           console.error("About API error:", res.status);
           return;

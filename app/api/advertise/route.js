@@ -57,7 +57,7 @@ export async function GET(req) {
   try {
     const { searchParams } = new URL(req.url);
 
-    // website_ids=1,3,7 -> array
+    // website_ids=1,3,7 -> [1,3,7]
     let websiteIds = searchParams.get("website_ids")
       ? searchParams
           .get("website_ids")
@@ -168,10 +168,28 @@ export async function GET(req) {
       ORDER BY total_openers DESC;
     `;
 
+    // 5️⃣ Total opens on "last campaign per website" across all selected website_ids
+    const lastCampaignOpensSql = `
+  WITH last_campaigns AS (
+    SELECT DISTINCT ON (website_id)
+      id,
+      website_id,
+      date
+    FROM campaigns
+    WHERE website_id = ANY($1::int[])
+    ORDER BY website_id, date DESC NULLS LAST, id DESC
+  )
+  SELECT 
+    COUNT(eo.id) AS total_opens_last_campaigns
+  FROM last_campaigns lc
+  LEFT JOIN emails_open eo
+    ON eo.campaign_id = lc.id;
+`;
+
     const allowedDomains = getAllowedDomainsForWebsiteIds(websiteIds);
 
     //
-    // 5️⃣ Linkly: list_links for p-ad (to get link IDs for this workspace + domains)
+    // 6️⃣ Linkly list_links for p-ad (to get link IDs)
     //
     const linklyListUrl =
       `https://app.linklyhq.com/api/workspace/${WORKSPACE_ID}/list_links` +
@@ -188,6 +206,7 @@ export async function GET(req) {
       opensMonthlyResult,
       genderResult,
       linklyListData,
+      lastCampaignOpensResult,
     ] = await Promise.all([
       query(subscribersSql, [websiteIds]),
       query(countrySql, [websiteIds]),
@@ -197,6 +216,7 @@ export async function GET(req) {
         if (!res.ok) throw new Error("Failed to fetch Linkly links");
         return res.json();
       }),
+      query(lastCampaignOpensSql, [websiteIds]),
     ]);
 
     //
@@ -259,7 +279,24 @@ export async function GET(req) {
     });
 
     //
-    // 6️⃣ Ad click activity from Linkly /clicks (bots filtered)
+    // 7️⃣ Total opens for the "last campaign per website" (all selected websites)
+    let lastCampaignOpenSummary = {
+      totalOpens: 0,
+      formattedTotalOpens: "0",
+    };
+
+    if (lastCampaignOpensResult.rows.length > 0) {
+      const r = lastCampaignOpensResult.rows[0];
+      const total = Number(r.total_opens_last_campaigns || 0);
+
+      lastCampaignOpenSummary = {
+        totalOpens: total,
+        formattedTotalOpens: total.toLocaleString("en-US"),
+      };
+    }
+
+    //
+    // 8️⃣ Ad click activity from Linkly /clicks
     //
     const links = linklyListData.links || linklyListData.data || [];
     const now = new Date();
@@ -267,7 +304,6 @@ export async function GET(req) {
     today.setHours(0, 0, 0, 0);
     const sixtyDaysAgo = new Date(today.getTime() - 60 * MS_PER_DAY);
 
-    // We care about all p-ad links on the selected domains
     const linkIds = links
       .filter((link) => allowedDomains.has(link.domain))
       .map((l) => l.id)
@@ -295,7 +331,7 @@ export async function GET(req) {
         `&api_key=${process.env.LINKLY_API_KEY}` +
         `&bots=false`;
 
-      console.log("CLICK API URL:", clicksUrl); // <-- ADD THIS
+      console.log("CLICK API URL:", clicksUrl);
 
       const clicksData = await fetch(clicksUrl).then((res) => {
         if (!res.ok) {
@@ -327,18 +363,17 @@ export async function GET(req) {
         const diffMs = today.getTime() - dayMidnight.getTime();
         const daysAgo = Math.floor(diffMs / MS_PER_DAY);
 
-        // We only requested 60 days, but guard anyway
         if (daysAgo < 0 || daysAgo >= 60) continue;
 
         if (daysAgo < 30) {
-          // THIS MONTH window (0–29 days ago)
+          // THIS MONTH (0–29 days ago)
           const pos = 29 - daysAgo; // 0 oldest, 29 newest
           let bucket = Math.floor(pos / bucketSpan); // 0..3
           if (bucket < 0) bucket = 0;
           if (bucket >= BUCKETS_PER_WINDOW) bucket = BUCKETS_PER_WINDOW - 1;
           thisMonthBuckets[bucket] += Number(y) || 0;
         } else {
-          // LAST MONTH window (30–59 days ago)
+          // LAST MONTH (30–59 days ago)
           const pos = 59 - daysAgo; // 0 oldest, 29 newest
           let bucket = Math.floor(pos / bucketSpan); // 0..3
           if (bucket < 0) bucket = 0;
@@ -356,7 +391,7 @@ export async function GET(req) {
     }
 
     //
-    // Final payload
+    // Final payload (now includes lastCampaignOpenStats)
     //
     return NextResponse.json({
       subscribersMonthly,
@@ -364,6 +399,7 @@ export async function GET(req) {
       opensMonthly,
       opensByGender,
       adClickActivity,
+      lastCampaignOpenSummary,
     });
   } catch (error) {
     console.error("[/api/advertise] error:", error);
