@@ -8,26 +8,9 @@ import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 
 export default function ReadersNewsletters() {
-  const datas = [
+  const data = [
     {
       id: 1,
-      headerButton: "Subscribe",
-      image: "/readers/n-gs.png",
-      topic: "Geopolitics",
-      when: "Mon-Sat",
-      heading: "Geopolitical Summary",
-      paragraph:
-        "Clear, concise daily overview of global events. Conflicts, power shifts, and diplomacy summarized with care, so you stay informed without wasting hours on the news.",
-      footerButton: "Learn More",
-      btnBg: "#01261E",
-      btnHover: "#0B4337",
-      textColor: "#fff",
-      arrowColor: "#fff",
-      border: "#01261E",
-      source: "https://www.geopoliticalsummary.com/",
-    },
-    {
-      id: 2,
       headerButton: "Subscribe",
       image: "/readers/n-ps.png",
       topic: "News",
@@ -35,7 +18,7 @@ export default function ReadersNewsletters() {
       heading: "Presidential Summary",
       paragraph:
         "Truthful and unbiased summaries of key events in politics, business, culture, and sports stories shaping our time without drowning in endless headlines.",
-      footerButton: "Learn More",
+      isActive: true,
       btnBg: "#01261E",
       btnHover: "#0B4337",
       textColor: "#fff",
@@ -46,13 +29,31 @@ export default function ReadersNewsletters() {
     {
       id: 3,
       headerButton: "Subscribe",
+      image: "/readers/n-gs.png",
+      topic: "Geopolitics",
+      when: "Mon-Sat",
+      heading: "Geopolitical Summary",
+      paragraph:
+        "Clear, concise daily overview of global events. Conflicts, power shifts, and diplomacy summarized with care, so you stay informed without wasting hours on the news.",
+      isActive: true,
+      btnBg: "#01261E",
+      btnHover: "#0B4337",
+      textColor: "#fff",
+      arrowColor: "#fff",
+      border: "#01261E",
+      source: "https://www.geopoliticalsummary.com/",
+    },
+
+    {
+      id: 7,
+      headerButton: "Subscribe",
       image: "/readers/n-ds.png",
       topic: "City series",
       when: "Weekdays",
       heading: "Dubai Summary",
       paragraph:
         "A daily overview of the Dubai’s news, people, business, and culture, intelligently summarised so you stay connected to Dubai’s pulse in one elegant read.",
-      footerButton: "Learn More",
+      isActive: true,
       btnBg: "#01261E",
       btnHover: "#0B4337",
       textColor: "#fff",
@@ -61,7 +62,7 @@ export default function ReadersNewsletters() {
       source: "https://www.dubaisummary.com/",
     },
     {
-      id: 4,
+      id: 8,
       headerButton: "Subscribe",
       image: "/readers/n-ls.png",
       topic: "City series",
@@ -69,14 +70,13 @@ export default function ReadersNewsletters() {
       heading: "London Summary",
       paragraph:
         "Your window into London’s heartbeat. From markets and policy to culture, Crown and daily life, summarized with clarity and elegance.",
-      footerButton: "Coming soon",
+      isActive: false,
       btnBg: "#C6C5C0",
       btnHover: "#C6C5C0",
       textColor: "#000",
       arrowColor: "#000",
       border: "#C6C5C0",
-      // source: "https://www.londonsummary.com/",
-      source: "#",
+      source: "https://www.londonsummary.com/",
     },
     // {
     //   id: 2,
@@ -135,7 +135,7 @@ export default function ReadersNewsletters() {
     },
   ];
 
-  const [testInform, setTestInform] = useState(datas);
+  const [testInform, setTestInform] = useState(data);
   const [email, setEmail] = useState("");
   const [details, setDetails] = useState({ ids: [], email: "" });
   const [showPopup, setShowPopup] = useState(false);
@@ -157,20 +157,70 @@ export default function ReadersNewsletters() {
   };
 
   const handleSubmit = async () => {
-    const dataToSend = { email: details.email, ids: details.ids };
+    const selectedIds = details.ids;
+    const userEmail = details.email.trim();
+
+    if (!userEmail || selectedIds.length === 0) {
+      console.warn("Email and at least one newsletter are required");
+      return;
+    }
+
+    const payload = {
+      email: userEmail,
+      websiteIds: selectedIds,
+    };
+
     try {
-      const res = await fetch("/api/sagravia", {
+      // 1️⃣ Create/update user + subscribers
+      const res = await fetch("/api/add-user", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(dataToSend),
+        body: JSON.stringify(payload),
       });
-      if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+
+      const json = await res.json();
+      if (!json.success) {
+        throw new Error(json.error || "add-user API returned success: false");
+      }
+
+      const { userId, uniqueId, websiteIds = [] } = json;
+
+      // 2️⃣ Fire welcome emails for each selected newsletter
+      const selectedNewsletters = data.filter((nl) =>
+        websiteIds.includes(nl.id)
+      );
+
+      await Promise.all(
+        selectedNewsletters.map((nl) => {
+          // nl.source e.g. "https://www.presidentialsummary.com/"
+          const baseUrl = (nl.source || "").replace(/\/+$/, ""); // strip trailing slash
+          const welcomeUrl = `${baseUrl}/api/emails/welcome`;
+
+          return fetch(welcomeUrl, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              email: userEmail,
+              uniqueId,
+              userId,
+            }),
+          }).catch((err) => {
+            console.error("Error sending welcome email to", welcomeUrl, err);
+          });
+        })
+      );
+
+      // 3️⃣ Reset UI
       setShowPopup(true);
       setEmail("");
       setTestInform((prev) => prev.map((el) => ({ ...el, selected: false })));
       setDetails({ ids: [], email: "" });
     } catch (error) {
-      console.error("Error submitting data:", error);
+      console.error("Error submitting data or sending welcomes:", error);
     }
   };
 
@@ -333,7 +383,7 @@ export default function ReadersNewsletters() {
                     "
                     >
                       <span className="font-[400] text-[13px]">
-                        {data.footerButton}
+                        {data.isActive ? "Learn More" : "Coming Soon"}
                       </span>
 
                       <svg
