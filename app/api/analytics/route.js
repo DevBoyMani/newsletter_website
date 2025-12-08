@@ -104,34 +104,36 @@ export async function POST(request) {
     // 2️⃣ Subscribers by month: last 6 completed months (emails_sent)
     //
     const subscribersSql = `
-      WITH months AS (
-        SELECT 
-          date_trunc('month', current_date) - INTERVAL '6 months'
-              + (g.m * INTERVAL '1 month') AS month_start
-        FROM generate_series(0, 5) AS g(m)
-      ),
-      relevant_campaigns AS (
-        SELECT id, date::date AS campaign_date
-        FROM campaigns
-        WHERE website_id = $1
-      ),
-      sent_by_month AS (
-        SELECT
-          date_trunc('month', rc.campaign_date) AS month_start,
-          es.user_id
-        FROM emails_sent es
-        JOIN relevant_campaigns rc ON rc.id = es.campaign_id
-        -- uncomment if you only want successful sends:
-        -- WHERE es.status = 'sent'
-      )
-      SELECT
-        TO_CHAR(m.month_start::date, 'YYYY-MM-01') AS month,
-        COALESCE(COUNT(DISTINCT sbm.user_id), 0) AS subscribers_count
-      FROM months m
-      LEFT JOIN sent_by_month sbm
-        ON sbm.month_start = m.month_start
-      GROUP BY m.month_start
-      ORDER BY m.month_start;
+    WITH months AS (
+  SELECT 
+    date_trunc('month', current_date) - INTERVAL '6 months'
+        + (g.m * INTERVAL '1 month') AS month_start
+  FROM generate_series(0, 5) AS g(m)
+),
+
+campaigns_for_site AS (
+  SELECT id, date::date AS sent_date
+  FROM campaigns
+  WHERE website_id = $1
+),
+
+sent_unique AS (
+  SELECT
+    date_trunc('month', c.sent_date) AS month_start,
+    es.user_id
+  FROM emails_sent es
+  JOIN campaigns_for_site c ON c.id = es.campaign_id
+  GROUP BY date_trunc('month', c.sent_date), es.user_id
+)
+
+SELECT
+  TO_CHAR(m.month_start::date, 'YYYY-MM-01') AS month,
+  COUNT(DISTINCT s.user_id) AS subscribers_count
+FROM months m
+LEFT JOIN sent_unique s
+  ON s.month_start = m.month_start
+GROUP BY m.month_start
+ORDER BY m.month_start;
     `;
 
     //
