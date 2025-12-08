@@ -73,79 +73,92 @@ export async function GET(req) {
       );
     }
 
-    //
-    // 1️⃣ Monthly Subscribers
-    //
+    // 1️⃣ Monthly distinct recipients (from emails_sent), last 12 *completed* months
     const subscribersSql = `
-      WITH months AS (
-        SELECT 
-          date_trunc('month', current_date) - INTERVAL '11 months'
+  WITH months AS (
+    SELECT 
+      date_trunc('month', current_date) - INTERVAL '12 months'
           + (g.m * INTERVAL '1 month') AS month_start
-        FROM generate_series(0, 11) AS g(m)
-      )
-      SELECT
-        TO_CHAR(m.month_start::date, 'YYYY-MM-01') AS month,
-        COUNT(s.user_id) AS subscribers_count
-      FROM months m
-      LEFT JOIN subscribers s
-        ON s.website_id = ANY($1::int[])
-       AND s.status = 'subscribed'
-       AND s.created_at >= m.month_start
-       AND s.created_at <  (m.month_start + INTERVAL '1 month')
-      GROUP BY m.month_start
-      ORDER BY m.month_start;
-    `;
+    FROM generate_series(0, 11) AS g(m)
+  ),
+  relevant_campaigns AS (
+    SELECT id, date::date AS campaign_date
+    FROM campaigns
+    WHERE website_id = ANY($1::int[])
+  ),
+  sent_emails AS (
+    SELECT
+      es.user_id,
+      rc.campaign_date
+    FROM emails_sent es
+    JOIN relevant_campaigns rc ON rc.id = es.campaign_id
+    -- if you only want successfully sent emails, uncomment:
+    -- WHERE es.status = 'sent'
+  )
+  SELECT
+    TO_CHAR(m.month_start::date, 'YYYY-MM-01') AS month,
+    COUNT(DISTINCT se.user_id) AS subscribers_count
+  FROM months m
+  LEFT JOIN sent_emails se
+    ON se.campaign_date >= m.month_start
+   AND se.campaign_date <  (m.month_start + INTERVAL '1 month')
+  GROUP BY m.month_start
+  ORDER BY m.month_start;
+`;
 
-    //
-    // 2️⃣ Opens by Country
-    //
+    // 2️⃣ Opens by Country (distinct users only)
     const countrySql = `
-      WITH relevant_campaigns AS (
-        SELECT id
-        FROM campaigns
-        WHERE website_id = ANY($1::int[])
-      )
-      SELECT
-        u.country,
-        COUNT(DISTINCT eo.user_id) AS unique_openers,
-        COUNT(eo.id)              AS total_opens
-      FROM emails_open eo
-      JOIN relevant_campaigns c ON c.id = eo.campaign_id
-      JOIN users u              ON u.id = eo.user_id
-      WHERE u.country IS NOT NULL
-        AND u.country <> ''
-      GROUP BY u.country
-      ORDER BY total_opens DESC;
-    `;
+  WITH relevant_opens AS (
+    SELECT DISTINCT eo.user_id
+    FROM emails_open eo
+    JOIN campaigns c ON c.id = eo.campaign_id
+    WHERE c.website_id = ANY($1::int[])
+  ),
+  country_counts AS (
+    SELECT
+      u.country,
+      COUNT(*) AS unique_openers
+    FROM relevant_opens ro
+    JOIN users u ON u.id = ro.user_id
+    WHERE u.country IS NOT NULL
+      AND u.country <> ''
+    GROUP BY u.country
+  )
+  SELECT
+    country,
+    unique_openers,
+    -- keep this alias so the JS mapping code doesn't need to change
+    unique_openers AS total_opens
+  FROM country_counts
+  ORDER BY unique_openers DESC;
+`;
 
-    //
-    // 3️⃣ Opens Monthly
-    //
+    // 3️⃣ Opens Monthly – last 12 *completed* months (exclude current month)
     const opensMonthlySql = `
-      WITH months AS (
-        SELECT 
-          date_trunc('month', current_date) - INTERVAL '11 months'
+  WITH months AS (
+    SELECT 
+      date_trunc('month', current_date) - INTERVAL '12 months'
           + (g.m * INTERVAL '1 month') AS month_start
-        FROM generate_series(0, 11) AS g(m)
-      ),
-      relevant_opens AS (
-        SELECT
-          eo.id,
-          c.date::date AS event_date
-        FROM emails_open eo
-        JOIN campaigns c ON c.id = eo.campaign_id
-        WHERE c.website_id = ANY($1::int[])
-      )
-      SELECT
-        TO_CHAR(m.month_start::date, 'YYYY-MM-01') AS month,
-        COUNT(ro.id) AS total_opens
-      FROM months m
-      LEFT JOIN relevant_opens ro
-        ON ro.event_date >= m.month_start
-       AND ro.event_date <  (m.month_start + INTERVAL '1 month')
-      GROUP BY m.month_start
-      ORDER BY m.month_start;
-    `;
+    FROM generate_series(0, 11) AS g(m)
+  ),
+  relevant_opens AS (
+    SELECT
+      eo.id,
+      c.date::date AS event_date
+    FROM emails_open eo
+    JOIN campaigns c ON c.id = eo.campaign_id
+    WHERE c.website_id = ANY($1::int[])
+  )
+  SELECT
+    TO_CHAR(m.month_start::date, 'YYYY-MM-01') AS month,
+    COUNT(ro.id) AS total_opens
+  FROM months m
+  LEFT JOIN relevant_opens ro
+    ON ro.event_date >= m.month_start
+   AND ro.event_date <  (m.month_start + INTERVAL '1 month')
+  GROUP BY m.month_start
+  ORDER BY m.month_start;
+`;
 
     //
     // 4️⃣ Opens by Gender

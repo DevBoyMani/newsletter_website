@@ -7,9 +7,9 @@ import AnalyticsComboList from "../../../components/analyticsComboList/analytics
 // Page components
 import PresidentialSummaryAnalytics from "../../../components/analyticsPages/analyticsPSComponent/analyticsPSComponent";
 import GeopoliticalSummaryAnalytics from "../../../components/analyticsPages/analyticsGSComponent/analyticsGSComponent";
-import BusinessHistoryAnalytics from "../../../components/analyticsPages/analyticsBHComponent/analyticsBHComponent";
-import LongAndShortAnalytics from "../../../components/analyticsPages/analyticsLScomponent/analyticsLSComponent";
-import MovieSuggestionsAnalytics from "../../../components/analyticsPages/analyticsMSComponent/analyticsMSComponent";
+// import BusinessHistoryAnalytics from "../../../components/analyticsPages/analyticsBHComponent/analyticsBHComponent";
+// import LongAndShortAnalytics from "../../../components/analyticsPages/analyticsLScomponent/analyticsLSComponent";
+// import MovieSuggestionsAnalytics from "../../../components/analyticsPages/analyticsMSComponent/analyticsMSComponent";
 import DubaiSummaryAnalytics from "../../../components/analyticsPages/analyticsDSComponent/analyticsDSComponent";
 
 export default function AnalyticsPage() {
