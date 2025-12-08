@@ -1,7 +1,7 @@
 "use client";
 
 import { Listbox } from "@headlessui/react";
-import { ChevronDownIcon, ChevronUpIcon } from "@heroicons/react/20/solid";
+import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 const options = [
@@ -14,55 +14,43 @@ const options = [
 ];
 
 export default function AnalyticsComboList({ selected, onChange }) {
+  const router = useRouter();
+
   // selected will be the slug (eg "geopolitical-summary")
   const selectedOption =
     options.find((o) => o.value === selected) || options[0];
 
+  const handleChange = (opt) => {
+    const value = opt?.value;
+    if (!value) return;
+
+    if (typeof onChange === "function") {
+      // If parent passed a handler (old pattern), use it
+      onChange(value);
+    } else {
+      // Fallback: navigate directly (server-page use case)
+      router.push(`/analytics/${value}`);
+    }
+  };
+
   return (
-    // <div className="w-full max-w-[40%]">
-    //   <Listbox value={selectedOption} onChange={(opt) => onChange(opt.value)}>
-    //     <div className="relative">
-    //       <Listbox.Button className="relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-full py-2 focus:outline-none text-[#fff] font-[400] leading-normal">
-    //         <p className="ml-4">{selectedOption.label}</p>
-    //         <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6 text-white" />
-    //       </Listbox.Button>
-
-    //       <Listbox.Options className="absolute z-10 mt-1 w-full px-[20px] py-[10px] rounded-[10px] bg-[#01261E] text-[16px] font-[600] leading-[104%]">
-    //         {options
-    //           .filter((item) => item.value !== selectedOption.value) // 🚀 remove selected one
-    //           .map((item) => (
-    //             <Listbox.Option
-    //               key={item.value}
-    //               value={item}
-    //               className={`text-[16px] font-[400] leading-[104%] bg-[#01261E] text-[#FFFFFF99] py-[10px] hover:text-[#fff] cursor-pointer`}
-    //             >
-    //               {item.label}
-    //             </Listbox.Option>
-    //           ))}
-    //       </Listbox.Options>
-    //     </div>
-    //   </Listbox>
-    // </div>
-
     <div className="px-4 pb-[32px] pt-[2px] lg:pb-0 lg:px-0 w-full lg:max-w-[40%] z-10">
-      <Listbox value={selectedOption} onChange={(opt) => onChange(opt.value)}>
+      <Listbox value={selectedOption} onChange={handleChange}>
         {({ open }) => (
           <div className="relative">
             <Listbox.Button className="relative w-full cursor-pointer text-left text-[16px] bg-[#01261E] rounded-full py-2 focus:outline-none text-[#fff] font-[600] lg:font-[400] leading-normal">
               <p className="ml-4">{selectedOption.label}</p>
               {open ? (
-                // <ChevronUpIcon className="absolute right-2 top-2 h-6 w-6 text-white" />
                 <Image
-                  src="/analytics/icon-up.png" // your up arrow image
+                  src="/analytics/icon-up.png"
                   alt="Up"
                   width={12}
                   height={7}
                   className="absolute right-6 top-4"
                 />
               ) : (
-                // <ChevronDownIcon className="absolute right-2 top-2 h-6 w-6  text-white" />
                 <Image
-                  src="/analytics/icon-down.png" // your down arrow image
+                  src="/analytics/icon-down.png"
                   alt="Down"
                   width={12}
                   height={7}

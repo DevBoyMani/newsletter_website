@@ -1,0 +1,43 @@
+export const ANALYTICS_CONFIG = {
+  "presidential-summary": {
+    slug: "presidential-summary",
+    websiteId: 1,
+    name: "Presidential Summary",
+    heroTitleLine1: "Key events",
+    heroTitleLine2: "with context",
+    visitUrl: "https://www.presidentialsummary.com/",
+    desktopBg: "/analytics/bg-ps.png",
+    desktopPhone: "/analytics/a-ps.png",
+    mobileBg: "/analytics/bg-ps.png",
+    mobilePhone: "/analytics/mobile-a-ps.png",
+    adCardId: 1,
+  },
+  "geopolitical-summary": {
+    slug: "geopolitical-summary",
+    websiteId: 3,
+    name: "Geopolitical Summary",
+    heroTitleLine1: "Global shifts",
+    heroTitleLine2: "made understandable",
+    visitUrl: "https://www.geopoliticalsummary.com/",
+    desktopBg: "/analytics/bg-gs.png",
+    desktopPhone: "/analytics/a-gs.png",
+    mobileBg: "/analytics/bg-gs.png",
+    mobilePhone: "/analytics/mobile-a-gs.png",
+    adCardId: 3,
+  },
+  "dubai-summary": {
+    slug: "dubai-summary",
+    websiteId: 7,
+    name: "Dubai Summary",
+    heroTitleLine1: "Dubai’s pulse",
+    heroTitleLine2: "at a glance",
+    visitUrl: "https://www.dubaisummary.com/",
+    desktopBg: "/analytics/bg-ds.png",
+    desktopPhone: "/analytics/a-ds.png",
+    mobileBg: "/analytics/bg-ds.png",
+    mobilePhone: "/analytics/mobile-a-ds.png",
+    adCardId: 7,
+  },
+};
+
+export const ANALYTICS_SLUGS = Object.keys(ANALYTICS_CONFIG);

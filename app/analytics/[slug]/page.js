@@ -1,47 +1,60 @@
-"use client";
-
-import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
-import AnalyticsComboList from "../../../components/analyticsComboList/analyticsComboList";
+import { notFound } from "next/navigation";
 
-// Page components
-import PresidentialSummaryAnalytics from "../../../components/analyticsPages/analyticsPSComponent/analyticsPSComponent";
-import GeopoliticalSummaryAnalytics from "../../../components/analyticsPages/analyticsGSComponent/analyticsGSComponent";
-// import BusinessHistoryAnalytics from "../../../components/analyticsPages/analyticsBHComponent/analyticsBHComponent";
-// import LongAndShortAnalytics from "../../../components/analyticsPages/analyticsLScomponent/analyticsLSComponent";
-// import MovieSuggestionsAnalytics from "../../../components/analyticsPages/analyticsMSComponent/analyticsMSComponent";
-import DubaiSummaryAnalytics from "../../../components/analyticsPages/analyticsDSComponent/analyticsDSComponent";
+import { ANALYTICS_CONFIG, ANALYTICS_SLUGS } from "../config";
+import WebsiteAnalytics from "@/components/analyticsPages/WebsiteAnalytics";
+import AnalyticsComboList from "@/components/analyticsComboList/analyticsComboList";
 
-export default function AnalyticsPage() {
-  const { slug } = useParams();
-  const router = useRouter();
+export const revalidate = 3600;
 
-  const selectedTopic = slug || "presidential-summary";
+export async function generateStaticParams() {
+  return ANALYTICS_SLUGS.map((slug) => ({ slug }));
+}
 
-  const handleTopicChange = (newTopic) => {
-    router.push(`/analytics/${newTopic}`);
-  };
-
-  // slugs → components
-  const componentMap = {
-    "presidential-summary": <PresidentialSummaryAnalytics />,
-    "geopolitical-summary": <GeopoliticalSummaryAnalytics />,
-    // "business-history": <BusinessHistoryAnalytics />,
-    // "long-and-short": <LongAndShortAnalytics />,
-    // "movie-suggestions": <MovieSuggestionsAnalytics />,
-    "dubai-summary": <DubaiSummaryAnalytics />,
-  };
-
-  const CurrentComponent = componentMap[selectedTopic] || (
-    <p className="text-gray-500">Still in progress guys!</p>
+async function fetchAnalyticsForWebsite(websiteId) {
+  const res = await fetch(
+    `${
+      process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
+    }/api/analytics`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ websiteId }),
+      next: { revalidate },
+    }
   );
+
+  if (!res.ok) {
+    console.error("Failed to fetch /api/analytics", res.status);
+    return null;
+  }
+
+  return res.json();
+}
+
+export default async function AnalyticsPage({ params }) {
+  // 🔑 THIS IS THE IMPORTANT CHANGE
+  const { slug } = await params; // instead of: const slug = params.slug;
+
+  const config = ANALYTICS_CONFIG[slug];
+
+  if (!config) {
+    return notFound();
+  }
+
+  const analytics = await fetchAnalyticsForWebsite(config.websiteId);
+
+  const opensByMonth = analytics?.opensByMonth || [];
+  const subscribersByMonth = analytics?.subscribersByMonth || [];
+  const genderBreakdown = analytics?.genderBreakdown || [];
+  const countryBreakdown = analytics?.countryBreakdown || [];
+  const adClicksMonthly = analytics?.adClicksMonthly || [];
 
   return (
     <>
-      {/* desktop view */}
+      {/* DESKTOP */}
       <div className="hidden lg:block bg-[#FAFAFA] pb-[60px]">
         <div className="px-[33px]">
-          {/* logo */}
           <Link href="/">
             <div className="pt-[30px]">
               <img
@@ -52,7 +65,6 @@ export default function AnalyticsPage() {
             </div>
           </Link>
 
-          {/* heading */}
           <div className="flex justify-between pt-[37px]">
             <div className="w-[40%]">
               <h2 className="text-[47px] font-[400] leading-normal font-[manrope] text-[#000]">
@@ -60,27 +72,32 @@ export default function AnalyticsPage() {
               </h2>
             </div>
             <div className="w-[60%] flex justify-end items-end">
-              <AnalyticsComboList
-                selected={selectedTopic}
-                onChange={handleTopicChange}
-              />
+              <AnalyticsComboList selected={slug} />
             </div>
           </div>
 
-          {/* topic analytics */}
-          {CurrentComponent}
+          <WebsiteAnalytics
+            config={config}
+            opensByMonth={opensByMonth}
+            subscribersByMonth={subscribersByMonth}
+            genderBreakdown={genderBreakdown}
+            countryBreakdown={countryBreakdown}
+            adClicksMonthly={adClicksMonthly}
+          />
         </div>
       </div>
 
-      {/* mobile view */}
+      {/* MOBILE */}
       <div className="block lg:hidden bg-[#FAFAFA] pt-[160px] pb-[70px]">
-        <AnalyticsComboList
-          selected={selectedTopic}
-          onChange={handleTopicChange}
+        <AnalyticsComboList selected={slug} />
+        <WebsiteAnalytics
+          config={config}
+          opensByMonth={opensByMonth}
+          subscribersByMonth={subscribersByMonth}
+          genderBreakdown={genderBreakdown}
+          countryBreakdown={countryBreakdown}
+          adClicksMonthly={adClicksMonthly}
         />
-
-        {/* topic analytics */}
-        {CurrentComponent}
       </div>
     </>
   );

@@ -239,7 +239,7 @@ export async function POST(request) {
       totalOpeners: Number(r.total_openers || 0),
     }));
 
-    const countryBreakdown = countriesAll.slice(0, 5); // 👈 KEEP ONLY TOP 5
+    const countryBreakdown = countriesAll.slice(0, 4); // 👈 KEEP ONLY TOP 5
 
     //
     // 6️⃣ Ad clicks: last 6 completed months (Linkly)
