@@ -10,53 +10,79 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 
-// Color palette for up to 5 countries
-const COUNTRY_COLORS = [
-  "#E19F20", // gold
-  "#9A4831", // brick
-  "#657C75", // green/grey
-  "#3A4E65", // blue-grey
-  "#6B7280", // slate
-];
-
-// Build data from API response
-function buildCountryData(countryBreakdown = []) {
-  return (countryBreakdown || [])
-    .map((row, idx) => ({
-      country: row.country || "Unknown",
-      value: Number(row.totalOpeners || 0),
-      fill: COUNTRY_COLORS[idx % COUNTRY_COLORS.length],
-    }))
-    .filter((d) => d.value > 0);
+// Shape from API: countryBreakdown[]
+interface CountryRow {
+  country: string;
+  totalOpeners: number;
 }
 
-// Bubble-style tooltip like GeoTooltip
-function CountryTooltip({ active, payload }) {
+interface AnalyticsPSCountryChartProps {
+  countryBreakdown?: CountryRow[];
+}
+
+type CountryChartItem = {
+  country: string;
+  value: number;
+  fill: string;
+};
+
+const COUNTRY_COLORS = ["#E19F20", "#9A4831", "#657C75", "#3A4E65", "#4B5563"];
+
+// Build chart data from API response
+function buildChartData(
+  countryBreakdown: CountryRow[] = []
+): CountryChartItem[] {
+  const sorted = [...(countryBreakdown || [])].sort(
+    (a, b) => (b.totalOpeners || 0) - (a.totalOpeners || 0)
+  );
+
+  const top = sorted.slice(0, 4); // top 4 countries
+
+  // Fallback if no data
+  if (!top.length) {
+    return [
+      { country: "United States", value: 0, fill: COUNTRY_COLORS[0] },
+      { country: "United Kingdom", value: 0, fill: COUNTRY_COLORS[1] },
+    ];
+  }
+
+  return top.map((row, idx) => ({
+    country: row.country || "Unknown",
+    value: Number(row.totalOpeners || 0),
+    fill: COUNTRY_COLORS[idx % COUNTRY_COLORS.length],
+  }));
+}
+
+// Bubble-style tooltip (like your GeoTooltip)
+function GeoTooltip({ active, payload }: any) {
   if (!active || !payload || !payload.length) return null;
 
-  const item = payload[0]?.payload;
-  if (!item) return null;
+  const item = payload[0];
+  const country = item.name || item.payload.country;
+  const value = item.value || 0;
 
   const formatted = new Intl.NumberFormat("en-US", {
     maximumFractionDigits: 0,
-  }).format(item.value);
+  }).format(value);
 
   return (
     <div className="flex items-center gap-2 rounded-[999px] border border-[#E5E7EB] bg-white px-4 py-2 text-sm shadow-[0px_22px_45px_rgba(15,23,42,0.18)]">
       <span
         className="h-[10px] w-[10px] rounded-[4px]"
-        style={{ backgroundColor: item.fill || "#394E65" }}
+        style={{ backgroundColor: item.payload.fill || "#394E65" }}
       />
       <span className="font-medium text-[#111827] whitespace-nowrap">
-        {item.country}
+        {country}
       </span>
       <span className="font-semibold text-[#111827]">{formatted}</span>
     </div>
   );
 }
 
-export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
-  const chartData = buildCountryData(countryBreakdown);
+export default function AnalyticsPSCountryChart({
+  countryBreakdown = [],
+}: AnalyticsPSCountryChartProps) {
+  const chartData = buildChartData(countryBreakdown);
 
   return (
     <>
@@ -68,13 +94,12 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
               Country
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[14px] font-[manrope] font-[400] leading-[120.222%] pt-[19px] pb-[20px]">
-              Where our readers are opening from. Top countries by engaged
-              readers.
+              Where our readers are based, ranked by engagement.
             </CardDescription>
           </CardHeader>
 
           <CardContent className="flex items-center justify-between -mt-9">
-            {/* Legend (names only, no counts) */}
+            {/* Legend */}
             <div className="flex flex-col gap-[16px] mt-5">
               {chartData.map((item) => (
                 <div key={item.country} className="flex items-center gap-2">
@@ -82,7 +107,7 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
                     className="w-3 h-3 rounded-[2px]"
                     style={{ backgroundColor: item.fill }}
                   />
-                  <span className="text-[#464E5F] text-[14px] font-[manrope] font-[500] leading-normal">
+                  <span className="text-[#464E5F] text-[14px] font-[manrope] font-[500] leading-normal ">
                     {item.country}
                   </span>
                 </div>
@@ -93,7 +118,6 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
             <div className="w-[50%] max-w-[162px] aspect-square mt-2">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Tooltip content={<CountryTooltip />} />
                   <Pie
                     data={chartData}
                     dataKey="value"
@@ -102,6 +126,7 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
                     outerRadius="100%"
                     stroke="transparent"
                   />
+                  <Tooltip content={<GeoTooltip />} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
@@ -117,7 +142,7 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
               Country
             </CardTitle>
             <CardDescription className="text-[#6E6E6E] text-[12px] font-[manrope] font-[400] leading-[145%] pt-[6px] pb-[20px] mt-0">
-              Top countries where people open this newsletter.
+              Where our readers are based, ranked by engagement.
             </CardDescription>
           </CardHeader>
 
@@ -133,7 +158,7 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
                     className="w-3 h-3 rounded-[2px]"
                     style={{ backgroundColor: item.fill }}
                   />
-                  <span className="text-[#464E5F] text-[14px] font-[manrope] font-[500] leading-normal">
+                  <span className="text-[#464E5F] text-[14px] font-[manrope] font-[500] leading-normal ">
                     {item.country}
                   </span>
                 </div>
@@ -144,7 +169,6 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
             <div className="w-[45%] max-w-[160px] aspect-square mt-0">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
-                  <Tooltip content={<CountryTooltip />} />
                   <Pie
                     data={chartData}
                     dataKey="value"
@@ -153,6 +177,7 @@ export default function AnalyticsPSCountryChart({ countryBreakdown = [] }) {
                     outerRadius="100%"
                     stroke="transparent"
                   />
+                  <Tooltip content={<GeoTooltip />} />
                 </PieChart>
               </ResponsiveContainer>
             </div>
