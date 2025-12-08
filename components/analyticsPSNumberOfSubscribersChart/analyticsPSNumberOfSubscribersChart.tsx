@@ -18,11 +18,22 @@ import {
 } from "@/components/ui/card";
 import { ChartContainer } from "@/components/ui/chart";
 
+// Types
+type SubscribersRow = {
+  month: string; // "2025-06-01"
+  subscribersCount?: number;
+  subscribers_count?: number;
+};
+
+interface AnalyticsPSNumberOfSubscribersChartProps {
+  subscribersByMonth?: SubscribersRow[];
+}
+
 // number -> "590,055"
-function formatNumber(value) {
+function formatNumber(value: number | null | undefined): string {
   return new Intl.NumberFormat("en-US", {
     maximumFractionDigits: 0,
-  }).format(value || 0);
+  }).format(value ?? 0);
 }
 
 // keys must match dataKey
@@ -33,7 +44,7 @@ const chartConfig = {
   },
 };
 
-function buildChartData(subscribersByMonth = []) {
+function buildChartData(subscribersByMonth: SubscribersRow[] = []) {
   return (subscribersByMonth || []).map((row) => {
     const d = new Date(row.month); // "2025-06-01"
     const monthLabel = d.toLocaleString("en-US", { month: "short" }); // Jun, Jul...
@@ -41,18 +52,26 @@ function buildChartData(subscribersByMonth = []) {
     return {
       month: monthLabel,
       subscribersCount: Number(
-        row.subscribersCount || row.subscribers_count || 0
+        row.subscribersCount ?? row.subscribers_count ?? 0
       ),
     };
   });
 }
 
 // Bubble tooltip for subscribers
-function SubscribersTooltip({ active, payload, label }) {
+function SubscribersTooltip({
+  active,
+  payload,
+  label,
+}: {
+  active?: boolean;
+  payload?: any[];
+  label?: string;
+}) {
   if (!active || !payload || !payload.length) return null;
 
   const item = payload[0];
-  const value = formatNumber(item.value || 0);
+  const value = formatNumber(item.value as number | undefined);
 
   return (
     <div className="rounded-2xl bg-white px-4 py-3 shadow-[0_12px_40px_rgba(15,23,42,0.12)] border flex flex-col gap-1 text-sm">
@@ -67,7 +86,7 @@ function SubscribersTooltip({ active, payload, label }) {
             backgroundColor: item.color || chartConfig.subscribersCount.color,
           }}
         />
-        <span className="text-[#6B7280]">Subscribers:</span>
+        <span className="text-[#6B7280]">Subscribers</span>
         <span className="font-semibold text-[#111827]">{value}</span>
       </div>
     </div>
@@ -76,7 +95,7 @@ function SubscribersTooltip({ active, payload, label }) {
 
 export default function AnalyticsPSNumberOfSubscribersChart({
   subscribersByMonth = [],
-}) {
+}: AnalyticsPSNumberOfSubscribersChartProps) {
   const chartData = buildChartData(subscribersByMonth);
 
   return (
@@ -111,7 +130,7 @@ export default function AnalyticsPSNumberOfSubscribersChart({
                   tickLine={false}
                   tickMargin={10}
                   width={60}
-                  tickFormatter={(value) =>
+                  tickFormatter={(value: number) =>
                     new Intl.NumberFormat("en-US", {
                       notation: "compact",
                       maximumFractionDigits: 1,
@@ -181,7 +200,7 @@ export default function AnalyticsPSNumberOfSubscribersChart({
                     tickMargin={10}
                     width={50}
                     tick={{ fontSize: 8, fill: "#77838F" }}
-                    tickFormatter={(value) =>
+                    tickFormatter={(value: number) =>
                       new Intl.NumberFormat("en-US", {
                         notation: "compact",
                         maximumFractionDigits: 1,
