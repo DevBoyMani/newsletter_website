@@ -17,7 +17,7 @@ const chartConfig = {
   },
 };
 
-// ⬇️ Custom tooltip: same bubble + vertical line, but ONLY number on second line
+// ⬇️ Custom tooltip: same bubble + vertical line, but ONLY number on second lin
 function SubscribersTooltip({ active, payload, label }) {
   if (!active || !payload || !payload.length) return null;
 
