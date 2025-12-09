@@ -14,6 +14,7 @@ export default function AdvertisePageMobileVersion({
   opensByGender,
   opensMonthly,
   adClickActivity,
+  formattedTotalOpens,
 }) {
   const videos = [
     { video: "/advertise/v-1.mp4", id: "video1", height: "h-[297px]" },
@@ -51,7 +52,7 @@ export default function AdvertisePageMobileVersion({
 
         <div className="px-4 pt-10 mx-auto max-w-screen-xl">
           <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] ">
-            90,367 people would have seen your brand yesterday
+            {formattedTotalOpens} people would have seen your brand yesterday
           </h2>
           <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
             Make your brand part of their morning ritual. Not ignored ad

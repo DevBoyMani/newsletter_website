@@ -284,6 +284,9 @@ export default function AdvertiseClient({ analyticsData }) {
           opensByGender={opensByGender}
           opensMonthly={opensMonthly}
           adClickActivity={adClickActivity}
+          formattedTotalOpens={
+            analyticsData?.lastCampaignOpenSummary?.formattedTotalOpens
+          }
         />
       </div>
     </>
