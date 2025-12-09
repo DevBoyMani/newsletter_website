@@ -5,7 +5,7 @@ import { ANALYTICS_CONFIG, ANALYTICS_SLUGS } from "../config";
 import WebsiteAnalytics from "@/components/analyticsPages/WebsiteAnalytics";
 import AnalyticsComboList from "@/components/analyticsComboList/analyticsComboList";
 
-export const revalidate = 60 * 60 * 12; // 43200 seconds = 12 hours
+export const revalidate = 43200; // 43200 seconds = 12 hours
 export async function generateStaticParams() {
   return ANALYTICS_SLUGS.map((slug) => ({ slug }));
 }
