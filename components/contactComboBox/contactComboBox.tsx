@@ -9,17 +9,7 @@ import {
 import { CheckIcon, ChevronDownIcon } from "@heroicons/react/20/solid";
 import clsx from "clsx";
 
-type Option = {
-  id: number;
-  name: string;
-};
-
-interface ContactComboBoxProps {
-  value: Option;
-  onChange: (val: Option) => void;
-}
-
-const options: Option[] = [
+const options = [
   { id: 1, name: "Select..." },
   { id: 2, name: "Google" },
   { id: 3, name: "Social Media" },
@@ -27,31 +17,41 @@ const options: Option[] = [
   { id: 5, name: "Other" },
 ];
 
+// 👇 props type: value is string, onChange returns string
+type ContactComboBoxProps = {
+  value: string;
+  onChange: (val: string) => void;
+};
+
 export default function ContactComboBox({
   value,
   onChange,
 }: ContactComboBoxProps) {
+  // value is a string like "Google" or ""
+  const selectedName = value || "Select...";
+
   return (
-    <div className="">
-      <Listbox value={value} onChange={onChange}>
+    <div>
+      <Listbox value={selectedName} onChange={onChange}>
         <div className="relative">
           <ListboxButton
             className={clsx(
               "relative w-full cursor-default bg-white text-left text-[14px] border-b border-[#8D8D8D] py-1.5 focus:outline-none focus:border-[#01261E]",
-              value.name !== "Select..." ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
+              selectedName !== "Select..." ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
             )}
           >
-            {value?.name || "Select..."}
+            {selectedName}
             <ChevronDownIcon
               className="pointer-events-none absolute inset-y-0 right-2 top-2.5 h-5 w-5 text-gray-400"
               aria-hidden="true"
             />
           </ListboxButton>
+
           <ListboxOptions className="absolute z-10 mt-1 w-full rounded-md bg-white shadow-lg ring-1 ring-black/5 focus:outline-none text-sm">
             {options.map((option) => (
               <ListboxOption
                 key={option.id}
-                value={option}
+                value={option.name} // string
                 className={({ active }) =>
                   clsx(
                     "cursor-default select-none px-4 py-2",

@@ -1,12 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { BiBorderRadius } from "react-icons/bi";
 import ContactComboBox from "../../components/contactComboBox/contactComboBox";
 import ContactPhoneNumberSelection from "../../components/contactPhoneNumberSection/contactPhoneNumberSelection";
 import ContactRadioButtonsInput from "../../components/contactRdaioButtonsInput/contactRadioButtonsInput";
 import ContactMessage from "../../components/contactMessage/contactMessage";
-import Footer from "../../components/footer/footer";
 
 const socialMediaIcons = [
   {
@@ -41,8 +39,8 @@ export default function Contact() {
     fullName: "",
     email: "",
     phone: "",
-    foundUsVia: "",
-    preferredContact: "", // from Radio button
+    foundUsVia: "", // 👈 string, not object
+    preferredContact: "",
     message: "",
   });
 
@@ -59,35 +57,24 @@ export default function Contact() {
 
   const [errors, setErrors] = useState({});
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     const newErrors = {};
 
-    // Full name validation
     if (!formData.fullName.trim()) {
       newErrors.fullName = "Full name must be at least 3 characters";
     }
-
-    // else if (formData.fullName.length < 3) {
-    //   newErrors.fullName = "Full name must be at least 3 characters";
-    // }
-
-    // Email validation
     if (!formData.email.trim()) {
       newErrors.email = "Email is required";
     } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
       newErrors.email = "Please enter a valid email address";
     }
-
-    // Phone validation
     if (!formData.phone.trim()) {
       newErrors.phone = "Phone number is required";
     } else if (!/^\+?[0-9\s-]{7,15}$/.test(formData.phone)) {
       newErrors.phone = "Please enter a valid phone number";
     }
-
-    // Optional: Check for preferredContact
     if (!formData.preferredContact.trim()) {
       newErrors.preferredContact = "Please select a preferred contact method";
     }
@@ -98,19 +85,49 @@ export default function Contact() {
     }
 
     setErrors({});
-    console.log("Submitted data:", formData);
-    localStorage.setItem("contactFormData", JSON.stringify(formData));
-    setFormSubmitted(true);
 
-    //  Reset
-    setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
-      foundUsVia: "",
-      preferredContact: "",
-      message: "",
-    });
+    // 👇 IMPORTANT: don't manipulate foundUsVia here anymore
+    const payload = {
+      ...formData,
+      source: "contact-page",
+    };
+
+    console.log("Submitting payload:", payload); // just to verify
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.ok) {
+        console.error("Contact API error", data);
+        setErrors((prev) => ({
+          ...prev,
+          submit: "Something went wrong. Please try again.",
+        }));
+        return;
+      }
+
+      setFormSubmitted(true);
+      setFormData({
+        fullName: "",
+        email: "",
+        phone: "",
+        foundUsVia: "",
+        preferredContact: "",
+        message: "",
+      });
+    } catch (err) {
+      console.error("Fetch error:", err);
+      setErrors((prev) => ({
+        ...prev,
+        submit: "Unable to send message right now. Please try again later.",
+      }));
+    }
   };
 
   // Simplified Chatra integration
@@ -703,6 +720,11 @@ export default function Contact() {
                     </div>
 
                     <div className="flex justify-center  mt-4">
+                      {errors.submit && (
+                        <p className="text-red-500 text-[12px] mt-2">
+                          {errors.submit}
+                        </p>
+                      )}
                       <button
                         onClick={handleSubmit}
                         className="w-full py-2.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-[5px] hover:bg-[#014134] transition"
