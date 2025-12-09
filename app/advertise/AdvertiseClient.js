@@ -159,10 +159,10 @@ export default function AdvertiseClient({ analyticsData }) {
           {/* #2 */}
           <div className="flex flex-col md:flex-row justify-center items-stretch gap-4 w-full md:py-4">
             <div className="w-full md:w-[35%]">
-              <ActiveUsers opensMonthly={opensMonthly} />
+              <Statistics opensByGender={opensByGender} />
             </div>
             <div className="w-full md:w-[45%]">
-              <Statistics opensByGender={opensByGender} />
+              <ActiveUsers opensMonthly={opensMonthly} />
             </div>
           </div>
 
@@ -277,7 +277,14 @@ export default function AdvertiseClient({ analyticsData }) {
 
       {/* mobile view for advertise page */}
       <div className="block lg:hidden bg-[#FAFAFA] pt-[100px] pb-[10px]">
-        <AdvertisePageMobileVersion />
+        <AdvertisePageMobileVersion
+          subscribersMonthly={subscribersMonthly}
+          isLoading={false}
+          opensByCountry={opensByCountry}
+          opensByGender={opensByGender}
+          opensMonthly={opensMonthly}
+          adClickActivity={adClickActivity}
+        />
       </div>
     </>
   );

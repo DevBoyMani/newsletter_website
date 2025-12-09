@@ -1,19 +1,20 @@
-import { Component } from "../../components/areaChart/areaChart";
 import { AccountReached } from "../../components/advertiseComponents/analyticsCharts/chartAccountReached/chartAccountReached";
 import { ViewsCountry } from "../../components/advertiseComponents/analyticsCharts/chartViewsByCountry/chartViewsByCountry";
 import { ActiveUsers } from "../../components/advertiseComponents/analyticsCharts/chartActiveUsers/chartActiveUsers";
 import { Statistics } from "../../components/advertiseComponents/analyticsCharts/chartStatistics/chartStatistics";
 import { SignInUps } from "../../components/advertiseComponents/analyticsCharts/chartSignUps/chartSignUps";
 import HeadingWithUnderline from "../../components/advertiseComponents/headingWithUnderline/headingwithUnderline";
-import AdvertiseFaq from "../../components/advertiseComponents/advertiseFaq/advertiseFaq";
-import Footer from "../../components/footer/footer";
-import InThePress from "../advertiseComponents/mobileViewComponents/inThePress/inThePress";
 import { MobileFaq } from "../advertiseComponents/mobileViewComponents/mobileFaq/mobileFaq";
-import { Agdasima } from "next/font/google";
 import AdvertiseAdBlocker from "../advertiseAdBlocker/advertiseAdBlocker";
 import Link from "next/link";
 
-export default function AdvertisePageMobileVersion() {
+export default function AdvertisePageMobileVersion({
+  subscribersMonthly,
+  opensByCountry,
+  opensByGender,
+  opensMonthly,
+  adClickActivity,
+}) {
   const videos = [
     { video: "/advertise/v-1.mp4", id: "video1", height: "h-[297px]" },
     { video: "/advertise/v-2.mp4", id: "video2", height: "h-[245px]" },
@@ -123,19 +124,22 @@ export default function AdvertisePageMobileVersion() {
         <div className=" mt-10">
           {/* Chart Row 1 */}
           <div className="flex flex-col justify-center items-center gap-4">
-            <AccountReached />
-            <ViewsCountry />
+            <AccountReached
+              subscribersMonthly={subscribersMonthly}
+              isLoading={false}
+            />{" "}
+            <ViewsCountry opensByCountry={opensByCountry} />{" "}
           </div>
 
           {/* Chart Row 2 */}
           <div className="flex flex-col justify-center items-center gap-4">
-            <ActiveUsers />
-            <Statistics />
+            <Statistics opensByGender={opensByGender} />
+            <ActiveUsers opensMonthly={opensMonthly} />
           </div>
 
           {/* Chart Row 3 */}
           <div className="flex flex-col justify-center items-center gap-4">
-            <SignInUps />
+            <SignInUps adClickActivity={adClickActivity} />
             <div
               className="w-full h-[215px] rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
               style={{

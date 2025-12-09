@@ -146,7 +146,10 @@ export function SignInUps(props) {
               </div>
             </CardHeader>
             <CardContent>
-              <ChartContainer config={chartConfig} className="w-full h-[250px]">
+              <ChartContainer
+                config={chartConfig}
+                className="w-full h-[250px] pt-5"
+              >
                 <LineChart
                   accessibilityLayer
                   data={chartData}
