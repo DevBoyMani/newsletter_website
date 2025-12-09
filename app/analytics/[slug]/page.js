@@ -5,8 +5,7 @@ import { ANALYTICS_CONFIG, ANALYTICS_SLUGS } from "../config";
 import WebsiteAnalytics from "@/components/analyticsPages/WebsiteAnalytics";
 import AnalyticsComboList from "@/components/analyticsComboList/analyticsComboList";
 
-export const revalidate = 3600;
-
+export const revalidate = 60 * 60 * 12; // 43200 seconds = 12 hours
 export async function generateStaticParams() {
   return ANALYTICS_SLUGS.map((slug) => ({ slug }));
 }
@@ -20,7 +19,7 @@ async function fetchAnalyticsForWebsite(websiteId) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ websiteId }),
-      next: { revalidate },
+      // `next` options don’t really do anything on POST, but harmless
     }
   );
 
@@ -29,7 +28,8 @@ async function fetchAnalyticsForWebsite(websiteId) {
     return null;
   }
 
-  return res.json();
+  const data = await res.json(); // ✅ unwrap JSON here
+  return data;
 }
 
 export default async function AnalyticsPage({ params }) {

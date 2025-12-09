@@ -2,7 +2,7 @@
 import selectedIds from "../../data/selectedWebsites";
 import AdvertiseClient from "./AdvertiseClient";
 
-export const revalidate = 14400; // 4 hours
+export const revalidate = 60 * 60 * 12; // 43200 seconds = 12 hours
 async function getAnalytics() {
   // Build an absolute base URL for server-side fetch
   const baseUrl =

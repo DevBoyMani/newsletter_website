@@ -16,37 +16,37 @@ import Link from "next/link";
 import CustomizedHoverButton from "../../components/customizedHoverButton/customizedHoverButton";
 
 // --- Add formatter here ---
-function formatCompactNumber(num) {
-  if (!num) return "0";
+// function formatCompactNumber(num) {
+//   if (!num) return "0";
 
-  const n = Number(num);
-  if (isNaN(n)) return num;
+//   const n = Number(num);
+//   if (isNaN(n)) return num;
 
-  // Billions → allow decimal
-  if (n >= 1_000_000_000) {
-    return (n / 1_000_000_000).toFixed(1).replace(/\.0$/, "") + "B";
-  }
+//   // Billions → allow decimal
+//   if (n >= 1_000_000_000) {
+//     return (n / 1_000_000_000).toFixed(1).replace(/\.0$/, "") + "B";
+//   }
 
-  // Millions → allow decimal
-  if (n >= 1_000_000) {
-    return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
-  }
+//   // Millions → allow decimal
+//   if (n >= 1_000_000) {
+//     return (n / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+//   }
 
-  // Thousands → NO decimal
-  if (n >= 1_000) {
-    return Math.floor(n / 1_000) + "K";
-  }
+//   // Thousands → NO decimal
+//   if (n >= 1_000) {
+//     return Math.floor(n / 1_000) + "K";
+//   }
 
-  return n.toString();
-}
+//   return n.toString();
+// }
 
 export default function AdvertiseClient({ analyticsData }) {
   const [data] = useState(analyticsData || {});
   // Use raw number and convert
-  const rawYesterdayOpens =
-    analyticsData?.lastCampaignOpenSummary?.totalOpens || 124056;
+  // const rawYesterdayOpens =
+  //   analyticsData?.lastCampaignOpenSummary?.totalOpens || 124056;
 
-  const heroYesterdayReach = formatCompactNumber(rawYesterdayOpens);
+  // const heroYesterdayReach = formatCompactNumber(rawYesterdayOpens);
   const {
     subscribersMonthly = [],
     opensByCountry = [],
@@ -84,7 +84,8 @@ export default function AdvertiseClient({ analyticsData }) {
                 className="text-[80px] lg:w-[50%]  leading-[94%]"
                 style={{ textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)" }}
               >
-                {heroYesterdayReach} people would have seen your brand yesterday
+                {analyticsData?.lastCampaignOpenSummary?.formattedTotalOpens}{" "}
+                people would have seen your brand yesterday
               </h2>
               <p className="text-[20px] py-4 w-[30%] sm:w-[30%]">
                 Make your brand part of their morning ritual. Not ignored ad
