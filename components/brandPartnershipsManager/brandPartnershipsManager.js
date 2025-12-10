@@ -2,18 +2,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const jobCriteria = [
-  { label: "Experience Level", data: "Mid-level", id: "1" },
-  { label: "Type", data: "Full Time", id: "2" },
+  { label: "Experience level", data: "Mid-level", id: "1" },
+  { label: "Type", data: "Full-time", id: "2" },
   { label: "Location", data: "100% Remote", id: "3" },
   {
-    label: "Salary",
-    data: "$12,000–$24,000 (depending on experience)",
+    label: "Salary range",
+    data: "$24,000–$36,000 ",
     id: "4",
   },
-  { label: "Time", data: "40 hours per week", id: "5" },
+  { label: "Work hours", data: "40 hours per week", id: "5" },
 ];
 
-export default function ContentWriterLondon() {
+export default function BrandPartnershipsManager() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -63,14 +63,15 @@ export default function ContentWriterLondon() {
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
-            {/* left */}
+            {/* left default*/}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
               <div className="h-auto">
                 <Link
                   href="/careers"
                   className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline "
                 >
-                  <span className="text-[20px]"> &#8592;</span> All job offers
+                  <span className="text-[20px]"> &#8592;</span> All open
+                  positions
                 </Link>
                 <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                   <div className="">
@@ -78,15 +79,16 @@ export default function ContentWriterLondon() {
                       Apply now!
                     </p>
                     <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">
-                      If you're interested in end-to-end development and want to
-                      work with cutting-edge technologies, come on board.
+                      If you’re ready to join a fast-moving global media company
+                      and work with ambitious, creative people who value quality
+                      and initiative, we’d love to hear from you.
                     </p>
                     <div className="flex flex-row ">
                       <p
                         className="text-[#fff] text-[16px] font-[400]
                                      hover:underline cursor-pointer"
                       >
-                        careers@sagravia.com
+                        careers@houseofsummary.com
                       </p>
                       <img
                         src="/careers/content-copy.png"
@@ -130,10 +132,10 @@ export default function ContentWriterLondon() {
                 {/* 2 */}
                 <div className="pt-[30px]">
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
-                    Editorial
+                    Marketing
                   </p>
                   <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
-                    Content Writer
+                    Brand Partnerships Manager
                   </h2>
                 </div>
                 {/* 3 */}
@@ -209,17 +211,15 @@ export default function ContentWriterLondon() {
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    We’re looking for a sharp, curious, and culturally tuned-in
-                    Content Writer to join the team behind London Summary, a
-                    growing newsletter that curates the most interesting
-                    stories, people, and happenings across the city. You’ll be
-                    part writer, part editor, and part detective, someone who
-                    can capture London’s essence in a few smart, engaging
-                    paragraphs. Your work will span news, business, culture, and
-                    lifestyle, helping readers feel more connected to London
-                    every morning. This is a remote role, but you must be based
-                    in the UK, with a genuine familiarity and feel for life in
-                    London.
+                    The Brand Partnerships Manager will lead sponsorship and
+                    advertising relationships across House of Summary’s
+                    portfolio of newsletters. You’ll identify opportunities,
+                    craft partnership proposals, and execute campaigns that
+                    bring value to both our partners and audience. This role
+                    requires a mix of creativity, relationship management, and
+                    business strategy; someone who can build long-term
+                    partnerships while ensuring measurable success through
+                    data-driven insights.
                   </p>
                 </div>
                 {/* assignment */}
@@ -229,44 +229,65 @@ export default function ContentWriterLondon() {
                       Assignment
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      We want to see how you think, research, and write with
-                      clarity and voice. This task tests your ability to combine
-                      news judgment, storytelling, and editorial tone, the three
-                      traits that define our writers at House of Summary.
+                      We want to see how you think about brand alignment,
+                      storytelling, and partnership strategy for newsletters.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>Task Overview</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Create a short piece for London Summary, a daily
-                      newsletter that covers business, culture, city life, and
-                      the people shaping London today. Your goal is to show how
-                      you can write smart, concise, and engaging content that
-                      informs and entertains readers in just a few minutes.
-                    </p>
-                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Use the examples on the{" "}
+                      Visit{" "}
                       <a
                         className="underline"
-                        href="https://www.londonsummary.com/"
+                        href="https://www.houseofsummary.com/readers"
                         target="_blank"
                       >
-                        London Summary website
+                        https://www.houseofsummary.com/readers
                       </a>{" "}
-                      as a guide for tone, structure, and style.
+                      to get a feel for the style and tone of our publications.
+                      Then outline how you’d approach securing a sponsorship for
+                      one of the newsletters (you choose which).
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Include the following in your submission (max three
+                      pages):
                     </p>
 
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Brand fit:</strong> Which brand would you
+                        approach and why?
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Campaign concept:</strong> What kind of
+                        partnership would you propose (native ad, sponsored
+                        feature, custom series, etc.)?
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Value proposition:</strong> What’s in it for the
+                        brand and how does it align with our audience?
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Measurement:</strong> How would you define and
+                        measure success?
+                      </span>
+                    </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Send your assignment as a single PDF (maximum two pages)
+                        Send your assignment as a single PDF (maximum three
+                        pages)
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Subject line: Content Writer – [Your Name]
+                        Subject line: Brand Partnerships Manager – [Your Name]
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
@@ -281,17 +302,16 @@ export default function ContentWriterLondon() {
                     Job description
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                    As a Content Writer for London Summary, you’ll be
-                    responsible for researching, writing, and editing stories
-                    that bring the city to life, from emerging business trends
-                    and cultural shifts to quirky local happenings. You’ll
-                    curate complex topics into short, witty, and human pieces
-                    that resonate with busy readers. You’ll also help shape the
-                    newsletter’s tone, pitch story ideas, and collaborate with
-                    editors, designers, and growth teams to refine the overall
-                    voice and experience. The ideal candidate has a sharp
-                    editorial instinct, a feel for London’s rhythm, and an
-                    ability to turn insight into irresistible copy.
+                    As Brand Partnerships Manager, you’ll oversee sponsorships,
+                    collaborations, and advertising initiatives that strengthen
+                    the House of Summary brand. You’ll identify potential
+                    partners, negotiate deals, and ensure seamless campaign
+                    execution across multiple newsletters. Working closely with
+                    editorial, design, and analytics teams, you’ll craft
+                    data-backed campaigns that connect brands with readers
+                    authentically while delivering measurable results. You’ll
+                    also play a key role in shaping future partnership formats
+                    and expanding our global advertiser network.
                   </p>
                 </div>
                 {/* experience*/}
@@ -300,33 +320,48 @@ export default function ContentWriterLondon() {
                     Experience
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>Excellent written English and editorial judgment</li>
-                    <li>Strong research and summarization skills</li>
                     <li>
-                      Experience writing for newsletters, magazines, or digital
-                      media
+                      4+ years in partnerships, advertising, or brand management
+                      roles
                     </li>
                     <li>
-                      Deep curiosity about London’s people, culture, and
-                      politics
+                      Proven success in securing and managing brand
+                      collaborations
                     </li>
+                    <li>Strong presentation and communication skills</li>
                     <li>
-                      Attention to detail and comfort with fast-paced deadlines
+                      Analytical mindset with experience in campaign tracking
+                      and performance optimization
+                    </li>
+                    <li>Excellent organization and multitasking abilities</li>
+                    <li>
+                      Understanding of digital media ecosystems and audience
+                      engagement metrics
                     </li>
                   </ul>
                 </div>
-                {/* Nice to have*/}
+                {/* benefits */}
                 <div className="pt-[30px]">
                   <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Nice to have
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>
-                      Familiarity with SEO, analytics, and headline testing
+                      Experience with newsletter advertising or publishing
+                      partnerships
                     </li>
-                    <li>Knowledge of local London publications and trends</li>
-                    <li>Experience with CMS tools like Substack or Beehiiv</li>
-                    <li>Light design instincts for layout or visuals</li>
+                    <li>Familiarity with Beehiiv, Paved, or ConvertKit</li>
+                    <li>
+                      Understanding of AI SEO and performance marketing metrics
+                    </li>
+                    <li>
+                      Network of marketing decision-makers in luxury, finance,
+                      or travel
+                    </li>
+                    <li>
+                      Experience managing influencer or branded content
+                      campaigns
+                    </li>
                   </ul>
                 </div>
                 {/* benefits */}
@@ -335,15 +370,13 @@ export default function ContentWriterLondon() {
                     Benefits
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
+                    <li>Opportunity to work directly with global brands</li>
                     <li>
-                      Be part of London Summary’s editorial core as it grows
+                      Full ownership of partnership strategy across multiple
+                      titles
                     </li>
-                    <li>Freedom to pitch stories and shape tone</li>
-                    <li>Flexible hours and creative autonomy</li>
-                    <li>
-                      Work with a small, ambitious team that values quality,
-                      curiosity, and good humor
-                    </li>
+                    <li>Flexible remote work culture</li>
+                    <li>Creative and data-driven work environment</li>
                   </ul>
                 </div>
                 {/* join our team & how to apply default*/}
@@ -467,10 +500,10 @@ export default function ContentWriterLondon() {
           {/* 2 */}
           <div className="pt-[28px]">
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
-              Editorial
+              Marketing
             </p>
             <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
-              Content Writer
+              Brand Partnerships Manager
             </h2>
           </div>
           {/* 3 */}
@@ -494,16 +527,14 @@ export default function ContentWriterLondon() {
               Position summary
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              We’re looking for a sharp, curious, and culturally tuned-in
-              Content Writer to join the team behind London Summary, a growing
-              newsletter that curates the most interesting stories, people, and
-              happenings across the city. You’ll be part writer, part editor,
-              and part detective, someone who can capture London’s essence in a
-              few smart, engaging paragraphs. Your work will span news,
-              business, culture, and lifestyle, helping readers feel more
-              connected to London every morning. This is a remote role, but you
-              must be based in the UK, with a genuine familiarity and feel for
-              life in London.
+              The Brand Partnerships Manager will lead sponsorship and
+              advertising relationships across House of Summary’s portfolio of
+              newsletters. You’ll identify opportunities, craft partnership
+              proposals, and execute campaigns that bring value to both our
+              partners and audience. This role requires a mix of creativity,
+              relationship management, and business strategy; someone who can
+              build long-term partnerships while ensuring measurable success
+              through data-driven insights.
             </p>
           </div>
           {/* Assignment*/}
@@ -513,31 +544,51 @@ export default function ContentWriterLondon() {
                 Assignment
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                We want to see how you think, research, and write with clarity
-                and voice. This task tests your ability to combine news
-                judgment, storytelling, and editorial tone, the three traits
-                that define our writers at House of Summary.
+                We want to see how you think about brand alignment,
+                storytelling, and partnership strategy for newsletters.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>Task Overview</strong>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Create a short piece for London Summary, a daily newsletter that
-                covers business, culture, city life, and the people shaping
-                London today. Your goal is to show how you can write smart,
-                concise, and engaging content that informs and entertains
-                readers in just a few minutes.
-              </p>
-              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Use the examples on the{" "}
+                Visit{" "}
                 <a
                   className="underline"
-                  href="https://www.londonsummary.com/"
+                  href="https://www.houseofsummary.com/readers"
                   target="_blank"
                 >
-                  London Summary website
+                  https://www.houseofsummary.com/readers
                 </a>{" "}
-                as a guide for tone, structure, and style.
+                to get a feel for the style and tone of our publications. Then
+                outline how you’d approach securing a sponsorship for one of the
+                newsletters (you choose which).
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Include the following in your submission (max three pages):
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Brand fit:</strong> Which brand would you approach and
+                  why?
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Campaign concept:</strong> What kind of partnership
+                  would you propose (native ad, sponsored feature, custom
+                  series, etc.)?
+                </span>
+
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Value proposition:</strong> What’s in it for the brand
+                  and how does it align with our audience?
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Measurement:</strong> How would you define and measure
+                  success?
+                </span>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
@@ -545,11 +596,11 @@ export default function ContentWriterLondon() {
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Send your assignment as a single PDF (maximum two pages)
+                  Send your assignment as a single PDF (maximum three pages)
                 </span>
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Subject line: Content Writer – [Your Name]
+                  Subject line: Brand Partnerships Manager – [Your Name]
                 </span>
 
                 <span className="block pl-6 -indent-4">
@@ -565,16 +616,15 @@ export default function ContentWriterLondon() {
               Job description
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              As a Content Writer for London Summary, you’ll be responsible for
-              researching, writing, and editing stories that bring the city to
-              life, from emerging business trends and cultural shifts to quirky
-              local happenings. You’ll curate complex topics into short, witty,
-              and human pieces that resonate with busy readers. You’ll also help
-              shape the newsletter’s tone, pitch story ideas, and collaborate
-              with editors, designers, and growth teams to refine the overall
-              voice and experience. The ideal candidate has a sharp editorial
-              instinct, a feel for London’s rhythm, and an ability to turn
-              insight into irresistible copy.
+              As Brand Partnerships Manager, you’ll oversee sponsorships,
+              collaborations, and advertising initiatives that strengthen the
+              House of Summary brand. You’ll identify potential partners,
+              negotiate deals, and ensure seamless campaign execution across
+              multiple newsletters. Working closely with editorial, design, and
+              analytics teams, you’ll craft data-backed campaigns that connect
+              brands with readers authentically while delivering measurable
+              results. You’ll also play a key role in shaping future partnership
+              formats and expanding our global advertiser network.
             </p>
           </div>
           {/* Experience */}
@@ -583,27 +633,43 @@ export default function ContentWriterLondon() {
               Experience
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Excellent written English and editorial judgment</li>
-              <li>Strong research and summarization skills</li>
               <li>
-                Experience writing for newsletters, magazines, or digital media
+                4+ years in partnerships, advertising, or brand management roles
               </li>
               <li>
-                Deep curiosity about London’s people, culture, and politics
+                Proven success in securing and managing brand collaborations
               </li>
-              <li>Attention to detail and comfort with fast-paced deadlines</li>
+              <li>Strong presentation and communication skills</li>
+              <li>
+                Analytical mindset with experience in campaign tracking and
+                performance optimization
+              </li>
+              <li>Excellent organization and multitasking abilities</li>
+              <li>
+                Understanding of digital media ecosystems and audience
+                engagement metrics
+              </li>
             </ul>
           </div>
           {/* Nice to have */}
           <div className="mt-[35px]">
-            <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
+            <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Nice to have
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Familiarity with SEO, analytics, and headline testing</li>
-              <li>Knowledge of local London publications and trends</li>
-              <li>Experience with CMS tools like Substack or Beehiiv</li>
-              <li>Light design instincts for layout or visuals</li>
+              <li>
+                Experience with newsletter advertising or publishing
+                partnerships
+              </li>
+              <li>Familiarity with Beehiiv, Paved, or ConvertKit</li>
+              <li>Understanding of AI SEO and performance marketing metrics</li>
+              <li>
+                Network of marketing decision-makers in luxury, finance, or
+                travel
+              </li>
+              <li>
+                Experience managing influencer or branded content campaigns
+              </li>
             </ul>
           </div>
           {/* Benefits */}
@@ -612,13 +678,12 @@ export default function ContentWriterLondon() {
               Benefits
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Be part of London Summary’s editorial core as it grows</li>
-              <li>Freedom to pitch stories and shape tone</li>
-              <li>Flexible hours and creative autonomy</li>
+              <li>Opportunity to work directly with global brands</li>
               <li>
-                Work with a small, ambitious team that values quality,
-                curiosity, and good humor
+                Full ownership of partnership strategy across multiple titles
               </li>
+              <li>Flexible remote work culture</li>
+              <li>Creative and data-driven work environment</li>
             </ul>
           </div>
           {/* Join our team */}

@@ -267,7 +267,7 @@ export default function CookiePolicyBody() {
               Cookie Policy
             </h2>
             <p className="text-[16px] text-[#595959] font-[500] leading-[157%] py-[35px]">
-              Latest updated November 15, 2025 Latest updated November 15, 2025
+              Latest updated November 15, 2025
             </p>
           </div>
 

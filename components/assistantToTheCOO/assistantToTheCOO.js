@@ -2,18 +2,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const jobCriteria = [
-  { label: "Experience Level", data: "Mid-level", id: "1" },
-  { label: "Type", data: "Full Time", id: "2" },
+  { label: "Experience level", data: "Junior", id: "1" },
+  { label: "Type", data: "Full-time", id: "2" },
   { label: "Location", data: "100% Remote", id: "3" },
   {
-    label: "Salary",
-    data: "$12,000–$24,000 (depending on experience)",
+    label: "Salary range",
+    data: "$12,000–$24,000",
     id: "4",
   },
-  { label: "Time", data: "40 hours per week", id: "5" },
+  { label: "Work hours", data: "40 hours per week", id: "5" },
 ];
 
-export default function ContentWriterLondon() {
+export default function AssistantToTheCOO() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -63,14 +63,15 @@ export default function ContentWriterLondon() {
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
-            {/* left */}
+            {/* left default*/}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
               <div className="h-auto">
                 <Link
                   href="/careers"
                   className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline "
                 >
-                  <span className="text-[20px]"> &#8592;</span> All job offers
+                  <span className="text-[20px]"> &#8592;</span> All open
+                  positions
                 </Link>
                 <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                   <div className="">
@@ -78,15 +79,16 @@ export default function ContentWriterLondon() {
                       Apply now!
                     </p>
                     <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">
-                      If you're interested in end-to-end development and want to
-                      work with cutting-edge technologies, come on board.
+                      If you’re ready to join a fast-moving global media company
+                      and work with ambitious, creative people who value quality
+                      and initiative, we’d love to hear from you.
                     </p>
                     <div className="flex flex-row ">
                       <p
                         className="text-[#fff] text-[16px] font-[400]
                                      hover:underline cursor-pointer"
                       >
-                        careers@sagravia.com
+                        careers@houseofsummary.com
                       </p>
                       <img
                         src="/careers/content-copy.png"
@@ -130,10 +132,10 @@ export default function ContentWriterLondon() {
                 {/* 2 */}
                 <div className="pt-[30px]">
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
-                    Editorial
+                    Other
                   </p>
                   <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
-                    Content Writer
+                    Assistant to the COO
                   </h2>
                 </div>
                 {/* 3 */}
@@ -209,17 +211,14 @@ export default function ContentWriterLondon() {
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    We’re looking for a sharp, curious, and culturally tuned-in
-                    Content Writer to join the team behind London Summary, a
-                    growing newsletter that curates the most interesting
-                    stories, people, and happenings across the city. You’ll be
-                    part writer, part editor, and part detective, someone who
-                    can capture London’s essence in a few smart, engaging
-                    paragraphs. Your work will span news, business, culture, and
-                    lifestyle, helping readers feel more connected to London
-                    every morning. This is a remote role, but you must be based
-                    in the UK, with a genuine familiarity and feel for life in
-                    London.
+                    As the Assistant to the COO, you’ll serve as a vital bridge
+                    between leadership and various teams, helping execute daily
+                    priorities, organize information, and track operational
+                    progress. You’ll be responsible for managing tasks,
+                    preparing reports, and ensuring smooth workflows. This
+                    position provides hands-on exposure to management,
+                    communication, and process optimization in a rapidly
+                    expanding international organization.
                   </p>
                 </div>
                 {/* assignment */}
@@ -229,44 +228,56 @@ export default function ContentWriterLondon() {
                       Assignment
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      We want to see how you think, research, and write with
-                      clarity and voice. This task tests your ability to combine
-                      news judgment, storytelling, and editorial tone, the three
-                      traits that define our writers at House of Summary.
+                      We want to see how you approach structure, organization,
+                      and clarity in operational work.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>Task Overview</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Create a short piece for London Summary, a daily
-                      newsletter that covers business, culture, city life, and
-                      the people shaping London today. Your goal is to show how
-                      you can write smart, concise, and engaging content that
-                      informs and entertains readers in just a few minutes.
-                    </p>
-                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Use the examples on the{" "}
+                      Visit{" "}
                       <a
                         className="underline"
-                        href="https://www.londonsummary.com/"
+                        href="https://www.houseofsummary.com/readers"
                         target="_blank"
                       >
-                        London Summary website
+                        https://www.houseofsummary.com/
                       </a>{" "}
-                      as a guide for tone, structure, and style.
+                      to get familiar with the tone and style of our company.
+                      Then, write a one-page summary explaining how you would
+                      help the COO improve coordination across multiple teams
+                      (for example: editorial, marketing, design, and
+                      partnerships).
                     </p>
-
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <strong>Your summary should:</strong>
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Key priorities you’d focus on in the first month
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        How would you stay organized with multiple ongoing
+                        projects
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        One example of how you’d communicate progress to the COO
+                      </span>
+                    </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Send your assignment as a single PDF (maximum two pages)
+                        Send your assignment as a PDF (max one page)
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Subject line: Content Writer – [Your Name]
+                        Subject line: Assistant to the COO – [Your Name]
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
@@ -281,17 +292,14 @@ export default function ContentWriterLondon() {
                     Job description
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                    As a Content Writer for London Summary, you’ll be
-                    responsible for researching, writing, and editing stories
-                    that bring the city to life, from emerging business trends
-                    and cultural shifts to quirky local happenings. You’ll
-                    curate complex topics into short, witty, and human pieces
-                    that resonate with busy readers. You’ll also help shape the
-                    newsletter’s tone, pitch story ideas, and collaborate with
-                    editors, designers, and growth teams to refine the overall
-                    voice and experience. The ideal candidate has a sharp
-                    editorial instinct, a feel for London’s rhythm, and an
-                    ability to turn insight into irresistible copy.
+                    As Assistant to the COO, you’ll manage scheduling,
+                    communication, and project tracking to support company-wide
+                    operations. You’ll help prepare reports, organize team
+                    updates, and ensure that tasks move efficiently between
+                    departments. You’ll also assist with coordination for
+                    company meetings, internal documentation, and process
+                    improvements. This role requires strong communication
+                    skills, attention to detail, and a proactive attitude.
                   </p>
                 </div>
                 {/* experience*/}
@@ -300,33 +308,35 @@ export default function ContentWriterLondon() {
                     Experience
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>Excellent written English and editorial judgment</li>
-                    <li>Strong research and summarization skills</li>
+                    <li>No prior experience needed</li>
+                    <li>Excellent organizational and time-management skills</li>
+                    <li>Strong written and verbal communication</li>
                     <li>
-                      Experience writing for newsletters, magazines, or digital
-                      media
+                      Ability to multitask and prioritize in a fast-paced
+                      environment
                     </li>
+                    <li>Proficiency with Google Workspace or similar tools</li>
                     <li>
-                      Deep curiosity about London’s people, culture, and
-                      politics
-                    </li>
-                    <li>
-                      Attention to detail and comfort with fast-paced deadlines
+                      Eagerness to learn and contribute across different teams
                     </li>
                   </ul>
                 </div>
-                {/* Nice to have*/}
+                {/* Nice to have */}
                 <div className="pt-[30px]">
                   <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Nice to have
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
+                    <li>Experience in media, communications, or startups</li>
                     <li>
-                      Familiarity with SEO, analytics, and headline testing
+                      Familiarity with project management tools (Asana, Notion,
+                      etc.)
                     </li>
-                    <li>Knowledge of local London publications and trends</li>
-                    <li>Experience with CMS tools like Substack or Beehiiv</li>
-                    <li>Light design instincts for layout or visuals</li>
+                    <li>
+                      Basic understanding of business operations or marketing
+                      workflows
+                    </li>
+                    <li>Interest in newsletters or digital media</li>
                   </ul>
                 </div>
                 {/* benefits */}
@@ -335,15 +345,13 @@ export default function ContentWriterLondon() {
                     Benefits
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
+                    <li>Opportunity to work closely with leadership</li>
                     <li>
-                      Be part of London Summary’s editorial core as it grows
+                      Exposure to all operational aspects of a growing media
+                      company
                     </li>
-                    <li>Freedom to pitch stories and shape tone</li>
-                    <li>Flexible hours and creative autonomy</li>
-                    <li>
-                      Work with a small, ambitious team that values quality,
-                      curiosity, and good humor
-                    </li>
+                    <li>Flexible working hours and remote setup</li>
+                    <li>Career development in operations and management</li>
                   </ul>
                 </div>
                 {/* join our team & how to apply default*/}
@@ -407,16 +415,16 @@ export default function ContentWriterLondon() {
             The assignment is mandatory.
           </span>
           {/* <Link
-                       href="/careers/#assignment"
-                       className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
-                     >
-                       <span>Go to assignment</span>
-                       <img
-                         src="/careers/down.png"
-                         alt="arrow"
-                         className="w-[11px] h-[11px] ml-[15px]"
-                       />
-                     </Link> */}
+            href="/careers/#assignment"
+            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+          >
+            <span>Go to assignment</span>
+            <img
+              src="/careers/down.png"
+              alt="arrow"
+              className="w-[11px] h-[11px] ml-[15px]"
+            />
+          </Link> */}
           <Link
             href="#assignment"
             scroll={false}
@@ -467,10 +475,10 @@ export default function ContentWriterLondon() {
           {/* 2 */}
           <div className="pt-[28px]">
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
-              Editorial
+              Other
             </p>
             <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
-              Content Writer
+              Assistant to the COO
             </h2>
           </div>
           {/* 3 */}
@@ -494,16 +502,13 @@ export default function ContentWriterLondon() {
               Position summary
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              We’re looking for a sharp, curious, and culturally tuned-in
-              Content Writer to join the team behind London Summary, a growing
-              newsletter that curates the most interesting stories, people, and
-              happenings across the city. You’ll be part writer, part editor,
-              and part detective, someone who can capture London’s essence in a
-              few smart, engaging paragraphs. Your work will span news,
-              business, culture, and lifestyle, helping readers feel more
-              connected to London every morning. This is a remote role, but you
-              must be based in the UK, with a genuine familiarity and feel for
-              life in London.
+              As the Assistant to the COO, you’ll serve as a vital bridge
+              between leadership and various teams, helping execute daily
+              priorities, organize information, and track operational progress.
+              You’ll be responsible for managing tasks, preparing reports, and
+              ensuring smooth workflows. This position provides hands-on
+              exposure to management, communication, and process optimization in
+              a rapidly expanding international organization.
             </p>
           </div>
           {/* Assignment*/}
@@ -513,31 +518,43 @@ export default function ContentWriterLondon() {
                 Assignment
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                We want to see how you think, research, and write with clarity
-                and voice. This task tests your ability to combine news
-                judgment, storytelling, and editorial tone, the three traits
-                that define our writers at House of Summary.
+                We want to see how you approach structure, organization, and
+                clarity in operational work.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>Task Overview</strong>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Create a short piece for London Summary, a daily newsletter that
-                covers business, culture, city life, and the people shaping
-                London today. Your goal is to show how you can write smart,
-                concise, and engaging content that informs and entertains
-                readers in just a few minutes.
-              </p>
-              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Use the examples on the{" "}
+                Visit{" "}
                 <a
                   className="underline"
-                  href="https://www.londonsummary.com/"
+                  href="https://www.houseofsummary.com/readers"
                   target="_blank"
                 >
-                  London Summary website
+                  https://www.houseofsummary.com/
                 </a>{" "}
-                as a guide for tone, structure, and style.
+                to get familiar with the tone and style of our company. Then,
+                write a one-page summary explaining how you would help the COO
+                improve coordination across multiple teams (for example:
+                editorial, marketing, design, and partnerships).
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>Your summary should:</strong>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  Key priorities you’d focus on in the first month
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  How would you stay organized with multiple ongoing projects
+                </span>
+
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  One example of how you’d communicate progress to the COO
+                </span>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
@@ -545,11 +562,11 @@ export default function ContentWriterLondon() {
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Send your assignment as a single PDF (maximum two pages)
+                  Send your assignment as a PDF (max one page)
                 </span>
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Subject line: Content Writer – [Your Name]
+                  Subject line: Assistant to the COO – [Your Name]
                 </span>
 
                 <span className="block pl-6 -indent-4">
@@ -565,16 +582,13 @@ export default function ContentWriterLondon() {
               Job description
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              As a Content Writer for London Summary, you’ll be responsible for
-              researching, writing, and editing stories that bring the city to
-              life, from emerging business trends and cultural shifts to quirky
-              local happenings. You’ll curate complex topics into short, witty,
-              and human pieces that resonate with busy readers. You’ll also help
-              shape the newsletter’s tone, pitch story ideas, and collaborate
-              with editors, designers, and growth teams to refine the overall
-              voice and experience. The ideal candidate has a sharp editorial
-              instinct, a feel for London’s rhythm, and an ability to turn
-              insight into irresistible copy.
+              As Assistant to the COO, you’ll manage scheduling, communication,
+              and project tracking to support company-wide operations. You’ll
+              help prepare reports, organize team updates, and ensure that tasks
+              move efficiently between departments. You’ll also assist with
+              coordination for company meetings, internal documentation, and
+              process improvements. This role requires strong communication
+              skills, attention to detail, and a proactive attitude.
             </p>
           </div>
           {/* Experience */}
@@ -583,27 +597,31 @@ export default function ContentWriterLondon() {
               Experience
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Excellent written English and editorial judgment</li>
-              <li>Strong research and summarization skills</li>
+              <li>No prior experience needed</li>
+              <li>Excellent organizational and time-management skills</li>
+              <li>Strong written and verbal communication</li>
               <li>
-                Experience writing for newsletters, magazines, or digital media
+                Ability to multitask and prioritize in a fast-paced environment
               </li>
-              <li>
-                Deep curiosity about London’s people, culture, and politics
-              </li>
-              <li>Attention to detail and comfort with fast-paced deadlines</li>
+              <li>Proficiency with Google Workspace or similar tools</li>
+              <li>Eagerness to learn and contribute across different teams</li>
             </ul>
           </div>
-          {/* Nice to have */}
+          {/*Nice to have */}
           <div className="mt-[35px]">
-            <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
+            <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Nice to have
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Familiarity with SEO, analytics, and headline testing</li>
-              <li>Knowledge of local London publications and trends</li>
-              <li>Experience with CMS tools like Substack or Beehiiv</li>
-              <li>Light design instincts for layout or visuals</li>
+              <li>Experience in media, communications, or startups</li>
+              <li>
+                Familiarity with project management tools (Asana, Notion, etc.)
+              </li>
+              <li>
+                Basic understanding of business operations or marketing
+                workflows
+              </li>
+              <li>Interest in newsletters or digital media</li>
             </ul>
           </div>
           {/* Benefits */}
@@ -612,13 +630,12 @@ export default function ContentWriterLondon() {
               Benefits
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Be part of London Summary’s editorial core as it grows</li>
-              <li>Freedom to pitch stories and shape tone</li>
-              <li>Flexible hours and creative autonomy</li>
+              <li>Opportunity to work closely with leadership</li>
               <li>
-                Work with a small, ambitious team that values quality,
-                curiosity, and good humor
+                Exposure to all operational aspects of a growing media company
               </li>
+              <li>Flexible working hours and remote setup</li>
+              <li>Career development in operations and management</li>
             </ul>
           </div>
           {/* Join our team */}

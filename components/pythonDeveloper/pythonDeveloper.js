@@ -169,17 +169,22 @@ export default function PythonDeveloper() {
                         mandatory.
                       </span>
                       <a
-                        href="#"
+                        href="#assignment"
                         onClick={(e) => {
                           e.preventDefault();
-                          const section = document.querySelector("#assignment");
-                          if (!section) return; // prevent error if not found
 
-                          const yOffset = -100; // adjust for sticky header height if needed
+                          const section = document.querySelector("#assignment");
+                          if (!section) return;
+
+                          const yOffset = -100; // adjust for sticky left panel
                           const y =
                             section.getBoundingClientRect().top +
                             window.pageYOffset +
                             yOffset;
+
+                          // ✅ update slug (same as mobile)
+                          window.history.pushState(null, "", "#assignment");
+
                           window.scrollTo({ top: y, behavior: "smooth" });
                         }}
                       >
@@ -279,34 +284,44 @@ export default function PythonDeveloper() {
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>Requirements:</strong>
                     </p>
+
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <span className="mx-6">-</span>
-                      Use Python 3.8+
-                      <br />
-                      <span className="mx-6">-</span>
-                      Allowed libraries: requests, pandas, matplotlib,
-                      beautifulsoup4, etc.
-                      <br />
-                      <span className="mx-6">-</span>
-                      Clean, readable code with comments or docstrings
-                      <br />
-                      <span className="mx-6">-</span>
-                      Output should be easy to understand (in terminal or as a
-                      file)
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Use Python 3.8+
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Allowed libraries: requests, pandas, matplotlib,
+                        beautifulsoup4, etc.
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Clean, readable code with comments or docstrings
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Output should be easy to understand (in terminal or as a
+                        file)
+                      </span>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <span className="mx-6">-</span>
-                      Send your script (or GitHub link) and a short note on what
-                      you built
-                      <br />
-                      <span className="mx-6">-</span>
-                      Subject line: Python Developer – [Your Name]
-                      <br />
-                      <span className="mx-6">-</span>
-                      Email it to careers@houseofsummary.com
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Send your script (or GitHub link) and a short note on
+                        what you built
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Subject line: Python Developer – [Your Name]
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Email it to careers@houseofsummary.com
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -423,6 +438,52 @@ export default function PythonDeveloper() {
       </div>
 
       {/* mobile */}
+      {/* Careers banner */}
+      <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
+        <div className="bg-[#E5C8CD] w-full px-4 py-[11px] flex items-center justify-center">
+          <span className="text-[#000000] text-[12px] font-[600] leading-normal">
+            The assignment is mandatory.
+          </span>
+          {/* <Link
+                  href="/careers/#assignment"
+                  className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+                >
+                  <span>Go to assignment</span>
+                  <img
+                    src="/careers/down.png"
+                    alt="arrow"
+                    className="w-[11px] h-[11px] ml-[15px]"
+                  />
+                </Link> */}
+          <Link
+            href="#assignment"
+            scroll={false}
+            onClick={(e) => {
+              e.preventDefault();
+
+              const section = document.querySelector("#assignment");
+              if (!section) return;
+
+              const yOffset = 760; // height of mobile banner
+              const y =
+                section.getBoundingClientRect().top +
+                window.pageYOffset +
+                yOffset;
+
+              window.history.pushState(null, "", "#assignment"); // ✅ updates slug
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }}
+            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+          >
+            <span>Go to assignment</span>
+            <img
+              src="/careers/down.png"
+              alt="arrow"
+              className="w-[11px] h-[11px] ml-[15px]"
+            />
+          </Link>
+        </div>
+      </div>
       <div className="block lg:hidden ">
         <div className="px-4 pt-[187px] pb-[45px] bg-[#FAFAFA]">
           {/* 1 */}
@@ -431,7 +492,7 @@ export default function PythonDeveloper() {
               Remote
             </p>
             <p className="px-[12px] py-1 bg-[#DAEBE8] text-[15px] text-[#000] font-[400] leading-normal text-center items-center flex justify-center rounded-[5px]">
-              Part-time
+              Full-time
             </p>
           </div>
           {/* date */}
@@ -444,10 +505,10 @@ export default function PythonDeveloper() {
           {/* 2 */}
           <div className="pt-[28px]">
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
-              Marketing
+              Tech
             </p>
             <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
-              Social Media Intern
+              Python Developer
             </h2>
           </div>
           {/* 3 */}
@@ -471,121 +532,108 @@ export default function PythonDeveloper() {
               Position summary
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              Help grow our newsletters across social platforms through daily
-              content, smart copy, and iterative testing. You will learn how to
-              turn attention into measurable actions while keeping our brand
-              voice sharp and consistent.
+              As a Python Developer, you’ll help build the systems that keep our
+              network of newsletters running efficiently. From data pipelines to
+              automation scripts and analytics dashboards, you’ll be creating
+              tools that scale with our growth.
             </p>
           </div>
           {/* Assignment*/}
           <div className="px-[16px] py-[30px] bg-[#DAEBE8] rounded-[5px] mt-[35px]">
-            <div className="">
+            <div id="assignment" className="">
               <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
                 Assignment
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                We’d love to see how you think about social media; how you plan,
-                create, and communicate ideas that work.
+                We want to see how you think, structure your logic, and work
+                with data.
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
-                <strong>Your task:</strong>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Your task is to create a small, clean Python project that does
+                one useful thing well. Choose one of the options below and focus
+                on writing clear, working code.
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
-                Imagine you’re managing social media for one of our newsletters:
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>1. Data Aggregator</strong>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Fetch data from a public API (for example: NewsAPI, CoinGecko,
+                or OpenWeatherMap), clean it, and save it locally as a CSV or
+                JSON file.
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Then, show a short analysis, such as top items, averages, or
+                frequency counts.
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>2. Newsletter Metrics Parser</strong>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Use or simulate newsletter data (opens, clicks, etc.).
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Write a script that calculates engagement rates and shows a
+                short summary like:
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>Newsletter:</strong> Presidential Summary <br />
+                <strong>Open Rate:</strong> 54.3%
+                <br />
+                <strong>CTR:</strong> 6.7% <br />
+                <strong>Week-over-week Growth:</strong> +12%
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Bonus: Add a simple Matplotlib chart.
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>3. Simple Web Scraper</strong>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Scrape 10-20 recent article titles and URLs from a public news
+                or blog site using requests and BeautifulSoup.
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Save them to CSV and print which words appear most often in the
+                titles.
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                (Avoid sites that block scraping or require a login).
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>Requirements:</strong>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
-                  <span className="pr-2">-</span>{" "}
-                  <a
-                    href="https://www.presidentialsummary.com/"
-                    target="_blank"
-                    className="underline"
-                  >
-                    Presidential Summary
-                  </a>{" "}
-                  (global news)
-                </span>
-
-                <span className="block pl-6 -indent-4">
-                  <span className="pr-2">-</span>{" "}
-                  <a
-                    href="https://www.geopoliticalsummary.com/"
-                    target="_blank"
-                    className="underline"
-                  >
-                    Geopolitical Summary
-                  </a>{" "}
-                  (international politics)
-                </span>
-
-                <span className="block pl-6 -indent-4">
-                  <span className="pr-2">-</span>{" "}
-                  <a
-                    href="https://www.dubaisummary.com/"
-                    target="_blank"
-                    className="underline"
-                  >
-                    Dubai Summary
-                  </a>{" "}
-                  (UAE news and lifestyle)
-                </span>
-              </p>
-
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
-                Pick one newsletter and create a short 3-day content plan for
-                it.
-              </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
-                <strong>What to include:</strong>
-              </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
-                <span className="block pl-6 -indent-4">
-                  <span className="pr-2">-</span> Which newsletter did you
-                  choose and why?
-                </span>
-
-                <span className="block pl-6 -indent-4">
-                  <span className="pr-2">-</span> Who is the typical audience?
-                  (Age, interests, and why they’d follow this account)
-                </span>
-
-                <span className="block pl-6 -indent-4">
-                  <span className="pr-2">-</span> Three posts for three days:
-                </span>
-              </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
-                <span className="block pl-12 -indent-4">
                   <span className="pr-2">-</span>
-                  Give each post a title or hook
+                  Use Python 3.8+
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  Allowed libraries: requests, pandas, matplotlib,
+                  beautifulsoup4, etc.
                 </span>
 
-                <span className="block pl-12 -indent-4">
+                <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Add a short caption (1-2 sentences)
+                  Clean, readable code with comments or docstrings
                 </span>
-
-                <span className="block pl-12 -indent-4">
+                <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Say which platform it’s for (e.g., Instagram, Threads,
-                  LinkedIn)
-                </span>
-                <span className="block pl-12 -indent-4">
-                  <span className="pr-2">-</span>
-                  Add a quick note on why it would perform well
+                  Output should be easy to understand (in terminal or as a file)
                 </span>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Send your short plan as a 1-page PDF
+                  Send your script (or GitHub link) and a short note on what you
+                  built
                 </span>
-
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Subject line: Social Media Intern – [Your Name]
+                  Subject line: Python Developer – [Your Name]
                 </span>
 
                 <span className="block pl-6 -indent-4">
@@ -601,15 +649,17 @@ export default function PythonDeveloper() {
               Job description
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              As a Social Media Intern, you’ll create and publish short-form
-              posts and videos across all major platforms. You’ll write catchy
-              captions, manage posting calendars, and monitor trends and
-              audience engagement in real time. Working closely with our
-              editorial and analytics teams, you’ll help refine strategies and
-              discover what makes content perform. This internship offers a
-              unique opportunity to learn the ins and outs of digital media,
-              brand storytelling, and audience psychology while building a
-              strong creative portfolio.
+              As a Python Developer, you’ll design, build, and maintain scalable
+              scripts and microservices that power data pipelines, automation
+              tools, and analytics across our brand network. You’ll integrate
+              APIs, streamline workflows, and develop solutions that make our
+              systems smarter and faster. Working closely with editorial,
+              analytics, and design teams, you’ll turn repetitive tasks into
+              efficient processes, build integrations between platforms, and
+              experiment with predictive models for audience insights. This role
+              is perfect for someone who enjoys solving complex problems,
+              writing clean and reliable code, and seeing their automations
+              quietly run the world in the background.
             </p>
           </div>
           {/* Experience */}
@@ -617,18 +667,19 @@ export default function PythonDeveloper() {
             <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
               Experience
             </p>
-            <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-[25px]">
+            <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
               <li>
-                Familiarity with Facebook, Instagram, Threads, X, Reddit, and
-                LinkedIn
+                Strong proficiency in Python 3.x (Pandas, Requests, Asyncio,
+                Selenium, etc.)
               </li>
-              <li>Strong writing and basic visual judgment</li>
+              <li>Experience with APIs, scraping, and automation</li>
               <li>
-                Organized, reliable, and curious about analytics and testing
+                Familiarity with SQL databases (PostgreSQL, SQLite, BigQuery)
               </li>
               <li>
-                Bonus: experience with creator collaborations or analytics tools
+                Bonus: Experience with ML frameworks (Scikit-learn, XGBoost)
               </li>
+              <li>Knowledge of version control (Git) and deployment tools</li>
             </ul>
           </div>
           {/* Benefits */}
@@ -636,14 +687,12 @@ export default function PythonDeveloper() {
             <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Benefits
             </p>
-            <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-[25px]">
-              <li>Real ownership of posts and weekly campaigns</li>
-              <li>Mentorship from editors and marketers</li>
-              <li>Portfolio pieces with measurable outcomes</li>
-              <li>Flexible schedule and fully remote setup</li>
-              <li>
-                Potential for extension or recommendation based on performance
-              </li>
+            <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
+              <li>Direct impact on thousands of readers through automation</li>
+              <li>Collaborative, fast-moving environment</li>
+              <li>Flexible hours and fully remote</li>
+              <li>Freedom to experiment and build real systems</li>
+              <li>Results that run quietly while you sleep</li>
             </ul>
           </div>
           {/* Join our team */}

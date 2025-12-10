@@ -2,18 +2,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const jobCriteria = [
-  { label: "Experience Level", data: "Mid-level", id: "1" },
-  { label: "Type", data: "Full Time", id: "2" },
+  { label: "Experience level", data: "Senior", id: "1" },
+  { label: "Type", data: "Part-time", id: "2" },
   { label: "Location", data: "100% Remote", id: "3" },
   {
-    label: "Salary",
-    data: "$12,000–$24,000 (depending on experience)",
+    label: "Salary range",
+    data: "$24,000–$36,000",
     id: "4",
   },
-  { label: "Time", data: "40 hours per week", id: "5" },
+  { label: "Work hours", data: "20–25 hours per week", id: "5" },
 ];
 
-export default function ContentWriterLondon() {
+export default function LegalComplianceOfficer() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -63,14 +63,15 @@ export default function ContentWriterLondon() {
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
-            {/* left */}
+            {/* left default*/}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
               <div className="h-auto">
                 <Link
                   href="/careers"
                   className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline "
                 >
-                  <span className="text-[20px]"> &#8592;</span> All job offers
+                  <span className="text-[20px]"> &#8592;</span> All open
+                  positions
                 </Link>
                 <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                   <div className="">
@@ -78,15 +79,16 @@ export default function ContentWriterLondon() {
                       Apply now!
                     </p>
                     <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">
-                      If you're interested in end-to-end development and want to
-                      work with cutting-edge technologies, come on board.
+                      If you’re ready to join a fast-moving global media company
+                      and work with ambitious, creative people who value quality
+                      and initiative, we’d love to hear from you.
                     </p>
                     <div className="flex flex-row ">
                       <p
                         className="text-[#fff] text-[16px] font-[400]
                                      hover:underline cursor-pointer"
                       >
-                        careers@sagravia.com
+                        careers@houseofsummary.com
                       </p>
                       <img
                         src="/careers/content-copy.png"
@@ -117,7 +119,7 @@ export default function ContentWriterLondon() {
                       Remote
                     </p>
                     <p className="py-1 px-[12px] bg-[#DAEBE8] text-[15px] text-[#000] font-[400] leading-normal text-center items-center flex justify-center rounded-[5px]">
-                      Full-time
+                      Part-time
                     </p>
                   </div>
                   {/* date */}
@@ -130,10 +132,10 @@ export default function ContentWriterLondon() {
                 {/* 2 */}
                 <div className="pt-[30px]">
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
-                    Editorial
+                    Other
                   </p>
                   <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
-                    Content Writer
+                    Legal & Compliance Officer
                   </h2>
                 </div>
                 {/* 3 */}
@@ -209,17 +211,14 @@ export default function ContentWriterLondon() {
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    We’re looking for a sharp, curious, and culturally tuned-in
-                    Content Writer to join the team behind London Summary, a
-                    growing newsletter that curates the most interesting
-                    stories, people, and happenings across the city. You’ll be
-                    part writer, part editor, and part detective, someone who
-                    can capture London’s essence in a few smart, engaging
-                    paragraphs. Your work will span news, business, culture, and
-                    lifestyle, helping readers feel more connected to London
-                    every morning. This is a remote role, but you must be based
-                    in the UK, with a genuine familiarity and feel for life in
-                    London.
+                    We’re looking for a strategic and detail-oriented Legal &
+                    Compliance Officer to handle legal, regulatory, and
+                    compliance matters for House of Summary and its affiliated
+                    newsletters. You’ll draft and review contracts, advise on
+                    data protection and advertising law, and implement clear
+                    compliance policies across multiple jurisdictions. This is a
+                    flexible, part-time position ideal for a legal professional
+                    who thrives in fast-paced, international environments.
                   </p>
                 </div>
                 {/* assignment */}
@@ -229,44 +228,119 @@ export default function ContentWriterLondon() {
                       Assignment
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      We want to see how you think, research, and write with
-                      clarity and voice. This task tests your ability to combine
-                      news judgment, storytelling, and editorial tone, the three
-                      traits that define our writers at House of Summary.
+                      We want to see how you think, analyze, and structure
+                      compliance frameworks in a fast-moving media business.
+                      This task tests your ability to combine legal reasoning,
+                      risk awareness, and operational practicality; the three
+                      pillars of effective compliance leadership.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>Task Overview</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Create a short piece for London Summary, a daily
-                      newsletter that covers business, culture, city life, and
-                      the people shaping London today. Your goal is to show how
-                      you can write smart, concise, and engaging content that
-                      informs and entertains readers in just a few minutes.
+                      House of Summary operates a network of newsletters and
+                      digital media properties including Presidential Summary,
+                      Geopolitical Summary, Dubai Summary, and London Summary.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Use the examples on the{" "}
-                      <a
-                        className="underline"
-                        href="https://www.londonsummary.com/"
-                        target="_blank"
-                      >
-                        London Summary website
-                      </a>{" "}
-                      as a guide for tone, structure, and style.
+                      Your goal is to show how you would protect the company’s
+                      interests, ensure regulatory compliance, and set up
+                      simple, scalable processes for a growing cross-border
+                      business operating in the US, EU, and UAE.
                     </p>
-
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Choose <strong>one or more</strong> of the following
+                      directions:
+                    </p>
+                    <div>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        <strong>Option 1: Compliance Framework</strong>
+                      </p>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        Outline a plan to design a compliance and governance
+                        framework for a growing media company. Include:
+                      </p>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>
+                          Key policies and documents you’d prioritize (e.g.,
+                          Privacy Policy, Ad Disclosure, Data Handling, Content
+                          Guidelines)
+                        </span>
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>
+                          How would you ensure compliance across jurisdictions
+                          (US, EU, UAE)
+                        </span>
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>
+                          How you’d structure internal compliance checks or
+                          audits
+                        </span>
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        <strong>Option 2: Legal Risk Analysis</strong>
+                      </p>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        Identify and summarize three major legal risks for a
+                        digital newsletter business. Include:
+                      </p>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>
+                          Description of each risk (e.g., advertising
+                          disclosures, copyright, data protection)
+                        </span>
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>
+                          Practical mitigation steps
+                        </span>
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>
+                          Example of how you’d communicate these risks to a
+                          non-legal founder or department head
+                        </span>
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        <strong>Option 3: Contract and Policy Review</strong>
+                      </p>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        Draft or outline one of the following:
+                      </p>
+                      <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>A sample advertiser
+                          agreement clause covering disclosure, payment terms,
+                          and content liability
+                        </span>
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>A short privacy policy
+                          paragraph explaining how user email data is collected
+                          and used
+                        </span>
+                        <span className="block pl-6 -indent-4">
+                          <span className="mr-2">-</span>A freelancer or
+                          contributor clause addressing content ownership and
+                          confidentiality
+                        </span>
+                      </p>
+                    </div>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Send your assignment as a single PDF (maximum two pages)
+                        Send your assignment as a single PDF (maximum five
+                        pages)
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Subject line: Content Writer – [Your Name]
+                        Subject line: Legal & Compliance Officer – [Your Name]
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
@@ -281,17 +355,15 @@ export default function ContentWriterLondon() {
                     Job description
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                    As a Content Writer for London Summary, you’ll be
-                    responsible for researching, writing, and editing stories
-                    that bring the city to life, from emerging business trends
-                    and cultural shifts to quirky local happenings. You’ll
-                    curate complex topics into short, witty, and human pieces
-                    that resonate with busy readers. You’ll also help shape the
-                    newsletter’s tone, pitch story ideas, and collaborate with
-                    editors, designers, and growth teams to refine the overall
-                    voice and experience. The ideal candidate has a sharp
-                    editorial instinct, a feel for London’s rhythm, and an
-                    ability to turn insight into irresistible copy.
+                    As Legal & Compliance Officer, you’ll lead the company’s
+                    legal and compliance operations, ensuring all business
+                    activities align with international laws and best practices.
+                    You’ll review and draft contracts, manage privacy and
+                    advertising compliance, oversee risk management, and
+                    maintain proper documentation across entities. You’ll also
+                    support leadership on strategic legal decisions while
+                    developing frameworks that ensure the company remains
+                    secure, ethical, and future-ready.
                   </p>
                 </div>
                 {/* experience*/}
@@ -300,33 +372,51 @@ export default function ContentWriterLondon() {
                     Experience
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>Excellent written English and editorial judgment</li>
-                    <li>Strong research and summarization skills</li>
                     <li>
-                      Experience writing for newsletters, magazines, or digital
-                      media
+                      5+ years of experience in corporate law, compliance, or
+                      legal operations
                     </li>
                     <li>
-                      Deep curiosity about London’s people, culture, and
-                      politics
+                      Strong knowledge of international business law, contracts,
+                      and privacy regulations
                     </li>
                     <li>
-                      Attention to detail and comfort with fast-paced deadlines
+                      Excellent drafting, negotiation, and communication skills
+                    </li>
+                    <li>
+                      Ability to translate legal complexity into practical
+                      business advice
+                    </li>
+                    <li>
+                      Experience supporting cross-border entities or
+                      international teams
+                    </li>
+                    <li>
+                      Exceptional attention to detail and strong analytical
+                      skills
                     </li>
                   </ul>
                 </div>
-                {/* Nice to have*/}
+                {/* Nice to have */}
                 <div className="pt-[30px]">
                   <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
-                    Nice to have
+                    Benefits
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>
-                      Familiarity with SEO, analytics, and headline testing
+                      Experience in media, tech, or digital publishing sectors
                     </li>
-                    <li>Knowledge of local London publications and trends</li>
-                    <li>Experience with CMS tools like Substack or Beehiiv</li>
-                    <li>Light design instincts for layout or visuals</li>
+                    <li>
+                      Knowledge of advertising and sponsorship compliance
+                      regulations
+                    </li>
+                    <li>
+                      Familiarity with US, UAE, or Swiss corporate structures
+                    </li>
+                    <li>Understanding of IP licensing and brand protection</li>
+                    <li>
+                      Background in startup or holding company environments
+                    </li>
                   </ul>
                 </div>
                 {/* benefits */}
@@ -335,14 +425,12 @@ export default function ContentWriterLondon() {
                     Benefits
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
+                    <li>Part-time leadership role with global exposure</li>
+                    <li>Work directly with executive leadership</li>
+                    <li>Competitive compensation and flexible schedule</li>
                     <li>
-                      Be part of London Summary’s editorial core as it grows
-                    </li>
-                    <li>Freedom to pitch stories and shape tone</li>
-                    <li>Flexible hours and creative autonomy</li>
-                    <li>
-                      Work with a small, ambitious team that values quality,
-                      curiosity, and good humor
+                      Opportunity to set legal standards across a global media
+                      group
                     </li>
                   </ul>
                 </div>
@@ -407,16 +495,16 @@ export default function ContentWriterLondon() {
             The assignment is mandatory.
           </span>
           {/* <Link
-                       href="/careers/#assignment"
-                       className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
-                     >
-                       <span>Go to assignment</span>
-                       <img
-                         src="/careers/down.png"
-                         alt="arrow"
-                         className="w-[11px] h-[11px] ml-[15px]"
-                       />
-                     </Link> */}
+                             href="/careers/#assignment"
+                             className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+                           >
+                             <span>Go to assignment</span>
+                             <img
+                               src="/careers/down.png"
+                               alt="arrow"
+                               className="w-[11px] h-[11px] ml-[15px]"
+                             />
+                           </Link> */}
           <Link
             href="#assignment"
             scroll={false}
@@ -454,7 +542,7 @@ export default function ContentWriterLondon() {
               Remote
             </p>
             <p className="px-[12px] py-1 bg-[#DAEBE8] text-[15px] text-[#000] font-[400] leading-normal text-center items-center flex justify-center rounded-[5px]">
-              Full-time
+              Part-time
             </p>
           </div>
           {/* date */}
@@ -467,10 +555,10 @@ export default function ContentWriterLondon() {
           {/* 2 */}
           <div className="pt-[28px]">
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
-              Editorial
+              Other
             </p>
             <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
-              Content Writer
+              Legal & Compliance Officer
             </h2>
           </div>
           {/* 3 */}
@@ -494,16 +582,14 @@ export default function ContentWriterLondon() {
               Position summary
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              We’re looking for a sharp, curious, and culturally tuned-in
-              Content Writer to join the team behind London Summary, a growing
-              newsletter that curates the most interesting stories, people, and
-              happenings across the city. You’ll be part writer, part editor,
-              and part detective, someone who can capture London’s essence in a
-              few smart, engaging paragraphs. Your work will span news,
-              business, culture, and lifestyle, helping readers feel more
-              connected to London every morning. This is a remote role, but you
-              must be based in the UK, with a genuine familiarity and feel for
-              life in London.
+              We’re looking for a strategic and detail-oriented Legal &
+              Compliance Officer to handle legal, regulatory, and compliance
+              matters for House of Summary and its affiliated newsletters.
+              You’ll draft and review contracts, advise on data protection and
+              advertising law, and implement clear compliance policies across
+              multiple jurisdictions. This is a flexible, part-time position
+              ideal for a legal professional who thrives in fast-paced,
+              international environments.
             </p>
           </div>
           {/* Assignment*/}
@@ -513,43 +599,114 @@ export default function ContentWriterLondon() {
                 Assignment
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                We want to see how you think, research, and write with clarity
-                and voice. This task tests your ability to combine news
-                judgment, storytelling, and editorial tone, the three traits
-                that define our writers at House of Summary.
+                We want to see how you think, analyze, and structure compliance
+                frameworks in a fast-moving media business. This task tests your
+                ability to combine legal reasoning, risk awareness, and
+                operational practicality; the three pillars of effective
+                compliance leadership.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>Task Overview</strong>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Create a short piece for London Summary, a daily newsletter that
-                covers business, culture, city life, and the people shaping
-                London today. Your goal is to show how you can write smart,
-                concise, and engaging content that informs and entertains
-                readers in just a few minutes.
+                House of Summary operates a network of newsletters and digital
+                media properties including Presidential Summary, Geopolitical
+                Summary, Dubai Summary, and London Summary.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Use the examples on the{" "}
-                <a
-                  className="underline"
-                  href="https://www.londonsummary.com/"
-                  target="_blank"
-                >
-                  London Summary website
-                </a>{" "}
-                as a guide for tone, structure, and style.
+                Your goal is to show how you would protect the company’s
+                interests, ensure regulatory compliance, and set up simple,
+                scalable processes for a growing cross-border business operating
+                in the US, EU, and UAE.
               </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Choose <strong>one or more</strong> of the following directions:
+              </p>
+              <div>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  <strong>Option 1: Compliance Framework</strong>
+                </p>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  Outline a plan to design a compliance and governance framework
+                  for a growing media company. Include:
+                </p>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>
+                    Key policies and documents you’d prioritize (e.g., Privacy
+                    Policy, Ad Disclosure, Data Handling, Content Guidelines)
+                  </span>
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>
+                    How would you ensure compliance across jurisdictions (US,
+                    EU, UAE)
+                  </span>
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>
+                    How you’d structure internal compliance checks or audits
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  <strong>Option 2: Legal Risk Analysis</strong>
+                </p>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  Identify and summarize three major legal risks for a digital
+                  newsletter business. Include:
+                </p>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>
+                    Description of each risk (e.g., advertising disclosures,
+                    copyright, data protection)
+                  </span>
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>
+                    Practical mitigation steps
+                  </span>
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>
+                    Example of how you’d communicate these risks to a non-legal
+                    founder or department head
+                  </span>
+                </p>
+              </div>
+              <div>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  <strong>Option 3: Contract and Policy Review</strong>
+                </p>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  Draft or outline one of the following:
+                </p>
+                <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>A sample advertiser agreement
+                    clause covering disclosure, payment terms, and content
+                    liability
+                  </span>
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>A short privacy policy
+                    paragraph explaining how user email data is collected and
+                    used
+                  </span>
+                  <span className="block pl-6 -indent-4">
+                    <span className="pr-2">-</span>A freelancer or contributor
+                    clause addressing content ownership and confidentiality
+                  </span>
+                </p>
+              </div>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Send your assignment as a single PDF (maximum two pages)
+                  Send your assignment as a single PDF (maximum five pages)
                 </span>
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Subject line: Content Writer – [Your Name]
+                  Subject line: Legal & Compliance Officer – [Your Name]
                 </span>
 
                 <span className="block pl-6 -indent-4">
@@ -565,16 +722,14 @@ export default function ContentWriterLondon() {
               Job description
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              As a Content Writer for London Summary, you’ll be responsible for
-              researching, writing, and editing stories that bring the city to
-              life, from emerging business trends and cultural shifts to quirky
-              local happenings. You’ll curate complex topics into short, witty,
-              and human pieces that resonate with busy readers. You’ll also help
-              shape the newsletter’s tone, pitch story ideas, and collaborate
-              with editors, designers, and growth teams to refine the overall
-              voice and experience. The ideal candidate has a sharp editorial
-              instinct, a feel for London’s rhythm, and an ability to turn
-              insight into irresistible copy.
+              As Legal & Compliance Officer, you’ll lead the company’s legal and
+              compliance operations, ensuring all business activities align with
+              international laws and best practices. You’ll review and draft
+              contracts, manage privacy and advertising compliance, oversee risk
+              management, and maintain proper documentation across entities.
+              You’ll also support leadership on strategic legal decisions while
+              developing frameworks that ensure the company remains secure,
+              ethical, and future-ready.
             </p>
           </div>
           {/* Experience */}
@@ -583,27 +738,41 @@ export default function ContentWriterLondon() {
               Experience
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Excellent written English and editorial judgment</li>
-              <li>Strong research and summarization skills</li>
               <li>
-                Experience writing for newsletters, magazines, or digital media
+                5+ years of experience in corporate law, compliance, or legal
+                operations
               </li>
               <li>
-                Deep curiosity about London’s people, culture, and politics
+                Strong knowledge of international business law, contracts, and
+                privacy regulations
               </li>
-              <li>Attention to detail and comfort with fast-paced deadlines</li>
+              <li>Excellent drafting, negotiation, and communication skills</li>
+              <li>
+                Ability to translate legal complexity into practical business
+                advice
+              </li>
+              <li>
+                Experience supporting cross-border entities or international
+                teams
+              </li>
+              <li>
+                Exceptional attention to detail and strong analytical skills
+              </li>
             </ul>
           </div>
-          {/* Nice to have */}
+          {/* Nice to have*/}
           <div className="mt-[35px]">
-            <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
+            <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Nice to have
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Familiarity with SEO, analytics, and headline testing</li>
-              <li>Knowledge of local London publications and trends</li>
-              <li>Experience with CMS tools like Substack or Beehiiv</li>
-              <li>Light design instincts for layout or visuals</li>
+              <li>Experience in media, tech, or digital publishing sectors</li>
+              <li>
+                Knowledge of advertising and sponsorship compliance regulations
+              </li>
+              <li>Familiarity with US, UAE, or Swiss corporate structures</li>
+              <li>Understanding of IP licensing and brand protection</li>
+              <li>Background in startup or holding company environments</li>
             </ul>
           </div>
           {/* Benefits */}
@@ -612,12 +781,11 @@ export default function ContentWriterLondon() {
               Benefits
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Be part of London Summary’s editorial core as it grows</li>
-              <li>Freedom to pitch stories and shape tone</li>
-              <li>Flexible hours and creative autonomy</li>
+              <li>Part-time leadership role with global exposure</li>
+              <li>Work directly with executive leadership</li>
+              <li>Competitive compensation and flexible schedule</li>
               <li>
-                Work with a small, ambitious team that values quality,
-                curiosity, and good humor
+                Opportunity to set legal standards across a global media group
               </li>
             </ul>
           </div>
