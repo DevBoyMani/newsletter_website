@@ -2,18 +2,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const jobCriteria = [
-  { label: "Experience Level", data: "Mid-level", id: "1" },
-  { label: "Type", data: "Full Time", id: "2" },
+  { label: "Experience level", data: "Mid-level", id: "1" },
+  { label: "Type", data: "Full-time", id: "2" },
   { label: "Location", data: "100% Remote", id: "3" },
   {
-    label: "Salary",
-    data: "$12,000–$24,000 (depending on experience)",
+    label: "Salary range",
+    data: "$12,000–$24,000",
     id: "4",
   },
-  { label: "Time", data: "40 hours per week", id: "5" },
+  { label: "Work hours", data: "40 hours per week", id: "5" },
 ];
 
-export default function ContentWriterLondon() {
+export default function VideoEditor() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -63,14 +63,15 @@ export default function ContentWriterLondon() {
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
-            {/* left */}
+            {/* left default*/}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
               <div className="h-auto">
                 <Link
                   href="/careers"
                   className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline "
                 >
-                  <span className="text-[20px]"> &#8592;</span> All job offers
+                  <span className="text-[20px]"> &#8592;</span> All open
+                  positions
                 </Link>
                 <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                   <div className="">
@@ -78,15 +79,16 @@ export default function ContentWriterLondon() {
                       Apply now!
                     </p>
                     <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">
-                      If you're interested in end-to-end development and want to
-                      work with cutting-edge technologies, come on board.
+                      If you’re ready to join a fast-moving global media company
+                      and work with ambitious, creative people who value quality
+                      and initiative, we’d love to hear from you.
                     </p>
                     <div className="flex flex-row ">
                       <p
                         className="text-[#fff] text-[16px] font-[400]
                                      hover:underline cursor-pointer"
                       >
-                        careers@sagravia.com
+                        careers@houseofsummary.com
                       </p>
                       <img
                         src="/careers/content-copy.png"
@@ -130,10 +132,10 @@ export default function ContentWriterLondon() {
                 {/* 2 */}
                 <div className="pt-[30px]">
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
-                    Editorial
+                    Design
                   </p>
                   <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
-                    Content Writer
+                    Video Editor
                   </h2>
                 </div>
                 {/* 3 */}
@@ -209,17 +211,14 @@ export default function ContentWriterLondon() {
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    We’re looking for a sharp, curious, and culturally tuned-in
-                    Content Writer to join the team behind London Summary, a
-                    growing newsletter that curates the most interesting
-                    stories, people, and happenings across the city. You’ll be
-                    part writer, part editor, and part detective, someone who
-                    can capture London’s essence in a few smart, engaging
-                    paragraphs. Your work will span news, business, culture, and
-                    lifestyle, helping readers feel more connected to London
-                    every morning. This is a remote role, but you must be based
-                    in the UK, with a genuine familiarity and feel for life in
-                    London.
+                    The Video Editor will be responsible for producing
+                    short-form video content across House of Summary’s digital
+                    platforms, including Instagram and TikTok accounts for
+                    Presidential Summary, Geopolitical Summary, London Summary,
+                    and Dubai Summary. You’ll work with our content and design
+                    teams to edit reels, create transitions, and ensure brand
+                    consistency. Your work will focus on clarity, engagement,
+                    and storytelling.
                   </p>
                 </div>
                 {/* assignment */}
@@ -229,44 +228,62 @@ export default function ContentWriterLondon() {
                       Assignment
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      We want to see how you think, research, and write with
-                      clarity and voice. This task tests your ability to combine
-                      news judgment, storytelling, and editorial tone, the three
-                      traits that define our writers at House of Summary.
+                      We want to understand your editing style, creative
+                      instinct, and ability to turn raw information into an
+                      engaging visual story.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>Task Overview</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Create a short piece for London Summary, a daily
-                      newsletter that covers business, culture, city life, and
-                      the people shaping London today. Your goal is to show how
-                      you can write smart, concise, and engaging content that
-                      informs and entertains readers in just a few minutes.
-                    </p>
-                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Use the examples on the{" "}
+                      Visit{" "}
                       <a
                         className="underline"
-                        href="https://www.londonsummary.com/"
+                        href="https://www.houseofsummary.com/readers"
                         target="_blank"
                       >
-                        London Summary website
+                        https://www.houseofsummary.com/readers
                       </a>{" "}
-                      as a guide for tone, structure, and style.
+                      to get a feel for the style and tone of our publications.
+                      Then, select one article or theme and create a 30-60
+                      second sample reel that represents how you’d visually
+                      bring our stories to social platforms.
                     </p>
-
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <strong>Your video should:</strong>
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Hook viewers within the first 2 seconds.
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Maintain strong pacing throughout with on-screen text
+                        and transitions.
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Convey a clear message consistent with our tone
+                        (informative, global, polished).
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Include subtitles and simple motion graphics.
+                      </span>
+                    </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Send your assignment as a single PDF (maximum two pages)
+                        Upload your video file (MP4) or unlisted YouTube/Vimeo
+                        link.
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Subject line: Content Writer – [Your Name]
+                        Subject line: Video Editor (Reels) – [Your Name]
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
@@ -281,17 +298,13 @@ export default function ContentWriterLondon() {
                     Job description
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                    As a Content Writer for London Summary, you’ll be
-                    responsible for researching, writing, and editing stories
-                    that bring the city to life, from emerging business trends
-                    and cultural shifts to quirky local happenings. You’ll
-                    curate complex topics into short, witty, and human pieces
-                    that resonate with busy readers. You’ll also help shape the
-                    newsletter’s tone, pitch story ideas, and collaborate with
-                    editors, designers, and growth teams to refine the overall
-                    voice and experience. The ideal candidate has a sharp
-                    editorial instinct, a feel for London’s rhythm, and an
-                    ability to turn insight into irresistible copy.
+                    As a Video Editor for Reels, you’ll create short-form
+                    content tailored for social media, transforming newsletter
+                    insights into captivating visual stories. You’ll edit
+                    footage, source clips, design text animations, and ensure
+                    alignment with each brand’s visual identity. Working closely
+                    with the content and design teams, you’ll optimize videos
+                    for engagement, retention, and storytelling impact.
                   </p>
                 </div>
                 {/* experience*/}
@@ -300,33 +313,43 @@ export default function ContentWriterLondon() {
                     Experience
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>Excellent written English and editorial judgment</li>
-                    <li>Strong research and summarization skills</li>
                     <li>
-                      Experience writing for newsletters, magazines, or digital
-                      media
+                      2-4 years of experience in video editing or motion design
                     </li>
                     <li>
-                      Deep curiosity about London’s people, culture, and
-                      politics
+                      Proficiency in Adobe Premiere Pro, Final Cut Pro, or
+                      DaVinci Resolve
                     </li>
                     <li>
-                      Attention to detail and comfort with fast-paced deadlines
+                      Strong sense of rhythm, storytelling, and attention to
+                      detail
                     </li>
+                    <li>
+                      Experience editing Reels, TikToks, or short YouTube videos
+                    </li>
+                    <li>
+                      Ability to work quickly with minimal supervision and meet
+                      deadlines
+                    </li>
+                    <li>Familiarity with social media trends and analytics</li>
                   </ul>
                 </div>
-                {/* Nice to have*/}
+                {/* Nice to have */}
                 <div className="pt-[30px]">
                   <p className="text-[#121212] text-[18px] font-[700] leading-[141%] pb-2">
                     Nice to have
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
+                    <li>Basic knowledge of color grading and sound design</li>
                     <li>
-                      Familiarity with SEO, analytics, and headline testing
+                      Experience creating AI-enhanced or data-driven video
+                      content
                     </li>
-                    <li>Knowledge of local London publications and trends</li>
-                    <li>Experience with CMS tools like Substack or Beehiiv</li>
-                    <li>Light design instincts for layout or visuals</li>
+                    <li>Familiarity with After Effects or CapCut templates</li>
+                    <li>
+                      Understanding of brand storytelling and audience targeting
+                    </li>
+                    <li>Interest in news, geopolitics, or business topics</li>
                   </ul>
                 </div>
                 {/* benefits */}
@@ -335,15 +358,10 @@ export default function ContentWriterLondon() {
                     Benefits
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>
-                      Be part of London Summary’s editorial core as it grows
-                    </li>
-                    <li>Freedom to pitch stories and shape tone</li>
-                    <li>Flexible hours and creative autonomy</li>
-                    <li>
-                      Work with a small, ambitious team that values quality,
-                      curiosity, and good humor
-                    </li>
+                    <li>Competitive salary with growth opportunities</li>
+                    <li>Flexible working hours and remote setup</li>
+                    <li>Creative freedom within brand guidelines</li>
+                    <li>Collaboration with an international media team</li>
                   </ul>
                 </div>
                 {/* join our team & how to apply default*/}
@@ -407,16 +425,16 @@ export default function ContentWriterLondon() {
             The assignment is mandatory.
           </span>
           {/* <Link
-                       href="/careers/#assignment"
-                       className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
-                     >
-                       <span>Go to assignment</span>
-                       <img
-                         src="/careers/down.png"
-                         alt="arrow"
-                         className="w-[11px] h-[11px] ml-[15px]"
-                       />
-                     </Link> */}
+                 href="/careers/#assignment"
+                 className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+               >
+                 <span>Go to assignment</span>
+                 <img
+                   src="/careers/down.png"
+                   alt="arrow"
+                   className="w-[11px] h-[11px] ml-[15px]"
+                 />
+               </Link> */}
           <Link
             href="#assignment"
             scroll={false}
@@ -467,10 +485,10 @@ export default function ContentWriterLondon() {
           {/* 2 */}
           <div className="pt-[28px]">
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
-              Editorial
+              Design
             </p>
             <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
-              Content Writer
+              Video Editor
             </h2>
           </div>
           {/* 3 */}
@@ -494,16 +512,13 @@ export default function ContentWriterLondon() {
               Position summary
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              We’re looking for a sharp, curious, and culturally tuned-in
-              Content Writer to join the team behind London Summary, a growing
-              newsletter that curates the most interesting stories, people, and
-              happenings across the city. You’ll be part writer, part editor,
-              and part detective, someone who can capture London’s essence in a
-              few smart, engaging paragraphs. Your work will span news,
-              business, culture, and lifestyle, helping readers feel more
-              connected to London every morning. This is a remote role, but you
-              must be based in the UK, with a genuine familiarity and feel for
-              life in London.
+              The Video Editor will be responsible for producing short-form
+              video content across House of Summary’s digital platforms,
+              including Instagram and TikTok accounts for Presidential Summary,
+              Geopolitical Summary, London Summary, and Dubai Summary. You’ll
+              work with our content and design teams to edit reels, create
+              transitions, and ensure brand consistency. Your work will focus on
+              clarity, engagement, and storytelling.
             </p>
           </div>
           {/* Assignment*/}
@@ -513,31 +528,49 @@ export default function ContentWriterLondon() {
                 Assignment
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                We want to see how you think, research, and write with clarity
-                and voice. This task tests your ability to combine news
-                judgment, storytelling, and editorial tone, the three traits
-                that define our writers at House of Summary.
+                We want to understand your editing style, creative instinct, and
+                ability to turn raw information into an engaging visual story.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>Task Overview</strong>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Create a short piece for London Summary, a daily newsletter that
-                covers business, culture, city life, and the people shaping
-                London today. Your goal is to show how you can write smart,
-                concise, and engaging content that informs and entertains
-                readers in just a few minutes.
-              </p>
-              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Use the examples on the{" "}
+                Visit{" "}
                 <a
                   className="underline"
-                  href="https://www.londonsummary.com/"
+                  href="https://www.houseofsummary.com/readers"
                   target="_blank"
                 >
-                  London Summary website
+                  https://www.houseofsummary.com/readers
                 </a>{" "}
-                as a guide for tone, structure, and style.
+                to get a feel for the style and tone of our publications. Then,
+                select one article or theme and create a 30-60 second sample
+                reel that represents how you’d visually bring our stories to
+                social platforms.
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <strong>Your video should:</strong>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  Hook viewers within the first 2 seconds.
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  Maintain strong pacing throughout with on-screen text and
+                  transitions.
+                </span>
+
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  Convey a clear message consistent with our tone (informative,
+                  global, polished).
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  Include subtitles and simple motion graphics.
+                </span>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
@@ -545,11 +578,11 @@ export default function ContentWriterLondon() {
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Send your assignment as a single PDF (maximum two pages)
+                  Upload your video file (MP4) or unlisted YouTube/Vimeo link.
                 </span>
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Subject line: Content Writer – [Your Name]
+                  Subject line: Video Editor (Reels) – [Your Name]
                 </span>
 
                 <span className="block pl-6 -indent-4">
@@ -565,16 +598,13 @@ export default function ContentWriterLondon() {
               Job description
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              As a Content Writer for London Summary, you’ll be responsible for
-              researching, writing, and editing stories that bring the city to
-              life, from emerging business trends and cultural shifts to quirky
-              local happenings. You’ll curate complex topics into short, witty,
-              and human pieces that resonate with busy readers. You’ll also help
-              shape the newsletter’s tone, pitch story ideas, and collaborate
-              with editors, designers, and growth teams to refine the overall
-              voice and experience. The ideal candidate has a sharp editorial
-              instinct, a feel for London’s rhythm, and an ability to turn
-              insight into irresistible copy.
+              As a Video Editor for Reels, you’ll create short-form content
+              tailored for social media, transforming newsletter insights into
+              captivating visual stories. You’ll edit footage, source clips,
+              design text animations, and ensure alignment with each brand’s
+              visual identity. Working closely with the content and design
+              teams, you’ll optimize videos for engagement, retention, and
+              storytelling impact.
             </p>
           </div>
           {/* Experience */}
@@ -583,27 +613,39 @@ export default function ContentWriterLondon() {
               Experience
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Excellent written English and editorial judgment</li>
-              <li>Strong research and summarization skills</li>
+              <li>2-4 years of experience in video editing or motion design</li>
               <li>
-                Experience writing for newsletters, magazines, or digital media
+                Proficiency in Adobe Premiere Pro, Final Cut Pro, or DaVinci
+                Resolve
               </li>
               <li>
-                Deep curiosity about London’s people, culture, and politics
+                Strong sense of rhythm, storytelling, and attention to detail
               </li>
-              <li>Attention to detail and comfort with fast-paced deadlines</li>
+              <li>
+                Experience editing Reels, TikToks, or short YouTube videos
+              </li>
+              <li>
+                Ability to work quickly with minimal supervision and meet
+                deadlines
+              </li>
+              <li>Familiarity with social media trends and analytics</li>
             </ul>
           </div>
-          {/* Nice to have */}
+          {/* Nice to have*/}
           <div className="mt-[35px]">
-            <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
+            <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Nice to have
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Familiarity with SEO, analytics, and headline testing</li>
-              <li>Knowledge of local London publications and trends</li>
-              <li>Experience with CMS tools like Substack or Beehiiv</li>
-              <li>Light design instincts for layout or visuals</li>
+              <li>Basic knowledge of color grading and sound design</li>
+              <li>
+                Experience creating AI-enhanced or data-driven video content
+              </li>
+              <li>Familiarity with After Effects or CapCut templates</li>
+              <li>
+                Understanding of brand storytelling and audience targeting
+              </li>
+              <li>Interest in news, geopolitics, or business topics</li>
             </ul>
           </div>
           {/* Benefits */}
@@ -612,13 +654,10 @@ export default function ContentWriterLondon() {
               Benefits
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Be part of London Summary’s editorial core as it grows</li>
-              <li>Freedom to pitch stories and shape tone</li>
-              <li>Flexible hours and creative autonomy</li>
-              <li>
-                Work with a small, ambitious team that values quality,
-                curiosity, and good humor
-              </li>
+              <li>Competitive salary with growth opportunities</li>
+              <li>Flexible working hours and remote setup</li>
+              <li>Creative freedom within brand guidelines</li>
+              <li>Collaboration with an international media team</li>
             </ul>
           </div>
           {/* Join our team */}

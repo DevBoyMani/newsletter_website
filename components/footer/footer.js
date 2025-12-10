@@ -11,27 +11,27 @@ const socialMediaIcons = [
   {
     name: "x",
     src: "/f-x.png",
-    href: "https://www.presidentialsummary.com/",
+    href: "https://x.com/Houseofsummary",
   },
   {
     name: "insta",
     src: "/f-insta.png",
-    href: "https://www.presidentialsummary.com/",
+    href: "https://www.instagram.com/houseofsummary/",
   },
   {
     name: "fb",
     src: "/f-fb.png",
-    href: "https://www.presidentialsummary.com/",
+    href: "https://www.facebook.com/Houseofsummary/",
   },
   {
     name: "ln",
     src: "/f-ln.png",
-    href: "https://www.presidentialsummary.com/",
+    href: "https://www.linkedin.com/company/houseofsummary/",
   },
   {
     name: "threads",
     src: "/f-threads.png",
-    href: "https://www.presidentialsummary.com/",
+    href: "https://www.threads.com/@houseofsummary",
   },
 ];
 

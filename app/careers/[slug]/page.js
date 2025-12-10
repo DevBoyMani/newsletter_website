@@ -3,31 +3,24 @@
 import { useParams } from "next/navigation";
 import SocialMediaIntern from "../../../components/socialMediaIntern/socialMediaIntern";
 import PythonDeveloper from "../../../components/pythonDeveloper/pythonDeveloper";
-import CareersFullStack from "../../../components/careersFullStack/careersFullStack";
-import CareersLogoDesigner from "../../../components/careersLogoDesigner/careersLogoDesigner";
-import CareersWebDesigner from "../../../components/careersWebDesigner/careersWebDesigner";
-import CareersBackendDev from "../../../components/careersBackendDev/careersBackendDev";
-import CareersSoftWareEngineer from "../../../components/careersSoftwareEngineer/careersSoftwareEngineer";
 import ContentWriterLondon from "../../../components/contentWriterLondon/contentWriterLondon";
-
-// import dynamic from 'next/dynamic';
-
-// Lazy import your components
-// const GraphicDesigner = dynamic(() => import('@/components/careers/GraphicDesigner'));
-// const UXDesigner = dynamic(() => import('@/components/careers/UXDesigner'));
-// const FullStack = dynamic(() => import('@/components/careers/FullStack'));
-// const BackendDev = dynamic(() => import('@/components/careers/BackendDev'));
-// const SoftwareEngineer = dynamic(() => import('@/components/careers/SoftwareEngineer'));
+import SeoManager from "../../../components/seoManager/seoManager";
+import HeadOfSales from "../../../components/headOfSales/headOfSales";
+import BrandPartnershipsManager from "../../../components/brandPartnershipsManager/brandPartnershipsManager";
+import LegalComplianceOfficer from "../../../components/legalComplianceOfficer/legalComplianceOfficer";
+import VideoEditor from "../../../components/videoEditor/videoEditor";
+import AssistantToTheCOO from "../../../components/assistantToTheCOO/assistantToTheCOO";
 
 const componentMap = {
   "marketing-social": () => <SocialMediaIntern />,
   "python-developer": () => <PythonDeveloper />,
   "content-writer-london-summary": () => <ContentWriterLondon />,
-  "seo-manager": () => <CareersFullStack />,
-  "leadership-ad-sales": () => <CareersLogoDesigner />,
-  "legal-compliance-officer": () => <CareersWebDesigner />,
-  "brand-partnerships-manager": () => <CareersBackendDev />,
-  "video-editor": () => <CareersSoftWareEngineer />,
+  "seo-manager": () => <SeoManager />,
+  "head-of-sales": () => <HeadOfSales />,
+  "legal-compliance-officer": () => <LegalComplianceOfficer />,
+  "brand-partnerships-manager": () => <BrandPartnershipsManager />,
+  "video-editor": () => <VideoEditor />,
+  "assistant-to-the-coo": () => <AssistantToTheCOO />,
 };
 
 export default function CareersSlug() {

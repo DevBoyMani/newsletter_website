@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
@@ -165,17 +167,22 @@ export default function SocialMediaIntern() {
                         mandatory.
                       </span>
                       <a
-                        href="#"
+                        href="#assignment"
                         onClick={(e) => {
                           e.preventDefault();
-                          const section = document.querySelector("#assignment");
-                          if (!section) return; // prevent error if not found
 
-                          const yOffset = -100; // adjust for sticky header height if needed
+                          const section = document.querySelector("#assignment");
+                          if (!section) return;
+
+                          const yOffset = -100; // adjust for sticky left panel
                           const y =
                             section.getBoundingClientRect().top +
                             window.pageYOffset +
                             yOffset;
+
+                          // ✅ update slug (same as mobile)
+                          window.history.pushState(null, "", "#assignment");
+
                           window.scrollTo({ top: y, behavior: "smooth" });
                         }}
                       >
@@ -226,29 +233,37 @@ export default function SocialMediaIntern() {
                       newsletters:
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <span className="mx-6">-</span>
-                      <a
-                        href="https://www.presidentialsummary.com/"
-                        target="_blank"
-                      >
-                        <span className="underline">Presidential Summary</span>
-                      </a>
-                      &nbsp; (global news)
-                      <br />
-                      <span className="mx-6">-</span>
-                      <a
-                        href="https://www.geopoliticalsummary.com/"
-                        target="_blank"
-                      >
-                        <span className="underline">Geopolitical Summary</span>
-                      </a>
-                      &nbsp;(international politics)
-                      <br />
-                      <span className="mx-6">-</span>
-                      <a href="https://www.dubaisummary.com/" target="_blank">
-                        <span className="underline">Dubai Summary</span>
-                      </a>{" "}
-                      &nbsp;(UAE news and lifestyle)
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <a
+                          href="https://www.presidentialsummary.com/"
+                          target="_blank"
+                        >
+                          <span className="underline">
+                            Presidential Summary
+                          </span>
+                        </a>
+                        &nbsp; (global news)
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <a
+                          href="https://www.geopoliticalsummary.com/"
+                          target="_blank"
+                        >
+                          <span className="underline">
+                            Geopolitical Summary
+                          </span>
+                        </a>
+                        &nbsp;(international politics)
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <a href="https://www.dubaisummary.com/" target="_blank">
+                          <span className="underline">Dubai Summary</span>
+                        </a>{" "}
+                        &nbsp;(UAE news and lifestyle)
+                      </span>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                       Pick one newsletter and create a short 3-day content plan
@@ -258,41 +273,54 @@ export default function SocialMediaIntern() {
                       <strong>What to include:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <span className="mx-6">-</span>
-                      Which newsletter did you choose and why?
-                      <br />
-                      <span className="mx-6">-</span>
-                      Who is the typical audience? (Age, interests, and why
-                      they’d follow this account)
-                      <br />
-                      <span className="mx-6">-</span>
-                      Three posts for three days:
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Give each post a title or hook
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Add a short caption (1-2 sentences)
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Say which platform it’s for (e.g., Instagram, Threads,
-                      LinkedIn)
-                      <br />
-                      <span className="ml-16 mr-6">-</span>
-                      Add a quick note on why it would perform well
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Which newsletter did you choose and why?
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Who is the typical audience? (Age, interests, and why
+                        they’d follow this account)
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        Three posts for three days:
+                      </span>
+
+                      <span className="ml-14 block -indent-4 mt-2">
+                        <span className="mr-2">-</span>
+                        Give each post a title or hook
+                      </span>
+                      <span className="ml-14 block -indent-4">
+                        <span className="mr-2">-</span>
+                        Add a short caption (1-2 sentences)
+                      </span>
+                      <span className="ml-14 block -indent-4">
+                        <span className="mr-2">-</span>
+                        Say which platform it’s for (e.g., Instagram, Threads,
+                        LinkedIn)
+                      </span>
+                      <span className="ml-14 block -indent-4">
+                        <span className="mr-2">-</span>
+                        Add a quick note on why it would perform well
+                      </span>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      <span className="mx-6">-</span>
-                      Send your short plan as a 1-page PDF
-                      <br />
-                      <span className="mx-6">-</span>
-                      Subject line: Social Media Intern – [Your Name]
-                      <br />
-                      <span className="mx-6">-</span>
-                      Email it to careers@houseofsummary.com
+                      <span className="ml-6 block -indent-4">
+                        <span className="mr-2">-</span>
+                        Send your short plan as a 1-page PDF
+                      </span>
+                      <span className="ml-6 block -indent-4">
+                        <span className="mr-2">-</span>
+                        Subject line: Social Media Intern – [Your Name]
+                      </span>
+                      <span className="ml-6 block -indent-4">
+                        <span className="mr-2">-</span>
+                        Email it to careers@houseofsummary.com
+                      </span>
                     </p>
                   </div>
                 </div>
@@ -404,6 +432,53 @@ export default function SocialMediaIntern() {
       </div>
 
       {/* mobile */}
+      {/* Careers banner */}
+      <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
+        <div className="bg-[#E5C8CD] w-full px-4 py-[11px] flex items-center justify-center">
+          <span className="text-[#000000] text-[12px] font-[600] leading-normal">
+            The assignment is mandatory.
+          </span>
+          {/* <Link
+            href="/careers/#assignment"
+            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+          >
+            <span>Go to assignment</span>
+            <img
+              src="/careers/down.png"
+              alt="arrow"
+              className="w-[11px] h-[11px] ml-[15px]"
+            />
+          </Link> */}
+          <Link
+            href="#assignment"
+            scroll={false}
+            onClick={(e) => {
+              e.preventDefault();
+
+              const section = document.querySelector("#assignment");
+              if (!section) return;
+
+              const yOffset = 760; // height of mobile banner
+              const y =
+                section.getBoundingClientRect().top +
+                window.pageYOffset +
+                yOffset;
+
+              window.history.pushState(null, "", "#assignment"); // ✅ updates slug
+              window.scrollTo({ top: y, behavior: "smooth" });
+            }}
+            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+          >
+            <span>Go to assignment</span>
+            <img
+              src="/careers/down.png"
+              alt="arrow"
+              className="w-[11px] h-[11px] ml-[15px]"
+            />
+          </Link>
+        </div>
+      </div>
+
       <div className="block lg:hidden ">
         <div className="px-4 pt-[187px] pb-[45px] bg-[#FAFAFA]">
           {/* 1 */}
@@ -460,7 +535,7 @@ export default function SocialMediaIntern() {
           </div>
           {/* Assignment*/}
           <div className="px-[16px] py-[30px] bg-[#DAEBE8] rounded-[5px] mt-[35px]">
-            <div className="">
+            <div id="assignment" className="">
               <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
                 Assignment
               </p>
@@ -468,13 +543,13 @@ export default function SocialMediaIntern() {
                 We’d love to see how you think about social media; how you plan,
                 create, and communicate ideas that work.
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>Your task:</strong>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 Imagine you’re managing social media for one of our newsletters:
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>{" "}
                   <a
@@ -512,14 +587,14 @@ export default function SocialMediaIntern() {
                 </span>
               </p>
 
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 Pick one newsletter and create a short 3-day content plan for
                 it.
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>What to include:</strong>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span> Which newsletter did you
                   choose and why?
@@ -534,7 +609,7 @@ export default function SocialMediaIntern() {
                   <span className="pr-2">-</span> Three posts for three days:
                 </span>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-12 -indent-4">
                   <span className="pr-2">-</span>
                   Give each post a title or hook
@@ -555,10 +630,10 @@ export default function SocialMediaIntern() {
                   Add a quick note on why it would perform well
                 </span>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
               </p>
-              <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-4">
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
                   Send your short plan as a 1-page PDF
@@ -598,7 +673,7 @@ export default function SocialMediaIntern() {
             <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
               Experience
             </p>
-            <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-[25px]">
+            <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
               <li>
                 Familiarity with Facebook, Instagram, Threads, X, Reddit, and
                 LinkedIn
@@ -617,7 +692,7 @@ export default function SocialMediaIntern() {
             <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Benefits
             </p>
-            <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-[25px]">
+            <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
               <li>Real ownership of posts and weekly campaigns</li>
               <li>Mentorship from editors and marketers</li>
               <li>Portfolio pieces with measurable outcomes</li>
@@ -647,7 +722,7 @@ export default function SocialMediaIntern() {
                 </p>
                 <div className=" flex flex-col py-3">
                   <div className="w-[85%]">
-                    <p className="text-[#000] text-[16px] font-[400] leading-[174%]">
+                    <p className="text-[#000] text-[14px] font-[400] leading-[174%]">
                       Send your CV, a motivational letter, and the completed
                       assignment to  
                       <span className="underline cursor-pointer">

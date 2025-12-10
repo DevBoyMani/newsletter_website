@@ -25,7 +25,7 @@ const sectionsWithContent = [
     content: (
       <>
         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
-          1.1 Personal Information
+          <strong>1.1 Personal Information</strong>
         </p>
         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
           We may collect personal information that you voluntarily provide to us
@@ -65,7 +65,7 @@ const sectionsWithContent = [
           list so that you receive no further email communication from us.
         </p>
         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
-          1.2 Non-Personal Information
+          <strong>1.2 Non-Personal Information</strong>
         </p>
         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
           We may also collect non-personal information about you automatically
@@ -117,7 +117,23 @@ const sectionsWithContent = [
           We do not sell or rent your personal information to third parties. We
           may share your information with:
         </p>
-        <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
+        <ul className="custom-list text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
+          <li>
+            Service Providers: Third-party vendors who help us operate our
+            Website and provide our newsletter services, subject to
+            confidentiality agreements.
+          </li>
+          <li>
+            Legal Requirements: If required by law or in response to valid
+            requests by public authorities (e.g., a court or government agency).
+          </li>
+          <li>
+            Business Transfers: In the event of a merger, acquisition, or sale
+            of all or a portion of our assets, your information may be
+            transferred as part of that transaction.
+          </li>
+        </ul>
+        {/* <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
           Service Providers: Third-party vendors who help us operate our Website
           and provide our newsletter services, subject to confidentiality
           agreements.
@@ -128,9 +144,11 @@ const sectionsWithContent = [
           Business Transfers: In the event of a merger, acquisition, or sale of
           all or a portion of our assets, your information may be transferred as
           part of that transaction.
-        </p>
+        </p> */}
         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
-          We may disclose Personal Data and other information as follows:
+          <strong>
+            We may disclose Personal Data and other information as follows:
+          </strong>
         </p>
         <p className="text-[#000] lg:text-[16px] text-[14px] font-[400] leading-[174%] pb-[16px]">
           1. Third Parties that Help Provide the Messaging Service: We will not

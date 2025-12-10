@@ -65,76 +65,6 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isBlogPage, pathname, isMobile]);
 
-  //  site-footer
-
-  // useEffect(() => {
-  //   if (typeof window === "undefined") return;
-
-  //   let timeoutId: NodeJS.Timeout | null = null;
-  //   let animationFrameId: number | null = null;
-
-  //   const checkNavbarFooterContact = () => {
-  //     const navbar = document.querySelector('nav, header, [role="navigation"]');
-  //     const desktopFooter = document.getElementById("site-footer");
-  //     const mobileFooter = document.getElementById("mob-site-footer");
-
-  //     if (!navbar) return;
-
-  //     const navbarRect = navbar.getBoundingClientRect();
-  //     const navbarBottom = navbarRect.bottom;
-
-  //     // Check desktop footer contact
-  //     if (desktopFooter) {
-  //       const footerRect = desktopFooter.getBoundingClientRect();
-  //       const footerTop = footerRect.top;
-  //       setFooterInView(navbarBottom >= footerTop);
-  //     }
-
-  //     // Check mobile footer contact - more sensitive detection
-  //     if (mobileFooter) {
-  //       const footerRect = mobileFooter.getBoundingClientRect();
-  //       const footerTop = footerRect.top;
-
-  //       // For mobile, use a smaller threshold for instant detection
-  //       const isTouching = navbarBottom >= footerTop - 5; // 5px buffer for instant detection
-  //       setMobFooterInView(isTouching);
-  //     }
-  //   };
-
-  //   // Use requestAnimationFrame for smoother mobile performance
-  //   const handleScroll = () => {
-  //     if (timeoutId) clearTimeout(timeoutId);
-
-  //     // Cancel previous animation frame if exists
-  //     if (animationFrameId) cancelAnimationFrame(animationFrameId);
-
-  //     // Use requestAnimationFrame for instant response on mobile
-  //     animationFrameId = requestAnimationFrame(checkNavbarFooterContact);
-
-  //     // Also set timeout for resize events
-  //     timeoutId = setTimeout(checkNavbarFooterContact, 10);
-  //   };
-
-  //   // Initial check
-  //   checkNavbarFooterContact();
-
-  //   // Add event listeners with better options for mobile
-  //   window.addEventListener("scroll", handleScroll, {
-  //     passive: true,
-  //     capture: true,
-  //   });
-  //   window.addEventListener("resize", handleScroll, { passive: true });
-  //   window.addEventListener("touchmove", handleScroll, { passive: true });
-
-  //   return () => {
-  //     if (timeoutId) clearTimeout(timeoutId);
-  //     if (animationFrameId) cancelAnimationFrame(animationFrameId);
-  //     window.removeEventListener("scroll", handleScroll);
-  //     window.removeEventListener("resize", handleScroll);
-  //     window.removeEventListener("touchmove", handleScroll);
-  //   };
-  // }, [setFooterInView, setMobFooterInView]);
-
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -152,20 +82,6 @@ export default function Navbar() {
       const navbarRect = navbar.getBoundingClientRect();
       const navbarBottom = navbarRect.bottom;
 
-      // ✅ Check if inside ad-blocker section
-      // if (adBlocker) {
-      //   const adRect = adBlocker.getBoundingClientRect();
-
-      //   const isInAdBlocker =
-      //     navbarBottom >= adRect.top && navbarBottom <= adRect.bottom;
-
-      //   if (isInAdBlocker) {
-      //     navbar.classList.add("nav-colored");
-      //   } else {
-      //     navbar.classList.remove("nav-colored");
-      //   }
-      // }
-      // ✅ Check if inside ad-blocker section
       if (adBlocker) {
         const adRect = adBlocker.getBoundingClientRect();
 

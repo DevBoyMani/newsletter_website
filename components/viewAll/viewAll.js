@@ -92,7 +92,7 @@ export default function ViewAll({ activeCategory }) {
         "This is a leadership role for someone who thrives at the intersection of media, sales, and strategy, turning brand relationships into long-term revenue partnerships and premium advertising experiences.",
       button: "Apply",
       theme: "#1A1A1A",
-      slug: "leadership-ad-sales",
+      slug: "head-of-sales",
     },
     {
       tag: "others",
@@ -144,6 +144,23 @@ export default function ViewAll({ activeCategory }) {
       button: "Apply",
       theme: "#01261E",
       slug: "video-editor",
+    },
+    {
+      tag: "other",
+      name: "Other",
+      title: "Assistant to the COO",
+      experience: "Junior",
+      content:
+        "Support the COO with daily operations, coordination, and communication across teams in a fast-growing international media company.",
+      popupSalary: "$12,000–$24,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is looking for a proactive Assistant to the COO to help streamline operations and communication across departments. You’ll work directly with leadership, helping manage schedules, follow-ups, and team coordination.",
+      popupContent2:
+        "This role is ideal for someone organized, curious, and eager to learn how global media operations function from the inside. You’ll support everything from project planning to internal communications.",
+      button: "Apply",
+      theme: "#33a4b9",
+      slug: "assistant-to-the-coo",
     },
   ];
 

@@ -2,13 +2,6 @@
 
 import React, { useState, useRef } from "react";
 import ViewAll from "../../components/viewAll/viewAll";
-import Leadership from "../../components/leadership/leadership";
-import Others from "../../components/others/others";
-import Design from "../../components/design/design";
-import Engineering from "../../components/engineering/engineering";
-import Editorial from "../../components/editorial/editorial";
-import Tech from "../../components/tech/tech";
-import Marketing from "../../components/marketing/marketing";
 
 import CareersTestimonialsTab from "../../components/careersTestimonialTab/careersTestimonialsTab";
 import CareersStepAccordionSection from "../../components/careersStepAccordionSection/careersStepAccordionSection";

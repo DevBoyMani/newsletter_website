@@ -2,18 +2,18 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 
 const jobCriteria = [
-  { label: "Experience Level", data: "Mid-level", id: "1" },
-  { label: "Type", data: "Full Time", id: "2" },
+  { label: "Experience level", data: "Senior", id: "1" },
+  { label: "Type", data: "Full-time", id: "2" },
   { label: "Location", data: "100% Remote", id: "3" },
   {
-    label: "Salary",
-    data: "$12,000–$24,000 (depending on experience)",
+    label: "Salary range",
+    data: "$12,000–$18,000 (depending on experience)",
     id: "4",
   },
-  { label: "Time", data: "40 hours per week", id: "5" },
+  { label: "Work hours", data: "40 hours per week", id: "5" },
 ];
 
-export default function ContentWriterLondon() {
+export default function SeoManager() {
   const [activeIndex, setActiveIndex] = useState(0);
   const sectionRefs = useRef([]);
 
@@ -63,14 +63,15 @@ export default function ContentWriterLondon() {
       <div className="hidden lg:block">
         <div className="md:px-28 pt-14 pb-4 bg-[#FAFAFA]">
           <div className="flex md:flex-row justify-start flex-col w-full h-full">
-            {/* left */}
+            {/* left default*/}
             <div className="max-w-[40%] w-full  h-fit sticky top-24 self-start pb-[115px]">
               <div className="h-auto">
                 <Link
                   href="/careers"
                   className="text-[16px] font-[600] text-[#000] leading-[normal] hover:underline "
                 >
-                  <span className="text-[20px]"> &#8592;</span> All job offers
+                  <span className="text-[20px]"> &#8592;</span> All open
+                  positions
                 </Link>
                 <div className="w-[80%] h-auto  bg-[#01261E] mt-10 p-8 rounded-[10px]">
                   <div className="">
@@ -78,15 +79,16 @@ export default function ContentWriterLondon() {
                       Apply now!
                     </p>
                     <p className="w-[100%] text-[#fff] text-[16px] font-[300] leading-[141%] pt-6 pb-4">
-                      If you're interested in end-to-end development and want to
-                      work with cutting-edge technologies, come on board.
+                      If you’re ready to join a fast-moving global media company
+                      and work with ambitious, creative people who value quality
+                      and initiative, we’d love to hear from you.
                     </p>
                     <div className="flex flex-row ">
                       <p
                         className="text-[#fff] text-[16px] font-[400]
                                      hover:underline cursor-pointer"
                       >
-                        careers@sagravia.com
+                        careers@houseofsummary.com
                       </p>
                       <img
                         src="/careers/content-copy.png"
@@ -130,10 +132,10 @@ export default function ContentWriterLondon() {
                 {/* 2 */}
                 <div className="pt-[30px]">
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
-                    Editorial
+                    Other
                   </p>
                   <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
-                    Content Writer
+                    SEO Manager
                   </h2>
                 </div>
                 {/* 3 */}
@@ -209,17 +211,14 @@ export default function ContentWriterLondon() {
                     Position summary
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    We’re looking for a sharp, curious, and culturally tuned-in
-                    Content Writer to join the team behind London Summary, a
-                    growing newsletter that curates the most interesting
-                    stories, people, and happenings across the city. You’ll be
-                    part writer, part editor, and part detective, someone who
-                    can capture London’s essence in a few smart, engaging
-                    paragraphs. Your work will span news, business, culture, and
-                    lifestyle, helping readers feel more connected to London
-                    every morning. This is a remote role, but you must be based
-                    in the UK, with a genuine familiarity and feel for life in
-                    London.
+                    We are looking for a data-driven and creative SEO Manager to
+                    lead the organic growth efforts across our network of
+                    newsletters. You will develop and execute SEO strategies for
+                    multiple brands, working at the intersection of analytics,
+                    content, and audience development. The ideal candidate has a
+                    balance of technical knowledge, editorial understanding, and
+                    strategic vision, someone who can translate data into
+                    meaningful growth. This is a remote, full-time role.
                   </p>
                 </div>
                 {/* assignment */}
@@ -229,44 +228,66 @@ export default function ContentWriterLondon() {
                       Assignment
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      We want to see how you think, research, and write with
-                      clarity and voice. This task tests your ability to combine
-                      news judgment, storytelling, and editorial tone, the three
-                      traits that define our writers at House of Summary.
+                      We want to see how you diagnose and improve the
+                      infrastructure of SEO. This task tests your technical
+                      understanding, prioritization, and problem-solving
+                      approach.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>Task Overview</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Create a short piece for London Summary, a daily
-                      newsletter that covers business, culture, city life, and
-                      the people shaping London today. Your goal is to show how
-                      you can write smart, concise, and engaging content that
-                      informs and entertains readers in just a few minutes.
+                      Imagine you’ve been asked to audit the SEO performance of
+                      presidentialsummary.com and dubaisummary.com.
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                      Use the examples on the{" "}
-                      <a
-                        className="underline"
-                        href="https://www.londonsummary.com/"
-                        target="_blank"
-                      >
-                        London Summary website
-                      </a>{" "}
-                      as a guide for tone, structure, and style.
+                      <strong>Deliverables (maximum five pages):</strong>
                     </p>
-
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Initial technical audit plan:</strong> Outline
+                        the key things you’d check first (e.g., crawlability,
+                        sitemap, canonicalization, schema, Core Web Vitals).
+                        Include the tools and methodology you’d use.
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Top 3 fix priorities:</strong> Identify the
+                        issues that would make the biggest difference to traffic
+                        or rankings. Explain how you’d measure improvement after
+                        implementing fixes.
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Cross-brand SEO hygiene plan:</strong> Propose
+                        one shared technical checklist that all House of Summary
+                        sites should follow.
+                      </span>
+                      <span className="block pl-6 -indent-4">
+                        <span className="mr-2">-</span>
+                        <strong>Automation and reporting:</strong> Suggest how
+                        to automate recurring SEO checks and track issues over
+                        time.
+                      </span>
+                    </p>
+                    <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
+                      Use examples and frameworks that reflect real-world
+                      experience. There’s no need for access to analytics or
+                      backend systems; focus on your reasoning and structure.
+                    </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <strong>How to submit:</strong>
                     </p>
                     <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Send your assignment as a single PDF (maximum two pages)
+                        Send your assignment as a single PDF (maximum five
+                        pages)
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
-                        Subject line: Content Writer – [Your Name]
+                        Subject line: SEO Manager – [Your Name]
                       </span>
                       <span className="block pl-6 -indent-4">
                         <span className="mr-2">-</span>
@@ -281,17 +302,14 @@ export default function ContentWriterLondon() {
                     Job description
                   </p>
                   <p className="text-[#121212] text-[16px] font-[400] leading-[141%] py-2">
-                    As a Content Writer for London Summary, you’ll be
-                    responsible for researching, writing, and editing stories
-                    that bring the city to life, from emerging business trends
-                    and cultural shifts to quirky local happenings. You’ll
-                    curate complex topics into short, witty, and human pieces
-                    that resonate with busy readers. You’ll also help shape the
-                    newsletter’s tone, pitch story ideas, and collaborate with
-                    editors, designers, and growth teams to refine the overall
-                    voice and experience. The ideal candidate has a sharp
-                    editorial instinct, a feel for London’s rhythm, and an
-                    ability to turn insight into irresistible copy.
+                    As SEO Manager, you will oversee the search performance and
+                    organic growth of all newsletters under the House of Summary
+                    brand. You’ll design strategies that improve visibility,
+                    rankings, and conversions across multiple sites,
+                    collaborating closely with editorial, growth, and technical
+                    teams. You’ll turn insights into measurable outcomes,
+                    optimizing content, improving structure, and scaling impact
+                    across brands and regions.
                   </p>
                 </div>
                 {/* experience*/}
@@ -300,18 +318,33 @@ export default function ContentWriterLondon() {
                     Experience
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
-                    <li>Excellent written English and editorial judgment</li>
-                    <li>Strong research and summarization skills</li>
                     <li>
-                      Experience writing for newsletters, magazines, or digital
-                      media
+                      Proven experience in SEO management or digital growth
+                      roles
                     </li>
                     <li>
-                      Deep curiosity about London’s people, culture, and
-                      politics
+                      Strong understanding of on-page, off-page, and technical
+                      SEO
                     </li>
                     <li>
-                      Attention to detail and comfort with fast-paced deadlines
+                      Proficiency with Google Search Console, Ahrefs, SEMrush,
+                      and GA4
+                    </li>
+                    <li>
+                      Experience in keyword research, backlink analysis, and
+                      content optimization
+                    </li>
+                    <li>
+                      Analytical mindset with strong prioritization and
+                      reporting skills
+                    </li>
+                    <li>
+                      Excellent collaboration and communication across
+                      departments
+                    </li>
+                    <li>
+                      Curiosity about newsletters, publishing, and audience
+                      growth
                     </li>
                   </ul>
                 </div>
@@ -322,11 +355,16 @@ export default function ContentWriterLondon() {
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>
-                      Familiarity with SEO, analytics, and headline testing
+                      Experience with media, newsletter, or publishing SEO
                     </li>
-                    <li>Knowledge of local London publications and trends</li>
-                    <li>Experience with CMS tools like Substack or Beehiiv</li>
-                    <li>Light design instincts for layout or visuals</li>
+                    <li>
+                      Understanding of email deliverability and open rate
+                      optimization
+                    </li>
+                    <li>
+                      Knowledge of HTML, structured data, and automation tools
+                    </li>
+                    <li>Experience with AI SEO tools and workflows</li>
                   </ul>
                 </div>
                 {/* benefits */}
@@ -336,13 +374,18 @@ export default function ContentWriterLondon() {
                   </p>
                   <ul className="custom-list text-[#121212] text-[16px] font-[400] leading-[141%] pt-2">
                     <li>
-                      Be part of London Summary’s editorial core as it grows
+                      Opportunity to scale international titles across multiple
+                      markets
                     </li>
-                    <li>Freedom to pitch stories and shape tone</li>
-                    <li>Flexible hours and creative autonomy</li>
                     <li>
-                      Work with a small, ambitious team that values quality,
-                      curiosity, and good humor
+                      Ownership of SEO strategy and visibility across all brands
+                    </li>
+                    <li>
+                      Flexible working environment with global collaboration
+                    </li>
+                    <li>
+                      Access to real-time editorial analytics and tools for
+                      testing and innovation
                     </li>
                   </ul>
                 </div>
@@ -467,10 +510,10 @@ export default function ContentWriterLondon() {
           {/* 2 */}
           <div className="pt-[28px]">
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
-              Editorial
+              Other
             </p>
             <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
-              Content Writer
+              SEO Manager
             </h2>
           </div>
           {/* 3 */}
@@ -494,50 +537,71 @@ export default function ContentWriterLondon() {
               Position summary
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              We’re looking for a sharp, curious, and culturally tuned-in
-              Content Writer to join the team behind London Summary, a growing
-              newsletter that curates the most interesting stories, people, and
-              happenings across the city. You’ll be part writer, part editor,
-              and part detective, someone who can capture London’s essence in a
-              few smart, engaging paragraphs. Your work will span news,
-              business, culture, and lifestyle, helping readers feel more
-              connected to London every morning. This is a remote role, but you
-              must be based in the UK, with a genuine familiarity and feel for
-              life in London.
+              We are looking for a data-driven and creative SEO Manager to lead
+              the organic growth efforts across our network of newsletters. You
+              will develop and execute SEO strategies for multiple brands,
+              working at the intersection of analytics, content, and audience
+              development. The ideal candidate has a balance of technical
+              knowledge, editorial understanding, and strategic vision, someone
+              who can translate data into meaningful growth. This is a remote,
+              full-time role.
             </p>
           </div>
           {/* Assignment*/}
           <div className="px-[16px] py-[30px] bg-[#DAEBE8] rounded-[5px] mt-[35px]">
-            <div id="assignment" className="">
-              <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
+            <div className="">
+              <p
+                id="assignment"
+                className="text-[#121212] text-[22px] font-[700] leading-[141%]"
+              >
                 Assignment
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                We want to see how you think, research, and write with clarity
-                and voice. This task tests your ability to combine news
-                judgment, storytelling, and editorial tone, the three traits
-                that define our writers at House of Summary.
+                We want to see how you diagnose and improve the infrastructure
+                of SEO. This task tests your technical understanding,
+                prioritization, and problem-solving approach.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>Task Overview</strong>
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Create a short piece for London Summary, a daily newsletter that
-                covers business, culture, city life, and the people shaping
-                London today. Your goal is to show how you can write smart,
-                concise, and engaging content that informs and entertains
-                readers in just a few minutes.
+                Imagine you’ve been asked to audit the SEO performance of
+                presidentialsummary.com and dubaisummary.com.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
-                Use the examples on the{" "}
-                <a
-                  className="underline"
-                  href="https://www.londonsummary.com/"
-                  target="_blank"
-                >
-                  London Summary website
-                </a>{" "}
-                as a guide for tone, structure, and style.
+                <strong>Deliverables (maximum five pages):</strong>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Initial technical audit plan:</strong> Outline the key
+                  things you’d check first (e.g., crawlability, sitemap,
+                  canonicalization, schema, Core Web Vitals). Include the tools
+                  and methodology you’d use.
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Top 3 fix priorities:</strong> Identify the issues
+                  that would make the biggest difference to traffic or rankings.
+                  Explain how you’d measure improvement after implementing
+                  fixes.
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Cross-brand SEO hygiene plan:</strong> Propose one
+                  shared technical checklist that all House of Summary sites
+                  should follow.
+                </span>
+                <span className="block pl-6 -indent-4">
+                  <span className="pr-2">-</span>
+                  <strong>Automation and reporting:</strong> Suggest how to
+                  automate recurring SEO checks and track issues over time.
+                </span>
+              </p>
+              <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
+                Use examples and frameworks that reflect real-world experience.
+                There’s no need for access to analytics or backend systems;
+                focus on your reasoning and structure.
               </p>
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <strong>How to submit:</strong>
@@ -545,11 +609,11 @@ export default function ContentWriterLondon() {
               <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-4">
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Send your assignment as a single PDF (maximum two pages)
+                  Send your assignment as a single PDF (maximum five pages)
                 </span>
                 <span className="block pl-6 -indent-4">
                   <span className="pr-2">-</span>
-                  Subject line: Content Writer – [Your Name]
+                  Subject line: SEO Manager – [Your Name]
                 </span>
 
                 <span className="block pl-6 -indent-4">
@@ -565,16 +629,13 @@ export default function ContentWriterLondon() {
               Job description
             </p>
             <p className="text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              As a Content Writer for London Summary, you’ll be responsible for
-              researching, writing, and editing stories that bring the city to
-              life, from emerging business trends and cultural shifts to quirky
-              local happenings. You’ll curate complex topics into short, witty,
-              and human pieces that resonate with busy readers. You’ll also help
-              shape the newsletter’s tone, pitch story ideas, and collaborate
-              with editors, designers, and growth teams to refine the overall
-              voice and experience. The ideal candidate has a sharp editorial
-              instinct, a feel for London’s rhythm, and an ability to turn
-              insight into irresistible copy.
+              As SEO Manager, you will oversee the search performance and
+              organic growth of all newsletters under the House of Summary
+              brand. You’ll design strategies that improve visibility, rankings,
+              and conversions across multiple sites, collaborating closely with
+              editorial, growth, and technical teams. You’ll turn insights into
+              measurable outcomes, optimizing content, improving structure, and
+              scaling impact across brands and regions.
             </p>
           </div>
           {/* Experience */}
@@ -583,27 +644,43 @@ export default function ContentWriterLondon() {
               Experience
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Excellent written English and editorial judgment</li>
-              <li>Strong research and summarization skills</li>
               <li>
-                Experience writing for newsletters, magazines, or digital media
+                Proven experience in SEO management or digital growth roles
               </li>
               <li>
-                Deep curiosity about London’s people, culture, and politics
+                Strong understanding of on-page, off-page, and technical SEO
               </li>
-              <li>Attention to detail and comfort with fast-paced deadlines</li>
+              <li>
+                Proficiency with Google Search Console, Ahrefs, SEMrush, and GA4
+              </li>
+              <li>
+                Experience in keyword research, backlink analysis, and content
+                optimization
+              </li>
+              <li>
+                Analytical mindset with strong prioritization and reporting
+                skills
+              </li>
+              <li>
+                Excellent collaboration and communication across departments
+              </li>
+              <li>
+                Curiosity about newsletters, publishing, and audience growth
+              </li>
             </ul>
           </div>
-          {/* Nice to have */}
+          {/*Nice to have*/}
           <div className="mt-[35px]">
-            <p className="text-[#121212] text-[22px] font-[700] leading-[141%] ">
+            <p className="text-[#121212] text-[22px] font-[700] leading-[141%]">
               Nice to have
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Familiarity with SEO, analytics, and headline testing</li>
-              <li>Knowledge of local London publications and trends</li>
-              <li>Experience with CMS tools like Substack or Beehiiv</li>
-              <li>Light design instincts for layout or visuals</li>
+              <li>Experience with media, newsletter, or publishing SEO</li>
+              <li>
+                Understanding of email deliverability and open rate optimization
+              </li>
+              <li>Knowledge of HTML, structured data, and automation tools</li>
+              <li>Experience with AI SEO tools and workflows</li>
             </ul>
           </div>
           {/* Benefits */}
@@ -612,12 +689,17 @@ export default function ContentWriterLondon() {
               Benefits
             </p>
             <ul className="custom-list text-[#121212] text-[14px] font-[400] leading-[141%] pt-[25px]">
-              <li>Be part of London Summary’s editorial core as it grows</li>
-              <li>Freedom to pitch stories and shape tone</li>
-              <li>Flexible hours and creative autonomy</li>
               <li>
-                Work with a small, ambitious team that values quality,
-                curiosity, and good humor
+                Opportunity to scale international titles across multiple
+                markets
+              </li>
+              <li>
+                Ownership of SEO strategy and visibility across all brands
+              </li>
+              <li>Flexible working environment with global collaboration</li>
+              <li>
+                Access to real-time editorial analytics and tools for testing
+                and innovation
               </li>
             </ul>
           </div>

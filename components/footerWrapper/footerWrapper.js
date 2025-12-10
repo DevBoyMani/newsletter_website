@@ -3,38 +3,16 @@
 import { usePathname } from "next/navigation";
 import Footer from "../../components/footer/footer";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function FooterWrapper() {
   const pathname = usePathname();
 
-  // const shouldHideFooter = pathname === "/readers";
   const isCareersSlugPage = pathname.startsWith("/careers/");
   const showContactBanner = !isCareersSlugPage;
 
   return (
     <>
-      {/* Careers banner (only for careers/[slug]) */}
-      {isCareersSlugPage && (
-        <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
-          <div className="bg-[#E5C8CD] w-full px-[26px] py-[11px] flex items-center justify-center">
-            <span className="text-[#000000] text-[12px] font-[600] leading-normal">
-              The assignment is mandatory.
-            </span>
-            <Link
-              href="/careers/slug"
-              className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
-            >
-              <span>Go to assignment</span>
-              <img
-                src="/careers/down.png"
-                alt="arrow"
-                className="w-[11px] h-[11px] ml-[15px]"
-              />
-            </Link>
-          </div>
-        </div>
-      )}
-
       {/* Contact banner (all pages except careers/[slug]) */}
       {showContactBanner && (
         <div className="block lg:hidden fixed top-0 left-0 w-full z-[998]">
@@ -47,18 +25,17 @@ export default function FooterWrapper() {
               className="ml-2 text-[#C7A262] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal"
             >
               <span>SCHEDULE A CALL</span>
-              <img
+              <Image
                 src="/contact/r-arr.png"
                 alt="arrow"
-                className="w-[11px] h-[11px] ml-[15px]"
+                width={11}
+                height={11}
+                className="ml-[15px]"
               />
             </Link>
           </div>
         </div>
       )}
-
-      {/* Common footer (everywhere except /readers) */}
-      {/* {!shouldHideFooter && <Footer />} */}
       <Footer />
     </>
   );
