@@ -395,7 +395,7 @@ export async function GET(req) {
         }
       }
 
-      const weeks = ["week 1", "week 2", "week 3", "week 4"];
+      const weeks = ["Week 1", "Week 2", "Week 3", "Week 4"];
       adClickActivity = weeks.map((label, i) => ({
         week: label,
         lastMonth: lastMonthBuckets[i],
