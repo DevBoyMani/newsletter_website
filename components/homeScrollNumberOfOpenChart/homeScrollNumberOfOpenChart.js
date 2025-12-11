@@ -16,26 +16,100 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartContainer } from "@/components/ui/chart";
 
-export const description =
-  "A multiple line chart (Loyal, New, Unique Customers)";
+export const description = "Monthly number of emails opened.";
 
-const chartData = [
-  { year: 2014, loyal: 0.75, new: 0.7, unique: 0.78 },
-  { year: 2015, loyal: 0.72, new: 0.6, unique: 0.8 },
-  { year: 2016, loyal: 0.65, new: 0.55, unique: 0.7 },
-  { year: 2017, loyal: 0.7, new: 0.65, unique: 0.68 },
-  { year: 2018, loyal: 0.8, new: 0.82, unique: 0.79 },
-  { year: 2019, loyal: 0.78, new: 0.75, unique: 0.77 },
-  { year: 2020, loyal: 0.6, new: 0.55, unique: 0.65 },
-  { year: 2021, loyal: 0.58, new: 0.52, unique: 0.68 },
+// Static mock of opensMonthly from API
+const opensMonthly = [
+  {
+    month: "2024-12-01",
+    count: 15705,
+  },
+  {
+    month: "2025-01-01",
+    count: 39388,
+  },
+  {
+    month: "2025-02-01",
+    count: 108552,
+  },
+  {
+    month: "2025-03-01",
+    count: 116890,
+  },
+  {
+    month: "2025-04-01",
+    count: 118544,
+  },
+  {
+    month: "2025-05-01",
+    count: 216724,
+  },
+  {
+    month: "2025-06-01",
+    count: 605878,
+  },
+  {
+    month: "2025-07-01",
+    count: 1077573,
+  },
+  {
+    month: "2025-08-01",
+    count: 1217735,
+  },
+  {
+    month: "2025-09-01",
+    count: 1445221,
+  },
+  {
+    month: "2025-10-01",
+    count: 1619861,
+  },
+  {
+    month: "2025-11-01",
+    count: 2334333,
+  },
 ];
 
+// Convert "2025-01-01" → "Jan 25"
+function formatMonthLabel(monthStr) {
+  const d = new Date(monthStr);
+  if (Number.isNaN(d.getTime())) return monthStr;
+  return d.toLocaleDateString("en-US", {
+    month: "short",
+    year: "2-digit",
+  });
+}
+
+// Compact number formatter: 141K, 2.3M, 1.1B
+const compactNumber = new Intl.NumberFormat("en-US", {
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
+
+// Shape data for Recharts
+const chartData = opensMonthly.map((item) => ({
+  month: formatMonthLabel(item.month),
+  opens: item.count,
+}));
+
+// Tooltip formatter (bubble)
+function BubbleTooltip({ active, payload, label }) {
+  if (!active || !payload?.length) return null;
+
+  return (
+    <div className="rounded-md bg-white shadow-lg px-3 py-2 border border-gray-200">
+      <p className="text-[11px] font-medium">{label}</p>
+      <p className="text-[12px] font-semibold text-[#01261E]">
+        {compactNumber.format(payload[0].value)} opens
+      </p>
+    </div>
+  );
+}
+
 const chartConfig = {
-  loyal: { label: "Loyal Customers", color: "#F5A623" },
-  new: { label: "New Customers", color: "#B03C2F" },
-  unique: { label: "Unique Customers", color: "#5C7D73" },
+  opens: { label: "Emails opened", color: "#01261E" },
 };
 
 export default function HomeScrollNumberOfOpensChart() {
@@ -61,47 +135,35 @@ export default function HomeScrollNumberOfOpensChart() {
                 margin={{ top: 0, right: 10, left: 10, bottom: 0 }}
               >
                 <CartesianGrid vertical={false} stroke="#E5E7EB" />
+
                 <XAxis
-                  dataKey="year"
+                  dataKey="month"
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
                   fontSize={11}
                 />
+
                 <YAxis
-                  domain={[0.5, 0.9]}
+                  domain={[0, "auto"]}
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
-                  width={25}
+                  width={40}
                   fontSize={11}
+                  tickFormatter={(value) => compactNumber.format(value)}
                 />
 
-                {/* Tooltip with moving vertical line */}
+                {/* Bubble Tooltip */}
                 <Tooltip
-                  cursor={{ stroke: "#000", strokeDasharray: "3 3" }}
-                  content={<ChartTooltipContent />}
+                  content={<BubbleTooltip />}
+                  cursor={{ stroke: "#01261E", strokeDasharray: "3 3" }}
                 />
 
-                {/* Lines */}
                 <Line
-                  dataKey="loyal"
+                  dataKey="opens"
                   type="monotone"
-                  stroke={chartConfig.loyal.color}
-                  strokeWidth={2.5}
-                  dot={false}
-                />
-                <Line
-                  dataKey="new"
-                  type="monotone"
-                  stroke={chartConfig.new.color}
-                  strokeWidth={2.5}
-                  dot={false}
-                />
-                <Line
-                  dataKey="unique"
-                  type="monotone"
-                  stroke={chartConfig.unique.color}
+                  stroke={chartConfig.opens.color}
                   strokeWidth={2.5}
                   dot={false}
                 />
@@ -109,37 +171,19 @@ export default function HomeScrollNumberOfOpensChart() {
             </ChartContainer>
           </CardContent>
 
-          {/* labels */}
           <div className="flex gap-6 justify-center items-center pt-[9.5px]">
             <div className="flex items-center gap-2">
-              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Number of emails opened opens
+                Number of emails opened
               </span>
             </div>
-
-            {/* <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span>
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                New Customers
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Unique Customers
-              </span>
-            </div> */}
           </div>
         </Card>
       </div>
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <Card
-          className={`px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]`}
-        >
+        <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
               Emails opened
@@ -156,51 +200,37 @@ export default function HomeScrollNumberOfOpensChart() {
                 <LineChart
                   data={chartData}
                   margin={{ top: 0, right: 5, left: 5, bottom: 0 }}
-                  width={500} // Force wider width
+                  width={500}
                 >
                   <CartesianGrid vertical={false} stroke="#E5E7EB" />
+
                   <XAxis
-                    dataKey="year"
+                    dataKey="month"
                     axisLine={false}
                     tickLine={false}
                     tickMargin={10}
                     tick={{ fontSize: 8, fill: "#77838F" }}
-                    // width={10}
                   />
+
                   <YAxis
-                    domain={[0.5, 0.9]}
+                    domain={[0, "auto"]}
                     axisLine={false}
                     tickLine={false}
                     tickMargin={10}
                     tick={{ fontSize: 8, fill: "#77838F" }}
-                    width={25}
+                    width={40}
+                    tickFormatter={(value) => compactNumber.format(value)}
                   />
 
-                  {/* Tooltip with moving vertical line */}
                   <Tooltip
-                    cursor={{ stroke: "#000", strokeDasharray: "3 3" }}
-                    content={<ChartTooltipContent />}
+                    content={<BubbleTooltip />}
+                    cursor={{ stroke: "#01261E", strokeDasharray: "3 3" }}
                   />
 
-                  {/* Lines */}
                   <Line
-                    dataKey="loyal"
+                    dataKey="opens"
                     type="monotone"
-                    stroke={chartConfig.loyal.color}
-                    strokeWidth={2.5}
-                    dot={false}
-                  />
-                  <Line
-                    dataKey="new"
-                    type="monotone"
-                    stroke={chartConfig.new.color}
-                    strokeWidth={2.5}
-                    dot={false}
-                  />
-                  <Line
-                    dataKey="unique"
-                    type="monotone"
-                    stroke={chartConfig.unique.color}
+                    stroke={chartConfig.opens.color}
                     strokeWidth={2.5}
                     dot={false}
                   />
@@ -209,28 +239,12 @@ export default function HomeScrollNumberOfOpensChart() {
             </div>
           </CardContent>
 
-          {/* labels */}
           <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
             <div className="flex items-center gap-2">
-              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#E19F20]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Number of emails opened opens
+                Number of emails opened
               </span>
             </div>
-
-            {/* <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span>
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                New Customers
-              </span>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Unique Customers
-              </span>
-            </div> */}
           </div>
         </Card>
       </div>

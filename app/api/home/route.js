@@ -126,20 +126,6 @@ export async function GET(req) {
       ORDER BY m.month_start;
     `;
 
-    // SQL 3: Last campaign open total
-    const lastCampaignOpensSql = `
-      WITH last_campaigns AS (
-        SELECT DISTINCT ON (website_id)
-          id, website_id, date
-        FROM campaigns
-        WHERE website_id = ANY($1::int[])
-        ORDER BY website_id, date DESC NULLS LAST, id DESC
-      )
-      SELECT COUNT(eo.id) AS total_opens_last_campaigns
-      FROM last_campaigns lc
-      LEFT JOIN emails_open eo ON eo.campaign_id = lc.id;
-    `;
-
     const allowedDomains = getAllowedDomainsForWebsiteIds(websiteIds);
 
     // Linkly API
@@ -151,17 +137,12 @@ export async function GET(req) {
     //
     // 🔥 DB Calls + Linkly call (async parallel)
     //
-    const [
-      subscribersResult,
-      opensMonthlyResult,
-      lastCampaignOpensResult,
-      linklyListData,
-    ] = await Promise.all([
-      query(subscribersSql, [websiteIds]),
-      query(opensMonthlySql, [websiteIds]),
-      query(lastCampaignOpensSql, [websiteIds]),
-      fetch(linklyListUrl).then((res) => res.json()),
-    ]);
+    const [subscribersResult, opensMonthlyResult, linklyListData] =
+      await Promise.all([
+        query(subscribersSql, [websiteIds]),
+        query(opensMonthlySql, [websiteIds]),
+        fetch(linklyListUrl).then((res) => res.json()),
+      ]);
 
     //
     // subscribersMonthly
@@ -180,25 +161,7 @@ export async function GET(req) {
     }));
 
     //
-    // Last campaign open summary
-    //
-    let lastCampaignOpenSummary = {
-      totalOpens: 0,
-      formattedTotalOpens: "0",
-    };
-
-    if (lastCampaignOpensResult.rows.length > 0) {
-      const total = Number(
-        lastCampaignOpensResult.rows[0].total_opens_last_campaigns || 0
-      );
-      lastCampaignOpenSummary = {
-        totalOpens: total,
-        formattedTotalOpens: total.toLocaleString("en-US"),
-      };
-    }
-
-    //
-    // Linkly click activity — unchanged
+    // Linkly click activity
     //
     const links = linklyListData.links || linklyListData.data || [];
     const today = new Date();
@@ -278,7 +241,6 @@ export async function GET(req) {
       subscribersMonthly,
       opensMonthly,
       adClickActivity,
-      lastCampaignOpenSummary,
     });
   } catch (err) {
     console.error("Error at /api/advertise:", err);

@@ -37,7 +37,8 @@
     "tailwind.config.js",
     "app/layout.js",
     "components/navbar/navbar.tsx",
-    "components/aboutNewslettersStatistics/aboutNewslettersStatistics.js"
+    "components/aboutNewslettersStatistics/aboutNewslettersStatistics.js",
+    "app/page.js"
   ],
   "exclude": ["node_modules"]
 }

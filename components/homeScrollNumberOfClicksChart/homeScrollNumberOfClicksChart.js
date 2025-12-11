@@ -16,26 +16,69 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { ChartContainer, ChartTooltipContent } from "@/components/ui/chart";
+import { ChartContainer } from "@/components/ui/chart";
 
 export const description =
-  "A multiple line chart (Loyal, New, Unique Customers)";
+  "Weekly ad click activity (last month vs this month).";
 
-const chartData = [
-  { year: 2014, loyal: 0.75, new: 0.7, unique: 0.78 },
-  { year: 2015, loyal: 0.72, new: 0.6, unique: 0.8 },
-  { year: 2016, loyal: 0.65, new: 0.55, unique: 0.7 },
-  { year: 2017, loyal: 0.7, new: 0.65, unique: 0.68 },
-  { year: 2018, loyal: 0.8, new: 0.82, unique: 0.79 },
-  { year: 2019, loyal: 0.78, new: 0.75, unique: 0.77 },
-  { year: 2020, loyal: 0.6, new: 0.55, unique: 0.65 },
-  { year: 2021, loyal: 0.58, new: 0.52, unique: 0.68 },
+// 🔹 Static mock from API: adClickActivity
+const adClickActivity = [
+  {
+    week: "Week 1",
+    lastMonth: 870,
+    thisMonth: 15599,
+  },
+  {
+    week: "Week 2",
+    lastMonth: 9365,
+    thisMonth: 17273,
+  },
+  {
+    week: "Week 3",
+    lastMonth: 8681,
+    thisMonth: 10825,
+  },
+  {
+    week: "Week 4",
+    lastMonth: 9317,
+    thisMonth: 11240,
+  },
 ];
 
+// Compact number formatter: 141K, 2.3M, 1.1B
+const compactNumber = new Intl.NumberFormat("en-US", {
+  notation: "compact",
+  maximumFractionDigits: 1,
+});
+
+// Recharts data (already good shape)
+const chartData = adClickActivity;
+
+// Bubble tooltip showing both lines
+function BubbleTooltip({ active, payload, label }) {
+  if (!active || !payload?.length) return null;
+
+  return (
+    <div className="rounded-md bg-white shadow-lg px-3 py-2 border border-gray-200">
+      <p className="text-[11px] font-medium mb-[2px]">{label}</p>
+      {payload.map((entry, idx) => (
+        <p
+          key={idx}
+          className="text-[12px] font-semibold flex items-center gap-1"
+          style={{ color: entry.color || "#01261E" }}
+        >
+          <span>{entry.name}:</span>
+          <span>{compactNumber.format(entry.value)} clicks</span>
+        </p>
+      ))}
+    </div>
+  );
+}
+
+// Chart config (for your ChartContainer)
 const chartConfig = {
-  loyal: { label: "Loyal Customers", color: "#F5A623" },
-  new: { label: "New Customers", color: "#B03C2F" },
-  unique: { label: "Unique Customers", color: "#5C7D73" },
+  lastMonth: { label: "Last month", color: "#B03C2F" },
+  thisMonth: { label: "This month", color: "#5C7D73" },
 };
 
 export default function HomeScrollNumberOfClicksChart() {
@@ -43,7 +86,7 @@ export default function HomeScrollNumberOfClicksChart() {
     <>
       {/* desktop */}
       <div className="lg:block hidden">
-        <Card className="p-[30px]">
+        <Card className="p-[30px] h-full">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Clicks
@@ -61,47 +104,45 @@ export default function HomeScrollNumberOfClicksChart() {
                 margin={{ top: 0, right: 10, left: 10, bottom: 0 }}
               >
                 <CartesianGrid vertical={false} stroke="#E5E7EB" />
+
                 <XAxis
-                  dataKey="year"
+                  dataKey="week"
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
-                  fontSize={11}
-                />
-                <YAxis
-                  domain={[0.5, 0.9]}
-                  axisLine={false}
-                  tickLine={false}
-                  tickMargin={10}
-                  width={25}
                   fontSize={11}
                 />
 
-                {/* Tooltip with moving vertical line */}
+                <YAxis
+                  domain={[0, "auto"]}
+                  axisLine={false}
+                  tickLine={false}
+                  tickMargin={10}
+                  width={40}
+                  fontSize={11}
+                  tickFormatter={(value) => compactNumber.format(value)}
+                />
+
+                {/* Bubble tooltip */}
                 <Tooltip
                   cursor={{ stroke: "#000", strokeDasharray: "3 3" }}
-                  content={<ChartTooltipContent />}
+                  content={<BubbleTooltip />}
                 />
 
-                {/* Lines */}
-                {/* <Line
-              dataKey="loyal"
-              type="monotone"
-              stroke={chartConfig.loyal.color}
-              strokeWidth={2.5}
-              dot={false}
-            /> */}
+                {/* Lines: last month vs this month */}
                 <Line
-                  dataKey="new"
+                  dataKey="lastMonth"
+                  name="Last month"
                   type="monotone"
-                  stroke={chartConfig.new.color}
+                  stroke={chartConfig.lastMonth.color}
                   strokeWidth={2.5}
                   dot={false}
                 />
                 <Line
-                  dataKey="unique"
+                  dataKey="thisMonth"
+                  name="This month"
                   type="monotone"
-                  stroke={chartConfig.unique.color}
+                  stroke={chartConfig.thisMonth.color}
                   strokeWidth={2.5}
                   dot={false}
                 />
@@ -112,21 +153,14 @@ export default function HomeScrollNumberOfClicksChart() {
           {/* labels */}
           <div className="flex gap-6 justify-center items-center pt-[9.5px]">
             <div className="flex items-center gap-2">
-              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Click count
+                Click count (last month vs this month)
               </span>
             </div>
-
-            {/* <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Unique Customers
-              </span>
-            </div> */}
           </div>
         </Card>
       </div>
+
       {/* mobile */}
       <div className="block lg:hidden">
         <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
@@ -149,47 +183,43 @@ export default function HomeScrollNumberOfClicksChart() {
                   width={500}
                 >
                   <CartesianGrid vertical={false} stroke="#E5E7EB" />
+
                   <XAxis
-                    dataKey="year"
+                    dataKey="week"
                     axisLine={false}
                     tickLine={false}
                     tickMargin={10}
                     tick={{ fontSize: 8, fill: "#77838F" }}
-                  />
-                  <YAxis
-                    domain={[0.5, 0.9]}
-                    axisLine={false}
-                    tickLine={false}
-                    tickMargin={10}
-                    tick={{ fontSize: 8, fill: "#77838F" }}
-                    width={25}
                   />
 
-                  {/* Tooltip with moving vertical line */}
+                  <YAxis
+                    domain={[0, "auto"]}
+                    axisLine={false}
+                    tickLine={false}
+                    tickMargin={10}
+                    tick={{ fontSize: 8, fill: "#77838F" }}
+                    width={40}
+                    tickFormatter={(value) => compactNumber.format(value)}
+                  />
+
                   <Tooltip
                     cursor={{ stroke: "#000", strokeDasharray: "3 3" }}
-                    content={<ChartTooltipContent />}
+                    content={<BubbleTooltip />}
                   />
 
-                  {/* Lines */}
-                  {/* <Line
-              dataKey="loyal"
-              type="monotone"
-              stroke={chartConfig.loyal.color}
-              strokeWidth={2.5}
-              dot={false}
-            /> */}
                   <Line
-                    dataKey="new"
+                    dataKey="lastMonth"
+                    name="Last month"
                     type="monotone"
-                    stroke={chartConfig.new.color}
+                    stroke={chartConfig.lastMonth.color}
                     strokeWidth={2.5}
                     dot={false}
                   />
                   <Line
-                    dataKey="unique"
+                    dataKey="thisMonth"
+                    name="This month"
                     type="monotone"
-                    stroke={chartConfig.unique.color}
+                    stroke={chartConfig.thisMonth.color}
                     strokeWidth={2.5}
                     dot={false}
                   />
@@ -201,18 +231,10 @@ export default function HomeScrollNumberOfClicksChart() {
           {/* labels */}
           <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
             <div className="flex items-center gap-2">
-              {/* <span className="w-[9px] h-[9px] rounded-[2px] bg-[#9A4831]"></span> */}
               <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Click count
+                Click count (last month vs this month)
               </span>
             </div>
-            {/* 
-            <div className="flex items-center gap-2">
-              <span className="w-[9px] h-[9px] rounded-[2px] bg-[#657C75]"></span>
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Unique Customers
-              </span>
-            </div> */}
           </div>
         </Card>
       </div>
