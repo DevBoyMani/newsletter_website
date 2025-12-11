@@ -35,5 +35,11 @@ const websiteOptions = [
     linklyDomains: ["link.dubaisummary.com"],
     domain: "dubaisummary.com",
   },
+  {
+    id: 8,
+    name: "London Summary",
+    linklyDomains: ["link.londonsummary.com"],
+    domain: "londonsummary.com",
+  },
 ];
 export default websiteOptions;
