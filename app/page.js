@@ -1,5 +1,5 @@
 // app/advertise/page.js
-import selectedIds from "../../data/selectedWebsites";
+import selectedIds from "../data/selectedWebsites";
 import HomeClient from "./HomeClient";
 
 export const revalidate = 43200; // 43200 seconds = 12 hours

@@ -114,7 +114,7 @@ const chartConfig = {
 };
 
 export default function HomeScrollNumberOfSubscribersChart({
-  subscribersMonthly,
+  subscribersMonthly = [],
 }) {
   const chartData = subscribersMonthly.map((item) => ({
     month: formatMonthLabel(item.month),

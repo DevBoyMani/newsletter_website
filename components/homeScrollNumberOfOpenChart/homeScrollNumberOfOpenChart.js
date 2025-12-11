@@ -106,7 +106,8 @@ const chartConfig = {
   opens: { label: "Emails opened", color: "#01261E" },
 };
 
-export default function HomeScrollNumberOfOpensChart({ opensMonthly }) {
+export default function HomeScrollNumberOfOpensChart({ opensMonthly = [] }) {
+  console.log("opensMonthly", opensMonthly);
   // Shape data for Recharts
   const chartData = opensMonthly.map((item) => ({
     month: formatMonthLabel(item.month),

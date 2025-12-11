@@ -81,7 +81,9 @@ const chartConfig = {
   thisMonth: { label: "This month", color: "#5C7D73" },
 };
 
-export default function HomeScrollNumberOfClicksChart({ adClickActivity }) {
+export default function HomeScrollNumberOfClicksChart({
+  adClickActivity = [],
+}) {
   const chartData = adClickActivity;
 
   return (
