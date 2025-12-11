@@ -21,56 +21,56 @@ import { ChartContainer } from "@/components/ui/chart";
 export const description = "Monthly emails sent / subscribers reached.";
 
 // 🔹 Static mock from API: subscribersMonthly
-const subscribersMonthly = [
-  {
-    month: "2024-12-01",
-    count: 4786,
-  },
-  {
-    month: "2025-01-01",
-    count: 36480,
-  },
-  {
-    month: "2025-02-01",
-    count: 115349,
-  },
-  {
-    month: "2025-03-01",
-    count: 203591,
-  },
-  {
-    month: "2025-04-01",
-    count: 319762,
-  },
-  {
-    month: "2025-05-01",
-    count: 340253,
-  },
-  {
-    month: "2025-06-01",
-    count: 419994,
-  },
-  {
-    month: "2025-07-01",
-    count: 625718,
-  },
-  {
-    month: "2025-08-01",
-    count: 1078698,
-  },
-  {
-    month: "2025-09-01",
-    count: 894573,
-  },
-  {
-    month: "2025-10-01",
-    count: 777328,
-  },
-  {
-    month: "2025-11-01",
-    count: 1126959,
-  },
-];
+// const subscribersMonthly = [
+//   {
+//     month: "2024-12-01",
+//     count: 4786,
+//   },
+//   {
+//     month: "2025-01-01",
+//     count: 36480,
+//   },
+//   {
+//     month: "2025-02-01",
+//     count: 115349,
+//   },
+//   {
+//     month: "2025-03-01",
+//     count: 203591,
+//   },
+//   {
+//     month: "2025-04-01",
+//     count: 319762,
+//   },
+//   {
+//     month: "2025-05-01",
+//     count: 340253,
+//   },
+//   {
+//     month: "2025-06-01",
+//     count: 419994,
+//   },
+//   {
+//     month: "2025-07-01",
+//     count: 625718,
+//   },
+//   {
+//     month: "2025-08-01",
+//     count: 1078698,
+//   },
+//   {
+//     month: "2025-09-01",
+//     count: 894573,
+//   },
+//   {
+//     month: "2025-10-01",
+//     count: 777328,
+//   },
+//   {
+//     month: "2025-11-01",
+//     count: 1126959,
+//   },
+// ];
 
 // "2025-01-01" -> "Jan 25"
 function formatMonthLabel(monthStr) {
@@ -89,10 +89,10 @@ const compactNumber = new Intl.NumberFormat("en-US", {
 });
 
 // Shape data for Recharts
-const chartData = subscribersMonthly.map((item) => ({
-  month: formatMonthLabel(item.month),
-  sent: item.count,
-}));
+// const chartData = subscribersMonthly.map((item) => ({
+//   month: formatMonthLabel(item.month),
+//   sent: item.count,
+// }));
 
 // Bubble tooltip
 function BubbleTooltip({ active, payload, label }) {
@@ -113,7 +113,13 @@ const chartConfig = {
   sent: { label: "Emails sent", color: "#5C7D73" },
 };
 
-export default function HomeScrollNumberOfSubscribersChart() {
+export default function HomeScrollNumberOfSubscribersChart({
+  subscribersMonthly,
+}) {
+  const chartData = subscribersMonthly.map((item) => ({
+    month: formatMonthLabel(item.month),
+    sent: item.count,
+  }));
   return (
     <>
       {/* desktop */}

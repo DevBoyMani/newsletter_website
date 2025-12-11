@@ -3,7 +3,11 @@ import HomeAutoScrollImages from "../homeAutoScrollCharts/homeAutoScrollCharts";
 import HomeAutoScrollCharts from "../homeAutoScrollCharts/homeAutoScrollCharts";
 import Link from "next/link";
 
-export default function HomeWorldEngages() {
+export default function HomeWorldEngages({
+  subscribersMonthly,
+  opensMonthly,
+  adClickActivity,
+}) {
   return (
     <>
       {/* desktop */}
@@ -34,7 +38,11 @@ export default function HomeWorldEngages() {
                     maxHeight: "600px",
                   }}
                 >
-                  <HomeAutoScrollCharts />
+                  <HomeAutoScrollCharts
+                    subscribersMonthly={subscribersMonthly}
+                    opensMonthly={opensMonthly}
+                    adClickActivity={adClickActivity}
+                  />
                 </div>
               </div>
 

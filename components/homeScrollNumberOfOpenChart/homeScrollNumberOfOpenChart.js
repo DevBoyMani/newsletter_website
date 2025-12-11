@@ -21,56 +21,56 @@ import { ChartContainer } from "@/components/ui/chart";
 export const description = "Monthly number of emails opened.";
 
 // Static mock of opensMonthly from API
-const opensMonthly = [
-  {
-    month: "2024-12-01",
-    count: 15705,
-  },
-  {
-    month: "2025-01-01",
-    count: 39388,
-  },
-  {
-    month: "2025-02-01",
-    count: 108552,
-  },
-  {
-    month: "2025-03-01",
-    count: 116890,
-  },
-  {
-    month: "2025-04-01",
-    count: 118544,
-  },
-  {
-    month: "2025-05-01",
-    count: 216724,
-  },
-  {
-    month: "2025-06-01",
-    count: 605878,
-  },
-  {
-    month: "2025-07-01",
-    count: 1077573,
-  },
-  {
-    month: "2025-08-01",
-    count: 1217735,
-  },
-  {
-    month: "2025-09-01",
-    count: 1445221,
-  },
-  {
-    month: "2025-10-01",
-    count: 1619861,
-  },
-  {
-    month: "2025-11-01",
-    count: 2334333,
-  },
-];
+// const opensMonthly = [
+//   {
+//     month: "2024-12-01",
+//     count: 15705,
+//   },
+//   {
+//     month: "2025-01-01",
+//     count: 39388,
+//   },
+//   {
+//     month: "2025-02-01",
+//     count: 108552,
+//   },
+//   {
+//     month: "2025-03-01",
+//     count: 116890,
+//   },
+//   {
+//     month: "2025-04-01",
+//     count: 118544,
+//   },
+//   {
+//     month: "2025-05-01",
+//     count: 216724,
+//   },
+//   {
+//     month: "2025-06-01",
+//     count: 605878,
+//   },
+//   {
+//     month: "2025-07-01",
+//     count: 1077573,
+//   },
+//   {
+//     month: "2025-08-01",
+//     count: 1217735,
+//   },
+//   {
+//     month: "2025-09-01",
+//     count: 1445221,
+//   },
+//   {
+//     month: "2025-10-01",
+//     count: 1619861,
+//   },
+//   {
+//     month: "2025-11-01",
+//     count: 2334333,
+//   },
+// ];
 
 // Convert "2025-01-01" → "Jan 25"
 function formatMonthLabel(monthStr) {
@@ -87,12 +87,6 @@ const compactNumber = new Intl.NumberFormat("en-US", {
   notation: "compact",
   maximumFractionDigits: 1,
 });
-
-// Shape data for Recharts
-const chartData = opensMonthly.map((item) => ({
-  month: formatMonthLabel(item.month),
-  opens: item.count,
-}));
 
 // Tooltip formatter (bubble)
 function BubbleTooltip({ active, payload, label }) {
@@ -112,7 +106,12 @@ const chartConfig = {
   opens: { label: "Emails opened", color: "#01261E" },
 };
 
-export default function HomeScrollNumberOfOpensChart() {
+export default function HomeScrollNumberOfOpensChart({ opensMonthly }) {
+  // Shape data for Recharts
+  const chartData = opensMonthly.map((item) => ({
+    month: formatMonthLabel(item.month),
+    opens: item.count,
+  }));
   return (
     <>
       {/* desktop */}

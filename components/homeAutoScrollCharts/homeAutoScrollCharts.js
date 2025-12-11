@@ -7,11 +7,21 @@ import HomeScrollNumberOfOpensChart from "@/components/homeScrollNumberOfOpenCha
 import HomeScrollNumberOfClicksChart from "@/components/homeScrollNumberOfClicksChart/homeScrollNumberOfClicksChart";
 import HomeScrollNumberOfSubscribersChart from "@/components/homeScrollNumberOfSubscribersChart/homeScrollNumberOfSubscribersChart";
 
-export default function HomeAutoScrollCharts() {
+export default function HomeAutoScrollCharts({
+  subscribersMonthly,
+  opensMonthly,
+  adClickActivity,
+}) {
   const charts = [
-    <HomeScrollNumberOfOpensChart key="opens" />,
-    <HomeScrollNumberOfClicksChart key="clicks" />,
-    <HomeScrollNumberOfSubscribersChart key="subs" />,
+    <HomeScrollNumberOfOpensChart key="opens" opensMonthly={opensMonthly} />,
+    <HomeScrollNumberOfClicksChart
+      key="clicks"
+      adClickActivity={adClickActivity}
+    />,
+    <HomeScrollNumberOfSubscribersChart
+      key="subs"
+      subscribersMonthly={subscribersMonthly}
+    />,
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);

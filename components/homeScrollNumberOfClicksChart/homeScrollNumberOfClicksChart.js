@@ -22,28 +22,28 @@ export const description =
   "Weekly ad click activity (last month vs this month).";
 
 // 🔹 Static mock from API: adClickActivity
-const adClickActivity = [
-  {
-    week: "Week 1",
-    lastMonth: 870,
-    thisMonth: 15599,
-  },
-  {
-    week: "Week 2",
-    lastMonth: 9365,
-    thisMonth: 17273,
-  },
-  {
-    week: "Week 3",
-    lastMonth: 8681,
-    thisMonth: 10825,
-  },
-  {
-    week: "Week 4",
-    lastMonth: 9317,
-    thisMonth: 11240,
-  },
-];
+// const adClickActivity = [
+//   {
+//     week: "Week 1",
+//     lastMonth: 870,
+//     thisMonth: 15599,
+//   },
+//   {
+//     week: "Week 2",
+//     lastMonth: 9365,
+//     thisMonth: 17273,
+//   },
+//   {
+//     week: "Week 3",
+//     lastMonth: 8681,
+//     thisMonth: 10825,
+//   },
+//   {
+//     week: "Week 4",
+//     lastMonth: 9317,
+//     thisMonth: 11240,
+//   },
+// ];
 
 // Compact number formatter: 141K, 2.3M, 1.1B
 const compactNumber = new Intl.NumberFormat("en-US", {
@@ -52,7 +52,7 @@ const compactNumber = new Intl.NumberFormat("en-US", {
 });
 
 // Recharts data (already good shape)
-const chartData = adClickActivity;
+// const chartData = adClickActivity;
 
 // Bubble tooltip showing both lines
 function BubbleTooltip({ active, payload, label }) {
@@ -81,7 +81,9 @@ const chartConfig = {
   thisMonth: { label: "This month", color: "#5C7D73" },
 };
 
-export default function HomeScrollNumberOfClicksChart() {
+export default function HomeScrollNumberOfClicksChart({ adClickActivity }) {
+  const chartData = adClickActivity;
+
   return (
     <>
       {/* desktop */}
