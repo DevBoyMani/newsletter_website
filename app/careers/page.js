@@ -54,14 +54,14 @@ const Careers = () => {
             </h2>
             <div className="hidden lg:flex space-x-4 mt-8 text-[#020715] text-[17px]">
               <a
-                href=""
+                href="https://www.linkedin.com/company/houseofsummary/"
                 target="_blank"
                 className="hover:underline hover:text-[#01261E]"
               >
                 LinkedIn ↗
               </a>
               <a
-                href=""
+                href="https://www.glassdoor.com/Overview/Working-at-House-of-Summary-EI_IE10263537.11,27.htm"
                 target="_blank"
                 className="hover:underline hover:text-[#01261E]"
               >

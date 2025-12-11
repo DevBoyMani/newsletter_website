@@ -131,50 +131,39 @@ export default function AdvertisePageMobileVersion({
       </div>
 
       {/* Combined Analytics */}
-      <div className="bg-[#FAFAFA] relative px-4 md:px-28 pt-20">
+      <div className="bg-[#FAFAFA] px-4 pt-20">
         <HeadingWithUnderline text="Combined Analytics" />
 
         {/* Analytics Chart Grid */}
-        <div className=" mt-10">
-          {/* Chart Row 1 */}
-          <div className="flex flex-col justify-center items-center gap-4">
-            <AccountReached
-              subscribersMonthly={subscribersMonthly}
-              isLoading={false}
-            />{" "}
-            <ViewsCountry opensByCountry={opensByCountry} />{" "}
-          </div>
+        <div className="mt-10 grid grid-cols-1 gap-[20px]">
+          <AccountReached
+            subscribersMonthly={subscribersMonthly}
+            isLoading={false}
+          />
+          <ViewsCountry opensByCountry={opensByCountry} />
+          <Statistics opensByGender={opensByGender} />
+          <ActiveUsers opensMonthly={opensMonthly} />
 
-          {/* Chart Row 2 */}
-          <div className="flex flex-col justify-center items-center gap-4">
-            <Statistics opensByGender={opensByGender} />
-            <ActiveUsers opensMonthly={opensMonthly} />
-          </div>
-
-          {/* Chart Row 3 */}
-          <div className="flex flex-col justify-center items-center gap-4">
-            <SignInUps adClickActivity={adClickActivity} />
-            <div
-              className="w-full h-[215px] rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
-              style={{
-                background:
-                  "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)",
-              }}
-            >
-              <div className="flex flex-col justify-between p-6 h-full">
-                <p className="text-white text-[15px] font-[400] max-w-[335px]">
-                  This is where precision meets perspective. Explore detailed
-                  analytics for every newsletter to see how influence,
-                  attention, and conversion intertwine across our newsletter
-                  portfolio.
-                </p>
-                <div className="flex justify-start items-center w-fit max-h-[20px] pb-6">
-                  <Link href="/analytics">
-                    <button className="text-[14px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
-                      See analytics
-                    </button>
-                  </Link>
-                </div>
+          <SignInUps adClickActivity={adClickActivity} />
+          <div
+            className="w-full h-[215px] rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
+            style={{
+              background:
+                "conic-gradient(from 142deg at 60.52% 63.72%, var(--Green-Main, #01261E) 0deg, #116150 360deg)",
+            }}
+          >
+            <div className="flex flex-col justify-between p-6 h-full">
+              <p className="text-white text-[15px] font-[400] max-w-[335px]">
+                This is where precision meets perspective. Explore detailed
+                analytics for every newsletter to see how influence, attention,
+                and conversion intertwine across our newsletter portfolio.
+              </p>
+              <div className="flex justify-start items-center w-fit max-h-[20px] pb-6">
+                <Link href="/analytics">
+                  <button className="text-[14px] mt-6 px-4 py-1.5 border border-white text-white rounded-full hover:bg-white hover:text-[#01261E] transition">
+                    See analytics
+                  </button>
+                </Link>
               </div>
             </div>
           </div>

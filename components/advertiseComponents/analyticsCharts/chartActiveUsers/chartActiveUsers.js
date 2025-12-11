@@ -190,7 +190,7 @@ export function ActiveUsers(props) {
       </div>
 
       {/* mobile view */}
-      <div className="block lg:hidden relative w-full h-full flex justify-center items-center mt-4">
+      <div className="block lg:hidden relative w-full h-full flex justify-center items-center">
         <div
           className="relative w-full h-[215px] transition-transform duration-500"
           style={{

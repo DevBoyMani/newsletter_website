@@ -20,8 +20,9 @@ const textVariants = {
 // fixed colors per website_id
 const websiteColorMap = {
   1: "#4D3060", // Presidential Summary
-  3: "#06266D", // Geopolitical Summary
-  7: "#EECA66", // Dubai Summary
+  2: "#06266D", // Geopolitical Summary
+  3: "linear-gradient(135deg, #EECA66, #102341)", // Dubai Summary (gradient)
+  4: "#80011F", //london summary
 };
 
 // format total reads into label like "1.5 million"
@@ -53,6 +54,7 @@ export default function AboutNewslettersStatistics() {
     { id: 1, name: "Presidential Summary", colorImage: "about/ps.png" },
     { id: 2, name: "Geopolitical Summary", colorImage: "about/gs.png" },
     { id: 3, name: "Dubai Summary", colorImage: "about/ds-small.png" },
+    { id: 4, name: "London Summary", colorImage: "about/ls-small.png" },
   ];
 
   // first 3 lines stay static
@@ -168,7 +170,7 @@ export default function AboutNewslettersStatistics() {
                 </p>
               </div>
 
-              <div className="flex space-x-7 mt-6 pl-14">
+              <div className="grid grid-cols-2 gap-x-7 gap-y-4 mt-6 pl-14">
                 {newsletters.map((item) => (
                   <div key={item.id} className="flex items-center space-x-2 ">
                     <img
