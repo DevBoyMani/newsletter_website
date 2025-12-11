@@ -1,5 +1,4 @@
-const selectedIds = process.env.SELECTED_WEBSITE_IDS?.split(",").map(
-  Number
-) ?? [1, 3, 7];
+const selectedIds =
+  process.env.NEXT_PUBLIC_SELECTED_WEBSITE_IDS?.split(",").map(Number) || [];
 
 export default selectedIds;
