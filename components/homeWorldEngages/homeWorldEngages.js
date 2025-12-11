@@ -117,7 +117,11 @@ export default function HomeWorldEngages({
           <div className="pt-[25px] ">
             {/* Carousel Section */}
             <div className="px-4 ">
-              <HomeAutoScrollCharts />
+              <HomeAutoScrollCharts
+                subscribersMonthly={subscribersMonthly}
+                opensMonthly={opensMonthly}
+                adClickActivity={adClickActivity}
+              />
             </div>
 
             {/* Map Background + Content Section */}
