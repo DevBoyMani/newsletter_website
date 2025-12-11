@@ -98,9 +98,9 @@ export default function AnalyticsPSCountryChart({
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex items-center justify-between -mt-9">
+          <CardContent className="flex items-center justify-between">
             {/* Legend */}
-            <div className="flex flex-col gap-[16px] mt-5">
+            <div className="flex flex-col gap-[16px]">
               {chartData.map((item) => (
                 <div key={item.country} className="flex items-center gap-2">
                   <span
@@ -115,7 +115,7 @@ export default function AnalyticsPSCountryChart({
             </div>
 
             {/* Donut Chart */}
-            <div className="w-[50%] max-w-[162px] aspect-square mt-2">
+            <div className="w-[50%] max-w-[162px] aspect-square mt-[0%]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
@@ -146,7 +146,7 @@ export default function AnalyticsPSCountryChart({
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex items-center justify-between pb-[16px] -mt-9">
+          <CardContent className="flex items-center justify-between pb-[16px]">
             {/* Legend */}
             <div className="flex flex-col gap-[10px]">
               {chartData.map((item) => (

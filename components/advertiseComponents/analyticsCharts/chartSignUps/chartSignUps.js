@@ -269,7 +269,7 @@ export function SignInUps(props) {
                       <p className="text-[8px] text-[#9291A5]">past 30 days</p>
                     </div>
                   </div>
-                  <div className="flex mr-8 gap-4 text-sm ml-8">
+                  <div className="flex mr-0 gap-2 text-sm ml-2">
                     <div className="flex items-center gap-2">
                       <img
                         src="/advertise/chart-canada.png"
@@ -293,7 +293,7 @@ export function SignInUps(props) {
             <CardContent className="p-0 ">
               <ChartContainer
                 config={chartConfig}
-                className="w-full h-[120px] sm:h-[100px] px-2"
+                className="w-full h-[140px] px-0 pt-4"
               >
                 <LineChart
                   accessibilityLayer

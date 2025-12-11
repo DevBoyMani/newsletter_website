@@ -97,7 +97,7 @@ export default function AnalyticsPSAgeChart({
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex justify-between items-center -mt-9">
+          <CardContent className="flex justify-between items-center">
             {/* Legend */}
             <div className="flex flex-col gap-[16px] -mt-4 pt-0">
               {chartData.map((item) => (
@@ -114,7 +114,7 @@ export default function AnalyticsPSAgeChart({
             </div>
 
             {/* Donut Chart */}
-            <div className="w-[50%] max-w-[162px] aspect-square">
+            <div className="w-[50%] max-w-[162px] aspect-square -mt-[5%]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
@@ -145,7 +145,7 @@ export default function AnalyticsPSAgeChart({
             </CardDescription>
           </CardHeader>
 
-          <CardContent className="flex justify-between items-center pb-[16px] -mt-9">
+          <CardContent className="flex justify-between items-center pb-[16px] ">
             {/* Legend */}
             <div className="flex flex-col gap-[10px] -mt-7">
               {chartData.map((item) => (
@@ -165,7 +165,7 @@ export default function AnalyticsPSAgeChart({
             </div>
 
             {/* Donut Chart */}
-            <div className="w-[45%] max-w-[160px] aspect-square">
+            <div className="w-[45%] max-w-[160px] aspect-square -mt-[5%]">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie

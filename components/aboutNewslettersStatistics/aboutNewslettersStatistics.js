@@ -21,7 +21,7 @@ const textVariants = {
 const websiteColorMap = {
   1: "#4D3060", // Presidential Summary
   3: "#06266D", // Geopolitical Summary
-  7: "#80011F", // Dubai Summary
+  7: "#EECA66", // Dubai Summary
 };
 
 // format total reads into label like "1.5 million"

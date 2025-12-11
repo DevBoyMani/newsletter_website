@@ -34,7 +34,7 @@ export default function AnalyticsComboList({ selected, onChange }) {
   };
 
   return (
-    <div className="px-4 pb-[32px] pt-[2px] lg:pb-0 lg:px-0 w-full lg:max-w-[40%] z-10">
+    <div className="px-4 pb-[32px] pt-[2px] lg:pb-0 lg:px-0 w-full lg:max-w-[40%] z-50">
       <Listbox value={selectedOption} onChange={handleChange}>
         {({ open }) => (
           <div className="relative">
@@ -59,7 +59,7 @@ export default function AnalyticsComboList({ selected, onChange }) {
               )}
             </Listbox.Button>
 
-            <Listbox.Options className="absolute z-10 mt-1 w-full px-[20px] py-[10px] rounded-[10px] bg-[#01261E] text-[16px] font-[600] leading-[104%]">
+            <Listbox.Options className="absolute z-50 mt-1 w-full px-[20px] py-[10px] rounded-[10px] bg-[#01261E] text-[16px] font-[600] leading-[104%]">
               {options
                 .filter((item) => item.value !== selectedOption.value)
                 .map((item) => (

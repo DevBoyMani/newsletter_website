@@ -9,28 +9,28 @@ import ContactMessage from "../../components/contactMessage/contactMessage";
 const socialMediaIcons = [
   {
     name: "x",
-    src: "/readers/x.png",
-    href: "https://www.presidentialsummary.com/",
+    src: "/f-x.png",
+    href: "https://x.com/Houseofsummary",
   },
   {
     name: "insta",
-    src: "/readers/insta.png",
-    href: "https://www.presidentialsummary.com/",
+    src: "/f-insta.png",
+    href: "https://www.instagram.com/houseofsummary/",
+  },
+  {
+    name: "fb",
+    src: "/f-fb.png",
+    href: "https://www.facebook.com/Houseofsummary/",
   },
   {
     name: "ln",
-    src: "/readers/ln.png",
-    href: "https://www.presidentialsummary.com/",
-  },
-  {
-    name: "facebook",
-    src: "/contact/fb.png",
-    href: "https://www.presidentialsummary.com/",
+    src: "/f-ln.png",
+    href: "https://www.linkedin.com/company/houseofsummary/",
   },
   {
     name: "threads",
-    src: "/contact/threads.png",
-    href: "https://www.presidentialsummary.com/",
+    src: "/f-threads.png",
+    href: "https://www.threads.com/@houseofsummary",
   },
 ];
 

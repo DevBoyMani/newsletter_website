@@ -221,7 +221,7 @@ export function ActiveUsers(props) {
             <CardContent className="p-0">
               <ChartContainer
                 config={chartConfig}
-                className="w-full h-[120px] sm:h-[100px] px-2 p-0"
+                className="w-full h-[120px] px-0 pt-4"
               >
                 <AreaChart
                   accessibilityLayer
