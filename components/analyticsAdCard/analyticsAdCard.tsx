@@ -110,10 +110,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
           <p className="text-[14px] leading-[139%] text-[#fff] pt-[12px]">
             Email sales at{" "}
             <span className="inline-flex items-center gap-1 font-[500] text-[#fff]">
-              <a
-                href="mailto:sales@houseofsummary.com"
-                className="underline underline-offset-4 decoration-[1px]"
-              >
+              <a href="mailto:sales@houseofsummary.com" className="">
                 sales@houseofsummary.com
               </a>
 
@@ -126,7 +123,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
             </span>
             or WhatsApp us at{" "}
             <a
-              className="underline underline-offset-4 decoration-[1px]"
+              className="underline underline-offset-4 decoration-[1px] font-[400]"
               href="https://wa.me/12185000099 "
               target="_blank"
             >
