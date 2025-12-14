@@ -101,7 +101,7 @@ export function SignInUps(props) {
           }}
         >
           {/* Front */}
-          <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8">
+          <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8 rounded-[20px] shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]">
             <button
               onClick={() => setFlipped(true)}
               className="absolute top-6 right-8 rounded-full "
@@ -198,7 +198,7 @@ export function SignInUps(props) {
 
           {/* Back Side */}
           <Card
-            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8"
+            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8 rounded-[20px] shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",
@@ -246,7 +246,7 @@ export function SignInUps(props) {
           }}
         >
           {/* Front */}
-          <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6">
+          <Card className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6 rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]">
             <button
               onClick={() => setFlipped(true)}
               className="absolute top-4 right-6 rounded-full "
@@ -344,7 +344,7 @@ export function SignInUps(props) {
 
           {/* Back */}
           <Card
-            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6"
+            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6 rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",

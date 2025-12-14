@@ -326,7 +326,7 @@ export default function AboutOurCompany() {
                   className="w-8 h-8 bg-[#4D3060] hover:bg-[#684182] rounded-full"
                 />
               </a>
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
+              {/* <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
                 <div className="w-[150px]">
                   <p className="text-[10px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                     Presidential Summary
@@ -338,7 +338,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
-              </div>
+              </div> */}
             </div>
 
             {/* Icon 2 - Top Right (Blue stripes icon) */}
@@ -350,7 +350,7 @@ export default function AboutOurCompany() {
                   className="w-8 h-8 bg-[#06266D] hover:bg-[#0A338C] rounded-full"
                 />
               </a>
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              {/* <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="w-[150px]">
                   <p className="text-[10px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                     Geopolitical Summary
@@ -362,7 +362,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
-              </div>
+              </div> */}
             </div>
 
             {/* Icon 3 - Middle Right (B&H) */}
@@ -422,7 +422,7 @@ export default function AboutOurCompany() {
                   className="w-8 h-8 bg-[#80011F] hover:bg-[#AA0028] rounded-full object-contain p-1"
                 />
               </a>
-              <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
+              {/* <div className="absolute -top-16 left-1/2 -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10">
                 <div className="w-[150px]">
                   <p className="text-[10px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                     London Summary
@@ -434,7 +434,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 <div className="absolute left-1/2 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
-              </div>
+              </div> */}
             </div>
 
             {/* Icon 5 - Bottom Left (Building) */}
@@ -470,7 +470,7 @@ export default function AboutOurCompany() {
                   className="w-8 h-8 bg-[#102341] hover:bg-[#102341] rounded-full"
                 />
               </a>
-              <div className="absolute -top-[160%] left-[180%] -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
+              {/* <div className="absolute -top-[160%] left-[180%] -translate-x-1/2 bg-[#26252C] text-[#fff] text-xs py-2 rounded-[5px] shadow opacity-0 group-hover:opacity-100 transition-opacity z-10 ">
                 <div className="w-[150px]">
                   <p className="text-[10px] text-center font-[600] leading-[135%] tracking-[0.24px]">
                     Dubai Summary
@@ -482,7 +482,7 @@ export default function AboutOurCompany() {
                 </div>
 
                 <div className="absolute left-8 -bottom-1 -translate-x-1/2 w-3 h-3 bg-[#26252C] rotate-45 z-[-1]"></div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

@@ -64,17 +64,25 @@ export default function AboutOurStandards() {
   // orbit scroll for mobile
   const orbitRef = useRef(null);
   const contentRef = useRef(null);
+  const hasScrolledRef = useRef(false);
 
   const handleDotClick = (label) => {
     setSelected(label);
-    setTimeout(() => {
-      if (orbitRef.current) {
-        orbitRef.current.scrollIntoView({ behavior: "smooth", block: "start" });
-        setTimeout(() => {
-          window.scrollBy({ top: -96, behavior: "smooth" }); // adjust -40px as needed
-        }, 300); // match the scrollIntoView duration (~300ms)
-      }
-    }, 50);
+
+    // Scroll ONLY the first time
+    if (!hasScrolledRef.current && orbitRef.current) {
+      hasScrolledRef.current = true;
+
+      orbitRef.current.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+
+      // optional offset for fixed header
+      setTimeout(() => {
+        window.scrollBy({ top: -146, behavior: "smooth" });
+      }, 300);
+    }
   };
 
   // orbit scroll for mobile
@@ -213,20 +221,6 @@ export default function AboutOurStandards() {
 
           <div ref={contentRef} className="">
             {activeContent && (
-              // <div>
-              //   <div className="pt-4 pb-4">
-              //     <h5 className=" leading-normal text-[22px] text-[#000] font-[400] underline underline-offset-[6px] decoration-[1px]">
-              //       {activeContent.label}
-              //     </h5>
-              //   </div>
-              //   <p className="text-[14px] font-[400] leading-normal">
-              //     {activeContent.p1}
-              //   </p>
-              //   <p className="text-[14px] font-[400] leading-normal py-4">
-              //     {activeContent.p2}
-              //   </p>
-              // </div>
-
               <AnimatePresence mode="wait">
                 {activeContent && (
                   <motion.div

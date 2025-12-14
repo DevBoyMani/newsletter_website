@@ -102,7 +102,7 @@ export default function AnalyticsPSNumberOfSubscribersChart({
     <>
       {/* desktop */}
       <div className="lg:block hidden">
-        <Card className="px-[35px] py-[40px] h-[465px]">
+        <Card className="px-[35px] py-[40px] h-[465px] rounded-[20px] shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]">
           <CardHeader>
             <CardTitle className="text-[22px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Subscriber growth over time
@@ -168,7 +168,7 @@ export default function AnalyticsPSNumberOfSubscribersChart({
 
       {/* mobile */}
       <div className="block lg:hidden">
-        <Card className="px-[16px] pt-[16px]">
+        <Card className="px-[16px] pt-[16px] rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Subscriber growth over time

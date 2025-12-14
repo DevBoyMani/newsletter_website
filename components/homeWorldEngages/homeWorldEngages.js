@@ -2,12 +2,15 @@ import AnalyticsPSNumberOfClicksChart from "@/components/analyticsPSNumberOfClic
 import HomeAutoScrollImages from "../homeAutoScrollCharts/homeAutoScrollCharts";
 import HomeAutoScrollCharts from "../homeAutoScrollCharts/homeAutoScrollCharts";
 import Link from "next/link";
+import { useState } from "react";
 
 export default function HomeWorldEngages({
   subscribersMonthly,
   opensMonthly,
   adClickActivity,
 }) {
+  const [isLoading, setIsLoading] = useState(false);
+
   return (
     <>
       {/* desktop */}
@@ -145,10 +148,17 @@ export default function HomeWorldEngages({
                     </p>
 
                     <div className="pl-4 mt-[20px]">
-                      <Link href="/analytics">
+                      {/* <Link href="/analytics">
                         <button className="w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[42px] font-[400] leading-[30px] text-[14px] sm:text-[15px] tracking-[-0.14px]">
                           View analytics <span className="text-[14px]">→</span>
                         </button>
+                      </Link> */}
+                      <Link
+                        href="/analytics"
+                        prefetch
+                        className="w-fit flex items-center gap-[10px] bg-[#01261E] hover:bg-[#0B4337] text-white py-1 px-7 rounded-[42px] font-[400] leading-[30px] text-[14px] tracking-[-0.14px]"
+                      >
+                        View analytics <span>→</span>
                       </Link>
                     </div>
                   </div>

@@ -89,8 +89,8 @@ export default function HomeScrollNumberOfClicksChart({
   return (
     <>
       {/* desktop */}
-      <div className="lg:block hidden">
-        <Card className="p-[30px] h-full">
+      <div className="lg:block hidden shadow-[0_4px_37px_0_rgba(0,0,0,0.05)]">
+        <Card className="p-[30px] h-[315px] rounded-[10px] bg-[#fff]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Clicks
@@ -166,8 +166,8 @@ export default function HomeScrollNumberOfClicksChart({
       </div>
 
       {/* mobile */}
-      <div className="block lg:hidden">
-        <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
+      <div className="block lg:hidden shadow-[0_0_44px_rgba(0,0,0,0.06)]">
+        <Card className="px-[16px] pt-[16px] rounded-[5px] h-[266px] bg-[#fff]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
               Clicks
@@ -180,7 +180,7 @@ export default function HomeScrollNumberOfClicksChart({
 
           <CardContent className="pt-[10px]">
             <div className="w-[100%] overflow-visible">
-              <ChartContainer config={chartConfig} className="w-full h-[125px]">
+              <ChartContainer config={chartConfig} className="w-full h-[120px]">
                 <LineChart
                   data={chartData}
                   margin={{ top: 0, right: 5, left: 5, bottom: 0 }}

@@ -29,7 +29,7 @@ export default function WebsiteAnalytics({
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-[22px]">
           {/* Hero card (left) */}
           <div
-            className="relative h-[465px] flex flex-col justify-between rounded-[22px] p-[40px] bg-cover bg-center overflow-hidden"
+            className="relative h-[465px] flex flex-col justify-between rounded-[20px] p-[40px] bg-cover bg-center overflow-hidden shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]"
             style={{ backgroundImage: `url(${config.desktopBg})` }}
           >
             <div className="z-10">
@@ -79,7 +79,7 @@ export default function WebsiteAnalytics({
       <div className="block lg:hidden px-4">
         {/* Hero section */}
         <div
-          className="relative h-[232px] flex flex-col justify-between rounded-[10px] pt-[16px] pl-[16px] bg-cover bg-center overflow-hidden"
+          className="relative h-[232px] flex flex-col justify-between pt-[16px] pl-[16px] bg-cover bg-center overflow-hidden rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
           style={{ backgroundImage: `url(${config.mobileBg})` }}
         >
           <div className="z-10 relative">

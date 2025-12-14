@@ -33,7 +33,7 @@ export default function HomeAutoScrollCharts({
 
     const interval = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % charts.length);
-    }, 3000);
+    }, 5000);
 
     return () => clearInterval(interval);
   }, [paused, charts.length]);
@@ -45,9 +45,7 @@ export default function HomeAutoScrollCharts({
         className="
           hidden lg:block relative w-full 
           rounded-[5px] overflow-hidden
-          h-[400px]    
-          min-h-[400px]
-          max-h-[450px]
+          h-[315px]
         "
         onMouseEnter={() => setPaused(true)} // 🟢 pause on hover
         onMouseLeave={() => setPaused(false)} // 🟢 resume on leave
@@ -69,10 +67,7 @@ export default function HomeAutoScrollCharts({
       {/* --- MOBILE VERSION --- */}
       <div className="block lg:hidden relative w-full">
         <div
-          className="
-            relative w-full rounded-[5px] overflow-hidden
-            min-h-[265px] max-h-[360px]
-          "
+          className="relative w-full overflow-hidden h-[266px]"
           onTouchStart={() => setPaused(true)} // 🟢 pause on touch
           onTouchEnd={() => setPaused(false)} // 🟢 resume after touch
         >
@@ -91,7 +86,7 @@ export default function HomeAutoScrollCharts({
         </div>
 
         {/* Indicator */}
-        <div className="relative mt-[22px] mb-[5px] flex justify-center">
+        {/* <div className="relative mt-[22px] mb-[5px] flex justify-center">
           <div className="w-full max-w-[111px] h-[1.5px] bg-[#E6E6E6] rounded-full relative overflow-hidden">
             <motion.div
               key={currentIndex}
@@ -106,7 +101,7 @@ export default function HomeAutoScrollCharts({
               }}
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

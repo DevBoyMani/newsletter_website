@@ -41,7 +41,7 @@ export default function Footer() {
 
   const [showPopup, setShowPopup] = useState(false);
   const handleCopy = () => {
-    const email = "careers@sagravia.com";
+    const email = "sales@houseofsummary.com";
 
     navigator.clipboard.writeText(email).then(() => {
       setShowPopup(true);
@@ -185,7 +185,7 @@ export default function Footer() {
               <div className="flex justify-end items-center">
                 {socialMediaIcons.map((item, index) => (
                   <div className="pl-[10px] " key={index}>
-                    <a href={item.href}>
+                    <a href={item.href} target="_blank">
                       <img
                         src={item.src}
                         alt={item.name}
@@ -288,37 +288,19 @@ export default function Footer() {
                   </li>
                 </ul>
               </div>
-
-              {/* <div className="pt-12 ">
-                  <ul className="flex flex-col ">
-                    <li className="text-[16px] font-semibold pb-4">
-                      Contact Us
-                    </li>
-
-                    <li href="#" className="py-1 text-[14px]">
-                      <Link href="#" className="">
-                        info@sagravia.com
-                      </Link>
-                    </li>
-                    <li href="#" className="py-1 text-[14px]">
-                      <Link href="#" className="">
-                        +1-2345-6789
-                      </Link>
-                    </li>
-                    <li href="#" className="py-1 text-[14px]">
-                      <Link href="#" className="">
-                        123 Ave, New York, USA
-                      </Link>
-                    </li>
-                  </ul>
-                </div> */}
             </div>
 
             {/* social icons */}
-            <div className="pt-[52px] px-4 flex justify-center">
+            <div className="pt-[52px] px-4 flex justify-center relative z-50">
               <div className="flex space-x-6 ">
                 {socialMediaIcons.map((icons, index) => (
-                  <a key={index} href={icons.href} target="_blank">
+                  <a
+                    key={index}
+                    href={icons.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block touch-manipulation"
+                  >
                     <img
                       src={icons.src}
                       alt={icons.name}

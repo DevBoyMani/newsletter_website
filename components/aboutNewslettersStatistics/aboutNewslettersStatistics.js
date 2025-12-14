@@ -21,7 +21,7 @@ const textVariants = {
 const websiteColorMap = {
   1: "#4D3060", // Presidential Summary
   2: "#06266D", // Geopolitical Summary
-  3: "linear-gradient(135deg, #EECA66, #102341)", // Dubai Summary (gradient)
+  3: "#EECA66", // Dubai Summary (gradient)
   4: "#80011F", //london summary
 };
 
@@ -176,7 +176,7 @@ export default function AboutNewslettersStatistics() {
                     <img
                       src={item.colorImage}
                       alt={item.name}
-                      className="w-2 h-2 object-contain"
+                      className="w-[11px] h-[11px] object-contain rounded-[1px]"
                     />
                     <p className="text-[14px] font-[600] text-[#151515] leading-[109.922%]">
                       {item.name}
@@ -243,7 +243,7 @@ export default function AboutNewslettersStatistics() {
                     <img
                       src={item.colorImage}
                       alt={item.name}
-                      className="w-2 h-2 object-contain"
+                      className="w-[9px] h-[9px] object-contain rounded-[1px]"
                     />
                     <p className="text-[14px] font-[600] text-[#151515] leading-[109.922%]">
                       {item.name}

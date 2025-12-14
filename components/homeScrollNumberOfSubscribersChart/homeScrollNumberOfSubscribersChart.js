@@ -123,8 +123,8 @@ export default function HomeScrollNumberOfSubscribersChart({
   return (
     <>
       {/* desktop */}
-      <div className="lg:block hidden">
-        <Card className="p-[30px] h-full">
+      <div className="lg:block hidden shadow-[0_4px_37px_0_rgba(0,0,0,0.05)]">
+        <Card className="p-[30px] h-[315px] rounded-[10px] bg-[#fff]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114.423%]">
               Emails sent
@@ -191,8 +191,8 @@ export default function HomeScrollNumberOfSubscribersChart({
       </div>
 
       {/* mobile */}
-      <div className="block lg:hidden bg-[#fff]">
-        <Card className="px-[16px] pt-[16px] rounded-[5px] h-full shadow-[0px_4px_37px_rgba(0,0,0,0.05)]">
+      <div className="block lg:hidden shadow-[0_0_44px_rgba(0,0,0,0.06)]">
+        <Card className="px-[16px] pt-[16px] rounded-[5px] h-[266px] bg-[#fff]">
           <CardHeader>
             <CardTitle className="text-[16px] text-[#000] font-[manrope] font-[600] leading-[114%]">
               Emails sent

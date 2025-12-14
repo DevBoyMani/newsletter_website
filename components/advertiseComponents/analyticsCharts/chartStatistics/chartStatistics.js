@@ -82,7 +82,7 @@ export function Statistics(props) {
         >
           {/* Front */}
           <Card
-            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8"
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-8 rounded-[20px] shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -156,7 +156,7 @@ export function Statistics(props) {
 
           {/* Back */}
           <Card
-            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8"
+            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-8 rounded-[20px] shadow-[0px_4px_37px_0px_rgba(0,0,0,0.05)]"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",
@@ -202,7 +202,7 @@ export function Statistics(props) {
         >
           {/* Front */}
           <Card
-            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6"
+            className="absolute w-full h-full bg-[#fff] flex flex-col justify-between p-6 rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
             style={{ backfaceVisibility: "hidden" }}
           >
             <button
@@ -254,7 +254,7 @@ export function Statistics(props) {
                     {chartData.map((item) => (
                       <div
                         key={item.key}
-                        className="flex items-center justify-between"
+                        className="flex items-center justify-start gap-6"
                       >
                         <div className="flex items-center gap-2">
                           <span
@@ -278,7 +278,7 @@ export function Statistics(props) {
 
           {/* Back */}
           <Card
-            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6 rounded-xl shadow-md"
+            className="absolute w-full h-full bg-[#01261E] flex flex-col justify-start p-6 rounded-xl shadow-md rounded-[10px] shadow-[0px_0px_7.1px_0px_rgba(0,0,0,0.16)]"
             style={{
               transform: "rotateY(180deg)",
               backfaceVisibility: "hidden",

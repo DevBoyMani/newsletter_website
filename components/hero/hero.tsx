@@ -48,7 +48,7 @@ export default function Hero() {
               </p>
               <div className="pt-[32px]">
                 {/* w-[43%] */}
-                <Link href="/advertise">
+                <Link href="/contact">
                   <button className="w-[238px] bg-[#01261E] hover:bg-[#0B4337] py-[9px] px-[18px] text-[center] text-[19px] text-[#fff] rounded-[57px] leading-normal font-[400]">
                     Advertise your brand
                   </button>
@@ -105,25 +105,25 @@ export default function Hero() {
               world full of noise, our audience comes here to think. Reach them
               here.
             </p>
-
-            <div className="pt-6">
-              <Link href="/advertise">
-                <button className="w-[111px] sm:w-[118px] bg-[#01261E] py-[8px] px-[18px] text-center text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
-                  Advertise
-                </button>
-              </Link>
-            </div>
           </div>
         </div>
 
-        {/* Image */}
-        <div className="bg-[#FAFAFA]">
-          <div className="-mt-[40px]">
-            <img
-              src="/home/hero-image-new-mobile.png"
-              alt="Home hero image"
-              className="w-full h-auto"
-            />
+        {/* Image + the button leading to contact page */}
+        <div className="bg-[#FAFAFA] relative">
+          {/* Image */}
+          <img
+            src="/home/hero-image-new-mobile.png"
+            alt="Home hero image"
+            className="w-full h-auto"
+          />
+
+          {/* Button overlay */}
+          <div className="absolute top-4 left-4 z-20">
+            <Link href="/contact">
+              <button className="w-[111px] sm:w-[118px] bg-[#01261E] py-[8px] px-[18px] text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
+                Advertise
+              </button>
+            </Link>
           </div>
         </div>
 

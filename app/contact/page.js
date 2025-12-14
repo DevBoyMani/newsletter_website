@@ -130,35 +130,12 @@ export default function Contact() {
     }
   };
 
-  // Simplified Chatra integration
-  useEffect(() => {
-    // Initialize Chatra
-    window.ChatraID = "aH58HozYPtMden4C9";
-
-    // Load Chatra script
-    const script = document.createElement("script");
-    script.async = true;
-    script.src = "https://call.chatra.io/chatra.js";
-    document.head.appendChild(script);
-
-    // Set ready state when Chatra loads
-    script.onload = () => {
-      if (window.Chatra) {
-        window.Chatra("on", "ready", () => {
-          setChatraReady(true);
-          console.log("Chatra ready!");
-        });
-      }
-    };
-  }, []);
-
   const openChat = () => {
     if (window.Chatra) {
+      window.Chatra("show");
       window.Chatra("openChat");
     } else {
-      // Fallback: open in new tab or show message
-      console.log("Chatra not available");
-      alert("Chat is currently unavailable. Please try again later.");
+      console.warn("Chatra not ready yet");
     }
   };
 
@@ -397,50 +374,6 @@ export default function Contact() {
                   value={formData.preferredContact}
                   onChange={(val) => handleChange("preferredContact", val)}
                 />
-
-                {/*  message */}
-                {/* <div className="">
-                  <ContactMessage
-                    value={formData.message}
-                    onChange={(val) => handleChange("message", val)}
-                  />
-                </div> */}
-
-                {/* <div className="flex justify-end mt-4">
-                  <button
-                    onClick={handleSubmit}
-                    className="px-14 py-3.5 bg-[#01261E] text-white text-[16px] font-[500] rounded-full hover:bg-[#014134] transition"
-                  >
-                    Send message
-                  </button>
-                </div> */}
-
-                {/* {formSubmitted && (
-                  <div className="flex items-start gap-2 mt-6 bg-[#F6FFF8] px-4 py-3 rounded-md border border-[#CDF1DA] max-w-md transition-opacity duration-500 ease-in-out opacity-100">
-                    <div className="w-6 h-6 bg-[#6FCF97] rounded-full flex items-center justify-center mt-1">
-                      <svg
-                        className="w-4 h-4 text-white"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="3"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          d="M5 13l4 4L19 7"
-                        />
-                      </svg>
-                    </div>
-                    <div className="text-[#333] text-sm font-medium leading-tight">
-                      Message sent
-                      <p className="text-[#4F4F4F] text-[14px] font-normal mt-0.5">
-                        Thanks for reaching out! We’ll get back to you in 2–3
-                        business days.
-                      </p>
-                    </div>
-                  </div>
-                )} */}
 
                 {!formSubmitted && (
                   <>
