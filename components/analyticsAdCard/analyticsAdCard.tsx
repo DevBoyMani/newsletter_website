@@ -155,8 +155,8 @@ export default function AnalyticsAdCard({ id = 0 }) {
                 fontWeight="600"
                 width="129px"
                 borderColor="#fff"
-                hoverBgColor="#fff"
-                hoverText="#01261E"
+                // hoverBgColor="#fff"
+                // hoverText="#01261E"
                 textColor="#fff"
                 padding="py-[7px]"
               />
