@@ -120,7 +120,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
                 className="w-3 h-4 cursor-pointer"
                 onClick={handleCopy}
               />
-            </span>
+            </span>{" "}
             or WhatsApp us at{" "}
             <a
               className="underline underline-offset-4 decoration-[1px] font-[400]"
