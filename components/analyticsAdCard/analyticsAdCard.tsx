@@ -107,7 +107,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
             action. Schedule a call with the sales team by clicking on the
             button below.
           </p>
-          <p className="text-[14px] leading-[139%] text-[#fff] pt-[12px]">
+          <p className="text-[14px] leading-[140%] text-[#fff] pt-[12px]">
             Email sales at{" "}
             <span className="inline-flex items-center gap-1 font-[500] text-[#fff]">
               <a href="mailto:sales@houseofsummary.com" className="">
@@ -124,7 +124,7 @@ export default function AnalyticsAdCard({ id = 0 }) {
             or WhatsApp us at{" "}
             <a
               className="underline underline-offset-4 decoration-[1px] font-[400]"
-              href="https://wa.me/12185000099 "
+              href="https://wa.me/12185000099"
               target="_blank"
             >
               +1 218 500 0099
