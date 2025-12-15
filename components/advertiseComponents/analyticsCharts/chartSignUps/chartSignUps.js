@@ -22,10 +22,11 @@ const chartConfig = {
   },
 };
 
-// Format y-axis values with commas
+// 1.2K, 25K, 1.4M, 2.3B
 const formatNumber = (value) =>
   new Intl.NumberFormat("en-US", {
-    maximumFractionDigits: 0,
+    notation: "compact",
+    maximumFractionDigits: 1,
   }).format(Number(value) || 0);
 
 // Bubble tooltip
@@ -154,7 +155,7 @@ export function SignInUps(props) {
                   accessibilityLayer
                   data={chartData}
                   margin={{
-                    left: 40, // extra space so Y-axis labels don't get cut
+                    left: 10, // extra space so Y-axis labels don't get cut
                     right: 20,
                     top: 10,
                     bottom: 10,
@@ -162,7 +163,7 @@ export function SignInUps(props) {
                 >
                   <CartesianGrid vertical={false} />
                   <YAxis
-                    width={40}
+                    width={28}
                     tickLine={false}
                     axisLine={false}
                     tick={{ fill: "#515151", fontSize: 12 }}
@@ -299,7 +300,7 @@ export function SignInUps(props) {
                   accessibilityLayer
                   data={chartData}
                   margin={{
-                    left: 36,
+                    left: 6,
                     right: 16,
                     top: 8,
                     bottom: 8,
@@ -307,10 +308,10 @@ export function SignInUps(props) {
                 >
                   <CartesianGrid vertical={false} />
                   <YAxis
-                    width={32}
+                    width={24}
                     tickLine={false}
                     axisLine={false}
-                    tick={{ fill: "#515151", fontSize: 10 }}
+                    tick={{ fill: "#515151", fontSize: 8 }}
                     tickFormatter={formatNumber}
                     domain={["auto", "auto"]}
                   />
@@ -320,7 +321,7 @@ export function SignInUps(props) {
                     axisLine={true}
                     tickMargin={6}
                     tickFormatter={(value) => value.slice(0, 6)}
-                    tick={{ fill: "#515151", fontSize: 10 }}
+                    tick={{ fill: "#515151", fontSize: 8 }}
                   />
                   <ChartTooltip cursor={false} content={<ClickTooltip />} />
                   <Line

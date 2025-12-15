@@ -20,9 +20,9 @@ const textVariants = {
 // fixed colors per website_id
 const websiteColorMap = {
   1: "#4D3060", // Presidential Summary
-  2: "#06266D", // Geopolitical Summary
-  3: "#EECA66", // Dubai Summary (gradient)
-  4: "#80011F", //london summary
+  3: "#06266D", // Geopolitical Summary
+  7: "#EECA66", // Dubai Summary (gradient)
+  8: "#80011F", //london summary
 };
 
 // format total reads into label like "1.5 million"

@@ -18,6 +18,12 @@ const chartConfig = {
   },
 };
 
+const formatCompact = (value) =>
+  new Intl.NumberFormat("en-US", {
+    notation: "compact",
+    maximumFractionDigits: 1,
+  }).format(value);
+
 // Bubble tooltip (same style as subscribers)
 function OpensTooltip({ active, payload, label }) {
   if (!active || !payload || !payload.length) return null;
@@ -95,7 +101,7 @@ export function ActiveUsers(props) {
                   accessibilityLayer
                   data={chartData}
                   margin={{
-                    left: 40, // ⬅️ more room for Y-axis labels
+                    left: 10, // ⬅️ more room for Y-axis labels
                     right: 12,
                   }}
                 >
@@ -119,16 +125,12 @@ export function ActiveUsers(props) {
                   <CartesianGrid vertical={true} />
 
                   <YAxis
-                    width={35}
+                    width={28}
                     tickLine={false}
                     axisLine={false}
                     tick={{ fill: "#515151", fontSize: 12 }}
                     domain={["auto", "auto"]}
-                    tickFormatter={(value) =>
-                      new Intl.NumberFormat("en-US", {
-                        maximumFractionDigits: 0,
-                      }).format(value)
-                    }
+                    tickFormatter={(value) => formatCompact(value)}
                   />
 
                   <XAxis
@@ -227,7 +229,7 @@ export function ActiveUsers(props) {
                   accessibilityLayer
                   data={chartData}
                   margin={{
-                    left: 40,
+                    left: 10,
                     right: 12,
                   }}
                 >
@@ -251,16 +253,12 @@ export function ActiveUsers(props) {
                   <CartesianGrid vertical={true} />
 
                   <YAxis
-                    width={35}
+                    width={24}
                     tickLine={false}
                     axisLine={false}
-                    tick={{ fill: "#515151", fontSize: 12 }}
+                    tick={{ fill: "#515151", fontSize: 8 }}
                     domain={["auto", "auto"]}
-                    tickFormatter={(value) =>
-                      new Intl.NumberFormat("en-US", {
-                        maximumFractionDigits: 0,
-                      }).format(value)
-                    }
+                    tickFormatter={(value) => formatCompact(value)}
                   />
 
                   <XAxis

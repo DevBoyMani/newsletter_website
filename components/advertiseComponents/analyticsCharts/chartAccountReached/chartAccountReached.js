@@ -235,6 +235,7 @@ export function AccountReached(props) {
                     dataKey="month"
                     tickLine={false}
                     axisLine={{ stroke: "#000000" }}
+                    tick={{ fill: "#515151", fontSize: 8 }}
                     tickMargin={8}
                   />
 
