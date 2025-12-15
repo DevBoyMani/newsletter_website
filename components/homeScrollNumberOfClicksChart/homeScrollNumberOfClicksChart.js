@@ -21,38 +21,25 @@ import { ChartContainer } from "@/components/ui/chart";
 export const description =
   "Weekly ad click activity (last month vs this month).";
 
-// 🔹 Static mock from API: adClickActivity
-// const adClickActivity = [
-//   {
-//     week: "Week 1",
-//     lastMonth: 870,
-//     thisMonth: 15599,
-//   },
-//   {
-//     week: "Week 2",
-//     lastMonth: 9365,
-//     thisMonth: 17273,
-//   },
-//   {
-//     week: "Week 3",
-//     lastMonth: 8681,
-//     thisMonth: 10825,
-//   },
-//   {
-//     week: "Week 4",
-//     lastMonth: 9317,
-//     thisMonth: 11240,
-//   },
-// ];
-
 // Compact number formatter: 141K, 2.3M, 1.1B
 const compactNumber = new Intl.NumberFormat("en-US", {
   notation: "compact",
   maximumFractionDigits: 1,
 });
 
-// Recharts data (already good shape)
-// const chartData = adClickActivity;
+// Ensure X-axis shows even number of ticks
+function getEvenTicks(labels) {
+  if (!labels || labels.length === 0) return [];
+
+  // For very small datasets, don't be aggressive
+  if (labels.length <= 2) return labels;
+
+  // Already even
+  if (labels.length % 2 === 0) return labels;
+
+  // Odd → drop last
+  return labels.slice(0, labels.length - 1);
+}
 
 // Bubble tooltip showing both lines
 function BubbleTooltip({ active, payload, label }) {
@@ -86,6 +73,9 @@ export default function HomeScrollNumberOfClicksChart({
 }) {
   const chartData = adClickActivity;
 
+  const labels = chartData.map((d) => d.week);
+  const evenTicks = getEvenTicks(labels);
+
   return (
     <>
       {/* desktop */}
@@ -111,6 +101,7 @@ export default function HomeScrollNumberOfClicksChart({
 
                 <XAxis
                   dataKey="week"
+                  ticks={evenTicks}
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
@@ -190,6 +181,7 @@ export default function HomeScrollNumberOfClicksChart({
 
                   <XAxis
                     dataKey="week"
+                    ticks={evenTicks}
                     axisLine={false}
                     tickLine={false}
                     tickMargin={10}

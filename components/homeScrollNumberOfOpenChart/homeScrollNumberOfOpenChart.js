@@ -20,58 +20,6 @@ import { ChartContainer } from "@/components/ui/chart";
 
 export const description = "Monthly number of emails opened.";
 
-// Static mock of opensMonthly from API
-// const opensMonthly = [
-//   {
-//     month: "2024-12-01",
-//     count: 15705,
-//   },
-//   {
-//     month: "2025-01-01",
-//     count: 39388,
-//   },
-//   {
-//     month: "2025-02-01",
-//     count: 108552,
-//   },
-//   {
-//     month: "2025-03-01",
-//     count: 116890,
-//   },
-//   {
-//     month: "2025-04-01",
-//     count: 118544,
-//   },
-//   {
-//     month: "2025-05-01",
-//     count: 216724,
-//   },
-//   {
-//     month: "2025-06-01",
-//     count: 605878,
-//   },
-//   {
-//     month: "2025-07-01",
-//     count: 1077573,
-//   },
-//   {
-//     month: "2025-08-01",
-//     count: 1217735,
-//   },
-//   {
-//     month: "2025-09-01",
-//     count: 1445221,
-//   },
-//   {
-//     month: "2025-10-01",
-//     count: 1619861,
-//   },
-//   {
-//     month: "2025-11-01",
-//     count: 2334333,
-//   },
-// ];
-
 // Convert "2025-01-01" → "Jan 25"
 function formatMonthLabel(monthStr) {
   const d = new Date(monthStr);
@@ -82,13 +30,27 @@ function formatMonthLabel(monthStr) {
   });
 }
 
-// Compact number formatter: 141K, 2.3M, 1.1B
+// Compact number formatter
 const compactNumber = new Intl.NumberFormat("en-US", {
   notation: "compact",
   maximumFractionDigits: 1,
 });
 
-// Tooltip formatter (bubble)
+// Ensure X-axis shows even number of ticks
+function getEvenTicks(labels) {
+  if (!labels || labels.length === 0) return [];
+
+  // Small datasets → keep as is
+  if (labels.length <= 2) return labels;
+
+  // Already even
+  if (labels.length % 2 === 0) return labels;
+
+  // Odd → drop last
+  return labels.slice(0, labels.length - 1);
+}
+
+// Tooltip bubble UI
 function BubbleTooltip({ active, payload, label }) {
   if (!active || !payload?.length) return null;
 
@@ -107,12 +69,15 @@ const chartConfig = {
 };
 
 export default function HomeScrollNumberOfOpensChart({ opensMonthly = [] }) {
-  console.log("opensMonthly", opensMonthly);
-  // Shape data for Recharts
+  // Shape the chart data
   const chartData = opensMonthly.map((item) => ({
     month: formatMonthLabel(item.month),
     opens: item.count,
   }));
+
+  const labels = chartData.map((d) => d.month);
+  const evenTicks = getEvenTicks(labels);
+
   return (
     <>
       {/* desktop */}
@@ -138,6 +103,7 @@ export default function HomeScrollNumberOfOpensChart({ opensMonthly = [] }) {
 
                 <XAxis
                   dataKey="month"
+                  ticks={evenTicks}
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
@@ -154,7 +120,6 @@ export default function HomeScrollNumberOfOpensChart({ opensMonthly = [] }) {
                   tickFormatter={(value) => compactNumber.format(value)}
                 />
 
-                {/* Bubble Tooltip */}
                 <Tooltip
                   content={<BubbleTooltip />}
                   cursor={{ stroke: "#01261E", strokeDasharray: "3 3" }}
@@ -172,11 +137,9 @@ export default function HomeScrollNumberOfOpensChart({ opensMonthly = [] }) {
           </CardContent>
 
           <div className="flex gap-6 justify-center items-center pt-[9.5px]">
-            <div className="flex items-center gap-2">
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Number of emails opened
-              </span>
-            </div>
+            <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
+              Number of emails opened
+            </span>
           </div>
         </Card>
       </div>
@@ -195,56 +158,53 @@ export default function HomeScrollNumberOfOpensChart({ opensMonthly = [] }) {
           </CardHeader>
 
           <CardContent className="pt-[10px] px-0">
-            <div className="w-[100%] overflow-visible">
-              <ChartContainer config={chartConfig} className="w-full h-[125px]">
-                <LineChart
-                  data={chartData}
-                  margin={{ top: 0, right: 5, left: 5, bottom: 0 }}
-                  width={500}
-                >
-                  <CartesianGrid vertical={false} stroke="#E5E7EB" />
+            <ChartContainer config={chartConfig} className="w-full h-[125px]">
+              <LineChart
+                data={chartData}
+                margin={{ top: 0, right: 5, left: 5, bottom: 0 }}
+                width={500}
+              >
+                <CartesianGrid vertical={false} stroke="#E5E7EB" />
 
-                  <XAxis
-                    dataKey="month"
-                    axisLine={false}
-                    tickLine={false}
-                    tickMargin={10}
-                    tick={{ fontSize: 8, fill: "#77838F" }}
-                  />
+                <XAxis
+                  dataKey="month"
+                  ticks={evenTicks}
+                  axisLine={false}
+                  tickLine={false}
+                  tickMargin={10}
+                  tick={{ fontSize: 8, fill: "#77838F" }}
+                />
 
-                  <YAxis
-                    domain={[0, "auto"]}
-                    axisLine={false}
-                    tickLine={false}
-                    tickMargin={10}
-                    tick={{ fontSize: 8, fill: "#77838F" }}
-                    width={40}
-                    tickFormatter={(value) => compactNumber.format(value)}
-                  />
+                <YAxis
+                  domain={[0, "auto"]}
+                  axisLine={false}
+                  tickLine={false}
+                  tickMargin={10}
+                  width={40}
+                  tick={{ fontSize: 8, fill: "#77838F" }}
+                  tickFormatter={(value) => compactNumber.format(value)}
+                />
 
-                  <Tooltip
-                    content={<BubbleTooltip />}
-                    cursor={{ stroke: "#01261E", strokeDasharray: "3 3" }}
-                  />
+                <Tooltip
+                  content={<BubbleTooltip />}
+                  cursor={{ stroke: "#01261E", strokeDasharray: "3 3" }}
+                />
 
-                  <Line
-                    dataKey="opens"
-                    type="monotone"
-                    stroke={chartConfig.opens.color}
-                    strokeWidth={2.5}
-                    dot={false}
-                  />
-                </LineChart>
-              </ChartContainer>
-            </div>
+                <Line
+                  dataKey="opens"
+                  type="monotone"
+                  stroke={chartConfig.opens.color}
+                  strokeWidth={2.5}
+                  dot={false}
+                />
+              </LineChart>
+            </ChartContainer>
           </CardContent>
 
           <div className="flex gap-[10px] justify-center items-center pb-[16px] pt-[7px]">
-            <div className="flex items-center gap-2">
-              <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
-                Number of emails opened
-              </span>
-            </div>
+            <span className="text-[9px] text-[#464E5F] font-[500] leading-normal">
+              Number of emails opened
+            </span>
           </div>
         </Card>
       </div>
