@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import { Plus, Check } from "lucide-react";
-import ReaderNLTestMobile from "../readerNLTestMobile/readerNLTestMobile";
+// import ReaderNLTestMobile from "../readerNLTestMobile/readerNLTestMobile";
+import ReadersNLTest from "../readersNLTest/readersNLTest";
 
 export default function ReadersMobileNewsletterCards() {
   const newsLetterData = [
@@ -158,8 +159,19 @@ export default function ReadersMobileNewsletterCards() {
           </div>
         ))}
       </div>
-
+      {/* 
       <ReaderNLTestMobile
+        count={testInform.filter((el) => el.selected).length}
+        email={email}
+        setEmail={handleEmailChange}
+        mHandleSubmit={handleSubmit}
+        showPopup={showPopup}
+        setShowPopup={setShowPopup}
+        testInform={testInform}
+        setTestInform={setTestInform}
+      /> */}
+
+      <ReadersNLTest
         count={testInform.filter((el) => el.selected).length}
         email={email}
         setEmail={handleEmailChange}

@@ -10,23 +10,6 @@ import Link from "next/link";
 export default function ReadersNewsletters() {
   const data = [
     {
-      id: 1,
-      headerButton: "Subscribe",
-      image: "/readers/n-ps.png",
-      topic: "News",
-      when: "Mon-Sat",
-      heading: "Presidential Summary",
-      paragraph:
-        "Truthful and unbiased summaries of key events in politics, business, culture, and sports stories shaping our time without drowning in endless headlines.",
-      isActive: true,
-      btnBg: "#01261E",
-      btnHover: "#0B4337",
-      textColor: "#fff",
-      arrowColor: "#fff",
-      border: "#01261E",
-      source: "https://www.presidentialsummary.com/",
-    },
-    {
       id: 3,
       headerButton: "Subscribe",
       image: "/readers/n-gs.png",
@@ -43,7 +26,23 @@ export default function ReadersNewsletters() {
       border: "#01261E",
       source: "https://www.geopoliticalsummary.com/",
     },
-
+    {
+      id: 1,
+      headerButton: "Subscribe",
+      image: "/readers/n-ps.png",
+      topic: "News",
+      when: "Mon-Sat",
+      heading: "Presidential Summary",
+      paragraph:
+        "Truthful and unbiased summaries of key events in politics, business, culture, and sports stories shaping our time without drowning in endless headlines.",
+      isActive: true,
+      btnBg: "#01261E",
+      btnHover: "#0B4337",
+      textColor: "#fff",
+      arrowColor: "#fff",
+      border: "#01261E",
+      source: "https://www.presidentialsummary.com/",
+    },
     {
       id: 7,
       headerButton: "Subscribe",
@@ -83,40 +82,6 @@ export default function ReadersNewsletters() {
       // border: "#C6C5C0",
       source: "https://www.londonsummary.com/",
     },
-    // {
-    //   id: 2,
-    //   headerButton: "Subscribe",
-    //   image: "/readers/n-ms.png",
-    //   topic: "News",
-    //   when: "weekly",
-    //   heading: "Movie Suggestions",
-    //   paragraph:
-    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-    //   footerButton: "Learn More",
-    // },
-
-    // {
-    //   id: 4,
-    //   headerButton: "Subscribe",
-    //   image: "/readers/n-bh.png",
-    //   topic: "News",
-    //   when: "weekly",
-    //   heading: "Business History",
-    //   paragraph:
-    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-    //   footerButton: "Learn More",
-    // },
-    // {
-    //   id: 5,
-    //   headerButton: "Subscribe",
-    //   image: "/readers/n-ls.png",
-    //   topic: "News",
-    //   when: "weekly",
-    //   heading: "Long and Short",
-    //   paragraph:
-    //     "Through in-depth analysis and well-researched content, we make historical knowledge accessible to professionals, students, and anyone interested in political history.",
-    //   footerButton: "Learn More",
-    // },
   ];
 
   const aboutOurInfo = [
@@ -250,7 +215,7 @@ export default function ReadersNewsletters() {
 
     setTimeout(() => {
       window.scrollTo({ top: y, behavior: "smooth" });
-    }, 200); // delay to ensure layout is rendered
+    }, 200);
   }, [params]);
   return (
     <div id="ourNewsletters" className="bg-[#FAFAFA]">

@@ -10,23 +10,6 @@ export default function ViewAll({ activeCategory }) {
 
   const images = [
     {
-      tag: "marketing",
-      name: "Marketing",
-      title: "Social Media Intern",
-      experience: "Entry",
-      content:
-        "Create, publish, and analyze daily social content to grow readership and brand reach across major platforms with hands-on strategy experience.",
-      popupSalary: "Internship",
-      popupVenue: "remote",
-      popupContent1:
-        "Join our editorial team as a Social Media Intern and help shape how our newsletters show up across Facebook, Instagram, Threads, X, Reddit, and LinkedIn. You will publish daily content, write sharp hooks, and manage a consistent calendar.",
-      popupContent2:
-        "You will monitor comments and trends, track analytics, and test ideas that turn readers into subscribers. Expect hands-on guidance, real responsibility, and weekly feedback that strengthens storytelling, design judgment, and data-driven decision making.",
-      button: "Apply",
-      theme: "#E19F20",
-      slug: "marketing-social",
-    },
-    {
       tag: "tech",
       name: "Tech",
       title: "Python Developer",
@@ -40,9 +23,27 @@ export default function ViewAll({ activeCategory }) {
       popupContent2:
         "This is a hands-on role that blends engineering and creativity. You’ll collaborate with our editorial and analytics teams to build tools that save hours, power insights, and help us grow faster.",
       button: "Apply",
-      theme: "#582719",
+      theme: "#E19F20",
       slug: "python-developer",
     },
+    {
+      tag: "design",
+      name: "Design",
+      title: "Video Editor",
+      experience: "Mid-level",
+      content:
+        "Edit and produce short-form video content and reels that bring House of Summary’s storytelling and brand identity to life.",
+      popupSalary: "$12,000–$24,000",
+      popupVenue: "remote",
+      popupContent1:
+        "We’re looking for a Video Editor (Reels) who can turn ideas into visually compelling short-form content. You’ll edit fast-paced, on-brand videos for our newsletters and social media channels, shaping narratives that connect with a global audience.",
+      popupContent2:
+        "This role suits someone creative and detail-oriented who understands pacing, hooks, and trends, and can adapt serious topics like geopolitics and business into engaging visuals.",
+      button: "Apply",
+      theme: "#582719",
+      slug: "video-editor",
+    },
+
     {
       tag: "editorial",
       name: "Editorial",
@@ -57,26 +58,10 @@ export default function ViewAll({ activeCategory }) {
       popupContent2:
         "You’ll help build one of London’s most distinctive newsletters, writing pieces that inform, entertain, and connect readers to the pulse of the city.",
       button: "Apply",
-      theme: "#016788",
+      theme: "#092236",
       slug: "content-writer-london-summary",
     },
-    {
-      tag: "others",
-      name: "Other",
-      title: "SEO Manager",
-      experience: "Senior",
-      content:
-        "Drive organic growth across a global network of newsletters by building and optimizing data-driven SEO strategies.",
-      popupSalary: "$12,000–$18,000",
-      popupVenue: "remote",
-      popupContent1:
-        "House of Summary is looking for an SEO Manager who blends analytical precision with creative insight. You’ll help our network of newsletters reach millions more readers organically.",
-      popupContent2:
-        "This is a hands-on role where strategy meets execution: analyzing data, improving infrastructure, and driving measurable audience growth",
-      button: "Apply",
-      theme: "#092236",
-      slug: "seo-manager",
-    },
+
     {
       tag: "leadership",
       name: "Leadership",
@@ -95,22 +80,23 @@ export default function ViewAll({ activeCategory }) {
       slug: "head-of-sales",
     },
     {
-      tag: "others",
-      name: "Other",
-      title: "Legal & Compliance Officer",
-      experience: "Senior",
+      tag: "marketing",
+      name: "Marketing",
+      title: "Social Media Intern",
+      experience: "Entry",
       content:
-        "Oversee legal, regulatory, and compliance functions across an international media group operating newsletters in the US, EU, and UAE.",
-      popupSalary: "$24,000–$36,000",
+        "Create, publish, and analyze daily social content to grow readership and brand reach across major platforms with hands-on strategy experience.",
+      popupSalary: "Internship",
       popupVenue: "remote",
       popupContent1:
-        "House of Summary is seeking a Legal & Compliance Officer to manage and oversee legal, regulatory, and compliance activities across its international portfolio of media brands.",
+        "Join our editorial team as a Social Media Intern and help shape how our newsletters show up across Facebook, Instagram, Threads, X, Reddit, and LinkedIn. You will publish daily content, write sharp hooks, and manage a consistent calendar.",
       popupContent2:
-        "This is a strategic and detail-oriented role for someone who can bridge legal precision with commercial awareness, ensuring operational integrity and compliance across multiple jurisdictions.",
+        "You will monitor comments and trends, track analytics, and test ideas that turn readers into subscribers. Expect hands-on guidance, real responsibility, and weekly feedback that strengthens storytelling, design judgment, and data-driven decision making.",
       button: "Apply",
       theme: "#394E65",
-      slug: "legal-compliance-officer",
+      slug: "marketing-social",
     },
+
     {
       tag: "marketing",
       name: "Marketing",
@@ -125,28 +111,46 @@ export default function ViewAll({ activeCategory }) {
       popupContent2:
         "This role blends creativity with commercial insight, ideal for someone who understands brand storytelling, audience growth, and performance metrics that drive meaningful results.",
       button: "Apply",
-      theme: "#657C75",
+      theme: "#394E65",
       slug: "brand-partnerships-manager",
     },
+
     {
-      tag: "design",
-      name: "Design",
-      title: "Video Editor",
-      experience: "Mid-level",
+      tag: "others",
+      name: "Other",
+      title: "SEO Manager",
+      experience: "Senior",
       content:
-        "Edit and produce short-form video content and reels that bring House of Summary’s storytelling and brand identity to life.",
-      popupSalary: "$12,000–$24,000",
+        "Drive organic growth across a global network of newsletters by building and optimizing data-driven SEO strategies.",
+      popupSalary: "$12,000–$18,000",
       popupVenue: "remote",
       popupContent1:
-        "We’re looking for a Video Editor (Reels) who can turn ideas into visually compelling short-form content. You’ll edit fast-paced, on-brand videos for our newsletters and social media channels, shaping narratives that connect with a global audience.",
+        "House of Summary is looking for an SEO Manager who blends analytical precision with creative insight. You’ll help our network of newsletters reach millions more readers organically.",
       popupContent2:
-        "This role suits someone creative and detail-oriented who understands pacing, hooks, and trends, and can adapt serious topics like geopolitics and business into engaging visuals.",
+        "This is a hands-on role where strategy meets execution: analyzing data, improving infrastructure, and driving measurable audience growth",
       button: "Apply",
-      theme: "#01261E",
-      slug: "video-editor",
+      theme: "#657C75",
+      slug: "seo-manager",
     },
     {
-      tag: "other",
+      tag: "others",
+      name: "Other",
+      title: "Legal & Compliance Officer",
+      experience: "Senior",
+      content:
+        "Oversee legal, regulatory, and compliance functions across an international media group operating newsletters in the US, EU, and UAE.",
+      popupSalary: "$24,000–$36,000",
+      popupVenue: "remote",
+      popupContent1:
+        "House of Summary is seeking a Legal & Compliance Officer to manage and oversee legal, regulatory, and compliance activities across its international portfolio of media brands.",
+      popupContent2:
+        "This is a strategic and detail-oriented role for someone who can bridge legal precision with commercial awareness, ensuring operational integrity and compliance across multiple jurisdictions.",
+      button: "Apply",
+      theme: "#657C75",
+      slug: "legal-compliance-officer",
+    },
+    {
+      tag: "others",
       name: "Other",
       title: "Assistant to the COO",
       experience: "Junior",
@@ -159,7 +163,7 @@ export default function ViewAll({ activeCategory }) {
       popupContent2:
         "This role is ideal for someone organized, curious, and eager to learn how global media operations function from the inside. You’ll support everything from project planning to internal communications.",
       button: "Apply",
-      theme: "#33a4b9",
+      theme: "#657C75",
       slug: "assistant-to-the-coo",
     },
   ];

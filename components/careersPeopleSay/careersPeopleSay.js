@@ -29,7 +29,7 @@ const CareersPeopleSay = () => {
       role: "Content Writer",
     },
   ];
-  const [selectedImage, setSelectedImage] = useState(images[2]);
+  const [selectedImage, setSelectedImage] = useState(images[0]);
 
   return (
     <>
