@@ -26,9 +26,9 @@ const CareersCardItem = ({ item, index }) => (
     custom={index}
   >
     <img src={item.logo} alt={item.heading} className="w-12 h-12 mb-3" />
-    <h3 className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
+    <p className="text-[#000] text-[20px] font-[400] mb-4 leading-[128%]">
       {item.heading}
-    </h3>
+    </p>
     <p className="text-[#000] text-[16px] font-[400] leading-[149%]">
       {item.content}
     </p>

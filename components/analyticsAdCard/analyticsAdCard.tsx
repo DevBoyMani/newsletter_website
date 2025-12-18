@@ -2,16 +2,8 @@ import Link from "next/link";
 import CustomizedHoverButton from "../customizedHoverButton/customizedHoverButton";
 import { useState } from "react";
 
-export default function AnalyticsAdCard({ id = 0 }) {
-  const websiteLinks = [
-    { id: 1, source: "https://www.presidentialsummary.com/", target: "_blank" },
-    { id: 2, source: "https://www.geopoliticalsummary.com/", target: "_blank" },
-    { id: 3, source: "https://www.businesshistory.co/", target: "_blank" },
-    { id: 4, source: "https://www.longandshort.com/", target: "_blank" },
-    { id: 5, source: "https://www.moviesuggestions.com/", target: "_blank" },
-    { id: 6, source: "https://www.dubaisummary.com/", target: "_blank" },
-  ];
-  const matchedLink = websiteLinks.find((link) => link.id === id);
+export default function AnalyticsAdCard({ config }) {
+  const homepageUrl = config?.visitUrl;
 
   const [showPopup, setShowPopup] = useState(false);
   const handleCopy = () => {
@@ -77,11 +69,11 @@ export default function AnalyticsAdCard({ id = 0 }) {
               </button>
             </Link>
 
-            {matchedLink && (
+            {homepageUrl && (
               <CustomizedHoverButton
                 // href={matchedLink.source}
                 // target={matchedLink.target}
-                href="/"
+                href={homepageUrl}
                 label="Homepage"
                 fontSize="14px"
                 fontWeight="600"
@@ -145,11 +137,9 @@ export default function AnalyticsAdCard({ id = 0 }) {
               </button>
             </Link>
 
-            {matchedLink && (
+            {homepageUrl && (
               <CustomizedHoverButton
-                // href={matchedLink.source}
-                // target={matchedLink.target}
-                href="/"
+                href={homepageUrl}
                 label="Homepage"
                 fontSize="14px"
                 fontWeight="600"

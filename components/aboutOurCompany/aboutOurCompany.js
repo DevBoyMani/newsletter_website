@@ -85,7 +85,7 @@ export default function AboutOurCompany() {
               <div className="relative w-full flex justify-center items-center">
                 {/* Orbit background image */}
                 <img
-                  src="/about/roll-with-nls.png"
+                  src="/about/orbit-nls.png"
                   alt="Orbit"
                   className="w-[92%] h-auto"
                 />
@@ -312,7 +312,7 @@ export default function AboutOurCompany() {
           <div className="relative w-full flex justify-center items-center">
             {/* Orbit background image */}
             <img
-              src="/about/roll-with-nls.png"
+              src="/about/orbit-nls.png"
               alt="Orbit"
               className="w-[92%] h-auto"
             />

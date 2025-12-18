@@ -282,6 +282,9 @@ export default function Footer() {
                     </Link>
                   </li>
                   <li className="py-1 text-[14px]">
+                    <Link href="/careers">Careers</Link>
+                  </li>
+                  <li className="py-1 text-[14px]">
                     <Link href="/contact" className="font-[400]">
                       Contact
                     </Link>
