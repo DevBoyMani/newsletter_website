@@ -105,7 +105,7 @@ export default function HomeScrollNumberOfClicksChart({
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
-                  fontSize={11}
+                  fontSize={10}
                 />
 
                 <YAxis
@@ -114,7 +114,7 @@ export default function HomeScrollNumberOfClicksChart({
                   tickLine={false}
                   tickMargin={10}
                   width={40}
-                  fontSize={11}
+                  fontSize={10}
                   tickFormatter={(value) => compactNumber.format(value)}
                 />
 

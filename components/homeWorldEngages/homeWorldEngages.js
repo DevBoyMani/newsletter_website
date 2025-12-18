@@ -30,7 +30,7 @@ export default function HomeWorldEngages({
           </div>
           {/* 2 */}
           <div className="pt-[63px] overflow-hidden">
-            <div className="flex flex-row justify-between items-stretch gap-[4vw] xl:gap-[106px]">
+            <div className="flex flex-row justify-between items-stretch gap-[4vw] xl:gap-[60px]">
               {/* Left side - Carousel */}
               <div className="flex-1 flex justify-center items-center min-w-0">
                 <div
@@ -119,7 +119,7 @@ export default function HomeWorldEngages({
 
           <div className="pt-[25px] ">
             {/* Carousel Section */}
-            <div className="px-4 ">
+            <div className="px-0 ">
               <HomeAutoScrollCharts
                 subscribersMonthly={subscribersMonthly}
                 opensMonthly={opensMonthly}
