@@ -71,7 +71,7 @@ export default function WebsiteAnalytics({
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-[22px]">
           <AnalyticsPSAgeChart genderBreakdown={genderBreakdown} />
           <AnalyticsPSCountryChart countryBreakdown={countryBreakdown} />
-          <AnalyticsAdCard config={config} />
+          <AnalyticsAdCard id={config.adCardId} />
         </div>
       </div>
 
@@ -116,7 +116,7 @@ export default function WebsiteAnalytics({
           />
           <AnalyticsPSAgeChart genderBreakdown={genderBreakdown} />
           <AnalyticsPSCountryChart countryBreakdown={countryBreakdown} />
-          <AnalyticsAdCard config={config} />
+          <AnalyticsAdCard id={config.adCardId} />
         </div>
       </div>
     </>

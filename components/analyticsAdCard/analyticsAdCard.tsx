@@ -2,8 +2,13 @@ import Link from "next/link";
 import CustomizedHoverButton from "../customizedHoverButton/customizedHoverButton";
 import { useState } from "react";
 
-export default function AnalyticsAdCard({ config }) {
-  const homepageUrl = config?.visitUrl;
+export default function AnalyticsAdCard({ id = 0 }) {
+  const websiteLinks = [
+    { id: 1, source: "https://www.presidentialsummary.com/", target: "_blank" },
+    { id: 3, source: "https://www.geopoliticalsummary.com/", target: "_blank" },
+    { id: 7, source: "https://www.dubaisummary.com/", target: "_blank" },
+  ];
+  const matchedLink = websiteLinks.find((link) => link.id === id);
 
   const [showPopup, setShowPopup] = useState(false);
   const handleCopy = () => {
@@ -69,11 +74,11 @@ export default function AnalyticsAdCard({ config }) {
               </button>
             </Link>
 
-            {homepageUrl && (
+            {matchedLink && (
               <CustomizedHoverButton
                 // href={matchedLink.source}
                 // target={matchedLink.target}
-                href={homepageUrl}
+                href="/"
                 label="Homepage"
                 fontSize="14px"
                 fontWeight="600"
@@ -137,9 +142,11 @@ export default function AnalyticsAdCard({ config }) {
               </button>
             </Link>
 
-            {homepageUrl && (
+            {matchedLink && (
               <CustomizedHoverButton
-                href={homepageUrl}
+                // href={matchedLink.source}
+                // target={matchedLink.target}
+                href="/"
                 label="Homepage"
                 fontSize="14px"
                 fontWeight="600"
