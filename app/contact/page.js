@@ -139,6 +139,47 @@ export default function Contact() {
     }
   };
 
+  // 1. Update state to track which element was clicked
+  const [showPopup, setShowPopup] = useState({
+    visible: false,
+    type: "", // 'phone' or 'email'
+    position: { x: 0, y: 0 },
+  });
+
+  // 2. Separate handlers for phone and email
+  const handleCopyPhone = (e) => {
+    const phoneNumber = "+1 218 500 0099";
+
+    navigator.clipboard.writeText(phoneNumber).then(() => {
+      const rect = e.target.getBoundingClientRect();
+      setShowPopup({
+        visible: true,
+        type: "phone",
+        position: { x: rect.left, y: rect.top },
+      });
+
+      setTimeout(() => {
+        setShowPopup({ visible: false, type: "", position: { x: 0, y: 0 } });
+      }, 1500);
+    });
+  };
+
+  const handleCopyEmail = (e) => {
+    const email = "contact@houseofsummary.com";
+
+    navigator.clipboard.writeText(email).then(() => {
+      const rect = e.target.getBoundingClientRect();
+      setShowPopup({
+        visible: true,
+        type: "email",
+        position: { x: rect.left, y: rect.top },
+      });
+
+      setTimeout(() => {
+        setShowPopup({ visible: false, type: "", position: { x: 0, y: 0 } });
+      }, 1500);
+    });
+  };
   return (
     <>
       {/* desktop view */}
@@ -184,15 +225,35 @@ export default function Contact() {
                       alt="call"
                       className="w-6 h-6"
                     />
-                    <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">
+                    <button
+                      onClick={handleCopyPhone}
+                      className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]"
+                    >
                       +1 218 500 0099
-                    </p>
+                    </button>
                   </div>
                   <div className="flex pb-10">
                     <img src="/contact/sms.jpg" alt="sms" className="w-6 h-6" />
-                    <p className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]">
+                    <button
+                      onClick={handleCopyEmail}
+                      className="ml-6 text-[#fff] text-[16px] leading-normal font-[400]"
+                    >
                       contact@houseofsummary.com
-                    </p>
+                    </button>
+                    {showPopup.visible && (
+                      <div
+                        className="fixed bg-[#000] text-white text-xs px-3 py-2 rounded-md shadow-md z-50 whitespace-nowrap"
+                        style={{
+                          left: `${showPopup.position.x}px`,
+                          top: `${showPopup.position.y - 40}px`, // Position above the button
+                          transform: "translateX(-50%)",
+                        }}
+                      >
+                        {showPopup.type === "phone"
+                          ? "Phone number copied!"
+                          : "Email copied!"}
+                      </div>
+                    )}
                   </div>
                   <div className="flex pb-10">
                     <img
@@ -483,9 +544,12 @@ export default function Contact() {
                       />
                     </div>
                     <div className="flex justify-center">
-                      <p className="text-[#fff] text-[12px] leading-normal font-[400]">
+                      <button
+                        onClick={handleCopyPhone}
+                        className="text-[#fff] text-[12px] leading-normal font-[400]"
+                      >
                         +1 218 500 0099
-                      </p>
+                      </button>
                     </div>
                   </div>
                   <div className="pb-4">
@@ -501,9 +565,12 @@ export default function Contact() {
                       />
                     </div>
                     <div className="flex justify-center">
-                      <p className="text-[#fff] text-[12px] leading-normal font-[400]">
+                      <button
+                        onClick={handleCopyEmail}
+                        className="text-[#fff] text-[12px] leading-normal font-[400]"
+                      >
                         contact@houseofsummary.com
-                      </p>
+                      </button>
                     </div>
                   </div>
                   <div className="pb-0">
@@ -521,7 +588,20 @@ export default function Contact() {
                       </p>
                     </div>
                   </div>
-
+                  {showPopup.visible && (
+                    <div
+                      className="fixed bg-[#000] text-white text-xs px-3 py-1 rounded-md shadow-md z-50 whitespace-nowrap"
+                      style={{
+                        left: `${showPopup.position.x}px`,
+                        top: `${showPopup.position.y - 30}px`, // Position above the button
+                        transform: "translateX(-50%)",
+                      }}
+                    >
+                      {showPopup.type === "phone"
+                        ? "Phone number copied!"
+                        : "Email copied!"}
+                    </div>
+                  )}
                   {/* social icons */}
                   <div>
                     <div className="relative overflow-hidden pb-0">
