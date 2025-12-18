@@ -49,7 +49,7 @@ export default function LegalComplianceOfficer() {
   }, []);
 
   const handleCopy = () => {
-    const email = "careers@sagravia.com";
+    const email = "careers@houseofsummary.com";
 
     navigator.clipboard.writeText(email).then(() => {
       setShowPopup(true);
@@ -123,11 +123,11 @@ export default function LegalComplianceOfficer() {
                     </p>
                   </div>
                   {/* date */}
-                  <div>
+                  {/* <div>
                     <p className="text-[#000] text-[15px] font-[400] leading-normal">
                       November 15th, 2025
                     </p>
-                  </div>
+                  </div> */}
                 </div>
                 {/* 2 */}
                 <div className="pt-[30px]">
@@ -456,8 +456,35 @@ export default function LegalComplianceOfficer() {
                         <div className="w-[85%]">
                           <p className="text-[#000] text-[16px] font-[400] leading-[174%]">
                             Send your CV, a motivational letter, and the
-                            completed assignment to  
-                            <span className="underline cursor-pointer">
+                            completed assignment to{" "}
+                            <span
+                              className="underline cursor-pointer hover:text-blue-600 transition-colors duration-200"
+                              onClick={() => {
+                                const email = "careers@hourseofsummary.com";
+                                navigator.clipboard
+                                  .writeText(email)
+                                  // .then(() => {
+                                  //   alert(
+                                  //     `Email copied to clipboard: ${email}`
+                                  //   );
+                                  // })
+                                  .catch((err) => {
+                                    console.error("Failed to copy: ", err);
+                                    // Fallback for older browsers
+                                    const textarea =
+                                      document.createElement("textarea");
+                                    textarea.value = email;
+                                    document.body.appendChild(textarea);
+                                    textarea.select();
+                                    document.execCommand("copy");
+                                    document.body.removeChild(textarea);
+                                    alert(
+                                      `Email copied to clipboard: ${email}`
+                                    );
+                                  });
+                              }}
+                              title="Click to copy email"
+                            >
                               careers@hourseofsummary.com
                             </span>{" "}
                             with the name of the position in the subject of the
@@ -471,7 +498,7 @@ export default function LegalComplianceOfficer() {
                         </div>
                         <div className="md:w-[20%] w-full mt-6">
                           <a
-                            href="mailto:careers@sagravia.com"
+                            href="mailto:careers@hourseofsummary.com"
                             className="block text-center bg-[#01261E] hover:bg-[#014134] text-white text-[14px] font-[600] px-4 py-2 rounded-full w-full"
                           >
                             Apply now
@@ -546,11 +573,11 @@ export default function LegalComplianceOfficer() {
             </p>
           </div>
           {/* date */}
-          <div className="pt-[9px]">
+          {/* <div className="pt-[9px]">
             <p className="text-[#6B6B6F] text-[15px] font-[400] leading-normal">
               November 15th, 2025
             </p>
-          </div>
+          </div> */}
 
           {/* 2 */}
           <div className="pt-[28px]">

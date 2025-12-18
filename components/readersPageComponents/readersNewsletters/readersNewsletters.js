@@ -185,7 +185,7 @@ export default function ReadersNewsletters() {
       );
 
       // 3️⃣ Reset UI
-      setShowPopup(true);
+      // setShowPopup(true);
       setEmail("");
       setTestInform((prev) => prev.map((el) => ({ ...el, selected: false })));
       setDetails({ ids: [], email: "" });

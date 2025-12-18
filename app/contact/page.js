@@ -414,8 +414,8 @@ export default function Contact() {
                     </div>
                     <div className="pt-[17px]">
                       <p className="text-[#000] text-[14px] font-[300] leading-[20px]">
-                        Thanks for reaching out! We’ll get back to you in 2–3
-                        business days.
+                        Thanks for reaching out! We’ll get back to you as soon
+                        as possible.
                       </p>
                     </div>
                   </>
@@ -685,8 +685,8 @@ export default function Contact() {
                     </div>
                     <div className="pt-[14px]">
                       <p className="text-[#000] text-[14px] font-[300] leading-[20px]">
-                        Thanks for reaching out! We’ll get back to you in 2–3
-                        business days.
+                        Thanks for reaching out! We’ll get back to you as soon
+                        as possible.
                       </p>
                     </div>
                   </>
