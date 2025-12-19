@@ -185,33 +185,79 @@ export default function ViewAll({ activeCategory }) {
           (item) => item.tag.toLowerCase() === activeCategory.toLowerCase()
         );
 
+  // return (
+  //   <div className="text-white py-10 lg:py-8 mx-auto relative">
+  //     <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-5 gap-x-4 gap-y-4">
+  //       {filteredImages.map((item, index) => (
+  //         <React.Fragment key={index}>
+  //           {/* DESKTOP */}
+  //           <div key={`w-${index}`} className="hidden lg:block">
+  //             <CareersJobCardsWeb
+  //               item={item}
+  //               index={index}
+  //               hoveredIndex={hoveredIndex}
+  //               setHoveredIndex={setHoveredIndex}
+  //               handleImageClick={handleImageClick}
+  //             />
+  //           </div>
+  //           {/* MOBILE */}
+  //           <div key={`m-${index}`} className="lg:hidden">
+  //             <CareersJobCardsMobile
+  //               item={item}
+  //               index={index}
+  //               handleImageClick={handleImageClick}
+  //               setHoveredIndex={setHoveredIndex}
+  //               hoveredIndex={hoveredIndex}
+  //             />
+  //           </div>
+  //         </React.Fragment>
+  //       ))}
+  //     </div>
+
+  //     {/* POPUP */}
+  //     {selectedIndex !== null && (
+  //       <CareersAssignmentPopup
+  //         selectedIndex={selectedIndex}
+  //         closeSidebar={closeSidebar}
+  //         images={images}
+  //       />
+  //     )}
+  //   </div>
+  // );
   return (
     <div className="text-white py-10 lg:py-8 mx-auto relative">
       <div className="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-5 gap-x-4 gap-y-4">
-        {filteredImages.map((item, index) => (
-          <React.Fragment key={index}>
-            {/* DESKTOP */}
-            <div key={`w-${index}`} className="hidden lg:block">
-              <CareersJobCardsWeb
-                item={item}
-                index={index}
-                hoveredIndex={hoveredIndex}
-                setHoveredIndex={setHoveredIndex}
-                handleImageClick={handleImageClick}
-              />
-            </div>
-            {/* MOBILE */}
-            <div key={`m-${index}`} className="lg:hidden">
-              <CareersJobCardsMobile
-                item={item}
-                index={index}
-                handleImageClick={handleImageClick}
-                setHoveredIndex={setHoveredIndex}
-                hoveredIndex={hoveredIndex}
-              />
-            </div>
-          </React.Fragment>
-        ))}
+        {filteredImages.map((item, filteredIndex) => {
+          // Find the original index in the full images array
+          const originalIndex = images.findIndex(
+            (img) => img.slug === item.slug
+          );
+
+          return (
+            <React.Fragment key={filteredIndex}>
+              {/* DESKTOP */}
+              <div className="hidden lg:block">
+                <CareersJobCardsWeb
+                  item={item}
+                  index={filteredIndex}
+                  hoveredIndex={hoveredIndex}
+                  setHoveredIndex={setHoveredIndex}
+                  handleImageClick={() => handleImageClick(originalIndex)} // Pass original index
+                />
+              </div>
+              {/* MOBILE */}
+              <div className="lg:hidden">
+                <CareersJobCardsMobile
+                  item={item}
+                  index={filteredIndex}
+                  handleImageClick={() => handleImageClick(originalIndex)} // Pass original index
+                  setHoveredIndex={setHoveredIndex}
+                  hoveredIndex={hoveredIndex}
+                />
+              </div>
+            </React.Fragment>
+          );
+        })}
       </div>
 
       {/* POPUP */}
@@ -219,7 +265,7 @@ export default function ViewAll({ activeCategory }) {
         <CareersAssignmentPopup
           selectedIndex={selectedIndex}
           closeSidebar={closeSidebar}
-          images={images}
+          images={images} // This remains the full images array
         />
       )}
     </div>
