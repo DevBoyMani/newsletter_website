@@ -6,74 +6,54 @@ import countries from "../../data/countries/countries";
 
 export default function ContactPhoneNumberSelection({ value, onChange }) {
   const [selectedCountry, setSelectedCountry] = useState(countries[0]);
+  const [localNumber, setLocalNumber] = useState("");
 
   useEffect(() => {
     const detectCountry = async () => {
       try {
         const res = await fetch("https://geolocation-db.com/json/");
-        if (!res.ok) throw new Error("Request failed");
         const data = await res.json();
-        const countryCode = data.country_code; // e.g., "IN", "US"
-        const match = countries.find((c) => c.code === countryCode);
-        if (match) {
-          setSelectedCountry(match);
-        } else {
-          // fallback if country not found
-          const fallback = countries.find((c) => c.code === "US");
-          if (fallback) setSelectedCountry(fallback);
-        }
-      } catch (error) {
-        console.error("Failed to detect country:", error);
-        const fallback = countries.find((c) => c.code === "US");
-        if (fallback) setSelectedCountry(fallback);
+        const match = countries.find((c) => c.code === data.country_code);
+        setSelectedCountry(match || countries.find((c) => c.code === "US"));
+      } catch {
+        setSelectedCountry(countries.find((c) => c.code === "US"));
       }
     };
-
     detectCountry();
   }, []);
 
-  const handlePhoneChange = (e) => {
-    onChange(e.target.value);
-  };
+  // whenever country or local number changes, send full phone
+  useEffect(() => {
+    if (!localNumber) {
+      onChange("");
+      return;
+    }
+
+    const dial = (selectedCountry.dial_code || "").replace(/^\+/, ""); // "+1" -> "1"
+    onChange(`${dial} ${localNumber}`); // "1 9238923"
+  }, [selectedCountry, localNumber]);
 
   return (
     <div className="lg:max-w-md mx-auto">
       <div className="flex items-center">
         <Listbox value={selectedCountry} onChange={setSelectedCountry}>
           <div className="relative">
-            <Listbox.Button className="shrink-0 z-10 inline-flex items-center py-1.5   text-[#8D8D8D] text-[14px] border-b border-[#8D8D8D] focus:outline-none focus:border-[#01261E]">
+            <Listbox.Button className="shrink-0 inline-flex items-center py-1.5 text-[#8D8D8D] text-[14px] border-b border-[#8D8D8D] focus:outline-none focus:border-[#01261E]">
               {selectedCountry.flag}
               <span className="ml-1">{selectedCountry.dial_code}</span>
-              <svg
-                className="w-2.5 h-2.5 ms-2.5"
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 10 6"
-              >
-                <path
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  d="m1 1 4 4 4-4"
-                />
+              <svg className="w-2.5 h-2.5 ms-2.5" viewBox="0 0 10 6">
+                <path d="m1 1 4 4 4-4" stroke="currentColor" strokeWidth="2" />
               </svg>
             </Listbox.Button>
-            <Listbox.Options className="text-[14px] absolute mt-1 max-h-60 w-52 overflow-auto rounded-lg bg-white shadow-md ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+
+            <Listbox.Options className="absolute z-10 mt-1 max-h-60 w-52 overflow-auto rounded-lg bg-white shadow-md">
               {countries.map((country, index) => (
                 <Listbox.Option
                   key={index}
                   value={country}
-                  className={({ active }) =>
-                    `cursor-pointer select-none px-4 py-2 ${
-                      active ? "bg-gray-100" : "text-gray-700"
-                    }`
-                  }
+                  className="cursor-pointer px-4 py-2 hover:bg-gray-100"
                 >
-                  <span className="inline-flex items-center">
-                    {country.flag}
-                    {country.name} ({country.dial_code})
-                  </span>
+                  {country.flag} {country.name} ({country.dial_code})
                 </Listbox.Option>
               ))}
             </Listbox.Options>
@@ -82,12 +62,9 @@ export default function ContactPhoneNumberSelection({ value, onChange }) {
 
         <input
           type="tel"
-          placeholder=""
-          value={value}
-          onChange={handlePhoneChange}
-          className={`border-b text-[14px] border-[#8D8D8D] rounded-none focus:outline-none focus:border-[#01261E] block w-[100%] px-4 py-1.5 focus:placeholder-transparent group focus-within:text-[#01261E] ${
-            value ? "text-[#1A1A1A]" : "text-[#8D8D8D]"
-          }`}
+          value={localNumber}
+          onChange={(e) => setLocalNumber(e.target.value)}
+          className="border-b text-[14px] border-[#8D8D8D] w-full px-4 py-1.5 focus:outline-none focus:border-[#01261E]"
         />
       </div>
     </div>
