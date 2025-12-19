@@ -37,17 +37,20 @@ const compactNumber = new Intl.NumberFormat("en-US", {
 });
 
 // Ensure X-axis shows an even number of ticks
-function getEvenTicks(labels) {
+function getFourTicks(labels) {
   if (!labels || labels.length === 0) return [];
 
-  // For very small datasets, keep as-is
-  if (labels.length <= 2) return labels;
+  // If 4 or fewer labels, just return them
+  if (labels.length <= 4) return labels;
 
-  // Already even
-  if (labels.length % 2 === 0) return labels;
+  const lastIndex = labels.length - 1;
 
-  // Odd → drop last
-  return labels.slice(0, labels.length - 1);
+  return [
+    labels[0],
+    labels[Math.round(lastIndex / 3)],
+    labels[Math.round((2 * lastIndex) / 3)],
+    labels[lastIndex],
+  ];
 }
 
 // Bubble tooltip
@@ -78,8 +81,7 @@ export default function HomeScrollNumberOfSubscribersChart({
   }));
 
   const labels = chartData.map((d) => d.month);
-  const evenTicks = getEvenTicks(labels);
-
+  const xTicks = getFourTicks(labels);
   return (
     <>
       {/* desktop */}
@@ -105,7 +107,7 @@ export default function HomeScrollNumberOfSubscribersChart({
 
                 <XAxis
                   dataKey="month"
-                  ticks={evenTicks}
+                  ticks={xTicks}
                   axisLine={false}
                   tickLine={false}
                   tickMargin={10}
@@ -176,7 +178,7 @@ export default function HomeScrollNumberOfSubscribersChart({
 
                   <XAxis
                     dataKey="month"
-                    ticks={evenTicks}
+                    ticks={xTicks}
                     axisLine={false}
                     tickLine={false}
                     tickMargin={10}
