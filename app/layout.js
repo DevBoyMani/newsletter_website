@@ -2,6 +2,7 @@ import "./globals.css";
 import Navbar from "../components/navbar/navbar";
 import FooterWrapper from "../components/footerWrapper/footerWrapper";
 import ChatraProvider from "../components/chatraProvider/chatraProvider";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 import { Manrope } from "next/font/google";
 
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
         {children}
         <FooterWrapper />
       </body>
+      <GoogleAnalytics gaId="G-8LHP119MT9" />
     </html>
   );
 }
