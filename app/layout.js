@@ -13,6 +13,12 @@ const manrope = Manrope({
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope.variable}>
+      <head>
+        <meta
+          name="google-site-verification"
+          content="9eqrF35DPBCpUmWcXWYJL31OjFXXVwBd_H6crG8wmvw"
+        />
+      </head>
       <body>
         <ChatraProvider />
         <Navbar />
