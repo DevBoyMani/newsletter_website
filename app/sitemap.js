@@ -11,10 +11,6 @@ export default function sitemap() {
     "careers",
     "contact",
     "analytics",
-    "policy/privacy-policy",
-    "policy/terms-of-use",
-    "policy/cookie-policy",
-    "policy/refund-policy",
   ];
 
   const mainPagesUrl = mainPages.map((slug) => ({
@@ -22,6 +18,23 @@ export default function sitemap() {
     lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.7,
+  }));
+
+  /* -----------------------
+     Policy pages
+  ------------------------ */
+  const policyPages = [
+    "privacy-policy",
+    "terms-of-use",
+    "cookie-policy",
+    "refund-policy",
+  ];
+
+  const policyPagesUrl = policyPages.map((slug) => ({
+    url: `${baseUrl}/policy/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.4,
   }));
 
   /* -----------------------
@@ -42,7 +55,7 @@ export default function sitemap() {
   const careerPagesUrl = careerSlugs.map((slug) => ({
     url: `${baseUrl}/careers/${slug}`,
     lastModified: new Date(),
-    changeFrequency: "monthly",
+    changeFrequency: "weekly",
     priority: 0.6,
   }));
 
@@ -73,6 +86,7 @@ export default function sitemap() {
       priority: 1,
     },
     ...mainPagesUrl,
+    ...policyPagesUrl,
     ...careerPagesUrl,
     ...analyticsPagesUrl,
   ];
