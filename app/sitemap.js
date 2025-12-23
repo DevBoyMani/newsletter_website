@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = "https://houseofsummary.com";
+  const baseUrl = "https://www.houseofsummary.com";
 
   /* -----------------------
      Main static pages
@@ -11,10 +11,10 @@ export default function sitemap() {
     "careers",
     "contact",
     "analytics",
-    "privacy-policy",
-    "terms-of-use",
-    "cookie-policy",
-    "refund-policy",
+    "policy/privacy-policy",
+    "policy/terms-of-use",
+    "policy/cookie-policy",
+    "policy/refund-policy",
   ];
 
   const mainPagesUrl = mainPages.map((slug) => ({
@@ -25,7 +25,7 @@ export default function sitemap() {
   }));
 
   /* -----------------------
-     Careers pages (dynamic)
+     Careers pages
   ------------------------ */
   const careerSlugs = [
     "marketing-social",
@@ -47,6 +47,22 @@ export default function sitemap() {
   }));
 
   /* -----------------------
+     Analytics pages
+  ------------------------ */
+  const analyticsSlugs = [
+    "presidential-summary",
+    "geopolitical-summary",
+    "dubai-summary",
+  ];
+
+  const analyticsPagesUrl = analyticsSlugs.map((slug) => ({
+    url: `${baseUrl}/analytics/${slug}`,
+    lastModified: new Date(),
+    changeFrequency: "weekly",
+    priority: 0.65,
+  }));
+
+  /* -----------------------
      Final sitemap
   ------------------------ */
   return [
@@ -58,5 +74,6 @@ export default function sitemap() {
     },
     ...mainPagesUrl,
     ...careerPagesUrl,
+    ...analyticsPagesUrl,
   ];
 }
