@@ -66,7 +66,7 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
           <Link href="/readers">
             <div className="flex items-center gap-1">
               <a
-                href="/readers?scrollTo=ourNewsletters"
+                href="/readers?#ourNewsletters"
                 className="text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
               >
                 See all{" "}
@@ -83,10 +83,7 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
         </div> */}
         <div className="mt-5">
           <Link
-            href={{
-              pathname: "/readers",
-              query: { scrollTo: "ourNewsletters" },
-            }}
+            href="/readers#ourNewsletters"
             className="flex items-center gap-1 text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
           >
             <span>See all</span>
