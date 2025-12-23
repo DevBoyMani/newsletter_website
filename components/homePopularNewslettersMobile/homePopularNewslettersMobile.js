@@ -62,7 +62,7 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
           })}
         </div>
 
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <Link href="/readers">
             <div className="flex items-center gap-1">
               <a
@@ -79,6 +79,22 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
                 />
               </span>
             </div>
+          </Link>
+        </div> */}
+        <div className="mt-5">
+          <Link
+            href={{
+              pathname: "/readers",
+              query: { scrollTo: "ourNewsletters" },
+            }}
+            className="flex items-center gap-1 text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
+          >
+            <span>See all</span>
+            <img
+              src="/home/popular-nls-r-arr.png"
+              alt="right arrow"
+              className="w-3"
+            />
           </Link>
         </div>
       </div>
