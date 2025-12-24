@@ -2,6 +2,15 @@
 import selectedIds from "../../data/selectedWebsites";
 import AdvertiseClient from "./AdvertiseClient";
 
+export const metadata = {
+  title: "Advertise on House of Summary - Reach an Intellectual Audience",
+  description:
+    "Reach a highly engaged audience of readers and professionals. Grow your brand by advertising on the House of Summary platform today.",
+  alternates: {
+    canonical: "https://www.houseofsummary.com/advertise",
+  },
+};
+
 export const revalidate = 43200; // 43200 seconds = 12 hours
 async function getAnalytics() {
   // Build an absolute base URL for server-side fetch
