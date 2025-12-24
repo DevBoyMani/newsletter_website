@@ -5,7 +5,7 @@ export default function HomeSocialConversations() {
       <div className="hidden lg:block bg-[#FAFAFA]">
         <div className="pt-[80px] lg:pt-[141px]">
           <div
-            className="bg-[url('/home/conversations-new.png')] 
+            className="bg-[url('/home/conversations-new.webp')] 
                  bg-contain lg:bg-[length:100%_auto] bg-no-repeat bg-center
                  w-full min-h-[400px] md:min-h-[600px] lg:min-h-[1058px] 2xl:min-h-[1258px] 
                  relative"
@@ -48,7 +48,7 @@ export default function HomeSocialConversations() {
         <div className="pt-[40px]">
           <div
             className="relative w-full 
-                 bg-[url('/home/conversations-new-home.png')]
+                 bg-[url('/home/mobile/conversations-new-home.webp')]
                  bg-cover bg-no-repeat bg-center
                  min-h-[350px] sm:min-h-[400px] 
                  flex items-start justify-start"

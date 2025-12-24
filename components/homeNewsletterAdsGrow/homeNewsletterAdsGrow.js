@@ -5,7 +5,7 @@ export default function HomeNewsletterAdsGrow() {
   const cardDataMobile = [
     {
       id: 1,
-      image: "/home/peoples-mobile.png",
+      image: "/home/mobile/peoples-mobile.webp",
       icon: "/home/reach-everyone-logo.png",
       title: "Reach everyone the same day",
       description: (
@@ -20,7 +20,7 @@ export default function HomeNewsletterAdsGrow() {
     },
     {
       id: 2,
-      image: "/home/rect-1-mobile.png",
+      image: "/home/mobile/rect-1-mobile.webp",
       icon: "/home/ad-blocker-red.png",
       title: "Ad blockers don’t stop email ads",
       description: (
@@ -34,7 +34,7 @@ export default function HomeNewsletterAdsGrow() {
     },
     {
       id: 3,
-      image: "/home/rect-2-mobile.png",
+      image: "/home/mobile/rect-2-mobile.webp",
       icon: "/home/ad.png",
       title: "No banner blindness",
       description: (
@@ -90,7 +90,7 @@ export default function HomeNewsletterAdsGrow() {
               <div className="w-[50%]">
                 <div className="absolute right-[18%]">
                   <img
-                    src="/home/peoples.png"
+                    src="/home/peoples.webp"
                     alt="peoples"
                     className="h-[220px] "
                   />
@@ -106,7 +106,7 @@ export default function HomeNewsletterAdsGrow() {
             <div className="w-1/2">
               <div className="bg-white rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)] overflow-hidden">
                 <img
-                  src="/home/rect-1.png"
+                  src="/home/rect-1.webp"
                   alt="ad blocker"
                   className="w-full object-cover"
                 />
@@ -136,7 +136,7 @@ export default function HomeNewsletterAdsGrow() {
             <div className="w-1/2">
               <div className="bg-white rounded-[12px] shadow-[0_0_44px_0_rgba(0,0,0,0.06)] overflow-hidden">
                 <img
-                  src="/home/rect-2.png"
+                  src="/home/rect-2.webp"
                   alt="newsletter reach"
                   className="w-full object-cover"
                 />

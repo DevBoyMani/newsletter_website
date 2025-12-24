@@ -59,7 +59,7 @@ export default function Hero() {
             <div className="w-[50%]">
               <div className="relative right-0">
                 <img
-                  src="/home/hero-image-new.png"
+                  src="/home/hero-image-new.webp"
                   alt="Home hero image"
                   className="object-contain w-full"
                 />
@@ -112,7 +112,7 @@ export default function Hero() {
         <div className="bg-[#FAFAFA] relative">
           {/* Image */}
           <img
-            src="/home/hero-image-new-mobile.png"
+            src="/home/mobile/hero-image-new-mobile.webp"
             alt="Home hero image"
             className="w-full h-auto"
           />
