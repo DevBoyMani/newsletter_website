@@ -2,6 +2,15 @@
 import selectedIds from "../data/selectedWebsites";
 import HomeClient from "./HomeClient";
 
+export const metadata = {
+  title: "House of Summary | Verified News, Summarized",
+  description:
+    "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+  alternates: {
+    canonical: "https://www.houseofsummary.com/",
+  },
+};
+
 export const revalidate = 43200; // 43200 seconds = 12 hours
 async function getAnalytics() {
   // Build an absolute base URL for server-side fetch

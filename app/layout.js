@@ -11,6 +11,15 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
+export const metadata = {
+  title: "House of Summary | Verified News, Summarized",
+  description:
+    "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+  alternates: {
+    canonical: "https://www.houseofsummary.com/",
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={manrope.variable}>
