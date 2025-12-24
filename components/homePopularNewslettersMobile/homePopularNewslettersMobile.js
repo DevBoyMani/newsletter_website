@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useSwipeable } from "react-swipeable";
+import Image from "next/image";
 
 const HomePopularNewslettersMobile = ({ cardsMobile }) => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -87,10 +88,12 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
             className="flex items-center gap-1 text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
           >
             <span>See all</span>
-            <img
+            <Image
               src="/home/popular-nls-r-arr.png"
               alt="right arrow"
-              className="w-3"
+              width="12"
+              height="12"
+              className="w-3 h-3"
             />
           </Link>
         </div>
