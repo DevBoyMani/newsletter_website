@@ -1,97 +1,14 @@
-"use client";
+import CareersClient from "../../components/careersClient/careersClient";
 
-import React, { useState, useRef } from "react";
-import ViewAll from "../../components/viewAll/viewAll";
-
-import CareersTestimonialsTab from "../../components/careersTestimonialTab/careersTestimonialsTab";
-import CareersStepAccordionSection from "../../components/careersStepAccordionSection/careersStepAccordionSection";
-import CareersVideoBanner from "../../components/careersVideoBanner/careersVideoBanner";
-import CareersWhatWeOffer from "../../components/careersWhatWeOffer/careersWhatWeOffer";
-import CareersPeopleSay from "../../components/careersPeopleSay/careersPeopleSay";
-
-const Careers = () => {
-  const [activeTab, setActiveTab] = useState(0);
-  const [activeStepImage, setActiveStepImage] = useState(null);
-
-  const steps = [
-    { id: 1, source: "/careers/step-1.png", name: "step-1" },
-    { id: 2, source: "/careers/step-2.png", name: "step-2" },
-    { id: 3, source: "/careers/step-3.png", name: "step-3" },
-    { id: 4, source: "/careers/step-4.png", name: "step-4" },
-    { id: 5, source: "/careers/step-5.png", name: "step-5" },
-  ];
-
-  const testimonials = [
-    { name: "View All" },
-    { name: "Design" },
-    // { name: "Engineering" },
-    { name: "Editorial" },
-    { name: "Tech" },
-    { name: "Leadership" },
-    { name: "Marketing" },
-    { name: "Others" },
-  ];
-
-  const handleStepChange = (stepNumber) => {
-    const selected = steps.find((s) => s.id === stepNumber);
-    setActiveStepImage(selected);
-  };
-
-  return (
-    <>
-      {/* Header */}
-      <div className="md:px-28 px-4 lg:pt-28 pt-[170px] mx-auto bg-[#FAFAFA]">
-        <div className="pb-8 text-start ">
-          <p className="lg:text-[25px] text-[12px] font-[600] text-[#020715] uppercase">
-            Tired of endless job searching?
-          </p>
-          <h2 className="text-[53px] lg:text-[80px] text-[#01261E] py-2 leading-[104%] w-[80%] lg:w-[46%]">
-            Join a team built on trust
-          </h2>
-          <div className="lg:pt-14 pt-8 border-black border-b flex justify-between">
-            <h2 className="lg:text-[56px] text-[30px] text-[#01261E]">
-              Open Positions
-            </h2>
-            <div className="hidden lg:flex space-x-4 mt-8 text-[#020715] text-[17px]">
-              <a
-                href="https://www.linkedin.com/company/houseofsummary/"
-                target="_blank"
-                className="hover:underline hover:text-[#01261E]"
-              >
-                LinkedIn ↗
-              </a>
-              <a
-                href="https://www.glassdoor.com/Overview/Working-at-House-of-Summary-EI_IE10263537.11,27.htm"
-                target="_blank"
-                className="hover:underline hover:text-[#01261E]"
-              >
-                Glassdoor ↗
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-      {/* Testimonials Tabs */}
-      <div className="w-full md:px-28 px-4 bg-[#FAFAFA]">
-        <CareersTestimonialsTab
-          testimonials={testimonials}
-          activeTab={activeTab}
-          setActiveTab={setActiveTab}
-        />
-      </div>
-      {/* Active Tab Section */}
-      <div className="mt-0 md:px-28 px-4 bg-[#FAFAFA]">
-        <ViewAll activeCategory={testimonials[activeTab].name} />
-      </div>
-      <CareersStepAccordionSection
-        activeStepImage={activeStepImage}
-        handleStepChange={handleStepChange}
-      />
-      <CareersVideoBanner />
-      <CareersWhatWeOffer />
-      <CareersPeopleSay />
-    </>
-  );
+export const metadata = {
+  title: "Careers at House of Summary - Join Our Creative Teams",
+  description:
+    "Explore exciting career opportunities at House of Summary. Be part of a creative team dedicated to simplifying complex news for global readers.",
+  alternates: {
+    canonical: "https://www.houseofsummary.com/careers",
+  },
 };
 
-export default Careers;
+export default function CareersPage() {
+  return <CareersClient />;
+}

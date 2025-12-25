@@ -12,12 +12,15 @@ const manrope = Manrope({
 });
 
 export const metadata = {
-  title: "House of Summary | Verified News, Summarized",
+  metadataBase: new URL("https://www.houseofsummary.com"),
+
+  title: {
+    default: "House of Summary | Verified News, Summarized",
+    // template: "%s | House of Summary",
+  },
+
   description:
     "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
-  alternates: {
-    canonical: "https://www.houseofsummary.com/",
-  },
 };
 
 export default function RootLayout({ children }) {

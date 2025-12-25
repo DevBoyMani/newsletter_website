@@ -3,6 +3,11 @@ export const ANALYTICS_CONFIG = {
     slug: "presidential-summary",
     websiteId: 1,
     name: "Presidential Summary",
+    seo: {
+      title: "Presidential Summary Analytics at House of Summary",
+      description:
+        "Analyze the performance and engagement metrics for the Presidential Summary. Get data-driven insights into our executive-level audience.",
+    },
     heroTitleLine1: "Key events",
     heroTitleLine2: "with context",
     visitUrl: "https://www.presidentialsummary.com/",
@@ -16,6 +21,11 @@ export const ANALYTICS_CONFIG = {
     slug: "geopolitical-summary",
     websiteId: 3,
     name: "Geopolitical Summary",
+    seo: {
+      title: "Geopolitical Summary Analytics at House of Summary",
+      description:
+        "Explore engagement data and reader demographics for the Geopolitical Summary. Discover how our global news insights resonate with a worldwide audience.",
+    },
     heroTitleLine1: "Global shifts made",
     heroTitleLine2: "understandable",
     visitUrl: "https://www.geopoliticalsummary.com/",
@@ -29,6 +39,11 @@ export const ANALYTICS_CONFIG = {
     slug: "dubai-summary",
     websiteId: 7,
     name: "Dubai Summary",
+    seo: {
+      title: "Dubai Summary Analytics at House of Summary",
+      description:
+        "View detailed analytics for the Dubai Summary newsletter. Understand our reach and influence within the Middle East's premier business hub.",
+    },
     heroTitleLine1: "Dubai’s pulse",
     heroTitleLine2: "at a glance",
     visitUrl: "https://www.dubaisummary.com/",

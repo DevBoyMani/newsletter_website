@@ -8,6 +8,15 @@ import ReadersHero from "../../components/readersPageComponents/readersHero/read
 import ReadersNewsletters from "../../components/readersPageComponents/readersNewsletters/readersNewsletters";
 import HeadingWithUnderline from "../../components/readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 
+export const metadata = {
+  title: "House of Summary Readers - Join Our Knowledge Community",
+  description:
+    "Connect with a global community of dedicated readers. Explore how House of Summary helps lifelong learners stay informed with curated insights.",
+  alternates: {
+    canonical: "https://www.houseofsummary.com/readers",
+  },
+};
+
 export default function ReadersPage() {
   return (
     <>

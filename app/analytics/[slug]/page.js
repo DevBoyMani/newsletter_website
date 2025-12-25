@@ -10,6 +10,26 @@ export async function generateStaticParams() {
   return ANALYTICS_SLUGS.map((slug) => ({ slug }));
 }
 
+// meta data
+export async function generateMetadata({ params }) {
+  const { slug } = await params; // ✅ FIX
+
+  const config = ANALYTICS_CONFIG[slug];
+
+  if (!config) {
+    return {};
+  }
+
+  return {
+    title: `${config.seo.title}`,
+    description: `${config.seo.description}.`,
+    alternates: {
+      canonical: `/analytics/${slug}`,
+    },
+  };
+}
+// meta data
+
 async function fetchAnalyticsForWebsite(websiteId) {
   const res = await fetch(
     `${
