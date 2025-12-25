@@ -37,7 +37,7 @@ export default function AdvertiseAdBlocker() {
       id: 1,
       content:
         "This is how the internet normally looks. Your campaigns appear across websites  giving you broad visibility wherever your audience browses. However...",
-      image: "/advertise/without-ad-blocker-new-mobile.png",
+      image: "/advertise/without-ad-blocker-new-mobile.webp",
     },
     {
       id: 2,

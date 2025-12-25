@@ -5,7 +5,7 @@ export default function AboutHero() {
         <div className="relative bg-[#FAFAFA]">
           <div className="px-2 pt-[124px]">
             <img
-              src="/about/hero-2.png"
+              src="/about/hero-2.webp"
               alt="About us hero"
               className="w-full"
             />
@@ -86,7 +86,7 @@ export default function AboutHero() {
         <div className="relative bg-[#FAFAFA] px-4">
           <div className="px-0">
             <img
-              src="/about/hero-2.png"
+              src="/about/hero-2.webp"
               alt="About us hero"
               className="w-full"
             />

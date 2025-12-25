@@ -15,7 +15,7 @@ const sections = [
   {
     id: 2,
     title: "High quality pictures for context",
-    src: "/readers/nl-image-for-features.png",
+    src: "/readers/nl-image-for-features.webp",
     content:
       "We use images with intention. Every picture adds clarity, helps you understand the story faster, and gives you visual context without overwhelming your reading flow.",
     imageSize: "w-[431px] h-[379px]",
@@ -64,7 +64,7 @@ export default function ReadersMobileFeaturesSection() {
         const imageSrc = isFirst
           ? mode === "light"
             ? "/readers/light-mode-image.png"
-            : "/readers/dark-mode-image.png"
+            : "/readers/dark-mode-image.webp"
           : src;
 
         return (

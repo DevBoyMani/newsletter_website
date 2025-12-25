@@ -32,7 +32,7 @@ export default function PresidentialSummaryAnalytics() {
               </a>
             </div>
             <img
-              src="/analytics/a-ps.png"
+              src="/analytics/a-ps.webp"
               alt="Phone preview"
               className="absolute right-[30px] bottom-0 w-[370px] object-contain"
             />

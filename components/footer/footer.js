@@ -200,7 +200,7 @@ export default function Footer() {
           <div className="pt-[68px]">
             <div className="relative flex justify-center items-center">
               <img
-                src="/home/footer-summary.png"
+                src="/home/footer-summary.webp"
                 alt="Summary banner"
                 className="w-full"
               />

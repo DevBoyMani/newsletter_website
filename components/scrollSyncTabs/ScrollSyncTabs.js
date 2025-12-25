@@ -15,7 +15,7 @@ const tabs = [
   {
     id: 2,
     title: "High quality pictures for context",
-    image: "/readers/nl-image-for-features.png",
+    image: "/readers/nl-image-for-features.webp",
     content:
       "We use images with intention. Every picture adds clarity, helps you understand the story faster, and gives you visual context without overwhelming your reading flow.",
     imageSize: "w-[431px]",
@@ -23,7 +23,7 @@ const tabs = [
   {
     id: 3,
     title: "Human written and fact checked",
-    image: "/readers/fact-checked.png",
+    image: "/readers/fact-checked.webp",
     content:
       "We don’t publish until every claim is confirmed. Our editors validate sources, check dates, trace data, and ensure context so you never get half-truths or headlines without substance.",
     imageSize: "w-[431px] ",
@@ -118,7 +118,7 @@ export default function ScrollSyncTabs() {
               isFirst && mode === "light"
                 ? "/readers/light-mode-image.png"
                 : isFirst && mode === "dark"
-                ? "/readers/dark-mode-image.png"
+                ? "/readers/dark-mode-image.webp"
                 : tab.image;
 
             return (
