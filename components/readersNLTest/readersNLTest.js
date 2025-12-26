@@ -151,12 +151,9 @@ const ReadersNLTest = ({
                       <div className="space-y-4 text-sm text-gray-300">
                         <p>
                           Please check your{" "}
-                          <a
-                            href={`mailto:${email}`}
-                            className="font-semibold text-white underline hover:opacity-80"
-                          >
+                          <span className="font-semibold text-white">
                             {email}
-                          </a>{" "}
+                          </span>{" "}
                           email and confirm your free subscription.
                         </p>
                         <p>
@@ -244,12 +241,7 @@ const ReadersNLTest = ({
                   <div className="space-y-3 text-sm text-gray-300">
                     <p className="text-center">
                       Please check your{" "}
-                      <a
-                        href={`mailto:${email}`}
-                        className="font-semibold text-white"
-                      >
-                        {email}
-                      </a>{" "}
+                      <span className="font-semibold text-white">{email}</span>{" "}
                       email and confirm your free subscription.
                     </p>
                     <p className="text-center">
