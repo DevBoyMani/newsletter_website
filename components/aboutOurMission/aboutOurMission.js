@@ -226,7 +226,7 @@ export default function AboutOurMission() {
           <h2 className="w-full pb-2 text-[30px] lg:text-[56px] text-[#01261E] leading-[1.2]  text-center">
             Our mission
           </h2>
-          <p className="text-[#000] text-center text-[14px] font-[400] leading-[130%] tracking-[0.28px] px-12">
+          <p className="text-[#000] text-center text-[14px] font-[400] leading-[130%] tracking-[0.28px] px-6">
             Our mission is to summarize the truth of what is happening in the
             world in a way that is clear and easy to understand.
           </p>
