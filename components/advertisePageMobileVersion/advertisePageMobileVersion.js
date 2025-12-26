@@ -188,7 +188,7 @@ export default function AdvertisePageMobileVersion({
           <h2 className="text-[34px]  font-[400] leading-[1]">
             The most valuable real estate is the inbox
           </h2>
-          <p className="text-[#121212] text-[16px] leading-[125%] font-[400] tracking-[0.8px] py-[30px] text-center">
+          <p className="text-[#121212] text-[16px] leading-[125%] font-[400] tracking-[0.8px] py-[30px] text-center lg:px-0 px-4">
             The inbox gives your brand a direct path to the reader. No
             algorithms, no ad blockers, no visual clutter. Just undivided
             attention.

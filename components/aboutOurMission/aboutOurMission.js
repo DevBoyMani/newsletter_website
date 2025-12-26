@@ -232,7 +232,7 @@ export default function AboutOurMission() {
           </p>
         </div>
 
-        <div className="pb-10 pt-4 relative">
+        <div className="pb-10 relative">
           <div className="bg-[#DAEBE8] h-[348px] relative overflow-hidden pt-4">
             {/* Left Arrow */}
             {currentIndex !== 0 && (

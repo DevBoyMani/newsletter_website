@@ -119,7 +119,7 @@ export default function HomeWorldEngages({
 
           <div className="pt-[25px] ">
             {/* Carousel Section */}
-            <div className="px-0 ">
+            <div className="px-4">
               <HomeAutoScrollCharts
                 subscribersMonthly={subscribersMonthly}
                 opensMonthly={opensMonthly}

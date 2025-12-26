@@ -226,7 +226,7 @@ export default function HomeLatestStrories() {
 
         {/* contact our team */}
         <div className="pt-[20px] bg-[#FAFAFA]">
-          <div className="flex flex-col items-center justify-center text-center px-[53px] pt-[35px] pb-[60px]">
+          <div className="flex flex-col items-center justify-center text-center pt-[35px] pb-[60px]">
             <div className="">
               <h2
                 className="text-[34px] font-[400] leading-[normal]"
@@ -237,7 +237,7 @@ export default function HomeLatestStrories() {
             </div>
 
             <div className="pt-[30px]">
-              <p className="w-[252px] text-[16px] font-[400] leading-[125%] tracking-[0.8px] text-center">
+              <p className="px-4 text-[16px] font-[400] leading-[125%] tracking-[0.8px] text-center">
                 Our readers pay attention. They trust what we share and they act
                 on it. If your brand aligns with that level of quality, let’s
                 talk and see if we’re a good fit.

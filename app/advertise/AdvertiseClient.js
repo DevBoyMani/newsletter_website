@@ -243,8 +243,8 @@ export default function AdvertiseClient({ analyticsData }) {
             <br /> estate is the inbox
           </h2>
 
-          <div className="w-[537px] mx-auto pt-[30px]">
-            <p className="text-[20px] font-[400] leading-[1.5]">
+          <div className="w-[537px] mx-auto pt-[30px] ">
+            <p className="text-[20px] font-[400] leading-[1.5] ">
               The inbox gives your brand a direct path to the reader. No
               algorithms, no ad blockers, no visual clutter. Just undivided
               attention.
