@@ -12,7 +12,7 @@ export const ANALYTICS_CONFIG = {
     heroTitleLine2: "with context",
     visitUrl: "https://www.presidentialsummary.com/",
     desktopBg: "/analytics/bg-ps.png",
-    desktopPhone: "/analytics/a-ps.png",
+    desktopPhone: "/analytics/a-ps.webp",
     mobileBg: "/analytics/bg-ps.png",
     mobilePhone: "/analytics/mobile-a-ps.png",
     adCardId: 1,

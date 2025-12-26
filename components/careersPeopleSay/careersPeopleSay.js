@@ -7,7 +7,7 @@ const CareersPeopleSay = () => {
     {
       id: 1,
       smallSrc: "/careers/mani-small.png",
-      fullSrc: "/careers/mani-big.png",
+      fullSrc: "/careers/mani-big.webp",
       text: "“Working here genuinely feels like being part of something that’s growing fast but still thoughtful. We move quickly, test ideas, and actually see them go live.”",
       name: "Mani",
       role: "Junior Technology Specialist",
