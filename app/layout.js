@@ -12,13 +12,41 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
+// export const metadata = {
+//   metadataBase: new URL("https://www.houseofsummary.com"),
+//   title: {
+//     default: "House of Summary | Verified News, Summarized",
+//   },
+//   description:
+//     "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+//   openGraph: {
+//     title: "House of Summary | Verified News, Summarized",
+//     description:
+//       "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+//     url: "https://www.houseofsummary.com/",
+//     siteName: "House of Summary",
+//     images: [
+//       {
+//         url: "/og/og.png",
+//         width: 1200,
+//         height: 630,
+//         alt: "House of Summary – Verified News",
+//       },
+//     ],
+//     type: "website",
+//   },
+// };
+
 export const metadata = {
   metadataBase: new URL("https://www.houseofsummary.com"),
+
   title: {
     default: "House of Summary | Verified News, Summarized",
   },
+
   description:
     "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+
   openGraph: {
     title: "House of Summary | Verified News, Summarized",
     description:
@@ -27,13 +55,21 @@ export const metadata = {
     siteName: "House of Summary",
     images: [
       {
-        url: "/og/og.png",
+        url: "https://www.houseofsummary.com/og/og.png",
         width: 1200,
         height: 630,
         alt: "House of Summary – Verified News",
       },
     ],
     type: "website",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "House of Summary | Verified News, Summarized",
+    description:
+      "Get the latest, verified news summaries from House of Summary.",
+    images: ["https://www.houseofsummary.com/og/og.png"],
   },
 };
 
@@ -77,7 +113,8 @@ export default function RootLayout({ children }) {
         <Script
           id="organization-schema"
           type="application/ld+json"
-          strategy="afterInteractive"
+          // strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
