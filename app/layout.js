@@ -75,13 +75,9 @@ export default function RootLayout({ children }) {
 
         {/* Organization Schema */}
         <Script
-          // id="organization-schema"
-          // type="application/ld+json"
-          // strategy="afterInteractive"
-
           id="organization-schema"
           type="application/ld+json"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
