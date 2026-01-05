@@ -51,9 +51,9 @@ export default function AdvertisePageMobileVersion({
         <div className="absolute top-20 bottom-[390px] left-[85.5%] w-px bg-gray-300 z-0" /> */}
 
         <div className="px-4 pt-10 mx-auto max-w-screen-xl">
-          <h2 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] ">
+          <h1 className="text-[44px] font-[400] text-left text-[#01261E] w-full leading-[117%] ">
             {formattedTotalOpens} people would have seen your brand yesterday
-          </h2>
+          </h1>
           <p className="w-[60%] sm:w-[80%] md:w-[70%] text-sm sm:text-base py-4 text-black">
             Make your brand part of their morning ritual. Not ignored ad
             inventory.

@@ -17,7 +17,7 @@ export default function AboutHero() {
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {/* LONG */}
-            <h2
+            <h1
               className="absolute font-[700]"
               style={{
                 left: "1vw",
@@ -28,10 +28,10 @@ export default function AboutHero() {
               }}
             >
               LONG
-            </h2>
+            </h1>
 
             {/* STORY */}
-            <h2
+            <h1
               className="absolute font-[700]"
               style={{
                 left: "1.5vw",
@@ -41,10 +41,10 @@ export default function AboutHero() {
               }}
             >
               STORY
-            </h2>
+            </h1>
 
             {/* SHORT */}
-            <h2
+            <h1
               className="absolute font-[700]"
               style={{
                 left: "8.2vw",
@@ -54,7 +54,7 @@ export default function AboutHero() {
               }}
             >
               SHORT
-            </h2>
+            </h1>
           </div>
 
           {/* Paragraph (scales slightly but keeps readability) */}
@@ -98,7 +98,7 @@ export default function AboutHero() {
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {/* LONG */}
-            <h2
+            <h1
               className="absolute font-[700]"
               style={{
                 left: "6vw",
@@ -109,10 +109,10 @@ export default function AboutHero() {
               }}
             >
               LONG
-            </h2>
+            </h1>
 
             {/* STORY */}
-            <h2
+            <h1
               className="absolute font-[700]"
               style={{
                 left: "9vw",
@@ -122,10 +122,10 @@ export default function AboutHero() {
               }}
             >
               STORY
-            </h2>
+            </h1>
 
             {/* SHORT */}
-            <h2
+            <h1
               className="absolute font-[700]"
               style={{
                 left: "17vw",
@@ -135,7 +135,7 @@ export default function AboutHero() {
               }}
             >
               SHORT
-            </h2>
+            </h1>
           </div>
 
           {/* Paragraph (scales slightly but keeps readability) */}

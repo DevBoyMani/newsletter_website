@@ -80,13 +80,13 @@ export default function AdvertiseClient({ analyticsData }) {
           {/* Text Section */}
           <div className="lg:pt-20 mx-auto">
             <div className="text-[#01261E]">
-              <h2
+              <h1
                 className="text-[80px] lg:w-[50%]  leading-[94%]"
                 style={{ textShadow: "0px 4px 4px rgba(31, 25, 25, 0.00)" }}
               >
                 {analyticsData?.lastCampaignOpenSummary?.formattedTotalOpens}{" "}
                 people would have seen your brand yesterday
-              </h2>
+              </h1>
               <p className="text-[20px] py-4 w-[30%] sm:w-[30%]">
                 Make your brand part of their morning ritual. Not ignored ad
                 inventory.

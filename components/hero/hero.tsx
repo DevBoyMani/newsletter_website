@@ -33,12 +33,12 @@ export default function Hero() {
           <div className="pt-[142px] pl-[110px] flex">
             {/* left */}
             <div className="w-[50%]">
-              <h2
+              <h1
                 className={` w-full text-[80px] font-[400] leading-[94%] text-[#01261E] shadow-[0_4px_4px_rgba(31,25,25,0.00)]`}
               >
                 Summary is where decision makers read, and the right brands are
                 seen.
-              </h2>
+              </h1>
               <p
                 className={`text-[#121212] pt-[32px] w-[455px] text-[18px] font-[400] leading-[168%]`}
               >
@@ -95,10 +95,10 @@ export default function Hero() {
           {/* 1 — Hero Section */}
 
           <div>
-            <h2 className="text-[44px] font-[400] leading-[110%] text-[#01261E] max-w-[344px]">
+            <h1 className="text-[44px] font-[400] leading-[110%] text-[#01261E] max-w-[344px]">
               Summary is where decision makers read, and the right brands are
               seen.
-            </h2>
+            </h1>
 
             <p className="text-[#121212] pt-[14px] text-[14px] font-[400] leading-[145%]">
               In a world full of AI summaries, ours are written by humans. In a

@@ -45,9 +45,9 @@ const Careers = () => {
           <p className="lg:text-[25px] text-[12px] font-[600] text-[#020715] uppercase">
             Tired of endless job searching?
           </p>
-          <h2 className="text-[53px] lg:text-[80px] text-[#01261E] py-2 leading-[104%] w-[80%] lg:w-[46%]">
+          <h1 className="text-[53px] lg:text-[80px] text-[#01261E] py-2 leading-[104%] w-[80%] lg:w-[46%]">
             Join a team built on trust
-          </h2>
+          </h1>
           <div className="lg:pt-14 pt-8 border-black border-b flex justify-between">
             <h2 className="lg:text-[56px] text-[30px] text-[#01261E]">
               Open Positions

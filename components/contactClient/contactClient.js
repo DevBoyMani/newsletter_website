@@ -188,7 +188,7 @@ export default function ContactClient() {
           {/* header */}
           <div className="">
             <div className="flex justify-center text-[44px] leading-normal text-[#01261E]">
-              <h2>Let’s connect</h2>
+              <h1>Let’s connect</h1>
             </div>
             <div className="flex justify-center text-[18px] font-[500] text-[#717171] leading-normal pt-[20px]">
               Our team usually replies within a few hours.
@@ -509,7 +509,7 @@ export default function ContactClient() {
           <div className="w-full px-4 sm:px-0 pb-4">
             <div className="text-center">
               <div className="text-[30px] leading-normal  text-[#01261E]">
-                <h2>Let’s connect</h2>
+                <h1>Let’s connect</h1>
               </div>
               <div className="mt-2 text-[14px] font-[500] text-[#717171] leading-normal max-w-[60%] mx-auto">
                 Our team usually replies within

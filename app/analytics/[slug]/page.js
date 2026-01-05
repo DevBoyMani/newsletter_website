@@ -87,9 +87,9 @@ export default async function AnalyticsPage({ params }) {
 
           <div className="flex justify-between pt-[37px]">
             <div className="w-[40%]">
-              <h2 className="text-[47px] font-[400] leading-normal font-[manrope] text-[#000]">
+              <h1 className="text-[47px] font-[400] leading-normal font-[manrope] text-[#000]">
                 Analytics overview
-              </h2>
+              </h1>
             </div>
             <div className="w-[60%] flex justify-end items-end">
               <AnalyticsComboList selected={slug} />

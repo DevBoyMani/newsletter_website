@@ -29,9 +29,9 @@ export default function ReadersMobileView() {
     <>
       <div className="bg-[#FAFAFA] pt-[110px]">
         <div className="px-4 py-10 mx-auto">
-          <h2 className=" text-[#01261E] text-[44px] leading-[107%] ">
+          <h1 className=" text-[#01261E] text-[44px] leading-[107%] ">
             For the readers still left in the world.
-          </h2>
+          </h1>
           <p className="text-[#121212] text-[14px] leading-normal font-[400] py-4">
             Our newsletters are written for those who seek meaning, not just
             empty updates.
