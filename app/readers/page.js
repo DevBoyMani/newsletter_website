@@ -8,12 +8,19 @@ import ReadersHero from "../../components/readersPageComponents/readersHero/read
 import ReadersNewsletters from "../../components/readersPageComponents/readersNewsletters/readersNewsletters";
 import HeadingWithUnderline from "../../components/readersPageComponents/stuff/headingWithUnderline/headingwithUnderline";
 
+const title = "House of Summary Readers - Join Our Knowledge Community";
+const description =
+  "Connect with a global community of dedicated readers. Explore how House of Summary helps lifelong learners stay informed with curated insights.";
+
 export const metadata = {
-  title: "House of Summary Readers - Join Our Knowledge Community",
-  description:
-    "Connect with a global community of dedicated readers. Explore how House of Summary helps lifelong learners stay informed with curated insights.",
+  title,
+  description,
   alternates: {
     canonical: "https://www.houseofsummary.com/readers",
+  },
+  openGraph: {
+    title,
+    description,
   },
 };
 
