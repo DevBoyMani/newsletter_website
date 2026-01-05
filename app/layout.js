@@ -19,6 +19,22 @@ export const metadata = {
   },
   description:
     "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+  openGraph: {
+    title: "House of Summary | Verified News, Summarized",
+    description:
+      "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+    url: "https://www.houseofsummary.com/",
+    siteName: "House of Summary",
+    images: [
+      {
+        url: "/og/og.png",
+        width: 1200,
+        height: 630,
+        alt: "House of Summary – Verified News",
+      },
+    ],
+    type: "website",
+  },
 };
 
 const organizationSchema = {
@@ -59,9 +75,13 @@ export default function RootLayout({ children }) {
 
         {/* Organization Schema */}
         <Script
+          // id="organization-schema"
+          // type="application/ld+json"
+          // strategy="afterInteractive"
+
           id="organization-schema"
           type="application/ld+json"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
           }}
