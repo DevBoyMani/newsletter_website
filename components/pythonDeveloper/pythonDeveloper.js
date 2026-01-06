@@ -134,9 +134,9 @@ export default function PythonDeveloper() {
                   <p className="text-[#000] text-[13px] font-[500] leading-normal">
                     Tech
                   </p>
-                  <h2 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
+                  <h1 className=" text-[#000] text-[56px] font-[400] leading-[1.2]">
                     Python Developer
-                  </h2>
+                  </h1>
                 </div>
                 {/* 3 */}
                 <div className="pt-[68px]">
@@ -534,9 +534,9 @@ export default function PythonDeveloper() {
             <p className="text-[#9493A5] text-[13px] font-[500] leading-normal">
               Tech
             </p>
-            <h2 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
+            <h1 className=" text-[#01261E] text-[30px] font-[400] leading-[1.2]">
               Python Developer
-            </h2>
+            </h1>
           </div>
           {/* 3 */}
           <div className="pt-[34px]">

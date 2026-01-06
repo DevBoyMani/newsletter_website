@@ -478,9 +478,9 @@ export default function TermsOfUseBody() {
         <div className="md:px-28 pt-14 pb-[130px]">
           {/* 1 hero */}
           <div className="pt-[26px]">
-            <h2 className="text-[56px] font-[400] leading-[104%] text-[#000]">
+            <h1 className="text-[56px] font-[400] leading-[104%] text-[#000]">
               Terms of Use
-            </h2>
+            </h1>
             <p className="text-[16px] text-[#595959] font-[500] leading-[157%] py-[35px]">
               Latest updated November 15, 2025
             </p>

@@ -201,9 +201,9 @@ export default function CookiePolicyMobileBody() {
 
         {/* hero */}
         <div className="pt-[125px]">
-          <h2 className="text-[30px] font-[400] leading-[104%] text-[#01261E] ">
+          <h1 className="text-[30px] font-[400] leading-[104%] text-[#01261E] ">
             Cookie Policy
-          </h2>
+          </h1>
           <p className="text-[15px] text-[#6B6B6F] font-[400] leading-[157%] pt-[16px] pb-[35px]">
             Latest updated November 15, 2025
           </p>
