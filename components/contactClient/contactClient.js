@@ -210,9 +210,9 @@ export default function ContactClient() {
                   />
                 </div>
                 <div>
-                  <p className="text-[#fff] text-[28px] leading-normal font-[600] ">
+                  <h2 className="text-[#fff] text-[28px] leading-normal font-[600] font-[manrope]">
                     Contact details
-                  </p>
+                  </h2>
                   <p className="text-[#C9C9C9] text-[18px] font-[400] leading-normal pt-2 w-[377px]">
                     Whether you want to advertise, send feedback, or just say
                     hello, we’d love to hear from you.
@@ -526,9 +526,9 @@ export default function ContactClient() {
             >
               <div className=" bg-[#01261E] rounded-[5px]">
                 <div className="text-center pt-4">
-                  <p className="text-[#fff] text-[20px] leading-normal font-[600] ">
+                  <h2 className="text-[#fff] text-[20px] leading-normal font-[600] font-[manrope">
                     Contact details
-                  </p>
+                  </h2>
                   <p className="text-[#C9C9C9] text-[11px] font-[400] leading-normal pt-2 w-[172px] mx-auto">
                     Whether you want to advertise, send feedback, or just say
                     hello, we’d love to hear from you.

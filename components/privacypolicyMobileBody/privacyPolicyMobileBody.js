@@ -531,9 +531,9 @@ export default function PrivacyPolicyMobileBody() {
               <div className="text-[14px] text-[#000000] font-[400] leading-normal pb-[22px]">
                 {section.topContent}
               </div>
-              <p className="text-[#000] text-[22px] font-[700] leading-normal pt-[13px] pb-[25px]">
+              <h2 className="text-[#000] text-[22px] font-[700] leading-normal pt-[13px] pb-[25px] font-[manrope]">
                 {section.title}
-              </p>
+              </h2>
               <div className="text-[14px] text-[#000000] font-[400] leading-normal">
                 {section.content}
               </div>

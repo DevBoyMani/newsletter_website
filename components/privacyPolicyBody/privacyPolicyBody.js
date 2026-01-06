@@ -605,9 +605,9 @@ export default function PrivacyPolicyBody() {
                   <div className="text-[16px] text-[#000000] font-[500] leading-[157%] pb-[16px]">
                     {section.topContent}
                   </div>
-                  <p className="text-[#000] text-[30px] font-[500] leading-[120%] pt-[24px] pb-[13px]">
+                  <h2 className="text-[#000] text-[30px] font-[500] leading-[120%] pt-[24px] pb-[13px] font-[manrope]">
                     {section.title}
-                  </p>
+                  </h2>
                   <div className="pb-[16px]">{section.content}</div>
                 </div>
               ))}
