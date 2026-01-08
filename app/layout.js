@@ -12,30 +12,16 @@ const manrope = Manrope({
   variable: "--font-manrope",
 });
 
-// export const metadata = {
-//   metadataBase: new URL("https://www.houseofsummary.com"),
-//   title: {
-//     default: "House of Summary | Verified News, Summarized",
-//   },
-//   description:
-//     "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
-//   openGraph: {
-//     title: "House of Summary | Verified News, Summarized",
-//     description:
-//       "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
-//     url: "https://www.houseofsummary.com/",
-//     siteName: "House of Summary",
-//     images: [
-//       {
-//         url: "/og/og.png",
-//         width: 1200,
-//         height: 630,
-//         alt: "House of Summary – Verified News",
-//       },
-//     ],
-//     type: "website",
-//   },
-// };
+const websiteSchema = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.houseofsummary.com/#website",
+  name: "House of Summary",
+  url: "https://www.houseofsummary.com",
+  publisher: {
+    "@id": "https://www.houseofsummary.com/#organization",
+  },
+};
 
 export const metadata = {
   metadataBase: new URL("https://www.houseofsummary.com"),
@@ -117,6 +103,15 @@ export default function RootLayout({ children }) {
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationSchema),
+          }}
+        />
+        {/* WebSite Schema (IMPORTANT for Google site name) */}
+        <Script
+          id="website-schema"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteSchema),
           }}
         />
       </head>
