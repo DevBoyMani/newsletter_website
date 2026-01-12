@@ -92,8 +92,6 @@ export default function Hero() {
       {/* Mobile */}
       <div className="block lg:hidden">
         <div className="bg-[#FAFAFA] pt-[144px] px-4">
-          {/* 1 — Hero Section */}
-
           <div>
             <h1 className="text-[44px] font-[400] leading-[110%] text-[#01261E] max-w-[344px]">
               Summary is where decision makers read, and the right brands are
@@ -108,7 +106,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Image + the button leading to contact page */}
         <div className="bg-[#FAFAFA] relative">
           {/* Image */}
           <img
@@ -127,7 +124,6 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* 2 — Trusted Companies */}
         <div className="pt-[20px] pb-[24px] overflow-hidden bg-[#FAFAFA]">
           <div className="relative w-full scroll-company-wrapper">
             <div className="pointer-events-none absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-[#FAFAFA] to-transparent z-10" />

@@ -97,7 +97,7 @@ export default function AboutOurCompany() {
                     target="_blank"
                   >
                     <img
-                      src="/about/ps-round.png"
+                      src="/about/ps-round.webp"
                       alt="Capitol"
                       className="w-10 h-10 bg-[#4D3060] hover:bg-[#684182] rounded-full"
                     />
@@ -124,7 +124,7 @@ export default function AboutOurCompany() {
                     target="_blank"
                   >
                     <img
-                      src="/about/gs-round.png"
+                      src="/about/gs-round.webp"
                       alt="Stripes"
                       className="w-10 h-10 bg-[#06266D] hover:bg-[#0A338C] rounded-full"
                     />
@@ -197,7 +197,7 @@ export default function AboutOurCompany() {
                 <div className="absolute bottom-[16%] right-[32%] group">
                   <a href="https://www.londonsummary.com/" target="_blank">
                     <img
-                      src="/about/london-round.png"
+                      src="/about/london-round.webp"
                       alt="london"
                       className="w-10 h-10 bg-[#80011F] hover:bg-[#AA0028] rounded-full object-contain p-1"
                     />
@@ -246,7 +246,7 @@ export default function AboutOurCompany() {
                   {/* Normal Image */}
                   <a href="https://www.dubaisummary.com/" target="_blank">
                     <img
-                      src="/about/ds-1.png"
+                      src="/about/ds-1.webp"
                       alt="normal"
                       className="w-full h-full bg-[#102341] rounded-full absolute top-0 left-0 opacity-100 group-hover:opacity-0"
                     />
@@ -321,7 +321,7 @@ export default function AboutOurCompany() {
             <div className="absolute top-[15%] left-[30%] group">
               <a href="https://www.presidentialsummary.com/" target="_blank">
                 <img
-                  src="/about/ps-round.png"
+                  src="/about/ps-round.webp"
                   alt="Capitol"
                   className="w-8 h-8 bg-[#4D3060] hover:bg-[#684182] rounded-full"
                 />
@@ -345,7 +345,7 @@ export default function AboutOurCompany() {
             <div className="absolute top-[12%] right-[25%] group">
               <a href="https://www.geopoliticalsummary.com/" target="_blank">
                 <img
-                  src="/about/gs-round.png"
+                  src="/about/gs-round.webp"
                   alt="Stripes"
                   className="w-8 h-8 bg-[#06266D] hover:bg-[#0A338C] rounded-full"
                 />
@@ -417,7 +417,7 @@ export default function AboutOurCompany() {
             <div className="absolute bottom-[14%] right-[32%] group">
               <a href="https://www.londonsummary.com/" target="_blank">
                 <img
-                  src="/about/london-round.png"
+                  src="/about/london-round.webp"
                   alt="london"
                   className="w-8 h-8 bg-[#80011F] hover:bg-[#AA0028] rounded-full object-contain p-1"
                 />
@@ -465,7 +465,7 @@ export default function AboutOurCompany() {
             <div className="absolute top-[40%] left-[7%] group">
               <a href="https://www.dubaisummary.com/" target="_blank">
                 <img
-                  src="/about/ds-1.png"
+                  src="/about/ds-1.webp"
                   alt="Capitol"
                   className="w-8 h-8 bg-[#102341] hover:bg-[#102341] rounded-full"
                 />
