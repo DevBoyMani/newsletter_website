@@ -43,7 +43,7 @@ export default function AdvertiseAdBlocker() {
       id: 2,
       content:
         "This is what your audience sees with an ad blocker. Your web ads disappear entirely, but in email inbox they stay visible every time. Over 40% of internet users have ad blockers.",
-      image: "/advertise/with-ad-blocker-new-mobile.png",
+      image: "/advertise/with-ad-blocker-new-mobile.webp",
     },
   ];
 
@@ -186,34 +186,13 @@ export default function AdvertiseAdBlocker() {
 
         <div className="relative pt-0 pb-0">
           <div className="relative w-full">
-            {/* with animation */}
-            {/* <AnimatePresence custom={directionMob} mode="wait">
-              <motion.div
-                key={itemMob.image}
-                initial={{ x: directionMob > 0 ? 100 : -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: directionMob > 0 ? -100 : 100, opacity: 0 }}
-                transition={{ duration: 0.3 }}
-                className="w-full"
-              >
-                <img
-                  src={itemMob.image}
-                  alt="Adblocker illustration"
-                  className="w-full h-auto z-10"
-                />
-              </motion.div>
-            </AnimatePresence> */}
-            {/* with animation */}
-
-            {/* without animation */}
-            <div key={itemMob.image} className="w-full">
+            <div className="w-full">
               <img
                 src={itemMob.image}
                 alt="Adblocker illustration"
                 className="w-full h-auto z-10"
               />
             </div>
-            {/* without animation */}
           </div>
         </div>
       </div>

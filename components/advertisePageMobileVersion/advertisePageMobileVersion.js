@@ -17,16 +17,24 @@ export default function AdvertisePageMobileVersion({
   formattedTotalOpens,
 }) {
   const videos = [
-    { video: "/advertise/v-1.mp4", id: "video1", height: "h-[297px]" },
-    { video: "/advertise/v-2.mp4", id: "video2", height: "h-[245px]" },
     {
-      video: "/advertise/v-3.mp4",
+      video: "/advertise/m-v-1.mp4",
+      id: "video1",
+      height: "h-[297px]",
+    },
+    {
+      video: "/advertise/m-v-2.mp4",
+      id: "video2",
+      height: "h-[245px]",
+    },
+    {
+      video: "/advertise/m-v-3.mp4",
       id: "video3",
       height: "h-[389px]",
       moveUp: "mt-[-80px]",
     },
     {
-      video: "/advertise/v-4.mp4",
+      video: "/advertise/m-v-4.mp4",
       id: "video4",
       height: "h-[513px]",
       moveUp: "mt-[-120px]",
@@ -178,7 +186,7 @@ export default function AdvertisePageMobileVersion({
         <div className="flex w-full max-h-[213px] relative overflow-hidden">
           <video autoPlay loop muted playsInline className=" object-cover">
             <source
-              src="/advertise/advertise-page-video.mp4"
+              src="/advertise/m-advertise-page-video.mp4"
               type="video/mp4"
             />
           </video>
