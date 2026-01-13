@@ -7,6 +7,7 @@ import HeadingWithUnderline from "../../components/advertiseComponents/headingWi
 import { MobileFaq } from "../advertiseComponents/mobileViewComponents/mobileFaq/mobileFaq";
 import AdvertiseAdBlocker from "../advertiseAdBlocker/advertiseAdBlocker";
 import Link from "next/link";
+import AdvertiseMotionText from "../../components/advertiseMotionText/advertiseMotionText";
 
 export default function AdvertisePageMobileVersion({
   subscribersMonthly,
@@ -117,7 +118,6 @@ export default function AdvertisePageMobileVersion({
         <div className="absolute -bottom-1 left-0 w-full h-[120px] px-4 bg-gradient-to-t from-[#FAFAFA] to-transparent z-10" />
 
         {/* Subscribers Text */}
-        {/* Subscribers Text */}
         {/* <div className="relative bottom-[50px] left-4 w-full text-start z-20">
         
           <h2
@@ -202,19 +202,7 @@ export default function AdvertisePageMobileVersion({
             attention.
           </p>
 
-          <a
-            href="/contact"
-            className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group bg-[#01261E] text-[#ffffff] font-[800]"
-          >
-            <span className="flex py-2 justify-end items-center text-[37px] uppercase whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-            </span>
-          </a>
+          <AdvertiseMotionText />
         </div>
       </div>
 

@@ -1,3 +1,5 @@
+import AdvertiseMotionText from "../../components/advertiseMotionText/advertiseMotionText";
+
 export default function HomeLatestStrories() {
   const blogPosts = [
     {
@@ -32,199 +34,30 @@ export default function HomeLatestStrories() {
     <>
       {/* desktop */}
       <div className="hidden lg:block bg-[#FAFAFA]">
-        {/* latest stories */}
-        {/* <div className="px-[110px] pt-[100px] pb-[80px]">
-          <div className="">
-            <div className="flex flex-col justify-center items-center">
-              <h2 className="text-center text-[56px] text-[#01261E] font-[400] leading-[48px] tracking-[-1.2px]">
-                Latest stories from the blog
-              </h2>
-              <p className="pt-[26px] text-center text-[19px] text-[#161C2D] font-[400] leading-[32px] tracking-[-0.03px] w-[39%]">
-                Discover hundreds of technical articles & open-source projects
-                and radically improve your stack
-              </p>
-            </div>
+        <div className="flex flex-col items-center justify-center text-center lg:pt-[70px] lg:pb-[127px] pb-16 bg-[#FAFAFA]">
+          <h2
+            className="text-[34px] lg:text-[56px] font-[400]"
+            style={{ fontFamily: "GT Super Ds Trial" }}
+          >
+            Advertise with us
+          </h2>
+
+          <div className="w-[640px] mx-auto px-8">
+            <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
+              Our readers pay attention. They trust what we share and they act
+              on it. If your brand aligns with that level of quality, let’s talk
+              and see if we’re a good fit.
+            </p>
           </div>
-     
-          <div className="pt-[56px]">
-            <div className="flex flex-row gap-[21px] flex-wrap items-stretch">
-              {blogPosts.map((post) => (
-                <div
-                  key={post.id}
-                  className="group flex-1 min-w-[300px] bg-[#fff] border border-[#E7E9ED] rounded-[15px] flex flex-col transition-shadow duration-500 
-          shadow-[0_0_20px_0_rgba(102,102,102,0.15)] hover:shadow-[0_0_30px_0_rgba(102,102,102,0.25)] cursor-pointer overflow-hidden relative"
-                >
-                
-                  <div className="p-[5px]">
-                    <div className="w-full h-full overflow-hidden rounded-[15px]">
-                      <img
-                        src={post.image}
-                        alt={post.title}
-                        className="w-full h-full object-cover transition-all duration-500 group-hover:scale-[1.02]"
-                      />
-                    </div>
-                  </div>
 
-                 
-                  <div
-                    className="flex flex-col flex-1 transition-transform duration-500 ease-out
-            group-hover:-translate-y-[12px] relative"
-                  >
-                
-                    <div className="pt-[24px] px-[15px] flex flex-col flex-1">
-                      <h3 className="text-[#000] text-[20px] font-[400] leading-[22px] font-[manrope]">
-                        {post.title}
-                      </h3>
-                      <p className="text-[#878C91] text-[15px] font-[400] leading-[24px] py-[20px] flex-1 group-hover:-translate-y-[12px] transition-transform duration-500 ease-in-out">
-                        {post.description}
-                      </p>
-                    </div>
+          {/* Moving Text desktop*/}
 
-                
-                    <div
-                      className="absolute -bottom-5 left-0 w-full px-[15px] pb-[20px] 
-              translate-y-full opacity-0 pointer-events-none
-              group-hover:translate-y-0 group-hover:opacity-100 group-hover:pointer-events-auto
-              transition-all duration-500 ease-out"
-                    >
-                      <div className="flex items-center justify-between">
-                        <p className="text-[#000000] text-[15px] font-[500] leading-[24px]">
-                          Read more
-                        </p>
-                        <a href={post.link}>
-                          <img
-                            src="/home/nl-arr.png"
-                            alt="newsletter source arrow"
-                            className="w-3 h-3"
-                          />
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div> */}
-        {/* need to create separate component */}
-        {/* contact our team */}
-        <div>
-          <div className="flex flex-col items-center justify-center text-center lg:pt-[70px] lg:pb-[127px] pb-16 bg-[#FAFAFA]">
-            <h2
-              className="text-[34px] lg:text-[56px] font-[400]"
-              style={{ fontFamily: "GT Super Ds Trial" }}
-            >
-              Advertise with us
-            </h2>
-
-            <div className="w-[640px] mx-auto px-8">
-              <p className="text-[12px] lg:text-[18px] font-[400] leading-[150%] tracking-[0.36px] text-center">
-                Our readers pay attention. They trust what we share and they act
-                on it. If your brand aligns with that level of quality, let’s
-                talk and see if we’re a good fit.
-              </p>
-            </div>
-
-            {/* Moving Text desktop*/}
-
-            <a
-              href="/contact"
-              className="hidden lg:block lg:w-[806px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
-            >
-              <span className="flex py-[31px] justify-end items-center  text-[100px] font-[800] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll group-hover:pause group ">
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              </span>
-            </a>
-
-            {/* Moving Text mobile*/}
-
-            {/* <a
-              href="#"
-              className=" block lg:hidden w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E] font-[800]"
-            >
-              <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES SPEAK TO SALES
-                SPEAK TO SALES
-              </span>
-            </a> */}
-          </div>
+          <AdvertiseMotionText />
         </div>
       </div>
 
       {/* mobile */}
       <div className="block lg:hidden bg-[#FAFAFA]">
-        {/* latest stories */}
-        {/* <div className="px-4 pt-[46px] pb-[55px]">
-          <div className="flex flex-col justify-center items-center">
-            <h2 className="text-center w-[243px] text-[30px]  text-[#121212] font-[400] leading-[120%]">
-              Latest stories from
-              <br /> the blog
-            </h2>
-            <p className="pt-[25px] text-center text-[14px] text-[#121212] font-[400] leading-[145%] tracking-[0.7px] w-[295px]">
-              Discover hundreds of technical articles & open-source projects and
-              radically improve your stack.
-            </p>
-          </div>
-
-        
-          <div className="pt-[40px] flex flex-col gap-[25px] items-center">
-            {blogPosts.map((post) => (
-              <div
-                key={post.id}
-                className="w-full max-w-[800px] bg-[#fff] border border-[#E7E9ED] rounded-[15px] shadow-[0_0_20px_0_rgba(102,102,102,0.15)] overflow-hidden"
-              >
-              
-                <div className="w-full h-[250px] p-1">
-                  <img
-                    src={post.image}
-                    alt={post.title}
-                    className="w-full h-full object-cover rounded-[15px]"
-                  />
-                </div>
-
-                
-                <div className="px-[15px] py-[20px] flex flex-col justify-between min-h-[200px]">
-                  <div>
-                    <h3 className="text-[#000] text-[16px] font-[400] leading-[22px] font-[manrope]">
-                      {post.title}
-                    </h3>
-                    <p className="text-[#878C91] text-[14px] font-[400] leading-[160%] pt-[15px]">
-                      {post.description}
-                    </p>
-                  </div>
-
-                
-                  <div className="pt-[15px] flex items-center justify-between ">
-                    <p className="text-[#000000] text-[15px] font-[500] leading-[24px]">
-                      Read more
-                    </p>
-                    <a href={post.link}>
-                      <img
-                        src="/home/nl-arr.png"
-                        alt="newsletter source arrow"
-                        className="w-2.5 h-2.5"
-                      />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div> */}
-
-        {/* contact our team */}
         <div className="pt-[20px] bg-[#FAFAFA]">
           <div className="flex flex-col items-center justify-center text-center pt-[35px] pb-[60px]">
             <div className="">
@@ -236,7 +69,7 @@ export default function HomeLatestStrories() {
               </h2>
             </div>
 
-            <div className="pt-[30px]">
+            <div className="py-[30px]">
               <p className="px-4 text-[16px] font-[400] leading-[125%] tracking-[0.8px] text-center">
                 Our readers pay attention. They trust what we share and they act
                 on it. If your brand aligns with that level of quality, let’s
@@ -245,19 +78,7 @@ export default function HomeLatestStrories() {
             </div>
             {/* Moving Text mobile*/}
 
-            <a
-              href="/contact"
-              className="w-full max-w-[269px] border border-[#01261E] rounded-full overflow-hidden relative group mt-[30px] bg-[#01261E] text-[#ffffff]  font-[800]"
-            >
-              <span className="flex py-2 justify-end items-center text-[37px] whitespace-nowrap transition-transform duration-500 ease-in-out animate-scroll-mobile group-hover:pause group ">
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-                ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
-              </span>
-            </a>
+            <AdvertiseMotionText />
           </div>
         </div>
       </div>

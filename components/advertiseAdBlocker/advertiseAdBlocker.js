@@ -110,33 +110,13 @@ export default function AdvertiseAdBlocker() {
 
         <div className="relative pt-8 pb-[92px] overflow-hidden">
           <div className="mx-auto max-w-[80%] relative">
-            {/* with animation */}
-            {/* <AnimatePresence custom={direction} mode="wait">
-              <motion.div
-                key={item.image}
-                initial={{ x: direction > 0 ? 300 : -300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                exit={{ x: direction > 0 ? -300 : 300, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-                className="w-full h-full"
-              >
-                <img
-                  src={item.image}
-                  alt="Adblocker illustration"
-                  className="w-full h-full object-cover rounded-[15px]"
-                />
-              </motion.div>
-            </AnimatePresence> */}
-            {/* with animation */}
-            {/* without animation */}
-            <div key={item.image} className="w-full h-full">
+            <div className="w-full h-full">
               <img
                 src={item.image}
                 alt="Adblocker illustration"
                 className="w-full h-full object-cover rounded-[15px]"
               />
             </div>
-            {/* without animation */}
           </div>
         </div>
       </div>

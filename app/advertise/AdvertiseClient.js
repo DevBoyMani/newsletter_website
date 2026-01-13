@@ -14,6 +14,7 @@ import AdvertiseAdBlocker from "../../components/advertiseAdBlocker/advertiseAdB
 import AdvertiseNewFaq from "../../components/advertiseNewFaq/advertiseNewFaq";
 import Link from "next/link";
 import CustomizedHoverButton from "../../components/customizedHoverButton/customizedHoverButton";
+import AdvertiseMotionText from "../../components/advertiseMotionText/advertiseMotionText";
 
 // --- Add formatter here ---
 // function formatCompactNumber(num) {
@@ -251,7 +252,7 @@ export default function AdvertiseClient({ analyticsData }) {
             </p>
           </div>
 
-          <a
+          {/* <a
             href="/contact"
             className="w-[806px] border border-[#01261E] rounded-[153px] overflow-hidden relative group mt-10 hover:bg-[#01261E] hover:text-[#ffffff] text-[#01261E]"
           >
@@ -263,7 +264,8 @@ export default function AdvertiseClient({ analyticsData }) {
               ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
               ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp; ADVERTISE&nbsp;
             </span>
-          </a>
+          </a> */}
+          <AdvertiseMotionText />
         </div>
       </div>
 
