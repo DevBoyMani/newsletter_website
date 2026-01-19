@@ -63,28 +63,9 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
           })}
         </div>
 
-        {/* <div className="mt-5">
-          <Link href="/readers">
-            <div className="flex items-center gap-1">
-              <a
-                href="/readers?#ourNewsletters"
-                className="text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
-              >
-                See all{" "}
-              </a>
-              <span>
-                <img
-                  src="/home/popular-nls-r-arr.png"
-                  alt="right arrow"
-                  className="w-3"
-                />
-              </span>
-            </div>
-          </Link>
-        </div> */}
         <div className="mt-5">
           <Link
-            href="/readers#ourNewsletters"
+            href="/readers"
             className="flex items-center gap-1 text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
           >
             <span>See all</span>

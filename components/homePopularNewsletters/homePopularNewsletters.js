@@ -60,7 +60,7 @@ export default function HomePopularNewsletters() {
               judgment.
             </p>
             <a
-              href="/readers?#ourNewsletters"
+              href="/readers"
               className="mt-8 text-[18px] text-[#000] font-[400] leading-[104%] hover:underline underline-offset-[6px]"
             >
               All newsletters &rarr;

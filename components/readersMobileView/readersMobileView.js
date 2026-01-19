@@ -9,22 +9,22 @@ import Link from "next/link";
 
 export default function ReadersMobileView() {
   const params = useSearchParams();
-  // smooth scroll the click from home page more nls ( trick pharams)
-  useEffect(() => {
-    const target = params.get("scrollTo");
-    if (!target) return;
 
-    const section = document.querySelector(`#${target}`);
-    if (!section) return;
+  // useEffect(() => {
+  //   const target = params.get("scrollTo");
+  //   if (!target) return;
 
-    const yOffset = -100; // your custom offset
-    const y =
-      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  //   const section = document.querySelector(`#${target}`);
+  //   if (!section) return;
 
-    setTimeout(() => {
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }, 200); // delay to ensure layout is rendered
-  }, [params]);
+  //   const yOffset = -100;
+  //   const y =
+  //     section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+  //   setTimeout(() => {
+  //     window.scrollTo({ top: y, behavior: "smooth" });
+  //   }, 200);
+  // }, [params]);
   return (
     <>
       <div className="bg-[#FAFAFA] pt-[110px]">

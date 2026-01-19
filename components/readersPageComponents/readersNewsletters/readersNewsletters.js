@@ -153,7 +153,7 @@ export default function ReadersNewsletters() {
 
   const handleAdd = (id) => {
     const newArr = testInform.map((el) =>
-      el.id === id ? { ...el, selected: !el.selected } : el
+      el.id === id ? { ...el, selected: !el.selected } : el,
     );
     setTestInform(newArr);
     const selectedIds = newArr.filter((el) => el.selected).map((el) => el.id);
@@ -245,7 +245,7 @@ export default function ReadersNewsletters() {
 
       // 3) welcome emails
       const selectedNewsletters = data.filter((nl) =>
-        websiteIds.includes(nl.id)
+        websiteIds.includes(nl.id),
       );
 
       await Promise.all(
@@ -258,9 +258,9 @@ export default function ReadersNewsletters() {
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ email: userEmail, uniqueId, userId }),
           }).catch((err) =>
-            console.error("Welcome email error:", welcomeUrl, err)
+            console.error("Welcome email error:", welcomeUrl, err),
           );
-        })
+        }),
       );
 
       // ✅ Success: allow popup to show "One last step!"
@@ -274,21 +274,21 @@ export default function ReadersNewsletters() {
   };
 
   // smooth scroll (from query param)
-  useEffect(() => {
-    const target = params.get("scrollTo");
-    if (!target) return;
+  // useEffect(() => {
+  //   const target = params.get("scrollTo");
+  //   if (!target) return;
 
-    const section = document.querySelector(`#${target}`);
-    if (!section) return;
+  //   const section = document.querySelector(`#${target}`);
+  //   if (!section) return;
 
-    const yOffset = -100;
-    const y =
-      section.getBoundingClientRect().top + window.pageYOffset + yOffset;
+  //   const yOffset = -100;
+  //   const y =
+  //     section.getBoundingClientRect().top + window.pageYOffset + yOffset;
 
-    setTimeout(() => {
-      window.scrollTo({ top: y, behavior: "smooth" });
-    }, 200);
-  }, [params]);
+  //   setTimeout(() => {
+  //     window.scrollTo({ top: y, behavior: "smooth" });
+  //   }, 200);
+  // }, [params]);
 
   return (
     <div id="ourNewsletters" className="bg-[#FAFAFA]">
