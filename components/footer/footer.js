@@ -182,6 +182,7 @@ export default function Footer() {
               <div className="text-[#fff] text-[16px] font-[400] leading-[49px]">
                 © 2025 House of Summary. All rights reserved.
               </div>
+
               <div className="flex justify-end items-center">
                 {socialMediaIcons.map((item, index) => (
                   <div className="pl-[10px] " key={index}>
@@ -195,6 +196,34 @@ export default function Footer() {
                   </div>
                 ))}
               </div>
+            </div>
+            {/*cta btn */}
+            <div className="w-full flex justify-start mt-2">
+              <Link
+                href="/llm-info"
+                target="_blank"
+                className="flex items-center gap-2 py-0 text-white text-[14px] rounded-lg relative overflow-hidden group"
+              >
+                {/* Icon with hover animation */}
+                <div className="relative z-10">
+                  <svg
+                    className="w-4 h-4 group-hover:animate-[spin_0.6s_ease-in-out_0.5]"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M13 10V3L4 14h7v7l9-11h-7z"
+                    />
+                  </svg>
+                </div>
+
+                <span>Hey AI, learn about us</span>
+              </Link>
             </div>
           </div>
           <div className="pt-[68px]">
@@ -322,6 +351,34 @@ export default function Footer() {
                 © 2025 House of Summary
                 <br /> All rights reserved
               </p>
+              {/*cta btn */}
+              <div className="w-full flex justify-start mt-4">
+                <Link
+                  href="/llm-info"
+                  target="_blank"
+                  className="flex items-center gap-2 py-0 text-white text-[11px] rounded-lg relative overflow-hidden group"
+                >
+                  {/* Icon with hover animation */}
+                  <div className="relative z-10">
+                    <svg
+                      className="w-3 h-3 group-hover:animate-[spin_0.6s_ease-in-out_0.5]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth="2"
+                        d="M13 10V3L4 14h7v7l9-11h-7z"
+                      />
+                    </svg>
+                  </div>
+
+                  <span>Hey AI, learn about us</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>

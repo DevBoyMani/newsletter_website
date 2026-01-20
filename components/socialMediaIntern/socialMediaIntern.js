@@ -23,7 +23,7 @@ export default function SocialMediaIntern() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = sectionRefs.current.findIndex(
-              (ref) => ref === entry.target
+              (ref) => ref === entry.target,
             );
             if (index !== -1) {
               setActiveIndex(index);
@@ -34,7 +34,7 @@ export default function SocialMediaIntern() {
       {
         rootMargin: "-50% 0px -40% 0px",
         threshold: 0.2,
-      }
+      },
     );
 
     sectionRefs.current.forEach((ref) => {
@@ -54,7 +54,20 @@ export default function SocialMediaIntern() {
       setTimeout(() => setShowPopup(false), 1500); // Hide after 1.5 seconds
     });
   };
+  // Create a single scroll function at the top of your component
+  const scrollToAssignment = () => {
+    const section = document.querySelector("#assignment");
+    if (!section) return;
 
+    // Simple scroll with CSS handling the offset
+    section.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+
+    // Update URL
+    window.history.pushState(null, "", "#assignment");
+  };
   return (
     <>
       {/* desktop */}
@@ -170,20 +183,7 @@ export default function SocialMediaIntern() {
                         href="#assignment"
                         onClick={(e) => {
                           e.preventDefault();
-
-                          const section = document.querySelector("#assignment");
-                          if (!section) return;
-
-                          const yOffset = -100; // adjust for sticky left panel
-                          const y =
-                            section.getBoundingClientRect().top +
-                            window.pageYOffset +
-                            yOffset;
-
-                          // ✅ update slug (same as mobile)
-                          window.history.pushState(null, "", "#assignment");
-
-                          window.scrollTo({ top: y, behavior: "smooth" });
+                          scrollToAssignment();
                         }}
                       >
                         <div className="flex items-center font-[600] text-[#000]">
@@ -423,7 +423,7 @@ export default function SocialMediaIntern() {
                                     document.execCommand("copy");
                                     document.body.removeChild(textarea);
                                     alert(
-                                      `Email copied to clipboard: ${email}`
+                                      `Email copied to clipboard: ${email}`,
                                     );
                                   });
                               }}
@@ -459,15 +459,15 @@ export default function SocialMediaIntern() {
       </div>
 
       {/* mobile */}
-      {/* Careers banner */}
+      {/* Mobile version */}
       <div className="block lg:hidden fixed top-0 left-0 w-full z-[999]">
         <div className="bg-[#E5C8CD] w-full px-4 py-[11px] flex items-center justify-center">
           <span className="text-[#000000] text-[12px] font-[600] leading-normal">
             The assignment is mandatory.
           </span>
-          {/* <Link
-            href="/careers/#assignment"
-            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
+          <button
+            onClick={scrollToAssignment}
+            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase bg-transparent"
           >
             <span>Go to assignment</span>
             <img
@@ -475,37 +475,9 @@ export default function SocialMediaIntern() {
               alt="arrow"
               className="w-[11px] h-[11px] ml-[15px]"
             />
-          </Link> */}
-          <Link
-            href="#assignment"
-            scroll={false}
-            onClick={(e) => {
-              e.preventDefault();
-
-              const section = document.querySelector("#assignment");
-              if (!section) return;
-
-              const yOffset = 760; // height of mobile banner
-              const y =
-                section.getBoundingClientRect().top +
-                window.pageYOffset +
-                yOffset;
-
-              window.history.pushState(null, "", "#assignment"); // ✅ updates slug
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }}
-            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
-          >
-            <span>Go to assignment</span>
-            <img
-              src="/careers/down.png"
-              alt="arrow"
-              className="w-[11px] h-[11px] ml-[15px]"
-            />
-          </Link>
+          </button>
         </div>
       </div>
-
       <div className="block lg:hidden ">
         <div className="px-4 pt-[187px] pb-[45px] bg-[#FAFAFA]">
           {/* 1 */}

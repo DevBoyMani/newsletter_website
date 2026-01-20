@@ -23,7 +23,7 @@ const sections = [
   {
     id: 3,
     title: "Human written and fact checked",
-    src: "/readers/fact-checked-mobile.png",
+    src: "/readers/fact-checked-mobile.webp",
     content:
       "We don’t publish until every claim is confirmed. Our editors validate sources, check dates, trace data, and ensure context so you never get half-truths or headlines without substance.",
     // imageSize: "h-[444px]",
@@ -31,7 +31,7 @@ const sections = [
   {
     id: 4,
     title: "Clear summary for important news",
-    src: "/readers/clear-summary-for-the-import-news-mob.png",
+    src: "/readers/clear-summary-for-the-import-news-mob.webp",
     content:
       "We monitor the world’s most credible news outlets, filter out the noise, and summarize only what matters. You stay informed in minutes instead of losing hours on endless articles.",
     imageSize: "w-[60%]",
@@ -39,7 +39,7 @@ const sections = [
   {
     id: 5,
     title: "We don’t link to any paywalled sites",
-    src: "/readers/we-dont-think.png",
+    src: "/readers/we-dont-think.webp",
     content:
       "You will never hit a paywall from us. Every link we share is open, accessible, and worth your attention.",
     imageSize: " h-auto",
@@ -129,8 +129,8 @@ export default function ReadersMobileFeaturesSection() {
                   isThird
                     ? ""
                     : isFourth
-                    ? "" // No padding on 4th section image
-                    : "px-4"
+                      ? "" // No padding on 4th section image
+                      : "px-4"
                 }`}
               >
                 {imageSrc && (
