@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function ReadersHero() {
   return (
     <>
-      <div className="hidden lg:block bg-[#FAFAFA] px-12 pt-[100px]">
+      <div className="hidden lg:block bg-[#FAFAFA] px-12 pt-[100px] min-h-[766px]">
         <div className="w-full h-full relative overflow-hidden">
           <div className="w-full h-full">
             <video
