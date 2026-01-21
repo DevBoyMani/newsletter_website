@@ -65,7 +65,7 @@ const HomePopularNewslettersMobile = ({ cardsMobile }) => {
 
         <div className="mt-5">
           <Link
-            href="/readers"
+            href="/readers#our-newsletters"
             className="flex items-center gap-1 text-[15px] text-[#000] font-[600] hover:underline leading-[104%]"
           >
             <span>See all</span>

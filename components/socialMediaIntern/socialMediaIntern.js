@@ -54,20 +54,7 @@ export default function SocialMediaIntern() {
       setTimeout(() => setShowPopup(false), 1500); // Hide after 1.5 seconds
     });
   };
-  // Create a single scroll function at the top of your component
-  const scrollToAssignment = () => {
-    const section = document.querySelector("#assignment");
-    if (!section) return;
 
-    // Simple scroll with CSS handling the offset
-    section.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
-
-    // Update URL
-    window.history.pushState(null, "", "#assignment");
-  };
   return (
     <>
       {/* desktop */}
@@ -179,13 +166,7 @@ export default function SocialMediaIntern() {
                         Before applying for the job, completing the task is
                         mandatory.
                       </span>
-                      <a
-                        href="#assignment"
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToAssignment();
-                        }}
-                      >
+                      <Link href="#assignment">
                         <div className="flex items-center font-[600] text-[#000]">
                           <span className="whitespace-nowrap">
                             Go to assignment
@@ -198,7 +179,7 @@ export default function SocialMediaIntern() {
                             />
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -465,9 +446,9 @@ export default function SocialMediaIntern() {
           <span className="text-[#000000] text-[12px] font-[600] leading-normal">
             The assignment is mandatory.
           </span>
-          <button
-            onClick={scrollToAssignment}
-            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase bg-transparent"
+          <Link
+            href="#assignment"
+            className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
           >
             <span>Go to assignment</span>
             <img
@@ -475,7 +456,7 @@ export default function SocialMediaIntern() {
               alt="arrow"
               className="w-[11px] h-[11px] ml-[15px]"
             />
-          </button>
+          </Link>
         </div>
       </div>
       <div className="block lg:hidden ">
@@ -714,38 +695,6 @@ export default function SocialMediaIntern() {
               curious, and care deeply about what we create.
             </p>
           </div>
-          {/* how to apply */}
-          {/* <div className="px-4 py-[30px] bg-[#DAEBE8] rounded-[5px] mt-8">
-                <p className="text-[#000] text-[22px] font-[700] leading-[141%]">
-                  How to apply
-                </p>
-                <div className=" flex flex-col py-3">
-                  <div className="w-[85%]">
-                    <p className="text-[#000] text-[14px] font-[400] leading-[174%]">
-                      Send your CV, a motivational letter, and the completed
-                      assignment to  
-                      <span className="underline cursor-pointer">
-                        careers@hourseofsummary.com
-                      </span>{" "}
-                      with the name of the position in the subject of the email.{" "}
-                      <strong>
-                        Note: We do not review applications without the
-                        assignment
-                      </strong>
-                      .
-                    </p>
-                  </div>
-                  <div className="w-fit mt-6">
-                    <a
-                      href="mailto:careers@sagravia.com"
-                      className="block text-center bg-[#01261E] hover:bg-[#014134] text-white text-[14px] font-[600] px-4 py-2 rounded-full w-full"
-                    >
-                      Apply now
-                    </a>
-                  </div>
-                </div>
-              </div> */}
-          {/* apply  */}
           <div className="w-full bg-[#01261E] mt-[45px] px-[30px] py-[25px] rounded-[10px]">
             <p className="text-[#fff] text-[20px] font-[600] leading-[141%]">
               Apply now!

@@ -145,6 +145,10 @@ h6 {
     @apply bg-background text-foreground;
   }
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px;
+}
 
 @keyframes scrollText {
   from {
@@ -154,10 +158,6 @@ h6 {
     transform: translateX(0%);
   }
 }
-
-/* .animate-scroll {
-  animation: scrollText 13s linear infinite;
-} */
 
 .group:hover .animate-scroll {
   /* animation-play-state: paused; */
@@ -227,14 +227,6 @@ h6 {
   padding-left: 2em; /* indent text after bullet */
   text-indent: -1.4em; /* pull first line back to show bullet at start */
 }
-/*careers/slug   */
-
-/* .nav-colored {
-  background-color: #01261e;
-  transition: background-color 0.3s ease;
-} */
-
-/* home */
 
 @keyframes scroll-company {
   0% {
@@ -257,26 +249,4 @@ h6 {
 /* parent hover stops the animation so user can inspect logos */
 .scroll-company-wrapper:hover .animate-scroll-company {
   animation-play-state: paused;
-}
-#ourNewsletters {
-  scroll-margin-top: 80px;
-}
-
-/* In your global CSS or component style */
-#assignment {
-  scroll-margin-top: 100px; /* Adjust this value */
-}
-
-/* For mobile specifically */
-@media (max-width: 1023px) {
-  #assignment {
-    scroll-margin-top: 120px; /* Larger offset for mobile banner */
-  }
-}
-
-/* For desktop */
-@media (min-width: 1024px) {
-  #assignment {
-    scroll-margin-top: 80px; /* Smaller offset for desktop */
-  }
 }

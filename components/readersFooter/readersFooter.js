@@ -39,34 +39,6 @@ const feedbackData = [
   },
 ];
 
-// const socialMediaIcons = [
-//   {
-//     name: "x",
-//     src: "/readers/x.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "insta",
-//     src: "/readers/insta.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "ln",
-//     src: "/readers/ln.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "tiktok",
-//     src: "/readers/tiktok.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "t",
-//     src: "/readers/t.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-// ];
-
 export default function ReadersFooter() {
   const scrollRef = useRef(null);
   const [isHovered, setIsHovered] = useState(false);

@@ -39,34 +39,6 @@ const feedbackData = [
   },
 ];
 
-// const socialMediaIcons = [
-//   {
-//     name: "x",
-//     src: "/readers/x.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "insta",
-//     src: "/readers/insta.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "ln",
-//     src: "/readers/ln.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "tiktok",
-//     src: "/readers/tiktok.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-//   {
-//     name: "t",
-//     src: "/readers/t.png",
-//     href: "https://www.presidentialsummary.com/",
-//   },
-// ];
-
 export default function ReadersFooterMobile() {
   const mobileScrollRef = useRef(null); // Ref for the mobile scroll container
   const [isDragging, setIsDragging] = useState(false);
@@ -81,7 +53,7 @@ export default function ReadersFooterMobile() {
 
     // Pause the CSS animation on the animated container
     const animatedContainer = document.querySelector(
-      ".readers-footer-mobile-animate-scroll-cards"
+      ".readers-footer-mobile-animate-scroll-cards",
     );
     if (animatedContainer) {
       animatedContainer.style.animationPlayState = "paused";
@@ -100,7 +72,7 @@ export default function ReadersFooterMobile() {
 
     // Resume the CSS animation
     const animatedContainer = document.querySelector(
-      ".readers-footer-mobile-animate-scroll-cards"
+      ".readers-footer-mobile-animate-scroll-cards",
     );
     if (animatedContainer) {
       // Add a small delay before restarting to avoid jumpiness

@@ -25,7 +25,7 @@ export default function ContentWriterLondon() {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             const index = sectionRefs.current.findIndex(
-              (ref) => ref === entry.target
+              (ref) => ref === entry.target,
             );
             if (index !== -1) {
               setActiveIndex(index);
@@ -36,7 +36,7 @@ export default function ContentWriterLondon() {
       {
         rootMargin: "-50% 0px -40% 0px",
         threshold: 0.2,
-      }
+      },
     );
 
     sectionRefs.current.forEach((ref) => {
@@ -166,26 +166,7 @@ export default function ContentWriterLondon() {
                         Before applying for the job, completing the task is
                         mandatory.
                       </span>
-                      <a
-                        href="#assignment"
-                        onClick={(e) => {
-                          e.preventDefault();
-
-                          const section = document.querySelector("#assignment");
-                          if (!section) return;
-
-                          const yOffset = -100; // adjust for sticky left panel
-                          const y =
-                            section.getBoundingClientRect().top +
-                            window.pageYOffset +
-                            yOffset;
-
-                          // ✅ update slug (same as mobile)
-                          window.history.pushState(null, "", "#assignment");
-
-                          window.scrollTo({ top: y, behavior: "smooth" });
-                        }}
-                      >
+                      <Link href="#assignment">
                         <div className="flex items-center font-[600] text-[#000]">
                           <span className="whitespace-nowrap">
                             Go to assignment
@@ -198,7 +179,7 @@ export default function ContentWriterLondon() {
                             />
                           </div>
                         </div>
-                      </a>
+                      </Link>
                     </div>
                   </div>
                 </div>
@@ -391,7 +372,7 @@ export default function ContentWriterLondon() {
                                     document.execCommand("copy");
                                     document.body.removeChild(textarea);
                                     alert(
-                                      `Email copied to clipboard: ${email}`
+                                      `Email copied to clipboard: ${email}`,
                                     );
                                   });
                               }}
@@ -433,35 +414,9 @@ export default function ContentWriterLondon() {
           <span className="text-[#000000] text-[12px] font-[600] leading-normal">
             The assignment is mandatory.
           </span>
-          {/* <Link
-                       href="/careers/#assignment"
-                       className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
-                     >
-                       <span>Go to assignment</span>
-                       <img
-                         src="/careers/down.png"
-                         alt="arrow"
-                         className="w-[11px] h-[11px] ml-[15px]"
-                       />
-                     </Link> */}
+
           <Link
             href="#assignment"
-            scroll={false}
-            onClick={(e) => {
-              e.preventDefault();
-
-              const section = document.querySelector("#assignment");
-              if (!section) return;
-
-              const yOffset = 760; // height of mobile banner
-              const y =
-                section.getBoundingClientRect().top +
-                window.pageYOffset +
-                yOffset;
-
-              window.history.pushState(null, "", "#assignment"); // ✅ updates slug
-              window.scrollTo({ top: y, behavior: "smooth" });
-            }}
             className="ml-2 text-[#582719] hover:underline inline-flex items-center text-[12px] font-[800] leading-normal uppercase"
           >
             <span>Go to assignment</span>
