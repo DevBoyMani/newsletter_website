@@ -1,14 +1,10 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
-import { FaStar } from "react-icons/fa";
 
 export default function Hero() {
-  const [email, setEmail] = useState("");
   const trustedCompanies = [
     { id: 1, name: "autio", logo: "/home/autio.png" },
-    // { id: 2, name: "Going", logo: "/home/going.png" },
     { id: 2, name: "Zoho", logo: "/home/zoho.png" },
     { id: 3, name: "an", logo: "/home/an.png" },
     { id: 4, name: "gagg", logo: "/home/gagg.png" },
@@ -17,7 +13,6 @@ export default function Hero() {
 
   const trustedCompaniesMob = [
     { id: 1, name: "autio", logo: "/home/autio-mob.png" },
-    // { id: 2, name: "Going", logo: "/home/going.png" },
     { id: 2, name: "Zoho", logo: "/home/zoho-mob.png" },
     { id: 3, name: "an", logo: "/home/an-mob.png" },
     { id: 4, name: "gagg", logo: "/home/gaggenau-mob.png" },
@@ -84,11 +79,13 @@ export default function Hero() {
               <div className="w-[70%]">
                 <div className="flex flex-wrap justify-end items-center gap-[40px]">
                   {trustedCompanies.map((company) => (
-                    <img
+                    <Image
                       key={company.id}
                       src={company.logo}
                       alt={company.name}
-                      className="w-[100px] h-[47px] object-contain"
+                      width={100}
+                      height={47}
+                      className="object-contain"
                     />
                   ))}
                 </div>
@@ -116,13 +113,6 @@ export default function Hero() {
         </div>
 
         <div className="bg-[#FAFAFA] relative">
-          {/* Image */}
-          {/* <img
-            src="/home/mobile/hero-image-new-mobile.webp"
-            alt="Home hero image"
-            className="w-full h-auto"
-          /> */}
-
           <Image
             src="/home/mobile/hero-image-new-mobile.webp"
             alt="Home hero image"
@@ -131,7 +121,6 @@ export default function Hero() {
             className="w-full h-auto"
           />
 
-          {/* Button overlay */}
           <div className="absolute top-4 left-4 z-20">
             <Link href="/contact">
               <button className="w-[111px] sm:w-[118px] bg-[#01261E] py-[8px] px-[18px] text-[14px] text-[#FAFAFA] rounded-[50px] font-[300] tracking-[0.14px]">
@@ -149,11 +138,13 @@ export default function Hero() {
               {trustedCompaniesMob
                 .concat(trustedCompaniesMob)
                 .map((company, index) => (
-                  <img
-                    key={index}
+                  <Image
+                    key={`${company.id}-${index}`}
                     src={company.logo}
                     alt={company.name}
-                    className="w-[151px] h-[47px] object-contain"
+                    width={151}
+                    height={47}
+                    className=" object-contain"
                   />
                 ))}
             </div>
