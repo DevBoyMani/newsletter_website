@@ -58,9 +58,19 @@ export default function Hero() {
             {/* right */}
             <div className="w-[50%]">
               <div className="relative right-0">
+                {/* <img
+                  src="/home/hero-image-new.webp"
+                  alt="Home hero image"
+                  className="object-contain w-full"
+                /> */}
                 <img
                   src="/home/hero-image-new.webp"
                   alt="Home hero image"
+                  width="720"
+                  height="620"
+                  fetchpriority="high"
+                  loading="eager"
+                  decoding="async"
                   className="object-contain w-full"
                 />
               </div>
@@ -108,9 +118,20 @@ export default function Hero() {
 
         <div className="bg-[#FAFAFA] relative">
           {/* Image */}
+          {/* <img
+            src="/home/mobile/hero-image-new-mobile.webp"
+            alt="Home hero image"
+            className="w-full h-auto"
+          /> */}
+
           <img
             src="/home/mobile/hero-image-new-mobile.webp"
             alt="Home hero image"
+            width="390"
+            height="520"
+            fetchpriority="high"
+            loading="eager"
+            decoding="async"
             className="w-full h-auto"
           />
 
