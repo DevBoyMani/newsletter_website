@@ -63,14 +63,13 @@ export default function Hero() {
                   alt="Home hero image"
                   className="object-contain w-full"
                 /> */}
-                <img
+
+                <Image
                   src="/home/hero-image-new.webp"
                   alt="Home hero image"
-                  width="720"
-                  height="620"
-                  fetchpriority="high"
-                  loading="eager"
-                  decoding="async"
+                  width={720}
+                  height={620}
+                  priority
                   className="object-contain w-full"
                 />
               </div>
@@ -124,14 +123,11 @@ export default function Hero() {
             className="w-full h-auto"
           /> */}
 
-          <img
+          <Image
             src="/home/mobile/hero-image-new-mobile.webp"
             alt="Home hero image"
-            width="390"
-            height="520"
-            fetchpriority="high"
-            loading="eager"
-            decoding="async"
+            width={390}
+            height={520}
             className="w-full h-auto"
           />
 
