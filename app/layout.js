@@ -31,12 +31,12 @@ export const metadata = {
   },
 
   description:
-    "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+    "Two friends on opposite sides of the world went door to door selling magazines in their neighbourhood. Two decades later House of Summary is born.",
 
   openGraph: {
     title: "House of Summary | Verified News, Summarized",
     description:
-      "Get the latest, verified news summaries from House of Summary. Stay informed with concise, fact-based news for a clear picture of the world.",
+      "Two friends on opposite sides of the world went door to door selling magazines in their neighbourhood. Two decades later House of Summary is born.",
     url: "https://www.houseofsummary.com/",
     siteName: "House of Summary",
     images: [
