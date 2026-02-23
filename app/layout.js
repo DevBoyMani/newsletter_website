@@ -17,6 +17,7 @@ const websiteSchema = {
   "@type": "WebSite",
   "@id": "https://www.houseofsummary.com/#website",
   name: "House of Summary",
+  description: "Verified global news, summarized clearly and concisely.",
   url: "https://www.houseofsummary.com",
   publisher: {
     "@id": "https://www.houseofsummary.com/#organization",
@@ -24,10 +25,11 @@ const websiteSchema = {
 };
 
 export const metadata = {
-  metadataBase: new URL("https://www.houseofsummary.com"),
+  metadataBase: new URL("https://www.houseofsummary.com/"),
 
   title: {
     default: "House of Summary | Verified News, Summarized",
+    template: "%s | House of Summary",
   },
 
   description:
@@ -49,13 +51,26 @@ export const metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "House of Summary | Verified News, Summarized",
     description:
       "Get the latest, verified news summaries from House of Summary.",
     images: ["https://www.houseofsummary.com/og/og.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 
@@ -83,6 +98,14 @@ const organizationSchema = {
     email: "contact@houseofsummary.com",
     availableLanguage: "English",
   },
+  //Replace with your real social URLs. This increases Google trust → better sitelinks.
+
+  sameAs: [
+    "https://www.threads.com/@houseofsummary",
+    "https://www.facebook.com/Houseofsummary/",
+    "https://www.instagram.com/houseofsummary/",
+    "https://x.com/Houseofsummary",
+  ],
 };
 
 export default function RootLayout({ children }) {
