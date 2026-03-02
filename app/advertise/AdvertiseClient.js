@@ -123,10 +123,12 @@ export default function AdvertiseClient({ analyticsData }) {
               </div>
             </div>
 
-            {/* 500K Subscribers Text */}
+            {/* 1M+ Subscribers Text */}
             <div className="absolute -bottom-4 left-[49.7%] -translate-x-1/2 z-20 text-center">
               <h2 className="font-[700] sm:text-[10vw] lg:text-[11.4vw] 2xl:text-[11.4vw] [1650px]:text-[13vw] [1800px]:text-[13vw] leading-[94%] tracking-[-1.6px] whitespace-nowrap">
-                <span className="text-white">500k </span>
+                <span className="text-white">
+                  <span className="lg:text-[14.2vw]">1</span>M+{" "}
+                </span>
                 <span className="text-[#01261E]">Subscribers</span>
               </h2>
             </div>
