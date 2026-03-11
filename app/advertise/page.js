@@ -27,15 +27,21 @@ async function getAnalytics() {
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000");
 
+  console.log(
+    "Fetching analytics from:",
+    `${baseUrl}/api/advertise?website_ids=${selectedIds}`,
+  );
+
   const res = await fetch(
     `${baseUrl}/api/advertise?website_ids=${selectedIds}`,
     {
       // This works with the route-level revalidate – it's fine to keep
       next: { revalidate },
-    }
+    },
   );
 
   if (!res.ok) {
+    console.log(res);
     throw new Error("Failed to fetch analytics");
   }
 
