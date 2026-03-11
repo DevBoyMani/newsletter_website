@@ -32,7 +32,7 @@ export async function GET(req) {
     if (!websiteIds.length) {
       return NextResponse.json(
         { error: "No valid website_ids provided" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -168,8 +168,8 @@ export async function GET(req) {
     // 6️⃣ Linkly list_links for p-ad (to get link IDs)
     //
     const linklyListUrl =
-      `https://app.linklyhq.com/api/workspace/${WORKSPACE_ID}/list_links` +
-      "?page_size=500" +
+      `https://app.linklyhq.com/api/v1/workspace/${WORKSPACE_ID}/list_links` +
+      "?page_size=3000" +
       "&search=p-ad" +
       "&sort_by=inserted_at" +
       "&sort_dir=desc" +
@@ -208,7 +208,7 @@ export async function GET(req) {
     //
     const totalOpensAll = countryResult.rows.reduce(
       (sum, r) => sum + Number(r.total_opens || 0),
-      0
+      0,
     );
 
     const opensByCountryAll = countryResult.rows.map((r) => {
@@ -238,7 +238,7 @@ export async function GET(req) {
     //
     const totalGenderOpeners = genderResult.rows.reduce(
       (sum, r) => sum + Number(r.total_openers || 0),
-      0
+      0,
     );
 
     const opensByGender = genderResult.rows.map((r) => {
@@ -381,7 +381,7 @@ export async function GET(req) {
     console.error("[/api/advertise] error:", error);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
