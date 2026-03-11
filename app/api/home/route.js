@@ -31,7 +31,7 @@ export async function GET(req) {
     if (!websiteIds.length) {
       return NextResponse.json(
         { error: "No valid website_ids provided" },
-        { status: 400 }
+        { status: 400 },
       );
     }
 
@@ -93,7 +93,7 @@ export async function GET(req) {
 
     // Linkly API
     const linklyListUrl =
-      `https://app.linklyhq.com/api/workspace/${WORKSPACE_ID}/list_links` +
+      `https://app.linklyhq.com/api/v1/workspace/${WORKSPACE_ID}/list_links` +
       `?page_size=500&search=p-ad&sort_by=inserted_at&sort_dir=desc` +
       `&api_key=${process.env.LINKLY_API_KEY}`;
 
@@ -170,7 +170,7 @@ export async function GET(req) {
         const y = Number(point.y);
 
         const daysAgo = Math.floor(
-          (today.getTime() - day.setHours(0, 0, 0, 0)) / MS_PER_DAY
+          (today.getTime() - day.setHours(0, 0, 0, 0)) / MS_PER_DAY,
         );
 
         if (daysAgo < 0 || daysAgo >= 60) continue;
@@ -179,14 +179,14 @@ export async function GET(req) {
           const pos = 29 - daysAgo;
           const bucket = Math.min(
             BUCKETS - 1,
-            Math.max(0, Math.floor(pos / bucketSpan))
+            Math.max(0, Math.floor(pos / bucketSpan)),
           );
           thisMonthBuckets[bucket] += y;
         } else {
           const pos = 59 - daysAgo;
           const bucket = Math.min(
             BUCKETS - 1,
-            Math.max(0, Math.floor(pos / bucketSpan))
+            Math.max(0, Math.floor(pos / bucketSpan)),
           );
           lastMonthBuckets[bucket] += y;
         }
@@ -209,7 +209,7 @@ export async function GET(req) {
     console.error("Error at /api/advertise:", err);
     return NextResponse.json(
       { error: "Internal server error" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }
