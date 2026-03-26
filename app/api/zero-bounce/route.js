@@ -19,24 +19,24 @@ export async function POST(request) {
     // -------------------------------
     // 🔁 TOGGLE THIS WHEN ZB IS BACK
     // -------------------------------
-    // let responseZB = {
-    //   status: "valid",
-    //   sub_status: "recheck",
-    //   city: "",
-    //   country: "",
-    //   domain: "",
-    //   firstname: "",
-    //   lastname: "",
-    //   gender: "",
-    //   zipcode: "",
-    //   region: "",
-    //   smtp_provider: "",
-    // };
+    let responseZB = {
+      status: "valid",
+      sub_status: "recheck",
+      city: "",
+      country: "",
+      domain: "",
+      firstname: "",
+      lastname: "",
+      gender: "",
+      zipcode: "",
+      region: "",
+      smtp_provider: "",
+    };
 
     // ✅ UNCOMMENT THIS WHEN FIXED
-    let responseZB = ip
-      ? await zeroBounceServer.validateEmail(email.toLowerCase().trim(), ip)
-      : await zeroBounceServer.validateEmail(email.toLowerCase().trim());
+    // let responseZB = ip
+    //   ? await zeroBounceServer.validateEmail(email.toLowerCase().trim(), ip)
+    //   : await zeroBounceServer.validateEmail(email.toLowerCase().trim());
 
     // Fetch country based on IP
     let country = "Unknown";
