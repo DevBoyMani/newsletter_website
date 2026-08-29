@@ -18,7 +18,7 @@ export const metadata = {
   },
 };
 
-export const revalidate = 43200; // 43200 seconds = 12 hours
+export const dynamic = "force-dynamic";
 async function getAnalytics() {
   // Build an absolute base URL for server-side fetch
   const baseUrl =
