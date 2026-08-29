@@ -24,7 +24,7 @@ async function getAnalytics() {
   const baseUrl =
     process.env.BASE_URL ||
     (process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}`
+      ? `https://${process.env.BASE_URL}`
       : "http://localhost:3000");
 
   console.log(
