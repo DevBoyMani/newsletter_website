@@ -6,9 +6,7 @@ import WebsiteAnalytics from "@/components/analyticsPages/WebsiteAnalytics";
 import AnalyticsComboList from "@/components/analyticsComboList/analyticsComboList";
 
 export const revalidate = 43200; // 43200 seconds = 12 hours
-export async function generateStaticParams() {
-  return ANALYTICS_SLUGS.map((slug) => ({ slug }));
-}
+export const dynamic = "force-dynamic";
 
 // meta data
 export async function generateMetadata({ params }) {
