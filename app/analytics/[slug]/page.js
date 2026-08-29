@@ -32,15 +32,13 @@ export async function generateMetadata({ params }) {
 
 async function fetchAnalyticsForWebsite(websiteId) {
   const res = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
-    }/api/analytics`,
+    `${process.env.BASE_URL || "http://localhost:3000"}/api/analytics`,
     {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ websiteId }),
       // `next` options don’t really do anything on POST, but harmless
-    }
+    },
   );
 
   if (!res.ok) {
