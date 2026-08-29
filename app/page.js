@@ -20,10 +20,7 @@ async function getAnalytics() {
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000");
 
-  const res = await fetch(`${baseUrl}/api/home?website_ids=${selectedIds}`, {
-    // This works with the route-level revalidate – it's fine to keep
-    next: { revalidate },
-  });
+  const res = await fetch(`${baseUrl}/api/home?website_ids=${selectedIds}`);
 
   if (!res.ok) {
     throw new Error("Failed to fetch home analytics");
