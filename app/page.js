@@ -12,23 +12,24 @@ export const metadata = {
 };
 
 export const dynamic = "force-dynamic";
+
 async function getAnalytics() {
-  // Build an absolute base URL for server-side fetch
   const baseUrl =
     process.env.BASE_URL ||
     (process.env.VERCEL_URL
       ? `https://${process.env.VERCEL_URL}`
       : "http://localhost:3000");
 
-  const res = await fetch(`${baseUrl}/api/home?website_ids=${selectedIds}`);
+  const res = await fetch(`${baseUrl}/api/home?website_ids=${selectedIds}`, {
+    cache: "no-store",
+  });
 
   if (!res.ok) {
-    throw new Error("Failed to fetch home analytics");
+    throw new Error(`Failed to fetch home analytics: ${res.status}`);
   }
 
   return res.json();
 }
-
 export default async function Advertise() {
   const analyticsData = await getAnalytics();
 
